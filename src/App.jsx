@@ -1,33 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="header">
+        <div className="logo-container">
+          <div className="ks-logo">
+            <div className="dots">
+              <div className="dot"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+            </div>
+            <div className="dot-center"></div>
+            <div className="ks-text">KS</div>
+          </div>
+        </div>
+        <nav className="nav-menu">
+          <a href="#" className="nav-link">HOME</a>
+          <a href="#" className="nav-link">ABOUT</a>
+          <a href="#" className="nav-link">WORKS</a>
+          <a href="#" className="nav-link">DESIGNER</a>
+          <a href="#" className="nav-link">ARCHIVE</a>
+        </nav>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      
+      <div className="app-container">
+        <div className="left-section">
+          <div className="circle-pattern">
+            <div className="circle-row">
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+              <div className="circle orange"></div>
+              <div className="circle orange"></div>
+              <div className="circle orange"></div>
+              <div className="circle orange"></div>
+              <div className="circle blue"></div>
+            </div>
+            <div className="circle-row">
+              <div className="circle blue"></div>
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+            </div>
+            <div className="circle-row">
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+              <div className="circle white"></div>
+              <div className="circle orange"></div>
+              <div className="circle white"></div>
+            </div>
+            <div className="circle-row">
+              <div className="circle orange"></div>
+              <div className="circle white"></div>
+              <div className="circle blue"></div>
+              <div className="circle blue"></div>
+              <div className="circle orange"></div>
+              <div className="circle orange"></div>
+            </div>
+          </div>
+        </div>
+        <div className="right-section">
+          <div className="gray-rectangle"></div>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
