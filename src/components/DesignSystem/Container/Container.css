@@ -1,0 +1,89 @@
+/* Container Component Styles */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Max width variants */
+.container-mobile {
+  max-width: 320px;
+}
+
+.container-tablet {
+  max-width: 768px;
+}
+
+.container-desktop {
+  max-width: 1024px;
+}
+
+.container-large {
+  max-width: 1440px;
+}
+
+.container-full {
+  max-width: 100%;
+}
+
+/* Padding variants */
+.container-padding-none {
+  padding: 0;
+}
+
+.container-padding-small {
+  padding: 0 16px;
+}
+
+.container-padding-medium {
+  padding: 0 24px;
+}
+
+.container-padding-large {
+  padding: 0 32px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1440px) {
+  .container-large {
+    max-width: 100%;
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-desktop {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+  
+  .container-large {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-tablet {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+  
+  .container-desktop,
+  .container-large {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-mobile {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+  
+  .container-tablet,
+  .container-desktop,
+  .container-large {
+    padding: 0 12px;
+  }
+}
+

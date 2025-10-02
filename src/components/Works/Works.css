@@ -1,0 +1,257 @@
+/* Works Section Styles */
+.works {
+  padding: 6rem 0;
+  background: #2A2A2A;
+  position: relative;
+}
+
+.works::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.works-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.works-title {
+  margin-bottom: 1rem;
+}
+
+.works-description {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(79, 195, 247, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #3A3A3A 0%, #4A4A4A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+  animation: rotate 15s linear infinite;
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+  position: relative;
+}
+
+.placeholder-icon {
+  color: #999999;
+  opacity: 0.6;
+}
+
+.placeholder-text {
+  text-align: center;
+  font-size: 12px;
+}
+
+.project-content {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-title {
+  margin-bottom: 0.75rem;
+}
+
+.project-description {
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tag {
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 107, 53, 0.2);
+  color: #FF6B35;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-tag {
+  background: rgba(255, 107, 53, 0.3);
+  transform: scale(1.05);
+}
+
+.works-cta {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.works-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.works-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.works-button:hover::before {
+  left: 100%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .works-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .works {
+    padding: 4rem 0;
+  }
+  
+  .works-header {
+    margin-bottom: 3rem;
+  }
+  
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-image {
+    height: 180px;
+  }
+  
+  .project-content {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .works {
+    padding: 3rem 0;
+  }
+  
+  .works-header {
+    margin-bottom: 2rem;
+  }
+  
+  .works-grid {
+    gap: 1rem;
+  }
+  
+  .project-image {
+    height: 160px;
+  }
+  
+  .project-content {
+    padding: 1rem;
+  }
+  
+  .project-tags {
+    gap: 0.25rem;
+  }
+  
+  .project-tag {
+    padding: 0.2rem 0.5rem;
+    font-size: 11px;
+  }
+}
+

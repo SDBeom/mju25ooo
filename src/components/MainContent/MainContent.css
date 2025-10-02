@@ -1,0 +1,27 @@
+/* Main Content Styles */
+.main-content {
+  background: #2A2A2A;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Smooth scrolling for anchor links */
+.main-content {
+  scroll-behavior: smooth;
+}
+
+/* Section spacing */
+.main-content > section {
+  position: relative;
+}
+
+.main-content > section:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}

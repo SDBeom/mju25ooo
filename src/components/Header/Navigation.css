@@ -1,0 +1,95 @@
+/* Navigation Component Styles */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.nav-link:hover {
+  color: #FF6B35;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FF6B35 0%, #FF8A65 100%);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:active {
+  transform: translateY(0);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.nav-mobile .nav-link {
+  font-size: 16px;
+  padding: 12px 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-mobile .nav-link:last-child {
+  border-bottom: none;
+}
+
+.nav-mobile .nav-link::after {
+  display: none;
+}
+
+.nav-mobile .nav-link:hover {
+  background: rgba(255, 107, 53, 0.1);
+  border-radius: 8px;
+  transform: none;
+}
+
+/* Error state */
+.nav-error {
+  color: #F44336;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nav-menu:not(.nav-mobile) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-mobile .nav-link {
+    font-size: 15px;
+    padding: 10px 0;
+  }
+}
