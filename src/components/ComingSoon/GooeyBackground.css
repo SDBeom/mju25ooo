@@ -1,13 +1,13 @@
 /* Gooey Background */
 .gooey-bg {
-  position: fixed;           /* !important 제거 */
-  inset: 0;                  /* top/left/width/height 대신 */
+  position: absolute;   /* fixed 쓰지 말 것 */
+  inset: 0;
   pointer-events: none;
-  z-index: 0;                /* -1 금지: iOS에서 가려짐 */
+  z-index: 1;           /* 컨텐츠(2)보다 낮게, 음수 금지 */
   -webkit-filter: url(#goo); /* iOS용 접두사 추가 */
   filter: url(#goo);
-  overflow: hidden;          /* visible은 iOS에서 종종 문제 */
-  isolation: isolate;        /* 자체 스택 컨텍스트로 안전하게 */
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .gooey-circle {
@@ -29,6 +29,7 @@
 /* iOS 전용 안전장치: 혹시 남아있어도 무력화 */
 @supports (-webkit-touch-callout: none) {
   .gooey-circle {
+    transform: none;
     -webkit-transform: none;
     will-change: auto;
   }

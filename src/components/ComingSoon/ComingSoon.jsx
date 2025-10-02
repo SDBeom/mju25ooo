@@ -44,6 +44,9 @@ const ComingSoon = () => {
 
   return (
     <div className="coming-soon">
+      {/* 배경 레이어를 컨테이너 바깥이 아니라 바로 아래 첫 자식으로 */}
+      <GooeyBackground />
+      
       <div className="coming-soon-container">
         <div className="main-content">
           <div className="left-section">
@@ -112,8 +115,6 @@ const ComingSoon = () => {
         <div className="coming-soon-footer">
           <p>© 2025 MJU MCD. All rights reserved.</p>
         </div>
-        
-        <GooeyBackground />
       </div>
     </div>
   );
