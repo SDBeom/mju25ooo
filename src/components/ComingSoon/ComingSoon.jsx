@@ -63,7 +63,8 @@ const ComingSoon = () => {
             </h1>
             
             <p className="coming-soon-description">
-              점점점... 점점.. 점들이 모이는 중<br />
+              점점점...점점.. 점들이<br />
+              모이는 중<br />
               곧 만날 수 있어요!!
             </p>
           </div>
