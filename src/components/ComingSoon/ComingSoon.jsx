@@ -8,7 +8,11 @@ const ComingSoon = () => {
         <div className="coming-soon-content">
           <div className="logo-section">
             <div className="logo-circle">
-              <span className="logo-text">SD</span>
+              <img 
+                src="/Signature_logo.svg" 
+                alt="SD Logo" 
+                className="signature-logo"
+              />
             </div>
           </div>
           
@@ -17,8 +21,8 @@ const ComingSoon = () => {
           </h1>
           
           <p className="coming-soon-description">
-            새로운 웹사이트를 준비하고 있습니다.<br />
-            곧 만나보실 수 있습니다.
+            점점점... 점점.. 점들이 모이는 중<br />
+            곧 만날 수 있어요!!
           </p>
           
           <div className="coming-soon-features">
@@ -37,7 +41,7 @@ const ComingSoon = () => {
           </div>
           
           <div className="coming-soon-footer">
-            <p>© 2024 SD Portfolio. All rights reserved.</p>
+            <p>© 2025 MJU MCD. All rights reserved.</p>
           </div>
         </div>
         
@@ -53,3 +57,4 @@ const ComingSoon = () => {
 };
 
 export default ComingSoon;
+
