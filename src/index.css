@@ -1,7 +1,5 @@
-/* Pretendard 폰트는 index.html에서 CDN으로 로드됨 */
 
 :root {
-  /* Design System Variables */
   --color-background: #2A2A2A;
   --color-surface: #3A3A3A;
   --color-surface-variant: #4A4A4A;
@@ -11,12 +9,8 @@
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #CCCCCC;
   --color-text-muted: #999999;
-  
-  /* Typography */
   --font-primary: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
-  
-  /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -26,19 +20,15 @@
   --spacing-3xl: 64px;
   --spacing-4xl: 96px;
   --spacing-5xl: 128px;
-  
-  /* Breakpoints */
   --breakpoint-mobile: 320px;
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1024px;
   --breakpoint-large: 1440px;
   
-  /* Animations */
   --animation-fast: 150ms;
   --animation-normal: 300ms;
   --animation-slow: 500ms;
   
-  /* Base styles */
   font-family: var(--font-primary);
   line-height: 1.6;
   font-weight: 400;

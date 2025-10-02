@@ -1,5 +1,22 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import './GooeyBackground.css';
+
+// 상수들을 컴포넌트 외부로 이동하여 성능 최적화
+const CONFIG_BASE = {
+  desktop: { count: 24, radiusMin: 140, radiusMax: 160 },
+  tablet: { count: 12, radiusMin: 100, radiusMax: 120 },
+  mobile: { count: 8, radiusMin: 70, radiusMax: 90 }
+};
+
+const SPEED_CONFIG = { min: 1.6, max: 4.0 };
+const LIFE_DURATION = { min: 8000, max: 15000 };
+const FADE_DURATION = { min: 800, max: 1200 };
+
+const getConfig = (width) => {
+  if (width <= 480) return CONFIG_BASE.mobile;
+  if (width <= 768) return CONFIG_BASE.tablet;
+  return CONFIG_BASE.desktop;
+};
 
 const GooeyBackground = () => {
   const gooLayerRef = useRef(null);
@@ -8,30 +25,13 @@ const GooeyBackground = () => {
 
   useEffect(() => {
     const gooLayer = gooLayerRef.current;
-    
     const W = window.innerWidth;
     const H = window.innerHeight;
     
-    // 화면 크기에 따른 원 개수 및 크기 조절
-    let circleCount = 24; // 기본값 (데스크톱)
-    let radiusMin = 140;
-    let radiusMax = 160;
-    
-    if (W <= 768) { // 태블릿
-      circleCount = 12;
-      radiusMin = 100;
-      radiusMax = 120;
-    }
-    if (W <= 480) { // 모바일
-      circleCount = 8;
-      radiusMin = 70;
-      radiusMax = 90;
-    }
-    
     const config = {
-      count: circleCount,
-      speed: { min: 1.6, max: 4.0 },
-      radius: { min: radiusMin, max: radiusMax },
+      ...getConfig(W),
+      speed: SPEED_CONFIG,
+      radius: { min: getConfig(W).radiusMin, max: getConfig(W).radiusMax }
     };
 
     // 새로운 원 생성 함수
@@ -44,10 +44,9 @@ const GooeyBackground = () => {
       const heading = Math.random() * Math.PI * 2;
       const spd = Math.max(1.0, config.speed.min + Math.random() * (config.speed.max - config.speed.min));
 
-      // 생존시간 설정 (최소 8초, 최대 15초)
-      const lifeDuration = 8000 + Math.random() * 7000; // 8-15초
-      const fadeInDuration = 800 + Math.random() * 400; // 0.8-1.2초 페이드인
-      const fadeOutDuration = 800 + Math.random() * 400; // 0.8-1.2초 페이드아웃
+      const lifeDuration = LIFE_DURATION.min + Math.random() * (LIFE_DURATION.max - LIFE_DURATION.min);
+      const fadeInDuration = FADE_DURATION.min + Math.random() * (FADE_DURATION.max - FADE_DURATION.min);
+      const fadeOutDuration = FADE_DURATION.min + Math.random() * (FADE_DURATION.max - FADE_DURATION.min);
 
       // 초기 진입 애니메이션
       const startScale = 0.15 + Math.random() * 0.35;
@@ -184,25 +183,10 @@ const GooeyBackground = () => {
           gooLayer.innerHTML = '';
         }
         
-        let newCircleCount = 24;
-        let newRadiusMin = 140;
-        let newRadiusMax = 160;
-        
-        if (newW <= 768) { // 태블릿
-          newCircleCount = 12;
-          newRadiusMin = 100;
-          newRadiusMax = 120;
-        }
-        if (newW <= 480) { // 모바일
-          newCircleCount = 8;
-          newRadiusMin = 70;
-          newRadiusMax = 90;
-        }
-        
         const newConfig = {
-          count: newCircleCount,
-          speed: { min: 1.6, max: 4.0 },
-          radius: { min: newRadiusMin, max: newRadiusMax },
+          ...getConfig(newW),
+          speed: SPEED_CONFIG,
+          radius: { min: getConfig(newW).radiusMin, max: getConfig(newW).radiusMax }
         };
         
         // 새로운 설정으로 구이 효과 재생성 (생명주기 시스템 사용)
