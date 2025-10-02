@@ -28,20 +28,6 @@ const ComingSoon = () => {
             곧 만날 수 있어요!!
           </p>
           
-          <div className="coming-soon-features">
-            <div className="feature-item">
-              <div className="feature-icon">🎨</div>
-              <span>Modern Design</span>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">⚡</div>
-              <span>Fast Performance</span>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">📱</div>
-              <span>Responsive</span>
-            </div>
-          </div>
           
           <div className="coming-soon-footer">
             <p>© 2025 MJU MCD. All rights reserved.</p>
