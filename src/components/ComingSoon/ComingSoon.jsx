@@ -32,7 +32,7 @@ const ComingSoon = () => {
           </p>
           
           <div className="social-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://www.instagram.com/mju_mcd_2025/" target="_blank" rel="noopener noreferrer" className="social-link">
               <img src={instagramLogo} alt="Instagram" className="social-logo" />
             </a>
             <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="social-link">
