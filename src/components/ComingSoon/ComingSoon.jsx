@@ -45,66 +45,70 @@ const ComingSoon = () => {
     <div className="coming-soon">
       <div className="coming-soon-container">
         <div className="coming-soon-content">
-          <div className="logo-section">
-            <img 
-              src={signatureLogo} 
-              alt="SD Logo" 
-              className="signature-logo"
-              onError={(e) => {
-                console.log('Image failed to load:', e.target.src);
-                e.target.style.display = 'none';
-              }}
-            />
+          <div className="left-section">
+            <div className="logo-section">
+              <img 
+                src={signatureLogo} 
+                alt="SD Logo" 
+                className="signature-logo"
+                onError={(e) => {
+                  console.log('Image failed to load:', e.target.src);
+                  e.target.style.display = 'none';
+                }}
+              />
+            </div>
+            
+            <h1 className="coming-soon-title">
+              Coming Soon
+            </h1>
+            
+            <p className="coming-soon-description">
+              점점점... 점점.. 점들이 모이는 중<br />
+              곧 만날 수 있어요!!
+            </p>
           </div>
           
-          <h1 className="coming-soon-title">
-            Coming Soon
-          </h1>
-          
-          <p className="coming-soon-description">
-            점점점... 점점.. 점들이 모이는 중<br />
-            곧 만날 수 있어요!!
-          </p>
-          
-          <div className="countdown-timer">
-            <div className="countdown-container">
-              <div className="countdown-item">
-                <div className="countdown-number">{timeLeft.days.toString().padStart(2, '0')}</div>
-                <div className="countdown-label">Days</div>
-              </div>
-              <div className="countdown-separator">:</div>
-              <div className="countdown-item">
-                <div className="countdown-number">{timeLeft.hours.toString().padStart(2, '0')}</div>
-                <div className="countdown-label">Hours</div>
-              </div>
-              <div className="countdown-separator">:</div>
-              <div className="countdown-item">
-                <div className="countdown-number">{timeLeft.minutes.toString().padStart(2, '0')}</div>
-                <div className="countdown-label">Minutes</div>
-              </div>
-              <div className="countdown-separator">:</div>
-              <div className="countdown-item">
-                <div className="countdown-number">{timeLeft.seconds.toString().padStart(2, '0')}</div>
-                <div className="countdown-label">Seconds</div>
+          <div className="right-section">
+            <div className="countdown-timer">
+              <div className="countdown-container">
+                <div className="countdown-item">
+                  <div className="countdown-number">{timeLeft.days.toString().padStart(2, '0')}</div>
+                  <div className="countdown-label">Days</div>
+                </div>
+                <div className="countdown-separator">:</div>
+                <div className="countdown-item">
+                  <div className="countdown-number">{timeLeft.hours.toString().padStart(2, '0')}</div>
+                  <div className="countdown-label">Hours</div>
+                </div>
+                <div className="countdown-separator">:</div>
+                <div className="countdown-item">
+                  <div className="countdown-number">{timeLeft.minutes.toString().padStart(2, '0')}</div>
+                  <div className="countdown-label">Minutes</div>
+                </div>
+                <div className="countdown-separator">:</div>
+                <div className="countdown-item">
+                  <div className="countdown-number">{timeLeft.seconds.toString().padStart(2, '0')}</div>
+                  <div className="countdown-label">Seconds</div>
+                </div>
               </div>
             </div>
+            
+            <div className="social-links">
+              <a href="https://www.instagram.com/mju_mcd_2025/" target="_blank" rel="noopener noreferrer" className="social-link">
+                <img src={instagramLogo} alt="Instagram" className="social-logo" />
+              </a>
+              <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="social-link">
+                <img src={behanceLogo} alt="Behance" className="social-logo" />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                <img src={youtubeLogo} alt="YouTube" className="social-logo" />
+              </a>
+            </div>
           </div>
-          
-          <div className="social-links">
-            <a href="https://www.instagram.com/mju_mcd_2025/" target="_blank" rel="noopener noreferrer" className="social-link">
-              <img src={instagramLogo} alt="Instagram" className="social-logo" />
-            </a>
-            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="social-link">
-              <img src={behanceLogo} alt="Behance" className="social-logo" />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-link">
-              <img src={youtubeLogo} alt="YouTube" className="social-logo" />
-            </a>
-          </div>
-          
-          <div className="coming-soon-footer">
-            <p>© 2025 MJU MCD. All rights reserved.</p>
-          </div>
+        </div>
+        
+        <div className="coming-soon-footer">
+          <p>© 2025 MJU MCD. All rights reserved.</p>
         </div>
         
         <div className="background-pattern">
