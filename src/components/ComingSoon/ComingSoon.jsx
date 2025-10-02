@@ -1,6 +1,9 @@
 import React from 'react';
 import './ComingSoon.css';
 import signatureLogo from '../../assets/Signature_logo.svg';
+import instagramLogo from '../../assets/instagram.svg';
+import behanceLogo from '../../assets/behance.svg';
+import youtubeLogo from '../../assets/youtube.svg';
 
 const ComingSoon = () => {
   return (
@@ -28,6 +31,17 @@ const ComingSoon = () => {
             곧 만날 수 있어요!!
           </p>
           
+          <div className="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
+              <img src={instagramLogo} alt="Instagram" className="social-logo" />
+            </a>
+            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="social-link">
+              <img src={behanceLogo} alt="Behance" className="social-logo" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-link">
+              <img src={youtubeLogo} alt="YouTube" className="social-logo" />
+            </a>
+          </div>
           
           <div className="coming-soon-footer">
             <p>© 2025 MJU MCD. All rights reserved.</p>
