@@ -381,11 +381,12 @@
   }
   
   .countdown-label {
-    font-size: 0.6rem;
+    display: none;
   }
   
   .countdown-separator {
     font-size: 1.2rem;
+    margin: 0 var(--spacing-xs);
   }
   
   .social-links {
