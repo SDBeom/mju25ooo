@@ -4,6 +4,7 @@ import signatureLogo from '../../assets/Signature_logo.svg';
 import instagramLogo from '../../assets/instagram.svg';
 import behanceLogo from '../../assets/behance.svg';
 import youtubeLogo from '../../assets/youtube.svg';
+import GooeyBackground from './GooeyBackground';
 
 const ComingSoon = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -44,7 +45,7 @@ const ComingSoon = () => {
   return (
     <div className="coming-soon">
       <div className="coming-soon-container">
-        <div className="coming-soon-content">
+        <div className="main-content">
           <div className="left-section">
             <div className="logo-section">
               <img 
@@ -112,12 +113,7 @@ const ComingSoon = () => {
           <p>© 2025 MJU MCD. All rights reserved.</p>
         </div>
         
-        <div className="background-pattern">
-          <div className="pattern-circle circle-1"></div>
-          <div className="pattern-circle circle-2"></div>
-          <div className="pattern-circle circle-3"></div>
-          <div className="pattern-circle circle-4"></div>
-        </div>
+        <GooeyBackground />
       </div>
     </div>
   );
