@@ -146,7 +146,7 @@
   background-clip: text;
   line-height: 1;
   margin-bottom: var(--spacing-xs);
-  font-family: 'Inter', monospace;
+  font-family: var(--font-primary);
 }
 
 .countdown-label {
@@ -162,7 +162,7 @@
   font-weight: 700;
   color: var(--color-text-secondary);
   margin: 0 var(--spacing-sm);
-  font-family: 'Inter', monospace;
+  font-family: var(--font-primary);
 }
 
 .social-links {

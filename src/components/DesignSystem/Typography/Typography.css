@@ -1,6 +1,6 @@
 /* Typography Component Styles */
 .typography {
-  font-family: var(--font-primary, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-family: var(--font-primary);
   margin: 0;
   padding: 0;
   transition: color 0.2s ease;

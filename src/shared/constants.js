@@ -37,7 +37,7 @@ export const COLORS = {
 // Typography system from Figma
 export const TYPOGRAPHY = {
   // Font families
-  FONT_PRIMARY: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+  FONT_PRIMARY: 'Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
   FONT_MONO: 'JetBrains Mono, "Fira Code", Consolas, monospace',
   
   // Font sizes
