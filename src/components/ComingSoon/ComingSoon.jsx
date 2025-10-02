@@ -16,7 +16,7 @@ const ComingSoon = () => {
   useEffect(() => {
     const targetDate = new Date('2024-11-12T00:00:00').getTime();
 
-    const timer = setInterval(() => {
+    const updateTimer = () => {
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -29,9 +29,14 @@ const ComingSoon = () => {
         setTimeLeft({ days, hours, minutes, seconds });
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        clearInterval(timer);
       }
-    }, 1000);
+    };
+
+    // 즉시 실행
+    updateTimer();
+    
+    // 1초마다 업데이트
+    const timer = setInterval(updateTimer, 1000);
 
     return () => clearInterval(timer);
   }, []);
@@ -62,24 +67,26 @@ const ComingSoon = () => {
           </p>
           
           <div className="countdown-timer">
-            <div className="countdown-item">
-              <div className="countdown-number">{timeLeft.days}</div>
-              <div className="countdown-label">Days</div>
-            </div>
-            <div className="countdown-separator">:</div>
-            <div className="countdown-item">
-              <div className="countdown-number">{timeLeft.hours}</div>
-              <div className="countdown-label">Hours</div>
-            </div>
-            <div className="countdown-separator">:</div>
-            <div className="countdown-item">
-              <div className="countdown-number">{timeLeft.minutes}</div>
-              <div className="countdown-label">Minutes</div>
-            </div>
-            <div className="countdown-separator">:</div>
-            <div className="countdown-item">
-              <div className="countdown-number">{timeLeft.seconds}</div>
-              <div className="countdown-label">Seconds</div>
+            <div className="countdown-container">
+              <div className="countdown-item">
+                <div className="countdown-number">{timeLeft.days.toString().padStart(2, '0')}</div>
+                <div className="countdown-label">Days</div>
+              </div>
+              <div className="countdown-separator">:</div>
+              <div className="countdown-item">
+                <div className="countdown-number">{timeLeft.hours.toString().padStart(2, '0')}</div>
+                <div className="countdown-label">Hours</div>
+              </div>
+              <div className="countdown-separator">:</div>
+              <div className="countdown-item">
+                <div className="countdown-number">{timeLeft.minutes.toString().padStart(2, '0')}</div>
+                <div className="countdown-label">Minutes</div>
+              </div>
+              <div className="countdown-separator">:</div>
+              <div className="countdown-item">
+                <div className="countdown-number">{timeLeft.seconds.toString().padStart(2, '0')}</div>
+                <div className="countdown-label">Seconds</div>
+              </div>
             </div>
           </div>
           
