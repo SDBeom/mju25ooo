@@ -366,13 +366,14 @@
     gap: var(--spacing-xs);
     overflow-x: auto;
     justify-content: center;
-    max-width: calc(100vw - 2rem);
+    max-width: calc(100vw - 3rem);
     margin: 0 auto;
+    box-sizing: border-box;
   }
   
   .countdown-item {
-    min-width: 50px;
-    padding: 0 var(--spacing-xs);
+    min-width: 45px;
+    padding: 0;
     flex-shrink: 0;
   }
   
