@@ -1,5 +1,6 @@
 import React from 'react';
 import './ComingSoon.css';
+import signatureLogo from '../../assets/Signature_logo.svg';
 
 const ComingSoon = () => {
   return (
@@ -9,9 +10,13 @@ const ComingSoon = () => {
           <div className="logo-section">
             <div className="logo-circle">
               <img 
-                src="/Signature_logo.svg" 
+                src={signatureLogo} 
                 alt="SD Logo" 
                 className="signature-logo"
+                onError={(e) => {
+                  console.log('Image failed to load:', e.target.src);
+                  e.target.style.display = 'none';
+                }}
               />
             </div>
           </div>
