@@ -8,17 +8,15 @@ const ComingSoon = () => {
       <div className="coming-soon-container">
         <div className="coming-soon-content">
           <div className="logo-section">
-            <div className="logo-circle">
-              <img 
-                src={signatureLogo} 
-                alt="SD Logo" 
-                className="signature-logo"
-                onError={(e) => {
-                  console.log('Image failed to load:', e.target.src);
-                  e.target.style.display = 'none';
-                }}
-              />
-            </div>
+            <img 
+              src={signatureLogo} 
+              alt="SD Logo" 
+              className="signature-logo"
+              onError={(e) => {
+                console.log('Image failed to load:', e.target.src);
+                e.target.style.display = 'none';
+              }}
+            />
           </div>
           
           <h1 className="coming-soon-title">
