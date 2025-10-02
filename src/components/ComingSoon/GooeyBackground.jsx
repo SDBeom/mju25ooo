@@ -119,68 +119,76 @@ const GooeyBackground = () => {
     createGooey();
     animate();
 
-    // 화면 크기 변경 시 구이 효과 재생성
+    // 디바운스된 리사이즈 핸들러
+    let resizeTimeout;
     const handleResize = () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-      if (gooLayer) {
-        gooLayer.innerHTML = '';
-      }
-      
-      // 새로운 화면 크기로 다시 시작
-      const newW = window.innerWidth;
-      const newH = window.innerHeight;
-      
-      let newCircleCount = 24;
-      let newRadiusMin = 140;
-      let newRadiusMax = 160;
-      
-      if (newW <= 768) { // 태블릿
-        newCircleCount = 12;
-        newRadiusMin = 100;
-        newRadiusMax = 120;
-      }
-      if (newW <= 480) { // 모바일
-        newCircleCount = 8;
-        newRadiusMin = 70;
-        newRadiusMax = 90;
-      }
-      
-      const newConfig = {
-        count: newCircleCount,
-        speed: { min: 1.6, max: 4.0 },
-        radius: { min: newRadiusMin, max: newRadiusMax },
-      };
-      
-      // 새로운 설정으로 구이 효과 재생성
-      gooElementsRef.current = [];
-      for (let i = 0; i < newConfig.count; i++) {
-        const el = document.createElement('div');
-        el.className = 'gooey-circle';
-        gooLayer.appendChild(el);
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const newW = window.innerWidth;
+        const newH = window.innerHeight;
+        
+        // 화면 크기가 실제로 변경되었는지 확인
+        if (Math.abs(newW - W) < 50 && Math.abs(newH - H) < 50) {
+          return; // 크게 변경되지 않았으면 무시
+        }
+        
+        if (animationRef.current) {
+          cancelAnimationFrame(animationRef.current);
+        }
+        if (gooLayer) {
+          gooLayer.innerHTML = '';
+        }
+        
+        let newCircleCount = 24;
+        let newRadiusMin = 140;
+        let newRadiusMax = 160;
+        
+        if (newW <= 768) { // 태블릿
+          newCircleCount = 12;
+          newRadiusMin = 100;
+          newRadiusMax = 120;
+        }
+        if (newW <= 480) { // 모바일
+          newCircleCount = 8;
+          newRadiusMin = 70;
+          newRadiusMax = 90;
+        }
+        
+        const newConfig = {
+          count: newCircleCount,
+          speed: { min: 1.6, max: 4.0 },
+          radius: { min: newRadiusMin, max: newRadiusMax },
+        };
+        
+        // 새로운 설정으로 구이 효과 재생성
+        gooElementsRef.current = [];
+        for (let i = 0; i < newConfig.count; i++) {
+          const el = document.createElement('div');
+          el.className = 'gooey-circle';
+          gooLayer.appendChild(el);
 
-        const r = newConfig.radius.min + Math.random() * (newConfig.radius.max - newConfig.radius.min);
-        const heading = Math.random() * Math.PI * 2;
-        const spd = Math.max(1.0, newConfig.speed.min + Math.random() * (newConfig.speed.max - newConfig.speed.min));
+          const r = newConfig.radius.min + Math.random() * (newConfig.radius.max - newConfig.radius.min);
+          const heading = Math.random() * Math.PI * 2;
+          const spd = Math.max(1.0, newConfig.speed.min + Math.random() * (newConfig.speed.max - newConfig.speed.min));
 
-        // 초기 진입 애니메이션
-        const startScale = 0.15 + Math.random() * 0.35;
-        const delay = Math.random() * 600;
-        const duration = 600 + Math.random() * 500;
-        el.style.setProperty('--goo-start-scale', String(startScale));
-        el.style.animation = `goo-grow ${duration}ms cubic-bezier(0.22,1,0.36,1) ${delay}ms both`;
+          // 초기 진입 애니메이션
+          const startScale = 0.15 + Math.random() * 0.35;
+          const delay = Math.random() * 600;
+          const duration = 600 + Math.random() * 500;
+          el.style.setProperty('--goo-start-scale', String(startScale));
+          el.style.animation = `goo-grow ${duration}ms cubic-bezier(0.22,1,0.36,1) ${delay}ms both`;
 
-        gooElementsRef.current.push({
-          el,
-          x: Math.random() * newW,
-          y: Math.random() * newH,
-          vx: Math.cos(heading) * spd,
-          vy: Math.sin(heading) * spd,
-          r
-        });
-      }
-      animate();
+          gooElementsRef.current.push({
+            el,
+            x: Math.random() * newW,
+            y: Math.random() * newH,
+            vx: Math.cos(heading) * spd,
+            vy: Math.sin(heading) * spd,
+            r
+          });
+        }
+        animate();
+      }, 300); // 300ms 디바운스
     };
 
     window.addEventListener('resize', handleResize);
@@ -193,6 +201,7 @@ const GooeyBackground = () => {
       if (gooLayer) {
         gooLayer.innerHTML = '';
       }
+      clearTimeout(resizeTimeout);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
