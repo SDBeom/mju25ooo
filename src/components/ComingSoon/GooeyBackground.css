@@ -42,33 +42,7 @@
   -webkit-backface-visibility: hidden;  /* WebKit 호환성 */
 }
 
-/* 모바일에서 구이 필터 비활성화 (성능 최적화) */
-@media (max-width: 768px) {
-  .gooey-bg {
-    -webkit-filter: none;  /* WebKit 필터 비활성화 */
-    filter: none;          /* CSS 필터 비활성화 */
-  }
-  
-  .gooey-circle {
-    /* 모바일에서는 구이 효과 대신 단순한 글로우 효과 사용 */
-    box-shadow: 0 0 20px rgba(103, 197, 255, 0.3);
-  }
-}
-
-/* iOS Safari 전용 최적화 */
-@supports (-webkit-touch-callout: none) {
-  .gooey-bg {
-    /* iOS에서는 구이 필터 완전 비활성화 (성능 문제 방지) */
-    -webkit-filter: none;
-    filter: none;
-  }
-  
-  .gooey-circle {
-    /* iOS에서는 구이 효과 대신 더 강한 글로우 효과 사용 */
-    box-shadow: 0 0 30px rgba(103, 197, 255, 0.4);
-    transform: translate3d(0, 0, 0);  /* 3D 변형으로 GPU 가속 강제 */
-  }
-}
+/* 모든 기기에서 동일한 구이 효과 적용 */
 
 /* 접근성: 애니메이션 감소 설정 지원 */
 @media (prefers-reduced-motion: reduce) {

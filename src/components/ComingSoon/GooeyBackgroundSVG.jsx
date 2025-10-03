@@ -13,11 +13,11 @@
 
 import React, { useEffect, useRef } from 'react';
 
-// 반응형 설정: 화면 크기별 구이 원의 개수, 크기, 속도 조정
+// 통합 설정: 모든 기기에서 동일한 구이 효과
 const cfg = { 
-  desktop: { n: 12, r: [120, 150], s: [1.4, 3.0] },  // 데스크톱: 많은 원, 큰 크기, 빠른 속도
-  tablet: { n: 6, r: [90, 110], s: [1.0, 2.2] },     // 태블릿: 중간 설정
-  mobile: { n: 3, r: [60, 80], s: [0.4, 1.0] }       // 모바일: 적은 원, 작은 크기, 느린 속도
+  desktop: { n: 12, r: [120, 150], s: [1.4, 3.0] },  // 모든 기기에서 동일
+  tablet: { n: 12, r: [120, 150], s: [1.4, 3.0] },  // 모든 기기에서 동일
+  mobile: { n: 12, r: [120, 150], s: [1.4, 3.0] }   // 모든 기기에서 동일
 };
 
 /**
@@ -67,8 +67,8 @@ export default function GooeyBackgroundSVG() {
 
       const blur = document.createElementNS(ns, 'feGaussianBlur');
       blur.setAttribute('in', 'SourceGraphic');
-      // 모바일에서 블러 강도 낮춤
-      blur.setAttribute('stdDeviation', IS_IOS ? '3' : '6');
+      // 모든 기기에서 동일한 블러 강도
+      blur.setAttribute('stdDeviation', '6');
       blur.setAttribute('result', 'b');
 
       const cm = document.createElementNS(ns, 'feColorMatrix');

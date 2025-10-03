@@ -22,11 +22,11 @@ const TARGET_FPS = IS_IOS ? 30 : 60;
 const FRAME_TIME = 1000 / 60; // 60fps 기준 프레임 시간
 const TICK_INTERVAL = 1000 / TARGET_FPS;  // iOS: 33ms, 기타: 16.67ms
 
-// 반응형 설정: 화면 크기별 구이 원의 개수와 크기 조정
+// 통합 설정: 모든 기기에서 동일한 구이 효과
 const CONFIG_BASE = {
-  desktop: { count: 12, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 }, // 데스크톱: 많은 원, 큰 크기
-  tablet:  { count: 6,  radiusMin: 90,  radiusMax: 110, speedMin: 1.0, speedMax: 2.2 }, // 태블릿: 중간
-  mobile:  { count: 3,  radiusMin: 60,  radiusMax: 80,  speedMin: 0.4, speedMax: 1.0 }  // 모바일: 적은 원, 작은 크기
+  desktop: { count: 12, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 }, // 모든 기기에서 동일
+  tablet:  { count: 12, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 }, // 모든 기기에서 동일
+  mobile:  { count: 12, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 }  // 모든 기기에서 동일
 };
 
 // 구이 원의 생명주기 설정
@@ -381,8 +381,8 @@ const GooeyBackground = () => {
       <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden>
         <defs>
           <filter id="goo" filterUnits="userSpaceOnUse" x="-50%" y="-50%" width="200%" height="200%">
-            {/* 가우시안 블러: 원들을 부드럽게 연결 (iOS에서는 강도 낮춤) */}
-            <feGaussianBlur in="SourceGraphic" stdDeviation={IS_IOS ? "3" : "6"} result="blur" />
+            {/* 가우시안 블러: 원들을 부드럽게 연결 (모든 기기에서 동일) */}
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
             
             {/* 컬러 매트릭스: 알파 채널 증폭으로 구이 효과 강화 */}
             <feColorMatrix in="blur" type="matrix"
