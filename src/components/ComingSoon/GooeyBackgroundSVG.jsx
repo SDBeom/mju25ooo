@@ -1,28 +1,55 @@
+/**
+ * GooeyBackgroundSVG.jsx
+ * 
+ * SVG 기반 구이 효과(Gooey Effect)를 구현하는 React 컴포넌트
+ * DOM 기반 버전과 달리 SVG circle 요소를 직접 조작하여 구이 효과 생성
+ * 
+ * 주요 기능:
+ * - SVG 필터를 이용한 구이 효과
+ * - 반응형 디자인 (데스크톱/태블릿/모바일별 최적화)
+ * - 성능 최적화 (iOS 30fps, 기타 60fps)
+ * - 메모리 효율적인 요소 재사용
+ */
+
 import React, { useEffect, useRef } from 'react';
 
+// 반응형 설정: 화면 크기별 구이 원의 개수, 크기, 속도 조정
 const cfg = { 
-  desktop: { n: 12, r: [120, 150], s: [1.4, 3.0] },
-  tablet: { n: 6, r: [90, 110], s: [1.0, 2.2] },
-  mobile: { n: 3, r: [60, 80], s: [0.4, 1.0] } // 모바일에서 더 적고 느리게
+  desktop: { n: 12, r: [120, 150], s: [1.4, 3.0] },  // 데스크톱: 많은 원, 큰 크기, 빠른 속도
+  tablet: { n: 6, r: [90, 110], s: [1.0, 2.2] },     // 태블릿: 중간 설정
+  mobile: { n: 3, r: [60, 80], s: [0.4, 1.0] }       // 모바일: 적은 원, 작은 크기, 느린 속도
 };
 
+/**
+ * 화면 너비에 따른 구이 설정 티어 반환
+ * @param {number} w - 화면 너비
+ * @returns {string} 'mobile' | 'tablet' | 'desktop'
+ */
 const tier = (w) => w <= 480 ? 'mobile' : w <= 900 ? 'tablet' : 'desktop';
 
+// iOS 디바이스 감지 (성능 최적화를 위해 30fps로 제한)
 const IS_IOS = typeof navigator !== 'undefined' && /iP(hone|od|ad)/.test(navigator.platform) || /Macintosh/.test(navigator.userAgent) && 'ontouchend' in document;
-const TICK_INTERVAL = IS_IOS ? 33 : 16.67; // 30fps on iOS, 60fps on others
 
+// 프레임 레이트 설정 (iOS: 30fps, 기타: 60fps)
+const TICK_INTERVAL = IS_IOS ? 33 : 16.67; // iOS: 33ms, 기타: 16.67ms
+
+/**
+ * GooeyBackgroundSVG 컴포넌트
+ * SVG 기반 구이 효과를 구현하는 메인 컴포넌트
+ */
 export default function GooeyBackgroundSVG() {
-  const svgRef = useRef(null);
-  const animRef = useRef();
+  const svgRef = useRef(null);    // SVG DOM 요소 참조
+  const animRef = useRef();       // requestAnimationFrame ID 참조
 
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg) return;
 
-    const W = svg.clientWidth;
-    const H = svg.clientHeight;
-    const t = cfg[tier(window.innerWidth)];
-    const ns = 'http://www.w3.org/2000/svg';
+    // SVG 크기 및 설정 초기화
+    const W = svg.clientWidth;                    // SVG 너비
+    const H = svg.clientHeight;                   // SVG 높이
+    const t = cfg[tier(window.innerWidth)];       // 화면 크기에 맞는 설정
+    const ns = 'http://www.w3.org/2000/svg';     // SVG 네임스페이스
 
     // defs 전역 1회만 생성 (중복 방지)
     let defs = document.getElementById('goo-defs');

@@ -1,65 +1,79 @@
-/* Gooey Background: 모바일 최적화 */
+/**
+ * GooeyBackground.css
+ * 
+ * 구이 효과(Gooey Effect)를 위한 CSS 스타일
+ * 
+ * 주요 기능:
+ * - GPU 가속을 통한 부드러운 애니메이션
+ * - 반응형 디자인 (모바일/데스크톱 최적화)
+ * - 성능 최적화 (필터 비활성화, 접근성 지원)
+ */
+
+/* 구이 효과 컨테이너 */
 .gooey-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-  isolation: isolate;
-  contain: layout paint; /* 리페인트 범위 격리 */
+  position: absolute;        /* 절대 위치 지정 */
+  inset: 0;                 /* 전체 화면 크기로 설정 */
+  pointer-events: none;     /* 마우스 이벤트 무시 */
+  z-index: 1;              /* 배경 위, 콘텐츠 아래 */
+  overflow: hidden;         /* 넘치는 요소 숨김 */
+  isolation: isolate;       /* 스택 컨텍스트 격리 */
+  contain: layout paint;    /* 리페인트 범위 격리 (성능 최적화) */
   
-  /* 데스크톱에서만 구이 필터 적용 */
+  /* 데스크톱에서만 구이 필터 적용 (성능상 모바일에서는 비활성화) */
   -webkit-filter: url(#goo);
   filter: url(#goo);
 }
 
+/* 개별 구이 원 스타일 */
 .gooey-circle {
-  position: absolute;
-  top: 0;
+  position: absolute;       /* 절대 위치 */
+  top: 0;                  /* 위치 기준점 */
   left: 0;
-  border-radius: 50%;
-  background: #67C5FF;
-  opacity: 0.9;
-  box-shadow: none !important;
-  transform-origin: center;
+  border-radius: 50%;      /* 원형 모양 */
+  background: #67C5FF;     /* 파란색 배경 */
+  opacity: 0.9;           /* 약간의 투명도 */
+  box-shadow: none !important;  /* 그림자 제거 (구이 효과와 충돌 방지) */
+  transform-origin: center;     /* 변형 기준점을 중앙으로 */
   
-  /* GPU 가속 활성화 */
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  /* GPU 가속 활성화 (부드러운 애니메이션을 위해) */
+  will-change: transform, opacity;  /* 브라우저에 변경될 속성 미리 알림 */
+  transform: translateZ(0);         /* 3D 변형으로 GPU 레이어 생성 */
+  backface-visibility: hidden;      /* 뒷면 렌더링 비활성화 */
+  -webkit-backface-visibility: hidden;  /* WebKit 호환성 */
 }
 
-/* 모바일에서 구이 필터 비활성화 */
+/* 모바일에서 구이 필터 비활성화 (성능 최적화) */
 @media (max-width: 768px) {
   .gooey-bg {
-    -webkit-filter: none;
-    filter: none;
+    -webkit-filter: none;  /* WebKit 필터 비활성화 */
+    filter: none;          /* CSS 필터 비활성화 */
   }
   
   .gooey-circle {
-    /* 모바일에서는 단순한 블러 대신 */
+    /* 모바일에서는 구이 효과 대신 단순한 글로우 효과 사용 */
     box-shadow: 0 0 20px rgba(103, 197, 255, 0.3);
   }
 }
 
-/* iOS Safari 최적화 */
+/* iOS Safari 전용 최적화 */
 @supports (-webkit-touch-callout: none) {
   .gooey-bg {
+    /* iOS에서는 구이 필터 완전 비활성화 (성능 문제 방지) */
     -webkit-filter: none;
     filter: none;
   }
   
   .gooey-circle {
-    /* iOS에서는 구이 효과 대신 글로우 효과 */
+    /* iOS에서는 구이 효과 대신 더 강한 글로우 효과 사용 */
     box-shadow: 0 0 30px rgba(103, 197, 255, 0.4);
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);  /* 3D 변형으로 GPU 가속 강제 */
   }
 }
 
-/* 저성능 기기 감지 - prefers-reduced-motion */
+/* 접근성: 애니메이션 감소 설정 지원 */
 @media (prefers-reduced-motion: reduce) {
   .gooey-bg {
+    /* 사용자가 애니메이션 감소를 선호하는 경우 구이 효과 완전 비활성화 */
     display: none;
   }
 }
