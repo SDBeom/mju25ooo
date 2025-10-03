@@ -4,7 +4,7 @@ import signatureLogo from '../../assets/Signature_logo.svg';
 import instagramLogo from '../../assets/instagram.svg';
 import behanceLogo from '../../assets/behance.svg';
 import youtubeLogo from '../../assets/youtube.svg';
-import GooeyBackground from './GooeyBackground';
+import GooeyBackgroundSVG from './GooeyBackgroundSVG';
 
 const ComingSoon = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -48,7 +48,7 @@ const ComingSoon = () => {
   return (
     <div className="coming-soon">
       {/* 배경 레이어를 컨테이너 바깥이 아니라 바로 아래 첫 자식으로 */}
-      <GooeyBackground />
+      <GooeyBackgroundSVG />
       
       <div className="coming-soon-container">
         <div className="main-content">
