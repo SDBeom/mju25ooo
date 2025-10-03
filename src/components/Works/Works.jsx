@@ -7,7 +7,7 @@ import './Works.css';
 const Works = () => {
   const navigate = useNavigate();
 
-  const handleProjectClick = (projectId) => {
+  const handleProjectClick = () => {
     // 디자이너 페이지로 이동하여 더 많은 프로젝트 확인
     navigate('/designer');
   };
@@ -44,7 +44,7 @@ const Works = () => {
             <div 
               key={project.id} 
               className="project-card"
-              onClick={() => handleProjectClick(project.id)}
+              onClick={handleProjectClick}
             >
               <div className="project-image">
                 <div className="image-placeholder">
