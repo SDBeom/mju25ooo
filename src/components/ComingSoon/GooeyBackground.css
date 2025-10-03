@@ -21,9 +21,7 @@
   box-shadow: none !important;
   transform-origin: center;
 
-  /* 윈도우 성능 최적화를 위한 하드웨어 가속 */
-  transform: translateZ(0);
-  will-change: transform, opacity;
+  /* iOS 구이 효과를 위해 GPU 승격 속성 제거 */
 }
 
 /* iOS 전용 안전장치: 혹시 남아있어도 무력화 */
