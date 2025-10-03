@@ -1,8 +1,5 @@
 import React from 'react';
 import Header from '../Header/Header';
-import Hero from '../Hero/Hero';
-import About from '../About/About';
-import Works from '../Works/Works';
 import Footer from '../Footer/Footer';
 import './MainContent.css';
 
@@ -11,9 +8,14 @@ const MainContent = () => {
     <>
       <Header />
       <main className="main-content">
-        <Hero />
-        <About />
-        <Works />
+        <div className="main-visual">
+          <div className="drag-indicator">
+            <p>클릭 앤 드래그하여 탐색하세요</p>
+            <div className="drag-hint">
+              <span>← → ↑ ↓</span>
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </>

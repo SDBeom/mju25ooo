@@ -1,6 +1,8 @@
 /* Global styles */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -146,4 +148,179 @@ body {
 
 .slide-in-right {
   animation: slideInRight 0.6s ease-out;
+}
+
+/* App Wrapper Styles */
+.app-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Main Visual Drag Styles */
+.main-visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  user-select: none;
+  transition: transform 0.1s ease-out;
+  margin: 0;
+  padding: 0;
+}
+
+.main-visual.dragging {
+  transition: none;
+}
+
+/* 드래그 중일 때 링크와 버튼 비활성화 방지 */
+.main-visual a,
+.main-visual button {
+  pointer-events: all;
+}
+
+/* 모바일 터치 최적화 */
+@media (hover: none) and (pointer: coarse) {
+  .main-visual {
+    cursor: default;
+  }
+  
+  .main-visual.dragging {
+    cursor: default;
+  }
+}
+
+/* 반응형 메인 비주얼 위치 조정 */
+@media (max-width: 768px) {
+  .main-visual {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-visual {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* 위치 표시기 스타일 */
+.position-indicator {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 2000;
+  background: rgba(42, 42, 42, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #ffffff;
+  min-width: 200px;
+}
+
+.position-info {
+  margin-bottom: 8px;
+}
+
+.coordinate {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.coordinate:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  color: #4FC3F7;
+  margin-right: 8px;
+  font-weight: bold;
+  min-width: 20px;
+}
+
+.value {
+  color: #FF6B35;
+  margin-right: 8px;
+  font-weight: bold;
+  min-width: 60px;
+}
+
+.percent {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+}
+
+.position-map {
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.position-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #FF6B35;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+  transition: all 0.1s ease;
+}
+
+.position-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 모바일에서 위치 표시기 조정 */
+@media (max-width: 768px) {
+  .position-indicator {
+    top: 90px;
+    right: 10px;
+    font-size: 11px;
+    min-width: 180px;
+    padding: 10px;
+  }
+  
+  .position-map {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .position-indicator {
+    top: 80px;
+    right: 8px;
+    font-size: 10px;
+    min-width: 160px;
+    padding: 8px;
+  }
+  
+  .position-map {
+    height: 50px;
+  }
+  
+  .position-dot {
+    width: 6px;
+    height: 6px;
+  }
 }

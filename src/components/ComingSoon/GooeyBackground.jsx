@@ -7,9 +7,9 @@ const FRAME_TIME = 1000 / 60;
 const TICK_INTERVAL = 1000 / TARGET_FPS;  // 33ms on iOS
 
 const CONFIG_BASE = {
-  desktop: { count: 18, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 },
-  tablet:  { count: 10, radiusMin: 90,  radiusMax: 110, speedMin: 1.0, speedMax: 2.2 },
-  mobile:  { count: 4,  radiusMin: 60,  radiusMax: 80,  speedMin: 0.6, speedMax: 1.4 } // ↓↓↓
+  desktop: { count: 12, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 },
+  tablet:  { count: 6,  radiusMin: 90,  radiusMax: 110, speedMin: 1.0, speedMax: 2.2 },
+  mobile:  { count: 3,  radiusMin: 60,  radiusMax: 80,  speedMin: 0.4, speedMax: 1.0 } // 더 적게, 더 느리게
 };
 
 const LIFE_DURATION = { min: 9000, max: 16000 };
@@ -144,6 +144,8 @@ const GooeyBackground = () => {
       if (circle.style.transform !== nextTransform) {
         circle.style.transform = nextTransform;
         circle.style.webkitTransform = nextTransform;
+        // GPU 레이어 강제 생성
+        circle.style.willChange = 'transform';
       }
 
       // opacity는 페이드 구간에서만 변경
@@ -233,7 +235,7 @@ const GooeyBackground = () => {
       }, 250);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
 
     return () => {
       if (animationRef.current) {
@@ -256,7 +258,7 @@ const GooeyBackground = () => {
         <defs>
           <filter id="goo" filterUnits="userSpaceOnUse" x="-50%" y="-50%" width="200%" height="200%">
             {/* 모바일에선 stdDeviation을 낮춤 */}
-            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation={IS_IOS ? "3" : "6"} result="blur" />
             <feColorMatrix in="blur" type="matrix"
               values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -10" result="goo" />
             <feComposite in="SourceGraphic" in2="goo" operator="atop" />

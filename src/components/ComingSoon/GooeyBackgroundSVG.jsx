@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 
 const cfg = { 
-  desktop: { n: 18, r: [120, 150], s: [1.4, 3.0] },
-  tablet: { n: 10, r: [90, 110], s: [1.0, 2.2] },
-  mobile: { n: 6, r: [60, 80], s: [0.6, 1.4] } 
+  desktop: { n: 12, r: [120, 150], s: [1.4, 3.0] },
+  tablet: { n: 6, r: [90, 110], s: [1.0, 2.2] },
+  mobile: { n: 3, r: [60, 80], s: [0.4, 1.0] } // 모바일에서 더 적고 느리게
 };
 
 const tier = (w) => w <= 480 ? 'mobile' : w <= 900 ? 'tablet' : 'desktop';
@@ -40,7 +40,8 @@ export default function GooeyBackgroundSVG() {
 
       const blur = document.createElementNS(ns, 'feGaussianBlur');
       blur.setAttribute('in', 'SourceGraphic');
-      blur.setAttribute('stdDeviation', '6');
+      // 모바일에서 블러 강도 낮춤
+      blur.setAttribute('stdDeviation', IS_IOS ? '3' : '6');
       blur.setAttribute('result', 'b');
 
       const cm = document.createElementNS(ns, 'feColorMatrix');
@@ -208,7 +209,7 @@ export default function GooeyBackgroundSVG() {
         window.location.reload();
       }, 250);
     };
-    window.addEventListener('resize', onResize);
+    window.addEventListener('resize', onResize, { passive: true });
 
     return () => {
       cancelAnimationFrame(animRef.current);

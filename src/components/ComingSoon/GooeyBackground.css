@@ -1,14 +1,16 @@
-/* Gooey Background: data-URI 제거, DOM <defs>만 사용 */
+/* Gooey Background: 모바일 최적화 */
 .gooey-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  -webkit-filter: url(#goo);
-  filter: url(#goo);
   overflow: hidden;
   isolation: isolate;
   contain: layout paint; /* 리페인트 범위 격리 */
+  
+  /* 데스크톱에서만 구이 필터 적용 */
+  -webkit-filter: url(#goo);
+  filter: url(#goo);
 }
 
 .gooey-circle {
@@ -20,16 +22,45 @@
   opacity: 0.9;
   box-shadow: none !important;
   transform-origin: center;
-
-  /* iOS 구이 효과를 위해 GPU 승격 속성 제거 */
+  
+  /* GPU 가속 활성화 */
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-/* iOS 전용 안전장치: 혹시 남아있어도 무력화 */
-@supports (-webkit-touch-callout: none) {
+/* 모바일에서 구이 필터 비활성화 */
+@media (max-width: 768px) {
+  .gooey-bg {
+    -webkit-filter: none;
+    filter: none;
+  }
+  
   .gooey-circle {
-    transform: none;
-    -webkit-transform: none;
-    will-change: auto;
+    /* 모바일에서는 단순한 블러 대신 */
+    box-shadow: 0 0 20px rgba(103, 197, 255, 0.3);
+  }
+}
+
+/* iOS Safari 최적화 */
+@supports (-webkit-touch-callout: none) {
+  .gooey-bg {
+    -webkit-filter: none;
+    filter: none;
+  }
+  
+  .gooey-circle {
+    /* iOS에서는 구이 효과 대신 글로우 효과 */
+    box-shadow: 0 0 30px rgba(103, 197, 255, 0.4);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* 저성능 기기 감지 - prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .gooey-bg {
+    display: none;
   }
 }
 

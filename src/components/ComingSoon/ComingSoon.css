@@ -66,7 +66,7 @@
   letter-spacing: 1px;
 }
 
-.signature-logo {
+.coming-soon .signature-logo {
   width: 120px;
   height: 120px;
   object-fit: contain;
@@ -124,6 +124,10 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   max-width: 100%;
   overflow: hidden;
+  
+  /* GPU 가속 */
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 /* 모바일에서 유리 카드 비싸므로 다운그레이드 */
@@ -133,6 +137,10 @@
     backdrop-filter: none;
     background: rgba(255,255,255,0.06); /* 약간 밝기만 */
     box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    
+    /* 모바일에서 GPU 가속 제거 */
+    will-change: auto;
+    transform: none;
   }
 }
 
