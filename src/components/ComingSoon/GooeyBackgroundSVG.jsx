@@ -13,78 +13,8 @@
 
 import React, { useEffect, useRef } from 'react';
 
-// 기기별 구이 설정: 성능과 화면에 맞춰 개수, 반경, 속도를 조절
-const cfg = {
-  desktop: {
-    n: 14,
-    r: [110, 170],
-    s: [0.7, 1.6],
-    blur: 6,
-    opacity: 0.9,
-    spawnPadding: 120,
-    overscan: 220,
-    life: [9000, 16000],
-    fadeIn: [900, 1300],
-    fadeOut: [900, 1300],
-    useFilter: true,
-    smoothing: 0.3,
-    positionThreshold: 0.05,
-    opacityThreshold: 0.016,
-    thresholdGain: 0.0015
-  },
-  tablet: {
-    n: 12,
-    r: [95, 140],
-    s: [0.7, 1.8],
-    blur: 5,
-    opacity: 0.85,
-    spawnPadding: 100,
-    overscan: 200,
-    life: [8000, 14000],
-    fadeIn: [850, 1200],
-    fadeOut: [900, 1250],
-    useFilter: true,
-    smoothing: 0.27,
-    positionThreshold: 0.07,
-    opacityThreshold: 0.02,
-    thresholdGain: 0.0022
-  },
-  mobile: {
-    n: 6,  // 요소 수 대폭 감소
-    r: [60, 90],  // 크기 축소
-    s: [0.5, 1.2],
-    blur: 2.5,  // 블러 강도 감소
-    opacity: 0.86,
-    spawnPadding: 80,
-    overscan: 150,
-    life: [7500, 13500],
-    fadeIn: [750, 1050],
-    fadeOut: [750, 1100],
-    useFilter: false,  // 모바일에서 필터 완전 비활성화
-    smoothing: 0.24,
-    positionThreshold: 0.06,  // 업데이트 빈도 감소
-    opacityThreshold: 0.03,
-    thresholdGain: 0.0025
-  },
-  mobileLite: {
-    n: 4,  // 요소 수 더 감소
-    r: [50, 80],  // 크기 더 축소
-    s: [0.35, 1.05],
-    blur: 2.0,  // 블러 강도 더 감소
-    opacity: 0.78,
-    spawnPadding: 70,
-    overscan: 160,
-    life: [6200, 11000],
-    fadeIn: [650, 950],
-    fadeOut: [650, 950],
-    useFilter: false,  // 모바일라이트에서도 필터 비활성화
-    color: '#5FB6F5',
-    smoothing: 0.18,
-    positionThreshold: 0.08,  // 더 보수적으로
-    opacityThreshold: 0.04,
-    thresholdGain: 0.002
-  }
-};
+// 레거시 설정 (논리 좌표계로 대체됨)
+// const cfg = { ... }; // 더 이상 사용하지 않음
 
 /**
  * 화면 너비에 따른 구이 설정 티어 반환
@@ -133,12 +63,8 @@ const computeProfile = (svgEl, q = 1.0) => {
   return { n, rMin, rMax, stdDev, speedBase };
 };
 
-/**
- * 현재 화면 너비에 맞는 구이 설정 티어 반환 (레거시 호환)
- * @param {number} w - 화면 너비
- * @returns {string} 'mobile' | 'tablet' | 'desktop'
- */
-const tier = (w) => w <= 480 ? 'mobile' : w <= 900 ? 'tablet' : 'desktop';
+// 레거시 함수 (논리 좌표계로 대체됨)
+// const tier = (w) => w <= 480 ? 'mobile' : w <= 900 ? 'tablet' : 'desktop';
 
 // 논리 좌표계 설정 (고정 그리드)
 const LOGICAL_SIZE = 1000; // 1000x1000 고정 그리드
@@ -152,21 +78,8 @@ const TICK_INTERVAL = IS_IOS ? 33 : 16.67; // iOS: 33ms, 기타: 16.67ms
 let overBudgetFrames = 0;
 let quality = 1.0; // 1.0 = 풀, 0.6 = 세이프
 let prevTs = 0;
-const detectLowPowerProfile = () => {
-  if (typeof navigator === 'undefined') return false;
-  const cores = navigator.hardwareConcurrency || 4;
-  const deviceMemory = navigator.deviceMemory || 4;
-  const ua = navigator.userAgent || '';
-  const isAndroid = /Android/i.test(ua);
-  const lowCore = cores <= 3;
-  const lowMemory = deviceMemory && deviceMemory <= 2;
-
-  if (lowCore || lowMemory) return true;
-  if (IS_IOS && (cores <= 4 || lowMemory)) return true;
-  if (isAndroid && cores <= 4 && lowMemory) return true;
-
-  return false;
-};
+// 레거시 함수 (논리 좌표계로 대체됨)
+// const detectLowPowerProfile = () => { ... };
 
 const SPEED_NORMALIZER = 1 / 16.67;
 
@@ -416,10 +329,10 @@ export default function GooeyBackgroundSVG() {
           b.y = clamp(b.y, minY, maxY);
         }
         if (b.life >= b.lifeDur) {
-          const r = rand(t.r[0], t.r[1]);
+          const r = rand(rMin, rMax);
           const cx = spawnX();
           const cy = spawnY();
-          const sp = rand(t.s[0], t.s[1]);
+          const sp = speedBase * (0.8 + Math.random() * 0.4);
           const ang = rand(0, Math.PI * 2);
           b.r = r;
           b.x = cx;
@@ -459,7 +372,7 @@ export default function GooeyBackgroundSVG() {
         }
         const nextOpacity = Math.max(0, Math.min(1, op * baseOpacity));
 
-        if (Math.abs(nextOpacity - b.opacityValue) > opacityThreshold) {
+        if (Math.abs(nextOpacity - b.opacityValue) > 0.01) { // 간단한 임계값
           b.opacityValue = nextOpacity;
           b.style.opacity = nextOpacity <= 0.001 ? '0' : nextOpacity >= 0.999 ? '1' : nextOpacity.toFixed(3);
         }
@@ -467,8 +380,7 @@ export default function GooeyBackgroundSVG() {
         b.displayX += (b.x - b.displayX) * smoothing;
         b.displayY += (b.y - b.displayY) * smoothing;
 
-        const speed = Math.hypot(b.vx, b.vy);
-        const dynamicThreshold = Math.min(positionThreshold + speed * thresholdGain, positionThreshold * 3 + 0.08);
+        // 속도 계산 (현재 미사용)
 
         // 논리 좌표계 기반 미세 변화 건너뛰기
         const dx = b.displayX - (b.cxBase ? b.cxBase.value : parseFloat(b.el.getAttribute('cx') || '0'));
@@ -499,7 +411,7 @@ export default function GooeyBackgroundSVG() {
         const newWidth = window.innerWidth;
         const newHeight = window.innerHeight;
         
-        if (Math.abs(newWidth - W) + Math.abs(newHeight - H) < 80) return;
+        if (Math.abs(newWidth - svg.clientWidth) + Math.abs(newHeight - svg.clientHeight) < 80) return;
         
         cancelAnimationFrame(animRef.current);
         while (g.firstChild) g.removeChild(g.firstChild);
