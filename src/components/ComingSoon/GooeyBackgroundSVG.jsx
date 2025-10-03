@@ -137,6 +137,9 @@ export default function GooeyBackgroundSVG() {
     const baseOpacity = t.opacity ?? 0.9;
     const fillColor = t.color ?? '#67C5FF';
     const isFilterEnabled = t.useFilter !== false;
+    const smoothing = lowPower ? 0.18 : 0.28;
+    const positionThreshold = lowPower ? 0.12 : 0.06;
+    const opacityThreshold = lowPower ? 0.03 : 0.018;
 
     // defs 전역 1회만 생성 (중복 방지)
     let defs;
@@ -213,20 +216,24 @@ export default function GooeyBackgroundSVG() {
       const ang = rand(0, Math.PI * 2);
       const vx = Math.cos(ang) * sp;
       const vy = Math.sin(ang) * sp;
-      const cxStr = cx.toFixed(2);
-      const cyStr = cy.toFixed(2);
-      const initialOpacity = '0.000';
 
-      const c = document.createElementNS(ns, 'circle');
-      c.setAttribute('r', String(r));
-      c.setAttribute('cx', cxStr);
-      c.setAttribute('cy', cyStr);
-      c.setAttribute('fill', fillColor);
-      c.setAttribute('opacity', initialOpacity);
-      g.appendChild(c);
+      const circle = document.createElementNS(ns, 'circle');
+      circle.setAttribute('r', String(r));
+      circle.setAttribute('cx', String(cx));
+      circle.setAttribute('cy', String(cy));
+      circle.setAttribute('fill', fillColor);
+      circle.style.opacity = '0';
+      circle.style.willChange = 'opacity';
+      const cxBase = circle.cx && circle.cx.baseVal ? circle.cx.baseVal : null;
+      const cyBase = circle.cy && circle.cy.baseVal ? circle.cy.baseVal : null;
+      const rBase = circle.r && circle.r.baseVal ? circle.r.baseVal : null;
+      if (cxBase) cxBase.value = cx;
+      if (cyBase) cyBase.value = cy;
+      if (rBase) rBase.value = r;
+      g.appendChild(circle);
 
       return {
-        el: c,
+        el: circle,
         r,
         x: cx,
         y: cy,
@@ -236,9 +243,13 @@ export default function GooeyBackgroundSVG() {
         lifeDur: rand(lifeRange[0], lifeRange[1]),
         fadeIn: rand(fadeInRange[0], fadeInRange[1]),
         fadeOut: rand(fadeOutRange[0], fadeOutRange[1]),
-        lastX: cxStr,
-        lastY: cyStr,
-        lastOpacity: initialOpacity
+        cxBase,
+        cyBase,
+        rBase,
+        style: circle.style,
+        opacityValue: 0,
+        displayX: cx,
+        displayY: cy
       };
     });
 
@@ -312,15 +323,25 @@ export default function GooeyBackgroundSVG() {
           b.lifeDur = rand(lifeRange[0], lifeRange[1]);
           b.fadeIn = rand(fadeInRange[0], fadeInRange[1]);
           b.fadeOut = rand(fadeOutRange[0], fadeOutRange[1]);
-          const cxStr = cx.toFixed(2);
-          const cyStr = cy.toFixed(2);
-          b.el.setAttribute('r', String(r));
-          b.el.setAttribute('opacity', '0.000');
-          b.el.setAttribute('cx', cxStr);
-          b.el.setAttribute('cy', cyStr);
-          b.lastX = cxStr;
-          b.lastY = cyStr;
-          b.lastOpacity = '0.000';
+          if (b.rBase) {
+            b.rBase.value = r;
+          } else {
+            b.el.setAttribute('r', String(r));
+          }
+          b.opacityValue = 0;
+          b.style.opacity = '0';
+          b.displayX = cx;
+          b.displayY = cy;
+          if (b.cxBase) {
+            b.cxBase.value = cx;
+          } else {
+            b.el.setAttribute('cx', String(cx));
+          }
+          if (b.cyBase) {
+            b.cyBase.value = cy;
+          } else {
+            b.el.setAttribute('cy', String(cy));
+          }
         }
 
         let op = 1;
@@ -330,21 +351,28 @@ export default function GooeyBackgroundSVG() {
           op = Math.max(0, (b.lifeDur - b.life) / b.fadeOut);
         }
         const nextOpacity = Math.max(0, Math.min(1, op * baseOpacity));
-        const nextOpacityStr = nextOpacity.toFixed(3);
-        if (b.lastOpacity !== nextOpacityStr) {
-          b.el.setAttribute('opacity', nextOpacityStr);
-          b.lastOpacity = nextOpacityStr;
+
+        if (Math.abs(nextOpacity - b.opacityValue) > opacityThreshold) {
+          b.opacityValue = nextOpacity;
+          b.style.opacity = nextOpacity <= 0.001 ? '0' : nextOpacity >= 0.999 ? '1' : nextOpacity.toFixed(3);
         }
 
-        const nextX = b.x.toFixed(2);
-        if (b.lastX !== nextX) {
-          b.el.setAttribute('cx', nextX);
-          b.lastX = nextX;
+        b.displayX += (b.x - b.displayX) * smoothing;
+        b.displayY += (b.y - b.displayY) * smoothing;
+
+        if (b.cxBase) {
+          if (Math.abs(b.cxBase.value - b.displayX) > positionThreshold) {
+            b.cxBase.value = b.displayX;
+          }
+        } else if (Math.abs(parseFloat(b.el.getAttribute('cx') || '0') - b.displayX) > positionThreshold) {
+          b.el.setAttribute('cx', b.displayX.toFixed(2));
         }
-        const nextY = b.y.toFixed(2);
-        if (b.lastY !== nextY) {
-          b.el.setAttribute('cy', nextY);
-          b.lastY = nextY;
+        if (b.cyBase) {
+          if (Math.abs(b.cyBase.value - b.displayY) > positionThreshold) {
+            b.cyBase.value = b.displayY;
+          }
+        } else if (Math.abs(parseFloat(b.el.getAttribute('cy') || '0') - b.displayY) > positionThreshold) {
+          b.el.setAttribute('cy', b.displayY.toFixed(2));
         }
       }
       animRef.current = requestAnimationFrame(step);
@@ -399,3 +427,4 @@ export default function GooeyBackgroundSVG() {
     />
   );
 }
+
