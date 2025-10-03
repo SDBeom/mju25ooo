@@ -13,11 +13,38 @@
 
 import React, { useEffect, useRef } from 'react';
 
-// 통합 설정: 모든 기기에서 동일한 구이 효과
-const cfg = { 
-  desktop: { n: 12, r: [120, 150], s: [1.4, 3.0] },  // 모든 기기에서 동일
-  tablet: { n: 12, r: [120, 150], s: [1.4, 3.0] },  // 모든 기기에서 동일
-  mobile: { n: 12, r: [120, 150], s: [1.4, 3.0] }   // 모든 기기에서 동일
+// 기기별 구이 설정: 성능과 화면에 맞춰 개수, 반경, 속도를 조절
+const cfg = {
+  desktop: {
+    n: 14,
+    r: [110, 170],
+    s: [0.7, 1.6],
+    blur: 6,
+    opacity: 0.9,
+    spawnPadding: 120,
+    overscan: 220
+  },
+  tablet: {
+    n: 12,
+    r: [95, 140],
+    s: [0.7, 1.8],
+    blur: 5,
+    opacity: 0.85,
+    spawnPadding: 100,
+    overscan: 200
+  },
+  mobile: {
+    n: 10,
+    r: [70, 110],
+    s: [0.5, 1.3],
+    blur: 4.2,
+    opacity: 0.82,
+    spawnPadding: 90,
+    overscan: 180,
+    life: [7000, 12000],
+    fadeIn: [650, 1000],
+    fadeOut: [650, 1000]
+  }
 };
 
 /**
@@ -48,16 +75,31 @@ export default function GooeyBackgroundSVG() {
     // SVG 크기 및 설정 초기화
     const W = svg.clientWidth;                    // SVG 너비
     const H = svg.clientHeight;                   // SVG 높이
-    const t = cfg[tier(window.innerWidth)];       // 화면 크기에 맞는 설정
+    const t = cfg[tier(window.innerWidth)] || cfg.desktop;       // 화면 크기에 맞는 설정
     const ns = 'http://www.w3.org/2000/svg';     // SVG 네임스페이스
+    const maxRadius = t.r[1];
+    const blurValue = t.blur ?? 6;
+    const spawnPadding = t.spawnPadding ?? Math.max(maxRadius * 0.5, 60);
+    const overscan = t.overscan ?? Math.max(maxRadius * 1.5, 120);
+    const minX = -overscan;
+    const maxX = W + overscan;
+    const minY = -overscan;
+    const maxY = H + overscan;
+    const lifeRange = t.life ?? [9000, 16000];
+    const fadeInRange = t.fadeIn ?? [900, 1300];
+    const fadeOutRange = t.fadeOut ?? [900, 1300];
+    const baseOpacity = t.opacity ?? 0.9;
+    const fillColor = t.color ?? '#67C5FF';
 
     // defs 전역 1회만 생성 (중복 방지)
     let defs = document.getElementById('goo-defs');
+    let filter;
+    let blurNode;
     if (!defs) {
-      const defsNode = document.createElementNS(ns, 'defs');
-      defsNode.id = 'goo-defs';
+      defs = document.createElementNS(ns, 'defs');
+      defs.id = 'goo-defs';
       
-      const filter = document.createElementNS(ns, 'filter');
+      filter = document.createElementNS(ns, 'filter');
       filter.setAttribute('id', 'goo');
       filter.setAttribute('filterUnits', 'userSpaceOnUse');
       filter.setAttribute('x', '-50%');
@@ -65,11 +107,9 @@ export default function GooeyBackgroundSVG() {
       filter.setAttribute('width', '200%');
       filter.setAttribute('height', '200%');
 
-      const blur = document.createElementNS(ns, 'feGaussianBlur');
-      blur.setAttribute('in', 'SourceGraphic');
-      // 모든 기기에서 동일한 블러 강도
-      blur.setAttribute('stdDeviation', '6');
-      blur.setAttribute('result', 'b');
+      blurNode = document.createElementNS(ns, 'feGaussianBlur');
+      blurNode.setAttribute('in', 'SourceGraphic');
+      blurNode.setAttribute('result', 'b');
 
       const cm = document.createElementNS(ns, 'feColorMatrix');
       cm.setAttribute('in', 'b');
@@ -82,10 +122,20 @@ export default function GooeyBackgroundSVG() {
       comp.setAttribute('in2', 'g');
       comp.setAttribute('operator', 'atop');
 
-      filter.append(blur, cm, comp);
-      defsNode.append(filter);
-      svg.append(defsNode);
+      filter.append(blurNode, cm, comp);
+      defs.append(filter);
+      svg.append(defs);
+    } else {
+      filter = defs.querySelector('#goo');
+      if (filter) {
+        blurNode = filter.querySelector('feGaussianBlur');
+      }
     }
+
+    if (blurNode) {
+      blurNode.setAttribute('stdDeviation', String(blurValue));
+    }
+
 
     // 그룹에 필터 적용
     svg.innerHTML += ''; // 크롬 버그 회피용 no-op
@@ -94,10 +144,12 @@ export default function GooeyBackgroundSVG() {
     svg.appendChild(g);
 
     const rand = (a, b) => a + Math.random() * (b - a);
+    const spawnX = () => rand(-spawnPadding, W + spawnPadding);
+    const spawnY = () => rand(-spawnPadding, H + spawnPadding);
     const balls = Array.from({ length: t.n }).map(() => {
       const r = rand(t.r[0], t.r[1]);
-      const cx = rand(0, W);
-      const cy = rand(0, H);
+      const cx = spawnX();
+      const cy = spawnY();
       const sp = rand(t.s[0], t.s[1]);
       const ang = rand(0, Math.PI * 2);
       const vx = Math.cos(ang) * sp;
@@ -107,8 +159,8 @@ export default function GooeyBackgroundSVG() {
       c.setAttribute('r', String(r));
       c.setAttribute('cx', String(cx));
       c.setAttribute('cy', String(cy));
-      c.setAttribute('fill', '#67C5FF');
-      c.setAttribute('opacity', '0.9');
+      c.setAttribute('fill', fillColor);
+      c.setAttribute('opacity', '0');
       g.appendChild(c);
 
       return {
@@ -119,9 +171,9 @@ export default function GooeyBackgroundSVG() {
         vx,
         vy,
         life: 0,
-        lifeDur: rand(9000, 16000),
-        fadeIn: rand(900, 1300),
-        fadeOut: rand(900, 1300)
+        lifeDur: rand(lifeRange[0], lifeRange[1]),
+        fadeIn: rand(fadeInRange[0], fadeInRange[1]),
+        fadeOut: rand(fadeOutRange[0], fadeOutRange[1])
       };
     });
 
@@ -171,21 +223,18 @@ export default function GooeyBackgroundSVG() {
         b.x += b.vx * dt / 16.67;
         b.y += b.vy * dt / 16.67;
 
-        const m = b.r * 2;
-        if (b.x < -m || b.x > W + m) { 
-          b.vx *= -1; 
-          b.x = Math.max(-m, Math.min(W + m, b.x)); 
+        if (b.x < minX || b.x > maxX) {
+          b.vx *= -1;
+          b.x = Math.max(minX, Math.min(maxX, b.x));
         }
-        if (b.y < -m || b.y > H + m) { 
-          b.vy *= -1; 
-          b.y = Math.max(-m, Math.min(H + m, b.y)); 
+        if (b.y < minY || b.y > maxY) {
+          b.vy *= -1;
+          b.y = Math.max(minY, Math.min(maxY, b.y));
         }
-
         if (b.life >= b.lifeDur) {
-          // 재생성
           const r = rand(t.r[0], t.r[1]);
-          const cx = rand(0, W);
-          const cy = rand(0, H);
+          const cx = spawnX();
+          const cy = spawnY();
           const sp = rand(t.s[0], t.s[1]);
           const ang = rand(0, Math.PI * 2);
           b.r = r;
@@ -194,24 +243,25 @@ export default function GooeyBackgroundSVG() {
           b.vx = Math.cos(ang) * sp;
           b.vy = Math.sin(ang) * sp;
           b.life = 0;
-          b.lifeDur = rand(9000, 16000);
-          b.fadeIn = rand(900, 1300);
-          b.fadeOut = rand(900, 1300);
+          b.lifeDur = rand(lifeRange[0], lifeRange[1]);
+          b.fadeIn = rand(fadeInRange[0], fadeInRange[1]);
+          b.fadeOut = rand(fadeOutRange[0], fadeOutRange[1]);
           b.el.setAttribute('r', String(r));
+          b.el.setAttribute('opacity', '0');
         }
 
-        // 페이드
         let op = 1;
         if (b.life < b.fadeIn) {
           op = b.life / b.fadeIn;
         } else if (b.life > b.lifeDur - b.fadeOut) {
           op = Math.max(0, (b.lifeDur - b.life) / b.fadeOut);
         }
-        if (b.el.getAttribute('opacity') !== String(op)) {
-          b.el.setAttribute('opacity', String(op));
+        const nextOpacity = Math.max(0, Math.min(1, op * baseOpacity));
+        const nextOpacityStr = nextOpacity.toFixed(3);
+        if (b.el.getAttribute('opacity') !== nextOpacityStr) {
+          b.el.setAttribute('opacity', nextOpacityStr);
         }
 
-        // 위치
         b.el.setAttribute('cx', String(b.x));
         b.el.setAttribute('cy', String(b.y));
       }
