@@ -65,7 +65,7 @@ const cfg = {
     life: [6000, 10000],
     fadeIn: [600, 900],
     fadeOut: [600, 900],
-    useFilter: false,
+    useFilter: true,
     color: '#5FB6F5'
   }
 };
@@ -85,10 +85,17 @@ const TICK_INTERVAL = IS_IOS ? 33 : 16.67; // iOS: 33ms, 기타: 16.67ms
 const detectLowPowerProfile = () => {
   if (typeof navigator === 'undefined') return false;
   const cores = navigator.hardwareConcurrency || 4;
+  const deviceMemory = navigator.deviceMemory || 4;
   const ua = navigator.userAgent || '';
   const isAndroid = /Android/i.test(ua);
-  const dpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
-  return IS_IOS || cores <= 4 || (isAndroid && cores <= 6) || dpr >= 3;
+  const lowCore = cores <= 3;
+  const lowMemory = deviceMemory && deviceMemory <= 2;
+
+  if (lowCore || lowMemory) return true;
+  if (IS_IOS && (cores <= 4 || lowMemory)) return true;
+  if (isAndroid && cores <= 4 && lowMemory) return true;
+
+  return false;
 };
 
 const SPEED_NORMALIZER = 1 / 16.67;
