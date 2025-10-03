@@ -26,7 +26,10 @@ const cfg = {
     life: [9000, 16000],
     fadeIn: [900, 1300],
     fadeOut: [900, 1300],
-    useFilter: true
+    useFilter: true,
+    smoothing: 0.3,
+    positionThreshold: 0.05,
+    opacityThreshold: 0.016
   },
   tablet: {
     n: 12,
@@ -39,34 +42,43 @@ const cfg = {
     life: [8000, 14000],
     fadeIn: [850, 1200],
     fadeOut: [900, 1250],
-    useFilter: true
+    useFilter: true,
+    smoothing: 0.26,
+    positionThreshold: 0.07,
+    opacityThreshold: 0.02
   },
   mobile: {
-    n: 8,
-    r: [65, 105],
-    s: [0.45, 1.15],
-    blur: 4,
-    opacity: 0.8,
-    spawnPadding: 80,
-    overscan: 160,
-    life: [7000, 12000],
-    fadeIn: [700, 1000],
-    fadeOut: [700, 1000],
-    useFilter: true
+    n: 12,
+    r: [90, 150],
+    s: [0.6, 1.7],
+    blur: 5.2,
+    opacity: 0.86,
+    spawnPadding: 110,
+    overscan: 210,
+    life: [7500, 13500],
+    fadeIn: [750, 1050],
+    fadeOut: [750, 1100],
+    useFilter: true,
+    smoothing: 0.26,
+    positionThreshold: 0.07,
+    opacityThreshold: 0.02
   },
   mobileLite: {
-    n: 6,
-    r: [55, 90],
-    s: [0.35, 0.9],
-    blur: 3.2,
-    opacity: 0.74,
-    spawnPadding: 60,
-    overscan: 140,
-    life: [6000, 10000],
-    fadeIn: [600, 900],
-    fadeOut: [600, 900],
+    n: 7,
+    r: [60, 100],
+    s: [0.35, 1.05],
+    blur: 4,
+    opacity: 0.78,
+    spawnPadding: 70,
+    overscan: 160,
+    life: [6200, 11000],
+    fadeIn: [650, 950],
+    fadeOut: [650, 950],
     useFilter: true,
-    color: '#5FB6F5'
+    color: '#5FB6F5',
+    smoothing: 0.19,
+    positionThreshold: 0.12,
+    opacityThreshold: 0.028
   }
 };
 
@@ -137,9 +149,9 @@ export default function GooeyBackgroundSVG() {
     const baseOpacity = t.opacity ?? 0.9;
     const fillColor = t.color ?? '#67C5FF';
     const isFilterEnabled = t.useFilter !== false;
-    const smoothing = lowPower ? 0.18 : 0.28;
-    const positionThreshold = lowPower ? 0.12 : 0.06;
-    const opacityThreshold = lowPower ? 0.03 : 0.018;
+    const smoothing = t.smoothing ?? (lowPower ? 0.18 : 0.28);
+    const positionThreshold = t.positionThreshold ?? (lowPower ? 0.12 : 0.06);
+    const opacityThreshold = t.opacityThreshold ?? (lowPower ? 0.03 : 0.018);
 
     // defs 전역 1회만 생성 (중복 방지)
     let defs;
