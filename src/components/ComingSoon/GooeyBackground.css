@@ -1,28 +1,14 @@
-/* Gooey Background */
+/* Gooey Background: data-URI 제거, DOM <defs>만 사용 */
 .gooey-bg {
-  position: absolute;   /* fixed 쓰지 말 것 */
+  position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;           /* 컨텐츠(2)보다 낮게, 음수 금지 */
-  /* --- ⬇️ Safari 호환성 문제 해결: 데이터 URI 방식 적용 ⬇️ --- */
-  -webkit-filter: url('data:image/svg+xml,\
-    <svg xmlns="http://www.w3.org/2000/svg">\
-      <filter id="goo" filterUnits="userSpaceOnUse">\
-        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />\
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo" />\
-        <feComposite in="SourceGraphic" in2="goo" operator="atop" />\
-      </filter>\
-    </svg>#goo');
-  filter: url('data:image/svg+xml,\
-    <svg xmlns="http://www.w3.org/2000/svg">\
-      <filter id="goo" filterUnits="userSpaceOnUse">\
-        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />\
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo" />\
-        <feComposite in="SourceGraphic" in2="goo" operator="atop" />\
-      </filter>\
-    </svg>#goo');
+  z-index: 1;
+  -webkit-filter: url(#goo);
+  filter: url(#goo);
   overflow: hidden;
   isolation: isolate;
+  contain: layout paint; /* 리페인트 범위 격리 */
 }
 
 .gooey-circle {
