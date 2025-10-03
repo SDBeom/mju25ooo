@@ -22,11 +22,11 @@ const TARGET_FPS = IS_IOS ? 30 : 60;
 const FRAME_TIME = 1000 / 60; // 60fps 기준 프레임 시간
 const TICK_INTERVAL = 1000 / TARGET_FPS;  // iOS: 33ms, 기타: 16.67ms
 
-// 통합 설정: 모든 기기에서 동일한 구이 효과
+// 모바일 성능 최적화 설정
 const CONFIG_BASE = {
-  desktop: { count: 12, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 }, // 모든 기기에서 동일
-  tablet:  { count: 12, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 }, // 모든 기기에서 동일
-  mobile:  { count: 12, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 }  // 모든 기기에서 동일
+  desktop: { count: 12, radiusMin: 120, radiusMax: 150, speedMin: 1.4, speedMax: 3.0 },
+  tablet:  { count: 10, radiusMin: 100, radiusMax: 130, speedMin: 1.2, speedMax: 2.5 },
+  mobile:  { count: 7,  radiusMin: 70,  radiusMax: 110, speedMin: 1.0, speedMax: 1.8 }  // 모바일 최적화
 };
 
 // 구이 원의 생명주기 설정
@@ -102,6 +102,7 @@ const GooeyBackground = () => {
       style.opacity = '0';   // 초기 투명도 (페이드 인으로 시작)
       style.transform = `translate3d(${x - radius}px, ${y - radius}px, 0) scale(${SCALE_MIN})`;
       style.webkitTransform = style.transform;  // WebKit 브라우저 호환성
+      style.willChange = 'transform';  // GPU 가속을 위한 will-change 설정 (최초 한 번만)
 
       // 생명주기 설정 (랜덤 값으로 다양성 확보)
       const lifeDuration = LIFE_DURATION.min + Math.random() * (LIFE_DURATION.max - LIFE_DURATION.min);
@@ -216,7 +217,7 @@ const GooeyBackground = () => {
       if (circle.style.transform !== nextTransform) {
         circle.style.transform = nextTransform;
         circle.style.webkitTransform = nextTransform;  // WebKit 호환성
-        circle.style.willChange = 'transform';         // GPU 레이어 강제 생성
+        // willChange는 최초 한 번만 설정 (성능 최적화)
       }
 
       // 투명도 계산 (페이드 인/아웃 효과)
@@ -395,7 +396,7 @@ const GooeyBackground = () => {
       </svg>
 
       {/* 구이 원들을 담는 컨테이너 */}
-      <div ref={gooLayerRef} className="gooey-bg" />
+      <div ref={gooLayerRef} className="gooey-bg gooey-bg--dom" />
     </>
   );
 };

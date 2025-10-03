@@ -19,9 +19,15 @@
   isolation: isolate;       /* 스택 컨텍스트 격리 */
   contain: layout paint;    /* 리페인트 범위 격리 (성능 최적화) */
   
-  /* 데스크톱에서만 구이 필터 적용 (성능상 모바일에서는 비활성화) */
-  -webkit-filter: url(#goo);
-  filter: url(#goo);
+  /* CSS 전역 필터 제거 (SVG 그룹 필터와 중복 방지) */
+}
+
+/* DOM 버전에서만 데스크톱 한정으로 필터 적용 */
+@media (min-width: 1024px) {
+  .gooey-bg--dom { 
+    -webkit-filter: url(#goo);
+    filter: url(#goo); 
+  }
 }
 
 /* 개별 구이 원 스타일 */

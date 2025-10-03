@@ -50,39 +50,39 @@ const cfg = {
     thresholdGain: 0.0022
   },
   mobile: {
-    n: 12,
-    r: [90, 150],
-    s: [0.6, 1.7],
-    blur: 5.2,
+    n: 6,  // 요소 수 대폭 감소
+    r: [60, 90],  // 크기 축소
+    s: [0.5, 1.2],
+    blur: 2.5,  // 블러 강도 감소
     opacity: 0.86,
-    spawnPadding: 110,
-    overscan: 210,
+    spawnPadding: 80,
+    overscan: 150,
     life: [7500, 13500],
     fadeIn: [750, 1050],
     fadeOut: [750, 1100],
-    useFilter: true,
+    useFilter: false,  // 모바일에서 필터 완전 비활성화
     smoothing: 0.24,
-    positionThreshold: 0.02,
-    opacityThreshold: 0.018,
-    thresholdGain: 0.0035
+    positionThreshold: 0.06,  // 업데이트 빈도 감소
+    opacityThreshold: 0.03,
+    thresholdGain: 0.0025
   },
   mobileLite: {
-    n: 7,
-    r: [60, 100],
+    n: 4,  // 요소 수 더 감소
+    r: [50, 80],  // 크기 더 축소
     s: [0.35, 1.05],
-    blur: 4,
+    blur: 2.0,  // 블러 강도 더 감소
     opacity: 0.78,
     spawnPadding: 70,
     overscan: 160,
     life: [6200, 11000],
     fadeIn: [650, 950],
     fadeOut: [650, 950],
-    useFilter: true,
+    useFilter: false,  // 모바일라이트에서도 필터 비활성화
     color: '#5FB6F5',
     smoothing: 0.18,
-    positionThreshold: 0.035,
-    opacityThreshold: 0.026,
-    thresholdGain: 0.0042
+    positionThreshold: 0.08,  // 더 보수적으로
+    opacityThreshold: 0.04,
+    thresholdGain: 0.002
   }
 };
 
