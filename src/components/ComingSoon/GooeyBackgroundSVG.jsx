@@ -29,7 +29,8 @@ const cfg = {
     useFilter: true,
     smoothing: 0.3,
     positionThreshold: 0.05,
-    opacityThreshold: 0.016
+    opacityThreshold: 0.016,
+    thresholdGain: 0.0015
   },
   tablet: {
     n: 12,
@@ -43,9 +44,10 @@ const cfg = {
     fadeIn: [850, 1200],
     fadeOut: [900, 1250],
     useFilter: true,
-    smoothing: 0.26,
+    smoothing: 0.27,
     positionThreshold: 0.07,
-    opacityThreshold: 0.02
+    opacityThreshold: 0.02,
+    thresholdGain: 0.0022
   },
   mobile: {
     n: 12,
@@ -59,9 +61,10 @@ const cfg = {
     fadeIn: [750, 1050],
     fadeOut: [750, 1100],
     useFilter: true,
-    smoothing: 0.26,
-    positionThreshold: 0.07,
-    opacityThreshold: 0.02
+    smoothing: 0.24,
+    positionThreshold: 0.02,
+    opacityThreshold: 0.018,
+    thresholdGain: 0.0035
   },
   mobileLite: {
     n: 7,
@@ -76,9 +79,10 @@ const cfg = {
     fadeOut: [650, 950],
     useFilter: true,
     color: '#5FB6F5',
-    smoothing: 0.19,
-    positionThreshold: 0.12,
-    opacityThreshold: 0.028
+    smoothing: 0.18,
+    positionThreshold: 0.035,
+    opacityThreshold: 0.026,
+    thresholdGain: 0.0042
   }
 };
 
@@ -152,6 +156,7 @@ export default function GooeyBackgroundSVG() {
     const smoothing = t.smoothing ?? (lowPower ? 0.18 : 0.28);
     const positionThreshold = t.positionThreshold ?? (lowPower ? 0.12 : 0.06);
     const opacityThreshold = t.opacityThreshold ?? (lowPower ? 0.03 : 0.018);
+    const thresholdGain = t.thresholdGain ?? (lowPower ? 0.0032 : 0.002);
 
     // defs 전역 1회만 생성 (중복 방지)
     let defs;
@@ -372,18 +377,21 @@ export default function GooeyBackgroundSVG() {
         b.displayX += (b.x - b.displayX) * smoothing;
         b.displayY += (b.y - b.displayY) * smoothing;
 
+        const speed = Math.hypot(b.vx, b.vy);
+        const dynamicThreshold = Math.min(positionThreshold + speed * thresholdGain, positionThreshold * 3 + 0.08);
+
         if (b.cxBase) {
-          if (Math.abs(b.cxBase.value - b.displayX) > positionThreshold) {
+          if (Math.abs(b.cxBase.value - b.displayX) > dynamicThreshold) {
             b.cxBase.value = b.displayX;
           }
-        } else if (Math.abs(parseFloat(b.el.getAttribute('cx') || '0') - b.displayX) > positionThreshold) {
+        } else if (Math.abs(parseFloat(b.el.getAttribute('cx') || '0') - b.displayX) > dynamicThreshold) {
           b.el.setAttribute('cx', b.displayX.toFixed(2));
         }
         if (b.cyBase) {
-          if (Math.abs(b.cyBase.value - b.displayY) > positionThreshold) {
+          if (Math.abs(b.cyBase.value - b.displayY) > dynamicThreshold) {
             b.cyBase.value = b.displayY;
           }
-        } else if (Math.abs(parseFloat(b.el.getAttribute('cy') || '0') - b.displayY) > positionThreshold) {
+        } else if (Math.abs(parseFloat(b.el.getAttribute('cy') || '0') - b.displayY) > dynamicThreshold) {
           b.el.setAttribute('cy', b.displayY.toFixed(2));
         }
       }
