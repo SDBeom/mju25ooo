@@ -22,7 +22,11 @@ const cfg = {
     blur: 6,
     opacity: 0.9,
     spawnPadding: 120,
-    overscan: 220
+    overscan: 220,
+    life: [9000, 16000],
+    fadeIn: [900, 1300],
+    fadeOut: [900, 1300],
+    useFilter: true
   },
   tablet: {
     n: 12,
@@ -31,19 +35,38 @@ const cfg = {
     blur: 5,
     opacity: 0.85,
     spawnPadding: 100,
-    overscan: 200
+    overscan: 200,
+    life: [8000, 14000],
+    fadeIn: [850, 1200],
+    fadeOut: [900, 1250],
+    useFilter: true
   },
   mobile: {
-    n: 10,
-    r: [70, 110],
-    s: [0.5, 1.3],
-    blur: 4.2,
-    opacity: 0.82,
-    spawnPadding: 90,
-    overscan: 180,
+    n: 8,
+    r: [65, 105],
+    s: [0.45, 1.15],
+    blur: 4,
+    opacity: 0.8,
+    spawnPadding: 80,
+    overscan: 160,
     life: [7000, 12000],
-    fadeIn: [650, 1000],
-    fadeOut: [650, 1000]
+    fadeIn: [700, 1000],
+    fadeOut: [700, 1000],
+    useFilter: true
+  },
+  mobileLite: {
+    n: 6,
+    r: [55, 90],
+    s: [0.35, 0.9],
+    blur: 3.2,
+    opacity: 0.74,
+    spawnPadding: 60,
+    overscan: 140,
+    life: [6000, 10000],
+    fadeIn: [600, 900],
+    fadeOut: [600, 900],
+    useFilter: false,
+    color: '#5FB6F5'
   }
 };
 
@@ -59,6 +82,19 @@ const IS_IOS = typeof navigator !== 'undefined' && /iP(hone|od|ad)/.test(navigat
 
 // 프레임 레이트 설정 (iOS: 30fps, 기타: 60fps)
 const TICK_INTERVAL = IS_IOS ? 33 : 16.67; // iOS: 33ms, 기타: 16.67ms
+const detectLowPowerProfile = () => {
+  if (typeof navigator === 'undefined') return false;
+  const cores = navigator.hardwareConcurrency || 4;
+  const ua = navigator.userAgent || '';
+  const isAndroid = /Android/i.test(ua);
+  const dpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
+  return IS_IOS || cores <= 4 || (isAndroid && cores <= 6) || dpr >= 3;
+};
+
+const SPEED_NORMALIZER = 1 / 16.67;
+
+const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
 
 /**
  * GooeyBackgroundSVG 컴포넌트
@@ -75,7 +111,10 @@ export default function GooeyBackgroundSVG() {
     // SVG 크기 및 설정 초기화
     const W = svg.clientWidth;                    // SVG 너비
     const H = svg.clientHeight;                   // SVG 높이
-    const t = cfg[tier(window.innerWidth)] || cfg.desktop;       // 화면 크기에 맞는 설정
+    const viewportTier = tier(window.innerWidth);
+    const lowPower = detectLowPowerProfile();
+    const tierKey = lowPower && viewportTier === 'mobile' ? 'mobileLite' : viewportTier;
+    const t = cfg[tierKey] || cfg.desktop;       // 화면 크기에 맞는 설정
     const ns = 'http://www.w3.org/2000/svg';     // SVG 네임스페이스
     const maxRadius = t.r[1];
     const blurValue = t.blur ?? 6;
@@ -90,57 +129,70 @@ export default function GooeyBackgroundSVG() {
     const fadeOutRange = t.fadeOut ?? [900, 1300];
     const baseOpacity = t.opacity ?? 0.9;
     const fillColor = t.color ?? '#67C5FF';
+    const isFilterEnabled = t.useFilter !== false;
 
     // defs 전역 1회만 생성 (중복 방지)
-    let defs = document.getElementById('goo-defs');
+    let defs;
     let filter;
     let blurNode;
-    if (!defs) {
-      defs = document.createElementNS(ns, 'defs');
-      defs.id = 'goo-defs';
-      
-      filter = document.createElementNS(ns, 'filter');
-      filter.setAttribute('id', 'goo');
-      filter.setAttribute('filterUnits', 'userSpaceOnUse');
-      filter.setAttribute('x', '-50%');
-      filter.setAttribute('y', '-50%');
-      filter.setAttribute('width', '200%');
-      filter.setAttribute('height', '200%');
 
-      blurNode = document.createElementNS(ns, 'feGaussianBlur');
-      blurNode.setAttribute('in', 'SourceGraphic');
-      blurNode.setAttribute('result', 'b');
+    if (isFilterEnabled) {
+      defs = document.getElementById('goo-defs');
+      if (!defs) {
+        defs = document.createElementNS(ns, 'defs');
+        defs.id = 'goo-defs';
 
-      const cm = document.createElementNS(ns, 'feColorMatrix');
-      cm.setAttribute('in', 'b');
-      cm.setAttribute('type', 'matrix');
-      cm.setAttribute('values', '1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -10');
-      cm.setAttribute('result', 'g');
+        filter = document.createElementNS(ns, 'filter');
+        filter.setAttribute('id', 'goo');
+        filter.setAttribute('filterUnits', 'userSpaceOnUse');
+        filter.setAttribute('x', '-50%');
+        filter.setAttribute('y', '-50%');
+        filter.setAttribute('width', '200%');
+        filter.setAttribute('height', '200%');
 
-      const comp = document.createElementNS(ns, 'feComposite');
-      comp.setAttribute('in', 'SourceGraphic');
-      comp.setAttribute('in2', 'g');
-      comp.setAttribute('operator', 'atop');
+        blurNode = document.createElementNS(ns, 'feGaussianBlur');
+        blurNode.setAttribute('in', 'SourceGraphic');
+        blurNode.setAttribute('result', 'b');
 
-      filter.append(blurNode, cm, comp);
-      defs.append(filter);
-      svg.append(defs);
-    } else {
-      filter = defs.querySelector('#goo');
-      if (filter) {
-        blurNode = filter.querySelector('feGaussianBlur');
+        const cm = document.createElementNS(ns, 'feColorMatrix');
+        cm.setAttribute('in', 'b');
+        cm.setAttribute('type', 'matrix');
+        cm.setAttribute('values', '1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -10');
+        cm.setAttribute('result', 'g');
+
+        const comp = document.createElementNS(ns, 'feComposite');
+        comp.setAttribute('in', 'SourceGraphic');
+        comp.setAttribute('in2', 'g');
+        comp.setAttribute('operator', 'atop');
+
+        filter.append(blurNode, cm, comp);
+        defs.append(filter);
+        svg.append(defs);
+      } else {
+        filter = defs.querySelector('#goo');
+        if (filter) {
+          blurNode = filter.querySelector('feGaussianBlur');
+        }
       }
-    }
 
-    if (blurNode) {
-      blurNode.setAttribute('stdDeviation', String(blurValue));
+      if (blurNode) {
+        blurNode.setAttribute('stdDeviation', String(blurValue));
+      }
+
+      svg.style.removeProperty('filter');
+      svg.style.removeProperty('-webkit-filter');
+    } else {
+      svg.style.filter = 'none';
+      svg.style.webkitFilter = 'none';
     }
 
 
     // 그룹에 필터 적용
     svg.innerHTML += ''; // 크롬 버그 회피용 no-op
-    let g = document.createElementNS(ns, 'g');
-    g.setAttribute('filter', 'url(#goo)');
+    const g = document.createElementNS(ns, 'g');
+    if (isFilterEnabled) {
+      g.setAttribute('filter', 'url(#goo)');
+    }
     svg.appendChild(g);
 
     const rand = (a, b) => a + Math.random() * (b - a);
@@ -154,13 +206,16 @@ export default function GooeyBackgroundSVG() {
       const ang = rand(0, Math.PI * 2);
       const vx = Math.cos(ang) * sp;
       const vy = Math.sin(ang) * sp;
+      const cxStr = cx.toFixed(2);
+      const cyStr = cy.toFixed(2);
+      const initialOpacity = '0.000';
 
       const c = document.createElementNS(ns, 'circle');
       c.setAttribute('r', String(r));
-      c.setAttribute('cx', String(cx));
-      c.setAttribute('cy', String(cy));
+      c.setAttribute('cx', cxStr);
+      c.setAttribute('cy', cyStr);
       c.setAttribute('fill', fillColor);
-      c.setAttribute('opacity', '0');
+      c.setAttribute('opacity', initialOpacity);
       g.appendChild(c);
 
       return {
@@ -173,7 +228,10 @@ export default function GooeyBackgroundSVG() {
         life: 0,
         lifeDur: rand(lifeRange[0], lifeRange[1]),
         fadeIn: rand(fadeInRange[0], fadeInRange[1]),
-        fadeOut: rand(fadeOutRange[0], fadeOutRange[1])
+        fadeOut: rand(fadeOutRange[0], fadeOutRange[1]),
+        lastX: cxStr,
+        lastY: cyStr,
+        lastOpacity: initialOpacity
       };
     });
 
@@ -216,20 +274,21 @@ export default function GooeyBackgroundSVG() {
 
       const dt = Math.min(acc, 80);
       acc = 0;
+      const timeScale = dt * SPEED_NORMALIZER;
 
       for (let i = 0; i < balls.length; i++) {
         const b = balls[i];
         b.life += dt;
-        b.x += b.vx * dt / 16.67;
-        b.y += b.vy * dt / 16.67;
+        b.x += b.vx * timeScale;
+        b.y += b.vy * timeScale;
 
         if (b.x < minX || b.x > maxX) {
           b.vx *= -1;
-          b.x = Math.max(minX, Math.min(maxX, b.x));
+          b.x = clamp(b.x, minX, maxX);
         }
         if (b.y < minY || b.y > maxY) {
           b.vy *= -1;
-          b.y = Math.max(minY, Math.min(maxY, b.y));
+          b.y = clamp(b.y, minY, maxY);
         }
         if (b.life >= b.lifeDur) {
           const r = rand(t.r[0], t.r[1]);
@@ -246,8 +305,15 @@ export default function GooeyBackgroundSVG() {
           b.lifeDur = rand(lifeRange[0], lifeRange[1]);
           b.fadeIn = rand(fadeInRange[0], fadeInRange[1]);
           b.fadeOut = rand(fadeOutRange[0], fadeOutRange[1]);
+          const cxStr = cx.toFixed(2);
+          const cyStr = cy.toFixed(2);
           b.el.setAttribute('r', String(r));
-          b.el.setAttribute('opacity', '0');
+          b.el.setAttribute('opacity', '0.000');
+          b.el.setAttribute('cx', cxStr);
+          b.el.setAttribute('cy', cyStr);
+          b.lastX = cxStr;
+          b.lastY = cyStr;
+          b.lastOpacity = '0.000';
         }
 
         let op = 1;
@@ -258,12 +324,21 @@ export default function GooeyBackgroundSVG() {
         }
         const nextOpacity = Math.max(0, Math.min(1, op * baseOpacity));
         const nextOpacityStr = nextOpacity.toFixed(3);
-        if (b.el.getAttribute('opacity') !== nextOpacityStr) {
+        if (b.lastOpacity !== nextOpacityStr) {
           b.el.setAttribute('opacity', nextOpacityStr);
+          b.lastOpacity = nextOpacityStr;
         }
 
-        b.el.setAttribute('cx', String(b.x));
-        b.el.setAttribute('cy', String(b.y));
+        const nextX = b.x.toFixed(2);
+        if (b.lastX !== nextX) {
+          b.el.setAttribute('cx', nextX);
+          b.lastX = nextX;
+        }
+        const nextY = b.y.toFixed(2);
+        if (b.lastY !== nextY) {
+          b.el.setAttribute('cy', nextY);
+          b.lastY = nextY;
+        }
       }
       animRef.current = requestAnimationFrame(step);
     };
