@@ -5,8 +5,14 @@ import './Hero.css';
 
 const Hero = () => {
   const handleCTAClick = () => {
-    // TODO: Implement navigation to works section
-    console.log('CTA clicked - navigating to works');
+    // Works 섹션으로 스크롤
+    const worksSection = document.getElementById('works');
+    if (worksSection) {
+      worksSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   return (
@@ -67,6 +73,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
 
 

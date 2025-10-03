@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+﻿import React, { useEffect, useRef } from 'react';
 import './GooeyBackground.css';
 
-// 상수들을 컴포넌트 외부로 이동하여 성능 최적화
+// 화면 크기별 기본 설정
 const CONFIG_BASE = {
   desktop: { count: 24, radiusMin: 140, radiusMax: 160 },
   tablet: { count: 12, radiusMin: 100, radiusMax: 120 },
@@ -11,6 +11,8 @@ const CONFIG_BASE = {
 const SPEED_CONFIG = { min: 1.6, max: 4.0 };
 const LIFE_DURATION = { min: 8000, max: 15000 };
 const FADE_DURATION = { min: 800, max: 1200 };
+const FRAME_TIME = 1000 / 60; // 60fps 기준 프레임 시간
+const MAX_DELTA = 1000 / 10; // 탭 전환 후 급격한 점프 방지
 
 const getConfig = (width) => {
   if (width <= 480) return CONFIG_BASE.mobile;
@@ -25,30 +27,35 @@ const GooeyBackground = () => {
 
   useEffect(() => {
     const gooLayer = gooLayerRef.current;
-    const W = window.innerWidth;
-    const H = window.innerHeight;
-    
-    const config = {
-      ...getConfig(W),
+    if (!gooLayer) return;
+
+    let viewportWidth = window.innerWidth;
+    let viewportHeight = window.innerHeight;
+
+    const baseConfig = getConfig(viewportWidth);
+    let config = {
+      ...baseConfig,
       speed: SPEED_CONFIG,
-      radius: { min: getConfig(W).radiusMin, max: getConfig(W).radiusMax }
+      radius: { min: baseConfig.radiusMin, max: baseConfig.radiusMax }
     };
 
-    // 새로운 원 생성 함수
+    let lastTimestamp = null;
+
     const createNewCircle = () => {
       const el = document.createElement('div');
       el.className = 'gooey-circle';
       gooLayer.appendChild(el);
 
-      const r = config.radius.min + Math.random() * (config.radius.max - config.radius.min);
+      const radius = config.radius.min + Math.random() * (config.radius.max - config.radius.min);
       const heading = Math.random() * Math.PI * 2;
-      const spd = Math.max(1.0, config.speed.min + Math.random() * (config.speed.max - config.speed.min));
+      const speed = Math.max(1.0, config.speed.min + Math.random() * (config.speed.max - config.speed.min));
+      const vx = Math.cos(heading) * speed;
+      const vy = Math.sin(heading) * speed;
 
       const lifeDuration = LIFE_DURATION.min + Math.random() * (LIFE_DURATION.max - LIFE_DURATION.min);
       const fadeInDuration = FADE_DURATION.min + Math.random() * (FADE_DURATION.max - FADE_DURATION.min);
       const fadeOutDuration = FADE_DURATION.min + Math.random() * (FADE_DURATION.max - FADE_DURATION.min);
 
-      // 초기 진입 애니메이션
       const startScale = 0.15 + Math.random() * 0.35;
       const delay = Math.random() * 600;
       const duration = 600 + Math.random() * 500;
@@ -57,11 +64,11 @@ const GooeyBackground = () => {
 
       return {
         el,
-        x: Math.random() * W, // 화면 내 랜덤 위치
-        y: Math.random() * H,
-        vx: Math.cos(heading) * spd,
-        vy: Math.sin(heading) * spd,
-        r,
+        x: Math.random() * viewportWidth,
+        y: Math.random() * viewportHeight,
+        vx,
+        vy,
+        r: radius,
         lifeTime: 0,
         lifeDuration,
         fadeInDuration,
@@ -70,152 +77,132 @@ const GooeyBackground = () => {
       };
     };
 
-    // 초기 구이 원들 생성
-    const createGooey = () => {
-      if (!gooLayer) return;
-
-      gooLayer.innerHTML = ''; // 기존 원들 제거
+    const initializeGooey = () => {
+      gooLayer.innerHTML = '';
       gooElementsRef.current = [];
-      
+
       for (let i = 0; i < config.count; i++) {
         gooElementsRef.current.push(createNewCircle());
       }
     };
 
-    // 개별 원 생명주기 관리 시스템
-    const updateCircleLifecycle = (circle, index) => {
-      // 생명주기 업데이트
-      circle.lifeTime += 16; // 대략 60fps 기준
+    const updateCircleLifecycle = (circle, index, delta) => {
+      const effectiveDelta = delta > 0 ? Math.min(delta, MAX_DELTA) : FRAME_TIME;
+      const deltaRatio = effectiveDelta / FRAME_TIME;
 
-      // 속도가 너무 느린 경우 재설정 (자연스러운 움직임 유지)
+      circle.lifeTime += effectiveDelta;
+
       const speed = Math.sqrt(circle.vx * circle.vx + circle.vy * circle.vy);
       if (speed < 1.0) {
         const newHeading = Math.random() * Math.PI * 2;
-        const newSpd = Math.max(1.0, config.speed.min + Math.random() * (config.speed.max - config.speed.min));
-        circle.vx = Math.cos(newHeading) * newSpd;
-        circle.vy = Math.sin(newHeading) * newSpd;
+        const newSpeed = Math.max(1.0, config.speed.min + Math.random() * (config.speed.max - config.speed.min));
+        circle.vx = Math.cos(newHeading) * newSpeed;
+        circle.vy = Math.sin(newHeading) * newSpeed;
       }
 
-      // 위치 업데이트
-      circle.x += circle.vx;
-      circle.y += circle.vy;
+      circle.x += circle.vx * deltaRatio;
+      circle.y += circle.vy * deltaRatio;
 
-      // 화면 경계 처리 - 자연스러운 반사
       const margin = circle.r * 2;
-      if (circle.x < -margin || circle.x > W + margin) {
+      if (circle.x < -margin || circle.x > viewportWidth + margin) {
         circle.vx *= -1;
-        circle.x = Math.max(-margin, Math.min(W + margin, circle.x));
+        circle.x = Math.max(-margin, Math.min(viewportWidth + margin, circle.x));
       }
-      if (circle.y < -margin || circle.y > H + margin) {
+      if (circle.y < -margin || circle.y > viewportHeight + margin) {
         circle.vy *= -1;
-        circle.y = Math.max(-margin, Math.min(H + margin, circle.y));
+        circle.y = Math.max(-margin, Math.min(viewportHeight + margin, circle.y));
       }
 
-      // 생명주기 종료 체크
       if (circle.lifeTime >= circle.lifeDuration) {
-        // 기존 DOM 요소 제거하고 새로운 원으로 교체
         if (circle.el && circle.el.parentNode) {
           circle.el.parentNode.removeChild(circle.el);
         }
-        
-        // 새로운 원으로 교체
         gooElementsRef.current[index] = createNewCircle();
-        return true; // 새로운 원은 계속 업데이트
+        return;
       }
 
-      // 부드러운 페이드 효과 계산
       let opacity = 1;
       let scale = 1;
-      
+
       if (circle.lifeTime < circle.fadeInDuration) {
-        // 페이드 인 + 스케일 인
         const fadeProgress = circle.lifeTime / circle.fadeInDuration;
         opacity = fadeProgress;
-        scale = 0.3 + (fadeProgress * 0.7); // 0.3에서 1.0으로 스케일
+        scale = 0.3 + fadeProgress * 0.7;
       } else if (circle.lifeTime > circle.lifeDuration - circle.fadeOutDuration) {
-        // 페이드 아웃 + 스케일 아웃
         const fadeProgress = (circle.lifeDuration - circle.lifeTime) / circle.fadeOutDuration;
         opacity = fadeProgress;
-        scale = 0.7 + (fadeProgress * 0.3); // 1.0에서 0.7로 스케일
+        scale = 0.7 + fadeProgress * 0.3;
       }
 
-      // Update element style
-      const d = circle.r * 2;
-      circle.el.style.width = `${d}px`;
-      circle.el.style.height = `${d}px`;
+      const diameter = circle.r * 2;
+      circle.el.style.width = `${diameter}px`;
+      circle.el.style.height = `${diameter}px`;
       circle.el.style.left = `${circle.x - circle.r}px`;
       circle.el.style.top = `${circle.y - circle.r}px`;
       circle.el.style.opacity = opacity;
       circle.el.style.transform = `scale(${scale})`;
-
-      return true; // 이 원은 계속 업데이트
     };
 
-    // Animation loop - 개별 생명주기 시스템
-    const animate = () => {
+    const animate = (timestamp) => {
+      if (lastTimestamp === null) {
+        lastTimestamp = timestamp;
+      }
+
+      const delta = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+
       gooElementsRef.current.forEach((circle, index) => {
-        updateCircleLifecycle(circle, index);
+        updateCircleLifecycle(circle, index, delta);
       });
 
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    createGooey();
-    animate();
+    const startAnimation = () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      lastTimestamp = null;
+      animationRef.current = requestAnimationFrame(animate);
+    };
 
-    // 디바운스된 리사이즈 핸들러
+    initializeGooey();
+    startAnimation();
+
     let resizeTimeout;
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        const newW = window.innerWidth;
-        const newH = window.innerHeight;
-        
-        // 화면 크기가 실제로 변경되었는지 확인
-        if (Math.abs(newW - W) < 50 && Math.abs(newH - H) < 50) {
-          return; // 크게 변경되지 않았으면 무시
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
+
+        if (Math.abs(newWidth - viewportWidth) < 50 && Math.abs(newHeight - viewportHeight) < 50) {
+          return;
         }
-        
-        if (animationRef.current) {
-          cancelAnimationFrame(animationRef.current);
-        }
-        if (gooLayer) {
-          gooLayer.innerHTML = '';
-        }
-        
-        const newConfig = {
-          ...getConfig(newW),
+
+        viewportWidth = newWidth;
+        viewportHeight = newHeight;
+
+        const nextBaseConfig = getConfig(newWidth);
+        config = {
+          ...nextBaseConfig,
           speed: SPEED_CONFIG,
-          radius: { min: getConfig(newW).radiusMin, max: getConfig(newW).radiusMax }
+          radius: { min: nextBaseConfig.radiusMin, max: nextBaseConfig.radiusMax }
         };
-        
-        // 새로운 설정으로 구이 효과 재생성 (생명주기 시스템 사용)
-        gooElementsRef.current = [];
-        
-        // 임시로 config를 업데이트하여 createNewCircle이 새로운 설정을 사용하도록 함
-        const originalConfig = { ...config };
-        Object.assign(config, newConfig);
-        
-        for (let i = 0; i < newConfig.count; i++) {
-          gooElementsRef.current.push(createNewCircle());
-        }
-        
-        // config 복원
-        Object.assign(config, originalConfig);
-        animate();
-      }, 300); // 300ms 디바운스
+
+        initializeGooey();
+        startAnimation();
+      }, 300);
     };
 
     window.addEventListener('resize', handleResize);
 
-    // Cleanup
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
-      if (gooLayer) {
-        gooLayer.innerHTML = '';
-      }
+      lastTimestamp = null;
+      gooLayer.innerHTML = '';
       clearTimeout(resizeTimeout);
       window.removeEventListener('resize', handleResize);
     };
@@ -227,14 +214,18 @@ const GooeyBackground = () => {
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <defs>
           <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-            <feColorMatrix in="blur" mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo"/>
-            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+              result="goo"
+            />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
           </filter>
         </defs>
       </svg>
-      
+
       {/* Gooey Background Layer */}
       <div ref={gooLayerRef} className="gooey-bg" />
     </>

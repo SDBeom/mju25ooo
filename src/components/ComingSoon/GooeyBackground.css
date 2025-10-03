@@ -4,8 +4,23 @@
   inset: 0;
   pointer-events: none;
   z-index: 1;           /* 컨텐츠(2)보다 낮게, 음수 금지 */
-  -webkit-filter: url(#goo); /* iOS용 접두사 추가 */
-  filter: url(#goo);
+  /* --- ⬇️ Safari 호환성 문제 해결: 데이터 URI 방식 적용 ⬇️ --- */
+  -webkit-filter: url('data:image/svg+xml,\
+    <svg xmlns="http://www.w3.org/2000/svg">\
+      <filter id="goo" filterUnits="userSpaceOnUse">\
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />\
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo" />\
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />\
+      </filter>\
+    </svg>#goo');
+  filter: url('data:image/svg+xml,\
+    <svg xmlns="http://www.w3.org/2000/svg">\
+      <filter id="goo" filterUnits="userSpaceOnUse">\
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />\
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo" />\
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />\
+      </filter>\
+    </svg>#goo');
   overflow: hidden;
   isolation: isolate;
 }
@@ -20,10 +35,9 @@
   box-shadow: none !important;
   transform-origin: center;
 
-  /* ⚠️ iOS에서 필터 깨뜨리는 원인 제거 */
-  /* transform: translateZ(0);      삭제 */
-  /* -webkit-transform: translateZ(0); 삭제 */
-  /* will-change: transform;         삭제 */
+  /* 윈도우 성능 최적화를 위한 하드웨어 가속 */
+  transform: translateZ(0);
+  will-change: transform, opacity;
 }
 
 /* iOS 전용 안전장치: 혹시 남아있어도 무력화 */

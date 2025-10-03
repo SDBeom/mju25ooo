@@ -5,8 +5,8 @@ import './About.css';
 
 const About = () => {
   const handleContactClick = () => {
-    // TODO: Implement contact functionality
-    console.log('Contact button clicked');
+    // 이메일로 연락하거나 디자이너 페이지로 이동
+    window.open('mailto:designer@example.com', '_blank');
   };
 
   return (
@@ -99,6 +99,7 @@ const About = () => {
 };
 
 export default About;
+
 
 
 
