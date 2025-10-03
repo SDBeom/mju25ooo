@@ -91,13 +91,67 @@ const cfg = {
  * @param {number} w - 화면 너비
  * @returns {string} 'mobile' | 'tablet' | 'desktop'
  */
+/**
+ * 스케일과 DPR 계산 (논리 좌표계 기반)
+ * @param {SVGElement} svgEl - SVG 요소
+ * @returns {object} {s: scale, dpr: devicePixelRatio}
+ */
+const getScaleAndDpr = (svgEl) => {
+  const { width, height } = svgEl.getBoundingClientRect();
+  const s = Math.min(width, height) / LOGICAL_SIZE; // 화면→논리 스케일
+  const dpr = Math.max(1, Math.min(3, window.devicePixelRatio || 1));
+  return { s, dpr };
+};
+
+/**
+ * 동적 프로필 계산 (시각적 일관성 보장)
+ * @param {SVGElement} svgEl - SVG 요소
+ * @param {number} q - 품질 계수 (0.6~1.0)
+ * @returns {object} {n, rMin, rMax, stdDev, speedBase}
+ */
+const computeProfile = (svgEl, q = 1.0) => {
+  const { s, dpr } = getScaleAndDpr(svgEl);
+
+  // 시각적 밀도 일정: 면적 비례로 개수 계산, 상한/하한으로 안정화
+  const areaNorm = (svgEl.clientWidth * svgEl.clientHeight) / (360 * 640); // 360x640 기준
+  let n = Math.round(10 * areaNorm);            // 기본 10개를 기준 면적에 맞춤
+  n = Math.max(6, Math.min(14, n));             // 가드레일
+  n = Math.round(n * (0.7 + 0.3 * q));         // 품질 계수 적용
+
+  // 반경은 논리좌표 비율로 정의
+  const rMin = 0.07 * LOGICAL_SIZE;             // 7% of minDim
+  const rMax = 0.11 * LOGICAL_SIZE;             // 11%
+
+  // 블러: 논리 블러(px) * 화면스케일 * DPR 보정
+  const baseBlur = 3.2;                          // 논리 기준
+  let stdDev = baseBlur * s * Math.sqrt(dpr);     // 체감 균일, 과도한 증폭 방지
+  stdDev = Math.max(1.6, stdDev * (0.6 + 0.4 * q)); // 품질 계수 적용
+
+  // 속도: 화면 절대 이동을 동일하게 보이도록 논리 속도 * s 역보정
+  const speedBase = 0.06 / s;                    // 스케일 커질수록 느리게, 작아질수록 빠르게
+
+  return { n, rMin, rMax, stdDev, speedBase };
+};
+
+/**
+ * 현재 화면 너비에 맞는 구이 설정 티어 반환 (레거시 호환)
+ * @param {number} w - 화면 너비
+ * @returns {string} 'mobile' | 'tablet' | 'desktop'
+ */
 const tier = (w) => w <= 480 ? 'mobile' : w <= 900 ? 'tablet' : 'desktop';
 
-// iOS 디바이스 감지 (성능 최적화를 위해 30fps로 제한)
+// 논리 좌표계 설정 (고정 그리드)
+const LOGICAL_SIZE = 1000; // 1000x1000 고정 그리드
+
 const IS_IOS = typeof navigator !== 'undefined' && /iP(hone|od|ad)/.test(navigator.platform) || /Macintosh/.test(navigator.userAgent) && 'ontouchend' in document;
 
 // 프레임 레이트 설정 (iOS: 30fps, 기타: 60fps)
 const TICK_INTERVAL = IS_IOS ? 33 : 16.67; // iOS: 33ms, 기타: 16.67ms
+
+// 동적 품질 거버너 변수
+let overBudgetFrames = 0;
+let quality = 1.0; // 1.0 = 풀, 0.6 = 세이프
+let prevTs = 0;
 const detectLowPowerProfile = () => {
   if (typeof navigator === 'undefined') return false;
   const cores = navigator.hardwareConcurrency || 4;
@@ -127,36 +181,46 @@ export default function GooeyBackgroundSVG() {
   const svgRef = useRef(null);    // SVG DOM 요소 참조
   const animRef = useRef();       // requestAnimationFrame ID 참조
 
+  /**
+   * 품질 계수 적용 (동적 거버너)
+   * @param {number} q - 품질 계수 (0.6~1.0)
+   */
+  const applyQuality = (q) => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    
+    const prof = computeProfile(svg, q);
+    const thresh = 0.02 + (1 - q) * 0.05; // 업데이트 임계값 상향
+    
+    // 실제 원 개수 재배치/필터 stdDeviation 변경
+    return { prof, thresh };
+  };
+
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg) return;
 
-    // SVG 크기 및 설정 초기화
-    const W = svg.clientWidth;                    // SVG 너비
-    const H = svg.clientHeight;                   // SVG 높이
-    const viewportTier = tier(window.innerWidth);
-    const lowPower = detectLowPowerProfile();
-    const tierKey = lowPower && viewportTier === 'mobile' ? 'mobileLite' : viewportTier;
-    const t = cfg[tierKey] || cfg.desktop;       // 화면 크기에 맞는 설정
+    // 논리 좌표계 기반 초기화
+    let prof = computeProfile(svg, quality);
+    const { n, rMin, rMax, stdDev, speedBase } = prof;
+    let { thresh } = applyQuality(quality);
     const ns = 'http://www.w3.org/2000/svg';     // SVG 네임스페이스
-    const maxRadius = t.r[1];
-    const blurValue = t.blur ?? 6;
-    const spawnPadding = t.spawnPadding ?? Math.max(maxRadius * 0.5, 60);
-    const overscan = t.overscan ?? Math.max(maxRadius * 1.5, 120);
+    
+    // 논리 좌표계 경계 설정
+    const overscan = Math.max(rMax * 0.3, 30);   // 논리 좌표 기준 오버스캔
     const minX = -overscan;
-    const maxX = W + overscan;
+    const maxX = LOGICAL_SIZE + overscan;
     const minY = -overscan;
-    const maxY = H + overscan;
-    const lifeRange = t.life ?? [9000, 16000];
-    const fadeInRange = t.fadeIn ?? [900, 1300];
-    const fadeOutRange = t.fadeOut ?? [900, 1300];
-    const baseOpacity = t.opacity ?? 0.9;
-    const fillColor = t.color ?? '#67C5FF';
-    const isFilterEnabled = t.useFilter !== false;
-    const smoothing = t.smoothing ?? (lowPower ? 0.18 : 0.28);
-    const positionThreshold = t.positionThreshold ?? (lowPower ? 0.12 : 0.06);
-    const opacityThreshold = t.opacityThreshold ?? (lowPower ? 0.03 : 0.018);
-    const thresholdGain = t.thresholdGain ?? (lowPower ? 0.0032 : 0.002);
+    const maxY = LOGICAL_SIZE + overscan;
+    
+    // 생명주기 및 페이드 설정 (논리 좌표계에 맞춤)
+    const lifeRange = [9000, 16000];
+    const fadeInRange = [900, 1300];
+    const fadeOutRange = [900, 1300];
+    const baseOpacity = 0.9;
+    const fillColor = '#67C5FF';
+    const isFilterEnabled = quality > 0.7; // 품질에 따라 필터 활성화
+    const smoothing = 0.28;
 
     // defs 전역 1회만 생성 (중복 방지)
     let defs;
@@ -203,7 +267,7 @@ export default function GooeyBackgroundSVG() {
       }
 
       if (blurNode) {
-        blurNode.setAttribute('stdDeviation', String(blurValue));
+        blurNode.setAttribute('stdDeviation', stdDev.toString());
       }
 
       svg.style.removeProperty('filter');
@@ -223,13 +287,13 @@ export default function GooeyBackgroundSVG() {
     svg.appendChild(g);
 
     const rand = (a, b) => a + Math.random() * (b - a);
-    const spawnX = () => rand(-spawnPadding, W + spawnPadding);
-    const spawnY = () => rand(-spawnPadding, H + spawnPadding);
-    const balls = Array.from({ length: t.n }).map(() => {
-      const r = rand(t.r[0], t.r[1]);
+    const spawnX = () => rand(minX, maxX);
+    const spawnY = () => rand(minY, maxY);
+    const balls = Array.from({ length: n }).map(() => {
+      const r = rand(rMin, rMax);
       const cx = spawnX();
       const cy = spawnY();
-      const sp = rand(t.s[0], t.s[1]);
+      const sp = speedBase * (0.8 + Math.random() * 0.4); // 논리 속도 기반
       const ang = rand(0, Math.PI * 2);
       const vx = Math.cos(ang) * sp;
       const vy = Math.sin(ang) * sp;
@@ -301,19 +365,45 @@ export default function GooeyBackgroundSVG() {
       last = ts;
       acc += delta;
 
+      // 동적 품질 거버너: 프레임 시간 모니터링
+      const frameTime = ts - (prevTs || ts);
+      prevTs = ts;
+
+      // 타깃 16.7ms, 여유 22ms
+      if (frameTime > 22) overBudgetFrames++; else overBudgetFrames = Math.max(0, overBudgetFrames - 1);
+
+      if (overBudgetFrames >= 3 && quality > 0.6) {
+        quality = Math.max(0.6, quality - 0.1);
+        const newProf = applyQuality(quality);
+        // 동적으로 설정 업데이트
+        if (newProf) {
+          Object.assign(prof, newProf.prof);
+          thresh = newProf.thresh;
+        }
+        overBudgetFrames = 0;
+      } else if (overBudgetFrames === 0 && quality < 1) {
+        // 회복은 느리게
+        quality = Math.min(1, quality + 0.02);
+        const newProf = applyQuality(quality);
+        if (newProf) {
+          Object.assign(prof, newProf.prof);
+          thresh = newProf.thresh;
+        }
+      }
+
       // 30fps 스로틀 (iOS)
       if (acc < TICK_INTERVAL) { 
         animRef.current = requestAnimationFrame(step); 
         return; 
       }
 
-      const dt = Math.min(acc, 80);
+      const deltaTime = Math.min(acc, 80);
       acc = 0;
-      const timeScale = dt * SPEED_NORMALIZER;
+      const timeScale = deltaTime * SPEED_NORMALIZER;
 
       for (let i = 0; i < balls.length; i++) {
         const b = balls[i];
-        b.life += dt;
+        b.life += deltaTime;
         b.x += b.vx * timeScale;
         b.y += b.vy * timeScale;
 
@@ -380,19 +470,21 @@ export default function GooeyBackgroundSVG() {
         const speed = Math.hypot(b.vx, b.vy);
         const dynamicThreshold = Math.min(positionThreshold + speed * thresholdGain, positionThreshold * 3 + 0.08);
 
-        if (b.cxBase) {
-          if (Math.abs(b.cxBase.value - b.displayX) > dynamicThreshold) {
+        // 논리 좌표계 기반 미세 변화 건너뛰기
+        const dx = b.displayX - (b.cxBase ? b.cxBase.value : parseFloat(b.el.getAttribute('cx') || '0'));
+        const dy = b.displayY - (b.cyBase ? b.cyBase.value : parseFloat(b.el.getAttribute('cy') || '0'));
+        
+        if (dx * dx + dy * dy > (thresh * LOGICAL_SIZE) ** 2) {
+          if (b.cxBase) {
             b.cxBase.value = b.displayX;
+          } else {
+            b.el.setAttribute('cx', b.displayX.toFixed(2));
           }
-        } else if (Math.abs(parseFloat(b.el.getAttribute('cx') || '0') - b.displayX) > dynamicThreshold) {
-          b.el.setAttribute('cx', b.displayX.toFixed(2));
-        }
-        if (b.cyBase) {
-          if (Math.abs(b.cyBase.value - b.displayY) > dynamicThreshold) {
+          if (b.cyBase) {
             b.cyBase.value = b.displayY;
+          } else {
+            b.el.setAttribute('cy', b.displayY.toFixed(2));
           }
-        } else if (Math.abs(parseFloat(b.el.getAttribute('cy') || '0') - b.displayY) > dynamicThreshold) {
-          b.el.setAttribute('cy', b.displayY.toFixed(2));
         }
       }
       animRef.current = requestAnimationFrame(step);
@@ -435,7 +527,8 @@ export default function GooeyBackgroundSVG() {
     <svg 
       ref={svgRef} 
       className="gooey-bg" 
-      preserveAspectRatio="none"
+      viewBox={`0 0 ${LOGICAL_SIZE} ${LOGICAL_SIZE}`}
+      preserveAspectRatio="xMidYMid slice"
       style={{ 
         position: 'absolute', 
         inset: 0, 
