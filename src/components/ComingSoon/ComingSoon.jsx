@@ -56,7 +56,7 @@ const ComingSoon = () => {
             <div className="logo-section">
               <img 
                 src={signatureLogo} 
-                alt="명지대학교 MCD 졸업전시 로고 - 미디어커뮤니케이션디자인과 2025년 졸업작품전" 
+                alt="명지대학교 MCD 졸업전시 로고 - 미디어커뮤니케이션디자인전공 2025년 졸업작품전" 
                 className="signature-logo"
                 onError={handleImageError}
               />
@@ -67,7 +67,7 @@ const ComingSoon = () => {
             </h1>
             
             <p className="coming-soon-description">
-              미디어커뮤니케이션디자인과 학생들의<br />
+              미디어커뮤니케이션디자인전공 학생들의<br />
               창의적 작품이 곧 공개됩니다<br />
               Coming Soon!
             </p>
@@ -108,7 +108,7 @@ const ComingSoon = () => {
         </div>
         
         <footer className="coming-soon-footer">
-          <p>© 2025 명지대학교 미디어커뮤니케이션디자인과. All rights reserved.</p>
+          <p>© 2025 명지대학교 미디어커뮤니케이션디자인전공. All rights reserved.</p>
         </footer>
       </div>
     </div>
