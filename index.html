@@ -1,12 +1,68 @@
 <!doctype html> <!-- HTML5 문서 타입 선언 -->
-<html lang="en"> <!-- HTML 문서 시작, 언어를 영어로 설정 -->
+<html lang="ko"> <!-- HTML 문서 시작, 언어를 한국어로 설정 -->
   <head> <!-- 문서의 메타데이터 영역 -->
     <meta charset="UTF-8" /> <!-- 문자 인코딩을 UTF-8로 설정 (한글 지원) -->
     <link rel="icon" type="image/svg+xml" href="/Symbol.svg" /> <!-- 웹사이트 파비콘 설정 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 반응형 웹을 위한 뷰포트 설정 -->
-    <title>2025 명지대학교 MCD 졸업전시</title> <!-- 브라우저 탭에 표시될 제목 -->
+    
+    <!-- SEO 메타 태그 -->
+    <title>2025 명지대학교 MCD 졸업전시 | 미디어커뮤니케이션디자인과</title> <!-- 브라우저 탭에 표시될 제목 -->
+    <meta name="description" content="2025년 명지대학교 미디어커뮤니케이션디자인과 졸업전시회. MCD 학생들의 창의적인 작품과 디자인 포트폴리오를 만나보세요." />
+    <meta name="keywords" content="명지대학교, 졸업전시, MCD, 미디어커뮤니케이션디자인, 디자인, 포트폴리오, 2025, 졸전" />
+    <meta name="author" content="명지대학교 미디어커뮤니케이션디자인과" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    
+    <!-- Open Graph 메타 태그 (소셜 미디어 공유용) -->
+    <meta property="og:title" content="2025 명지대학교 MCD 졸업전시" />
+    <meta property="og:description" content="2025년 명지대학교 미디어커뮤니케이션디자인과 졸업전시회. MCD 학생들의 창의적인 작품과 디자인 포트폴리오를 만나보세요." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mju25ooo.github.io/" />
+    <meta property="og:image" content="https://mju25ooo.github.io/Signature_logo.svg" />
+    <meta property="og:site_name" content="명지대학교 MCD 졸업전시" />
+    
+    <!-- Twitter Card 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="2025 명지대학교 MCD 졸업전시" />
+    <meta name="twitter:description" content="2025년 명지대학교 미디어커뮤니케이션디자인과 졸업전시회. MCD 학생들의 창의적인 작품과 디자인 포트폴리오를 만나보세요." />
+    <meta name="twitter:image" content="https://mju25ooo.github.io/Signature_logo.svg" />
+    
+    <!-- 추가 SEO 메타 태그 -->
+    <meta name="theme-color" content="#2A2A2A" />
+    <meta name="msapplication-TileColor" content="#2A2A2A" />
+    <link rel="canonical" href="https://mju25ooo.github.io/" />
+    
+    <!-- 구조화된 데이터 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "2025 명지대학교 MCD 졸업전시",
+      "description": "2025년 명지대학교 미디어커뮤니케이션디자인과 졸업전시회",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "location": {
+        "@type": "Place",
+        "name": "명지대학교",
+        "address": "서울시 서대문구 거북골로 34"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "명지대학교 미디어커뮤니케이션디자인과"
+      },
+      "url": "https://mju25ooo.github.io/",
+      "image": "https://mju25ooo.github.io/Signature_logo.svg"
+    }
+    </script>
+    <!-- PWA 매니페스트 -->
+    <link rel="manifest" href="/manifest.json" />
+    
     <!-- Pretendard 폰트 -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    
+    <!-- 프리로드 중요한 리소스 -->
+    <link rel="preload" href="/src/assets/Signature_logo.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/src/assets/Symbol.svg" as="image" type="image/svg+xml" />
   </head>
   <body> <!-- 문서의 실제 내용 영역 -->
     <div id="root"></div> <!-- React 앱이 렌더링될 컨테이너 -->

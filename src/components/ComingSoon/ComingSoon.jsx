@@ -56,20 +56,20 @@ const ComingSoon = () => {
             <div className="logo-section">
               <img 
                 src={signatureLogo} 
-                alt="SD Logo" 
+                alt="명지대학교 MCD 졸업전시 로고 - 미디어커뮤니케이션디자인과 2025년 졸업작품전" 
                 className="signature-logo"
                 onError={handleImageError}
               />
             </div>
             
             <h1 className="coming-soon-title">
-              Coming Soon
+              2025 명지대학교 MCD 졸업전시
             </h1>
             
             <p className="coming-soon-description">
-              점점점...점점.. 점들이<br />
-              모이는 중<br />
-              곧 만날 수 있어요!!
+              미디어커뮤니케이션디자인과 학생들의<br />
+              창의적 작품이 곧 공개됩니다<br />
+              Coming Soon!
             </p>
           </div>
           
@@ -95,11 +95,11 @@ const ComingSoon = () => {
             
             <div className="social-links">
               {[
-                { href: 'https://www.instagram.com/mju_mcd_2025/', src: instagramLogo, alt: 'Instagram' },
-                { href: 'https://behance.net', src: behanceLogo, alt: 'Behance' },
-                { href: 'https://youtube.com', src: youtubeLogo, alt: 'YouTube' }
+                { href: 'https://www.instagram.com/mju_mcd_2025/', src: instagramLogo, alt: '명지대학교 MCD 졸업전시 인스타그램 - @mju_mcd_2025' },
+                { href: 'https://behance.net', src: behanceLogo, alt: '명지대학교 MCD 졸업전시 비핸스 - 디자인 포트폴리오' },
+                { href: 'https://youtube.com', src: youtubeLogo, alt: '명지대학교 MCD 졸업전시 유튜브 - 작품 소개 영상' }
               ].map(({ href, src, alt }) => (
-                <a key={alt} href={href} target="_blank" rel="noopener noreferrer" className="social-link">
+                <a key={alt} href={href} target="_blank" rel="noopener noreferrer" className="social-link" aria-label={`${alt}로 이동`}>
                   <img src={src} alt={alt} className="social-logo" />
                 </a>
               ))}
@@ -107,9 +107,9 @@ const ComingSoon = () => {
           </div>
         </div>
         
-        <div className="coming-soon-footer">
-          <p>© 2025 MJU MCD. All rights reserved.</p>
-        </div>
+        <footer className="coming-soon-footer">
+          <p>© 2025 명지대학교 미디어커뮤니케이션디자인과. All rights reserved.</p>
+        </footer>
       </div>
     </div>
   );

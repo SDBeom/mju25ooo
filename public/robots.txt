@@ -1,0 +1,28 @@
+# Robots.txt - 검색 엔진 크롤러를 위한 지침
+# 명지대학교 MCD 졸업전시 웹사이트
+
+User-agent: *
+Allow: /
+
+# 사이트맵 위치 안내
+Sitemap: https://mju25ooo.github.io/sitemap.xml
+
+# 크롤링 빈도 조정 (선택사항)
+Crawl-delay: 1
+
+# 특정 파일/디렉토리 제외 (필요시)
+# Disallow: /admin/
+# Disallow: /private/
+
+# 검색 엔진별 특별 지침
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: DaumBot
+Allow: /
