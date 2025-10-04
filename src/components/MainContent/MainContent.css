@@ -1,6 +1,6 @@
 /* Main Content Styles */
 .main-content {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  background: transparent;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -89,21 +89,4 @@
 }
 
 
-/* 드래그 영역 하이라이트 */
-.main-content::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 2px dashed rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.main-content:hover::after {
-  opacity: 1;
-}
+/* 드래그 영역 하이라이트 제거 */
