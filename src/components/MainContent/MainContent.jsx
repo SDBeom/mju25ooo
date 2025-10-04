@@ -12,10 +12,10 @@ const MainContent = ({ position }) => {
     >
       {/* 메인 타이틀 섹션 */}
       <section className="hero-section">
-        <div className="hero-content">
+        <div className="hero-content"></div>
           <h1 className="hero-title">
             <span className="title-main">졸업전시 2025</span>
-            <span className="title-sub">명지대학교 미디어커뮤니케이션디자인전공</span>
+            <span className="title-sub">2025 명지대학교 졸업전시 영상 애니메이션 다지안 전공</span>
           </h1>
           
           <div className="hero-description">

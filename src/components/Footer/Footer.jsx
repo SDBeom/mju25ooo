@@ -15,7 +15,7 @@ const Footer = () => {
               color="muted"
               className="footer-text"
             >
-              © {currentYear} KS Design. All rights reserved.
+              © {currentYear} 2025 MJU MCD. All rights reserved.
             </Typography>
           </div>
           
@@ -35,6 +35,8 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
 
 
 

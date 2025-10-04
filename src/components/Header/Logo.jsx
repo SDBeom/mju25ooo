@@ -7,7 +7,7 @@ const Logo = () => {
     <div className="logo-container">
       <img 
         src={SignatureLogo} 
-        alt="명지대학교 졸업전시 시그니처 로고 - 미디어커뮤니케이션디자인전공"
+        alt="2025 명지대학교 졸업전시 영상 애니메이션 다지안 전공 시그니처 로고"
       />
     </div>
   );
