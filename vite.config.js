@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // base: '/mju25ooo/', // 도메인 직접 연결 시 제거
+  base: 'https://mju25ooo.com/', // 개인 도메인으로 설정
   
   // 성능 최적화 설정
   build: {
