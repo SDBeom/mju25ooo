@@ -56,19 +56,19 @@ const ComingSoon = () => {
             <div className="logo-section">
               <img 
                 src={signatureLogo} 
-                alt="명지대학교 MCD 졸업전시 로고 - 미디어커뮤니케이션디자인전공 2025년 졸업작품전" 
+                alt="졸업전시 2025 로고 - 영상 애니메이션학과 졸업작품전" 
                 className="signature-logo"
                 onError={handleImageError}
               />
             </div>
             
             <h1 className="coming-soon-title">
-              2025 명지대학교 MCD 졸업전시
+              졸업전시 2025
             </h1>
             
             <p className="coming-soon-description">
-              미디어커뮤니케이션디자인전공 학생들의<br />
-              창의적 작품이 곧 공개됩니다<br />
+              영상, 애니메이션학과<br />
+              졸업작품이 곧 공개됩니다<br />
               Coming Soon!
             </p>
           </div>
@@ -95,9 +95,9 @@ const ComingSoon = () => {
             
             <div className="social-links">
               {[
-                { href: 'https://www.instagram.com/mju_mcd_2025/', src: instagramLogo, alt: '명지대학교 MCD 졸업전시 인스타그램 - @mju_mcd_2025' },
-                { href: 'https://behance.net', src: behanceLogo, alt: '명지대학교 MCD 졸업전시 비핸스 - 디자인 포트폴리오' },
-                { href: 'https://youtube.com', src: youtubeLogo, alt: '명지대학교 MCD 졸업전시 유튜브 - 작품 소개 영상' }
+                { href: 'https://www.instagram.com/mju_mcd_2025/', src: instagramLogo, alt: '졸업전시 2025 인스타그램 - 영상 애니메이션학과 졸업작품' },
+                { href: 'https://behance.net', src: behanceLogo, alt: '졸업전시 2025 비핸스 - 영상 애니메이션 포트폴리오' },
+                { href: 'https://youtube.com', src: youtubeLogo, alt: '졸업전시 2025 유튜브 - 졸업작품 소개 영상' }
               ].map(({ href, src, alt }) => (
                 <a key={alt} href={href} target="_blank" rel="noopener noreferrer" className="social-link" aria-label={`${alt}로 이동`}>
                   <img src={src} alt={alt} className="social-logo" />

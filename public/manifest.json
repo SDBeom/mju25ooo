@@ -1,7 +1,7 @@
 {
-  "name": "2025 명지대학교 MCD 졸업전시",
-  "short_name": "MJU MCD 2025",
-  "description": "2025년 명지대학교 미디어커뮤니케이션디자인전공 졸업전시회",
+  "name": "졸업전시 2025 | 영상 애니메이션학과",
+  "short_name": "졸업전시 2025",
+  "description": "2025년 졸업전시. 영상, 애니메이션학과 학생들의 창의적인 졸업작품 전시회",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#2A2A2A",
