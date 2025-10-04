@@ -242,7 +242,45 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <MainContent />
+      <div 
+        className="app-wrapper"
+        onMouseDown={handleMouseDown}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{
+          cursor: isDragging ? 'grabbing' : 'grab'
+        }}
+      >
+        <Header />
+        <MainContent />
+        <Footer />
+        
+        {/* 위치 표시기 */}
+        <div className="position-indicator">
+          <div className="position-info">
+            <div className="coordinate">
+              <span className="label">X:</span>
+              <span className="value">{Math.round(normalizedCurrent.x)}px</span>
+              <span className="percent">({Math.round(positionPercentX)}%)</span>
+            </div>
+            <div className="coordinate">
+              <span className="label">Y:</span>
+              <span className="value">{Math.round(normalizedCurrent.y)}px</span>
+              <span className="percent">({Math.round(positionPercentY)}%)</span>
+            </div>
+          </div>
+          <div className="position-map">
+            <div
+              className="position-dot"
+              style={{
+                left: `${positionPercentX}%`,
+                top: `${positionPercentY}%`
+              }}
+            ></div>
+          </div>
+        </div>
+      </div>
     </ErrorBoundary>
   );
 }
