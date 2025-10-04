@@ -5,6 +5,7 @@
  */
 
 import React, { useEffect, useRef } from 'react';
+import { checkStorageAvailability } from '../../shared/storage';
 
 const presets = {
   desktop: {
@@ -131,6 +132,9 @@ export default function GooeyBackgroundSVG() {
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg) return;
+
+    // 저장소 접근 가능성 확인 및 경고
+    checkStorageAvailability();
 
     const ns = 'http://www.w3.org/2000/svg';
     const viewportTier = tier(window.innerWidth);

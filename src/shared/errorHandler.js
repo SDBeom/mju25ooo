@@ -1,5 +1,6 @@
 // Error handling utilities
 
+
 /**
  * Custom error class for application-specific errors
  */
@@ -12,6 +13,7 @@ export class AppError extends Error {
     this.timestamp = new Date().toISOString();
   }
 }
+
 
 /**
  * Error handler for component errors
