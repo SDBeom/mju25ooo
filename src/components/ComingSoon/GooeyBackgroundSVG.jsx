@@ -49,7 +49,7 @@ const presets = {
     life: [6200, 11000],
     fade: [650, 950],
     color: '#5FB6F5',
-    useFilter: false
+    useFilter: true
   }
 };
 
@@ -311,4 +311,5 @@ export default function GooeyBackgroundSVG() {
     />
   );
 }
+
 
