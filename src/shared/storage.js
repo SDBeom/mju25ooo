@@ -2,8 +2,36 @@
  * 안전한 브라우저 저장소 접근 유틸리티
  * 
  * 브라우저의 개인정보 보호 설정으로 인한 저장소 접근 차단을 안전하게 처리합니다.
- * 쿠키 차단, 시크릿 모드, iframe 환경 등에서도 안정적으로 동작합니다.
+ * 쿠키 차단, 시크릿 모드, iframe 환경, 확장 프로그램 등에서도 안정적으로 동작합니다.
  */
+
+/**
+ * 현재 컨텍스트가 확장 프로그램인지 확인
+ * @returns {boolean} 확장 프로그램 컨텍스트 여부
+ */
+const isExtensionContext = () => {
+  try {
+    // 확장 프로그램 컨텍스트 확인 방법들
+    return (
+      // Chrome extension
+      typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.id ||
+      // Firefox extension
+      typeof browser !== 'undefined' && browser.runtime && browser.runtime.id ||
+      // Universal extension detection
+      window.location.protocol === 'chrome-extension:' ||
+      window.location.protocol === 'moz-extension:' ||
+      // Content script detection
+      document.documentElement.hasAttribute('data-extension-context') ||
+      // User agent based detection
+      navigator.userAgent.includes('Extension') ||
+      // URL pattern detection
+      window.location.href.includes('extension://') ||
+      window.location.href.includes('moz-extension://')
+    );
+  } catch (e) {
+    return false;
+  }
+};
 
 /**
  * 브라우저 저장소 접근 가능성 확인
@@ -11,6 +39,11 @@
  */
 export const isStorageAvailable = () => {
   try {
+    // 확장 프로그램 컨텍스트에서는 저장소 접근 불가
+    if (isExtensionContext()) {
+      return false;
+    }
+
     const testKey = '__storage_test__';
     localStorage.setItem(testKey, 'test');
     localStorage.removeItem(testKey);
@@ -28,6 +61,12 @@ export const isStorageAvailable = () => {
  */
 export const safeLocalStorage = (key, value = null) => {
   try {
+    // 확장 프로그램 컨텍스트에서는 저장소 접근 시도하지 않음
+    if (isExtensionContext()) {
+      console.warn('localStorage access blocked in extension context');
+      return null;
+    }
+
     if (value !== null) {
       localStorage.setItem(key, value);
       return value;
@@ -48,6 +87,12 @@ export const safeLocalStorage = (key, value = null) => {
  */
 export const safeSessionStorage = (key, value = null) => {
   try {
+    // 확장 프로그램 컨텍스트에서는 저장소 접근 시도하지 않음
+    if (isExtensionContext()) {
+      console.warn('sessionStorage access blocked in extension context');
+      return null;
+    }
+
     if (value !== null) {
       sessionStorage.setItem(key, value);
       return value;
@@ -69,6 +114,12 @@ export const safeSessionStorage = (key, value = null) => {
  */
 export const safeCookie = (name, value = null, days = 30) => {
   try {
+    // 확장 프로그램 컨텍스트에서는 쿠키 접근 시도하지 않음
+    if (isExtensionContext()) {
+      console.warn('Cookie access blocked in extension context');
+      return null;
+    }
+
     if (value !== null) {
       const expires = new Date();
       expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -151,17 +202,26 @@ export const safeStorageWithFallback = (key, value = null) => {
  */
 export const checkStorageAvailability = () => {
   const isAvailable = isStorageAvailable();
+  const isExtension = isExtensionContext();
   
   if (!isAvailable) {
-    console.warn(
-      '브라우저 저장소 접근이 차단되었습니다.\n' +
-      '가능한 원인:\n' +
-      '1. 쿠키 차단 설정\n' +
-      '2. 시크릿 모드 사용\n' +
-      '3. 광고 차단기 또는 보안 확장 프로그램\n' +
-      '4. iframe 환경에서의 서드 파티 정책\n' +
-      '\n일부 기능이 제한될 수 있습니다.'
-    );
+    if (isExtension) {
+      console.warn(
+        '확장 프로그램 컨텍스트에서 저장소 접근이 차단되었습니다.\n' +
+        '이는 브라우저의 보안 정책으로 인한 정상적인 동작입니다.\n' +
+        '메모리 기반 대체 저장소를 사용합니다.'
+      );
+    } else {
+      console.warn(
+        '브라우저 저장소 접근이 차단되었습니다.\n' +
+        '가능한 원인:\n' +
+        '1. 쿠키 차단 설정\n' +
+        '2. 시크릿 모드 사용\n' +
+        '3. 광고 차단기 또는 보안 확장 프로그램\n' +
+        '4. iframe 환경에서의 서드 파티 정책\n' +
+        '\n일부 기능이 제한될 수 있습니다.'
+      );
+    }
   }
   
   return isAvailable;
@@ -183,6 +243,7 @@ export const handleStorageError = (error, operation, key) => {
     timestamp: new Date().toISOString(),
     userAgent: navigator.userAgent,
     isIncognito: !isStorageAvailable(),
+    isExtension: isExtensionContext(),
     url: window.location.href
   };
 
