@@ -5,6 +5,7 @@ import ComingSoon from './components/ComingSoon/ComingSoon';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import MainContent from './components/MainContent/MainContent';
 
 const _resolveComingSoonState = () => {
   const preview = import.meta.env.VITE_PREVIEW_MODE;
@@ -16,8 +17,8 @@ const _resolveComingSoonState = () => {
     return envFlag.toLowerCase() === 'true';
   }
 
-  // 개발 환경에서도 커밍순 페이지 표시 (도메인과 동일하게)
-  return true;
+  // 커밍순 페이지 비활성화 - 메인 화면 표시
+  return false;
 };
 
 function App() {
@@ -241,44 +242,7 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <div 
-        className="app-wrapper"
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        style={{
-          cursor: isDragging ? 'grabbing' : 'grab'
-        }}
-      >
-        <Header />
-        <Footer />
-        
-        {/* 위치 표시기 */}
-        <div className="position-indicator">
-          <div className="position-info">
-            <div className="coordinate">
-              <span className="label">X:</span>
-              <span className="value">{Math.round(normalizedCurrent.x)}px</span>
-              <span className="percent">({Math.round(positionPercentX)}%)</span>
-            </div>
-            <div className="coordinate">
-              <span className="label">Y:</span>
-              <span className="value">{Math.round(normalizedCurrent.y)}px</span>
-              <span className="percent">({Math.round(positionPercentY)}%)</span>
-            </div>
-          </div>
-          <div className="position-map">
-            <div
-              className="position-dot"
-              style={{
-                left: `${positionPercentX}%`,
-                top: `${positionPercentY}%`
-              }}
-            ></div>
-          </div>
-        </div>
-      </div>
+      <MainContent />
     </ErrorBoundary>
   );
 }
