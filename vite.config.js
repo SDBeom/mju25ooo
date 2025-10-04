@@ -12,11 +12,25 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        // 청크 분할 최적화
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          animations: ['./src/components/ComingSoon/GooeyBackgroundSVG.jsx', './src/components/ComingSoon/GooeyBackground.jsx']
-        }
+        // 청크 분할 최적화 - 더 세분화
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            return 'vendor';
+          }
+          if (id.includes('GooeyBackground')) {
+            return 'animations';
+          }
+          if (id.includes('components')) {
+            return 'components';
+          }
+        },
+        // 파일명 최적화
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     },
     // 압축 최적화
@@ -24,9 +38,17 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true, // 프로덕션에서 console 제거
-        drop_debugger: true
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn']
+      },
+      mangle: {
+        safari10: true
       }
-    }
+    },
+    // 소스맵 최적화
+    sourcemap: false,
+    // 빌드 크기 최적화
+    target: 'es2015'
   },
   
   // 개발 서버 최적화
