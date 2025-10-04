@@ -253,7 +253,7 @@ function App() {
         }}
       >
         <Header />
-        <MainContent />
+        <MainContent position={normalizedCurrent} isDragging={isDragging} />
         <Footer />
         
         {/* 위치 표시기 */}
