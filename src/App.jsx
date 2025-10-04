@@ -20,8 +20,8 @@ const _resolveComingSoonState = () => {
     return envFlag.toLowerCase() === 'true';
   }
 
-  // 커밍순 페이지 활성화 - 모든 링크에서 표시
-  return true;
+  // 메인 화면에서만 커밍순 페이지 표시
+  return false;
 };
 
 function App() {
@@ -330,8 +330,8 @@ function App() {
   const positionPercentX = ((normalizedCurrent.x - bounds.minX) / (bounds.maxX - bounds.minX)) * 100;
   const positionPercentY = ((normalizedCurrent.y - bounds.minY) / (bounds.maxY - bounds.minY)) * 100;
 
-  // 커밍순 페이지 표시
-  if (showComingSoon) {
+  // 메인 페이지에서만 커밍순 페이지 표시
+  if (showComingSoon || currentPage === 'main') {
     return (
       <ErrorBoundary>
         <ComingSoon />
