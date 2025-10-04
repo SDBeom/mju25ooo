@@ -14,9 +14,9 @@ const isExtensionContext = () => {
     // 확장 프로그램 컨텍스트 확인 방법들
     return (
       // Chrome extension
-      typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.id ||
+      (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.id) ||
       // Firefox extension
-      typeof browser !== 'undefined' && browser.runtime && browser.runtime.id ||
+      (typeof browser !== 'undefined' && browser.runtime && browser.runtime.id) ||
       // Universal extension detection
       window.location.protocol === 'chrome-extension:' ||
       window.location.protocol === 'moz-extension:' ||
@@ -26,7 +26,11 @@ const isExtensionContext = () => {
       navigator.userAgent.includes('Extension') ||
       // URL pattern detection
       window.location.href.includes('extension://') ||
-      window.location.href.includes('moz-extension://')
+      window.location.href.includes('moz-extension://') ||
+      // Additional detection methods
+      (typeof window !== 'undefined' && window.chrome && window.chrome.runtime) ||
+      // Check for extension-specific globals
+      typeof __WEBPACK_EXTERNAL_MODULE__chrome_runtime__ !== 'undefined'
     );
   } catch (e) {
     return false;
