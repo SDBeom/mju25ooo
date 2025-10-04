@@ -224,11 +224,16 @@ const DESIGNERS = [
 ].sort((a, b) => a.name.localeCompare(b.name, 'ko', { sensitivity: 'base' }));
 
 const DesignerDetail = () => {
-  // URL에서 디자이너 이름 추출
-  const encodedName = window.location.pathname.split('/')[2];
-  const designerName = decodeURIComponent(encodedName);
+  // URL에서 디자이너 이름 추출 (쿼리 파라미터 제거)
+  const fullPath = window.location.href;
+  const pathWithoutQuery = fullPath.split('?')[0];
+  const pathParts = pathWithoutQuery.replace(window.location.origin, '').split('/');
+  const encodedName = pathParts[2];
+  const designerName = encodedName ? decodeURIComponent(encodedName) : '';
+  
   console.log('DesignerDetail - encodedName:', encodedName); // 디버깅용
   console.log('DesignerDetail - designerName:', designerName); // 디버깅용
+  
   const designer = DESIGNERS.find(d => d.name === designerName);
   console.log('DesignerDetail - designer:', designer); // 디버깅용
 

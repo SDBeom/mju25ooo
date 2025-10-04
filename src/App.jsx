@@ -35,19 +35,25 @@ function App() {
   // URL 기반 페이지 라우팅
   useEffect(() => {
     const updatePageFromUrl = () => {
-      const path = window.location.pathname;
+      // URL에서 경로만 추출 (쿼리 파라미터 제거)
+      const fullPath = window.location.href;
+      const pathWithoutQuery = fullPath.split('?')[0];
+      const path = pathWithoutQuery.replace(window.location.origin, '') || '/';
+      
       console.log('Current path:', path); // 디버깅용
       
-      if (path.startsWith('/designer/')) {
+      if (path.startsWith('/designer/') && path !== '/designer/') {
         console.log('Setting page to designerDetail'); // 디버깅용
         setCurrentPage('designerDetail');
       } else {
         switch (path) {
           case '/designer':
+          case '/designer/':
             console.log('Setting page to designer'); // 디버깅용
             setCurrentPage('designer');
             break;
           case '/works':
+          case '/works/':
             console.log('Setting page to works'); // 디버깅용
             setCurrentPage('works');
             break;
