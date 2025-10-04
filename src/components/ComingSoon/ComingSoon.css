@@ -2,8 +2,7 @@
   min-height: 100vh;
   background: linear-gradient(135deg, var(--color-background) 0%, #1a1a1a 100%);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   position: relative;
   z-index: 0;
   overflow: hidden;
@@ -15,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   min-height: 100vh;
   padding: var(--spacing-2xl);
   max-width: 100%;
@@ -27,7 +26,8 @@
   justify-content: center;
   gap: var(--spacing-3xl);
   padding: 0;
-  margin-bottom: var(--spacing-3xl);
+  flex: 1;
+  width: 100%;
 }
 
 .logo-section {
@@ -220,6 +220,8 @@
   text-align: center;
   width: 100%;
   max-width: 1000px;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .coming-soon-footer p {
@@ -238,7 +240,6 @@
   
   .main-content {
     gap: var(--spacing-4xl);
-    margin-bottom: var(--spacing-4xl);
   }
   
   .coming-soon-title {
@@ -286,7 +287,6 @@
   .main-content {
     flex-direction: column;
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-3xl);
   }
   
   .left-section {
@@ -326,7 +326,6 @@
   .main-content {
     flex-direction: column;
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-2xl);
   }
   
   .left-section {
