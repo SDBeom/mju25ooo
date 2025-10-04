@@ -331,7 +331,7 @@ function App() {
   const positionPercentY = ((normalizedCurrent.y - bounds.minY) / (bounds.maxY - bounds.minY)) * 100;
 
   // 메인 페이지에서만 커밍순 페이지 표시
-  if (showComingSoon || currentPage === 'main') {
+  if (currentPage === 'main') {
     return (
       <ErrorBoundary>
         <ComingSoon />
