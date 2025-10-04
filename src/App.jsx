@@ -34,6 +34,18 @@ function App() {
 
   // URL 기반 페이지 라우팅
   useEffect(() => {
+    try {
+      const storedPath = sessionStorage.getItem('spa-redirect-path');
+      if (storedPath) {
+        sessionStorage.removeItem('spa-redirect-path');
+        if (storedPath.startsWith('/')) {
+          window.history.replaceState({}, '', storedPath);
+        }
+      }
+    } catch (e) {
+      // ignore storage errors
+    }
+
     const updatePageFromUrl = () => {
       // URL에서 경로만 추출 (쿼리 파라미터 제거)
       const fullPath = window.location.href;
