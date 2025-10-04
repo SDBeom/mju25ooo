@@ -133,7 +133,7 @@ export default function GooeyBackgroundSVG() {
     const baseOpacity = 0.9;
     const fillColor = '#67C5FF';
     const isFilterEnabled = quality > 0.7; // 품질에 따라 필터 활성화
-    const smoothing = 0.28;
+    const smoothing = 0.15; // 더 빠른 반응성
 
     // defs 전역 1회만 생성 (중복 방지)
     let defs;
@@ -278,34 +278,11 @@ export default function GooeyBackgroundSVG() {
       last = ts;
       acc += delta;
 
-      // 동적 품질 거버너: 프레임 시간 모니터링
-      const frameTime = ts - (prevTs || ts);
-      prevTs = ts;
+      // 동적 품질 거버너 간소화 (성능 우선)
+      // 프레임 시간 모니터링은 일시적으로 비활성화하여 부드러운 애니메이션 우선
 
-      // 타깃 16.7ms, 여유 22ms
-      if (frameTime > 22) overBudgetFrames++; else overBudgetFrames = Math.max(0, overBudgetFrames - 1);
-
-      if (overBudgetFrames >= 3 && quality > 0.6) {
-        quality = Math.max(0.6, quality - 0.1);
-        const newProf = applyQuality(quality);
-        // 동적으로 설정 업데이트
-        if (newProf) {
-          Object.assign(prof, newProf.prof);
-          thresh = newProf.thresh;
-        }
-        overBudgetFrames = 0;
-      } else if (overBudgetFrames === 0 && quality < 1) {
-        // 회복은 느리게
-        quality = Math.min(1, quality + 0.02);
-        const newProf = applyQuality(quality);
-        if (newProf) {
-          Object.assign(prof, newProf.prof);
-          thresh = newProf.thresh;
-        }
-      }
-
-      // 30fps 스로틀 (iOS)
-      if (acc < TICK_INTERVAL) { 
+      // 프레임 레이트 제한 완화 (부드러운 애니메이션 우선)
+      if (acc < 16.67) { // 모든 기기에서 60fps 목표
         animRef.current = requestAnimationFrame(step); 
         return; 
       }
@@ -372,7 +349,7 @@ export default function GooeyBackgroundSVG() {
         }
         const nextOpacity = Math.max(0, Math.min(1, op * baseOpacity));
 
-        if (Math.abs(nextOpacity - b.opacityValue) > 0.01) { // 간단한 임계값
+        if (Math.abs(nextOpacity - b.opacityValue) > 0.005) { // 더 민감한 투명도 업데이트
           b.opacityValue = nextOpacity;
           b.style.opacity = nextOpacity <= 0.001 ? '0' : nextOpacity >= 0.999 ? '1' : nextOpacity.toFixed(3);
         }
@@ -382,11 +359,12 @@ export default function GooeyBackgroundSVG() {
 
         // 속도 계산 (현재 미사용)
 
-        // 논리 좌표계 기반 미세 변화 건너뛰기
+        // 부드러운 애니메이션을 위해 임계값 완화
         const dx = b.displayX - (b.cxBase ? b.cxBase.value : parseFloat(b.el.getAttribute('cx') || '0'));
         const dy = b.displayY - (b.cyBase ? b.cyBase.value : parseFloat(b.el.getAttribute('cy') || '0'));
         
-        if (dx * dx + dy * dy > (thresh * LOGICAL_SIZE) ** 2) {
+        // 임계값을 크게 줄여서 더 자주 업데이트
+        if (dx * dx + dy * dy > 1) {
           if (b.cxBase) {
             b.cxBase.value = b.displayX;
           } else {
