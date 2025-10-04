@@ -8,46 +8,46 @@ import React, { useEffect, useRef } from 'react';
 
 const presets = {
   desktop: {
-    count: 14,
-    radius: [110, 170],
-    speed: [0.55, 1.3],
-    blur: 6,
-    opacity: 0.9,
-    life: [9000, 15000],
-    fade: [900, 1200],
+    count: 8,           // 14 → 8로 대폭 감소
+    radius: [80, 120],  // 크기 축소로 필터 계산 비용 감소
+    speed: [0.8, 1.8],  // 속도 증가로 역동성 향상
+    blur: 3.5,          // 6 → 3.5로 블러 강도 감소
+    opacity: 0.85,      // 약간 투명도 조정
+    life: [8000, 12000], // 생명주기 단축
+    fade: [600, 800],   // 페이드 시간 단축
     color: '#67C5FF',
     useFilter: true
   },
   tablet: {
-    count: 12,
-    radius: [95, 140],
-    speed: [0.55, 1.35],
-    blur: 5,
-    opacity: 0.86,
-    life: [8200, 14000],
-    fade: [850, 1150],
+    count: 6,           // 12 → 6
+    radius: [70, 100],  // 크기 축소
+    speed: [0.7, 1.6],  // 속도 증가
+    blur: 3.0,          // 5 → 3.0
+    opacity: 0.82,
+    life: [7000, 11000],
+    fade: [500, 700],
     color: '#67C5FF',
     useFilter: true
   },
   mobile: {
-    count: 10,
-    radius: [80, 140],
-    speed: [0.5, 1.25],
-    blur: 4.6,
-    opacity: 0.84,
-    life: [7800, 13500],
-    fade: [780, 1080],
+    count: 5,           // 10 → 5
+    radius: [60, 90],   // 크기 축소
+    speed: [0.6, 1.4],  // 속도 증가
+    blur: 2.5,          // 4.6 → 2.5
+    opacity: 0.78,
+    life: [6000, 10000],
+    fade: [400, 600],
     color: '#67C5FF',
     useFilter: true
   },
   mobileLite: {
-    count: 7,
-    radius: [55, 100],
-    speed: [0.45, 1.05],
-    blur: 3.8,
+    count: 4,           // 7 → 4
+    radius: [50, 80],   // 크기 축소
+    speed: [0.5, 1.2],  // 속도 증가
+    blur: 2.0,          // 3.8 → 2.0
     opacity: 0.72,
-    life: [6200, 11000],
-    fade: [650, 950],
+    life: [5000, 9000],
+    fade: [350, 500],
     color: '#5FB6F5',
     useFilter: true
   }
@@ -236,7 +236,8 @@ export default function GooeyBackgroundSVG() {
       lastTimestamp = timestamp;
       accumulator += delta;
 
-      if (accumulator < TICK_INTERVAL) {
+      // 가벼운 필터를 위한 프레임 레이트 최적화 (50fps)
+      if (accumulator < 20) { // 16.67ms → 20ms (50fps)
         animRef.current = requestAnimationFrame(step);
         return;
       }
@@ -274,13 +275,19 @@ export default function GooeyBackgroundSVG() {
           opacity *= Math.max(0, (ball.lifeDur - ball.life) / ball.fadeOut);
         }
 
-        if (Math.abs(opacity - ball.opacityValue) > 0.01) {
+        // 가벼운 애니메이션을 위한 업데이트 최적화
+        if (Math.abs(opacity - ball.opacityValue) > 0.015) { // 임계값 증가로 업데이트 빈도 감소
           ball.opacityValue = opacity;
-          ball.el.setAttribute('opacity', opacity.toFixed(3));
+          ball.el.setAttribute('opacity', opacity.toFixed(2)); // 정밀도 감소
         }
 
-        ball.cxBase.value = ball.x;
-        ball.cyBase.value = ball.y;
+        // 위치 업데이트도 임계값 적용
+        const dx = ball.x - ball.cxBase.value;
+        const dy = ball.y - ball.cyBase.value;
+        if (dx * dx + dy * dy > 4) { // 2px 이상 움직일 때만 업데이트
+          ball.cxBase.value = ball.x;
+          ball.cyBase.value = ball.y;
+        }
       }
 
       animRef.current = requestAnimationFrame(step);
