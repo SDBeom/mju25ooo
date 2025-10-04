@@ -1,20 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { WORKS_CONTENT, COLORS } from '../../shared/constants';
 import { Container, Typography, Button } from '../DesignSystem';
 import './Works.css';
 
 const Works = () => {
-  const navigate = useNavigate();
 
   const handleProjectClick = () => {
     // 디자이너 페이지로 이동하여 더 많은 프로젝트 확인
-    navigate('/designer');
+    window.history.pushState({}, '', '/designer');
+    window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
   const handleViewAllClick = () => {
     // 디자이너 페이지로 이동
-    navigate('/designer');
+    window.history.pushState({}, '', '/designer');
+    window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
   return (

@@ -1,8 +1,9 @@
 /* Works Section Styles */
 .works {
-  padding: 6rem 0;
+  padding: 6rem 0 4rem 0; /* 하단 패딩 감소 */
   background: #2A2A2A;
   position: relative;
+  min-height: 100vh;
 }
 
 .works::before {

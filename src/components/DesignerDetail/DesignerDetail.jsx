@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import './Designer.css';
+import './DesignerDetail.css';
 
 // 디자이너 데이터 (가나다순으로 정렬)
 const DESIGNERS = [
@@ -223,152 +223,117 @@ const DESIGNERS = [
   }
 ].sort((a, b) => a.name.localeCompare(b.name, 'ko', { sensitivity: 'base' }));
 
-const Designer = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredDesigners, setFilteredDesigners] = useState(DESIGNERS);
+const DesignerDetail = () => {
+  // URL에서 디자이너 이름 추출
+  const encodedName = window.location.pathname.split('/')[2];
+  const designerName = decodeURIComponent(encodedName);
+  console.log('DesignerDetail - encodedName:', encodedName); // 디버깅용
+  console.log('DesignerDetail - designerName:', designerName); // 디버깅용
+  const designer = DESIGNERS.find(d => d.name === designerName);
+  console.log('DesignerDetail - designer:', designer); // 디버깅용
 
   const handleContactClick = (email) => {
     window.open(`mailto:${email}`, '_blank');
   };
 
-  const handleBackToMain = () => {
-    window.history.pushState({}, '', '/');
+  const handleBackToDesigners = () => {
+    window.history.pushState({}, '', '/designer');
     window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
-  const handleDesignerClick = (designer, e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // 새 페이지로 디자이너 상세 정보 표시 (이름 기반)
-    const encodedName = encodeURIComponent(designer.name);
-    window.history.pushState({}, '', `/designer/${encodedName}`);
-    window.dispatchEvent(new PopStateEvent('popstate'));
-  };
-
-  // 검색 기능
-  const handleSearchChange = (e) => {
-    const term = e.target.value;
-    setSearchTerm(term);
-    
-    if (term.trim() === '') {
-      setFilteredDesigners(DESIGNERS);
-    } else {
-      const filtered = DESIGNERS.filter(designer => 
-        designer.name.toLowerCase().includes(term.toLowerCase()) ||
-        designer.role.toLowerCase().includes(term.toLowerCase()) ||
-        designer.skills.some(skill => skill.toLowerCase().includes(term.toLowerCase()))
-      );
-      setFilteredDesigners(filtered);
-    }
-  };
-
-  const clearSearch = () => {
-    setSearchTerm('');
-    setFilteredDesigners(DESIGNERS);
-  };
+  if (!designer) {
+    return (
+      <>
+        <Header />
+        <div className="designer-detail-page">
+          <div className="error-container">
+            <h1>디자이너를 찾을 수 없습니다</h1>
+            <p>요청하신 디자이너 정보가 존재하지 않습니다.</p>
+            <button onClick={handleBackToDesigners} className="back-button">
+              디자이너 목록으로 돌아가기
+            </button>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
       <Header />
-      <div className="designer-page">
-        <div className="back-to-main">
-          <button onClick={handleBackToMain} className="back-button">
+      <div className="designer-detail-page">
+        <div className="back-to-designers">
+          <button onClick={handleBackToDesigners} className="back-button">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span>메인으로 돌아가기</span>
+            <span>디자이너 목록으로 돌아가기</span>
           </button>
         </div>
-        <div className="designer-container">
-          {/* 페이지 헤더 */}
-          <section className="page-header">
-            <h1 className="page-title">디자이너 소개</h1>
-            <p className="page-subtitle">명지대학교 미디어커뮤니케이션디자인전공 졸업생들</p>
-            <div className="designer-count">
-              총 <span className="count-number">{filteredDesigners.length}</span>명의 디자이너
-              {searchTerm && (
-                <span className="search-result"> (검색 결과)</span>
-              )}
-            </div>
-          </section>
-
-          {/* 검색 섹션 */}
-          <section className="search-section">
-            <div className="search-container">
-              <div className="search-input-wrapper">
-                <svg className="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
-                  <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2"/>
-                </svg>
-                <input
-                  type="text"
-                  placeholder="디자이너 이름, 역할, 스킬로 검색하세요..."
-                  value={searchTerm}
-                  onChange={handleSearchChange}
-                  className="search-input"
-                />
-                {searchTerm && (
-                  <button onClick={clearSearch} className="clear-button">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
-                )}
+        
+        <div className="designer-detail-container">
+          {/* 프로필 헤더 */}
+          <section className="profile-header">
+            <div className="profile-avatar">
+              <div className="avatar-placeholder">
+                <span className="avatar-name">{designer.name}</span>
               </div>
             </div>
+            <div className="profile-info">
+              <h1 className="profile-name">{designer.name}</h1>
+              <p className="profile-role">{designer.role}</p>
+              <p className="profile-description">{designer.description}</p>
+            </div>
           </section>
 
-          {/* 디자이너 그리드 */}
-          <section className="designers-grid">
-            {filteredDesigners.length > 0 ? (
-              filteredDesigners.map((designer) => (
-              <div 
-                key={designer.id} 
-                className="designer-card"
-                onClick={(e) => handleDesignerClick(designer, e)}
+          {/* 스킬 섹션 */}
+          <section className="skills-section">
+            <h2>주요 스킬</h2>
+            <div className="skills-grid">
+              {designer.skills.map((skill, index) => (
+                <div key={index} className="skill-card">
+                  <span className="skill-name">{skill}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 프로젝트 섹션 */}
+          <section className="projects-section">
+            <h2>대표 프로젝트</h2>
+            <div className="projects-grid">
+              {designer.projects.map((project, index) => (
+                <div key={index} className="project-card">
+                  <h3 className="project-title">프로젝트 {index + 1}</h3>
+                  <p className="project-description">{project}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 연락처 섹션 */}
+          <section className="contact-section">
+            <h2>연락처</h2>
+            <div className="contact-content">
+              <div className="contact-info">
+                <div className="email-info">
+                  <h3>이메일</h3>
+                  <p className="email-address">{designer.email}</p>
+                </div>
+              </div>
+              <button 
+                className="contact-button"
+                onClick={() => handleContactClick(designer.email)}
               >
-                <div className="designer-avatar">
-                  <div className="avatar-placeholder">
-                    <span className="avatar-name">{designer.name}</span>
-                  </div>
-                </div>
-                <div className="designer-info">
-                  <h3 className="designer-name">{designer.name}</h3>
-                  <p className="designer-role">{designer.role}</p>
-                  <p className="designer-description">{designer.description}</p>
-                </div>
-                <div className="designer-actions">
-                  <button className="contact-btn" onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    handleContactClick(designer.email);
-                  }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
-                      <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
-                    </svg>
-                    Contact
-                  </button>
-                </div>
-              </div>
-            ))
-            ) : (
-              <div className="no-results">
-                <div className="no-results-content">
-                  <svg className="no-results-icon" width="64" height="64" viewBox="0 0 24 24" fill="none">
-                    <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
-                    <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2"/>
-                  </svg>
-                  <h3>검색 결과가 없습니다</h3>
-                  <p>다른 키워드로 검색해보세요</p>
-                  <button onClick={clearSearch} className="reset-search-btn">
-                    검색 초기화
-                  </button>
-                </div>
-              </div>
-            )}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
+                  <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+                이메일로 연락하기
+              </button>
+            </div>
           </section>
-
         </div>
       </div>
       <Footer />
@@ -376,4 +341,4 @@ const Designer = () => {
   );
 };
 
-export default Designer;
+export default DesignerDetail;

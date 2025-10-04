@@ -6,6 +6,9 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import MainContent from './components/MainContent/MainContent';
+import Designer from './components/Designer/Designer';
+import DesignerDetail from './components/DesignerDetail/DesignerDetail';
+import Works from './components/Works/Works';
 
 const _resolveComingSoonState = () => {
   const preview = import.meta.env.VITE_PREVIEW_MODE;
@@ -17,16 +20,70 @@ const _resolveComingSoonState = () => {
     return envFlag.toLowerCase() === 'true';
   }
 
-  // 커밍순 페이지 비활성화 - 메인 화면 표시
-  return false;
+  // 커밍순 페이지 활성화 - 모든 링크에서 표시
+  return true;
 };
 
 function App() {
   const showComingSoon = _resolveComingSoonState();
+  const [currentPage, setCurrentPage] = useState('main');
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  // URL 기반 페이지 라우팅
+  useEffect(() => {
+    const updatePageFromUrl = () => {
+      const path = window.location.pathname;
+      console.log('Current path:', path); // 디버깅용
+      
+      if (path.startsWith('/designer/')) {
+        console.log('Setting page to designerDetail'); // 디버깅용
+        setCurrentPage('designerDetail');
+      } else {
+        switch (path) {
+          case '/designer':
+            console.log('Setting page to designer'); // 디버깅용
+            setCurrentPage('designer');
+            break;
+          case '/works':
+            console.log('Setting page to works'); // 디버깅용
+            setCurrentPage('works');
+            break;
+          case '/':
+          default:
+            console.log('Setting page to main'); // 디버깅용
+            setCurrentPage('main');
+            break;
+        }
+      }
+    };
+
+    // 초기 페이지 설정
+    updatePageFromUrl();
+
+    // 브라우저 뒤로가기/앞으로가기 처리
+    const handlePopState = () => {
+      updatePageFromUrl();
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
+
+  // 페이지 변경 시 URL 업데이트
+  const navigateToPage = (page, id = null) => {
+    setCurrentPage(page);
+    if (page === 'designerDetail' && id) {
+      window.history.pushState({}, '', `/designer/${id}`);
+    } else {
+      window.history.pushState({}, '', `/${page === 'main' ? '' : page}`);
+    }
+  };
 
   // 화면 크기 기반으로 드래그 범위 설정
   const getScreenBounds = () => {
@@ -64,6 +121,11 @@ function App() {
   }, []);
 
   const handleMouseDown = (e) => {
+    // 메인 페이지가 아닐 때는 드래그 비활성화
+    if (currentPage !== 'main') {
+      return;
+    }
+
     // 헤더나 푸터 영역 클릭은 무시
     if (e.target.closest('.header') || e.target.closest('.footer')) {
       return;
@@ -71,6 +133,12 @@ function App() {
     
     // 링크나 버튼 클릭은 무시
     if (e.target.closest('a') || e.target.closest('button') || e.target.closest('nav')) {
+      return;
+    }
+
+    // 스크롤 이벤트를 위한 예외 처리
+    // 마우스 휠이나 스크롤바 영역에서 드래그 시작 방지
+    if (e.target.closest('.position-indicator') || e.target.closest('.position-map')) {
       return;
     }
     
@@ -120,6 +188,11 @@ function App() {
   }, [isDragging, position, dragOffset, normalizePosition]);
 
   const handleTouchStart = (e) => {
+    // 메인 페이지가 아닐 때는 드래그 비활성화
+    if (currentPage !== 'main') {
+      return;
+    }
+
     // 헤더나 푸터 영역 터치는 무시
     if (e.target.closest('.header') || e.target.closest('.footer')) {
       return;
@@ -127,6 +200,12 @@ function App() {
 
     // 링크나 버튼 터치는 무시
     if (e.target.closest('a') || e.target.closest('button') || e.target.closest('nav')) {
+      return;
+    }
+
+    // 스크롤 이벤트를 위한 예외 처리
+    // 위치 표시기 영역에서 터치 드래그 시작 방지
+    if (e.target.closest('.position-indicator') || e.target.closest('.position-map')) {
       return;
     }
 
@@ -190,12 +269,30 @@ function App() {
     }
   }, [isDragging, position, dragOffset, normalizePosition]);
 
+  // 스크롤 이벤트 핸들러
+  const handleWheel = useCallback((e) => {
+    // 드래그 중이어도 스크롤 허용
+    if (isDragging) {
+      // 드래그를 유지하면서 스크롤 허용
+      return;
+    }
+  }, [isDragging]);
+
+  const handleScroll = useCallback((e) => {
+    // 스크롤 이벤트 허용
+    return;
+  }, []);
+
   useEffect(() => {
     if (isDragging) {
-      document.addEventListener('mousemove', handleMouseMove);
-      document.addEventListener('mouseup', handleMouseUp);
-      document.addEventListener('mouseleave', handleMouseUp); // 마우스가 창을 벗어날 때
-      document.addEventListener('contextmenu', forceStopDragging); // 우클릭 시
+      document.addEventListener('mousemove', handleMouseMove, { passive: false });
+      document.addEventListener('mouseup', handleMouseUp, { passive: true });
+      document.addEventListener('mouseleave', handleMouseUp, { passive: true });
+      document.addEventListener('contextmenu', forceStopDragging, { passive: true });
+      
+      // 스크롤 이벤트 허용
+      document.addEventListener('wheel', handleWheel, { passive: false });
+      document.addEventListener('scroll', handleScroll, { passive: true });
     }
 
     return () => {
@@ -203,6 +300,8 @@ function App() {
       document.removeEventListener('mouseup', handleMouseUp);
       document.removeEventListener('mouseleave', handleMouseUp);
       document.removeEventListener('contextmenu', forceStopDragging);
+      document.removeEventListener('wheel', handleWheel);
+      document.removeEventListener('scroll', handleScroll);
     };
   }, [isDragging, handleMouseMove, handleMouseUp, forceStopDragging]);
 
@@ -240,6 +339,36 @@ function App() {
     );
   }
 
+  // 디자이너 페이지 표시
+  if (currentPage === 'designer') {
+    return (
+      <ErrorBoundary>
+        <Designer />
+      </ErrorBoundary>
+    );
+  }
+
+  // 디자이너 상세 페이지 표시
+  if (currentPage === 'designerDetail') {
+    console.log('Rendering DesignerDetail component'); // 디버깅용
+    return (
+      <ErrorBoundary>
+        <DesignerDetail />
+      </ErrorBoundary>
+    );
+  }
+
+  // 작품 페이지 표시
+  if (currentPage === 'works') {
+    return (
+      <ErrorBoundary>
+        <Works />
+      </ErrorBoundary>
+    );
+  }
+
+  // 메인 페이지 표시
+  console.log('Rendering MainContent component, currentPage:', currentPage); // 디버깅용
   return (
     <ErrorBoundary>
       <div 
@@ -253,7 +382,7 @@ function App() {
         }}
       >
         <Header />
-        <MainContent position={normalizedCurrent} isDragging={isDragging} />
+        <MainContent position={normalizedCurrent} navigateToPage={navigateToPage} />
         <Footer />
         
         {/* 위치 표시기 */}

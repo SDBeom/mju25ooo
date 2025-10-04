@@ -1,10 +1,6 @@
 /* Footer Component Styles */
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  position: relative;
   background: rgba(42, 42, 42, 0.95);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
