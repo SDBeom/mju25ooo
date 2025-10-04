@@ -1,7 +1,7 @@
 import React from 'react';
 import './MainContent.css';
 
-const MainContent = ({ position, navigateToPage }) => {
+const MainContent = ({ position }) => {
   return (
     <main 
       className="main-content"
