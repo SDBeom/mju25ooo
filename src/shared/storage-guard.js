@@ -41,7 +41,10 @@ const isExtensionContext = () => {
       window.location.href.includes('extension://') ||
       window.location.href.includes('moz-extension://') ||
       (typeof window !== 'undefined' && window.chrome && window.chrome.runtime) ||
-      typeof __WEBPACK_EXTERNAL_MODULE__chrome_runtime__ !== 'undefined'
+      typeof __WEBPACK_EXTERNAL_MODULE__chrome_runtime__ !== 'undefined' ||
+      // content.js 파일에서 실행되는 경우 감지
+      (typeof window !== 'undefined' && window.location && 
+       window.location.href.includes('content.js'))
     );
   } catch (e) {
     return false;
@@ -184,19 +187,27 @@ const setupCookieGuard = () => {
 const setupGlobalErrorHandler = () => {
   // 저장소 접근 오류를 전역적으로 캐치
   window.addEventListener('error', (event) => {
-    if (event.message && event.message.includes('storage is not allowed')) {
+    // 확장 프로그램 관련 오류 무시
+    if (event.message && (
+        event.message.includes('storage is not allowed') ||
+        event.message.includes('extension port') ||
+        event.message.includes('message channel is closed') ||
+        event.message.includes('back/forward cache')
+    )) {
       event.preventDefault();
-      console.warn('Storage access blocked:', event.message);
       return false;
     }
   });
 
   // Promise rejection 오류 캐치
   window.addEventListener('unhandledrejection', (event) => {
-    if (event.reason && event.reason.message && 
-        event.reason.message.includes('storage is not allowed')) {
+    if (event.reason && event.reason.message && (
+        event.reason.message.includes('storage is not allowed') ||
+        event.reason.message.includes('extension port') ||
+        event.reason.message.includes('message channel is closed') ||
+        event.reason.message.includes('back/forward cache')
+    )) {
       event.preventDefault();
-      console.warn('Storage access blocked in promise:', event.reason.message);
       return false;
     }
   });

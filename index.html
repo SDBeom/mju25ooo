@@ -100,8 +100,7 @@
     </style>
     
     <!-- 프리로드 중요한 리소스 -->
-    <link rel="preload" href="/src/assets/Signature_logo.svg" as="image" type="image/svg+xml" />
-    <link rel="preload" href="/src/assets/Symbol.svg" as="image" type="image/svg+xml" />
+    <!-- SVG 리소스는 실제 사용되는 곳에서만 preload (GooeyBackgroundSVG에서 로드됨) -->
     
     <!-- DNS 프리페치 -->
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
