@@ -63,13 +63,13 @@ const ComingSoon = () => {
             </div>
             
             <h1 className="coming-soon-title">
-              졸업전시 2025
+              Coming Soon!
             </h1>
             
             <p className="coming-soon-description">
-              영상, 애니메이션학과<br />
-              졸업작품이 곧 공개됩니다<br />
-              Coming Soon!
+              점점점...점점.. 점들이<br />
+              모이는 중<br />
+              졸업작품이 곧 공개됩니다!
             </p>
           </div>
           
