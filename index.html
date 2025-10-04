@@ -3,13 +3,19 @@
   <head> <!-- 문서의 메타데이터 영역 -->
     <meta charset="UTF-8" /> <!-- 문자 인코딩을 UTF-8로 설정 (한글 지원) -->
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PXC3GQ2T');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager - 지연 로딩 -->
+    <script>
+    // GTM을 페이지 로드 완료 후 로딩
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PXC3GQ2T');
+      }, 2000);
+    });
+    </script>
     
     <link rel="icon" type="image/svg+xml" href="/Symbol.svg" /> <!-- 웹사이트 파비콘 설정 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 반응형 웹을 위한 뷰포트 설정 -->
@@ -66,9 +72,37 @@
     <!-- PWA 매니페스트 -->
     <link rel="manifest" href="/manifest.json" />
     
-    <!-- Pretendard 폰트 - 최적화된 로딩 -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" /></noscript>
+    <!-- 시스템 폰트 우선 사용 -->
+    <style>
+    /* Critical CSS 인라인 */
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .coming-soon-title { font-weight: 700; }
+    .coming-soon-description { font-weight: 400; }
+    </style>
+    
+    <!-- Pretendard 폰트 - 지연 로딩 -->
+    <script>
+    // 폰트를 페이지 로드 완료 후 로딩
+    window.addEventListener('load', function() {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css';
+      document.head.appendChild(link);
+    });
+    </script>
+    
+    <!-- Critical CSS 인라인 -->
+    <style>
+    /* 최소한의 Critical CSS */
+    .coming-soon { min-height: 100vh; background: #2A2A2A; }
+    .coming-soon-container { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .main-content { display: flex; align-items: center; gap: 2rem; max-width: 1200px; }
+    .left-section { flex: 1; }
+    .right-section { flex: 1; }
+    .coming-soon-title { font-size: 2.5rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1rem; }
+    .coming-soon-description { font-size: 1.2rem; color: #CCCCCC; line-height: 1.6; }
+    .signature-logo { max-width: 200px; height: auto; }
+    </style>
     
     <!-- 프리로드 중요한 리소스 -->
     <link rel="preload" href="/src/assets/Signature_logo.svg" as="image" type="image/svg+xml" />
