@@ -106,11 +106,11 @@ const ComingSoon = () => {
             </div>
           </div>
         </div>
-        
-        <footer className="coming-soon-footer">
-          <p>© 2025 명지대학교 미디어커뮤니케이션디자인전공. All rights reserved.</p>
-        </footer>
       </div>
+      
+      <footer className="coming-soon-footer">
+        <p>© 2025 명지대학교 미디어커뮤니케이션디자인전공. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
