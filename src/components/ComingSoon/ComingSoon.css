@@ -335,7 +335,7 @@
 @media (max-width: 768px) {
   .coming-soon-container {
     width: 100vw;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
   }
   
   .main-content {
@@ -345,6 +345,8 @@
   
   .left-section {
     text-align: center;
+    padding-top: var(--spacing-2xl);
+    margin-top: var(--spacing-lg);
   }
   
   .coming-soon-title {
