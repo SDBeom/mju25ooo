@@ -9,6 +9,9 @@
   overflow: hidden;
   margin: 0;
   padding: 0;
+  /* 푸터 공간 확보 */
+  padding-bottom: 80px;
+  box-sizing: border-box;
 }
 
 .coming-soon-container {
