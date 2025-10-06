@@ -12,13 +12,10 @@
   /* 푸터 공간 확보 */
   padding-bottom: 120px;
   box-sizing: border-box;
-  /* 모바일에서 pull-to-refresh 비활성화 */
-  overscroll-behavior: none;
-  overscroll-behavior-y: none;
-  /* iOS Safari에서 bounce 효과 비활성화 */
+  /* 모바일에서 pull-to-refresh만 방지, 스크롤은 허용 */
+  overscroll-behavior-y: contain;
+  /* iOS Safari에서 bounce 효과는 유지하되 pull-to-refresh만 방지 */
   -webkit-overflow-scrolling: touch;
-  /* 터치 액션 제한 */
-  touch-action: pan-x pan-y;
 }
 
 .coming-soon-container {
