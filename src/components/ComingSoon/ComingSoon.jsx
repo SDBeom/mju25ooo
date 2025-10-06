@@ -41,6 +41,54 @@ const ComingSoon = () => {
     return () => clearInterval(timer);
   }, [updateTimer]);
 
+  // 모바일에서 pull-to-refresh 방지
+  useEffect(() => {
+    const preventPullToRefresh = (e) => {
+      // 스크롤이 맨 위에 있을 때만 pull-to-refresh 방지
+      if (window.scrollY === 0) {
+        e.preventDefault();
+      }
+    };
+
+    // 터치 이벤트로 pull-to-refresh 방지
+    const preventTouchStart = (e) => {
+      if (e.touches.length !== 1) return;
+      
+      const touch = e.touches[0];
+      const startY = touch.clientY;
+      
+      const preventTouchMove = (e) => {
+        if (e.touches.length !== 1) return;
+        
+        const touch = e.touches[0];
+        const currentY = touch.clientY;
+        const deltaY = currentY - startY;
+        
+        // 위로 스크롤하려고 할 때 (pull-to-refresh) 방지
+        if (deltaY > 0 && window.scrollY === 0) {
+          e.preventDefault();
+        }
+      };
+      
+      const preventTouchEnd = () => {
+        document.removeEventListener('touchmove', preventTouchMove, { passive: false });
+        document.removeEventListener('touchend', preventTouchEnd);
+      };
+      
+      document.addEventListener('touchmove', preventTouchMove, { passive: false });
+      document.addEventListener('touchend', preventTouchEnd);
+    };
+
+    // 이벤트 리스너 추가
+    document.addEventListener('touchstart', preventTouchStart, { passive: true });
+    document.addEventListener('touchmove', preventPullToRefresh, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchstart', preventTouchStart);
+      document.removeEventListener('touchmove', preventPullToRefresh);
+    };
+  }, []);
+
   const handleImageError = useCallback((e) => {
     e.target.style.display = 'none';
   }, []);

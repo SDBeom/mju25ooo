@@ -25,7 +25,6 @@ const _resolveComingSoonState = () => {
 };
 
 function App() {
-  const showComingSoon = _resolveComingSoonState();
   const [currentPage, setCurrentPage] = useState('main');
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -42,7 +41,7 @@ function App() {
           window.history.replaceState({}, '', storedPath);
         }
       }
-    } catch (e) {
+    } catch {
       // ignore storage errors
     }
 
@@ -288,7 +287,7 @@ function App() {
   }, [isDragging, position, dragOffset, normalizePosition]);
 
   // 스크롤 이벤트 핸들러
-  const handleWheel = useCallback((e) => {
+  const handleWheel = useCallback(() => {
     // 드래그 중이어도 스크롤 허용
     if (isDragging) {
       // 드래그를 유지하면서 스크롤 허용
@@ -296,7 +295,7 @@ function App() {
     }
   }, [isDragging]);
 
-  const handleScroll = useCallback((e) => {
+  const handleScroll = useCallback(() => {
     // 스크롤 이벤트 허용
     return;
   }, []);
@@ -322,6 +321,54 @@ function App() {
       document.removeEventListener('scroll', handleScroll);
     };
   }, [isDragging, handleMouseMove, handleMouseUp, forceStopDragging]);
+
+  // 모바일에서 pull-to-refresh 방지
+  useEffect(() => {
+    const preventPullToRefresh = (e) => {
+      // 스크롤이 맨 위에 있을 때만 pull-to-refresh 방지
+      if (window.scrollY === 0) {
+        e.preventDefault();
+      }
+    };
+
+    // 터치 이벤트로 pull-to-refresh 방지
+    const preventTouchStart = (e) => {
+      if (e.touches.length !== 1) return;
+      
+      const touch = e.touches[0];
+      const startY = touch.clientY;
+      
+      const preventTouchMove = (e) => {
+        if (e.touches.length !== 1) return;
+        
+        const touch = e.touches[0];
+        const currentY = touch.clientY;
+        const deltaY = currentY - startY;
+        
+        // 위로 스크롤하려고 할 때 (pull-to-refresh) 방지
+        if (deltaY > 0 && window.scrollY === 0) {
+          e.preventDefault();
+        }
+      };
+      
+      const preventTouchEnd = () => {
+        document.removeEventListener('touchmove', preventTouchMove, { passive: false });
+        document.removeEventListener('touchend', preventTouchEnd);
+      };
+      
+      document.addEventListener('touchmove', preventTouchMove, { passive: false });
+      document.addEventListener('touchend', preventTouchEnd);
+    };
+
+    // 이벤트 리스너 추가
+    document.addEventListener('touchstart', preventTouchStart, { passive: true });
+    document.addEventListener('touchmove', preventPullToRefresh, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchstart', preventTouchStart);
+      document.removeEventListener('touchmove', preventPullToRefresh);
+    };
+  }, []);
 
   // ESC 키로 드래그 강제 해제
   useEffect(() => {

@@ -7,6 +7,13 @@
 
 html {
   scroll-behavior: smooth;
+  /* 모바일에서 pull-to-refresh 방지 */
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  /* iOS Safari에서 bounce 효과 비활성화 */
+  -webkit-overflow-scrolling: touch;
+  /* 터치 액션 제한 */
+  touch-action: pan-x pan-y;
 }
 
 body {
@@ -18,6 +25,18 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* 모바일에서 pull-to-refresh 방지 */
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  /* iOS Safari에서 bounce 효과 비활성화 */
+  -webkit-overflow-scrolling: touch;
+  /* 터치 액션 제한 */
+  touch-action: pan-x pan-y;
+  /* 모바일에서 스크롤 바운스 방지 */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 #root {
@@ -158,9 +177,13 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  /* 스크롤 허용을 위한 설정 */
+  /* 모바일에서 pull-to-refresh 비활성화 */
   touch-action: pan-x pan-y;
-  overscroll-behavior: contain;
+  overscroll-behavior: none;
+  /* iOS Safari에서 bounce 효과 비활성화 */
+  -webkit-overflow-scrolling: touch;
+  /* 모바일에서 새로고침 방지 */
+  overscroll-behavior-y: none;
 }
 
 /* 메인 비주얼 드래그 스타일은 MainContent.css로 이동됨 */
