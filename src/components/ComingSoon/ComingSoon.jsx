@@ -56,7 +56,7 @@ const ComingSoon = () => {
             <div className="logo-section">
               <img 
                 src={signatureLogo} 
-                alt="2025 명지대학교 졸업전시 영상 애니메이션 다지안 전공 로고" 
+                alt="2025 명지대학교 졸업전시 영상 애니메이션 디자인 전공 로고" 
                 className="signature-logo"
                 onError={handleImageError}
               />
@@ -95,9 +95,9 @@ const ComingSoon = () => {
             
             <div className="social-links">
               {[
-                { href: 'https://www.instagram.com/mju_mcd_2025/', src: instagramLogo, alt: '2025 명지대학교 졸업전시 인스타그램 - 영상 애니메이션 다지안 전공' },
-                { href: 'https://behance.net', src: behanceLogo, alt: '2025 명지대학교 졸업전시 비핸스 - 영상 애니메이션 다지안 전공 포트폴리오' },
-                { href: 'https://youtube.com', src: youtubeLogo, alt: '2025 명지대학교 졸업전시 유튜브 - 영상 애니메이션 다지안 전공 졸업작품 소개 영상' }
+                { href: 'https://www.instagram.com/mju_mcd_2025/', src: instagramLogo, alt: '2025 명지대학교 졸업전시 인스타그램 - 영상 애니메이션 디자인 전공' },
+                { href: 'https://behance.net', src: behanceLogo, alt: '2025 명지대학교 졸업전시 비핸스 - 영상 애니메이션 디자인 전공 포트폴리오' },
+                { href: 'https://youtube.com', src: youtubeLogo, alt: '2025 명지대학교 졸업전시 유튜브 - 영상 애니메이션 디자인 전공 졸업작품 소개 영상' }
               ].map(({ href, src, alt }) => (
                 <a key={alt} href={href} target="_blank" rel="noopener noreferrer" className="social-link" aria-label={`${alt}로 이동`}>
                   <img src={src} alt={alt} className="social-logo" />
