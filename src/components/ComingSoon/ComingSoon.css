@@ -1,5 +1,6 @@
 .coming-soon {
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100vw;
   background: linear-gradient(135deg, var(--color-background) 0%, #1a1a1a 100%);
   display: flex;
@@ -12,6 +13,7 @@
   /* 푸터 공간 확보 */
   padding-bottom: 120px;
   box-sizing: border-box;
+  --mobile-section-gap: 60px;
   /* 모바일에서 pull-to-refresh만 방지, 스크롤은 허용 */
   overscroll-behavior-y: contain;
   /* iOS Safari에서 bounce 효과는 유지하되 pull-to-refresh만 방지 */
@@ -334,55 +336,71 @@
 /* Mobile (768px and below) */
 @media (max-width: 768px) {
   .coming-soon {
-    /* 모바일에서 푸터 공간을 더 확보 */
-    padding-bottom: 160px;
+    padding-bottom: calc(var(--mobile-section-gap) + var(--spacing-2xl));
   }
   
   .coming-soon-container {
-    width: 100vw;
-    padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
-    /* 푸터와 겹치지 않도록 하단 여백 추가 */
-    margin-bottom: 80px;
+    width: 100%;
+    min-height: auto;
+    padding: clamp(72px, 12vh, 96px) var(--spacing-lg) calc(var(--spacing-lg) + var(--mobile-section-gap));
+    margin-bottom: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: var(--mobile-section-gap);
   }
   
   .main-content {
     flex-direction: column;
-    gap: var(--spacing-xl);
-    /* 모바일에서 요소들이 겹치지 않도록 조정 */
-    min-height: calc(100vh - 200px);
+    align-items: stretch;
+    gap: var(--mobile-section-gap);
+    min-height: auto;
+    padding-bottom: var(--mobile-section-gap);
+  }
+  
+  .logo-section {
+    margin-bottom: var(--mobile-section-gap);
   }
   
   .left-section {
     text-align: center;
-    padding-top: var(--spacing-2xl);
-    margin-top: var(--spacing-lg);
-    /* 하단 여백 추가 */
-    margin-bottom: var(--spacing-lg);
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding-top: 0;
+    margin: 0;
   }
   
   .coming-soon-title {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .coming-soon-description {
+    margin-bottom: 0;
   }
   
   .right-section {
-    gap: var(--spacing-xl);
-    /* 하단 여백 추가하여 푸터와 겹치지 않도록 */
-    margin-bottom: var(--spacing-2xl);
+    width: 100%;
+    align-items: center;
+    gap: calc(var(--mobile-section-gap) * 0.6);
+    margin-bottom: 0;
+  }
+  
+  .countdown-timer {
+    width: 100%;
   }
   
   .countdown-container {
-    padding: var(--spacing-lg) var(--spacing-sm);
+    padding: var(--spacing-lg);
     flex-wrap: nowrap;
     gap: var(--spacing-xs);
     overflow-x: auto;
     justify-content: center;
-    max-width: calc(100vw - 3rem);
+    width: min(100%, 360px);
     margin: 0 auto;
     box-sizing: border-box;
   }
   
   .countdown-item {
-    min-width: 45px;
+    min-width: 50px;
     padding: 0;
     flex-shrink: 0;
   }
@@ -401,14 +419,15 @@
   }
   
   .social-links {
-    gap: var(--spacing-lg);
-    /* 소셜 링크 하단 여백 추가 */
-    margin-bottom: var(--spacing-lg);
+    gap: calc(var(--mobile-section-gap) * 0.4);
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .social-link {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
   }
   
   .social-logo {
@@ -416,19 +435,12 @@
     height: 24px;
   }
   
-  .signature-logo { 
-    animation: none; 
+  .signature-logo {
+    animation: none;
   }
   
   .coming-soon-footer {
-    /* 모바일에서 푸터 위치 조정 */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    /* 모바일에서 푸터 높이 조정 */
+    margin-top: var(--mobile-section-gap);
     padding: var(--spacing-md) var(--spacing-lg);
   }
 }
-
