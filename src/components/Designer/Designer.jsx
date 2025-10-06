@@ -283,7 +283,7 @@ const Designer = () => {
           {/* 페이지 헤더 */}
           <section className="page-header">
             <h1 className="page-title">디자이너 소개</h1>
-            <p className="page-subtitle">2025 명지대학교 졸업전시 영상 애니메이션 디자인 전공 졸업생들</p>
+            <p className="page-subtitle">2025 명지대학교 졸업전시 영상 애니메이션 다지안 전공 졸업생들</p>
             <div className="designer-count">
               총 <span className="count-number">{filteredDesigners.length}</span>명의 디자이너
               {searchTerm && (

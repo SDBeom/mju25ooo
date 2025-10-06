@@ -15,7 +15,7 @@ const MainContent = ({ position }) => {
         <div className="hero-content">
           <h1 className="hero-title">
             <span className="title-main">졸업전시 2025</span>
-            <span className="title-sub">2025 명지대학교 졸업전시 영상 애니메이션 디자인 전공</span>
+            <span className="title-sub">2025 명지대학교 졸업전시 영상 애니메이션 다지안 전공</span>
           </h1>
           
           <div className="hero-description">
