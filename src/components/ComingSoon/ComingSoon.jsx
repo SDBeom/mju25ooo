@@ -41,46 +41,6 @@ const ComingSoon = () => {
     return () => clearInterval(timer);
   }, [updateTimer]);
 
-  // 모바일에서 pull-to-refresh만 방지 (스크롤은 허용)
-  useEffect(() => {
-    let startY = 0;
-    let isAtTop = false;
-
-    const handleTouchStart = (e) => {
-      if (e.touches.length !== 1) return;
-      
-      startY = e.touches[0].clientY;
-      isAtTop = window.scrollY === 0;
-    };
-
-    const handleTouchMove = (e) => {
-      if (e.touches.length !== 1 || !isAtTop) return;
-      
-      const currentY = e.touches[0].clientY;
-      const deltaY = currentY - startY;
-      
-      // 맨 위에서 아래로 스크롤하려고 할 때만 pull-to-refresh 방지
-      // 위로 스크롤은 허용
-      if (deltaY > 0 && isAtTop) {
-        e.preventDefault();
-      }
-    };
-
-    const handleTouchEnd = () => {
-      isAtTop = false;
-    };
-
-    // 이벤트 리스너 추가
-    document.addEventListener('touchstart', handleTouchStart, { passive: true });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
-    document.addEventListener('touchend', handleTouchEnd, { passive: true });
-
-    return () => {
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchmove', handleTouchMove);
-      document.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, []);
 
   const handleImageError = useCallback((e) => {
     e.target.style.display = 'none';
