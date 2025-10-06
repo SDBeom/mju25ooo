@@ -6,16 +6,12 @@
   flex-direction: column;
   position: relative;
   z-index: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   margin: 0;
   padding: 0;
   /* 푸터 공간 확보 */
   padding-bottom: 120px;
   box-sizing: border-box;
-  /* Pull-to-refresh 비활성화 */
-  overscroll-behavior: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 .coming-soon-container {
