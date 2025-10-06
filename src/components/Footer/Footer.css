@@ -1,4 +1,6 @@
-/* Footer Component Styles */
+/* Common Footer Styles - Shared across all footer components */
+
+/* Base footer styles */
 .footer {
   position: fixed;
   bottom: 0;
@@ -30,11 +32,91 @@
   min-height: 40px;
 }
 
+/* ComingSoon footer specific styles */
+  .coming-soon-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: none;
+    margin: 0;
+    flex-shrink: 0;
+    background: #ff7700;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    transform: translateY(100%);
+    transition: transform 0.27s ease-out;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-lg) 16px;
+    text-align: center;
+  }
+
+.coming-soon-footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Exhibition info styles */
+.exhibition-info {
+  text-align: center;
+}
+
+.exhibition-detail {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Logo styles */
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.footer-logo {
+  height: 40px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+}
+
+.mju-logo {
+  height: 45px;
+}
+
+.ooo-logo {
+  height: 35px;
+}
+
+/* Copyright styles */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.copyright-text {
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
 .footer-text {
   margin: 0;
 }
 
-/* Responsive design */
+/* Mobile responsive */
 @media (max-width: 768px) {
   .footer {
     padding: 1.5rem 0;
@@ -45,6 +127,68 @@
     gap: 0.5rem;
     text-align: center;
   }
+  
+  .coming-soon-footer {
+    position: relative; /* 일반적인 위치로 변경 */
+    width: 100%;
+    transform: translateY(0);
+    padding: var(--spacing-sm) var(--spacing-sm) 0; /* 하단 패딩 완전 제거 */
+    box-sizing: border-box; /* 패딩 포함 계산 */
+    height: auto; /* 자동 높이 */
+    margin: 0; /* 마진 제거 */
+    flex-shrink: 0; /* 축소 방지 */
+    order: 2; /* 푸터를 맨 아래로 배치 */
+  }
+  
+  .coming-soon-footer .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* 중앙 정렬로 변경 */
+    gap: var(--spacing-xs); /* 간격 최소화 */
+    padding: 0 0 var(--spacing-sm); /* 하단 패딩 추가 */
+    margin: 0; /* 마진 제거 */
+    height: auto; /* 자동 높이 */
+    min-height: auto; /* 최소 높이 제거 */
+  }
+  
+  .exhibition-info {
+    text-align: left;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .exhibition-detail {
+    font-size: 10px; /* 한 단계 더 작게 */
+    margin-bottom: 2px;
+  }
+  
+  .footer-logos {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+  
+  .footer-logo {
+    height: 16px; /* 더 작게 */
+  }
+  
+  .mju-logo {
+    height: 18px; /* 더 작게 */
+  }
+  
+  .ooo-logo {
+    height: 14px; /* 더 작게 */
+  }
+  
+  /* footer-bottom은 더 이상 사용하지 않음 - 저작권이 exhibition-info 안에 포함됨 */
+  
+  .copyright-text {
+    font-size: 10px; /* 한 단계 더 작게 */
+  }
 }
 
 @media (max-width: 480px) {
@@ -52,8 +196,3 @@
     padding: 1rem 0;
   }
 }
-
-
-
-
-
