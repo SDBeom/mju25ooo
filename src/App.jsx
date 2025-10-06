@@ -25,6 +25,7 @@ const _resolveComingSoonState = () => {
 };
 
 function App() {
+  const showComingSoon = _resolveComingSoonState();
   const [currentPage, setCurrentPage] = useState('main');
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -41,7 +42,7 @@ function App() {
           window.history.replaceState({}, '', storedPath);
         }
       }
-    } catch {
+    } catch (e) {
       // ignore storage errors
     }
 
@@ -286,6 +287,19 @@ function App() {
     }
   }, [isDragging, position, dragOffset, normalizePosition]);
 
+  // 스크롤 이벤트 핸들러
+  const handleWheel = useCallback((e) => {
+    // 드래그 중이어도 스크롤 허용
+    if (isDragging) {
+      // 드래그를 유지하면서 스크롤 허용
+      return;
+    }
+  }, [isDragging]);
+
+  const handleScroll = useCallback((e) => {
+    // 스크롤 이벤트 허용
+    return;
+  }, []);
 
   useEffect(() => {
     if (isDragging) {
@@ -293,6 +307,10 @@ function App() {
       document.addEventListener('mouseup', handleMouseUp, { passive: true });
       document.addEventListener('mouseleave', handleMouseUp, { passive: true });
       document.addEventListener('contextmenu', forceStopDragging, { passive: true });
+      
+      // 스크롤 이벤트 허용
+      document.addEventListener('wheel', handleWheel, { passive: false });
+      document.addEventListener('scroll', handleScroll, { passive: true });
     }
 
     return () => {
@@ -300,9 +318,10 @@ function App() {
       document.removeEventListener('mouseup', handleMouseUp);
       document.removeEventListener('mouseleave', handleMouseUp);
       document.removeEventListener('contextmenu', forceStopDragging);
+      document.removeEventListener('wheel', handleWheel);
+      document.removeEventListener('scroll', handleScroll);
     };
   }, [isDragging, handleMouseMove, handleMouseUp, forceStopDragging]);
-
 
   // ESC 키로 드래그 강제 해제
   useEffect(() => {

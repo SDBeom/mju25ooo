@@ -158,6 +158,9 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  /* 스크롤 허용을 위한 설정 */
+  touch-action: pan-x pan-y;
+  overscroll-behavior: contain;
 }
 
 /* 메인 비주얼 드래그 스타일은 MainContent.css로 이동됨 */

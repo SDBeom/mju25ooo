@@ -214,3 +214,32 @@ export const ANIMATIONS = {
     EASE_IN_OUT: 'cubic-bezier(0.4, 0, 0.2, 1)'
   }
 };
+
+// Exhibition information - Single source of truth
+export const EXHIBITION_INFO = {
+  TITLE: 'MJU MCD 졸업전시',
+  DATE: '2025.11.12 - 11.17',
+  TIME: '11:00 - 18:00',
+  VENUE: '인사동 마루아트센터 특별관',
+  ADDRESS: '35-4, INSADONG-GIL, JONGNO-GU',
+  COPYRIGHT: '© 2025 MJU MCD. All rights reserved.',
+  DESIGNED_BY: 'Designed with ❤️ by MCD Students'
+};
+
+// Footer configuration
+export const FOOTER_CONFIG = {
+  LOGO_SIZES: {
+    DESKTOP: {
+      MJU: '45px',
+      OOO: '35px'
+    },
+    MOBILE: {
+      MJU: '22px',
+      OOO: '18px'
+    }
+  },
+  TEXT_SIZES: {
+    DESKTOP: '0.9rem',
+    MOBILE: '0.8rem'
+  }
+};

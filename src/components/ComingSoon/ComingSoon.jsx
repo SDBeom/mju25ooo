@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './ComingSoon.css';
+import '../Footer/Footer.css';
 import signatureLogo from '../../assets/Signature_logo.svg';
 import instagramLogo from '../../assets/instagram.svg';
 import behanceLogo from '../../assets/behance.svg';
 import youtubeLogo from '../../assets/youtube.svg';
+import MJULogo from '../../assets/MJU_Signature_logo_Horizontal.svg';
+import OOOLOGO from '../../assets/ooo_Signture_logo_Horizontal.svg';
 import GooeyBackgroundSVG from './GooeyBackgroundSVG';
+import { EXHIBITION_INFO } from '../../shared/constants';
 
 const ComingSoon = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -41,8 +45,43 @@ const ComingSoon = () => {
     return () => clearInterval(timer);
   }, [updateTimer]);
 
+  // 휠 이벤트로 푸터가 서서히 올라오는 효과 (데스크톱/태블릿만)
+  useEffect(() => {
+    let wheelDelta = 0;
+    const maxDelta = 800; // 휠을 800만큼 돌리면 푸터가 완전히 올라옴
+    
+    const handleWheel = (e) => {
+      // 모바일에서는 휠 이벤트 비활성화
+      if (window.innerWidth <= 768) {
+        return;
+      }
+      
+      e.preventDefault(); // 기본 스크롤 방지
+      
+      const footer = document.querySelector('.coming-soon-footer');
+      if (footer) {
+        // 휠 델타값 누적
+        wheelDelta += e.deltaY;
+        wheelDelta = Math.max(0, Math.min(wheelDelta, maxDelta)); // 0과 maxDelta 사이로 제한
+        
+        // 휠 델타값에 따라 푸터의 translateY 값을 계산
+        const progress = wheelDelta / maxDelta;
+        const translateY = 100 - (progress * 100); // 100%에서 0%로 변화
+        
+        footer.style.transform = `translateY(${translateY}%)`;
+      }
+    };
+
+    // 휠 이벤트 리스너 추가
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
 
   const handleImageError = useCallback((e) => {
+    console.warn('Image failed to load:', e.target.src);
     e.target.style.display = 'none';
   }, []);
 
@@ -110,7 +149,34 @@ const ComingSoon = () => {
       </div>
       
       <footer className="coming-soon-footer">
-        <p>© 2025 MJU MCD. All rights reserved.</p>
+        <div className="footer-content">
+          {/* 전시 정보 및 저작권 */}
+          <div className="exhibition-info">
+            <div className="exhibition-detail">
+              {EXHIBITION_INFO.DATE} | {EXHIBITION_INFO.TIME}
+            </div>
+            <div className="exhibition-detail">
+              {EXHIBITION_INFO.ADDRESS}
+            </div>
+            <div className="exhibition-detail copyright-text">
+              {EXHIBITION_INFO.COPYRIGHT}
+            </div>
+          </div>
+
+          {/* 로고 섹션 */}
+          <div className="footer-logos">
+            <img 
+              src={MJULogo} 
+              alt="명지대학교 로고" 
+              className="footer-logo mju-logo"
+            />
+            <img 
+              src={OOOLOGO} 
+              alt="OOO 로고" 
+              className="footer-logo ooo-logo"
+            />
+          </div>
+        </div>
       </footer>
     </div>
   );
