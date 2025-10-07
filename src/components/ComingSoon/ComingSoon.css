@@ -27,6 +27,7 @@
   position: relative;
   overflow-y: auto;               /* Mobile: 세로 스크롤 허용 */
   overflow-x: hidden;             /* 가로 스크롤만 숨김 */
+  overscroll-behavior-y: contain; /* Mobile: pull-to-refresh 방지 */
 }
 
 /* ============================================
