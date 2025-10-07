@@ -25,8 +25,10 @@
   padding: 0;
   margin: 0;
   position: relative;
+  overflow-y: auto;               /* Mobile: 세로 스크롤 허용 */
   overflow-x: hidden;             /* 가로 스크롤만 숨김 */
-  overscroll-behavior-y: contain; /* Mobile: pull-to-refresh 방지 */
+  overscroll-behavior: contain;   /* Mobile: 스크롤 바운싱 방지 */
+  -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
 }
 
 /* ============================================
