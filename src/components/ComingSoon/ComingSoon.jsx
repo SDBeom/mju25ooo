@@ -12,6 +12,25 @@ const ComingSoon = () => {
   const footerRef = useRef(null);
   const containerRef = useRef(null);
   
+  // body/html 스크롤 비활성화 (ComingSoon 페이지일 때만)
+  useEffect(() => {
+    // body와 html의 overflow를 hidden으로 설정
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+    
+    return () => {
+      // 컴포넌트 언마운트 시 원래대로 복원
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, []);
+  
   // 모바일 pull-to-refresh 방지
   useEffect(() => {
     if (!isMobile) return;
