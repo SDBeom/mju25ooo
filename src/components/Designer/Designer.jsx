@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import './Designer.css';
@@ -224,6 +225,7 @@ const DESIGNERS = [
 ].sort((a, b) => a.name.localeCompare(b.name, 'ko', { sensitivity: 'base' }));
 
 const Designer = () => {
+  const { isMobile } = useBreakpointContext();
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredDesigners, setFilteredDesigners] = useState(DESIGNERS);
 
@@ -239,13 +241,11 @@ const Designer = () => {
   const handleDesignerClick = (designer, e) => {
     e.preventDefault();
     e.stopPropagation();
-    // 새 페이지로 디자이너 상세 정보 표시 (이름 기반)
     const encodedName = encodeURIComponent(designer.name);
     window.history.pushState({}, '', `/designer/${encodedName}`);
     window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
-  // 검색 기능
   const handleSearchChange = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
@@ -276,23 +276,23 @@ const Designer = () => {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span>메인으로 돌아가기</span>
+            <span>{isMobile ? '메인' : '메인으로 돌아가기'}</span>
           </button>
         </div>
         <div className="designer-container">
-          {/* 페이지 헤더 */}
           <section className="page-header">
             <h1 className="page-title">디자이너 소개</h1>
-            <p className="page-subtitle">2025 명지대학교 졸업전시 영상 애니메이션 다지안 전공 졸업생들</p>
+            <p className="page-subtitle">
+              {isMobile ? '2025 MJU MCD' : '2025 명지대학교 졸업전시 영상 애니메이션 디자인 전공 졸업생들'}
+            </p>
             <div className="designer-count">
-              총 <span className="count-number">{filteredDesigners.length}</span>명의 디자이너
-              {searchTerm && (
-                <span className="search-result"> (검색 결과)</span>
-              )}
+              {isMobile ? '' : '총 '}
+              <span className="count-number">{filteredDesigners.length}</span>
+              {isMobile ? '명' : '명의 디자이너'}
+              {searchTerm && <span className="search-result"> {isMobile ? '(검색)' : '(검색 결과)'}</span>}
             </div>
           </section>
 
-          {/* 검색 섹션 */}
           <section className="search-section">
             <div className="search-container">
               <div className="search-input-wrapper">
@@ -302,7 +302,7 @@ const Designer = () => {
                 </svg>
                 <input
                   type="text"
-                  placeholder="디자이너 이름, 역할, 스킬로 검색하세요..."
+                  placeholder={isMobile ? '검색...' : '디자이너 이름, 역할, 스킬로 검색하세요...'}
                   value={searchTerm}
                   onChange={handleSearchChange}
                   className="search-input"
@@ -318,7 +318,6 @@ const Designer = () => {
             </div>
           </section>
 
-          {/* 디자이너 그리드 */}
           <section className="designers-grid">
             {filteredDesigners.length > 0 ? (
               filteredDesigners.map((designer) => (
@@ -359,16 +358,15 @@ const Designer = () => {
                     <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
                     <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2"/>
                   </svg>
-                  <h3>검색 결과가 없습니다</h3>
+                  <h3>{isMobile ? '결과 없음' : '검색 결과가 없습니다'}</h3>
                   <p>다른 키워드로 검색해보세요</p>
                   <button onClick={clearSearch} className="reset-search-btn">
-                    검색 초기화
+                    {isMobile ? '초기화' : '검색 초기화'}
                   </button>
                 </div>
               </div>
             )}
           </section>
-
         </div>
       </div>
       <Footer />

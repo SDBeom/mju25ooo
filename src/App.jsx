@@ -1,6 +1,7 @@
 ﻿/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
+import { BreakpointProvider } from './contexts/BreakpointContext';
 import ComingSoon from './components/ComingSoon/ComingSoon';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import Header from './components/Header/Header';
@@ -348,87 +349,66 @@ function App() {
   const positionPercentX = ((normalizedCurrent.x - bounds.minX) / (bounds.maxX - bounds.minX)) * 100;
   const positionPercentY = ((normalizedCurrent.y - bounds.minY) / (bounds.maxY - bounds.minY)) * 100;
 
-  // 메인 페이지에서만 커밍순 페이지 표시
-  if (currentPage === 'main') {
-    return (
-      <ErrorBoundary>
-        <ComingSoon />
-      </ErrorBoundary>
-    );
-  }
-
-  // 디자이너 페이지 표시
-  if (currentPage === 'designer') {
-    return (
-      <ErrorBoundary>
-        <Designer />
-      </ErrorBoundary>
-    );
-  }
-
-  // 디자이너 상세 페이지 표시
-  if (currentPage === 'designerDetail') {
-    console.log('Rendering DesignerDetail component'); // 디버깅용
-    return (
-      <ErrorBoundary>
-        <DesignerDetail />
-      </ErrorBoundary>
-    );
-  }
-
-  // 작품 페이지 표시
-  if (currentPage === 'works') {
-    return (
-      <ErrorBoundary>
-        <Works />
-      </ErrorBoundary>
-    );
-  }
-
-  // 메인 페이지 표시
-  console.log('Rendering MainContent component, currentPage:', currentPage); // 디버깅용
+  // BreakpointProvider로 전체 앱 감싸기
   return (
-    <ErrorBoundary>
-      <div 
-        className="app-wrapper"
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        style={{
-          cursor: isDragging ? 'grabbing' : 'grab'
-        }}
-      >
-        <Header />
-        <MainContent position={normalizedCurrent} navigateToPage={navigateToPage} />
-        <Footer />
-        
-        {/* 위치 표시기 */}
-        <div className="position-indicator">
-          <div className="position-info">
-            <div className="coordinate">
-              <span className="label">X:</span>
-              <span className="value">{Math.round(normalizedCurrent.x)}px</span>
-              <span className="percent">({Math.round(positionPercentX)}%)</span>
-            </div>
-            <div className="coordinate">
-              <span className="label">Y:</span>
-              <span className="value">{Math.round(normalizedCurrent.y)}px</span>
-              <span className="percent">({Math.round(positionPercentY)}%)</span>
+    <BreakpointProvider>
+      <ErrorBoundary>
+        {/* 메인 페이지에서만 커밍순 페이지 표시 */}
+        {currentPage === 'main' && <ComingSoon />}
+
+        {/* 디자이너 페이지 표시 */}
+        {currentPage === 'designer' && <Designer />}
+
+        {/* 디자이너 상세 페이지 표시 */}
+        {currentPage === 'designerDetail' && <DesignerDetail />}
+
+        {/* 작품 페이지 표시 */}
+        {currentPage === 'works' && <Works />}
+
+        {/* 메인 페이지 표시 (currentPage가 다른 값일 때) */}
+        {!['main', 'designer', 'designerDetail', 'works'].includes(currentPage) && (
+          <div 
+            className="app-wrapper"
+            onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            style={{
+              cursor: isDragging ? 'grabbing' : 'grab'
+            }}
+          >
+            <Header />
+            <MainContent position={normalizedCurrent} navigateToPage={navigateToPage} />
+            <Footer />
+            
+            {/* 위치 표시기 */}
+            <div className="position-indicator">
+              <div className="position-info">
+                <div className="coordinate">
+                  <span className="label">X:</span>
+                  <span className="value">{Math.round(normalizedCurrent.x)}px</span>
+                  <span className="percent">({Math.round(positionPercentX)}%)</span>
+                </div>
+                <div className="coordinate">
+                  <span className="label">Y:</span>
+                  <span className="value">{Math.round(normalizedCurrent.y)}px</span>
+                  <span className="percent">({Math.round(positionPercentY)}%)</span>
+                </div>
+              </div>
+              <div className="position-map">
+                <div
+                  className="position-dot"
+                  style={{
+                    left: `${positionPercentX}%`,
+                    top: `${positionPercentY}%`
+                  }}
+                ></div>
+              </div>
             </div>
           </div>
-          <div className="position-map">
-            <div
-              className="position-dot"
-              style={{
-                left: `${positionPercentX}%`,
-                top: `${positionPercentY}%`
-              }}
-            ></div>
-          </div>
-        </div>
-      </div>
-    </ErrorBoundary>
+        )}
+      </ErrorBoundary>
+    </BreakpointProvider>
   );
 }
 

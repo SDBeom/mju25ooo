@@ -1,14 +1,22 @@
 import React from 'react';
-import { CIRCLE_PATTERN_CONFIG, CIRCLE_COLORS } from '../../shared/constants';
+import { useBreakpointContext } from '../../contexts/BreakpointContext';
+import { CIRCLE_PATTERN_CONFIG } from '../../shared/constants';
 import Circle from './Circle';
 import './CirclePattern.css';
 
 const CirclePattern = () => {
+  const { isMobile } = useBreakpointContext();
+
   try {
     const renderCircleRow = (rowConfig, rowIndex) => {
+      // Mobile: 60%만 표시
+      const circles = isMobile 
+        ? rowConfig.circles.slice(0, Math.ceil(rowConfig.circles.length * 0.6))
+        : rowConfig.circles;
+
       return (
         <div key={rowIndex} className="circle-row">
-          {rowConfig.circles.map((color, circleIndex) => (
+          {circles.map((color, circleIndex) => (
             <Circle
               key={`${rowIndex}-${circleIndex}`}
               color={color}

@@ -1,11 +1,10 @@
 import React from 'react';
-import { HERO_CONTENT, COLORS } from '../../shared/constants';
+import { HERO_CONTENT } from '../../shared/constants';
 import { Container, Typography, Button } from '../DesignSystem';
 import './Hero.css';
 
 const Hero = () => {
   const handleCTAClick = () => {
-    // Works 섹션으로 스크롤
     const worksSection = document.getElementById('works');
     if (worksSection) {
       worksSection.scrollIntoView({ 

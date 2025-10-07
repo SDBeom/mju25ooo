@@ -23,6 +23,8 @@ body {
 #root {
   margin: 0;
   padding: 0;
+  margin-bottom: 0; /* 하단 마진 명시적 제거 */
+  padding-bottom: 0; /* 하단 패딩 명시적 제거 */
   min-height: 100vh;
   background-color: #2A2A2A;
 }

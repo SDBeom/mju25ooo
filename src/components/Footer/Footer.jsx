@@ -25,7 +25,6 @@ const Footer = () => {
               color="muted"
               className="footer-text"
             >
-              Designed with ❤️
             </Typography>
           </div>
         </div>

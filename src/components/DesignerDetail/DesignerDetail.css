@@ -1,17 +1,21 @@
-/* Designer Detail Page Styles */
+/* ============================================
+   Designer Detail Page - Media Query 방식
+   ============================================ */
+
+/* Designer Detail Page Styles - Mobile First */
 .designer-detail-page {
   min-height: 100vh;
   background-color: var(--color-background);
   color: var(--color-text-primary);
-  padding-top: 80px; /* Account for fixed header */
-  padding-bottom: 0; /* Footer is now in normal flow */
+  padding-top: 60px; /* Mobile */
+  padding-bottom: 0;
 }
 
 /* Back Button */
 .back-to-designers {
   position: fixed;
-  top: 100px;
-  left: 2rem;
+  top: 80px; /* Mobile */
+  left: 1rem;
   z-index: 10;
 }
 
@@ -19,12 +23,12 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem; /* Mobile */
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 25px;
   color: var(--color-text-primary);
-  font-size: 0.9rem;
+  font-size: 0.8rem; /* Mobile */
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -46,20 +50,22 @@
 .designer-detail-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem; /* Mobile */
 }
 
 /* Profile Header */
 .profile-header {
   display: flex;
-  gap: 3rem;
+  flex-direction: column; /* Mobile: 세로 */
+  gap: 2rem; /* Mobile */
   align-items: center;
   margin-bottom: 4rem;
-  padding: 2rem;
+  padding: 1rem; /* Mobile */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center; /* Mobile */
 }
 
 .profile-avatar {
@@ -67,9 +73,9 @@
 }
 
 .avatar-placeholder {
-  width: 120px;
-  height: 80px;
-  border-radius: 40px;
+  width: 80px; /* Mobile */
+  height: 60px;
+  border-radius: 30px;
   background: linear-gradient(135deg, #FF6B35, #F7931E);
   display: flex;
   align-items: center;
@@ -78,7 +84,7 @@
 }
 
 .avatar-name {
-  font-size: 1.4rem;
+  font-size: 1rem; /* Mobile */
   font-weight: 600;
   color: #FFFFFF;
   text-align: center;
@@ -91,7 +97,7 @@
 }
 
 .profile-name {
-  font-size: 2.5rem;
+  font-size: 1.8rem; /* Mobile */
   font-weight: 700;
   color: #FFFFFF;
   margin-bottom: 0.5rem;
@@ -102,14 +108,14 @@
 }
 
 .profile-role {
-  font-size: 1.3rem;
+  font-size: 1rem; /* Mobile */
   color: #FF6B35;
   font-weight: 500;
   margin-bottom: 1rem;
 }
 
 .profile-description {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Mobile */
   color: #CCCCCC;
   line-height: 1.6;
   margin: 0;
@@ -121,7 +127,7 @@
 }
 
 .skills-section h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Mobile */
   font-weight: 600;
   color: #FFFFFF;
   margin-bottom: 2rem;
@@ -130,15 +136,15 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr; /* Mobile: 1열 */
+  gap: 0.75rem; /* Mobile */
 }
 
 .skill-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 0.75rem; /* Mobile */
   text-align: center;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -151,7 +157,7 @@
 }
 
 .skill-name {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Mobile */
   font-weight: 500;
   color: #FF6B35;
 }
@@ -162,7 +168,7 @@
 }
 
 .projects-section h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Mobile */
   font-weight: 600;
   color: #FFFFFF;
   margin-bottom: 2rem;
@@ -171,15 +177,15 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr; /* Mobile: 1열 */
+  gap: 1rem; /* Mobile */
 }
 
 .project-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1rem; /* Mobile */
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
@@ -191,14 +197,14 @@
 }
 
 .project-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Mobile */
   font-weight: 600;
   color: #FF6B35;
   margin-bottom: 1rem;
 }
 
 .project-description {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Mobile */
   color: #CCCCCC;
   line-height: 1.5;
   margin: 0;
@@ -210,7 +216,7 @@
 }
 
 .contact-section h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Mobile */
   font-weight: 600;
   color: #FFFFFF;
   margin-bottom: 2rem;
@@ -221,7 +227,7 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  padding: 3rem;
+  padding: 1.5rem; /* Mobile */
   text-align: center;
   backdrop-filter: blur(10px);
 }
@@ -238,11 +244,11 @@
 }
 
 .email-address {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Mobile */
   color: #FF6B35;
   font-family: monospace;
   background: rgba(255, 255, 255, 0.05);
-  padding: 1rem 2rem;
+  padding: 0.75rem 1rem; /* Mobile */
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0;
@@ -253,12 +259,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem; /* Mobile */
   background: linear-gradient(135deg, #FF6B35, #F7931E);
   border: none;
   border-radius: 25px;
   color: #FFFFFF;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Mobile */
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -289,131 +295,172 @@
   margin-bottom: 2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .designer-detail-container {
-    padding: 1rem;
+/* ============================================
+   Tablet (768px ~ 1023px)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .designer-detail-page {
+    padding-top: 70px;
   }
-  
-  .profile-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
+
+  .back-to-designers {
+    top: 90px;
+    left: 1.5rem;
+  }
+
+  .designer-detail-container {
     padding: 1.5rem;
   }
-  
+
+  .profile-header {
+    padding: 1.5rem;
+  }
+
   .avatar-placeholder {
     width: 100px;
     height: 70px;
     border-radius: 35px;
   }
-  
+
   .avatar-name {
     font-size: 1.2rem;
   }
-  
+
   .profile-name {
     font-size: 2rem;
   }
-  
+
   .profile-role {
     font-size: 1.1rem;
   }
-  
+
+  .skills-section h2,
+  .projects-section h2,
+  .contact-section h2 {
+    font-size: 1.6rem;
+  }
+
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tablet: auto-fit */
     gap: 0.75rem;
   }
-  
+
   .skill-card {
     padding: 1rem;
   }
-  
+
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Tablet: 1열 */
     gap: 1rem;
   }
-  
+
   .project-card {
     padding: 1.5rem;
   }
-  
+
   .contact-content {
     padding: 2rem;
   }
 }
 
-@media (max-width: 480px) {
+/* ============================================
+   Desktop (1024px 이상)
+   ============================================ */
+@media (min-width: 1024px) {
+  .designer-detail-page {
+    padding-top: 80px;
+  }
+
   .back-to-designers {
-    left: 1rem;
+    top: 100px;
+    left: 2rem;
   }
-  
+
   .back-button {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem;
-  }
-  
-  .profile-header {
-    padding: 1rem;
-  }
-  
-  .avatar-placeholder {
-    width: 80px;
-    height: 60px;
-    border-radius: 30px;
-  }
-  
-  .avatar-name {
-    font-size: 1rem;
-  }
-  
-  .profile-name {
-    font-size: 1.8rem;
-  }
-  
-  .profile-role {
-    font-size: 1rem;
-  }
-  
-  .profile-description {
-    font-size: 1rem;
-  }
-  
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .skill-card {
-    padding: 0.75rem;
-  }
-  
-  .skill-name {
+    padding: 0.75rem 1rem;
     font-size: 0.9rem;
   }
-  
-  .project-card {
-    padding: 1rem;
+
+  .designer-detail-container {
+    padding: 2rem;
   }
-  
-  .project-title {
+
+  .profile-header {
+    flex-direction: row; /* Desktop: 가로 */
+    gap: 3rem;
+    padding: 2rem;
+    text-align: left; /* Desktop: 왼쪽 정렬 */
+  }
+
+  .avatar-placeholder {
+    width: 120px;
+    height: 80px;
+    border-radius: 40px;
+  }
+
+  .avatar-name {
+    font-size: 1.4rem;
+  }
+
+  .profile-name {
+    font-size: 2.5rem;
+  }
+
+  .profile-role {
+    font-size: 1.3rem;
+  }
+
+  .profile-description {
     font-size: 1.1rem;
   }
-  
-  .project-description {
-    font-size: 0.9rem;
+
+  .skills-section h2,
+  .projects-section h2,
+  .contact-section h2 {
+    font-size: 1.8rem;
   }
-  
-  .contact-content {
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Desktop: auto-fit */
+    gap: 1rem;
+  }
+
+  .skill-card {
     padding: 1.5rem;
   }
-  
-  .email-address {
+
+  .skill-name {
     font-size: 1rem;
-    padding: 0.75rem 1rem;
   }
-  
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Desktop: auto-fit */
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 2rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .contact-content {
+    padding: 3rem;
+  }
+
+  .email-address {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+
   .contact-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
   }
 }

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 충돌 테스트</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 20px;
+      background: #1a1a1a;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #FF6B35;
+    }
+
+    .section {
+      margin-bottom: 50px;
+      padding: 20px;
+      background: #2a2a2a;
+      border-radius: 10px;
+    }
+
+    .example-box {
+      padding: 20px;
+      margin: 10px 0;
+      border: 2px solid #FF6B35;
+      border-radius: 8px;
+      background: #333;
+      transition: all 0.3s ease;
+    }
+
+    .info {
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    .current-size {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #FF6B35;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    /* ============================================
+       예시 1: Media Query 방식
+       ============================================ */
+    
+    /* Mobile (기본) */
+    .box-mediaquery {
+      background: #e74c3c; /* 빨강 */
+      font-size: 14px;
+      padding: 10px;
+    }
+    
+    .box-mediaquery::before {
+      content: "📱 Mobile (기본): 빨강, 작은 글씨";
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* Tablet (768px 이상) */
+    @media (min-width: 768px) {
+      .box-mediaquery {
+        background: #f39c12; /* 주황 */
+        font-size: 16px;
+        padding: 15px;
+      }
+      
+      .box-mediaquery::before {
+        content: "📱 Tablet (768px+): 주황, 중간 글씨";
+      }
+    }
+
+    /* Desktop (1024px 이상) */
+    @media (min-width: 1024px) {
+      .box-mediaquery {
+        background: #27ae60; /* 초록 */
+        font-size: 18px;
+        padding: 20px;
+      }
+      
+      .box-mediaquery::before {
+        content: "💻 Desktop (1024px+): 초록, 큰 글씨";
+      }
+    }
+
+    /* ============================================
+       예시 2: 클래스 방식
+       ============================================ */
+    
+    /* 공통 스타일 */
+    .box-class {
+      padding: 10px;
+      font-size: 14px;
+      background: #95a5a6; /* 회색 (기본) */
+    }
+
+    /* Desktop 전용 */
+    .box-class.box--desktop {
+      background: #3498db; /* 파랑 */
+      font-size: 18px;
+      padding: 20px;
+    }
+    
+    .box-class.box--desktop::before {
+      content: "💻 Desktop 클래스 적용: 파랑, 큰 글씨";
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* Tablet 전용 */
+    .box-class.box--tablet {
+      background: #9b59b6; /* 보라 */
+      font-size: 16px;
+      padding: 15px;
+    }
+    
+    .box-class.box--tablet::before {
+      content: "📱 Tablet 클래스 적용: 보라, 중간 글씨";
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* Mobile 전용 */
+    .box-class.box--mobile {
+      background: #e91e63; /* 핑크 */
+      font-size: 14px;
+      padding: 10px;
+    }
+    
+    .box-class.box--mobile::before {
+      content: "📱 Mobile 클래스 적용: 핑크, 작은 글씨";
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* ============================================
+       예시 3: 잘못된 방식 (충돌 발생!)
+       ============================================ */
+    
+    .box-wrong {
+      background: red;
+      font-size: 14px;
+    }
+    
+    .box-wrong {
+      background: blue; /* 위의 red를 덮어씀 */
+      font-size: 16px;
+    }
+    
+    .box-wrong {
+      background: green; /* 위의 blue를 덮어씀 */
+      font-size: 18px;
+    }
+    /* 결과: 항상 green, 18px만 적용됨 (충돌!) */
+
+    code {
+      background: #1a1a1a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #FF6B35;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="current-size">
+      현재 화면: <span id="current-width"></span>px
+    </div>
+
+    <h1>🎨 CSS 충돌 테스트</h1>
+
+    <!-- 예시 1: Media Query -->
+    <div class="section">
+      <h2>✅ 예시 1: Media Query 방식 (충돌 없음)</h2>
+      <div class="example-box box-mediaquery">
+        <p>창 크기를 조절해보세요!</p>
+        <ul class="info">
+          <li>📱 < 768px: 빨강</li>
+          <li>📱 768px ~ 1023px: 주황</li>
+          <li>💻 ≥ 1024px: 초록</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 예시 2: 클래스 방식 -->
+    <div class="section">
+      <h2>✅ 예시 2: 클래스 방식 (충돌 없음)</h2>
+      
+      <h3 style="margin-top: 20px;">Desktop 클래스:</h3>
+      <div class="example-box box-class box--desktop">
+        <p>이 박스는 <code>box--desktop</code> 클래스가 있습니다</p>
+      </div>
+
+      <h3 style="margin-top: 20px;">Tablet 클래스:</h3>
+      <div class="example-box box-class box--tablet">
+        <p>이 박스는 <code>box--tablet</code> 클래스가 있습니다</p>
+      </div>
+
+      <h3 style="margin-top: 20px;">Mobile 클래스:</h3>
+      <div class="example-box box-class box--mobile">
+        <p>이 박스는 <code>box--mobile</code> 클래스가 있습니다</p>
+      </div>
+
+      <p class="info">
+        💡 각 박스는 다른 클래스를 가지고 있어서 충돌하지 않습니다!
+      </p>
+    </div>
+
+    <!-- 예시 3: 잘못된 방식 -->
+    <div class="section">
+      <h2>❌ 예시 3: 잘못된 방식 (충돌 발생!)</h2>
+      <div class="example-box box-wrong">
+        <p><strong>항상 초록색만 나옵니다</strong></p>
+        <p class="info">
+          ⚠️ 같은 선택자를 여러 번 정의하면 마지막 것만 적용됩니다.<br>
+          이렇게 하면 안 됩니다!
+        </p>
+      </div>
+    </div>
+
+    <!-- 설명 -->
+    <div class="section">
+      <h2>📚 핵심 정리</h2>
+      
+      <h3>✅ 충돌하지 않는 이유:</h3>
+      <ol style="line-height: 2; margin: 20px 0;">
+        <li><strong>Media Query</strong>: 조건이 다름 (화면 크기별로 다른 조건)</li>
+        <li><strong>클래스 방식</strong>: Specificity가 다름 (선택자의 구체성이 다름)</li>
+      </ol>
+
+      <h3>❌ 충돌하는 경우:</h3>
+      <ol style="line-height: 2; margin: 20px 0;">
+        <li>같은 선택자를 조건 없이 여러 번 정의</li>
+        <li>같은 Specificity에서 같은 속성을 여러 번 정의</li>
+      </ol>
+
+      <div style="background: #1a1a1a; padding: 20px; border-radius: 8px; margin-top: 20px;">
+        <h3 style="color: #FF6B35;">💡 우리 프로젝트에서는:</h3>
+        <p style="line-height: 1.8; margin-top: 10px;">
+          <strong>JSX 파일 1개 + CSS 파일 1개</strong>로 충분합니다!<br>
+          Media Query나 클래스로 분기하면 충돌 없이 깔끔하게 처리됩니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 현재 화면 크기 표시
+    function updateSize() {
+      document.getElementById('current-width').textContent = window.innerWidth;
+    }
+    
+    updateSize();
+    window.addEventListener('resize', updateSize);
+  </script>
+</body>
+</html>
+
