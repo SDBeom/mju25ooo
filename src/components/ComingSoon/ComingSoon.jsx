@@ -12,6 +12,43 @@ const ComingSoon = () => {
   const footerRef = useRef(null);
   const containerRef = useRef(null);
   
+  // 모바일 pull-to-refresh 방지
+  useEffect(() => {
+    if (!isMobile) return;
+    
+    let touchStartY = 0;
+    
+    const handleTouchStart = (e) => {
+      touchStartY = e.touches[0].clientY;
+    };
+    
+    const handleTouchMove = (e) => {
+      const container = containerRef.current;
+      if (!container) return;
+      
+      const touchY = e.touches[0].clientY;
+      const touchDelta = touchY - touchStartY;
+      
+      // 스크롤이 맨 위에 있고, 아래로 당기는 동작(touchDelta > 0)일 때만 방지
+      if (container.scrollTop === 0 && touchDelta > 0) {
+        e.preventDefault();
+      }
+    };
+    
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('touchstart', handleTouchStart, { passive: true });
+      container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    }
+    
+    return () => {
+      if (container) {
+        container.removeEventListener('touchstart', handleTouchStart);
+        container.removeEventListener('touchmove', handleTouchMove);
+      }
+    };
+  }, [isMobile]);
+  
   // 페이지와 푸터 간의 상호작용 로직 (휠 이벤트 - 태블릿/데스크탑만)
   useEffect(() => {
     // 모바일에서만 휠 이벤트 비활성화
