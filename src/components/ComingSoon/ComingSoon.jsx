@@ -12,13 +12,6 @@ const ComingSoon = () => {
   const footerRef = useRef(null);
   const containerRef = useRef(null);
   
-  // 초기 스크롤 위치를 맨 위로 설정
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.scrollTop = 0;
-    }
-  }, []);
-  
   // 페이지와 푸터 간의 상호작용 로직 (휠 이벤트 - 태블릿/데스크탑만)
   useEffect(() => {
     // 모바일에서만 휠 이벤트 비활성화
