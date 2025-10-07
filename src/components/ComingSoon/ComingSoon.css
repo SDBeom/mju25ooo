@@ -18,20 +18,15 @@
   flex-direction: column;         /* 💡 메인은 위, 푸터는 아래로 분산 */
   justify-content: flex-end;      /* Mobile: 아래쪽 정렬 */
   align-items: center;            /* 좌우 중앙 정렬 */
-  position: fixed;                /* 화면 고정 */
-  top: 0;
-  left: 0;
+  min-height: 100vh;              /* 최소 화면 높이 (스크롤 허용) */
   width: 100vw;                   /* 화면 전체 너비 꽉 채움 */
-  height: 100vh;                  /* 화면 전체 높이 */
-  min-height: 100vh;              /* 최소 화면 높이 */
   background: linear-gradient(135deg, var(--color-background) 0%, #1a1a1a 100%);
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow-y: auto;               /* Mobile: 세로 스크롤 허용 */
+  position: relative;
   overflow-x: hidden;             /* 가로 스크롤만 숨김 */
   overscroll-behavior-y: contain; /* Mobile: pull-to-refresh 방지 */
-  -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
 }
 
 /* ============================================

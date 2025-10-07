@@ -12,61 +12,37 @@ const ComingSoon = () => {
   const footerRef = useRef(null);
   const containerRef = useRef(null);
   
-  // body/html 스크롤 비활성화 (ComingSoon 페이지일 때만)
+  // 모바일 pull-to-refresh 방지 (전역 적용)
   useEffect(() => {
-    // body와 html의 overflow를 hidden으로 설정
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-    document.body.style.height = '100%';
-    
-    return () => {
-      // 컴포넌트 언마운트 시 원래대로 복원
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.height = '';
-    };
-  }, []);
-  
-  // 모바일 pull-to-refresh 방지
-  useEffect(() => {
-    if (!isMobile) return;
-    
     let touchStartY = 0;
+    let isAtTop = false;
     
     const handleTouchStart = (e) => {
       touchStartY = e.touches[0].clientY;
+      // body 또는 container의 스크롤 위치 확인
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop || (containerRef.current ? containerRef.current.scrollTop : 0);
+      isAtTop = scrollTop === 0;
     };
     
     const handleTouchMove = (e) => {
-      const container = containerRef.current;
-      if (!container) return;
-      
       const touchY = e.touches[0].clientY;
       const touchDelta = touchY - touchStartY;
       
       // 스크롤이 맨 위에 있고, 아래로 당기는 동작(touchDelta > 0)일 때만 방지
-      if (container.scrollTop === 0 && touchDelta > 0) {
+      if (isAtTop && touchDelta > 0) {
         e.preventDefault();
       }
     };
     
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('touchstart', handleTouchStart, { passive: true });
-      container.addEventListener('touchmove', handleTouchMove, { passive: false });
-    }
+    // document에 직접 이벤트 리스너 추가
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
     
     return () => {
-      if (container) {
-        container.removeEventListener('touchstart', handleTouchStart);
-        container.removeEventListener('touchmove', handleTouchMove);
-      }
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchmove', handleTouchMove);
     };
-  }, [isMobile]);
+  }, []);
   
   // 페이지와 푸터 간의 상호작용 로직 (휠 이벤트 - 태블릿/데스크탑만)
   useEffect(() => {
