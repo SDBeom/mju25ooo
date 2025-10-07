@@ -1,11 +1,10 @@
 import React from 'react';
-import { ABOUT_CONTENT, COLORS } from '../../shared/constants';
+import { ABOUT_CONTENT } from '../../shared/constants';
 import { Container, Typography, Button } from '../DesignSystem';
 import './About.css';
 
 const About = () => {
   const handleContactClick = () => {
-    // 이메일로 연락하거나 디자이너 페이지로 이동
     window.open('mailto:designer@example.com', '_blank');
   };
 

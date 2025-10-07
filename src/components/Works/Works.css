@@ -1,6 +1,10 @@
-/* Works Section Styles */
+/* ============================================
+   Works Component - Media Query 방식
+   ============================================ */
+
+/* Works Section Styles - Mobile First */
 .works {
-  padding: 6rem 0 4rem 0; /* 하단 패딩 감소 */
+  padding: 3rem 0; /* Mobile 기본 */
   background: #2A2A2A;
   position: relative;
   min-height: 100vh;
@@ -19,7 +23,7 @@
 
 .works-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem; /* Mobile 간격 */
   position: relative;
   z-index: 1;
 }
@@ -36,8 +40,8 @@
 
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr; /* Mobile: 1열 */
+  gap: 1rem; /* Mobile 간격 */
   margin-bottom: 3rem;
   position: relative;
   z-index: 1;
@@ -78,7 +82,7 @@
 .project-image {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 160px; /* Mobile 높이 */
   overflow: hidden;
 }
 
@@ -123,7 +127,7 @@
 }
 
 .project-content {
-  padding: 1.5rem;
+  padding: 1rem; /* Mobile 패딩 */
   position: relative;
   z-index: 1;
 }
@@ -140,15 +144,15 @@
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.25rem; /* Mobile 간격 */
 }
 
 .project-tag {
-  padding: 0.25rem 0.75rem;
+  padding: 0.2rem 0.5rem; /* Mobile 패딩 */
   background: rgba(255, 107, 53, 0.2);
   color: #FF6B35;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 11px; /* Mobile 글씨 */
   font-weight: 500;
   border: 1px solid rgba(255, 107, 53, 0.3);
   transition: all 0.3s ease;
@@ -194,69 +198,72 @@
   }
 }
 
-/* Responsive design */
-@media (max-width: 1024px) {
-  .works-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
+/* ============================================
+   Tablet (768px ~ 1023px)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
   .works {
     padding: 4rem 0;
   }
-  
+
   .works-header {
     margin-bottom: 3rem;
   }
-  
+
   .works-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* Tablet: 2열 */
     gap: 1.5rem;
   }
-  
+
   .project-image {
     height: 180px;
   }
-  
+
   .project-content {
     padding: 1.25rem;
   }
-}
 
-@media (max-width: 480px) {
-  .works {
-    padding: 3rem 0;
-  }
-  
-  .works-header {
-    margin-bottom: 2rem;
-  }
-  
-  .works-grid {
-    gap: 1rem;
-  }
-  
-  .project-image {
-    height: 160px;
-  }
-  
-  .project-content {
-    padding: 1rem;
-  }
-  
   .project-tags {
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
-  
+
   .project-tag {
-    padding: 0.2rem 0.5rem;
-    font-size: 11px;
+    padding: 0.25rem 0.75rem;
+    font-size: 12px;
   }
 }
 
+/* ============================================
+   Desktop (1024px 이상)
+   ============================================ */
+@media (min-width: 1024px) {
+  .works {
+    padding: 6rem 0 4rem 0;
+  }
 
+  .works-header {
+    margin-bottom: 4rem;
+  }
 
+  .works-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Desktop: auto-fit */
+    gap: 2rem;
+  }
 
+  .project-image {
+    height: 200px;
+  }
 
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  .project-tags {
+    gap: 0.5rem;
+  }
+
+  .project-tag {
+    padding: 0.25rem 0.75rem;
+    font-size: 12px;
+  }
+}

@@ -1,6 +1,12 @@
-/* About Section Styles */
+/* ============================================
+   About Component - Media Query 방식
+   ============================================ */
+
+/* ============================================
+   공통 스타일
+   ============================================ */
 .about {
-  padding: 6rem 0;
+  padding: 3rem 0; /* Mobile 기본값 */
   background: #2A2A2A;
   position: relative;
 }
@@ -18,8 +24,8 @@
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr; /* Mobile: 1열 */
+  gap: 2rem; /* Mobile 간격 */
   align-items: center;
   position: relative;
   z-index: 1;
@@ -28,7 +34,7 @@
 .about-text {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .about-title {
@@ -50,19 +56,21 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr; /* Mobile: 1열 */
+  gap: 0.75rem;
 }
 
 .skill-item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.75rem;
+  padding: 0.5rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
+  justify-content: center;
+  text-align: center;
 }
 
 .skill-item:hover {
@@ -119,12 +127,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  order: -1; /* Mobile: 이미지를 위로 */
 }
 
 .about-image {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 250px; /* Mobile 크기 */
 }
 
 .image-placeholder {
@@ -178,73 +187,71 @@
   }
 }
 
-/* Responsive design */
-@media (max-width: 1024px) {
+/* ============================================
+   Tablet (768px ~ 1023px)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about {
+    padding: 4rem 0;
+  }
+
   .about-content {
-    grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
   }
   
-  .about-visual {
-    order: -1;
-  }
-  
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .about {
-    padding: 4rem 0;
-  }
-  
-  .about-content {
+  .about-text {
     gap: 2rem;
   }
-  
-  .about-text {
-    gap: 1.5rem;
-  }
-  
+
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Tablet: 3열 */
+    gap: 1rem;
   }
-  
+
   .skill-item {
-    padding: 0.5rem;
+    padding: 0.75rem;
   }
-  
-  .image-placeholder {
+
+  .about-image {
     max-width: 300px;
   }
 }
 
-@media (max-width: 480px) {
+/* ============================================
+   Desktop (1024px 이상)
+   ============================================ */
+@media (min-width: 1024px) {
   .about {
-    padding: 3rem 0;
+    padding: 6rem 0;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr 1fr; /* Desktop: 2열 */
+    gap: 4rem;
+    text-align: left;
   }
   
+  .about-text {
+    gap: 2rem;
+  }
+
+  .about-visual {
+    order: 0; /* Desktop: 이미지를 오른쪽으로 */
+  }
+
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* Desktop: 2열 */
+    gap: 1rem;
   }
-  
+
   .skill-item {
-    justify-content: center;
-    text-align: center;
+    padding: 0.75rem;
+    justify-content: flex-start;
+    text-align: left;
   }
-  
-  .image-placeholder {
-    max-width: 250px;
+
+  .about-image {
+    max-width: 400px;
   }
 }
-
-
-
-
-
-
-
-
-

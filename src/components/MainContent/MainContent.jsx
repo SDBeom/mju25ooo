@@ -1,7 +1,10 @@
 import React from 'react';
+import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import './MainContent.css';
 
 const MainContent = ({ position }) => {
+  const { isMobile } = useBreakpointContext();
+
   return (
     <main 
       className="main-content"
@@ -10,17 +13,18 @@ const MainContent = ({ position }) => {
         transition: 'transform 0.1s ease-out'
       }}
     >
-      {/* 메인 타이틀 섹션 */}
       <section className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">
             <span className="title-main">졸업전시 2025</span>
-            <span className="title-sub">2025 명지대학교 졸업전시 영상 애니메이션 다지안 전공</span>
+            <span className="title-sub">
+              {isMobile ? '2025 명지대학교 졸업전시' : '2025 명지대학교 졸업전시 영상 애니메이션 디자인 전공'}
+            </span>
           </h1>
           
           <div className="hero-description">
             <p>창의적인 영상과 애니메이션 작품을 만나보세요</p>
-            <p>졸업생들의 노력과 열정이 담긴 작품들을 소개합니다</p>
+            {!isMobile && <p>졸업생들의 노력과 열정이 담긴 작품들을 소개합니다</p>}
           </div>
           
           <div className="hero-actions">
@@ -46,21 +50,21 @@ const MainContent = ({ position }) => {
         </div>
       </section>
 
-      {/* 탐색 안내 */}
       <div className="exploration-hint">
         <div className="hint-content">
-          <p>클릭 앤 드래그하여 탐색하세요</p>
-          <div className="hint-arrows">
-            <span>← → ↑ ↓</span>
-          </div>
+          <p>{isMobile ? '스와이프하여 탐색하세요' : '클릭 앤 드래그하여 탐색하세요'}</p>
+          {!isMobile && (
+            <div className="hint-arrows">
+              <span>← → ↑ ↓</span>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* 배경 패턴 */}
       <div className="background-pattern">
         <div className="pattern-circle circle-1"></div>
         <div className="pattern-circle circle-2"></div>
-        <div className="pattern-circle circle-3"></div>
+        {!isMobile && <div className="pattern-circle circle-3"></div>}
         <div className="pattern-dots"></div>
       </div>
     </main>

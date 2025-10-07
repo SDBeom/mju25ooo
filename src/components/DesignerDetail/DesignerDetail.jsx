@@ -1,4 +1,5 @@
 import React from 'react';
+import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import './DesignerDetail.css';
@@ -224,18 +225,15 @@ const DESIGNERS = [
 ].sort((a, b) => a.name.localeCompare(b.name, 'ko', { sensitivity: 'base' }));
 
 const DesignerDetail = () => {
-  // URL에서 디자이너 이름 추출 (쿼리 파라미터 제거)
+  const { isMobile } = useBreakpointContext();
+  
   const fullPath = window.location.href;
   const pathWithoutQuery = fullPath.split('?')[0];
   const pathParts = pathWithoutQuery.replace(window.location.origin, '').split('/');
   const encodedName = pathParts[2];
   const designerName = encodedName ? decodeURIComponent(encodedName) : '';
   
-  console.log('DesignerDetail - encodedName:', encodedName); // 디버깅용
-  console.log('DesignerDetail - designerName:', designerName); // 디버깅용
-  
   const designer = DESIGNERS.find(d => d.name === designerName);
-  console.log('DesignerDetail - designer:', designer); // 디버깅용
 
   const handleContactClick = (email) => {
     window.open(`mailto:${email}`, '_blank');
@@ -273,12 +271,11 @@ const DesignerDetail = () => {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span>디자이너 목록으로 돌아가기</span>
+            <span>{isMobile ? '목록' : '디자이너 목록으로 돌아가기'}</span>
           </button>
         </div>
         
         <div className="designer-detail-container">
-          {/* 프로필 헤더 */}
           <section className="profile-header">
             <div className="profile-avatar">
               <div className="avatar-placeholder">
@@ -292,7 +289,6 @@ const DesignerDetail = () => {
             </div>
           </section>
 
-          {/* 스킬 섹션 */}
           <section className="skills-section">
             <h2>주요 스킬</h2>
             <div className="skills-grid">
@@ -304,7 +300,6 @@ const DesignerDetail = () => {
             </div>
           </section>
 
-          {/* 프로젝트 섹션 */}
           <section className="projects-section">
             <h2>대표 프로젝트</h2>
             <div className="projects-grid">
@@ -317,7 +312,6 @@ const DesignerDetail = () => {
             </div>
           </section>
 
-          {/* 연락처 섹션 */}
           <section className="contact-section">
             <h2>연락처</h2>
             <div className="contact-content">

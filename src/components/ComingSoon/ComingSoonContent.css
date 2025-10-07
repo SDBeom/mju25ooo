@@ -1,0 +1,325 @@
+/* ============================================
+   ComingSoon Content Component - Media Query 방식
+   ============================================ */
+
+/* ============================================
+   💡 메인 컨텐츠 컨테이너
+   ============================================ */
+.coming-soon-main-content {
+  display: flex;
+  flex-direction: column; /* Mobile: 세로 */
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl); /* Mobile 간격 */
+  width: 100%;
+  max-width: 500px; /* Mobile 최대 너비 */
+  padding: 0 1rem; /* Mobile: 상하 패딩 제거, 좌우만 1rem */
+  margin: 0 auto;
+  margin-top: 100px; /* Mobile: 상단 마진 100px */
+  margin-bottom: 30px; /* Mobile: 하단 마진 30px (푸터와의 간격) */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0; /* 💡 Mobile: 축소 방지 */
+}
+
+/* Content Sections */
+.coming-soon-left-section,
+.coming-soon-right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md); /* Mobile 간격 */
+  width: 100%;
+  max-width: 100%;
+  padding: var(--spacing-sm) 0; /* Mobile 패딩 */
+  margin: 0;
+  text-align: justify; /* Mobile: 양쪽 정렬 */
+  text-align-last: center; /* 마지막 줄은 중앙 정렬 */
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+.coming-soon-main-content .signature-logo {
+  width: 80px; /* Mobile: 1.5배 축소 (120px → 80px) */
+  height: 80px;
+  object-fit: contain;
+  animation: logoFloat 3s ease-in-out infinite;
+  margin-bottom: var(--spacing-sm);
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.coming-soon-main-content .coming-soon-title {
+  font-size: 2.5rem; /* Mobile */
+  font-weight: 800;
+  background: linear-gradient(135deg, rgba(255, 119, 0, 1) 0%, rgba(103, 197, 255, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--spacing-md);
+  text-align: center; /* 타이틀은 항상 중앙 정렬 */
+}
+
+.coming-soon-main-content .coming-soon-description {
+  font-size: 1.1rem; /* Mobile */
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-weight: 500;
+  margin: 0;
+  text-align: justify; /* Mobile: 양쪽 정렬 */
+  text-align-last: center; /* 마지막 줄은 중앙 정렬 */
+  word-spacing: -0.05em; /* 단어 간격 약간 줄여서 더 자연스럽게 */
+}
+
+/* ============================================
+   COUNTDOWN
+   ============================================ */
+.coming-soon-main-content .countdown-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm); /* Mobile 간격 */
+  width: 100%;
+  max-width: 100%; /* Mobile */
+  padding: var(--spacing-lg) var(--spacing-md); /* Mobile 패딩 */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+}
+
+.coming-soon-main-content .countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+.coming-soon-main-content .countdown-number {
+  font-size: 2rem; /* Mobile */
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.coming-soon-main-content .countdown-label {
+  display: none; /* Mobile: 숨김 */
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-top: var(--spacing-xs);
+}
+
+.coming-soon-main-content .countdown-separator {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ============================================
+   SOCIAL LINKS
+   ============================================ */
+.coming-soon-main-content .social-links {
+  display: flex;
+  gap: var(--spacing-md); /* Mobile 간격 */
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.coming-soon-main-content .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; /* Mobile */
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.coming-soon-main-content .social-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: var(--color-primary);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 20px rgba(255, 119, 0, 0.3);
+}
+
+.coming-soon-main-content .social-link img,
+.coming-soon-main-content .social-logo {
+  width: 24px; /* Mobile */
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* 로고를 흰색으로 변환 */
+}
+
+/* ============================================
+   Tablet (768px ~ 1023px)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .coming-soon-main-content {
+    flex: 0 0 auto; /* Tablet: 고정 크기 */
+    max-width: 800px;
+    gap: calc(var(--spacing-lg) * 2);
+    padding: 5vh var(--spacing-lg);
+  }
+
+  .coming-soon-left-section,
+  .coming-soon-right-section {
+    gap: var(--spacing-lg);
+    text-align: center; /* Tablet: 중앙 정렬로 변경 */
+  }
+
+  .coming-soon-main-content .coming-soon-description {
+    text-align: center; /* Tablet: 중앙 정렬 */
+    text-align-last: auto;
+    word-spacing: normal;
+  }
+
+  .coming-soon-main-content .signature-logo {
+    width: 100px; /* Tablet: 1.5배 축소 (150px → 100px) */
+    height: 100px;
+  }
+
+  .coming-soon-main-content .coming-soon-title {
+    font-size: 3.5rem;
+  }
+
+  .coming-soon-main-content .coming-soon-description {
+    font-size: 1.3rem;
+  }
+
+  .coming-soon-main-content .countdown-container {
+    gap: var(--spacing-md);
+    max-width: 600px;
+    padding: var(--spacing-xl);
+  }
+
+  .coming-soon-main-content .countdown-number {
+    font-size: 2.5rem;
+  }
+
+  .coming-soon-main-content .countdown-label {
+    display: block; /* Tablet: 표시 */
+    font-size: 1rem;
+  }
+
+  .coming-soon-main-content .social-link {
+    width: 56px;
+    height: 56px;
+  }
+
+  .coming-soon-main-content .social-link img,
+  .coming-soon-main-content .social-logo {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ============================================
+   Desktop (1024px 이상)
+   ============================================ */
+@media (min-width: 1024px) {
+  .coming-soon-main-content {
+    flex: 0 0 auto; /* Desktop: 고정 크기 */
+    flex-direction: row; /* Desktop: 가로 */
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--spacing-lg) * 4); /* Desktop 큰 간격 */
+    max-width: 1200px;
+    padding: 5vh var(--spacing-lg);
+  }
+
+  .coming-soon-left-section {
+    align-items: center;
+    text-align: center; /* Desktop: 중앙 정렬 */
+    gap: calc(var(--spacing-lg) * 1.5);
+    flex: none;
+    width: fit-content;
+  }
+
+  .coming-soon-right-section {
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing-lg) * 1.5);
+    flex: 1;
+    text-align: center; /* Desktop: 중앙 정렬 */
+  }
+
+  .coming-soon-main-content .coming-soon-description {
+    text-align: center; /* Desktop: 중앙 정렬 */
+    text-align-last: auto;
+    word-spacing: normal;
+  }
+
+  .coming-soon-main-content .signature-logo {
+    width: 120px; /* Desktop: 1.5배 축소 (180px → 120px) */
+    height: 120px;
+  }
+
+  .coming-soon-main-content .coming-soon-title {
+    font-size: 4.5rem;
+    white-space: nowrap;
+  }
+
+  .coming-soon-main-content .coming-soon-description {
+    font-size: 1.5rem;
+  }
+
+  .coming-soon-main-content .countdown-container {
+    max-width: 700px;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+  }
+
+  .coming-soon-main-content .countdown-number {
+    font-size: 3rem;
+  }
+
+  .coming-soon-main-content .countdown-label {
+    display: block; /* Desktop: 표시 */
+    font-size: 1rem;
+  }
+
+  .coming-soon-main-content .countdown-unit {
+    font-size: 1.1rem;
+  }
+
+  .coming-soon-main-content .social-links {
+    gap: var(--spacing-lg);
+  }
+
+  .coming-soon-main-content .social-link {
+    width: 64px;
+    height: 64px;
+  }
+
+  .coming-soon-main-content .social-link img,
+  .coming-soon-main-content .social-logo {
+    width: 32px;
+    height: 32px;
+  }
+}
+

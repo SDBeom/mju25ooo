@@ -1,6 +1,8 @@
-/* Common Footer Styles - Shared across all footer components */
+/* ============================================
+   Footer Component - Media Query 방식
+   ============================================ */
 
-/* Base footer styles */
+/* Base footer styles - Mobile First */
 .footer {
   position: fixed;
   bottom: 0;
@@ -10,7 +12,7 @@
   background: rgba(42, 42, 42, 0.95);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2rem 0;
+  padding: 1rem 0; /* Mobile: 작은 패딩 */
   z-index: 1000;
   box-sizing: border-box;
 }
@@ -32,8 +34,8 @@
   min-height: 40px;
 }
 
-/* ComingSoon footer specific styles */
-  .coming-soon-footer {
+/* ComingSoon footer specific styles - DISABLED (now in ComingSoon.css) */
+  /* .coming-soon-footer {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -50,9 +52,10 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: var(--spacing-lg) 16px;
     text-align: center;
-  }
+  } */
 
-.coming-soon-footer .footer-content {
+/* Styles moved to ComingSoon.css */
+/* .coming-soon-footer .footer-content {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -61,7 +64,6 @@
   align-items: center;
 }
 
-/* Exhibition info styles */
 .exhibition-info {
   text-align: center;
 }
@@ -72,7 +74,6 @@
   margin: 0;
 }
 
-/* Logo styles */
 .footer-logos {
   display: flex;
   justify-content: center;
@@ -97,7 +98,7 @@
 
 .ooo-logo {
   height: 35px;
-}
+} */
 
 /* Copyright styles */
 .footer-bottom {
@@ -116,39 +117,56 @@
   margin: 0;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
+/* Mobile (기본값 - 이미 위에 정의됨) */
+.footer-content {
+  display: flex;
+  flex-direction: column; /* Mobile: 세로 */
+  gap: 0.5rem;
+  text-align: center;
+  min-height: 40px;
+}
+
+/* Tablet (768px 이상) */
+@media (min-width: 768px) {
   .footer {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0; /* Tablet: 중간 패딩 */
   }
   
   .footer-content {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
+    flex-direction: row; /* Tablet: 가로 */
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* Desktop (1024px 이상) */
+@media (min-width: 1024px) {
+  .footer {
+    padding: 2rem 0; /* Desktop: 큰 패딩 */
   }
   
-  .coming-soon-footer {
-    position: relative; /* 일반적인 위치로 변경 */
+  /* ComingSoon footer styles moved to ComingSoon.css */
+  /* .coming-soon-footer {
+    position: relative;
     width: 100%;
     transform: translateY(0);
-    padding: var(--spacing-sm) var(--spacing-sm) 0; /* 하단 패딩 완전 제거 */
-    box-sizing: border-box; /* 패딩 포함 계산 */
-    height: auto; /* 자동 높이 */
-    margin: 0; /* 마진 제거 */
-    flex-shrink: 0; /* 축소 방지 */
-    order: 2; /* 푸터를 맨 아래로 배치 */
+    padding: var(--spacing-sm) var(--spacing-sm) 0;
+    box-sizing: border-box;
+    height: auto;
+    margin: 0;
+    flex-shrink: 0;
+    order: 2;
   }
   
   .coming-soon-footer .footer-content {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; /* 중앙 정렬로 변경 */
-    gap: var(--spacing-xs); /* 간격 최소화 */
-    padding: 0 0 var(--spacing-sm); /* 하단 패딩 추가 */
-    margin: 0; /* 마진 제거 */
-    height: auto; /* 자동 높이 */
-    min-height: auto; /* 최소 높이 제거 */
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0 0 var(--spacing-sm);
+    margin: 0;
+    height: auto;
+    min-height: auto;
   }
   
   .exhibition-info {
@@ -160,7 +178,7 @@
   }
   
   .exhibition-detail {
-    font-size: 10px; /* 한 단계 더 작게 */
+    font-size: 10px;
     margin-bottom: 2px;
   }
   
@@ -173,26 +191,29 @@
   }
   
   .footer-logo {
-    height: 16px; /* 더 작게 */
+    height: 16px;
   }
   
   .mju-logo {
-    height: 18px; /* 더 작게 */
+    height: 18px;
   }
   
   .ooo-logo {
-    height: 14px; /* 더 작게 */
+    height: 14px;
   }
-  
-  /* footer-bottom은 더 이상 사용하지 않음 - 저작권이 exhibition-info 안에 포함됨 */
   
   .copyright-text {
-    font-size: 10px; /* 한 단계 더 작게 */
-  }
+    font-size: 10px;
+  } */
 }
 
+/* Small Mobile (480px 미만) */
 @media (max-width: 480px) {
   .footer {
-    padding: 1rem 0;
+    padding: 1rem 0; /* Small Mobile: 더 작은 패딩 */
+  }
+  
+  .footer-text {
+    font-size: 0.85rem; /* Small Mobile: 작은 글씨 */
   }
 }

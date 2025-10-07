@@ -47,11 +47,17 @@
 
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0; /* 하단 마진 명시적 제거 */
+  padding-bottom: 0; /* 하단 패딩 명시적 제거 */
 }
 
 body {
   margin: 0;
   padding: 0;
+  margin-bottom: 0; /* 하단 마진 명시적 제거 */
+  padding-bottom: 0; /* 하단 패딩 명시적 제거 */
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--color-background);
