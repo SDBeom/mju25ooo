@@ -62,6 +62,7 @@ body {
   min-height: 100vh;
   background-color: var(--color-background);
   color: var(--color-text-primary);
+  overscroll-behavior-y: contain; /* 모바일 pull-to-refresh 방지 */
 }
 
 a {
