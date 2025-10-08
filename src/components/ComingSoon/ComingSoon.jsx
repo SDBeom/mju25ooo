@@ -51,9 +51,9 @@ const ComingSoon = () => {
     };
   }, [isMobile]);
   
-  // 페이지와 푸터 간의 상호작용 로직 (휠 이벤트 - 태블릿/데스크탑만)
+  // 페이지와 푸터 간의 상호작용 로직 (마우스 커서 - 태블릿/데스크탑)
   useEffect(() => {
-    // 모바일에서만 휠 이벤트 비활성화
+    // 모바일에서는 마우스 이벤트 비활성화
     if (isMobile) {
       return;
     }
@@ -61,33 +61,40 @@ const ComingSoon = () => {
     const footerElement = footerRef.current;
     if (!footerElement) return;
 
-    let wheelDelta = 0;
-    const maxDelta = 800;
-    
-    const handleWheel = (e) => {
-      // 실제 스크롤 가능한 영역 체크
-      const hasScroll = document.documentElement.scrollHeight > window.innerHeight;
+    const handleMouseMove = (e) => {
+      // 화면 하단에서 100px 이내에 마우스가 있을 때
+      const bottomThreshold = 100;
+      const distanceFromBottom = window.innerHeight - e.clientY;
       
-      // 스크롤이 있으면 일반 스크롤 허용
-      if (hasScroll) {
-        return;
+      if (distanceFromBottom <= bottomThreshold) {
+        // 하단에 가까우면 푸터를 올림 (0% ~ 100%)
+        const progress = Math.max(0, (bottomThreshold - distanceFromBottom) / bottomThreshold);
+        const translateY = 100 - (progress * 100);
+        
+        // 부드러운 애니메이션을 위해 transition 적용
+        footerElement.style.transition = 'transform 0.3s ease-out';
+        footerElement.style.transform = `translateY(${translateY}%)`;
+      } else {
+        // 하단에서 멀어지면 푸터를 숨김
+        footerElement.style.transition = 'transform 0.3s ease-out';
+        footerElement.style.transform = 'translateY(100%)';
       }
-      
-      e.preventDefault();
-      
-      wheelDelta += e.deltaY;
-      wheelDelta = Math.max(0, Math.min(wheelDelta, maxDelta));
-      
-      const progress = wheelDelta / maxDelta;
-      const translateY = 100 - (progress * 100);
-      
-      footerElement.style.transform = `translateY(${translateY}%)`;
     };
 
-    window.addEventListener('wheel', handleWheel, { passive: false });
+    // 마우스가 화면을 벗어날 때 푸터 숨김
+    const handleMouseLeave = () => {
+      if (footerElement) {
+        footerElement.style.transition = 'transform 0.3s ease-out';
+        footerElement.style.transform = 'translateY(100%)';
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
     
     return () => {
-      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, [isMobile]);
 

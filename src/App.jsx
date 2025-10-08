@@ -26,7 +26,7 @@ const _resolveComingSoonState = () => {
 };
 
 function App() {
-  const showComingSoon = _resolveComingSoonState();
+  const _showComingSoon = _resolveComingSoonState();
   const [currentPage, setCurrentPage] = useState('main');
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -43,7 +43,7 @@ function App() {
           window.history.replaceState({}, '', storedPath);
         }
       }
-    } catch (e) {
+    } catch {
       // ignore storage errors
     }
 
@@ -289,7 +289,7 @@ function App() {
   }, [isDragging, position, dragOffset, normalizePosition]);
 
   // 스크롤 이벤트 핸들러
-  const handleWheel = useCallback((e) => {
+  const handleWheel = useCallback(() => {
     // 드래그 중이어도 스크롤 허용
     if (isDragging) {
       // 드래그를 유지하면서 스크롤 허용
@@ -297,7 +297,7 @@ function App() {
     }
   }, [isDragging]);
 
-  const handleScroll = useCallback((e) => {
+  const handleScroll = useCallback(() => {
     // 스크롤 이벤트 허용
     return;
   }, []);
