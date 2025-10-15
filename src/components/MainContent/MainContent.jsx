@@ -2,17 +2,11 @@ import React from 'react';
 import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import './MainContent.css';
 
-const MainContent = ({ position }) => {
+const MainContent = () => {
   const { isMobile } = useBreakpointContext();
 
   return (
-    <main 
-      className="main-content"
-      style={{
-        transform: `translate(calc(-50% + ${position.x}px), calc(-50% + ${position.y}px))`,
-        transition: 'transform 0.1s ease-out'
-      }}
-    >
+    <main className="main-content">
       <section className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">
