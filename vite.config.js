@@ -53,6 +53,8 @@ export default defineConfig({
   
   // 개발 서버 최적화
   server: {
+    port: 5173,
+    strictPort: true,
     headers: {
       // 캐싱 헤더 설정
       'Cache-Control': 'public, max-age=31536000'
