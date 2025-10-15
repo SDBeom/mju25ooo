@@ -11,7 +11,7 @@ const DialRotation = ({ onNavigate }) => {
 
   // 다이얼 항목들
   const dialItems = [
-    { id: 'main', label: '메인', icon: '🏠', path: '/' },
+    { id: 'comingsoon', label: '커밍순', icon: '⏰', path: '/comingsoon' },
     { id: 'designer', label: '디자이너', icon: '👨‍🎨', path: '/designer' },
     { id: 'works', label: '작품', icon: '🎨', path: '/works' },
     { id: 'about', label: '소개', icon: 'ℹ️', path: '/about' }
