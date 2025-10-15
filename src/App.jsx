@@ -358,9 +358,6 @@ function App() {
   return (
     <BreakpointProvider>
       <ErrorBoundary>
-        {/* 메인 페이지에서만 커밍순 페이지 표시 */}
-        {currentPage === 'main' && <ComingSoon />}
-
         {/* 디자이너 페이지 표시 */}
         {currentPage === 'designer' && <Designer />}
 
@@ -370,8 +367,8 @@ function App() {
         {/* 작품 페이지 표시 */}
         {currentPage === 'works' && <Works />}
 
-        {/* 메인 페이지 표시 (currentPage가 다른 값일 때) */}
-        {!['main', 'designer', 'designerDetail', 'works'].includes(currentPage) && (
+        {/* 메인 페이지 표시 (currentPage가 main이거나 다른 값일 때) */}
+        {(currentPage === 'main' || !['designer', 'designerDetail', 'works'].includes(currentPage)) && (
           <div 
             className="app-wrapper"
             onMouseDown={handleMouseDown}
