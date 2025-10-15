@@ -1,5 +1,4 @@
-﻿/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useCallback } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BreakpointProvider } from './contexts/BreakpointContext';
 import ComingSoon from './components/ComingSoon/ComingSoon';
@@ -58,8 +57,8 @@ function App() {
         switch (path) {
           case '/main':
           case '/main/':
-            console.log('Setting page to main'); // 디버깅용
-            setCurrentPage('main');
+            console.log('Setting page to mainPage'); // 디버깅용
+            setCurrentPage('mainPage');
             break;
           case '/designer':
           case '/designer/':
@@ -121,9 +120,18 @@ function App() {
         {/* 작품 페이지 표시 */}
         {currentPage === 'works' && <Works />}
 
-        {/* 커밍순 페이지 표시 (메인 페이지일 때) */}
-        {(currentPage === 'main' || !['designer', 'designerDetail', 'works'].includes(currentPage)) && (
+        {/* 커밍순 페이지 표시 (루트 경로일 때) */}
+        {currentPage === 'main' && (
           <ComingSoon />
+        )}
+
+        {/* 메인화면 표시 (/main 경로일 때) */}
+        {currentPage === 'mainPage' && (
+          <div className="app-wrapper">
+            <Header />
+            <MainContent navigateToPage={navigateToPage} />
+            <Footer />
+          </div>
         )}
       </ErrorBoundary>
     </BreakpointProvider>
