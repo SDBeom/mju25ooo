@@ -60,6 +60,11 @@ function App() {
         setCurrentPage('designerDetail');
       } else {
         switch (path) {
+          case '/main':
+          case '/main/':
+            console.log('Setting page to main'); // 디버깅용
+            setCurrentPage('main');
+            break;
           case '/designer':
           case '/designer/':
             console.log('Setting page to designer'); // 디버깅용
