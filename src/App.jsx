@@ -1,11 +1,12 @@
 ﻿import React, { useState, useEffect } from 'react';
 import './App.css';
+import './components/MainScreen/MainScreen.css';
 import { BreakpointProvider } from './contexts/BreakpointContext';
 import ComingSoon from './components/ComingSoon/ComingSoon';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import MainContent from './components/MainContent/MainContent';
+import DialRotation from './components/DialRotation/DialRotation';
 import Designer from './components/Designer/Designer';
 import DesignerDetail from './components/DesignerDetail/DesignerDetail';
 import Works from './components/Works/Works';
@@ -125,11 +126,17 @@ function App() {
           <ComingSoon />
         )}
 
-        {/* 메인화면 표시 (/main 경로일 때) */}
+        {/* 메인화면 표시 (/main 경로일 때) - 회전 다이얼 포함 */}
         {currentPage === 'mainPage' && (
           <div className="app-wrapper">
             <Header />
-            <MainContent navigateToPage={navigateToPage} />
+            <main className="main-screen">
+              <div className="main-content">
+                <h1 className="main-title">졸업전시 2025</h1>
+                <p className="main-subtitle">명지대학교 영상 애니메이션 디자인 전공</p>
+                <DialRotation onNavigate={navigateToPage} />
+              </div>
+            </main>
             <Footer />
           </div>
         )}

@@ -1,0 +1,206 @@
+/* ============================================
+   DialRotation - 원형 다이얼 컴포넌트
+   ============================================ */
+
+.dial-rotation-container {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.dial-rotation {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  pointer-events: auto;
+  transition: transform 0.1s ease-out;
+}
+
+.dial-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff7700, #67c5ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.dial-center-icon {
+  font-size: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.dial-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 119, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.dial-item:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(255, 119, 0, 0.1);
+  border-color: #ff7700;
+  box-shadow: 0 4px 20px rgba(255, 119, 0, 0.3);
+}
+
+.dial-item-icon {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.dial-item-label {
+  font-size: 8px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  line-height: 1;
+}
+
+/* ============================================
+   모바일 반응형
+   ============================================ */
+@media (max-width: 768px) {
+  .dial-rotation-container {
+    right: 1rem;
+    top: auto;
+    bottom: 2rem;
+    transform: none;
+  }
+
+  .dial-rotation {
+    width: 150px;
+    height: 150px;
+  }
+
+  .dial-center {
+    width: 50px;
+    height: 50px;
+  }
+
+  .dial-center-icon {
+    font-size: 20px;
+  }
+
+  .dial-item {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dial-item-icon {
+    font-size: 14px;
+  }
+
+  .dial-item-label {
+    font-size: 7px;
+  }
+}
+
+/* ============================================
+   태블릿 반응형
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .dial-rotation-container {
+    right: 1.5rem;
+  }
+
+  .dial-rotation {
+    width: 180px;
+    height: 180px;
+  }
+
+  .dial-center {
+    width: 55px;
+    height: 55px;
+  }
+
+  .dial-center-icon {
+    font-size: 22px;
+  }
+
+  .dial-item {
+    width: 45px;
+    height: 45px;
+  }
+
+  .dial-item-icon {
+    font-size: 15px;
+  }
+
+  .dial-item-label {
+    font-size: 7.5px;
+  }
+}
+
+/* ============================================
+   애니메이션 효과
+   ============================================ */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(255, 119, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.dial-center {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* ============================================
+   접근성 개선
+   ============================================ */
+.dial-item:focus {
+  outline: 2px solid #ff7700;
+  outline-offset: 2px;
+}
+
+.dial-item:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* ============================================
+   다크 모드 지원
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  .dial-item {
+    background: rgba(30, 30, 30, 0.9);
+    border-color: rgba(255, 119, 0, 0.5);
+    color: #fff;
+  }
+
+  .dial-item:hover {
+    background: rgba(255, 119, 0, 0.2);
+  }
+
+  .dial-item-label {
+    color: #fff;
+  }
+}
