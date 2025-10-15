@@ -56,10 +56,10 @@ function App() {
         setCurrentPage('designerDetail');
       } else {
         switch (path) {
-          case '/main':
-          case '/main/':
-            console.log('Setting page to mainPage'); // 디버깅용
-            setCurrentPage('mainPage');
+          case '/comingsoon':
+          case '/comingsoon/':
+            console.log('Setting page to comingsoon'); // 디버깅용
+            setCurrentPage('comingsoon');
             break;
           case '/designer':
           case '/designer/':
@@ -73,8 +73,8 @@ function App() {
             break;
           case '/':
           default:
-            console.log('Setting page to main'); // 디버깅용
-            setCurrentPage('main');
+            console.log('Setting page to mainPage'); // 디버깅용
+            setCurrentPage('mainPage');
             break;
         }
       }
@@ -121,12 +121,12 @@ function App() {
         {/* 작품 페이지 표시 */}
         {currentPage === 'works' && <Works />}
 
-        {/* 커밍순 페이지 표시 (루트 경로일 때) */}
-        {currentPage === 'main' && (
+        {/* 커밍순 페이지 표시 (/comingsoon 경로일 때) */}
+        {currentPage === 'comingsoon' && (
           <ComingSoon />
         )}
 
-        {/* 메인화면 표시 (/main 경로일 때) - 회전 다이얼 포함 */}
+        {/* 메인화면 표시 (루트 경로일 때) - 회전 다이얼 포함 */}
         {currentPage === 'mainPage' && (
           <div className="app-wrapper">
             <Header />
