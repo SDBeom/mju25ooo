@@ -1,7 +1,6 @@
 import React from 'react';
 import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import './DesignerDetail.css';
 
 // 디자이너 데이터 (가나다순으로 정렬)
@@ -257,7 +256,6 @@ const DesignerDetail = () => {
             </button>
           </div>
         </div>
-        <Footer />
       </>
     );
   }

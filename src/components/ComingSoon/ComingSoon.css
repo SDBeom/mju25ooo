@@ -19,7 +19,7 @@
   justify-content: flex-end;      /* Mobile: 아래쪽 정렬 */
   align-items: center;            /* 좌우 중앙 정렬 */
   min-height: 100vh;              /* 최소 화면 높이 (스크롤 허용) */
-  width: 100vw;                   /* 화면 전체 너비 꽉 채움 */
+  width: 100%;                    /* 화면 전체 너비 꽉 채움 */
   background: linear-gradient(135deg, var(--color-background) 0%, #1a1a1a 100%);
   box-sizing: border-box;
   padding: 0;
