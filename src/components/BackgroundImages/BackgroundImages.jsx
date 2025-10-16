@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import './BackgroundImages.css';
+import image1 from '../../assets/imgi_3_premium_photo-1758613868292-a3f75bf1b649.webp';
+import image2 from '../../assets/poster_final.png';
 
 const BackgroundImages = ({ currentIndex }) => {
   const [images, setImages] = useState([]);
@@ -13,8 +15,8 @@ const BackgroundImages = ({ currentIndex }) => {
   const imageData = useMemo(() => {
     const images = [];
     const imageFiles = [
-      '/src/assets/imgi_3_premium_photo-1758613868292-a3f75bf1b649.webp',
-      '/src/assets/poster_final.png'
+      image1,
+      image2
     ];
     
     // 24개 이미지 생성 (다양한 이미지 파일 사용)
