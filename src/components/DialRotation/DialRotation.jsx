@@ -16,12 +16,12 @@ const DialRotation = () => {
   const getRadius = useCallback(() => {
     switch (breakpoint) {
       case 'mobile':
-        return 120; // 모바일: 작은 반지름
+        return 80; // 모바일: 더 작은 반지름
       case 'tablet':
-        return 200; // 태블릿: 중간 반지름
+        return 140; // 태블릿: 중간 반지름
       case 'desktop':
       default:
-        return 300; // 데스크탑: 큰 반지름
+        return 200; // 데스크탑: 큰 반지름
     }
   }, [breakpoint]);
 
