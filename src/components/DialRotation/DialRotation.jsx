@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import BackgroundImages from '../BackgroundImages/BackgroundImages';
+import { useBreakpoint } from '../../hooks/useBreakpoint';
 import './DialRotation.css';
 
 const DialRotation = () => {
@@ -9,6 +10,20 @@ const DialRotation = () => {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0, rotation: 0 });
   const dialRef = useRef(null);
   const totalItems = 24;
+  const breakpoint = useBreakpoint();
+
+  // 화면 크기에 따른 반지름 계산
+  const getRadius = useCallback(() => {
+    switch (breakpoint) {
+      case 'mobile':
+        return 120; // 모바일: 작은 반지름
+      case 'tablet':
+        return 200; // 태블릿: 중간 반지름
+      case 'desktop':
+      default:
+        return 300; // 데스크탑: 큰 반지름
+    }
+  }, [breakpoint]);
 
   // 24개 사진 데이터 (실제로는 이미지 경로를 사용해야 함)
   const imageItems = Array.from({ length: totalItems }, (_, index) => ({
@@ -88,12 +103,12 @@ const DialRotation = () => {
   // 항목 위치 계산
   const getItemPosition = useCallback((index) => {
     const angle = (360 / totalItems) * index;
-    const radius = 300; // 원형 반지름 (크기 증가에 맞춰 조정)
+    const radius = getRadius(); // 화면 크기에 따른 동적 반지름
     // 무한 회전을 위해 각도를 정규화하지 않고 직접 사용
     const x = Math.cos((angle + rotation) * Math.PI / 180) * radius;
     const y = Math.sin((angle + rotation) * Math.PI / 180) * radius;
     return { x, y };
-  }, [rotation, totalItems]);
+  }, [rotation, totalItems, getRadius]);
 
   // 이벤트 리스너 등록
   useEffect(() => {
