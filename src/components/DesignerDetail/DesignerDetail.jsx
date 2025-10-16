@@ -1,9 +1,7 @@
-import React from 'react';
-import { useBreakpointContext } from '../../contexts/BreakpointContext';
-import Header from '../Header/Header';
+import React, { useState, useEffect } from 'react';
 import './DesignerDetail.css';
 
-// 디자이너 데이터 (가나다순으로 정렬)
+// 디자이너 데이터
 const DESIGNERS = [
   { 
     id: 1, 
@@ -12,7 +10,9 @@ const DESIGNERS = [
     description: '사용자 중심의 직관적인 디자인을 추구합니다.',
     skills: ['Figma', 'Adobe XD', 'Sketch', 'Principle'],
     projects: ['모바일 뱅킹 앱 리디자인', '전자상거래 플랫폼 UX 개선'],
-    email: 'kimyunjung@mju.ac.kr'
+    email: 'kimyunjung@mju.ac.kr',
+    portfolio: 'https://portfolio.kimyunjung.com',
+    instagram: 'https://instagram.com/kimyunjung_design'
   },
   { 
     id: 2, 
@@ -21,7 +21,9 @@ const DESIGNERS = [
     description: '브랜드 아이덴티티와 시각 커뮤니케이션에 특화되어 있습니다.',
     skills: ['Photoshop', 'Illustrator', 'InDesign', 'After Effects'],
     projects: ['브랜드 아이덴티티 개발', '프로모션 디자인'],
-    email: 'kimjaeeun@mju.ac.kr'
+    email: 'kimjaeeun@mju.ac.kr',
+    portfolio: 'https://portfolio.kimjaeeun.com',
+    instagram: 'https://instagram.com/kimjaeeun_design'
   },
   { 
     id: 3, 
@@ -30,7 +32,9 @@ const DESIGNERS = [
     description: '동적인 시각 요소로 스토리를 전달합니다.',
     skills: ['After Effects', 'Cinema 4D', 'Blender', 'Premiere Pro'],
     projects: ['브랜드 모션 그래픽', 'UI 애니메이션'],
-    email: 'kimjina@mju.ac.kr'
+    email: 'kimjina@mju.ac.kr',
+    portfolio: 'https://portfolio.kimjina.com',
+    instagram: 'https://instagram.com/kimjina_motion'
   },
   { 
     id: 4, 
@@ -39,7 +43,9 @@ const DESIGNERS = [
     description: '반응형 웹 디자인과 사용자 경험에 집중합니다.',
     skills: ['HTML/CSS', 'JavaScript', 'React', 'Figma'],
     projects: ['기업 웹사이트 리뉴얼', '포트폴리오 웹사이트'],
-    email: 'kimchaeyoung@mju.ac.kr'
+    email: 'kimchaeyoung@mju.ac.kr',
+    portfolio: 'https://portfolio.kimchaeyoung.com',
+    instagram: 'https://instagram.com/kimchaeyoung_web'
   },
   { 
     id: 5, 
@@ -48,293 +54,164 @@ const DESIGNERS = [
     description: '창의적 비전과 전략적 사고로 프로젝트를 이끕니다.',
     skills: ['Creative Strategy', 'Team Management', 'Project Planning'],
     projects: ['종합 브랜딩 캠페인', '크리에이티브 디렉션'],
-    email: 'dotianhong@mju.ac.kr'
-  },
-  { 
-    id: 6, 
-    name: '박진아', 
-    role: 'Brand Designer', 
-    description: '브랜드의 가치를 시각적으로 구현하는 전문가입니다.',
-    skills: ['Brand Strategy', 'Logo Design', 'Visual Identity'],
-    projects: ['스타트업 브랜딩', '브랜드 가이드라인 제작'],
-    email: 'parkjina@mju.ac.kr'
-  },
-  { 
-    id: 7, 
-    name: '박해인', 
-    role: 'UI Designer', 
-    description: '사용자 인터페이스의 아름다움과 기능성을 균형있게 구현합니다.',
-    skills: ['UI Design', 'Prototyping', 'User Testing'],
-    projects: ['앱 UI/UX 디자인', '디자인 시스템 구축'],
-    email: 'parkhaein@mju.ac.kr'
-  },
-  { 
-    id: 8, 
-    name: '박희찬', 
-    role: 'Visual Designer', 
-    description: '시각적 언어로 복잡한 정보를 명확하게 전달합니다.',
-    skills: ['Infographic Design', 'Data Visualization', 'Editorial Design'],
-    projects: ['정보 그래픽 디자인', '연례 보고서 디자인'],
-    email: 'parkheechang@mju.ac.kr'
-  },
-  { 
-    id: 9, 
-    name: '서동범', 
-    role: 'Frontend Developer', 
-    description: '디자인과 개발의 경계에서 혁신적인 솔루션을 만듭니다.',
-    skills: ['React', 'Vue.js', 'TypeScript', 'Node.js'],
-    projects: ['파트타임 웹 애플리케이션', '졸업전시 웹사이트 개발'],
-    email: 'seodongbeom@mju.ac.kr'
-  },
-  { 
-    id: 10, 
-    name: '서원준', 
-    role: 'Product Designer', 
-    description: '제품의 전체적인 사용자 경험을 설계합니다.',
-    skills: ['Product Strategy', 'User Research', 'Service Design'],
-    projects: ['제품 UX 설계', '사용자 여정 맵핑'],
-    email: 'seowonjun@mju.ac.kr'
-  },
-  { 
-    id: 11, 
-    name: '송다희', 
-    role: 'Illustrator', 
-    description: '감성적인 일러스트레이션으로 스토리를 그려냅니다.',
-    skills: ['Digital Illustration', 'Character Design', 'Storyboarding'],
-    projects: ['캐릭터 디자인', '일러스트레이션 책 제작'],
-    email: 'songdahui@mju.ac.kr'
-  },
-  { 
-    id: 12, 
-    name: '심성빈', 
-    role: 'Interaction Designer', 
-    description: '사용자와 제품 간의 상호작용을 설계합니다.',
-    skills: ['Interaction Design', 'Prototyping', 'User Testing'],
-    projects: ['인터랙티브 설치물', 'AR/VR 인터페이스'],
-    email: 'shimsungbin@mju.ac.kr'
-  },
-  { 
-    id: 13, 
-    name: '우수민', 
-    role: 'Digital Designer', 
-    description: '디지털 환경에서의 창의적 표현을 추구합니다.',
-    skills: ['Digital Art', '3D Design', 'Web Design'],
-    projects: ['디지털 아트 전시', '웹 인터랙션 디자인'],
-    email: 'woosumyn@mju.ac.kr'
-  },
-  { 
-    id: 14, 
-    name: '이가비', 
-    role: 'Communication Designer', 
-    description: '효과적인 커뮤니케이션을 위한 시각적 메시지를 만듭니다.',
-    skills: ['Communication Strategy', 'Campaign Design', 'Social Media'],
-    projects: ['소셜 캠페인 디자인', '커뮤니케이션 전략 수립'],
-    email: 'leegabi@mju.ac.kr'
-  },
-  { 
-    id: 15, 
-    name: '이다영', 
-    role: 'Experience Designer', 
-    description: '전체적인 사용자 경험을 통합적으로 설계합니다.',
-    skills: ['UX Research', 'Journey Mapping', 'Service Design'],
-    projects: ['종합 UX 설계', '서비스 경험 개선'],
-    email: 'leedayoung@mju.ac.kr'
-  },
-  { 
-    id: 16, 
-    name: '이운', 
-    role: 'Art Director', 
-    description: '창의적 방향성을 제시하고 팀을 이끌어갑니다.',
-    skills: ['Art Direction', 'Creative Strategy', 'Team Leadership'],
-    projects: ['종합 크리에이티브 디렉션', '아트 디렉션'],
-    email: 'leeun@mju.ac.kr'
-  },
-  { 
-    id: 17, 
-    name: '이준규', 
-    role: 'Service Designer', 
-    description: '서비스의 전체적인 경험을 설계하고 개선합니다.',
-    skills: ['Service Design', 'Design Thinking', 'Co-creation'],
-    projects: ['서비스 디자인 워크샵', '서비스 경험 개선'],
-    email: 'leejunkyu@mju.ac.kr'
-  },
-  { 
-    id: 18, 
-    name: '이지민', 
-    role: 'Content Designer', 
-    description: '콘텐츠의 시각적 표현과 사용자 경험을 연결합니다.',
-    skills: ['Content Strategy', 'Editorial Design', 'Visual Storytelling'],
-    projects: ['콘텐츠 전략 수립', '에디토리얼 디자인'],
-    email: 'leejimin@mju.ac.kr'
-  },
-  { 
-    id: 19, 
-    name: '전기태', 
-    role: 'Design Strategist', 
-    description: '디자인 전략을 통해 비즈니스 목표를 달성합니다.',
-    skills: ['Design Strategy', 'Business Analysis', 'Design Management'],
-    projects: ['디자인 전략 수립', '비즈니스 디자인'],
-    email: 'jeongkita@mju.ac.kr'
-  },
-  { 
-    id: 20, 
-    name: '전서린', 
-    role: 'Packaging Designer', 
-    description: '제품의 첫인상을 결정하는 패키지 디자인에 특화되어 있습니다.',
-    skills: ['Package Design', '3D Modeling', 'Brand Application'],
-    projects: ['제품 패키지 디자인', '브랜드 패키지 시스템'],
-    email: 'jeonseorin@mju.ac.kr'
-  },
-  { 
-    id: 21, 
-    name: '정지민', 
-    role: 'Color Designer', 
-    description: '색채의 심리학적 효과를 활용한 디자인을 만듭니다.',
-    skills: ['Color Theory', 'Color Psychology', 'Brand Colors'],
-    projects: ['브랜드 컬러 시스템', '색채 전략 수립'],
-    email: 'jungjimin@mju.ac.kr'
-  },
-  { 
-    id: 22, 
-    name: '조하늘', 
-    role: 'Typography Designer', 
-    description: '타이포그래피를 통해 메시지의 강도를 조절합니다.',
-    skills: ['Typography', 'Font Design', 'Lettering'],
-    projects: ['타이포그래피 디자인', '폰트 디자인'],
-    email: 'johaneul@mju.ac.kr'
-  },
-  { 
-    id: 23, 
-    name: '허지훈', 
-    role: 'Design System Designer', 
-    description: '일관성 있는 디자인 시스템을 구축하고 관리합니다.',
-    skills: ['Design Systems', 'Component Library', 'Design Tokens'],
-    projects: ['디자인 시스템 구축', '컴포넌트 라이브러리 개발'],
-    email: 'heojihun@mju.ac.kr'
-  },
-  { 
-    id: 24, 
-    name: '안선민', 
-    role: 'User Researcher', 
-    description: '사용자 관점에서 디자인 문제를 해결합니다.',
-    skills: ['User Research', 'Usability Testing', 'Data Analysis'],
-    projects: ['사용자 리서치', '사용성 테스트'],
-    email: 'anseonmin@mju.ac.kr'
+    email: 'dotianhong@mju.ac.kr',
+    portfolio: 'https://portfolio.dotianhong.com',
+    instagram: 'https://instagram.com/dotianhong_creative'
   }
-].sort((a, b) => a.name.localeCompare(b.name, 'ko', { sensitivity: 'base' }));
+];
 
 const DesignerDetail = () => {
-  const { isMobile } = useBreakpointContext();
-  
-  const fullPath = window.location.href;
-  const pathWithoutQuery = fullPath.split('?')[0];
-  const pathParts = pathWithoutQuery.replace(window.location.origin, '').split('/');
-  const encodedName = pathParts[2];
-  const designerName = encodedName ? decodeURIComponent(encodedName) : '';
-  
-  const designer = DESIGNERS.find(d => d.name === designerName);
+  const [designer, setDesigner] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const handleContactClick = (email) => {
-    window.open(`mailto:${email}`, '_blank');
-  };
+  useEffect(() => {
+    // URL에서 디자이너 이름 추출
+    const fullPath = window.location.href;
+    const pathWithoutQuery = fullPath.split('?')[0];
+    const pathParts = pathWithoutQuery.replace(window.location.origin, '').split('/');
+    const encodedName = pathParts[2];
+    const designerName = encodedName ? decodeURIComponent(encodedName) : '';
+    
+    // 디자이너 찾기
+    const foundDesigner = DESIGNERS.find(d => d.name === designerName);
+    setDesigner(foundDesigner);
+    setLoading(false);
+  }, []);
 
   const handleBackToDesigners = () => {
     window.history.pushState({}, '', '/designer');
     window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
+  const handleContactClick = (email) => {
+    window.open(`mailto:${email}`, '_blank');
+  };
+
+  const handlePortfolioClick = (url) => {
+    window.open(url, '_blank');
+  };
+
+  const handleInstagramClick = (url) => {
+    window.open(url, '_blank');
+  };
+
+  if (loading) {
+    return (
+      <div className="designer-detail-loading">
+        <div className="loading-spinner"></div>
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   if (!designer) {
     return (
-      <>
-        <Header />
-        <div className="designer-detail-page">
-          <div className="error-container">
-            <h1>디자이너를 찾을 수 없습니다</h1>
-            <p>요청하신 디자이너 정보가 존재하지 않습니다.</p>
-            <button onClick={handleBackToDesigners} className="back-button">
-              디자이너 목록으로 돌아가기
-            </button>
-          </div>
-        </div>
-      </>
+      <div className="designer-detail-error">
+        <h1>Designer Not Found</h1>
+        <p>The designer you're looking for doesn't exist.</p>
+        <button onClick={handleBackToDesigners} className="back-button">
+          Back to Designers
+        </button>
+      </div>
     );
   }
 
   return (
-    <>
-      <Header />
-      <div className="designer-detail-page">
-        <div className="back-to-designers">
-          <button onClick={handleBackToDesigners} className="back-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <span>{isMobile ? '목록' : '디자이너 목록으로 돌아가기'}</span>
-          </button>
+    <div className="designer-detail">
+      {/* 헤더 */}
+      <header className="designer-detail-header">
+        <button onClick={handleBackToDesigners} className="back-button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          Back to Designers
+        </button>
+      </header>
+
+      {/* 메인 컨텐츠 */}
+      <main className="designer-detail-main">
+        <div className="designer-profile">
+          {/* 프로필 이미지 */}
+          <div className="designer-avatar">
+            <div className="avatar-placeholder">
+              <span className="avatar-initial">{designer.name.charAt(0)}</span>
+            </div>
+          </div>
+
+          {/* 기본 정보 */}
+          <div className="designer-info">
+            <h1 className="designer-name">{designer.name}</h1>
+            <h2 className="designer-role">{designer.role}</h2>
+            <p className="designer-description">{designer.description}</p>
+          </div>
+
+          {/* 액션 버튼들 */}
+          <div className="designer-actions">
+            <button 
+              onClick={() => handleContactClick(designer.email)} 
+              className="action-button primary"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
+                <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
+              </svg>
+              Contact
+            </button>
+            
+            <button 
+              onClick={() => handlePortfolioClick(designer.portfolio)} 
+              className="action-button secondary"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" strokeWidth="2"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="2"/>
+              </svg>
+              Portfolio
+            </button>
+            
+            <button 
+              onClick={() => handleInstagramClick(designer.instagram)} 
+              className="action-button secondary"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" strokeWidth="2"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" strokeWidth="2"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" strokeWidth="2"/>
+              </svg>
+              Instagram
+            </button>
+          </div>
         </div>
-        
-        <div className="designer-detail-container">
-          <section className="profile-header">
-            <div className="profile-avatar">
-              <div className="avatar-placeholder">
-                <span className="avatar-name">{designer.name}</span>
+
+        {/* 스킬 섹션 */}
+        <section className="designer-skills">
+          <h3>Skills</h3>
+          <div className="skills-grid">
+            {designer.skills.map((skill, index) => (
+              <div key={index} className="skill-tag">
+                {skill}
               </div>
-            </div>
-            <div className="profile-info">
-              <h1 className="profile-name">{designer.name}</h1>
-              <p className="profile-role">{designer.role}</p>
-              <p className="profile-description">{designer.description}</p>
-            </div>
-          </section>
+            ))}
+          </div>
+        </section>
 
-          <section className="skills-section">
-            <h2>주요 스킬</h2>
-            <div className="skills-grid">
-              {designer.skills.map((skill, index) => (
-                <div key={index} className="skill-card">
-                  <span className="skill-name">{skill}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="projects-section">
-            <h2>대표 프로젝트</h2>
-            <div className="projects-grid">
-              {designer.projects.map((project, index) => (
-                <div key={index} className="project-card">
-                  <h3 className="project-title">프로젝트 {index + 1}</h3>
-                  <p className="project-description">{project}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="contact-section">
-            <h2>연락처</h2>
-            <div className="contact-content">
-              <div className="contact-info">
-                <div className="email-info">
-                  <h3>이메일</h3>
-                  <p className="email-address">{designer.email}</p>
+        {/* 프로젝트 섹션 */}
+        <section className="designer-projects">
+          <h3>Featured Projects</h3>
+          <div className="projects-list">
+            {designer.projects.map((project, index) => (
+              <div key={index} className="project-item">
+                <div className="project-number">{String(index + 1).padStart(2, '0')}</div>
+                <div className="project-content">
+                  <h4>{project}</h4>
+                  <p>Detailed project description and process...</p>
                 </div>
               </div>
-              <button 
-                className="contact-button"
-                onClick={() => handleContactClick(designer.email)}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
-                  <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
-                </svg>
-                이메일로 연락하기
-              </button>
-            </div>
-          </section>
-        </div>
-      </div>
-      <Footer />
-    </>
+            ))}
+          </div>
+        </section>
+      </main>
+    </div>
   );
 };
 

@@ -1,466 +1,400 @@
 /* ============================================
-   Designer Detail Page - Media Query 방식
+   DesignerDetail - 새로운 디자이너 상세페이지
    ============================================ */
 
-/* Designer Detail Page Styles - Mobile First */
-.designer-detail-page {
+.designer-detail {
   min-height: 100vh;
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
-  padding-top: 60px; /* Mobile */
-  padding-bottom: 0;
+  background: linear-gradient(135deg, #2A2A2A 0%, #1a1a1a 100%);
+  color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
-/* Back Button */
-.back-to-designers {
+/* ============================================
+   로딩 및 에러 상태
+   ============================================ */
+.designer-detail-loading,
+.designer-detail-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #FF6B35;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.designer-detail-error h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #FF6B35;
+}
+
+.designer-detail-error p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #CCCCCC;
+}
+
+/* ============================================
+   헤더
+   ============================================ */
+.designer-detail-header {
   position: fixed;
-  top: 80px; /* Mobile */
-  left: 1rem;
-  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(42, 42, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
 }
 
 .back-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.75rem; /* Mobile */
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  color: var(--color-text-primary);
-  font-size: 0.8rem; /* Mobile */
-  font-weight: 500;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1rem;
   cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
 .back-button:hover {
-  background: rgba(255, 107, 53, 0.2);
-  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateX(-2px);
 }
 
 .back-button svg {
-  width: 16px;
-  height: 16px;
+  transition: transform 0.3s ease;
 }
 
-/* Container */
-.designer-detail-container {
-  max-width: 1000px;
+.back-button:hover svg {
+  transform: translateX(-2px);
+}
+
+/* ============================================
+   메인 컨텐츠
+   ============================================ */
+.designer-detail-main {
+  padding: 6rem 2rem 2rem;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem; /* Mobile */
 }
 
-/* Profile Header */
-.profile-header {
+.designer-profile {
   display: flex;
-  flex-direction: column; /* Mobile: 세로 */
-  gap: 2rem; /* Mobile */
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   margin-bottom: 4rem;
-  padding: 1rem; /* Mobile */
+  padding: 3rem 2rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center; /* Mobile */
 }
 
-.profile-avatar {
-  flex-shrink: 0;
+/* ============================================
+   프로필 아바타
+   ============================================ */
+.designer-avatar {
+  margin-bottom: 2rem;
 }
 
 .avatar-placeholder {
-  width: 80px; /* Mobile */
-  height: 60px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #FF6B35, #F7931E);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B35 0%, #4FC3F7 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3);
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+  transition: transform 0.3s ease;
 }
 
-.avatar-name {
-  font-size: 1rem; /* Mobile */
-  font-weight: 600;
+.avatar-placeholder:hover {
+  transform: scale(1.05);
+}
+
+.avatar-initial {
+  font-size: 3rem;
+  font-weight: bold;
   color: #FFFFFF;
-  text-align: center;
-  line-height: 1.2;
-  word-break: keep-all;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.profile-info {
-  flex: 1;
+/* ============================================
+   디자이너 정보
+   ============================================ */
+.designer-info {
+  margin-bottom: 2rem;
 }
 
-.profile-name {
-  font-size: 1.8rem; /* Mobile */
-  font-weight: 700;
-  color: #FFFFFF;
+.designer-name {
+  font-size: 2.5rem;
+  font-weight: bold;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #FF6B35, #F7931E);
+  background: linear-gradient(135deg, #FF6B35 0%, #4FC3F7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.profile-role {
-  font-size: 1rem; /* Mobile */
-  color: #FF6B35;
-  font-weight: 500;
+.designer-role {
+  font-size: 1.2rem;
+  color: #4FC3F7;
   margin-bottom: 1rem;
+  font-weight: 500;
 }
 
-.profile-description {
-  font-size: 1rem; /* Mobile */
+.designer-description {
+  font-size: 1.1rem;
   color: #CCCCCC;
   line-height: 1.6;
-  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-/* Skills Section */
-.skills-section {
+/* ============================================
+   액션 버튼들
+   ============================================ */
+.designer-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.action-button.primary {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8A65 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.action-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.action-button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.action-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   스킬 섹션
+   ============================================ */
+.designer-skills {
   margin-bottom: 4rem;
 }
 
-.skills-section h2 {
-  font-size: 1.5rem; /* Mobile */
-  font-weight: 600;
+.designer-skills h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
   color: #FFFFFF;
-  margin-bottom: 2rem;
   text-align: center;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mobile: 1열 */
-  gap: 0.75rem; /* Mobile */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.skill-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.skill-tag {
+  background: rgba(79, 195, 247, 0.1);
+  border: 1px solid rgba(79, 195, 247, 0.3);
+  color: #4FC3F7;
+  padding: 0.75rem 1rem;
   border-radius: 12px;
-  padding: 0.75rem; /* Mobile */
   text-align: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.skill-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 107, 53, 0.3);
-  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.1);
-}
-
-.skill-name {
-  font-size: 0.9rem; /* Mobile */
   font-weight: 500;
-  color: #FF6B35;
-}
-
-/* Projects Section */
-.projects-section {
-  margin-bottom: 4rem;
-}
-
-.projects-section h2 {
-  font-size: 1.5rem; /* Mobile */
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* Mobile: 1열 */
-  gap: 1rem; /* Mobile */
-}
-
-.project-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 1rem; /* Mobile */
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 107, 53, 0.3);
-  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.1);
-}
-
-.project-title {
-  font-size: 1.1rem; /* Mobile */
-  font-weight: 600;
-  color: #FF6B35;
-  margin-bottom: 1rem;
-}
-
-.project-description {
-  font-size: 0.9rem; /* Mobile */
-  color: #CCCCCC;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Contact Section */
-.contact-section {
-  margin-bottom: 2rem;
-}
-
-.contact-section h2 {
-  font-size: 1.5rem; /* Mobile */
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.contact-content {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 1.5rem; /* Mobile */
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
-
-.contact-info {
-  margin-bottom: 2rem;
-}
-
-.email-info h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: 1rem;
-}
-
-.email-address {
-  font-size: 1rem; /* Mobile */
-  color: #FF6B35;
-  font-family: monospace;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.75rem 1rem; /* Mobile */
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 0;
-  display: inline-block;
-}
-
-.contact-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem; /* Mobile */
-  background: linear-gradient(135deg, #FF6B35, #F7931E);
-  border: none;
-  border-radius: 25px;
-  color: #FFFFFF;
-  font-size: 0.9rem; /* Mobile */
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
-}
-
-.contact-button:hover {
+.skill-tag:hover {
+  background: rgba(79, 195, 247, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.4);
-}
-
-/* Error Container */
-.error-container {
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-.error-container h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: 1rem;
-}
-
-.error-container p {
-  font-size: 1.1rem;
-  color: #CCCCCC;
-  margin-bottom: 2rem;
 }
 
 /* ============================================
-   Tablet (768px ~ 1023px)
+   프로젝트 섹션
    ============================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .designer-detail-page {
-    padding-top: 70px;
+.designer-projects {
+  margin-bottom: 4rem;
+}
+
+.designer-projects h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.project-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8A65 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+}
+
+.project-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #FFFFFF;
+}
+
+.project-content p {
+  color: #CCCCCC;
+  line-height: 1.5;
+}
+
+/* ============================================
+   반응형 디자인
+   ============================================ */
+@media (max-width: 768px) {
+  .designer-detail-header {
+    padding: 1rem;
   }
 
-  .back-to-designers {
-    top: 90px;
-    left: 1.5rem;
+  .designer-detail-main {
+    padding: 5rem 1rem 2rem;
   }
 
-  .designer-detail-container {
-    padding: 1.5rem;
+  .designer-profile {
+    padding: 2rem 1rem;
   }
 
-  .profile-header {
-    padding: 1.5rem;
+  .designer-name {
+    font-size: 2rem;
+  }
+
+  .designer-role {
+    font-size: 1.1rem;
+  }
+
+  .designer-description {
+    font-size: 1rem;
+  }
+
+  .designer-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .project-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-number {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .designer-name {
+    font-size: 1.8rem;
   }
 
   .avatar-placeholder {
     width: 100px;
-    height: 70px;
-    border-radius: 35px;
+    height: 100px;
   }
 
-  .avatar-name {
-    font-size: 1.2rem;
-  }
-
-  .profile-name {
-    font-size: 2rem;
-  }
-
-  .profile-role {
-    font-size: 1.1rem;
-  }
-
-  .skills-section h2,
-  .projects-section h2,
-  .contact-section h2 {
-    font-size: 1.6rem;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tablet: auto-fit */
-    gap: 0.75rem;
-  }
-
-  .skill-card {
-    padding: 1rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr; /* Tablet: 1열 */
-    gap: 1rem;
-  }
-
-  .project-card {
-    padding: 1.5rem;
-  }
-
-  .contact-content {
-    padding: 2rem;
-  }
-}
-
-/* ============================================
-   Desktop (1024px 이상)
-   ============================================ */
-@media (min-width: 1024px) {
-  .designer-detail-page {
-    padding-top: 80px;
-  }
-
-  .back-to-designers {
-    top: 100px;
-    left: 2rem;
-  }
-
-  .back-button {
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .designer-detail-container {
-    padding: 2rem;
-  }
-
-  .profile-header {
-    flex-direction: row; /* Desktop: 가로 */
-    gap: 3rem;
-    padding: 2rem;
-    text-align: left; /* Desktop: 왼쪽 정렬 */
-  }
-
-  .avatar-placeholder {
-    width: 120px;
-    height: 80px;
-    border-radius: 40px;
-  }
-
-  .avatar-name {
-    font-size: 1.4rem;
-  }
-
-  .profile-name {
+  .avatar-initial {
     font-size: 2.5rem;
   }
 
-  .profile-role {
-    font-size: 1.3rem;
-  }
-
-  .profile-description {
-    font-size: 1.1rem;
-  }
-
-  .skills-section h2,
-  .projects-section h2,
-  .contact-section h2 {
-    font-size: 1.8rem;
-  }
-
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Desktop: auto-fit */
-    gap: 1rem;
-  }
-
-  .skill-card {
-    padding: 1.5rem;
-  }
-
-  .skill-name {
-    font-size: 1rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Desktop: auto-fit */
-    gap: 2rem;
-  }
-
-  .project-card {
-    padding: 2rem;
-  }
-
-  .project-title {
-    font-size: 1.2rem;
-  }
-
-  .project-description {
-    font-size: 1rem;
-  }
-
-  .contact-content {
-    padding: 3rem;
-  }
-
-  .email-address {
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
-  }
-
-  .contact-button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
+    grid-template-columns: 1fr 1fr;
   }
 }
