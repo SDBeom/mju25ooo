@@ -130,7 +130,7 @@ function App() {
         )}
 
         {/* 전역 Footer - 모든 페이지에서 공통으로 사용 */}
-        <Footer ref={footerRef} />
+        <Footer />
       </ErrorBoundary>
     </BreakpointProvider>
   );
