@@ -4,7 +4,6 @@ import './ComingSoon.css';
 
 // ✨ 컴포넌트들을 조립
 import ComingSoonContent from './ComingSoonContent';
-import ComingSoonFooter from './ComingSoonFooter';
 import GooeyBackgroundSVG from './GooeyBackgroundSVG';
 
 const ComingSoon = () => {
@@ -104,7 +103,6 @@ const ComingSoon = () => {
       
       {/* ✨ 블록 조립하듯 간단하게 구성 */}
       <ComingSoonContent />
-      <ComingSoonFooter ref={footerRef} />
     </div>
   );
 };

@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* 가로 스크롤바 제거 */
 }
 
 body {
@@ -18,6 +19,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* 가로 스크롤바 제거 */
 }
 
 #root {
@@ -27,6 +29,7 @@ body {
   padding-bottom: 0; /* 하단 패딩 명시적 제거 */
   min-height: 100vh;
   background-color: #2A2A2A;
+  overflow-x: hidden; /* 가로 스크롤바 제거 */
 }
 
 /* Custom scrollbar */
@@ -218,7 +221,7 @@ body {
   }
 }
 
-/* 메인 비주얼 드래그 스타일은 MainContent.css로 이동됨 */
+/* 메인 비주얼 스타일은 DialRotation.css에서 관리 */
 
 /* 위치 표시기 스타일 */
 .position-indicator {
@@ -336,5 +339,12 @@ body {
   .position-dot {
     width: 6px;
     height: 6px;
+  }
+}
+
+/* 모바일에서 Footer가 콘텐츠를 가리지 않도록 하단 패딩 추가 */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 0; /* 모바일 패딩 제거 */
   }
 }

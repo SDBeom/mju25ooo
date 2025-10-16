@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import BackgroundImages from '../BackgroundImages/BackgroundImages';
 import './DialRotation.css';
 
-const DialRotation = ({ onNavigate }) => {
+const DialRotation = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [rotation, setRotation] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -22,7 +23,11 @@ const DialRotation = ({ onNavigate }) => {
     const delta = e.deltaY > 0 ? 1 : -1;
     setCurrentIndex(prev => {
       const newIndex = (prev + delta + totalItems) % totalItems;
-      setRotation(prev => prev + (delta * (360 / totalItems)));
+      setRotation(prev => {
+        const rotationDelta = delta * (360 / totalItems);
+        // 무한 회전을 위해 각도를 누적 (360도 제한 없음)
+        return prev + rotationDelta;
+      });
       return newIndex;
     });
   }, [totalItems]);
@@ -44,16 +49,17 @@ const DialRotation = ({ onNavigate }) => {
     const deltaX = clientX - dragStart.x;
     const deltaY = clientY - dragStart.y;
     
-    // 회전 각도 계산
-    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+    // 회전 각도 계산 (더 부드러운 회전을 위해 감도 조정)
+    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) * 0.5;
     const newRotation = dragStart.rotation + angle;
     
     setRotation(newRotation);
     
-    // 회전에 따른 인덱스 업데이트
+    // 회전에 따른 인덱스 업데이트 (무한 회전 지원)
     const rotationPerItem = 360 / totalItems;
-    const newIndex = Math.round((newRotation % 360) / rotationPerItem);
-    setCurrentIndex((newIndex + totalItems) % totalItems);
+    // 무한 회전을 위해 각도를 정규화하지 않고 직접 계산
+    const newIndex = Math.round(newRotation / rotationPerItem);
+    setCurrentIndex((newIndex % totalItems + totalItems) % totalItems);
   }, [isDragging, dragStart, totalItems]);
 
   const handleEnd = useCallback(() => {
@@ -63,14 +69,27 @@ const DialRotation = ({ onNavigate }) => {
   // 항목 클릭 핸들러
   const handleItemClick = useCallback((index) => {
     setCurrentIndex(index);
+    // 현재 회전 각도를 기준으로 가장 가까운 회전 각도 계산
     const targetRotation = index * (360 / totalItems);
-    setRotation(targetRotation);
+    setRotation(prev => {
+      // 현재 각도에서 목표 각도까지의 최단 경로 계산
+      const currentNormalized = ((prev % 360) + 360) % 360;
+      const targetNormalized = ((targetRotation % 360) + 360) % 360;
+      const diff = targetNormalized - currentNormalized;
+      
+      // 최단 경로로 회전 (180도 이상 차이나면 반대 방향으로 회전)
+      if (Math.abs(diff) > 180) {
+        return prev + (diff > 0 ? diff - 360 : diff + 360);
+      }
+      return prev + diff;
+    });
   }, [totalItems]);
 
   // 항목 위치 계산
   const getItemPosition = useCallback((index) => {
     const angle = (360 / totalItems) * index;
-    const radius = 200; // 원형 반지름
+    const radius = 300; // 원형 반지름 (크기 증가에 맞춰 조정)
+    // 무한 회전을 위해 각도를 정규화하지 않고 직접 사용
     const x = Math.cos((angle + rotation) * Math.PI / 180) * radius;
     const y = Math.sin((angle + rotation) * Math.PI / 180) * radius;
     return { x, y };
@@ -105,16 +124,15 @@ const DialRotation = ({ onNavigate }) => {
   }, [handleWheel, handleStart, handleMove, handleEnd]);
 
   return (
-    <div className="dial-rotation-container">
-      <div 
-        ref={dialRef}
-        className="dial-rotation"
-        style={{
-          transform: `rotate(${rotation}deg)`,
-          cursor: isDragging ? 'grabbing' : 'grab'
-        }}
-      >
-        {/* 중앙 원과 텍스트 */}
+    <>
+      {/* 배경 이미지 - 스크롤과 다이얼 회전에 반응 */}
+      <BackgroundImages
+        currentIndex={currentIndex}
+        rotation={rotation}
+      />
+
+      <div className="dial-rotation-container">
+        {/* 중앙 원과 텍스트 - 회전하지 않도록 밖으로 분리 */}
         <div className="dial-center">
           <div className="dial-center-circle">
             <div className="dial-center-text">
@@ -123,39 +141,37 @@ const DialRotation = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* 24개 사진들이 원형으로 배치 */}
-        {imageItems.map((item, index) => {
-          const position = getItemPosition(index);
-          const isActive = index === currentIndex;
-          
-          return (
-            <div
-              key={item.id}
-              className={`dial-item ${isActive ? 'active' : ''}`}
-              style={{
-                transform: `translate(${position.x}px, ${position.y}px) rotate(${-rotation}deg)`
-              }}
-              onClick={() => handleItemClick(index)}
-            >
-              <div className="dial-item-image">
-                <img 
-                  src={item.image} 
-                  alt={item.alt}
-                  onError={(e) => {
-                    // 이미지 로드 실패 시 플레이스홀더 표시
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="image-placeholder" style={{ display: 'none' }}>
+        <div 
+          ref={dialRef}
+          className="dial-rotation"
+          style={{
+            transform: `rotate(${rotation}deg)`,
+            cursor: isDragging ? 'grabbing' : 'grab'
+          }}
+        >
+          {/* 24개 사진들이 원형으로 배치 */}
+          {imageItems.map((item, index) => {
+            const position = getItemPosition(index);
+            const isActive = index === currentIndex;
+            
+            return (
+              <div
+                key={item.id}
+                className={`dial-item ${isActive ? 'active' : ''}`}
+                style={{
+                  transform: `translate(${position.x}px, ${position.y}px) rotate(${-rotation}deg)`
+                }}
+                onClick={() => handleItemClick(index)}
+              >
+                <div className="dial-item-content">
                   {item.id}
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
