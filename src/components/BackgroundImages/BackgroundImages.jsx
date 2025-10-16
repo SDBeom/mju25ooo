@@ -119,7 +119,7 @@ const BackgroundImages = ({ currentIndex }) => {
 
   // 프레임 갤러리 스타일 계산 (스크롤 반응형, 무한 루프 지원)
   const getFrameGalleryStyle = useCallback((renderIndex) => {
-    const { width: viewportWidth, height: viewportHeight } = viewportSize;
+    const { height: viewportHeight } = viewportSize;
     
     // 기본 프레임 크기 (상하로 꽉 차게)
     const baseFrameHeight = viewportHeight * 0.95;
@@ -143,10 +143,6 @@ const BackgroundImages = ({ currentIndex }) => {
     // 스크롤에 따른 추가 스케일링 (부드러운 변화)
     const scrollScale = Math.max(0.7, 1 - Math.abs(scrollY) / 1000);
     const finalScale = scale * scrollScale;
-    
-    // 최종 프레임 크기
-    const frameWidth = baseFrameWidth * finalScale;
-    const frameHeight = baseFrameHeight * finalScale;
     
     // 보이는 범위 확장
     const isVisible = Math.abs(offset) <= 3.0;
