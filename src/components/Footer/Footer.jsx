@@ -1,50 +1,21 @@
 import React from 'react';
 import './Footer.css';
-import MJULogo from '../../assets/MJU_Signature_logo_Horizontal.svg';
-import OOOLOGO from '../../assets/ooo_Signture_logo_Horizontal.svg';
-import { EXHIBITION_INFO } from '../../shared/constants';
 
 const Footer = React.forwardRef((props, ref) => {
-  // 간단한 모바일 감지
-  const isMobile = window.innerWidth < 768;
-
   return (
     <footer className="footer" ref={ref}>
       <div className="footer-content">
-        {/* 전시 정보 섹션 */}
         <div className="exhibition-info">
           <div className="exhibition-detail">
-            {isMobile ? (
-              <>
-                {EXHIBITION_INFO.DATE}<br />
-                {EXHIBITION_INFO.TIME}<br />
-                {EXHIBITION_INFO.ADDRESS}<br />
-                {EXHIBITION_INFO.COPYRIGHT}
-              </>
-            ) : (
-              <>
-                {EXHIBITION_INFO.DATE} | {EXHIBITION_INFO.TIME}<br />
-                {EXHIBITION_INFO.ADDRESS}<br />
-                {EXHIBITION_INFO.COPYRIGHT}
-              </>
-            )}
+            2025.11.12 - 11.17 | 11:00 - 18:00<br />
+            35-4, INSADONG-GIL, JONGNO-GU<br />
+            © 2025 MJU MCD. All rights reserved.
           </div>
         </div>
-
-        {/* 로고 섹션 */}
         <div className="footer-logos">
-          <img 
-            src={MJULogo} 
-            alt="명지대학교 로고" 
-            className="footer-logo mju-logo"
-          />
-          <img 
-            src={OOOLOGO} 
-            alt="OOO 로고" 
-            className="footer-logo ooo-logo"
-          />
+          <div className="footer-logo mju-logo">MJU</div>
+          <div className="footer-logo ooo-logo">OOO</div>
         </div>
-
       </div>
     </footer>
   );
