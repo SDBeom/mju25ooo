@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+const Footer = () => {
   return (
     <footer style={{ 
       position: 'fixed', 
@@ -16,6 +16,6 @@ function Footer() {
       <div>2025.11.12 - 11.17 | © 2025 MJU MCD</div>
     </footer>
   );
-}
+};
 
 export default Footer;
