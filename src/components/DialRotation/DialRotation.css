@@ -7,8 +7,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1000px;
-  height: 1000px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1000px;
+  max-height: 1000px;
+  min-width: 300px;
+  min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,11 +107,37 @@
 }
 
 
-/* 반응형 디자인 */
+/* 반응형 디자인 - 태블릿 */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .dial-rotation-container {
+    max-width: 800px;
+    max-height: 800px;
+  }
+
+  .dial-center-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .dial-center-text {
+    font-size: 1.6rem;
+  }
+
+  .dial-item {
+    width: 60px;
+    height: 60px;
+  }
+
+  .dial-item-content {
+    font-size: 1.1rem;
+  }
+}
+
+/* 반응형 디자인 - 모바일 */
 @media (max-width: 768px) {
   .dial-rotation-container {
-    width: 500px;
-    height: 500px;
+    max-width: 500px;
+    max-height: 500px;
   }
 
   .dial-center-circle {
@@ -129,10 +159,11 @@
   }
 }
 
+/* 반응형 디자인 - 작은 모바일 */
 @media (max-width: 480px) {
   .dial-rotation-container {
-    width: 350px;
-    height: 350px;
+    max-width: 350px;
+    max-height: 350px;
   }
 
   .dial-center-circle {
