@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BreakpointProvider } from './contexts/BreakpointContext';
 import ComingSoon from './components/ComingSoon/ComingSoon';
@@ -12,7 +12,6 @@ import Works from './components/Works/Works';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('mainPage');
-  const footerRef = useRef(null);
   
   console.log('App rendered, currentPage:', currentPage);
 
@@ -58,47 +57,6 @@ function App() {
     return () => window.removeEventListener('popstate', updatePageFromUrl);
   }, []);
 
-  // 전역 마우스 호버 효과 (모든 페이지에서 작동)
-  useEffect(() => {
-    const footerElement = footerRef.current;
-    if (!footerElement) return;
-
-    const handleMouseMove = (e) => {
-      // 화면 하단에서 100px 이내에 마우스가 있을 때
-      const bottomThreshold = 100;
-      const distanceFromBottom = window.innerHeight - e.clientY;
-      
-      if (distanceFromBottom <= bottomThreshold) {
-        // 하단에 가까우면 푸터를 올림 (0% ~ 100%)
-        const progress = Math.max(0, (bottomThreshold - distanceFromBottom) / bottomThreshold);
-        const translateY = 100 - (progress * 100);
-        
-        // 부드러운 애니메이션을 위해 transition 적용
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = `translateY(${translateY}%)`;
-      } else {
-        // 하단에서 멀어지면 푸터를 숨김
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = 'translateY(100%)';
-      }
-    };
-
-    // 마우스가 화면을 벗어날 때 푸터 숨김
-    const handleMouseLeave = () => {
-      if (footerElement) {
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = 'translateY(100%)';
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
-    
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, []);
 
   return (
     <BreakpointProvider>
