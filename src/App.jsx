@@ -19,13 +19,6 @@ function App() {
   // URL 기반 페이지 라우팅
   useEffect(() => {
     const updatePageFromUrl = () => {
-      // GitHub Pages SPA 리다이렉트 처리
-      const redirectPath = sessionStorage.getItem('spa-redirect-path');
-      if (redirectPath) {
-        sessionStorage.removeItem('spa-redirect-path');
-        window.history.replaceState(null, '', redirectPath);
-      }
-      
       const fullPath = window.location.href;
       const pathWithoutQuery = fullPath.split('?')[0];
       const path = pathWithoutQuery.replace(window.location.origin, '') || '/';
