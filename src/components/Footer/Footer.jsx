@@ -1,12 +1,12 @@
 import React from 'react';
-import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import './Footer.css';
 import MJULogo from '../../assets/MJU_Signature_logo_Horizontal.svg';
 import OOOLOGO from '../../assets/ooo_Signture_logo_Horizontal.svg';
 import { EXHIBITION_INFO } from '../../shared/constants';
 
 const Footer = React.forwardRef((props, ref) => {
-  const { isMobile } = useBreakpointContext();
+  // 간단한 모바일 감지
+  const isMobile = window.innerWidth < 768;
 
   return (
     <footer className="footer" ref={ref}>
