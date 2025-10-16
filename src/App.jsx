@@ -4,11 +4,30 @@ import { BreakpointProvider } from './contexts/BreakpointContext';
 import ComingSoon from './components/ComingSoon/ComingSoon';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 import DialRotation from './components/DialRotation/DialRotation';
 import Designer from './components/Designer/Designer';
 import DesignerDetail from './components/DesignerDetail/DesignerDetail';
 import Works from './components/Works/Works';
+
+// 인라인 Footer 컴포넌트
+const Footer = () => {
+  return (
+    <footer style={{ 
+      position: 'fixed', 
+      bottom: 0, 
+      left: 0, 
+      right: 0, 
+      background: 'rgba(42, 42, 42, 0.95)', 
+      color: 'white', 
+      padding: '20px', 
+      textAlign: 'center',
+      zIndex: 9999
+    }}>
+      <div>2025.11.12 - 11.17 | © 2025 MJU MCD</div>
+    </footer>
+  );
+};
 
 function App() {
   const [currentPage, setCurrentPage] = useState('mainPage');
