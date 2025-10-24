@@ -46,7 +46,7 @@ function App() {
             break;
           case '/':
           default:
-            setCurrentPage('mainPage');
+            setCurrentPage('comingsoon');
             break;
         }
       }
