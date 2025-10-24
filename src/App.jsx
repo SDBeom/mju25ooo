@@ -67,8 +67,8 @@ function App() {
   return (
     <BreakpointProvider>
       <ErrorBoundary>
-        {/* 전역 Header - 모든 페이지에서 공통으로 사용 */}
-        <Header currentPage={currentPage} />
+        {/* 전역 Header - 커밍순 페이지가 아닐 때만 표시 */}
+        {currentPage !== 'comingsoon' && <Header currentPage={currentPage} />}
 
         {/* 디자이너 페이지 표시 */}
         {currentPage === 'designer' && <Designer />}
