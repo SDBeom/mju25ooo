@@ -24,6 +24,12 @@ function App() {
       
       console.log('Current path:', path);
       
+      // www.mju25ooo.com 도메인에서는 항상 커밍순 페이지만 표시
+      if (window.location.hostname === 'www.mju25ooo.com' || window.location.hostname === 'mju25ooo.com') {
+        setCurrentPage('comingsoon');
+        return;
+      }
+      
       if (path.startsWith('/designer/') && path !== '/designer/') {
         setCurrentPage('designerDetail');
       } else {
