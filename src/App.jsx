@@ -78,7 +78,9 @@ function App() {
     <BreakpointProvider>
       <ErrorBoundary>
         {/* 전역 Header - 커밍순 페이지가 아닐 때만 표시 */}
-        {currentPage !== 'comingsoon' && <Header currentPage={currentPage} />}
+        {currentPage !== 'comingsoon' && (
+          <Header currentPage={currentPage} />
+        )}
 
         {/* 디자이너 페이지 표시 */}
         {currentPage === 'designer' && <Designer />}
