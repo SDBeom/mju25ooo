@@ -24,8 +24,18 @@ function App() {
       
       console.log('Current path:', path);
       
-      // www.mju25ooo.com 도메인에서는 항상 커밍순 페이지만 표시
+      // www.mju25ooo.com 도메인에서는 특정 경로만 허용
       if (window.location.hostname === 'www.mju25ooo.com' || window.location.hostname === 'mju25ooo.com') {
+        // 디자이너 페이지는 미리보기 허용
+        if (path.startsWith('/designer')) {
+          if (path.startsWith('/designer/') && path !== '/designer/') {
+            setCurrentPage('designerDetail');
+          } else {
+            setCurrentPage('designer');
+          }
+          return;
+        }
+        // 나머지는 모두 커밍순 페이지
         setCurrentPage('comingsoon');
         return;
       }
