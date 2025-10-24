@@ -4,30 +4,11 @@ import { BreakpointProvider } from './contexts/BreakpointContext';
 import ComingSoon from './components/ComingSoon/ComingSoon';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import Header from './components/Header/Header';
-// import Footer from './components/Footer/Footer';
-import DialRotation from './components/DialRotation/DialRotation';
+import Footer from './components/Footer/Footer';
 import Designer from './components/Designer/Designer';
 import DesignerDetail from './components/DesignerDetail/DesignerDetail';
 import Works from './components/Works/Works';
-
-// 인라인 Footer 컴포넌트
-const Footer = () => {
-  return (
-    <footer style={{ 
-      position: 'fixed', 
-      bottom: 0, 
-      left: 0, 
-      right: 0, 
-      background: 'rgba(42, 42, 42, 0.95)', 
-      color: 'white', 
-      padding: '20px', 
-      textAlign: 'center',
-      zIndex: 9999
-    }}>
-      <div>2025.11.12 - 11.17 | © 2025 MJU MCD</div>
-    </footer>
-  );
-};
+import DraggableGrid from './components/DraggableGrid/DraggableGrid';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('mainPage');
@@ -65,7 +46,7 @@ function App() {
             break;
           case '/':
           default:
-            setCurrentPage('comingsoon');
+            setCurrentPage('mainPage');
             break;
         }
       }
@@ -80,6 +61,9 @@ function App() {
   return (
     <BreakpointProvider>
       <ErrorBoundary>
+        {/* 전역 Header - 모든 페이지에서 공통으로 사용 */}
+        <Header currentPage={currentPage} />
+
         {/* 디자이너 페이지 표시 */}
         {currentPage === 'designer' && <Designer />}
 
@@ -89,21 +73,12 @@ function App() {
         {/* 작품 페이지 표시 */}
         {currentPage === 'works' && <Works />}
 
-        {/* 커밍순 페이지 표시 (루트 경로에서 표시) */}
+        {/* 메인화면 표시 (/main 경로일 때) - 드래그 가능한 그리드 */}
+        {currentPage === 'mainPage' && <DraggableGrid />}
+
+        {/* 커밍순 페이지 표시 */}
         {currentPage === 'comingsoon' && (
           <ComingSoon />
-        )}
-
-        {/* 메인화면 표시 (/main 경로일 때) - 회전 다이얼 포함 */}
-        {currentPage === 'mainPage' && (
-          <div className="app-wrapper">
-            <Header />
-            <main className="main-screen">
-              <div className="main-content">
-                <DialRotation />
-              </div>
-            </main>
-          </div>
         )}
 
         {/* 전역 Footer - 모든 페이지에서 공통으로 사용 */}
