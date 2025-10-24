@@ -282,7 +282,7 @@ const Designer = () => {
           <section className="page-header">
             <h1 className="page-title">디자이너 소개</h1>
             <p className="page-subtitle">
-              {isMobile ? '2025 MJU MCD' : '2025 명지대학교 졸업전시 영상 애니메이션 디자인 전공 졸업생들'}
+              {isMobile ? '2025 MJU MCD' : '2025 명지대학교 졸업전시 영상애니메이션 전공 졸업생들'}
             </p>
             <div className="designer-count">
               {isMobile ? '' : '총 '}

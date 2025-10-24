@@ -16,11 +16,71 @@
   transition: all 0.3s ease;
 }
 
+/* ============================================
+   모드별 헤더 스타일
+   ============================================ */
+
+/* DraggableGrid 모드 - 투명하고 미니멀 */
+.header-grid-mode {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none; /* 클릭 이벤트를 통과시킴 */
+}
+
+/* DraggableGrid 모드에서 로고와 네비게이션은 클릭 가능 */
+.header-grid-mode .header-content {
+  height: 50px; /* 더 작은 높이 */
+  pointer-events: auto;
+}
+
+/* 디자이너 모드 - 크리에이티브한 스타일 */
+.header-design-mode {
+  background: rgba(255, 107, 53, 0.1);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.header-design-mode .header-content {
+  height: 70px;
+}
+
+/* 작품 모드 - 갤러리 스타일 */
+.header-works-mode {
+  background: rgba(79, 195, 247, 0.1);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(79, 195, 247, 0.2);
+}
+
+.header-works-mode .header-content {
+  height: 70px;
+}
+
+/* 커밍순 모드 - 특별한 스타일 */
+.header-comingsoon-mode {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.header-comingsoon-mode .header-content {
+  height: 80px;
+}
+
+/* 기본 모드 */
+.header-default-mode {
+  background: rgba(42, 42, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px; /* Mobile 높이 */
+  width: 100%; /* 전체 너비 */
+  padding: 0 20px; /* 좌우 패딩 */
 }
 
 /* Mobile menu toggle - Mobile/Tablet에서만 표시 */
@@ -79,7 +139,21 @@
    ============================================ */
 @media (min-width: 768px) and (max-width: 1023px) {
   .header-content {
-    height: 70px; /* Tablet 높이 */
+    padding: 0 32px; /* 태블릿 패딩 증가 */
+  }
+
+  /* 모드별 태블릿 높이 조정 */
+  .header-grid-mode .header-content {
+    height: 55px;
+  }
+
+  .header-design-mode .header-content,
+  .header-works-mode .header-content {
+    height: 75px;
+  }
+
+  .header-comingsoon-mode .header-content {
+    height: 85px;
   }
 
   .mobile-menu-toggle {
@@ -97,7 +171,21 @@
    ============================================ */
 @media (min-width: 1024px) {
   .header-content {
-    height: 80px; /* Desktop 높이 */
+    padding: 0 40px; /* 데스크톱 패딩 증가 */
+  }
+
+  /* 모드별 데스크톱 높이 조정 */
+  .header-grid-mode .header-content {
+    height: 60px;
+  }
+
+  .header-design-mode .header-content,
+  .header-works-mode .header-content {
+    height: 80px;
+  }
+
+  .header-comingsoon-mode .header-content {
+    height: 90px;
   }
 
   /* Desktop에서는 햄버거 메뉴 숨김 (조건부 렌더링으로 처리됨) */

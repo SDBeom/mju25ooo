@@ -16,11 +16,19 @@
   backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 9999;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* 가로 스크롤바 방지 */
+}
+
+/* 모바일에서는 기본적으로 static으로 설정 */
+@media (max-width: 767px) {
+  .footer {
+    position: static;
+    transform: none;
+  }
 }
 
 .footer-content {
@@ -59,16 +67,17 @@
 }
 
 .footer-logo:hover {
-  opacity: 1;
-  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .mju-logo {
-  width: 120px;
+  width: 140px;
+  height: auto;
 }
 
 .ooo-logo {
-  width: 80px;
+  width: 100px;
+  height: auto;
 }
 
 @keyframes logoFloat {
@@ -100,6 +109,27 @@
   text-align: left;
 }
 
+.exhibition-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.exhibition-date {
+  font-size: 0.9rem;
+  color: #FF6B35;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.exhibition-copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
 
 /* ============================================
    태블릿 (768px ~ 1023px)
@@ -128,11 +158,13 @@
   }
 
   .mju-logo {
-    width: 100px;
+    width: 120px;
+    height: auto;
   }
 
   .ooo-logo {
-    width: 70px;
+    width: 85px;
+    height: auto;
   }
 
   .exhibition-info {
@@ -143,6 +175,18 @@
   .exhibition-detail {
     font-size: 0.85rem;
     text-align: left;
+  }
+
+  .exhibition-title {
+    font-size: 0.9rem;
+  }
+
+  .exhibition-date {
+    font-size: 0.8rem;
+  }
+
+  .exhibition-copyright {
+    font-size: 0.75rem;
   }
 
 }
@@ -174,11 +218,13 @@
   }
 
   .mju-logo {
-    width: 120px;
+    width: 150px;
+    height: auto;
   }
 
   .ooo-logo {
-    width: 80px;
+    width: 110px;
+    height: auto;
   }
 
   .exhibition-info {
@@ -192,20 +238,24 @@
     line-height: 1.8;
   }
 
+  .exhibition-title {
+    font-size: 1.1rem;
+  }
+
+  .exhibition-date {
+    font-size: 1rem;
+  }
+
+  .exhibition-copyright {
+    font-size: 0.85rem;
+  }
+
 }
 
 /* ============================================
-   모바일 (768px 미만) - 푸터 항상 표시
+   모바일 (768px 미만) - 푸터 자연스러운 스크롤
    ============================================ */
 @media (max-width: 767px) {
-  .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: translateY(0); /* 모바일: 항상 표시 */
-    padding: 0;
-  }
 
   .footer-content {
     flex-direction: column;
@@ -227,11 +277,13 @@
   }
 
   .mju-logo {
-    width: 80px;
+    width: 100px;
+    height: auto;
   }
 
   .ooo-logo {
-    width: 60px;
+    width: 70px;
+    height: auto;
   }
 
   .exhibition-info {
@@ -243,6 +295,20 @@
     font-size: 0.8rem;
     line-height: 1.5;
     text-align: center;
+  }
+
+  .exhibition-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .exhibition-date {
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .exhibition-copyright {
+    font-size: 0.7rem;
   }
 
 }
@@ -258,11 +324,30 @@
 }
 
 /* ============================================
+   푸터 호버 효과 (데스크톱/태블릿만)
+   ============================================ */
+@media (min-width: 768px) {
+  .footer:hover {
+    background: rgba(42, 42, 42, 0.98);
+    border-top-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .footer-content {
+    transition: all 0.3s ease;
+  }
+  
+  .footer:hover .footer-content {
+    transform: translateY(-2px);
+  }
+}
+
+/* ============================================
    고성능 모드
    ============================================ */
 @media (prefers-reduced-motion: no-preference) {
   .footer {
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
   .footer-signature-logo {
