@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { BreakpointProvider } from './contexts/BreakpointContext';
 import ComingSoonV2 from './components/ComingSoon/ComingSoonV2';
