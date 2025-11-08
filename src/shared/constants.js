@@ -88,10 +88,9 @@ export const SPACING = {
 
 // Layout breakpoints for responsive design
 export const BREAKPOINTS = {
-  MOBILE: '320px',
-  TABLET: '768px',
-  DESKTOP: '1024px',
-  LARGE_DESKTOP: '1440px',
+  MOBILE: '375px',      // Mobile: 375px ~ 799px
+  TABLET: '800px',      // Tablet: 800px ~ 1279px
+  DESKTOP: '1280px',    // Desktop: 1280px 이상
 };
 
 // Circle pattern constants

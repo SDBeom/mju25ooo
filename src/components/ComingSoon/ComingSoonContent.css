@@ -3,24 +3,23 @@
    ============================================ */
 
 /* ============================================
-   💡 메인 컨텐츠 컨테이너
+   💡 메인 컨텐츠 컨테이너 - Mobile First
    ============================================ */
 .coming-soon-main-content {
   display: flex;
-  flex-direction: column; /* Mobile: 세로 */
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-xl); /* Mobile 간격 */
+  flex-direction: column; /* Mobile: 세로 배치 */
+  align-items: center; /* 좌우 중앙 정렬 */
+  justify-content: center; /* 상하 중앙 정렬 */
+  gap: var(--spacing-xl);
   width: 100%;
-  max-width: 500px; /* Mobile 최대 너비 */
-  padding: 0 1rem; /* Mobile: 상하 패딩 제거, 좌우만 1rem */
+  max-width: 100%; /* Mobile: 전체 너비 */
+  padding: 1.5rem 1rem; /* Mobile: 상하 좌우 패딩 */
   margin: 0 auto;
-  margin-top: 100px; /* Mobile: 상단 마진 100px */
-  margin-bottom: 30px; /* Mobile: 하단 마진 30px (푸터와의 간격) */
   box-sizing: border-box;
   position: relative;
   z-index: 2;
-  flex-shrink: 0; /* 💡 Mobile: 축소 방지 */
+  flex-shrink: 0;
+  min-height: auto; /* 높이 제한 제거 */
 }
 
 /* Content Sections */
@@ -80,9 +79,9 @@
   line-height: 1.8;
   font-weight: 500;
   margin: 0;
-  text-align: justify; /* Mobile: 양쪽 정렬 */
-  text-align-last: center; /* 마지막 줄은 중앙 정렬 */
-  word-spacing: -0.05em; /* 단어 간격 약간 줄여서 더 자연스럽게 */
+  text-align: center; /* Mobile: 중앙 정렬 */
+  text-align-last: center; /* 마지막 줄도 중앙 정렬 */
+  word-spacing: normal; /* 단어 간격 정상화 */
 }
 
 /* ============================================
@@ -180,16 +179,21 @@
    ============================================ */
 @media (min-width: 768px) and (max-width: 1023px) {
   .coming-soon-main-content {
-    flex: 0 0 auto; /* Tablet: 고정 크기 */
-    max-width: 800px;
-    gap: calc(var(--spacing-lg) * 2);
-    padding: 5vh var(--spacing-lg);
+    display: flex;
+    flex-direction: column; /* Tablet: 세로 배치 */
+    max-width: 900px;
+    gap: calc(var(--spacing-xl) * 2);
+    padding: 2rem var(--spacing-xl);
+    align-items: center; /* 좌우 중앙 정렬 */
+    justify-content: center; /* 상하 중앙 정렬 */
   }
 
   .coming-soon-left-section,
   .coming-soon-right-section {
     gap: var(--spacing-lg);
     text-align: center; /* Tablet: 중앙 정렬로 변경 */
+    align-items: center; /* Tablet: 중앙 정렬 */
+    justify-content: center;
   }
 
   .coming-soon-main-content .coming-soon-description {
@@ -213,8 +217,9 @@
 
   .coming-soon-main-content .countdown-container {
     gap: var(--spacing-md);
-    max-width: 600px;
+    max-width: 100%; /* 태블릿: 전체 너비 사용 */
     padding: var(--spacing-xl);
+    width: 100%;
   }
 
   .coming-soon-main-content .countdown-number {
@@ -243,45 +248,48 @@
    ============================================ */
 @media (min-width: 1024px) {
   .coming-soon-main-content {
-    flex: 0 0 auto; /* Desktop: 고정 크기 */
-    flex-direction: row; /* Desktop: 가로 */
-    justify-content: center;
-    align-items: center;
-    gap: calc(var(--spacing-lg) * 4); /* Desktop 큰 간격 */
-    max-width: 1200px;
-    padding: 5vh var(--spacing-lg);
+    display: flex;
+    flex-direction: row; /* Desktop: 가로 배치 */
+    justify-content: space-between; /* 좌우 분리 */
+    align-items: center; /* 상하 중앙 정렬 */
+    gap: calc(var(--spacing-xl) * 3); /* Desktop 큰 간격 */
+    max-width: 1400px;
+    padding: 6vh var(--spacing-2xl);
+    margin: 0 auto;
   }
 
   .coming-soon-left-section {
-    align-items: center;
-    text-align: center; /* Desktop: 중앙 정렬 */
-    gap: calc(var(--spacing-lg) * 1.5);
-    flex: none;
-    width: fit-content;
+    flex: 0 0 45%; /* Desktop: 왼쪽 섹션 고정 너비 */
+    align-items: center; /* 섹션 내부 중앙 정렬 */
+    justify-content: center;
+    text-align: center; /* 텍스트 중앙 정렬 */
+    gap: calc(var(--spacing-lg) * 2);
   }
 
   .coming-soon-right-section {
-    align-items: center;
+    flex: 0 0 45%; /* Desktop: 오른쪽 섹션 고정 너비 */
+    align-items: center; /* 섹션 내부 중앙 정렬 */
     justify-content: center;
-    gap: calc(var(--spacing-lg) * 1.5);
-    flex: 1;
-    text-align: center; /* Desktop: 중앙 정렬 */
+    text-align: center;
+    gap: calc(var(--spacing-lg) * 2);
   }
 
   .coming-soon-main-content .coming-soon-description {
     text-align: center; /* Desktop: 중앙 정렬 */
-    text-align-last: auto;
+    text-align-last: center;
     word-spacing: normal;
+    line-height: 2;
   }
 
   .coming-soon-main-content .signature-logo {
-    width: 120px; /* Desktop: 1.5배 축소 (180px → 120px) */
-    height: 120px;
+    width: 140px; /* Desktop: 크게 표시 */
+    height: 140px;
   }
 
   .coming-soon-main-content .coming-soon-title {
-    font-size: 4.5rem;
-    white-space: nowrap;
+    font-size: 5rem;
+    text-align: center; /* Desktop: 중앙 정렬 */
+    margin-bottom: var(--spacing-lg);
   }
 
   .coming-soon-main-content .coming-soon-description {

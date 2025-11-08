@@ -256,45 +256,52 @@
    모바일 (768px 미만) - 푸터 자연스러운 스크롤
    ============================================ */
 @media (max-width: 767px) {
+  .footer {
+    position: relative; /* 일반 문서 흐름에 따라 배치 */
+    bottom: auto;
+    left: auto;
+    right: auto;
+    transform: translateY(0); /* 모바일: 항상 표시 */
+    padding: 0;
+  }
 
   .footer-content {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    padding: 30px;
-    gap: 1.2rem;
-    min-height: 120px;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 1rem;
+    min-height: 80px;
     max-width: 100%;
   }
 
   .footer-logos {
-    justify-content: center;
-    gap: 1rem;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    flex: 0 0 auto;
   }
 
   .footer-logo {
-    height: 30px;
+    height: 25px;
   }
 
   .mju-logo {
-    width: 100px;
-    height: auto;
+    width: 70px;
   }
 
   .ooo-logo {
-    width: 70px;
-    height: auto;
+    width: 50px;
   }
 
   .exhibition-info {
-    text-align: center;
-    flex: none;
+    text-align: left;
+    flex: 1;
   }
 
   .exhibition-detail {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    text-align: left;
   }
 
   .exhibition-title {

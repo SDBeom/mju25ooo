@@ -16,27 +16,38 @@
 .coming-soon {
   display: flex;
   flex-direction: column;         /* 💡 메인은 위, 푸터는 아래로 분산 */
-  justify-content: flex-end;      /* Mobile: 아래쪽 정렬 */
+  justify-content: center;        /* 중앙 정렬 */
   align-items: center;            /* 좌우 중앙 정렬 */
   min-height: 100vh;              /* 최소 화면 높이 (스크롤 허용) */
   width: 100%;                    /* 화면 전체 너비 꽉 채움 */
-  background: linear-gradient(135deg, var(--color-background) 0%, #1a1a1a 100%);
+  background: var(--color-background);
   box-sizing: border-box;
-  padding: 0;
+  padding: 1rem;                   /* 모바일: 좌우 여백 */
   margin: 0;
   position: relative;
-  overflow-y: auto;               /* Mobile: 세로 스크롤 허용 */
-  overflow-x: hidden;             /* 가로 스크롤만 숨김 */
+  overflow: visible;              /* Mobile: overflow 제거 (body 스크롤 사용) */
   overscroll-behavior: contain;   /* Mobile: 스크롤 바운싱 방지 */
-  -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
 }
 
 /* ============================================
-   Tablet & Desktop (768px 이상)
+   Tablet (768px ~ 1023px)
    ============================================ */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .coming-soon {
-    justify-content: center; /* Tablet/Desktop: 중앙 정렬 (푸터가 휠로 올라오므로) */
-    overflow: hidden;        /* Tablet/Desktop: 스크롤 숨김 (휠 이벤트용) */
+    justify-content: flex-start; /* 태블릿: 상단부터 배치 */
+    overflow: visible;          /* 태블릿: overflow 제거 (body 스크롤 사용) */
+    padding: 2rem 2.5rem;      /* 태블릿: 상하 좌우 여백 */
+    padding-bottom: 120px;       /* 하단 여백 (푸터 공간) */
+  }
+}
+
+/* ============================================
+   Desktop (1024px 이상)
+   ============================================ */
+@media (min-width: 1024px) {
+  .coming-soon {
+    justify-content: center; /* Desktop: 중앙 정렬 */
+    overflow: hidden;       /* Desktop: 스크롤 숨김 (휠 이벤트용) */
+    padding: 4vh 3rem;     /* Desktop: 상하 vh 단위, 좌우 고정 */
   }
 }

@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 
 // Breakpoint 정의
+// Mobile: < 800px (375px ~ 799px)
+// Tablet: 800px ~ 1279px
+// Desktop: >= 1280px
 export const BREAKPOINTS = {
-  MOBILE: 768,
-  TABLET: 1024,
+  MOBILE: 800,      // Mobile max: 799px
+  TABLET: 1280,     // Desktop min: 1280px
 };
 
 export const DEVICE_TYPES = {
