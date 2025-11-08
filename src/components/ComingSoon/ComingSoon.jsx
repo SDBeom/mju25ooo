@@ -8,7 +8,6 @@ import GooeyBackgroundSVG from './GooeyBackgroundSVG';
 
 const ComingSoon = () => {
   const { isMobile } = useBreakpointContext();
-  const footerRef = useRef(null);
   const containerRef = useRef(null);
   
   // 모바일에서 pull-to-refresh 방지
@@ -50,52 +49,6 @@ const ComingSoon = () => {
     };
   }, [isMobile]);
   
-  // 페이지와 푸터 간의 상호작용 로직 (마우스 커서 - 태블릿/데스크탑)
-  useEffect(() => {
-    // 모바일에서는 마우스 이벤트 비활성화
-    if (isMobile) {
-      return;
-    }
-    
-    const footerElement = footerRef.current;
-    if (!footerElement) return;
-
-    const handleMouseMove = (e) => {
-      // 화면 하단에서 100px 이내에 마우스가 있을 때
-      const bottomThreshold = 100;
-      const distanceFromBottom = window.innerHeight - e.clientY;
-      
-      if (distanceFromBottom <= bottomThreshold) {
-        // 하단에 가까우면 푸터를 올림 (0% ~ 100%)
-        const progress = Math.max(0, (bottomThreshold - distanceFromBottom) / bottomThreshold);
-        const translateY = 100 - (progress * 100);
-        
-        // 부드러운 애니메이션을 위해 transition 적용
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = `translateY(${translateY}%)`;
-      } else {
-        // 하단에서 멀어지면 푸터를 숨김
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = 'translateY(100%)';
-      }
-    };
-
-    // 마우스가 화면을 벗어날 때 푸터 숨김
-    const handleMouseLeave = () => {
-      if (footerElement) {
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = 'translateY(100%)';
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
-    
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, [isMobile]);
 
   return (
     <div className="coming-soon" ref={containerRef}>

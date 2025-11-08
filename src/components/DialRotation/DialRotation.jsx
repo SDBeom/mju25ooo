@@ -16,21 +16,27 @@ const DialRotation = () => {
   const getRadius = useCallback(() => {
     switch (breakpoint) {
       case 'mobile':
-        return 80; // 모바일: 더 작은 반지름
+        return 120; // 모바일: 작은 반지름
       case 'tablet':
-        return 140; // 태블릿: 중간 반지름
+        return 180; // 태블릿: 중간 반지름
       case 'desktop':
       default:
-        return 200; // 데스크탑: 큰 반지름
+        return 250; // 데스크탑: 큰 반지름
     }
   }, [breakpoint]);
 
   // 24개 사진 데이터 (실제로는 이미지 경로를 사용해야 함)
-  const imageItems = Array.from({ length: totalItems }, (_, index) => ({
-    id: index + 1,
-    image: `/images/designer-${index + 1}.jpg`, // 실제 이미지 경로
-    alt: `Designer ${index + 1}`
-  }));
+  // 순서: 23, 22, 21, ..., 2, 1 (23부터 1까지 역순)
+  const imageItems = Array.from({ length: totalItems }, (_, index) => {
+    const id = totalItems - index; // 23, 22, 21, ..., 2, 1
+    const isEven = index % 2 === 0; // 짝수 인덱스는 주황, 홀수 인덱스는 파랑
+    return {
+      id: id,
+      image: `/images/designer-${id}.jpg`, // 실제 이미지 경로
+      alt: `Designer ${id}`,
+      color: isEven ? 'orange' : 'blue' // 주황과 파랑 교차
+    };
+  });
 
   // 스크롤 이벤트 핸들러
   const handleWheel = useCallback((e) => {
@@ -172,7 +178,7 @@ const DialRotation = () => {
             return (
               <div
                 key={item.id}
-                className={`dial-item ${isActive ? 'active' : ''}`}
+                className={`dial-item ${isActive ? 'active' : ''} ${item.color}`}
                 style={{
                   transform: `translate(${position.x}px, ${position.y}px) rotate(${-rotation}deg)`
                 }}

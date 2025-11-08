@@ -51,6 +51,12 @@ html {
   padding: 0;
   margin-bottom: 0; /* 하단 마진 명시적 제거 */
   padding-bottom: 0; /* 하단 패딩 명시적 제거 */
+  -ms-overflow-style: none; /* IE, Edge 스크롤바 숨기기 */
+  scrollbar-width: none; /* Firefox 스크롤바 숨기기 */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge 스크롤바 숨기기 */
 }
 
 body {
@@ -63,6 +69,12 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   overscroll-behavior-y: contain; /* 모바일 pull-to-refresh 방지 */
+  -ms-overflow-style: none; /* IE, Edge 스크롤바 숨기기 */
+  scrollbar-width: none; /* Firefox 스크롤바 숨기기 */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge 스크롤바 숨기기 */
 }
 
 a {
@@ -95,22 +107,16 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* 스크롤바 숨기기 (스크롤 기능은 유지) */
+* {
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-::-webkit-scrollbar-track {
-  background: var(--color-background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-blue) 100%);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #E55A2B 0%, #29B6F6 100%);
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+  width: 0;
+  height: 0;
 }
 
 /* Selection styles */
