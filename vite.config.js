@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: 'https://mju25ooo.com/', // 개인 도메인으로 설정
+  base: '/', // GitHub Pages용 상대 경로
   
   // 성능 최적화 설정
   build: {
@@ -53,6 +53,8 @@ export default defineConfig({
   
   // 개발 서버 최적화
   server: {
+    port: 5173,
+    strictPort: true,
     headers: {
       // 캐싱 헤더 설정
       'Cache-Control': 'public, max-age=31536000'

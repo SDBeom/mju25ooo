@@ -1,219 +1,373 @@
 /* ============================================
-   Footer Component - Media Query 방식
+   Footer - ComingSoon 스타일 전역 푸터
    ============================================ */
 
-/* Base footer styles - Mobile First */
+/* ============================================
+   💡 푸터 기본 스타일 (ComingSoon과 동일한 디자인)
+   ============================================ */
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
+  transform: translateY(100%); /* 기본적으로 숨김 (데스크탑/태블릿) */
   background: rgba(42, 42, 42, 0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 0; /* Mobile: 작은 패딩 */
-  z-index: 1000;
+  z-index: 9999;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 가로 스크롤바 방지 */
 }
 
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.3), transparent);
+/* 모바일에서는 기본적으로 static으로 설정 */
+@media (max-width: 767px) {
+  .footer {
+    position: static;
+    transform: none;
+  }
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  min-height: 40px;
-}
-
-/* ComingSoon footer specific styles - DISABLED (now in ComingSoon.css) */
-  /* .coming-soon-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    max-width: none;
-    margin: 0;
-    flex-shrink: 0;
-    background: #ff7700;
-    backdrop-filter: blur(10px);
-    z-index: 10;
-    transform: translateY(100%);
-    transition: transform 0.27s ease-out;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: var(--spacing-lg) 16px;
-    text-align: center;
-  } */
-
-/* Styles moved to ComingSoon.css */
-/* .coming-soon-footer .footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+  min-height: 80px;
 }
 
+/* ============================================
+   로고 섹션
+   ============================================ */
+.footer-logos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-logo {
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1); /* 로고를 흰색으로 변경 */
+}
+
+.footer-logo:hover {
+  opacity: 0.9;
+}
+
+.mju-logo {
+  width: 140px;
+  height: auto;
+}
+
+.ooo-logo {
+  width: 100px;
+  height: auto;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ============================================
+   전시 정보 섹션
+   ============================================ */
 .exhibition-info {
-  text-align: center;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  flex: 1;
 }
 
 .exhibition-detail {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
+  line-height: 1.6;
+  font-weight: 400;
   margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
-.footer-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
+.exhibition-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
-.footer-logo {
-  height: 40px;
-  width: auto;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.footer-logo:hover {
-  opacity: 1;
-}
-
-.mju-logo {
-  height: 45px;
-}
-
-.ooo-logo {
-  height: 35px;
-} */
-
-/* Copyright styles */
-.footer-bottom {
-  text-align: center;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.copyright-text {
-  color: #fff;
+.exhibition-date {
   font-size: 0.9rem;
-  margin: 0;
+  color: #FF6B35;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
 }
 
-.footer-text {
-  margin: 0;
+.exhibition-copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
 }
 
-/* Mobile (기본값 - 이미 위에 정의됨) */
-.footer-content {
-  display: flex;
-  flex-direction: column; /* Mobile: 세로 */
-  gap: 0.5rem;
-  text-align: center;
-  min-height: 40px;
-}
 
-/* Tablet (768px 이상) */
-@media (min-width: 768px) {
+/* ============================================
+   태블릿 (768px ~ 1023px)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
   .footer {
-    padding: 1.5rem 0; /* Tablet: 중간 패딩 */
+    padding: 0;
   }
-  
+
   .footer-content {
-    flex-direction: row; /* Tablet: 가로 */
-    justify-content: space-between;
-    text-align: left;
-  }
-}
-
-/* Desktop (1024px 이상) */
-@media (min-width: 1024px) {
-  .footer {
-    padding: 2rem 0; /* Desktop: 큰 패딩 */
-  }
-  
-  /* ComingSoon footer styles moved to ComingSoon.css */
-  /* .coming-soon-footer {
-    position: relative;
-    width: 100%;
-    transform: translateY(0);
-    padding: var(--spacing-sm) var(--spacing-sm) 0;
-    box-sizing: border-box;
-    height: auto;
-    margin: 0;
-    flex-shrink: 0;
-    order: 2;
-  }
-  
-  .coming-soon-footer .footer-content {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-xs);
-    padding: 0 0 var(--spacing-sm);
-    margin: 0;
-    height: auto;
-    min-height: auto;
+    gap: 2rem;
+    padding: 30px;
+    min-height: 70px;
+    max-width: 1000px;
   }
-  
-  .exhibition-info {
-    text-align: left;
-    flex: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  
-  .exhibition-detail {
-    font-size: 10px;
-    margin-bottom: 2px;
-  }
-  
+
   .footer-logos {
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    flex: none;
+    flex: 0 0 auto;
   }
-  
+
   .footer-logo {
-    height: 16px;
+    height: 35px;
   }
-  
+
   .mju-logo {
-    height: 18px;
+    width: 120px;
+    height: auto;
   }
-  
+
   .ooo-logo {
-    height: 14px;
+    width: 85px;
+    height: auto;
   }
-  
-  .copyright-text {
-    font-size: 10px;
-  } */
+
+  .exhibition-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .exhibition-detail {
+    font-size: 0.85rem;
+    text-align: left;
+  }
+
+  .exhibition-title {
+    font-size: 0.9rem;
+  }
+
+  .exhibition-date {
+    font-size: 0.8rem;
+  }
+
+  .exhibition-copyright {
+    font-size: 0.75rem;
+  }
+
 }
 
-/* Small Mobile (480px 미만) */
-@media (max-width: 480px) {
+/* ============================================
+   데스크톱 (1024px 이상)
+   ============================================ */
+@media (min-width: 1024px) {
   .footer {
-    padding: 1rem 0; /* Small Mobile: 더 작은 패딩 */
+    padding: 0;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 30px;
+    max-width: 1400px;
+    min-height: 90px;
+  }
+
+  .footer-logos {
+    flex: 0 0 auto;
+  }
+
+  .footer-logo {
+    height: 40px;
+  }
+
+  .mju-logo {
+    width: 150px;
+    height: auto;
+  }
+
+  .ooo-logo {
+    width: 110px;
+    height: auto;
+  }
+
+  .exhibition-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .exhibition-detail {
+    font-size: 0.9rem;
+    text-align: left;
+    line-height: 1.8;
+  }
+
+  .exhibition-title {
+    font-size: 1.1rem;
+  }
+
+  .exhibition-date {
+    font-size: 1rem;
+  }
+
+  .exhibition-copyright {
+    font-size: 0.85rem;
+  }
+
+}
+
+/* ============================================
+   모바일 (768px 미만) - 푸터 자연스러운 스크롤
+   ============================================ */
+@media (max-width: 767px) {
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 1.2rem;
+    min-height: 120px;
+    max-width: 100%;
+  }
+
+  .footer-logos {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    height: 30px;
+  }
+
+  .mju-logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .ooo-logo {
+    width: 70px;
+    height: auto;
+  }
+
+  .exhibition-info {
+    text-align: center;
+    flex: none;
+  }
+
+  .exhibition-detail {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .exhibition-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .exhibition-date {
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .exhibition-copyright {
+    font-size: 0.7rem;
+  }
+
+}
+
+/* ============================================
+   다크 모드 지원
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: rgba(26, 26, 26, 0.95);
+    border-top-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* ============================================
+   푸터 호버 효과 (데스크톱/태블릿만)
+   ============================================ */
+@media (min-width: 768px) {
+  .footer:hover {
+    background: rgba(42, 42, 42, 0.98);
+    border-top-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
   }
   
-  .footer-text {
-    font-size: 0.85rem; /* Small Mobile: 작은 글씨 */
+  .footer-content {
+    transition: all 0.3s ease;
+  }
+  
+  .footer:hover .footer-content {
+    transform: translateY(-2px);
+  }
+}
+
+/* ============================================
+   고성능 모드
+   ============================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .footer {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .footer-signature-logo {
+    animation: logoFloat 3s ease-in-out infinite;
+  }
+}
+
+/* ============================================
+   모션 감소 모드
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .footer {
+    transition: opacity 0.3s ease;
+  }
+  
+  .footer-signature-logo {
+    animation: none;
+  }
+  
+  .social-link:hover {
+    transform: none;
   }
 }

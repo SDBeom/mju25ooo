@@ -1,0 +1,280 @@
+.line,
+.char {
+  transform: translate3d(0, 100%, 0);
+}
+
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10; /* 헤더보다 낮지만 충분한 z-index */
+
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 2;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 0.45s ease-in-out;
+}
+
+.grid {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  gap: 5vw;
+}
+
+.--is-loaded {
+  overflow: hidden;
+}
+
+.--is-loaded .grid {
+  transition: transform 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  cursor: grab;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+}
+
+.column:nth-child(even) {
+  margin-top: 10vw;
+}
+
+.product {
+  position: relative;
+  width: 18.5vw;
+  aspect-ratio: 1 / 1;
+}
+
+.product div {
+  width: 18.5vw;
+  aspect-ratio: 1 / 1;
+}
+
+.product img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  will-change: transform;
+  transition: transform 300ms ease-in-out;
+}
+
+.product:hover img {
+  transform: scale(1.05);
+}
+
+.details {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  padding: 3vw 4vw;
+  background-color: #f1f1f1;
+
+  transform: translate3d(50vw, 0, 0);
+  z-index: 6;
+}
+
+@media (max-width: 600px) {
+  .details {
+    width: 90%;
+    height: 100vh;
+    padding: 8vw 7vw;
+
+    transform: translate3d(90%, 0, 0);
+  }
+}
+
+.details__title {
+  margin-bottom: 4vw;
+  position: relative;
+  display: grid;
+}
+
+@media (max-width: 600px) {
+  .details__title {
+    margin-bottom: 8vw;
+  }
+}
+
+.details__title p {
+  grid-area: 1 / -1;
+  overflow: hidden;
+  font-size: 3vw;
+  color: #000; /* 블랙 색상 */
+}
+
+@media (max-width: 600px) {
+  .details__title p {
+    font-size: 2rem;
+  }
+}
+
+.details__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 2vw;
+}
+
+.details__texts {
+  position: relative;
+  height: 100%;
+  line-height: 1.5;
+  display: grid;
+  max-width: 15rem;
+}
+
+.details__texts span {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000; /* 블랙 색상 */
+}
+
+.details__texts button {
+  appearance: none;
+  border: none;
+  display: block;
+  background-color: transparent;
+  margin-top: 1.5rem;
+  border: 1px solid #000; /* 블랙 테두리 */
+  border-radius: 1rem;
+  padding: 0.25rem 1rem;
+  color: #000; /* 블랙 텍스트 */
+}
+
+@media (max-width: 600px) {
+  .details__texts button {
+    margin-top: 5vw;
+  }
+}
+
+.details__texts [data-text] {
+  grid-area: 1 / -1;
+  bottom: 0;
+  left: 0;
+}
+
+.details__thumb {
+  position: relative;
+  width: 25vw;
+  aspect-ratio: 1 / 1;
+  z-index: 3;
+  will-change: transform;
+}
+
+@media (max-width: 600px) {
+  .details__thumb {
+    width: 100%;
+  }
+}
+
+.details__thumb div,
+.details__thumb img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details__texts p {
+  font-size: 0.85rem;
+  margin-bottom: 1vw;
+  color: #000; /* 블랙 색상 */
+}
+
+.cross {
+  position: fixed;
+  width: 3vw;
+  height: 3vw;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
+
+  transform: scale(0);
+}
+
+.cross svg {
+  width: 3vw;
+  height: 3vw;
+}
+
+.--is-details-showing {
+  cursor: pointer;
+}
+
+.--is-details-showing .grid {
+  pointer-events: none;
+}
+
+.--is-showing {
+  opacity: 1;
+}
+
+/* 로딩 상태 */
+.loading::before,
+.loading::after {
+  content: '';
+  position: fixed;
+  z-index: 10000;
+}
+
+.loading::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.loading::after {
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 1px;
+  margin: 0 0 0 -50px;
+  background: #1a1a1a;
+  animation: loaderAnim 1.5s ease-in-out infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+  }
+
+  50% {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
+
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+  }
+}
