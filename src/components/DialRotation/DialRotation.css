@@ -106,6 +106,44 @@
   user-select: none;
 }
 
+/* 주황색 다이얼 아이템 */
+.dial-item.orange {
+  background: linear-gradient(135deg, #FF7700, #FF9500);
+  border-color: rgba(255, 119, 0, 0.6);
+  box-shadow: 0 4px 15px rgba(255, 119, 0, 0.3);
+}
+
+.dial-item.orange:hover {
+  background: linear-gradient(135deg, #FF8800, #FFA500);
+  border-color: rgba(255, 119, 0, 0.8);
+  box-shadow: 0 6px 20px rgba(255, 119, 0, 0.4);
+}
+
+.dial-item.orange.active {
+  background: linear-gradient(135deg, #FF9900, #FFB500);
+  border-color: rgba(255, 119, 0, 1);
+  box-shadow: 0 8px 25px rgba(255, 119, 0, 0.5);
+}
+
+/* 파랑색 다이얼 아이템 */
+.dial-item.blue {
+  background: linear-gradient(135deg, #67C5FF, #4AB3FF);
+  border-color: rgba(103, 197, 255, 0.6);
+  box-shadow: 0 4px 15px rgba(103, 197, 255, 0.3);
+}
+
+.dial-item.blue:hover {
+  background: linear-gradient(135deg, #7DD3FF, #5BC5FF);
+  border-color: rgba(103, 197, 255, 0.8);
+  box-shadow: 0 6px 20px rgba(103, 197, 255, 0.4);
+}
+
+.dial-item.blue.active {
+  background: linear-gradient(135deg, #8DDDFF, #6BD7FF);
+  border-color: rgba(103, 197, 255, 1);
+  box-shadow: 0 8px 25px rgba(103, 197, 255, 0.5);
+}
+
 
 /* 반응형 디자인 - 태블릿 */
 @media (max-width: 1024px) and (min-width: 769px) {

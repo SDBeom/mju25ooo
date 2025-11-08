@@ -333,7 +333,6 @@ const DesignerDetail = () => {
           </section>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
