@@ -63,7 +63,7 @@ const HybridBackground = () => {
     paper.view.setViewSize(canvasWidth, canvasHeight);
 
     // 사용할 색상 팔레트
-    const colors = ['#FF7700', '#67C5FF', '#F4F1ED', '#FFFFFF', '#070707'];
+    const colors = ['#67C5FF', '#070707', '#F4F1ED', '#FFFFFF'];
 
     // Ball 클래스 정의
     const Ball = function (r, p, v, color) {

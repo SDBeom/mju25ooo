@@ -20,10 +20,11 @@
   --spacing-3xl: 64px;
   --spacing-4xl: 96px;
   --spacing-5xl: 128px;
-  --breakpoint-mobile: 320px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
+  --breakpoint-mobile: 375px;
+  --breakpoint-tablet: 800px;
+  --breakpoint-desktop: 1280px;
   --breakpoint-large: 1440px;
+  --header-offset: 60px;
   
   --animation-fast: 150ms;
   --animation-normal: 300ms;
@@ -71,6 +72,10 @@ body {
   overscroll-behavior-y: contain; /* 모바일 pull-to-refresh 방지 */
   -ms-overflow-style: none; /* IE, Edge 스크롤바 숨기기 */
   scrollbar-width: none; /* Firefox 스크롤바 숨기기 */
+}
+
+body.details-open {
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -128,4 +133,16 @@ button:focus-visible {
 ::-moz-selection {
   background: rgba(255, 107, 53, 0.3);
   color: var(--color-white);
+}
+
+@media (min-width: 800px) {
+  :root {
+    --header-offset: 68px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --header-offset: 100px;
+  }
 }

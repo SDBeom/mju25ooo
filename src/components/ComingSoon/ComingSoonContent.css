@@ -22,6 +22,37 @@
   min-height: auto; /* 높이 제한 제거 */
 }
 
+.coming-soon-main-content--simple {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.coming-soon-main-content--simple .coming-soon-left-section {
+  width: 100%;
+  max-width: 480px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin: 0 auto;
+}
+
+.coming-soon-main-content--simple .coming-soon-right-section,
+.coming-soon-main-content--simple .social-links,
+.coming-soon-main-content--simple .countdown-timer {
+  display: none;
+}
+
+.coming-soon-main-content--simple .coming-soon-description {
+  color: rgba(17, 17, 17, 0.8);
+}
+
 /* Content Sections */
 .coming-soon-left-section,
 .coming-soon-right-section {
@@ -73,6 +104,11 @@
   text-align: center; /* 타이틀은 항상 중앙 정렬 */
 }
 
+.coming-soon-main-content .coming-soon-title span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .coming-soon-main-content .coming-soon-description {
   font-size: 1.1rem; /* Mobile */
   color: var(--color-text-secondary);
@@ -82,6 +118,13 @@
   text-align: center; /* Mobile: 중앙 정렬 */
   text-align-last: center; /* 마지막 줄도 중앙 정렬 */
   word-spacing: normal; /* 단어 간격 정상화 */
+}
+
+.coming-soon-main-content--simple .coming-soon-title {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: rgba(17, 17, 17, 0.95);
+  margin-bottom: 0;
 }
 
 /* ============================================
@@ -175,9 +218,9 @@
 }
 
 /* ============================================
-   Tablet (768px ~ 1023px)
+   Tablet (800px ~ 1279px)
    ============================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 800px) and (max-width: 1279px) {
   .coming-soon-main-content {
     display: flex;
     flex-direction: column; /* Tablet: 세로 배치 */
@@ -244,9 +287,9 @@
 }
 
 /* ============================================
-   Desktop (1024px 이상)
+   Desktop (1280px 이상)
    ============================================ */
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .coming-soon-main-content {
     display: flex;
     flex-direction: row; /* Desktop: 가로 배치 */

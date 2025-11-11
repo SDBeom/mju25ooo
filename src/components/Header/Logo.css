@@ -7,16 +7,17 @@
 .logo-container img {
   height: 50px;
   width: auto;
+  filter: brightness(0) saturate(100%) invert(73%) sepia(13%)
+    saturate(1756%) hue-rotate(178deg) brightness(103%) contrast(102%);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .logo-container img {
     height: 45px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   .logo-container img {
     height: 40px;
   }

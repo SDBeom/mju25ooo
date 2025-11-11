@@ -1,165 +1,150 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import './App.css';
 import { BreakpointProvider } from './contexts/BreakpointContext';
-import ComingSoonV2 from './components/ComingSoon/ComingSoonV2';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Designer from './components/Designer/Designer';
-import DesignerDetail from './components/DesignerDetail/DesignerDetail';
-import Works from './components/Works/Works';
 import DraggableGrid from './components/DraggableGrid/DraggableGrid';
+import ComingSoonV2 from './components/ComingSoon/ComingSoonV2';
+import ArchivePage from './components/Archive/ArchivePage';
+import Works from './components/Works/Works';
+import DesignerDetail from './components/DesignerDetail/DesignerDetail';
+import Designer from './components/Designer/Designer';
+
+const MAIN_STAGE_VIDEO = new URL('./assets/안선민_멀티미디어 디자인_브랜딩영상.mp4', import.meta.url).href;
+
+const ROUTES = {
+  '/main': {
+    Component: DraggableGrid,
+    headerMode: 'mainPage',
+    containerVariant: 'grid',
+    windowVariant: 'grid',
+  },
+  '/about': {
+    Component: ComingSoonV2,
+    headerMode: 'comingsoon',
+    containerVariant: 'full',
+    windowVariant: 'content',
+  },
+  '/works': {
+    Component: Works,
+    headerMode: 'works',
+    containerVariant: 'content',
+    windowVariant: 'content',
+  },
+  '/designer': {
+    Component: Designer,
+    headerMode: 'designer',
+    containerVariant: 'content',
+    windowVariant: 'content',
+  },
+  '/designer/detail': {
+    Component: DesignerDetail,
+    headerMode: 'designer',
+    containerVariant: 'full',
+    windowVariant: 'content',
+  },
+  '/archive': {
+    Component: ArchivePage,
+    headerMode: 'comingsoon',
+    containerVariant: 'full',
+    windowVariant: 'content',
+  },
+};
+
+const resolvePath = (path) => {
+  if (path === '/') {
+    return '/main';
+  }
+
+  if (ROUTES[path]) {
+    return path;
+  }
+
+  if (path.startsWith('/designer/') && path !== '/designer/') {
+    return path;
+  }
+
+  return '/main';
+};
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('comingsoon');
-  const footerRef = useRef(null);
-  
-  console.log('App rendered, currentPage:', currentPage);
-
-  // URL 기반 페이지 라우팅
-  useEffect(() => {
-    const updatePageFromUrl = () => {
-      const fullPath = window.location.href;
-      const pathWithoutQuery = fullPath.split('?')[0];
-      const path = pathWithoutQuery.replace(window.location.origin, '') || '/';
-      
-      console.log('Current path:', path);
-      
-      // www.mju25ooo.com 도메인에서는 특정 경로만 허용
-      if (window.location.hostname === 'www.mju25ooo.com' || window.location.hostname === 'mju25ooo.com') {
-        // 디자이너 페이지는 미리보기 허용
-        if (path.startsWith('/designer')) {
-          if (path.startsWith('/designer/') && path !== '/designer/') {
-            setCurrentPage('designerDetail');
-          } else {
-            setCurrentPage('designer');
-          }
-          return;
-        }
-        // 나머지는 모두 커밍순 페이지
-        setCurrentPage('comingsoon');
-        return;
-      }
-      
-      if (path.startsWith('/designer/') && path !== '/designer/') {
-        setCurrentPage('designerDetail');
-      } else {
-        switch (path) {
-          case '/main':
-          case '/main/':
-            setCurrentPage('mainPage');
-            break;
-          case '/invitation':
-          case '/invitation/':
-            setCurrentPage('invitation');
-            break;
-          case '/comingsoon':
-          case '/comingsoon/':
-            setCurrentPage('comingsoon');
-            break;
-          case '/designer':
-          case '/designer/':
-            setCurrentPage('designer');
-            break;
-          case '/works':
-          case '/works/':
-            setCurrentPage('works');
-            break;
-          case '/':
-          default:
-            setCurrentPage('comingsoon');
-            break;
-        }
-      }
-    };
-
-    updatePageFromUrl();
-    window.addEventListener('popstate', updatePageFromUrl);
-    return () => window.removeEventListener('popstate', updatePageFromUrl);
-  }, []);
-
-  // 전역 마우스 호버 효과 (데스크톱/태블릿에서만 작동)
-  useEffect(() => {
-    const footerElement = footerRef.current;
-    if (!footerElement) return;
-
-    // 모바일에서는 마우스 이벤트 비활성화
-    const isMobile = window.innerWidth < 768;
-    if (isMobile) {
-      // 모바일에서는 푸터를 일반 문서 흐름에 따라 표시
-      footerElement.style.transition = 'none';
-      footerElement.style.transform = 'translateY(0%)';
-      return;
+  const [currentPath, setCurrentPath] = useState(() => {
+    const initialPath = resolvePath(window.location.pathname);
+    if (initialPath !== window.location.pathname) {
+      window.history.replaceState({}, '', initialPath);
     }
+    return initialPath;
+  });
 
-    const handleMouseMove = (e) => {
-      // 마우스가 푸터 영역에 있을 때
-      const footerRect = footerElement.getBoundingClientRect();
-      const mouseY = e.clientY;
-      
-      // 푸터 영역과 마우스가 겹치거나, 화면 하단 50px 이내에 있을 때
-      const isNearFooter = mouseY >= footerRect.top - 50 || mouseY >= window.innerHeight - 50;
-      
-      if (isNearFooter) {
-        // 푸터를 100% 올림
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = 'translateY(0%)';
-      } else {
-        // 푸터를 숨김
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = 'translateY(100%)';
+  useEffect(() => {
+    const handlePopState = () => {
+      const nextPath = resolvePath(window.location.pathname);
+      if (nextPath !== window.location.pathname) {
+        window.history.replaceState({}, '', nextPath);
       }
+      setCurrentPath(nextPath);
     };
 
-    // 마우스가 화면을 벗어날 때 푸터 숨김
-    const handleMouseLeave = () => {
-      if (footerElement) {
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = 'translateY(100%)';
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
-    
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
-    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  const normalizedPath = ROUTES[currentPath]
+    ? currentPath
+    : currentPath.startsWith('/designer/') && currentPath !== '/designer'
+      ? '/designer/detail'
+      : '/main';
+
+  const { Component: PageComponent, headerMode, containerVariant, windowVariant } =
+    ROUTES[normalizedPath] || ROUTES['/main'];
+
+  const mainWindowClasses = ['main-window'];
+  if (windowVariant === 'grid') {
+    mainWindowClasses.push('main-window--grid');
+  } else {
+    mainWindowClasses.push('main-window--content');
+  }
+
+  const containerClasses = ['main-window__container'];
+  if (containerVariant === 'grid') {
+    containerClasses.push('main-window__container--grid');
+  } else if (containerVariant === 'full') {
+    containerClasses.push('main-window__container--full');
+  } else {
+    containerClasses.push('main-window__container--content');
+  }
+
+  const mainClasses = ['main-page'];
+  if (windowVariant === 'grid') {
+    mainClasses.push('main-page--grid');
+  }
   return (
     <BreakpointProvider>
       <ErrorBoundary>
-        {/* 전역 Header - 커밍순 페이지가 아닐 때만 표시 */}
-        {currentPage !== 'comingsoon' && (
-          <Header currentPage={currentPage} />
-        )}
-
-        {/* 디자이너 페이지 표시 */}
-        {currentPage === 'designer' && <Designer />}
-
-        {/* 디자이너 상세 페이지 표시 */}
-        {currentPage === 'designerDetail' && <DesignerDetail />}
-
-        {/* 작품 페이지 표시 */}
-        {currentPage === 'works' && <Works />}
-
-        {/* 메인화면 표시 (/main 경로일 때) - 드래그 가능한 그리드 */}
-        {currentPage === 'mainPage' && <DraggableGrid />}
-
-        {/* 커밍순 페이지 표시 */}
-        {currentPage === 'comingsoon' && (
-          <ComingSoonV2 />
-        )}
-
-        {/* 메인 페이지 표시 (/main 경로일 때) - DraggableGrid */}
-        {currentPage === 'mainPage' && (
-          <DraggableGrid />
-        )}
-
-        {/* 전역 Footer - 모든 페이지에서 공통으로 사용 */}
-        <Footer />
+        <div className="app-layout">
+          <main className={mainClasses.join(' ')}>
+            <Header currentPage={headerMode} />
+            {windowVariant === 'grid' && (
+              <section className="main-hero" aria-hidden="true">
+                <video
+                  className="main-hero__video"
+                  src={MAIN_STAGE_VIDEO}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </section>
+            )}
+            <section className={mainWindowClasses.join(' ')} aria-labelledby="main-gallery-title">
+              <div className={containerClasses.join(' ')}>
+                <PageComponent key={currentPath} />
+              </div>
+            </section>
+            <Footer />
+          </main>
+        </div>
       </ErrorBoundary>
     </BreakpointProvider>
   );

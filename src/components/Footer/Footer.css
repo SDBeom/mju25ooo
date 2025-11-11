@@ -1,380 +1,513 @@
-/* ============================================
-   Footer - ComingSoon 스타일 전역 푸터
-   ============================================ */
-
-/* ============================================
-   💡 푸터 기본 스타일 (ComingSoon과 동일한 디자인)
-   ============================================ */
+/* Footer 기본 스타일 */
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
-  transform: translateY(100%); /* 기본적으로 숨김 (데스크탑/태블릿) */
-  background: rgba(42, 42, 42, 0.95);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 9999;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: #67c5ff;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* 가로 스크롤바 방지 */
+  position: relative;
+  overflow: hidden;
+  color: #111111;
+  z-index: 10;
+  transition: opacity 0.3s ease;
 }
 
-/* 모바일에서는 기본적으로 static으로 설정 */
-@media (max-width: 767px) {
-  .footer {
-    position: static;
-    transform: none;
-  }
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(244, 241, 237, 0.65) 35%,
+    rgba(255, 119, 0, 0.5) 65%,
+    rgba(7, 7, 7, 0.45) 100%
+  );
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle 50px at 50px 50px, rgba(103, 197, 255, 0.32) 0, rgba(103, 197, 255, 0.32) 40px, transparent 41px),
+    radial-gradient(circle 50px at 150px 50px, rgba(7, 7, 7, 0.24) 0, rgba(7, 7, 7, 0.24) 40px, transparent 41px),
+    radial-gradient(circle 50px at 250px 50px, rgba(255, 119, 0, 0.3) 0, rgba(255, 119, 0, 0.3) 40px, transparent 41px),
+    radial-gradient(circle 50px at 350px 50px, rgba(244, 241, 237, 0.46) 0, rgba(244, 241, 237, 0.46) 40px, transparent 41px),
+    radial-gradient(circle 50px at 50px 150px, rgba(255, 255, 255, 0.28) 0, rgba(255, 255, 255, 0.28) 40px, transparent 41px),
+    radial-gradient(circle 50px at 150px 150px, rgba(244, 241, 237, 0.5) 0, rgba(244, 241, 237, 0.5) 40px, transparent 41px),
+    radial-gradient(circle 50px at 250px 150px, rgba(7, 7, 7, 0.2) 0, rgba(7, 7, 7, 0.2) 40px, transparent 41px),
+    radial-gradient(circle 50px at 350px 150px, rgba(103, 197, 255, 0.26) 0, rgba(103, 197, 255, 0.26) 40px, transparent 41px),
+    radial-gradient(circle 50px at 50px 250px, rgba(244, 241, 237, 0.42) 0, rgba(244, 241, 237, 0.42) 40px, transparent 41px),
+    radial-gradient(circle 50px at 150px 250px, rgba(255, 119, 0, 0.24) 0, rgba(255, 119, 0, 0.24) 40px, transparent 41px),
+    radial-gradient(circle 50px at 250px 250px, rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0.3) 40px, transparent 41px),
+    radial-gradient(circle 50px at 350px 250px, rgba(7, 7, 7, 0.22) 0, rgba(7, 7, 7, 0.22) 40px, transparent 41px),
+    radial-gradient(circle 50px at 50px 350px, rgba(103, 197, 255, 0.2) 0, rgba(103, 197, 255, 0.2) 40px, transparent 41px),
+    radial-gradient(circle 50px at 150px 350px, rgba(7, 7, 7, 0.18) 0, rgba(7, 7, 7, 0.18) 40px, transparent 41px),
+    radial-gradient(circle 50px at 250px 350px, rgba(244, 241, 237, 0.44) 0, rgba(244, 241, 237, 0.44) 40px, transparent 41px),
+    radial-gradient(circle 50px at 350px 350px, rgba(255, 119, 0, 0.26) 0, rgba(255, 119, 0, 0.26) 40px, transparent 41px);
+  background-size: 400px 400px;
+  background-repeat: repeat;
+}
+
+body.header-hidden .footer {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .footer-content {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 3rem;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px;
+  margin: 0;
+  padding: 60px 40px;
   box-sizing: border-box;
-  min-height: 80px;
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
 }
 
-/* ============================================
-   로고 섹션
-   ============================================ */
-.footer-logos {
+.footer-info {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #111111;
+}
+
+.footer-headlines-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 1.5rem;
+  flex: 1 1 55%;
+  min-width: 260px;
+}
+
+.footer-headlines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: 1.6;
+  flex: 1 1 0%;
+  min-width: 0;
+  margin: 0;
+}
+
+.headline-ko {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+}
+
+.headline-ko.title {
+  font-size: clamp(2.2rem, 3.5vw, 3.1rem);
+  font-weight: 700;
+  color: #ff7700;
+  margin: 0;
+  line-height: 1.15;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.headline-ko.title .title-segment {
+  white-space: inherit;
+}
+
+.headline-ko.title .title-tablet-up {
+  display: inline;
+}
+
+.headline-ko.title .title-mobile {
+  display: none;
+}
+
+.headline-ko.title .title-break {
+  display: none;
+}
+
+.headline-ko.title .title-closing {
+  display: inline;
+  margin-left: 0.3em;
+}
+
+.footer-meta-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  flex: 1 1 35%;
+  min-width: 220px;
   margin: 0;
   padding: 0;
+  border-radius: 12px;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #111111;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.footer-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #111111;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.meta-group {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: #111111;
+  white-space: nowrap;
+}
+
+.meta-value {
+  display: block;
+  color: rgba(7, 7, 7, 0.82);
+}
+
+.meta-value a {
+  color: #ff7700;
+  text-decoration: none;
+}
+
+.meta-value a:hover {
+  text-decoration: underline;
 }
 
 .footer-logo {
-  height: 40px;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: all 0.3s ease;
-  filter: brightness(0) invert(1); /* 로고를 흰색으로 변경 */
+  display: block;
+  width: auto;
+  height: clamp(21px, 2.5vw, 36px);
+  filter: brightness(0) invert(1);
 }
 
-.footer-logo:hover {
-  opacity: 0.9;
+.footer-logo.mju-logo {
+  height: clamp(23px, 2.75vw, 38px);
 }
 
-.mju-logo {
-  width: 140px;
-  height: auto;
+.footer-logo.ooo-logo {
+  height: clamp(17px, 2.1vw, 30px);
 }
 
-.ooo-logo {
-  width: 100px;
-  height: auto;
-}
-
-@keyframes logoFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-/* ============================================
-   전시 정보 섹션
-   ============================================ */
-.exhibition-info {
-  text-align: left;
+.exhibition-copy {
   margin: 0;
-  padding: 0;
-  flex: 1;
+  color: rgba(7, 7, 7, 0.7);
+  font-size: 0.85rem;
+  white-space: pre-line;
 }
 
-.exhibition-detail {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  text-align: left;
+.headline-circle--empty {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
-.exhibition-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.exhibition-date {
-  font-size: 0.9rem;
-  color: #FF6B35;
-  font-weight: 500;
-  margin-bottom: 0.3rem;
-}
-
-.exhibition-copyright {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 400;
-}
-
-
-/* ============================================
-   태블릿 (768px ~ 1023px)
-   ============================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .footer {
-    padding: 0;
-  }
-
+@media (max-width: 799px) {
   .footer-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    padding: 30px;
-    min-height: 70px;
-    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding: 40px 20px;
+  }
+
+  .footer-info {
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .headline-ko {
+    font-size: 1.05rem;
+    white-space: pre-line;
+    text-align: left;
+  }
+
+  .headline-ko.title {
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
+    white-space: normal;
+    text-align: left;
+  }
+
+  .headline-ko.title .title-tablet-up {
+    display: none;
+  }
+
+  .headline-ko.title .title-break-mobile {
+    display: block;
+  }
+
+  .headline-ko.title .title-mobile {
+    display: inline;
+  }
+
+  .headline-ko.title .title-break-tablet {
+    display: none;
+  }
+
+  .headline-ko.title .title-closing {
+    margin-left: 0;
+  }
+
+  .exhibition-copy {
+    white-space: pre-line;
+    text-align: left;
+  }
+
+  .footer-meta-branding {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .footer-meta {
+    text-align: left;
+  }
+
+  .meta-group {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .meta-label {
+    white-space: normal;
   }
 
   .footer-logos {
-    flex: 0 0 auto;
-  }
-
-  .footer-logo {
-    height: 35px;
-  }
-
-  .mju-logo {
-    width: 120px;
-    height: auto;
-  }
-
-  .ooo-logo {
-    width: 85px;
-    height: auto;
-  }
-
-  .exhibition-info {
-    flex: 1;
-    text-align: left;
-  }
-
-  .exhibition-detail {
-    font-size: 0.85rem;
-    text-align: left;
-  }
-
-  .exhibition-title {
-    font-size: 0.9rem;
-  }
-
-  .exhibition-date {
-    font-size: 0.8rem;
-  }
-
-  .exhibition-copyright {
-    font-size: 0.75rem;
-  }
-
-}
-
-/* ============================================
-   데스크톱 (1024px 이상)
-   ============================================ */
-@media (min-width: 1024px) {
-  .footer {
-    padding: 0;
-  }
-
-  .footer-content {
-    flex-direction: row;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
-    padding: 30px;
-    max-width: 1400px;
-    min-height: 90px;
-  }
-
-  .footer-logos {
-    flex: 0 0 auto;
-  }
-
-  .footer-logo {
-    height: 40px;
-  }
-
-  .mju-logo {
-    width: 150px;
-    height: auto;
-  }
-
-  .ooo-logo {
-    width: 110px;
-    height: auto;
-  }
-
-  .exhibition-info {
-    flex: 1;
-    text-align: left;
-  }
-
-  .exhibition-detail {
-    font-size: 0.9rem;
-    text-align: left;
-    line-height: 1.8;
-  }
-
-  .exhibition-title {
-    font-size: 1.1rem;
-  }
-
-  .exhibition-date {
-    font-size: 1rem;
-  }
-
-  .exhibition-copyright {
-    font-size: 0.85rem;
-  }
-
-}
-
-/* ============================================
-   모바일 (768px 미만) - 푸터 자연스러운 스크롤
-   ============================================ */
-@media (max-width: 767px) {
-  .footer {
-    position: relative; /* 일반 문서 흐름에 따라 배치 */
-    bottom: auto;
-    left: auto;
-    right: auto;
-    transform: translateY(0); /* 모바일: 항상 표시 */
-    padding: 0;
-  }
-
-  .footer-content {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 1rem;
-    min-height: 80px;
+    gap: 0.75rem;
     max-width: 100%;
-  }
-
-  .footer-logos {
-    justify-content: flex-end;
-    gap: 0.8rem;
-    flex: 0 0 auto;
+    overflow: hidden;
   }
 
   .footer-logo {
-    height: 25px;
+    height: clamp(30px, 9vw, 38px);
+    width: auto;
+    max-width: min(46%, 140px);
+    display: block;
+    object-fit: contain;
   }
 
-  .mju-logo {
-    width: 70px;
+  .footer-logo.mju-logo {
+    height: clamp(32px, 9.5vw, 42px);
+    max-width: min(50%, 150px);
   }
 
-  .ooo-logo {
-    width: 50px;
+  .footer-logo.ooo-logo {
+    height: clamp(28px, 8.5vw, 36px);
+    max-width: min(42%, 130px);
   }
 
-  .exhibition-info {
-    text-align: left;
-    flex: 1;
-  }
-
-  .exhibition-detail {
-    font-size: 0.75rem;
-    line-height: 1.4;
-    text-align: left;
-  }
-
-  .exhibition-title {
-    font-size: 0.85rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .exhibition-date {
-    font-size: 0.75rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .exhibition-copyright {
-    font-size: 0.7rem;
-  }
-
-}
-
-/* ============================================
-   다크 모드 지원
-   ============================================ */
-@media (prefers-color-scheme: dark) {
-  .footer {
-    background: rgba(26, 26, 26, 0.95);
-    border-top-color: rgba(255, 255, 255, 0.15);
+  .footer-branding {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
 
-/* ============================================
-   푸터 호버 효과 (데스크톱/태블릿만)
-   ============================================ */
-@media (min-width: 768px) {
-  .footer:hover {
-    background: rgba(42, 42, 42, 0.98);
-    border-top-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
-  }
-  
+@media (min-width: 800px) and (max-width: 1279px) {
   .footer-content {
-    transition: all 0.3s ease;
+    padding: 52px 28px;
+    flex-direction: column;
+    gap: 2.5rem;
   }
-  
-  .footer:hover .footer-content {
-    transform: translateY(-2px);
+
+  .footer-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  .footer-headlines-row {
+    flex: 1 1 calc(55% - 1.25rem);
+    max-width: calc(55% - 1.25rem);
+    min-width: 260px;
+  }
+
+  .footer-headlines {
+    gap: 0.75rem;
+  }
+
+  .headline-ko {
+    font-size: 1.2rem;
+    white-space: pre-line;
+    text-align: left;
+  }
+
+  .headline-ko.title {
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    white-space: normal;
+    text-align: left;
+  }
+
+  .headline-ko.title .title-tablet-up {
+    display: inline;
+  }
+
+  .headline-ko.title .title-break-mobile {
+    display: none;
+  }
+
+  .headline-ko.title .title-mobile {
+    display: none;
+  }
+
+  .headline-ko.title .title-break-tablet {
+    display: block;
+  }
+
+  .headline-ko.title .title-closing {
+    display: inline-block;
+    margin-left: 0;
+  }
+
+  .exhibition-copy {
+    white-space: normal;
+    text-align: left;
+  }
+
+  .footer-meta-branding {
+    flex: 1 1 calc(45% - 1.25rem);
+    max-width: calc(45% - 1.25rem);
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .footer-meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-branding {
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
 
-/* ============================================
-   고성능 모드
-   ============================================ */
-@media (prefers-reduced-motion: no-preference) {
-  .footer {
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+@media (min-width: 1280px) {
+  .footer-content {
+    padding: 60px 40px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
   }
-  
-  .footer-signature-logo {
-    animation: logoFloat 3s ease-in-out infinite;
-  }
-}
 
-/* ============================================
-   모션 감소 모드
-   ============================================ */
-@media (prefers-reduced-motion: reduce) {
-  .footer {
-    transition: opacity 0.3s ease;
+  .footer-info {
+    flex: 1 1 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
   }
-  
-  .footer-signature-logo {
-    animation: none;
+
+  .footer-headlines-row {
+    flex: 1 1 calc(55% - 2rem);
+    max-width: calc(55% - 2rem);
   }
-  
-  .social-link:hover {
-    transform: none;
+
+  .headline-ko,
+  .headline-ko.title,
+  .exhibition-copy {
+    white-space: normal;
+    text-align: left;
+  }
+
+  .headline-ko {
+    font-size: 1.25rem;
+  }
+
+  .headline-ko.title {
+    font-size: clamp(2.6rem, 2.8vw, 3.2rem);
+    white-space: normal;
+    overflow-wrap: normal;
+  }
+
+  .headline-ko.title .title-tablet-up {
+    display: inline;
+  }
+
+  .headline-ko.title .title-mobile {
+    display: none;
+  }
+
+  .headline-ko.title .title-break-mobile,
+  .headline-ko.title .title-break-tablet {
+    display: none;
+  }
+
+  .headline-ko.title .title-closing {
+    display: inline;
+    margin-left: 0.3em;
+  }
+
+  .footer-meta-branding {
+    flex: 1 1 calc(45% - 2rem);
+    max-width: calc(45% - 2rem);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .footer-meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-meta .meta-value br {
+    display: none;
+  }
+
+  .footer-meta .meta-group {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-branding {
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }

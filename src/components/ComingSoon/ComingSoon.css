@@ -30,24 +30,43 @@
 }
 
 /* ============================================
-   Tablet (768px ~ 1023px)
+   Tablet (800px ~ 1279px)
    ============================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 800px) and (max-width: 1279px) {
   .coming-soon {
-    justify-content: flex-start; /* 태블릿: 상단부터 배치 */
-    overflow: visible;          /* 태블릿: overflow 제거 (body 스크롤 사용) */
-    padding: 2rem 2.5rem;      /* 태블릿: 상하 좌우 여백 */
-    padding-bottom: 120px;       /* 하단 여백 (푸터 공간) */
+    justify-content: center; /* 태블릿: 중앙 정렬 */
+    overflow: visible;       /* 태블릿: overflow 제거 (body 스크롤 사용) */
+    padding: 2rem 2.5rem;    /* 태블릿: 상하 좌우 여백 */
   }
 }
 
 /* ============================================
-   Desktop (1024px 이상)
+   Desktop (1280px 이상)
    ============================================ */
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .coming-soon {
     justify-content: center; /* Desktop: 중앙 정렬 */
     overflow: hidden;       /* Desktop: 스크롤 숨김 (휠 이벤트용) */
     padding: 4vh 3rem;     /* Desktop: 상하 vh 단위, 좌우 고정 */
   }
+}
+
+.coming-soon-main-content--simple {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.coming-soon-main-content--simple .coming-soon-left-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
 }

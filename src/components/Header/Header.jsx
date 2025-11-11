@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import { NAVIGATION_ITEMS } from '../../shared/constants';
 import Logo from './Logo';
@@ -6,11 +6,20 @@ import Navigation from './Navigation';
 import './Header.css';
 
 const Header = ({ currentPage = 'mainPage' }) => {
-  const { isDesktop } = useBreakpointContext();
+  const { deviceType, isMobile, isTablet, isDesktop } = useBreakpointContext();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const showInlineNavigation = isDesktop || isTablet;
+  const showMobileToggle = isMobile;
+
+  useEffect(() => {
+    if (!showMobileToggle && isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  }, [showMobileToggle, isMobileMenuOpen]);
+
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((prev) => !prev);
   };
 
   // 모드별 클래스명 결정
@@ -30,30 +39,35 @@ const Header = ({ currentPage = 'mainPage' }) => {
     }
   };
 
+  const deviceClassName = deviceType ? `header--${deviceType}` : '';
+
   return (
-    <header className={`header ${getHeaderMode()}`}>
+    <header className={`header ${getHeaderMode()} ${deviceClassName}`}>
       <div className="header-content">
-        <Logo />
-        
-        {/* Desktop: 항상 표시 */}
-        {isDesktop && <Navigation items={NAVIGATION_ITEMS} />}
-        
-        {/* Mobile/Tablet: 햄버거 메뉴 */}
-        {!isDesktop && (
-          <button 
-            className="mobile-menu-toggle"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
-          >
-            <span className="hamburger-line"></span>
-            <span className="hamburger-line"></span>
-            <span className="hamburger-line"></span>
-          </button>
-        )}
+        <div className="header-section header-section--left">
+          <Logo />
+        </div>
+
+        <div className="header-section header-section--center">
+          {showInlineNavigation && <Navigation items={NAVIGATION_ITEMS} />}
+        </div>
+
+        <div className="header-section header-section--right">
+          {showMobileToggle && (
+            <button
+              className="mobile-menu-toggle"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </button>
+          )}
+        </div>
       </div>
-      
-      {/* Mobile/Tablet 메뉴 */}
-      {!isDesktop && isMobileMenuOpen && (
+
+      {showMobileToggle && isMobileMenuOpen && (
         <div className="mobile-menu">
           <Navigation items={NAVIGATION_ITEMS} mobile />
         </div>

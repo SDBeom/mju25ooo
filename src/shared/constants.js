@@ -1,10 +1,10 @@
 // Navigation constants
 export const NAVIGATION_ITEMS = [
-  { id: 'home', label: 'HOME', href: '#' },
-  { id: 'about', label: 'ABOUT', href: '#' },
-  { id: 'works', label: 'WORKS', href: '#' },
-  { id: 'designer', label: 'DESIGNER', href: '#' },
-  { id: 'archive', label: 'ARCHIVE', href: '#' }
+  { id: 'home', label: 'HOME', href: '/main' },
+  { id: 'about', label: 'ABOUT', href: '/about' },
+  { id: 'works', label: 'WORKS', href: '/works' },
+  { id: 'designer', label: 'DESIGNER', href: '/designer' },
+  { id: 'archive', label: 'ARCHIVE', href: '/archive' }
 ];
 
 // Design System Colors from Figma

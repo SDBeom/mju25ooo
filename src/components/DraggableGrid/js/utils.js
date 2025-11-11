@@ -55,7 +55,7 @@ export const splitText = (element, type = 'chars') => {
     Array.from(text).forEach((char) => {
       const charSpan = document.createElement('span');
       charSpan.className = 'char';
-      charSpan.textContent = char === ' ' ? '\u00A0' : char; // Non-breaking space
+      charSpan.textContent = char === ' ' ? '\u00A0' : char;
       charSpan.style.display = 'inline-block';
       charSpan.style.transform = 'translate3d(0, 100%, 0)';
       charSpan.style.overflow = 'hidden';

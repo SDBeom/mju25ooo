@@ -1,81 +1,80 @@
-import React, { useEffect, useRef } from 'react';
-import { useBreakpointContext } from '../../contexts/BreakpointContext';
-import MJULogo from '../../assets/MJU_Signature_logo_Horizontal.svg';
-import OOOLogo from '../../assets/ooo_Signture_logo_Horizontal.svg';
+import React from 'react';
+import MJULogo from '../../assets/MJU_Signature_logo_Horizontal.webp';
+import OOOLogo from '../../assets/ooo_Signture_logo_Horizontal.webp';
 import './Footer.css';
 
 const Footer = () => {
-  const { isMobile } = useBreakpointContext();
-  const footerRef = useRef(null);
-
-  // 데스크톱/태블릿에서 마우스 호버 효과
-  useEffect(() => {
-    // 모바일에서는 마우스 이벤트 비활성화
-    if (isMobile) {
-      return;
-    }
-    
-    const footerElement = footerRef.current;
-    if (!footerElement) return;
-
-    const handleMouseMove = (e) => {
-      // 화면 하단에서 100px 이내에 마우스가 있을 때
-      const bottomThreshold = 100;
-      const distanceFromBottom = window.innerHeight - e.clientY;
-      
-      if (distanceFromBottom <= bottomThreshold) {
-        // 하단에 가까우면 푸터를 올림 (0% ~ 100%)
-        const progress = Math.max(0, (bottomThreshold - distanceFromBottom) / bottomThreshold);
-        const translateY = 100 - (progress * 100);
-        
-        // 부드러운 애니메이션을 위해 transition 적용
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = `translateY(${translateY}%)`;
-      } else {
-        // 하단에서 멀어지면 푸터를 숨김
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = 'translateY(100%)';
-      }
-    };
-
-    // 마우스가 화면을 벗어날 때 푸터 숨김
-    const handleMouseLeave = () => {
-      if (footerElement) {
-        footerElement.style.transition = 'transform 0.3s ease-out';
-        footerElement.style.transform = 'translateY(100%)';
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
-    
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, [isMobile]);
-
   return (
-    <footer className="footer" ref={footerRef}>
+    <footer className="footer">
       <div className="footer-content">
-        <div className="exhibition-info">
-          <div className="exhibition-detail">
-            <div className="exhibition-title">명지대학교 영상애니메이션 전공 졸업전시</div>
-            <div className="exhibition-date">2025.11.12 - 11.17</div>
-            <div className="exhibition-copyright">© 2025 MJU MCD</div>
+        <div className="footer-info">
+          <div className="footer-headlines-row">
+            <div className="footer-headlines">
+              <p className="headline-ko">
+                {'2025 명지대학교 디자인학부\n영상애니메이션디자인전공 제 24회 졸업전시'}
+              </p>
+              <p className="headline-ko title">
+                <span className="title-segment title-primary">「점점점 : 점(에서)</span>
+                <span className="title-segment title-tablet-up"> 점(으로)</span>
+                <br className="title-break title-break-mobile" />
+                <span className="title-segment title-mobile">점(으로) </span>
+                <br className="title-break title-break-tablet" />
+                <span className="title-segment title-closing">점(점)」</span>
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="footer-logos">
-          <img 
-            src={MJULogo} 
-            alt="MJU Signature Logo" 
-            className="footer-logo mju-logo"
-          />
-          <img 
-            src={OOOLogo} 
-            alt="OOO Signature Logo" 
-            className="footer-logo ooo-logo"
-          />
+
+          <div className="footer-meta-branding">
+            <div className="footer-meta">
+              <div className="meta-group">
+                <span className="meta-label">기간 · 관람</span>
+                <span className="meta-value">
+                  2025년 11월 12일 ~ 11월 17일,
+                  <br />
+                  {' '}
+                  매일 11:00 AM ~ 6:00 PM
+                </span>
+              </div>
+              <div className="meta-group">
+                <span className="meta-label">오프닝</span>
+                <span className="meta-value">2025년 11월 12일(수) 18:00</span>
+              </div>
+              <div className="meta-group">
+                <span className="meta-label">장소</span>
+                <span className="meta-value">
+                  인사동 마루아트센터 특별관
+                  <br />
+                  {' '}
+                  서울 종로구 인사동길 35-4
+                  <br />
+                  {' '}
+                  (35-4, Insadong-gil, Jongno-gu)
+                </span>
+              </div>
+              <div className="meta-group">
+                <span className="meta-label">Instagram</span>
+                <span className="meta-value">
+                  <a
+                    href="https://www.instagram.com/mju_mcd_2025/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    @mju_mcd_2025
+                  </a>
+                </span>
+              </div>
+            </div>
+
+            <div className="footer-branding">
+              <div className="footer-logos">
+                <img src={MJULogo} alt="명지대학교 로고" className="footer-logo mju-logo" />
+                <img src={OOOLogo} alt="OOO Signature Logo" className="footer-logo ooo-logo" />
+              </div>
+              <p className="exhibition-copy">
+                {'© 2025 Myongji University\nMedia Communication & Animation Design'}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -7,29 +7,194 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden; /* 가로 스크롤바 제거 */
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: var(--font-primary);
-  background-color: #2A2A2A;
-  color: #FFFFFF;
+  background-color: #08090d;
+  color: #f5f6fa;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* 가로 스크롤바 제거 */
+  overflow-x: hidden;
 }
 
 #root {
   margin: 0;
   padding: 0;
-  margin-bottom: 0; /* 하단 마진 명시적 제거 */
-  padding-bottom: 0; /* 하단 패딩 명시적 제거 */
   min-height: 100vh;
-  background-color: #2A2A2A;
-  overflow-x: hidden; /* 가로 스크롤바 제거 */
+  background-color: #08090d;
+  overflow-x: hidden;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% -10%, rgba(111, 122, 255, 0.06), transparent 55%), #08090d;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 0;
+}
+
+.main-page--grid {
+  padding-top: var(--header-offset);
+}
+
+.main-window {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0;
+}
+
+/* Main hero + window */
+.main-window--grid {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #ff7700;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.main-page--grid {
+  background-color: #ff7700;
+}
+
+.main-hero {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff7700;
+  padding: 40px 40px 40px;
+  box-sizing: border-box;
+}
+
+.main-page--grid .main-window {
+  background-color: transparent;
+}
+
+.main-hero__video {
+  width: 100%;
+  height: calc(100vh - var(--header-offset, 60px) - 80px);
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.main-page--snap {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.main-page--snap > .main-hero {
+  min-height: calc(100vh - var(--header-offset));
+  padding: 40px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.main-page--snap > .main-window,
+.main-page--snap > footer {
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.main-window--content {
+  min-height: 100vh;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.main-window__container {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 calc((100vw - 100%) / -2);
+  overflow: visible;
+  z-index: 1;
+}
+
+.main-window__container--grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.main-window__container--content {
+  padding: 500px 0 160px;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  overflow: visible;
+  background: #ffffff;
+}
+
+.main-window__container--full {
+  padding: 0;
+  overflow: hidden;
+}
+
+.main-page > footer {
+  margin: 0;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .main-window--grid {
+    min-height: auto;
+  }
+
+  .main-window__container,
+  .main-window__container--grid {
+    min-height: auto;
+  }
+
+  .main-hero {
+    padding: 40px 20px 32px;
+  }
+  .main-window--grid {
+    padding: 0 20px;
+  }
+
+  .main-hero__video {
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - var(--header-offset, 60px) - 40px);
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 801px) {
+  .main-hero {
+    padding: 0 28px 36px;
+  }
+  .main-window--grid {
+    padding: 0 28px;
+  }
+
+  .main-hero__video {
+    width: 100%;
+    height: calc(100vh - var(--header-offset, 60px) - 60px);
+  }
 }
 
 /* Custom scrollbar */
@@ -168,7 +333,6 @@ body {
   overscroll-behavior: contain;
 }
 
-
 /* 위치 표시기 스타일 */
 .position-indicator {
   position: fixed;
@@ -255,7 +419,7 @@ body {
 }
 
 /* 모바일에서 위치 표시기 조정 */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .position-indicator {
     top: 90px;
     right: 10px;
@@ -269,7 +433,7 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   .position-indicator {
     top: 80px;
     right: 8px;
@@ -289,7 +453,7 @@ body {
 }
 
 /* 모바일에서 Footer가 콘텐츠를 가리지 않도록 하단 패딩 추가 */
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   body {
     padding-bottom: 0; /* 모바일 패딩 제거 */
   }

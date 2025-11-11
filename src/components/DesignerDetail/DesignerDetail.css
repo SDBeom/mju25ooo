@@ -358,7 +358,7 @@
 /* ============================================
    반응형 디자인
    ============================================ */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .designer-detail-header {
     padding: 1rem;
   }
@@ -409,7 +409,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   .designer-name {
     font-size: 1.8rem;
   }
@@ -425,5 +425,136 @@
 
   .skills-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+.designer-meta .meta-group {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 9, 13, 0.78);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 40px);
+  z-index: 3000;
+}
+
+.project-modal {
+  position: relative;
+  width: min(680px, 100%);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  color: #111111;
+}
+
+.project-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.project-modal__close span {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 999px;
+}
+
+.project-modal__close span:first-child {
+  transform: rotate(45deg);
+}
+
+.project-modal__close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.project-modal__close:hover {
+  background: rgba(103, 197, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.project-modal__body {
+  padding: clamp(48px, 8vw, 72px) clamp(32px, 6vw, 52px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-modal__body h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.project-modal__body p {
+  margin: 0;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.7);
+}
+
+.project-modal__cta {
+  align-self: flex-start;
+  padding: 0.8rem 1.6rem;
+  border-radius: 14px;
+  border: none;
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-modal__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+}
+
+.project-modal__cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+@media (max-width: 799px) {
+  .project-modal {
+    border-radius: 16px;
+  }
+
+  .project-modal__close {
+    top: 14px;
+    right: 14px;
+  }
+
+  .project-modal__body {
+    padding: 40px 24px;
+  }
+
+  .project-modal__body p {
+    font-size: 0.95rem;
+  }
+
+  .project-modal__cta {
+    width: 100%;
+    text-align: center;
   }
 }

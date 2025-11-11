@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import './DesignerDetail.css';
+import KimYunjungDetail from './KimYunjungDetail';
 
 // 디자이너 데이터
 const DESIGNERS = [
@@ -63,6 +65,11 @@ const DESIGNERS = [
 const DesignerDetail = () => {
   const [designer, setDesigner] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [activeProjectIndex, setActiveProjectIndex] = useState(null);
+  const [modalRoot, setModalRoot] = useState(null);
+  const closeButtonRef = useRef(null);
+  const projectModalRef = useRef(null);
+  const lastFocusedRef = useRef(null);
 
   useEffect(() => {
     // URL에서 디자이너 이름 추출
@@ -76,7 +83,62 @@ const DesignerDetail = () => {
     const foundDesigner = DESIGNERS.find(d => d.name === designerName);
     setDesigner(foundDesigner);
     setLoading(false);
+    const root = document.getElementById('modal-root') || document.body;
+    setModalRoot(root);
   }, []);
+
+  useEffect(() => {
+    if (activeProjectIndex !== null) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+
+      const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+          setActiveProjectIndex(null);
+        } else if (event.key === 'Tab' && projectModalRef.current) {
+          const focusableSelectors =
+            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+          const focusable = Array.from(projectModalRef.current.querySelectorAll(focusableSelectors));
+          if (!focusable.length) {
+            event.preventDefault();
+            return;
+          }
+          const firstElement = focusable[0];
+          const lastElement = focusable[focusable.length - 1];
+          const isShift = event.shiftKey;
+          const active = document.activeElement;
+
+          if (!isShift && active === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
+          } else if (isShift && active === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+          }
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+      requestAnimationFrame(() => closeButtonRef.current?.focus());
+
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        document.removeEventListener('keydown', handleKeyDown);
+        lastFocusedRef.current?.focus();
+      };
+    }
+    return undefined;
+  }, [activeProjectIndex]);
+
+  const openProjectModal = (index, event) => {
+    event.preventDefault();
+    lastFocusedRef.current = event.currentTarget;
+    setActiveProjectIndex(index);
+  };
+
+  const closeProjectModal = () => {
+    setActiveProjectIndex(null);
+  };
 
   const handleBackToDesigners = () => {
     window.history.pushState({}, '', '/designer');
@@ -114,6 +176,10 @@ const DesignerDetail = () => {
         </button>
       </div>
     );
+  }
+
+  if (designer.name === '김윤정') {
+    return <KimYunjungDetail designer={designer} onBack={handleBackToDesigners} />;
   }
 
   return (
@@ -200,7 +266,18 @@ const DesignerDetail = () => {
           <h3>Featured Projects</h3>
           <div className="projects-list">
             {designer.projects.map((project, index) => (
-              <div key={index} className="project-item">
+              <div
+                key={index}
+                className="project-item"
+                role="button"
+                tabIndex={0}
+                onClick={(event) => openProjectModal(index, event)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    openProjectModal(index, event);
+                  }
+                }}
+              >
                 <div className="project-number">{String(index + 1).padStart(2, '0')}</div>
                 <div className="project-content">
                   <h4>{project}</h4>
@@ -221,6 +298,39 @@ const DesignerDetail = () => {
           </button>
         </section>
       </main>
+      {designer && activeProjectIndex !== null && modalRoot &&
+        createPortal(
+          <div className="project-modal-overlay" role="dialog" aria-modal="true" onClick={closeProjectModal}>
+            <div
+              className="project-modal"
+              role="document"
+              onClick={(event) => event.stopPropagation()}
+              ref={projectModalRef}
+            >
+              <button
+                type="button"
+                className="project-modal__close"
+                aria-label="닫기"
+                onClick={closeProjectModal}
+                ref={closeButtonRef}
+              >
+                <span></span>
+                <span></span>
+              </button>
+              <div className="project-modal__body">
+                <h2>{designer.projects[activeProjectIndex]}</h2>
+                <p>
+                  {designer.name} 디자이너의 프로젝트 “{designer.projects[activeProjectIndex]}”에 대한 상세
+                  설명을 준비 중입니다. 작품 프로세스, 컨셉, 사용 툴 등을 여기에 채워 넣을 수 있어요.
+                </p>
+                <button type="button" className="project-modal__cta" onClick={closeProjectModal}>
+                  닫기
+                </button>
+              </div>
+            </div>
+          </div>,
+          modalRoot,
+        )}
     </div>
   );
 };

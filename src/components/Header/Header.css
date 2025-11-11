@@ -10,10 +10,99 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(42, 42, 42, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 9, 13, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: none;
   transition: all 0.3s ease;
+  --header-height: 60px;
+  --header-horizontal-padding: 20px;
+  color: #000000;
+}
+
+body.header-hidden .header {
+  transform: translateY(-100%);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: var(--header-height);
+  width: 100%;
+  padding: 0 var(--header-horizontal-padding);
+  box-sizing: border-box;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: var(--header-height);
+  width: 100%;
+  padding: 0 var(--header-horizontal-padding);
+  box-sizing: border-box;
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+}
+
+.header-section--left {
+  justify-content: flex-start;
+}
+
+.header-section--center {
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+
+.header-section--center .nav-menu {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.header--mobile .header-section--center {
+  display: none;
+}
+
+.header--tablet {
+  --header-height: 68px;
+  --header-horizontal-padding: 28px;
+}
+
+.header--tablet .header-section--center {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.header--tablet .header-section--center .nav-menu {
+  justify-content: flex-end;
+}
+
+.header--tablet .header-section--right {
+  display: none;
+}
+
+.header--desktop {
+  --header-height: 100px;
+  --header-horizontal-padding: 40px;
+}
+
+.header--desktop .header-section--center {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.header--desktop .header-section--center .nav-menu {
+  justify-content: flex-end;
+}
+
+.header--desktop .header-section--right {
+  display: none;
 }
 
 /* ============================================
@@ -22,68 +111,28 @@
 
 /* DraggableGrid 모드 - 투명하고 미니멀 */
 .header-grid-mode {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   pointer-events: none; /* 클릭 이벤트를 통과시킴 */
 }
 
 /* DraggableGrid 모드에서 로고와 네비게이션은 클릭 가능 */
 .header-grid-mode .header-content {
-  height: 50px; /* 더 작은 높이 */
   pointer-events: auto;
 }
 
+.header-grid-mode {
+  --header-height: 52px;
+}
+
+.header-grid-mode.header--tablet {
+  --header-height: 56px;
+}
+
+.header-grid-mode.header--desktop {
+  --header-height: 100px;
+}
+
 /* 디자이너 모드 - 크리에이티브한 스타일 */
-.header-design-mode {
-  background: rgba(255, 107, 53, 0.1);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
-}
-
-.header-design-mode .header-content {
-  height: 70px;
-}
-
-/* 작품 모드 - 갤러리 스타일 */
-.header-works-mode {
-  background: rgba(79, 195, 247, 0.1);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(79, 195, 247, 0.2);
-}
-
-.header-works-mode .header-content {
-  height: 70px;
-}
-
-/* 커밍순 모드 - 특별한 스타일 */
-.header-comingsoon-mode {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.header-comingsoon-mode .header-content {
-  height: 80px;
-}
-
-/* 기본 모드 */
-.header-default-mode {
-  background: rgba(42, 42, 42, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px; /* Mobile 높이 */
-  width: 100%; /* 전체 너비 */
-  padding: 0 20px; /* 좌우 패딩 */
-}
-
-/* Mobile menu toggle - Mobile/Tablet에서만 표시 */
+/* Mobile menu toggle - Mobile에서만 표시 */
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
@@ -116,9 +165,8 @@
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(42, 42, 42, 0.98);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 9, 13, 0.95);
+  border-top: 1px solid rgba(103, 197, 255, 0.25);
   padding: 24px 0;
   animation: slideDown 0.3s ease;
 }
@@ -134,66 +182,24 @@
   }
 }
 
-/* ============================================
-   Tablet (768px ~ 1023px)
-   ============================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .header-content {
-    padding: 0 32px; /* 태블릿 패딩 증가 */
-  }
-
-  /* 모드별 태블릿 높이 조정 */
-  .header-grid-mode .header-content {
-    height: 55px;
-  }
-
-  .header-design-mode .header-content,
-  .header-works-mode .header-content {
-    height: 75px;
-  }
-
-  .header-comingsoon-mode .header-content {
-    height: 85px;
-  }
-
-  .mobile-menu-toggle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .hamburger-line {
-    width: 24px;
-  }
+.header--mobile .nav-menu {
+  display: none;
 }
 
-/* ============================================
-   Desktop (1024px 이상)
-   ============================================ */
-@media (min-width: 1024px) {
-  .header-content {
-    padding: 0 40px; /* 데스크톱 패딩 증가 */
-  }
+.header--tablet .nav-menu {
+  gap: 1.5rem;
+}
 
-  /* 모드별 데스크톱 높이 조정 */
-  .header-grid-mode .header-content {
-    height: 60px;
-  }
+.header--desktop .nav-menu {
+  gap: 2.5rem;
+}
 
-  .header-design-mode .header-content,
-  .header-works-mode .header-content {
-    height: 80px;
-  }
+.header--tablet .mobile-menu-toggle,
+.header--desktop .mobile-menu-toggle {
+  display: none;
+}
 
-  .header-comingsoon-mode .header-content {
-    height: 90px;
-  }
-
-  /* Desktop에서는 햄버거 메뉴 숨김 (조건부 렌더링으로 처리됨) */
-  .mobile-menu-toggle {
-    display: none;
-  }
-
-  .mobile-menu {
-    display: none;
-  }
+.header--tablet .mobile-menu,
+.header--desktop .mobile-menu {
+  display: none;
 }
