@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/Draggable';
-import { Flip } from 'gsap/Flip';
 import { preloadImages, splitText } from './js/utils.js';
 import { WORK_THUMBNAILS } from '../../data/workThumbsData.js';
 import resolveThumbSrc from '../../utils/resolveThumbSrc.js';
@@ -31,6 +30,8 @@ const columns = Array.from({ length: GRID_COLUMNS }, (_, columnIndex) => {
   }).filter(Boolean);
 });
 
+const isMobileViewport = () => window.matchMedia('(max-width: 800px)').matches;
+
 const DraggableGrid = () => {
   const containerRef = useRef(null);
   const gridRef = useRef(null);
@@ -44,7 +45,7 @@ const DraggableGrid = () => {
 
   useEffect(() => {
     document.body.classList.add('loading');
-    gsap.registerPlugin(Draggable, Flip);
+    gsap.registerPlugin(Draggable);
 
     const container = containerRef.current;
     const grid = gridRef.current;
@@ -62,8 +63,8 @@ const DraggableGrid = () => {
     let observer;
     let showDetailsActive = false;
     let currentProduct = null;
-    let originalParent = null;
     let productClickHandlers = [];
+    let productHoverHandlers = [];
     let containerClickHandler;
     let crossClickHandler;
     let onMouseMove;
@@ -198,9 +199,11 @@ const DraggableGrid = () => {
       const x = event.clientX;
       const y = event.clientY;
 
+      const offsetX = cross.offsetWidth / 2;
+      const offsetY = cross.offsetHeight / 2;
       gsap.to(cross, {
-        x: x - cross.offsetWidth / 2,
-        y: y - cross.offsetHeight / 2,
+        x: x - offsetX,
+        y: y - offsetY,
         duration: 0.4,
         ease: 'power2.out',
       });
@@ -237,103 +240,198 @@ const DraggableGrid = () => {
       });
     };
 
-    const flipProduct = (product) => {
-      if (detailsThumb) {
-        detailsThumb.innerHTML = '';
-      }
+    const registerProductHover = () => {
+      productHoverHandlers = products
+        .map((product) => {
+          const wrapper = product.parentNode;
+          const image = product.querySelector('img');
+          if (!wrapper || !image) {
+            return null;
+          }
 
+          const enterHandler = () => {
+            gsap.to(image, {
+              scale: 1.08,
+              duration: 0.35,
+              ease: 'power3.out',
+              overwrite: 'auto',
+            });
+          };
+
+          const leaveHandler = () => {
+            gsap.to(image, {
+              scale: 1,
+              duration: 0.45,
+              ease: 'power3.out',
+              overwrite: 'auto',
+            });
+          };
+
+          wrapper.addEventListener('mouseenter', enterHandler);
+          wrapper.addEventListener('mouseleave', leaveHandler);
+          wrapper.addEventListener('focus', enterHandler);
+          wrapper.addEventListener('blur', leaveHandler);
+
+          return {
+            image,
+            enterHandler,
+            leaveHandler,
+            wrapper,
+          };
+        })
+        .filter(Boolean);
+    };
+
+    const flipProduct = (product) => {
       currentProduct = product;
-      originalParent = product.parentNode;
 
       if (observer) {
         observer.unobserve(product);
       }
 
-      const state = Flip.getState(product);
+      const productImage = product.querySelector('img');
+      if (productImage) {
+        gsap.to(productImage, {
+          scale: 0.85,
+          duration: 0.35,
+          ease: 'power3.out',
+          overwrite: 'auto',
+        });
+      }
 
-      detailsThumb.appendChild(product);
+      if (detailsThumb) {
+        detailsThumb.innerHTML = '';
 
-      Flip.from(state, {
-        absolute: true,
-        duration: 1.2,
-        ease: 'power3.inOut',
-        nested: true,
-      });
+        if (productImage) {
+          const clonedImage = productImage.cloneNode(true);
+          clonedImage.style.width = '100%';
+          clonedImage.style.height = '100%';
+          clonedImage.style.objectFit = 'cover';
+          clonedImage.style.borderRadius = 'inherit';
+          clonedImage.style.transformOrigin = 'center center';
+          detailsThumb.appendChild(clonedImage);
+
+          gsap.fromTo(
+            clonedImage,
+            { scale: 0.75, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.6, ease: 'power3.out', overwrite: 'auto' }
+          );
+        }
+      }
 
       if (cross) {
+        cross.classList.add('is-visible');
         gsap.to(cross, {
           scale: 1,
           duration: 0.4,
-          delay: 0.5,
+          delay: 0.2,
           ease: 'power2.out',
         });
       }
     };
 
     const unFlipProduct = () => {
-      if (!currentProduct || !originalParent) return;
+      if (!currentProduct) return;
 
-      if (cross) {
-        gsap.to(cross, {
-          scale: 0,
-          duration: 0.4,
-          ease: 'power2.out',
-        });
-      }
+      const productImage = currentProduct.querySelector('img');
+      const thumbImage = detailsThumb ? detailsThumb.querySelector('img') : null;
 
-      const state = Flip.getState(currentProduct);
-
-      originalParent.appendChild(currentProduct);
-
-      if (detailsThumb) {
-        detailsThumb.innerHTML = '';
-      }
-
-      Flip.from(state, {
-        duration: 1.2,
-        delay: 0.3,
-        ease: 'power3.inOut',
-        nested: true,
+      const timeline = gsap.timeline({
         onComplete: () => {
-          gsap.set(currentProduct, {
-            position: '',
-            top: '',
-            left: '',
-            width: '',
-            height: '',
-            zIndex: '',
-          });
+          if (detailsThumb) {
+            detailsThumb.innerHTML = '';
+          }
 
           if (observer && currentProduct) {
             observer.observe(currentProduct);
           }
 
           currentProduct = null;
-          originalParent = null;
         },
       });
+
+      if (productImage) {
+        timeline.to(
+          productImage,
+          {
+            scale: 1,
+            duration: 0.45,
+            ease: 'power3.out',
+            overwrite: 'auto',
+          },
+          0
+        );
+      }
+
+      if (thumbImage) {
+        timeline.to(
+          thumbImage,
+          {
+            scale: 0.75,
+            opacity: 0,
+            duration: 0.4,
+            ease: 'power3.in',
+            overwrite: 'auto',
+          },
+          0
+        );
+      }
+
+      if (cross) {
+        timeline.to(
+          cross,
+          {
+            scale: 0,
+            duration: 0.4,
+            ease: 'power2.out',
+            onComplete: () => {
+              cross.classList.remove('is-visible');
+            },
+          },
+          0
+        );
+      }
     };
 
     const showDetails = (product) => {
       if (showDetailsActive) return;
       showDetailsActive = true;
+      const isMobile = isMobileViewport();
       details.classList.add('--is-showing');
       container.classList.add('--is-details-showing');
-      document.body.classList.add('cursor-cross');
+      if (!isMobile) {
+        document.body.classList.add('cursor-cross');
+      }
       document.body.classList.add('header-hidden');
       document.body.classList.add('details-open');
+      if (isMobile) {
+        gsap.to(container, {
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.inOut',
+          onStart() {
+            container.style.pointerEvents = 'none';
+          },
+        });
 
-      gsap.to(container, {
-        x: '-50vw',
-        duration: 1.2,
-        ease: 'power3.inOut',
-      });
+        gsap.to(details, {
+          x: 0,
+          duration: 0.6,
+          ease: 'power3.inOut',
+        });
+      } else {
+        gsap.to(container, {
+          x: '-50vw',
+          duration: 1.2,
+          ease: 'power3.inOut',
+        });
 
-      gsap.to(details, {
-        x: 0,
-        duration: 1.2,
-        ease: 'power3.inOut',
-      });
+        gsap.to(details, {
+          x: 0,
+          duration: 1.2,
+          ease: 'power3.inOut',
+        });
+      }
 
       flipProduct(product);
 
@@ -385,10 +483,32 @@ const DraggableGrid = () => {
       showDetailsActive = false;
       container.classList.remove('--is-details-showing');
       document.body.classList.remove('cursor-cross');
-      document.body.classList.remove('cursor-cross');
       document.body.classList.remove('header-hidden');
       document.body.classList.remove('details-open');
+      if (cross) {
+        cross.classList.remove('is-visible');
+      }
 
+      const isMobile = isMobileViewport();
+      if (isMobile) {
+        gsap.to(container, {
+          opacity: 1,
+          duration: 0.6,
+          delay: 0.3,
+          ease: 'power3.inOut',
+          onComplete: () => {
+            container.style.pointerEvents = '';
+            details.classList.remove('--is-showing');
+          },
+        });
+
+        gsap.to(details, {
+          x: '100vw',
+          duration: 0.6,
+          delay: 0.3,
+          ease: 'power3.inOut',
+        });
+      } else {
       gsap.to(container, {
         x: 0,
         duration: 1.2,
@@ -405,6 +525,7 @@ const DraggableGrid = () => {
         delay: 0.3,
         ease: 'power3.inOut',
       });
+      }
 
       titles.forEach((title) => {
         const chars = title.querySelectorAll('.char');
@@ -467,6 +588,8 @@ const DraggableGrid = () => {
       if (cross) {
         cross.addEventListener('click', crossClickHandler);
       }
+
+      registerProductHover();
     };
 
     const intro = () => {
@@ -543,6 +666,18 @@ const DraggableGrid = () => {
       productClickHandlers.forEach(({ product, handler }) => {
         product.removeEventListener('click', handler);
       });
+
+      productHoverHandlers.forEach(({ wrapper, image, enterHandler, leaveHandler }) => {
+        wrapper.removeEventListener('mouseenter', enterHandler);
+        wrapper.removeEventListener('mouseleave', leaveHandler);
+        wrapper.removeEventListener('focus', enterHandler);
+        wrapper.removeEventListener('blur', leaveHandler);
+        if (image) {
+          gsap.set(image, { scale: 1 });
+        }
+      });
+
+      productHoverHandlers = [];
 
       if (containerClickHandler) {
         container.removeEventListener('click', containerClickHandler);

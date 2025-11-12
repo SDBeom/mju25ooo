@@ -11,8 +11,6 @@ import Works from './components/Works/Works';
 import DesignerDetail from './components/DesignerDetail/DesignerDetail';
 import Designer from './components/Designer/Designer';
 
-const MAIN_STAGE_VIDEO = new URL('./assets/안선민_멀티미디어 디자인_브랜딩영상.mp4', import.meta.url).href;
-
 const ROUTES = {
   '/main': {
     Component: DraggableGrid,
@@ -125,18 +123,6 @@ function App() {
         <div className="app-layout">
           <main className={mainClasses.join(' ')}>
             <Header currentPage={headerMode} />
-            {windowVariant === 'grid' && (
-              <section className="main-hero" aria-hidden="true">
-                <video
-                  className="main-hero__video"
-                  src={MAIN_STAGE_VIDEO}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </section>
-            )}
             <section className={mainWindowClasses.join(' ')} aria-labelledby="main-gallery-title">
               <div className={containerClasses.join(' ')}>
                 <PageComponent key={currentPath} />
