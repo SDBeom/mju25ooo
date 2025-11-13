@@ -39,14 +39,11 @@
 }
 
 .designer-gallery__item--ghost {
-  display: block;
-  height: clamp(140px, 18vw, 240px);
-  padding: 0;
+  visibility: hidden;
   margin-bottom: 0;
-  background: #ffffff;
-  border-top: 1px solid rgba(0, 0, 0, 0.9);
   pointer-events: none;
-  overflow: hidden;
+  height: var(--designer-card-height, clamp(140px, 18vw, 240px));
+  min-height: var(--designer-card-height, clamp(140px, 18vw, 240px));
 }
 
 .designer-gallery__item--ghost::before {
@@ -179,10 +176,6 @@
     font-size: clamp(1.8rem, 10vw, 3rem);
   }
 
-  .designer-gallery__item--ghost {
-    height: clamp(120px, 26vw, 200px);
-  }
-
   .designer-gallery__footer {
     padding: 0;
   }
@@ -220,10 +213,6 @@
 
   .designer-gallery__item {
     margin-bottom: clamp(-9vw, -76px, -70px);
-  }
-
-  .designer-gallery__item--ghost {
-    height: clamp(130px, 20vw, 220px);
   }
 
   .designer-gallery__footer {

@@ -1,6 +1,6 @@
 export const WORK_THUMBNAILS = [
   { id: 1, title: '안녕, 우주', file: '썸네일_김윤정_안녕우주.webp', description: '미아는 함께 우주 비행사가 되기로 꿈꿨던 친구와 헤어지고 난 이후, 친구가 나오는 악몽을 꾼다.' },
-  { id: 2, title: 'Love at Rust Sight', file: '썸네일_김윤정_Love at Rust Sight.webp', description: "버림 받은 로봇은 자신을 받아줄 '천사'를 찾아다닌다." },
+  { id: 2, title: 'Love at Rust Sight', file: '썸네일_김윤정_Love at Rust Sight.webp', description: "버림 받은 로봇은 자신을 받아줄 '천사'를 찾아다닌다.", instagram: 'https://www.instagram.com/zlz_300/' },
   { id: 3, title: 'PETRICHOR', file: '썸네일_김재은_PETRICHOR.webp', description: '한때 푸르렀던 행성은 모래에 잠겼다. 과거의 모습은 저 아래에 묻히고, 생명의 흔적은 바람 속 먼지처럼 흩어졌다. 그 속에서, 한 여행자는 끝없이 펼쳐진 모래 위에 피어난 한 송이 꽃을 발견한다. 페트리코르(petrichor)는 비가 내릴 때 흙에서 피어오르는 향기. 그 꽃은 메마른 땅의 단비이자, 미래를 향한 희망이다. 여행자는 그 향기를 따라 유토피아를 향해 나아간다.' },
   { id: 4, title: 'Go Fetch!', file: '썸네일_김재은_Go Fetch!.webp', description: "강아지 '누리'는 주인 '라온'과의 공놀이 순간을 가장 좋아한다. 우주 탐사를 마치 집으로 돌아가던 길, 고장 난 우주선을 고치는 라온을 기다리던 누리는 변함없이 공을 물어와 놀아달라 재촉한다. 그러나 그 즐거운 발걸음은 뜻밖의 이별로 이어진다. 신비롭고 위험천만한 우주, 꿈결처럼 변하는 미지의 공간 속에서도 누리는 단 한 순간도 멈추지 않는다. 누리에게 공은 단순한 놀이의 도구가 아니다. 그것은 추억의 매개체이자, 다시 만날 수 있다는 믿음이다." },
   { id: 5, title: 'Cellestial', file: '썸네일_김지나_Cellestial.webp', description: "'셀레스티얼'은 세포(Cell)를 모티브로 한 캐릭터가 오염된 행성을 정화하고 과거 이곳에 무슨 일이 있었는지 파헤친다. 오염과 정화라는 부분을 몽환적으로 재해석하여 시각적인 즐거움을 주고자 한다." },

@@ -2,13 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import './KimYunjungDetail.css';
 
-import workThumbHero from '../../assets/kimyunjung/김윤정_Video_작품1_01.webp';
-import workThumb02 from '../../assets/kimyunjung/김윤정_Video_작품1_02.webp';
-import workThumb03 from '../../assets/kimyunjung/김윤정_Video_작품1_03.webp';
-import workThumb04 from '../../assets/kimyunjung/김윤정_Video_작품1_04.webp';
-import workThumb05 from '../../assets/kimyunjung/김윤정_Video_작품1_05.webp';
-import workThumb06 from '../../assets/kimyunjung/김윤정_Video_작품1_06.webp';
-import work2Thumb01 from '../../assets/kimyunjung/김윤정_Video_작품2_01.webp';
+import workThumbHero from '../../assets/김윤정/김윤정_Video_작품1_01.webp';
+import workThumb02 from '../../assets/김윤정/김윤정_Video_작품1_02.webp';
+import workThumb03 from '../../assets/김윤정/김윤정_Video_작품1_03.webp';
+import workThumb04 from '../../assets/김윤정/김윤정_Video_작품1_04.webp';
+import workThumb05 from '../../assets/김윤정/김윤정_Video_작품1_05.webp';
+import workThumb06 from '../../assets/김윤정/김윤정_Video_작품1_06.webp';
+import work2Thumb01 from '../../assets/김윤정/김윤정_Video_작품2_01.webp';
+import work2Scene02 from '../../assets/김윤정/김윤정_Video_작품2_02.webp';
+import work2Scene06 from '../../assets/김윤정/김윤정_Video_작품2_06.webp';
+import work2Scene07 from '../../assets/김윤정/김윤정_Video_작품2_07.webp';
+import work2Scene08 from '../../assets/김윤정/김윤정_Video_작품2_08.webp';
+import work2Scene09 from '../../assets/김윤정/김윤정_Video_작품2_09.webp';
+import work2Scene10 from '../../assets/김윤정/김윤정_Video_작품2_10.webp';
+import videoBadge from '../../assets/branding_logo/Video.webp';
+import ModalHeroSection from '../ModalHeroSection/ModalHeroSection.jsx';
 
 const WORKS = [
   {
@@ -17,49 +25,172 @@ const WORKS = [
     summary:
       "함께했던 가족과 헤어지고 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 '친구'를 찾아다닌다.",
     designerName: '김윤정',
-    heroImage: workThumbHero,
-    heroDescription:
-      "함께했던 가족과 헤어지고 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 '친구'를 찾아다닌다.",
-    heroButtons: ['디자이너의 다른 작품', '개인 SNS'],
-    storyBlocks: [
-      {
-        type: 'feature',
-        image: workThumb02,
-        quote:
-          '«Love at Rust Sight»는 로봇과 천사가 등장하는 이야기로, 가족에게 버림받은 청소로봇이 우연히 천사를 만난 후 자신을 가족으로 맞이해주길 바라며 죽으려한다는 내용의 2D 애니메이션이다.',
-        body:
-          "함께했던 가족과 헤어지고 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 '천사'를 찾아다닌다.",
-      },
-      {
-        type: 'text',
-        quote:
-          '영상이 시작되는 초반부는 한적한 분위기와 주변을 감도는 수묵 느낌으로 감정을 형성시키며 정적인 감정을 표현하고 있다.',
-      },
-      { type: 'image', content: workThumb03 },
-      { type: 'image', content: workThumb04 },
-      { type: 'image', content: workThumb05 },
-      { type: 'image', content: workThumb06 },
-    ],
     thumb: workThumbHero,
+    instagram: 'https://www.instagram.com/zlz_300/',
   },
   {
     id: 'kimyunjung-work-2',
-    title: '작품 2 · Love at Rust Sight: Extension',
-    summary:
-      '서브 캐릭터 시점으로 확장한 후속편. 파편화된 모듈과 타이포가 감정의 단편을 시각화합니다.',
+    title: '안녕 우주',
+    summary: '주인공은 함께 우주비행사가 되기로했던 소꿉친구의 사고사 소식을 듣고 악몽을 꾸기 시작한다.',
     designerName: '김윤정',
-    description:
-      '확장판은 메인 필름의 세계관을 유지하면서도 단편적인 감정 조각을 드러냅니다. 도형을 조합한 그래픽과 절제된 사운드를 사용해 여운 있는 리듬을 만들고, Figma 프레임에서는 카드형 레이아웃으로 주요 스틸을 강조하고 있습니다.',
-    details: [
-      'Mood — Fragmented Memory',
-      'Format — 1440 × 900, 30fps',
-      'Tools — After Effects · Audition',
-    ],
     thumb: work2Thumb01,
   },
 ];
 
-const KimYunjungDetail = ({ onBack }) => {
+const LoveAtRustSightModalContent = ({ onExploreOtherWorks, onOpenSNS }) => (
+  <div className="work-detail">
+    <ModalHeroSection
+      eyebrowImageSrc={videoBadge}
+      eyebrowImageAlt="Video Content 로고"
+      eyebrowText="Video Content"
+      title="Love at Rust Sight"
+      lead="함께했던 가족과 헤어진 후 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 ‘천사’를 찾아다닌다."
+      mediaSrc={workThumbHero}
+      mediaAlt="Love at Rust Sight 대표 장면"
+      ctas={[
+        { label: '디자이너의 다른 작품', variant: 'primary', onClick: onExploreOtherWorks },
+        { label: '개인 SNS', variant: 'secondary', onClick: onOpenSNS },
+      ]}
+    />
+    <section className="work-detail__section work-detail__feature work-detail__feature--1">
+      <div className="work-detail__image-block">
+        <img src={workThumb02} alt="Love at Rust Sight 장면 1" loading="lazy" />
+      </div>
+      <div className="work-detail__feature-text">
+        <p>
+          «Love at Rust Sight»는 로봇과 천사가 등장하는 이야기로, 가족에게 버림받은 청소로봇이 우연히 천사를 만난 후 자신을 가족으로
+          맞이해주길 바라며 죽으려 한다는 내용의 2D 애니메이션이다.
+        </p>
+        <p>
+          함께했던 가족과 헤어지고 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 ‘천사’를 찾아다닌다.
+        </p>
+      </div>
+    </section>
+    <section className="work-detail__section work-detail__feature work-detail__feature--2 work-detail__feature--media-only">
+      <div className="work-detail__image-block">
+        <img src={workThumb03} alt="Love at Rust Sight 장면 2" loading="lazy" />
+      </div>
+      <p className="work-detail__feature-caption">
+        영상이 시작되는 초반부는 한색, 후반부로 진행될수록 난색으로 분위기를 전환시켜 희망적이고 따뜻한 전개를 표현하고자 했습니다.
+      </p>
+    </section>
+    {[workThumb04, workThumb05, workThumb06].map((image, index) => (
+      <section
+        key={image}
+        className={`work-detail__section work-detail__feature work-detail__feature--${index + 3} work-detail__feature--media-only`}
+      >
+        <div className="work-detail__image-block">
+          <img src={image} alt={`Love at Rust Sight 장면 ${index + 3}`} loading="lazy" />
+        </div>
+      </section>
+    ))}
+  </div>
+);
+
+const LoveAtRustSightExtensionModalContent = ({ work, onExploreOtherWorks, onOpenSNS }) => {
+  const overviewCopy = [
+    '《안녕 우주》는 주인공이 우주비행사가 되기로 꿈꿔왔던 소꿉친구의 사고사 소식을 듣게 된 이후 우주에 홀로 남겨진 악몽을 꾸기 시작하면서,',
+    '그녀와의 지난 추억을 회상한다는 내용의 그림책이다.',
+  ];
+
+  const insightCards = [
+    {
+      id: 'card-1',
+      image: work2Scene06,
+      alt: '안녕 우주 스틸컷 - 기억의 페이지',
+      paragraphs: [
+        '혼자 마음의 짐을 끌어안은 사람들에게 그 짐을 떨쳐내지 못하더라도 어렵지 않게 안고 살아갈 수 있다는 메시지를 전하고 싶었다.',
+      ],
+    },
+    {
+      id: 'card-2',
+      image: work2Scene07,
+      alt: '안녕 우주 스틸컷 - 친구와의 추억',
+      paragraphs: [
+        '친구는 즐거움을 주는 존재이기도 하지만 이따금 마음에 상처를 주기도 하는 존재다.',
+        "가족보다 가까운 것 같으면서도 한없이 멀어질 때도 있는 '감정'들을 직접 창작한 이야기와 일러스트로 연출하고 싶었다.",
+        '친구와의 추억을 회상하는 중간마다 우주를 소재로 등장인물 간의 감정들을 연출하고자 했다.',
+      ],
+    },
+    {
+      id: 'card-3',
+      image: work2Scene08,
+      alt: '안녕 우주 스틸컷 - 스토리보드 장면',
+      paragraphs: [
+        '단순 일러스트레이션이 아닌 스토리보드를 그린다고 생각하며 제작했다.',
+        '이야기 구성과 연출, 드로잉 스타일을 발전시키고 싶었고, 일러스트 제작에 쓰이는 텍스처의 중요성과 활용성에 대한 식견을 넓힐 수 있는 작업이었다.',
+      ],
+    },
+  ];
+
+  const galleryImages = [
+    { id: 'gallery-1', src: work2Scene09, alt: '안녕 우주 장면 4' },
+    { id: 'gallery-2', src: work2Scene10, alt: '안녕 우주 장면 5' },
+    { id: 'gallery-3', src: work2Scene08, alt: '안녕 우주 장면 6' },
+  ];
+
+  return (
+    <div className="kim-love-modal kim-work2-modal">
+      <ModalHeroSection
+        eyebrowImageSrc={videoBadge}
+        eyebrowImageAlt="Video Content 로고"
+        eyebrowText="Video Content"
+        title="안녕 우주"
+        lead={work.summary}
+        mediaSrc={work2Thumb01}
+        mediaAlt={`${work.title} 대표 장면`}
+        ctas={[
+          { label: '디자이너의 다른 작품', variant: 'primary', onClick: onExploreOtherWorks },
+          { label: '개인 SNS', variant: 'secondary', onClick: onOpenSNS },
+        ]}
+      />
+
+      <section className="work-detail__section work-detail__feature">
+        <div className="work-detail__image-block">
+          <img src={work2Scene02} alt="안녕 우주 장면 1" loading="lazy" />
+        </div>
+        <div className="work-detail__feature-text">
+          {overviewCopy.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="work-detail__section work-detail__cards">
+        <ul className="work-detail__cards-grid">
+          {insightCards.map((card, index) => (
+            <li
+              key={card.id}
+              className={`work-detail__card work-detail__card--${index + 1}`}
+            >
+              <div className="work-detail__card-image">
+                <img src={card.image} alt={card.alt} loading="lazy" />
+              </div>
+              <div className="work-detail__card-text">
+                {card.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {galleryImages.map((item, index) => (
+        <section
+          key={item.id}
+          className={`work-detail__section work-detail__feature work-detail__feature--media-only work-detail__feature--gallery-${index + 1}`}
+        >
+          <div className="work-detail__image-block">
+            <img src={item.src} alt={item.alt} loading="lazy" />
+          </div>
+        </section>
+        ))}
+    </div>
+  );
+};
+
+const KimYunjungDetail = ({ onBack, designer }) => {
   const [selectedWork, setSelectedWork] = useState(null);
 
   const openWorkModal = (work) => {
@@ -91,9 +222,29 @@ const KimYunjungDetail = ({ onBack }) => {
     root?.classList.add('is-modal-open');
 
     window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('visibilitychange', closeWorkModal);
+    const handleMouseMove = (event) => {
+      const modal = document.querySelector('.kim-love-modal');
+      if (!modal) return;
+      const rect = modal.getBoundingClientRect();
+      const isInside =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+      if (isInside) {
+        document.body.classList.remove('kim-modal-cursor-cross');
+      } else {
+        document.body.classList.add('kim-modal-cursor-cross');
+      }
+    };
+    window.addEventListener('mousemove', handleMouseMove);
 
       return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('visibilitychange', closeWorkModal);
+      window.removeEventListener('mousemove', handleMouseMove);
+      document.body.classList.remove('kim-modal-cursor-cross');
 
       document.body.classList.remove('is-modal-open');
       html.classList.remove('is-modal-open');
@@ -106,6 +257,25 @@ const KimYunjungDetail = ({ onBack }) => {
       delete document.body.dataset.modalScrollY;
     };
   }, [selectedWork]);
+
+  const handleWrapperClick = (event) => {
+    if (!selectedWork) {
+      return;
+    }
+
+    const modalSelector =
+      selectedWork.id === 'kimyunjung-work-1' || selectedWork.id === 'kimyunjung-work-2'
+        ? '.kim-love-modal'
+        : '.kim-modal';
+    const modalElement = event.target.closest(modalSelector);
+
+    if (modalElement) {
+      event.stopPropagation();
+      return;
+    }
+
+    closeWorkModal();
+  };
 
   return (
     <div className="kim-detail">
@@ -157,67 +327,55 @@ const KimYunjungDetail = ({ onBack }) => {
       {selectedWork &&
         createPortal(
           <div className="kim-modal-overlay" role="dialog" aria-modal="true" onClick={closeWorkModal}>
-            <div className="kim-modal-wrapper" onClick={(event) => event.stopPropagation()}>
+            <div className="kim-modal-wrapper" onClick={handleWrapperClick}>
               <div className="kim-modal__topbar">
                 <span className="kim-modal__topbar-name">{selectedWork.designerName ?? '김윤정'}</span>
-                <button type="button" className="kim-modal__close" onClick={closeWorkModal} aria-label="닫기">
-                  <span />
-                  <span />
-                </button>
               </div>
               {selectedWork.id === 'kimyunjung-work-1' ? (
-                <div className="kim-modal kim-work1-modal">
-                  <section className="kim-work1-hero">
-                    <div className="kim-work1-hero__copy">
-                      <h2 className="kim-work1-hero__title">{selectedWork.title}</h2>
-                      <p className="kim-work1-hero__description">{selectedWork.heroDescription}</p>
-                      {selectedWork.heroButtons?.length > 0 && (
-                        <div className="kim-work1-hero__actions">
-                          {selectedWork.heroButtons.map((label) => (
-                            <button key={label} type="button">
-                              {label}
-                            </button>
-                          ))}
+                <div className="kim-love-modal">
+                  <LoveAtRustSightModalContent
+                    onExploreOtherWorks={() => {
+                      closeWorkModal();
+                      setTimeout(() => {
+                        document
+                          .querySelector('.kim-simple-gallery')
+                          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }, 200);
+                    }}
+                    onOpenSNS={() => {
+                      const url = selectedWork.instagram || designer?.instagram;
+                      if (!url) {
+                        return;
+                      }
+                      const cleaned = url.startsWith('http')
+                        ? url
+                        : `https://www.instagram.com/${url.replace(/^@/, '')}/`;
+                      window.open(cleaned, '_blank', 'noopener,noreferrer');
+                    }}
+                  />
                         </div>
-                      )}
-                    </div>
-                    <figure className="kim-work1-hero__media">
-                      <img src={selectedWork.heroImage ?? selectedWork.thumb} alt={`${selectedWork.title} 대표 이미지`} />
-                    </figure>
-                  </section>
-
-                {selectedWork.storyBlocks?.map((block, index) => {
-                    if (block.type === 'feature') {
-                      return (
-                        <section key={`feature-${index}`} className="kim-work1-feature">
-                          <figure className="kim-work1-feature__image">
-                            <img src={block.image} alt={`${selectedWork.title} Feature 1`} />
-                          </figure>
-                          <div className="kim-work1-feature__text">
-                            {block.quote && <p className="kim-work1-quote">{block.quote}</p>}
-                            {block.body && <p className="kim-work1-paragraph">{block.body}</p>}
-                          </div>
-                        </section>
-                      );
+              ) : selectedWork.id === 'kimyunjung-work-2' ? (
+                <LoveAtRustSightExtensionModalContent
+                  work={selectedWork}
+                  onExploreOtherWorks={() => {
+                    closeWorkModal();
+                    setTimeout(() => {
+                      document
+                        .querySelector('.kim-simple-gallery')
+                        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 200);
+                  }}
+                  onOpenSNS={() => {
+                    const url = selectedWork.instagram || designer?.instagram;
+                    if (!url) {
+                      return;
                     }
-                    if (block.type === 'text') {
-                      return (
-                        <section key={`text-${index}`} className="kim-work1-story-text">
-                          {block.quote && <p className="kim-work1-quote">{block.quote}</p>}
-                          {block.body && <p className="kim-work1-paragraph">{block.body}</p>}
-                        </section>
-                      );
-                    }
-                    if (block.type === 'image') {
-                      return (
-                        <figure key={`image-${index}`} className="kim-work1-story-image">
-                          <img src={block.content} alt={`${selectedWork.title} 스틸 ${index + 1}`} />
-                        </figure>
-                      );
-                    }
-                    return null;
-                  })}
-                </div>
+                    const cleaned = url.startsWith('http')
+                      ? url
+                      : `https://www.instagram.com/${url.replace(/^@/, '')}/`;
+                    window.open(cleaned, '_blank', 'noopener,noreferrer');
+                  }}
+                />
               ) : (
                 <div className="kim-modal">
                   <div className="kim-modal__media">

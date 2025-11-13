@@ -15,7 +15,7 @@ const DESIGNERS = [
     projects: ['모바일 뱅킹 앱 리디자인', '전자상거래 플랫폼 UX 개선'],
     email: 'kimyunjung@mju.ac.kr',
     portfolio: 'https://portfolio.kimyunjung.com',
-    instagram: 'https://instagram.com/kimyunjung_design'
+    instagram: 'https://www.instagram.com/zlz_300/'
   },
   { 
     id: 2, 
