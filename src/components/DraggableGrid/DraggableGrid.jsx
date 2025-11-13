@@ -196,15 +196,16 @@ const DraggableGrid = () => {
 
     const handleCursor = (event) => {
       if (!cross) return;
-      const x = event.clientX;
-      const y = event.clientY;
+
+      const targetX = event.clientX;
+      const targetY = event.clientY;
 
       const offsetX = cross.offsetWidth / 2;
       const offsetY = cross.offsetHeight / 2;
       gsap.to(cross, {
-        x: x - offsetX,
-        y: y - offsetY,
-        duration: 0.4,
+        x: targetX - offsetX,
+        y: targetY - offsetY,
+        duration: 0.25,
         ease: 'power2.out',
       });
     };
@@ -399,9 +400,14 @@ const DraggableGrid = () => {
       const isMobile = isMobileViewport();
       details.classList.add('--is-showing');
       container.classList.add('--is-details-showing');
+<<<<<<< HEAD
       if (!isMobile) {
         document.body.classList.add('cursor-cross');
       }
+=======
+      document.body.classList.add('cursor-cross');
+      document.body.classList.add('cross-locked');
+>>>>>>> 0ca626f (Update designer detail layouts)
       document.body.classList.add('header-hidden');
       document.body.classList.add('details-open');
       if (isMobile) {
@@ -483,6 +489,11 @@ const DraggableGrid = () => {
       showDetailsActive = false;
       container.classList.remove('--is-details-showing');
       document.body.classList.remove('cursor-cross');
+<<<<<<< HEAD
+=======
+      document.body.classList.remove('cross-locked');
+      document.body.classList.remove('cursor-cross');
+>>>>>>> 0ca626f (Update designer detail layouts)
       document.body.classList.remove('header-hidden');
       document.body.classList.remove('details-open');
       if (cross) {

@@ -22,6 +22,18 @@ body {
   overflow-x: hidden;
 }
 
+html.is-modal-open,
+body.is-modal-open,
+#root.is-modal-open {
+  overflow: hidden !important;
+}
+
+body.is-modal-open {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+}
+
 #root {
   margin: 0;
   padding: 0;

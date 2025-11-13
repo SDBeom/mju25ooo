@@ -2,6 +2,13 @@ body.cursor-cross {
   cursor: none;
 }
 
+body.cursor-cross .details button,
+body.cursor-cross .details a,
+body.cursor-cross .details [role='button'],
+body.cursor-cross .details__cta-button {
+  cursor: pointer;
+}
+
 *,
 *::after,
 *::before {
@@ -30,6 +37,20 @@ body {
   overflow-x: hidden;
 }
 
+<<<<<<< HEAD
+=======
+body.cursor-cross {
+  cursor: none;
+}
+
+body.cursor-cross .details button,
+body.cursor-cross .details a,
+body.cursor-cross .details [role='button'],
+body.cursor-cross .details__cta-button {
+  cursor: pointer;
+}
+
+>>>>>>> 0ca626f (Update designer detail layouts)
 @media (scripting: enabled) {
   .loading::before,
   .loading::after {
@@ -449,9 +470,10 @@ p {
   left: 0;
   width: 3vw;
   height: 3vw;
+  transform: translate3d(-50%, -50%, 0) scale(0);
+  transform-origin: center;
   z-index: 3200;
   pointer-events: none;
-  transform: scale(0);
   opacity: 0;
   transition: opacity 0.2s ease;
 }

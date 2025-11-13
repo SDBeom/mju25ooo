@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import './DesignerDetail.css';
 import KimYunjungDetail from './KimYunjungDetail';
+import KimJaeEunDetail from './KimJaeEunDetail';
 
 // 디자이너 데이터
 const DESIGNERS = [
@@ -180,6 +181,10 @@ const DesignerDetail = () => {
 
   if (designer.name === '김윤정') {
     return <KimYunjungDetail designer={designer} onBack={handleBackToDesigners} />;
+  }
+
+  if (designer.name === '김재은') {
+    return <KimJaeEunDetail designer={designer} onBack={handleBackToDesigners} />;
   }
 
   return (
