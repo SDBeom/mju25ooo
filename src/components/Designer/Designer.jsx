@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './Designer.css';
 import symbolImage from '../../assets/Symbol.webp';
@@ -240,6 +240,43 @@ const DESIGNERS = [
 const GALLERY_COLORS = ['#67C5FF', '#FF7700'];
 
 const Designer = () => {
+  const galleryRef = useRef(null);
+
+  useEffect(() => {
+    const container = galleryRef.current;
+    if (!container) {
+      return undefined;
+    }
+
+    const updateGhostHeight = () => {
+      const referenceItem = container.querySelector('.designer-gallery__item:not(.designer-gallery__item--ghost)');
+      if (!referenceItem) {
+        container.style.removeProperty('--designer-card-height');
+        return;
+      }
+      const height = referenceItem.getBoundingClientRect().height;
+      container.style.setProperty('--designer-card-height', `${height}px`);
+    };
+
+    updateGhostHeight();
+
+    let resizeObserver;
+    if (typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(updateGhostHeight);
+      const target = container.querySelector('.designer-gallery__item:not(.designer-gallery__item--ghost)');
+      if (target) {
+        resizeObserver.observe(target);
+      }
+    }
+
+    window.addEventListener('resize', updateGhostHeight);
+
+    return () => {
+      window.removeEventListener('resize', updateGhostHeight);
+      resizeObserver?.disconnect();
+    };
+  }, []);
+
   const handleCardEnter = useCallback((event, backgroundColor) => {
     const card = event.currentTarget;
     if (!card) return;
@@ -288,7 +325,7 @@ const Designer = () => {
 
   return (
     <div className="designer-gallery">
-      <div className="designer-gallery__inner">
+      <div className="designer-gallery__inner" ref={galleryRef}>
         {DESIGNERS.map((designer, index) => {
           const color = GALLERY_COLORS[index % GALLERY_COLORS.length];
           const instagramHandle =
