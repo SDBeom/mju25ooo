@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import './KimYunjungDetail.css';
 
-import workThumbHero from '../../assets/kimyunjung/김윤정_Video_작품1_01.png';
-import workThumb02 from '../../assets/kimyunjung/김윤정_Video_작품1_02.png';
-import workThumb03 from '../../assets/kimyunjung/김윤정_Video_작품1_03.png';
-import workThumb04 from '../../assets/kimyunjung/김윤정_Video_작품1_04.png';
-import workThumb05 from '../../assets/kimyunjung/김윤정_Video_작품1_05.png';
-import workThumb06 from '../../assets/kimyunjung/김윤정_Video_작품1_06.png';
-import work2Thumb01 from '../../assets/kimyunjung/김윤정_Video_작품2_01.png';
+import workThumbHero from '../../assets/kimyunjung/김윤정_Video_작품1_01.webp';
+import workThumb02 from '../../assets/kimyunjung/김윤정_Video_작품1_02.webp';
+import workThumb03 from '../../assets/kimyunjung/김윤정_Video_작품1_03.webp';
+import workThumb04 from '../../assets/kimyunjung/김윤정_Video_작품1_04.webp';
+import workThumb05 from '../../assets/kimyunjung/김윤정_Video_작품1_05.webp';
+import workThumb06 from '../../assets/kimyunjung/김윤정_Video_작품1_06.webp';
+import work2Thumb01 from '../../assets/kimyunjung/김윤정_Video_작품2_01.webp';
 
 const WORKS = [
   {

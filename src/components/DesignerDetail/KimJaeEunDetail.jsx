@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './KimJaeEunDetail.css';
 
-import workThumb01 from '../../assets/kimjaeeun/김재은_Video_작품1_01.png';
-import workThumb02 from '../../assets/kimjaeeun/김재은_Video_작품2_01.png';
+import workThumb01 from '../../assets/kimjaeeun/김재은_Video_작품1_01.webp';
+import workThumb02 from '../../assets/kimjaeeun/김재은_Video_작품2_01.webp';
 
 const WORKS = [
   {
