@@ -1,13 +1,3 @@
-body.cursor-cross {
-  cursor: none;
-}
-
-body.cursor-cross .details button,
-body.cursor-cross .details a,
-body.cursor-cross .details [role='button'],
-body.cursor-cross .details__cta-button {
-  cursor: pointer;
-}
 
 *,
 *::after,
@@ -37,8 +27,6 @@ body {
   overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-=======
 body.cursor-cross {
   cursor: none;
 }
@@ -50,7 +38,6 @@ body.cursor-cross .details__cta-button {
   cursor: pointer;
 }
 
->>>>>>> 0ca626f (Update designer detail layouts)
 @media (scripting: enabled) {
   .loading::before,
   .loading::after {
@@ -292,8 +279,6 @@ a:focus-visible {
   overflow: hidden;
   background: #67C5FF;
   border: 2px solid rgba(0, 0, 0, 0.08);
-  mix-blend-mode: screen;
-  transform-origin: center center;
 }
 
 .product div {
@@ -311,8 +296,10 @@ a:focus-visible {
   will-change: transform;
   transition: transform 300ms ease-in-out;
   border-radius: inherit;
-  mix-blend-mode: multiply;
-  transform-origin: center center;
+}
+
+.product:hover img {
+  transform: scale(1.05);
 }
 
 .details {
@@ -333,11 +320,7 @@ a:focus-visible {
 
 @media (max-width: 800px) {
   .details {
-    left: 0;
-    width: 100vw;
-    padding: 72px 24px 48px;
-    gap: 32px;
-    transform: translate3d(100vw, 0, 0);
+    display: none;
   }
 }
 
@@ -474,8 +457,6 @@ p {
   transform-origin: center;
   z-index: 3200;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease;
 }
 
 .cross svg {
@@ -483,18 +464,8 @@ p {
   height: 3vw;
 }
 
-@media (max-width: 800px) {
-  .cross {
-    display: none;
-  }
-}
-
-.cross.is-visible {
-  opacity: 1;
-}
-
 .--is-details-showing {
-  cursor: none;
+  cursor: pointer;
 }
 
 .--is-details-showing .grid {
