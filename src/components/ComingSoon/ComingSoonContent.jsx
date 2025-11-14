@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
-import brandingVideo from '../../assets/안선민_멀티미디어 디자인_브랜딩영상.mp4';
 import dorokImage1 from '../../assets/도록/image 2141.png';
 import dorokImage2 from '../../assets/도록/image 2143.png';
 import './ComingSoonContent.css';
+
+const brandingVideo = '/branding-video.mp4';
 
 const ComingSoonContent = () => {
   const introContainer = useRef(null);
