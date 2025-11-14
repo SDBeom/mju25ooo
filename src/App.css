@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: inherit;
 }
 
 html {
@@ -47,23 +48,36 @@ body.is-modal-open {
   flex-direction: column;
   min-height: 100vh;
   background: radial-gradient(circle at 20% -10%, rgba(111, 122, 255, 0.06), transparent 55%), #08090d;
+  overflow: visible;
 }
 
 .main-page {
-  display: flex;
-  flex-direction: column;
+  display: block;
   min-height: 100vh;
   padding-top: 0;
+  overflow: visible;
+}
+
+.main-page:has(.main-window--content) {
+  padding-top: var(--header-height, 100px);
+  display: block;
+  overflow: visible;
 }
 
 .main-page--grid {
   padding-top: var(--header-offset);
+  display: flex;
+  flex-direction: column;
 }
 
 .main-window {
-  flex: 0 0 auto;
   width: 100%;
   padding: 0;
+  overflow: visible;
+}
+
+.main-page:has(.main-window--content) .main-window {
+  display: block;
 }
 
 /* Main hero + window */
@@ -131,6 +145,8 @@ body.is-modal-open {
   min-height: 100vh;
   background: transparent;
   box-sizing: border-box;
+  display: block;
+  overflow: visible;
 }
 
 .main-window__container {
@@ -144,6 +160,32 @@ body.is-modal-open {
   z-index: 1;
 }
 
+.main-window__container--full {
+  overflow: visible;
+  height: auto;
+  position: relative;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* About 페이지 전용 스타일 */
+.main-window__container--full .about-main {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding: 0;
+  display: block;
+  overflow: visible;
+  height: auto;
+}
+
 .main-window__container--grid {
   display: flex;
   align-items: center;
@@ -153,17 +195,18 @@ body.is-modal-open {
 }
 
 .main-window__container--content {
-  padding: 500px 0 160px;
+  padding: 0 0 0;
   width: 100vw;
   max-width: none;
   margin: 0;
   overflow: visible;
   background: #ffffff;
+  margin-top: 0;
 }
 
 .main-window__container--full {
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .main-page > footer {

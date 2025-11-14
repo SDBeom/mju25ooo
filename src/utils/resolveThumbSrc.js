@@ -12,11 +12,9 @@ import dotianhongAnimated from '../assets/도티안홍/도티안홍_영상콘텐
 import parkJinaCrossCooty from '../assets/박진아/박진아_멀티미디어_작품1_01.webp';
 import parkJinaRemain from '../assets/박진아/박진아_멀티미디어_작품2_01.webp';
 import parkHaeinChrome from '../assets/박해인/박해인_모션디자인_작품1_01.webp';
-import parkHeechanReel from '../assets/박희찬/박희찬_게임콘텐츠_작품1_01.webp';
-import parkHeechanPledge from '../assets/박희찬/박희찬_게임콘텐츠_작품2_01.webp';
+import parkHeechanPledge from '../assets/박희찬/박희찬_게임콘텐츠_작품1_01.webp';
+import parkHeechanReel from '../assets/박희찬/박희찬_게임콘텐츠_작품2_01.webp';
 import thumbHiFive from '../assets/Thumb/썸네일_서동범_HiFive.webp';
-import thumbArcaneJinx from '../assets/Thumb/썸네일_서원준_ArcaneJinx.webp';
-import thumbAstra from '../assets/Thumb/썸네일_서원준_Astra.webp';
 import songDaheeCardOfLove from '../assets/송다희/송다희_영상콘텐츠_작품1_01.webp';
 import songDaheePeony from '../assets/송다희/송다희_영상콘텐츠_작품2_01.webp';
 import simSeongbinBoom from '../assets/심성빈/심성빈_영상콘텐츠_작품1_01.webp';
@@ -55,22 +53,25 @@ const workThumbnailMap = {
   '운명을 믿으세요?': kimChaeyoungWork1,
   '사이버 제사상': kimChaeyoungWork2,
   'SEE TINH (Isometric)': dotianhongIsometric,
+  '"SEE TINH" ISOMETRIC': dotianhongIsometric,
   'SEE TINH (Animated MV)': dotianhongAnimated,
+  '"SEE TINH" ANIMATED MUSIC VIDEO': dotianhongAnimated,
   'CROSS.COOTY': parkJinaCrossCooty,
+  'Cross Cooty': parkJinaCrossCooty,
   'Remains': parkJinaRemain,
   'Chrome 4: Seasons': parkHaeinChrome,
   '2025 Animation Reel': parkHeechanReel,
   'PLEDGE': parkHeechanPledge,
   'HiFive': thumbHiFive,
-  'Astra': thumbAstra,
-  'Arcane Jinx': thumbArcaneJinx,
   'Abyss Racing: 세이렌의 보물': leeGabiWork1,
   'Overcooked: 카페대소동': leeGabiWork2,
   'A Card of Love': songDaheeCardOfLove,
+  'A card of love': songDaheeCardOfLove,
   'Peony': songDaheePeony,
   'Linked': simSeongbinLinked,
   'BOOM': simSeongbinBoom,
   '피에르 위그: 리미널 가이드앱 UX/UI': wooSuminLiminal,
+  '피에르 위그: <리미널 Liminal> 가이드앱 UX/UI': wooSuminLiminal,
   '四神圖 (사신도)': wooSuminSasinDo,
   'Ready to Merry': leeDayoungReadyToMerry,
   'Floating Room': leeDayoungPlottingRoom,
@@ -80,13 +81,16 @@ const workThumbnailMap = {
   'LE LABO - City Exclusive': leeJiminVenetiPerfume,
   'Veneti (베네티)': leeJiminVenetiCharacter,
   '돌로르사가': jeonGiTaeDolor,
+  '돌로르사가 (Dolor Saga)': jeonGiTaeDolor,
   'War Orb': jeonGiTaeWarOrb,
+  '워오브 (War Orb)': jeonGiTaeWarOrb,
   'Karon': jeonSeorinKaron,
   'RAVEN-X': jeonSeorinRavenX,
   '더 고딕': jungJiminTheGothic,
   '더 웨폰': jungJiminTheWeapon,
   'The Reason that I Live': joHaneulReason,
   '청춘몽': joHaneulYouth,
+  '青春夢': joHaneulYouth,
   'Eternal Vision': heoJiHoonEternal,
   'Master your Imagination': heoJiHoonMaster,
   '[점점점] 메인 영상': anSeonminDesktop,

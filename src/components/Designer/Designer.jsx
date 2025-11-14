@@ -96,16 +96,6 @@ const DESIGNERS = [
     instagram: '@dong_b99'
   },
   {
-    id: 10,
-    name: '서원준',
-    role: 'Product Designer',
-    description: '제품의 전체적인 사용자 경험을 설계합니다.',
-    skills: ['Product Strategy', 'User Research', 'Service Design'],
-    projects: ['제품 UX 설계', '사용자 여정 맵핑'],
-    email: 'swon0813@gmail.com',
-    instagram: '@slowon13'
-  },
-  {
     id: 11,
     name: '송다희',
     role: 'Illustrator',

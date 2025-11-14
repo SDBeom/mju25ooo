@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { useBreakpointContext } from '../../contexts/BreakpointContext';
-import HybridBackground from '../ComingSoon/HybridBackground';
 import '../ComingSoon/ComingSoon.css';
 import './ArchivePage.css';
 
@@ -49,7 +48,6 @@ const ArchivePage = () => {
 
   return (
     <div className="coming-soon archive-page" ref={containerRef}>
-      <HybridBackground />
       <div className="archive-page__overlay">
         <section className="archive-page__content" aria-labelledby="archive-page-title">
           <span className="archive-page__label">Archive</span>

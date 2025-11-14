@@ -1,314 +1,78 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import gsap from 'gsap';
-import { WORK_THUMBNAILS } from '../../data/workThumbsData.js';
-import resolveThumbSrc from '../../utils/resolveThumbSrc.js';
+import designerDetailsData from '../../data/designerDetailsData.js';
+import DesignerShowcase from '../DesignerDetail/DesignerShowcase';
+import { splitText } from '../DraggableGrid/js/utils.js';
+import gameLogo from '../../assets/branding_logo/Game.svg';
+import motionLogo from '../../assets/branding_logo/Motion.svg';
+import multimediaLogo from '../../assets/branding_logo/Multimedia.svg';
+import videoLogo from '../../assets/branding_logo/Video.svg';
 import './Works.css';
+import '../DesignerDetail/DesignerShowcase.css';
 
 const GALLERY_COLORS = ['#67C5FF', '#FF7700'];
 
-const WORKS_LIST = [
+// 카테고리 정의
+const CATEGORIES = [
   {
-    id: 'linked',
-    title: 'Linked',
-    designer: '심성빈',
-    genre: '영상 콘텐츠 디자인',
-    description: '≪Linked≫는 하나의 점에서 시작해 관계라는 선을 만들고, 그 연결이 구조와 공동체로 확장되는 과정을 구현한 FX 아트워크입니다. 서로 다른 존재들이 연결되어 만들어내는 공동체의 아름다움과 우리가 모두 관계 속에 연결된 존재임을 느낄 수 있습니다.'
+    id: 'all', 
+    label: 'ALL', 
+    genre: null, 
+    logo: null,
+    description: null
   },
   {
-    id: 'boom',
-    title: 'BOOM',
-    designer: '심성빈',
-    genre: '영상 콘텐츠 디자인',
-    description: '≪BOOM≫은 반복되는 일상과 과로에서 벗어나고자 하는 욕망을 폭발이라는 시각적 장치로 표현한 작품입니다. 리드미컬하게 파괴되는 장면을 통해 현대 사회가 개인에게 가하는 압박과, 그로부터의 해방이 주는 카타르시스를 동시에 경험할 수 있습니다.'
-  },
-  {
-    id: 'go-fetch',
-    title: 'Go Fetch!',
-    designer: '김재은',
-    genre: '영상 콘텐츠 디자인',
-    description: "강아지 '누리'는 주인 '라온'과의 공놀이 순간을 가장 좋아합니다. 신비롭고 위험천만한 우주에서도 누리는 공을 물고 달리며 다시 만날 수 있다는 믿음을 품습니다. 공은 단순한 놀이 도구가 아니라 추억의 매개체이자 희망의 상징입니다."
-  },
-  {
-    id: 'petrichor',
-    title: 'PETRICHOR',
-    designer: '김재은',
-    genre: '영상 콘텐츠 디자인',
-    description: '한때 푸르렀던 행성은 모래에 잠겼고, 생명의 흔적은 바람 속 먼지처럼 흩어졌습니다. 여행자는 모래 위에서 피어난 한 송이 꽃을 발견하고, 비 내린 뒤의 흙냄새를 뜻하는 페트리코르의 향기를 따라 유토피아를 향해 나아갑니다.'
-  },
-  {
-    id: 'gothic-armor',
-    title: '더 고딕',
-    designer: '정지민',
+    id: 'game', 
+    label: 'GAME CONTENT DESIGN', 
     genre: '게임 콘텐츠 디자인',
-    description: '고딕풍 갑옷과 문양을 실제 고증을 바탕으로 재구성하고, 낡았지만 아름다운 질감을 표현한 작품입니다. 전장을 누비던 흔적과 승리를 향한 의지를 고딕 양식의 디테일과 판타지 감성으로 담아냈습니다.'
+    logo: gameLogo,
+    description: '게임 디자인은 플레이어를 온전히 몰입시키는 정교한 세계관을 구축하는 일입니다. G의 색상은 외부의 모든 것을 차단하는 완전한 몰입을 상징합니다. G는 어둠 속에서 점처럼 흩어진 이야기와 인물들이 하나의 거대한 흐름으로 연결되며, 플레이어를 그 세계의 중심으로 이끄는 강력한 소용돌이로 형상화했습니다.'
   },
   {
-    id: 'the-weapon',
-    title: '더 웨폰',
-    designer: '정지민',
-    genre: '게임 콘텐츠 디자인',
-    description: '고딕양식의 무기에 다양한 문양과 사용감을 더해 현실성을 높였습니다. 피가 튄 흔적과 섬세한 디테일을 통해 생생한 몰입감을 주며, 실제 사람이 사용할 수 있는 크기로 모델링되었습니다.'
-  },
-  {
-    id: 'abyss-racing',
-    title: 'Abyss Racing: 세이렌의 보물',
-    designer: '이가비',
-    genre: '게임 콘텐츠 디자인',
-    description: "<카트라이더: 드리프트> 신규 캐릭터 세이렌의 등장! 다오와 배찌가 수중신전에서 레전드 컵을 되찾기 위해 펼치는 치열한 레이싱을 수중도시 테마로 구현했습니다."
-  },
-  {
-    id: 'overcooked-cafe',
-    title: 'Overcooked: 카페대소동',
-    designer: '이가비',
-    genre: '게임 콘텐츠 디자인',
-    description: '한 번 망한 요리사들이 카페에서 다시 도전하며 벌어지는 좌충우돌 이야기를 담았습니다. 유쾌한 스토리와 생동감 넘치는 연출로 Overcooked 특유의 협동 플레이 감성을 살렸습니다.'
-  },
-  {
-    id: 'dolor-saga',
-    title: '돌로르사가 (Dolor Saga)',
-    designer: '전기태',
-    genre: '게임 콘텐츠 디자인',
-    description: "돌로르(Dolor)는 라틴어로 '고통'을 의미합니다. 용족과 전사들의 처절한 전쟁을 다룬 설정집으로, 다양한 종족과 세계관이 촘촘히 엮여 작품의 깊이를 더합니다."
-  },
-  {
-    id: 'war-orb',
-    title: '워오브 (War Orb)',
-    designer: '전기태',
-    genre: '게임 콘텐츠 디자인',
-    description: '빛나는 오브를 둘러싼 선과 악의 대립을 게임 영상으로 구성했습니다. 오브를 중심으로 선과 악의 가치가 뒤바뀌는 세계관 속에서, 선의 오브를 쫓는 네 가지 클래스를 Live 2D 애니메이션으로 소개합니다.'
-  },
-  {
-    id: 'love-at-rust-sight',
-    title: 'Love at rust sight',
-    designer: '김윤정',
-    genre: '영상 콘텐츠 디자인',
-    description: "버림받은 로봇이 자신을 받아줄 '천사'를 찾아 떠나는 이야기입니다. 녹슨 감성과 따뜻한 서사가 어우러져 새로운 사랑을 갈망하는 로봇의 여정을 담담하게 그립니다."
-  },
-  {
-    id: 'hello-universe',
-    title: '안녕 우주',
-    designer: '김윤정',
-    genre: '영상 콘텐츠 디자인',
-    description: '우주 비행사가 되기로 약속했던 친구와 헤어진 뒤 악몽에 시달리는 미아의 이야기입니다. 꿈과 현실이 교차하는 서사를 통해 이별과 그리움, 그리고 성장의 순간을 담았습니다.'
-  },
-  {
-    id: 'sasin-do',
-    title: '四神圖 (사신도)',
-    designer: '우수민',
-    genre: '멀티미디어 디자인',
-    description: '고분벽화 속 사신도를 현대적 캐릭터로 재해석했습니다. 동서남북을 수호하는 네 신수의 상징성을 현대적 디자인 언어와 결합해 전통과 현대의 조화를 이루었습니다.'
-  },
-  {
-    id: 'liminal-guide-app',
-    title: '피에르 위그: <리미널 Liminal> 가이드앱 UX/UI',
-    designer: '우수민',
-    genre: '멀티미디어 디자인',
-    description: '리움미술관 전시를 위한 가이드 앱으로, 전시 정보와 동선 안내, 관람객 참여형 인터랙션까지 아우르는 경험을 설계했습니다. 전통적 감상 방식을 넘어 새로운 전시 경험을 제안합니다.'
-  },
-  {
-    id: 'chrome-4-seasons',
-    title: 'Chrome 4: Seasons',
-    designer: '박해인',
+    id: 'motion', 
+    label: 'MOTION DESIGN', 
     genre: '모션 디자인',
-    description: '메타휴먼과 크롬하츠 브랜드가 만나 사계절의 감각을 시각화했습니다. 봄·여름·가을·겨울의 흐름을 크롬의 강렬한 아이덴티티와 결합해, 감각과 상상이 확장되는 경험을 선사합니다.'
+    logo: motionLogo,
+    description: '모션디자인에서 하나의 점은 결정적인 순간을 담은 키프레임입니다. 순수하고 밝은 바탕색은 이 모든 움직임이 그려지는 캔버스를 상징합니다. M은 이 깨끗한 캔버스 위에서 핵심 키프레임(점)들이 정교하게 연결되어, 방해 없이 오직 움직임의 본질만으로 하나의 완성된 리듬감을 만들어내는 과정을 보여줍니다.'
   },
   {
-    id: 'le-labo-city-exclusive',
-    title: 'LE LABO - City Exclusive',
-    designer: '이지민',
-    genre: '모션 디자인',
-    description: 'LE LABO의 시티 익스클루시브 컬렉션 중 서울의 CITRON 28, 도쿄의 GAIAC 10, LA의 MUSC 25를 시각적으로 해석한 프로모션 영상입니다. 도시의 향과 이미지를 모션으로 풀어냈습니다.'
-  },
-  {
-    id: 'veneti',
-    title: 'Veneti (베네티)',
-    designer: '이지민',
+    id: 'multimedia', 
+    label: 'MULTI MEDIA DESIGN', 
     genre: '멀티미디어 디자인',
-    description: "월트 디즈니 애니메이션 <인어공주>의 문어 마녀 '우르슬라'를 재해석한 캐릭터 작품입니다. '마녀는 정말 절대악인가?'라는 질문에서 출발해 인간의 양면성을 탐구합니다."
+    logo: multimediaLogo,
+    description: '각각의 점은 고유한 특성을 지닌 하나의 매체를 상징합니다. 멀티미디어의 생동감 넘치는 오렌지 컬러는 이 매체들을 융합하는 폭발적인 창의적 에너지를 의미합니다. 멀티미디어는 이 뜨거운 에너지로 점들이 경계를 허물고 조화롭게 연결되어, 다채로운 매체들이 각 부분의 총합을 뛰어넘는 역동적인 가치를 만들어내는 과정을 보여줍니다.'
   },
   {
-    id: 'pledge',
-    title: 'PLEDGE',
-    designer: '박희찬',
-    genre: '게임 콘텐츠 디자인',
-    description: '워해머 40,000 세계관을 기반으로 한 1분 분량의 단편 시네마틱입니다. 치명상을 입은 스페이스 마린이 드레드노트로 다시 깨어나는 순간을 통해 영원한 충성의 무게와 전장의 긴장감을 표현했습니다.'
-  },
-  {
-    id: 'animation-reel-2025',
-    title: '2025 Animation Reel',
-    designer: '박희찬',
-    genre: '게임 콘텐츠 디자인',
-    description: '게임 애니메이터 포트폴리오를 위한 쇼릴입니다. 인간형 캐릭터의 경쾌한 동작과 거대한 몬스터의 묵직한 움직임을 대비시켜 다양한 전투 모션과 무게감을 담았습니다.'
-  },
-  {
-    id: 'cross-cooty',
-    title: 'Cross Cooty',
-    designer: '박진아',
-    genre: '멀티미디어 디자인',
-    description: "상상의 생물 'Cooty'가 살아가는 플로팅 아일랜드 세계를 웹 기반 3D로 구현했습니다. 각 섬은 서로 다른 생태계처럼 구성되어, 웹을 통해 다양한 Cooty를 탐험할 수 있습니다."
-  },
-  {
-    id: 'remains',
-    title: 'Remains',
-    designer: '박진아',
+    id: 'video', 
+    label: 'VIDEO CONTENT DESIGN', 
     genre: '영상 콘텐츠 디자인',
-    description: '흩어지고 사라지는 감정과 기억 속에서 집착을 내려놓았을 때 비로소 드러나는 본래의 모습을 담았습니다. 자연 속에서 번뇌가 서서히 벗겨지는 과정을 통해 평화의 순간을 포착합니다.'
+    logo: videoLogo,
+    description: '하나의 점이 움직여 중력에 이끌려 바닥에 닿는 순간, 그 에너지는 새로운 방향으로의 도약을 이끌어냅니다. 비디오콘텐츠의 경쾌한 블루 컬러는 이 찰나의 순간에 폭발하는 생동감 넘치는 에너지 그 자체를 상징합니다. V는 이 푸른 에너지로 공이 튀어 오르며 만들어내는 \'새로운 도약\'의 역동적인 프레임을 형상화했습니다.'
   },
-  {
-    id: 'master-your-imagination',
-    title: 'Master your Imagination',
-    designer: '허지훈',
-    genre: '모션 디자인',
-    description: '“상상은 머릿속에서 피어나지만, 창조는 손에서 시작된다.” 로지텍 MX Master 3S를 통해 상상이 현실로 이어지는 순간을 감각적으로 보여줍니다.'
-  },
-  {
-    id: 'eternal-vision',
-    title: 'Eternal Vision',
-    designer: '허지훈',
-    genre: '모션 디자인',
-    description: '현대자동차의 상징인 포니 쿠페와 이를 계승한 N74의 탄생을 감각적으로 담았습니다. 헤리티지가 미래의 비전으로 확장되는 여정을 시각적으로 풀어냈습니다.'
-  },
-  {
-    id: 'believe-in-destiny',
-    title: '운명을 믿으세요?',
-    designer: '김채영',
-    genre: '멀티미디어 디자인',
-    description: "삶에서 선택과 운명에 대한 질문을 던지는 보드게임형 인터랙티브 작품입니다. 운명이라 여겼던 것들이 얼마나 자의적인지를 시각화하며 철학적인 메시지를 전달합니다."
-  },
-  {
-    id: 'cyber-jesasang',
-    title: '사이버 제사상',
-    designer: '김채영',
-    genre: '멀티미디어 디자인',
-    description: '당신이 짊어진 감정의 짐을 풀어내는 디지털 제사상입니다. 한국적 색감과 조형 언어 속에서 감정이 파괴되는 순간의 카타르시스를 경험하게 합니다.'
-  },
-  {
-    id: 'layered',
-    title: 'Layered',
-    designer: '이운',
-    genre: '멀티미디어 디자인',
-    description: '겹쳐짐은 개인의 정체성을 이루는 다층적 요소를 상징합니다. 기억이 담긴 옷을 업사이클링해 새로운 스타일로 재탄생시키며, 지속 가능한 패션과 환경 보호를 실천합니다.'
-  },
-  {
-    id: '9e9e9e',
-    title: '9e9e9e',
-    designer: '이운',
-    genre: '멀티미디어 디자인',
-    description: "작은 소품이 일상에 다정한 마법을 더한다는 메시지를 담은 디자인 문구 & 액세서리 브랜드입니다. 반복되는 알파벳과 숫자를 리본 모티프로 재해석했습니다."
-  },
-  {
-    id: 'ready-to-merry',
-    title: 'Ready to Merry',
-    designer: '이다영',
-    genre: '멀티미디어 디자인',
-    description: '한국의 크리스마스 캐롤을 카운트다운 형식으로 아카이빙한 앨범입니다. 작품을 보고 듣는 과정을 통해 크리스마스를 기다리는 설렘을 체험하게 합니다.'
-  },
-  {
-    id: 'floating-room',
-    title: '플롯팅룸',
-    designer: '이다영',
-    genre: '모션 디자인',
-    description: "‘Plot-ting’, ‘Float-ing’, ‘Flirt-ing’의 의미를 담은 가상의 토크 예능 프로그램 타이틀 시퀀스입니다. 다양한 작가들이 이야기를 나누고 즉석에서 새로운 스토리를 창작합니다."
-  },
-  {
-    id: 'see-tinh-isometric',
-    title: '“SEE TINH” ISOMETRIC',
-    designer: '도티안홍',
-    genre: '영상 콘텐츠 디자인',
-    description: '“See Tinh” 뮤직비디오에서 영감을 받아 제작된 아트토이와 3D 아이소메트릭 애니메이션입니다.'
-  },
-  {
-    id: 'see-tinh-animated',
-    title: '“SEE TINH” ANIMATED MUSIC VIDEO',
-    designer: '도티안홍',
-    genre: '영상 콘텐츠 디자인',
-    description: 'See Tinh 뮤직비디오를 2D 애니메이션 뮤직비디오로 재해석해 활기찬 에너지를 담았습니다.'
-  },
-  {
-    id: 'raven-x',
-    title: 'RAVEN-X',
-    designer: '전서린',
-    genre: '게임 콘텐츠 디자인',
-    description: '거대한 까마귀를 모티프로 한 고속 전투기를 디자인했습니다. 첨단 기술로 내부 위협과 테러로부터 인간을 수호하며 파괴적 힘을 상징합니다.'
-  },
-  {
-    id: 'karon',
-    title: 'Karon',
-    designer: '전서린',
-    genre: '게임 콘텐츠 디자인',
-    description: '미래 도시의 음지에서 활동하는 특수 요원 카론을 그린 작품입니다. 초록빛 귀걸이는 통신 장치이자 정체성의 상징으로, 그림자처럼 도시를 누비는 은밀한 수호자를 표현했습니다.'
-  },
-  {
-    id: 'cheongchunmong',
-    title: '青春夢',
-    designer: '조하늘',
-    genre: '모션 디자인',
-    description: '영상의 파편을 엮어내는 VJ 퍼포먼스를 통해 청춘의 순간을 몽환적으로 표현했습니다.'
-  },
-  {
-    id: 'the-reason-that-i-live',
-    title: 'The Reason that I Live',
-    designer: '조하늘',
-    genre: '영상 콘텐츠 디자인',
-    description: '히키코모리의 삶을 살던 주인공이 친구의 위로와 응원을 통해 다시 세상으로 한 걸음 내딛는 이야기를 그렸습니다.'
-  },
-  {
-    id: 'a-card-of-love',
-    title: 'A card of love',
-    designer: '송다희',
-    genre: '영상 콘텐츠 디자인',
-    description: '사랑을 표현하는 데 서툰 사람들을 위해 기획한 작품입니다. 20장의 카드에 감정과 질문을 담아 점술적인 방식으로 사랑을 탐구합니다.'
-  },
-  {
-    id: 'peony',
-    title: 'Peony',
-    designer: '송다희',
-    genre: '영상 콘텐츠 디자인',
-    description: "‘물’과 ‘작약’, ‘물고기’의 상징을 통해 언어를 넘어 감각적으로 시를 경험하게 하고, 개인의 기억과 감정에 닿을 수 있도록 구성했습니다."
-  },
-  {
-    id: 'astra',
-    title: 'Astra',
-    designer: '서원준',
-    genre: '게임 콘텐츠 디자인',
-    description: "세계관과 애정이 응축된 캐릭터 피규어입니다. 세부적인 디자인과 표정 하나하나에 담긴 감정을 정성스럽게 표현했습니다."
-  },
-  {
-    id: 'arcane-jinx',
-    title: 'Arcane Jinx',
-    designer: '서원준',
-    genre: '게임 콘텐츠 디자인',
-    description: '불안정한 정신과 폭발적인 에너지를 동시에 가진 징크스를 정적인 형태로 포착했습니다. 파괴적이지만 섬세한 매력을 조형과 채색으로 드러냅니다.'
-  },
-  {
-    id: 'hifive',
-    title: 'HiFive',
-    designer: '서동범',
-    genre: '멀티미디어 디자인',
-    description: '순간의 스파크, 손끝에서 전해지는 짜릿한 하이파이브! 계획되지 않은 만남이 새로운 발견이 되는 순간을 인터랙티브 브랜딩 경험으로 풀었습니다.'
-  },
-  {
-    id: 'caravan',
-    title: 'Caravan',
-    designer: '김지나',
-    genre: '게임 콘텐츠 디자인',
-    description: '광활한 사막을 배경으로 두 약탈자 부족의 이야기를 다룹니다. 캐릭터의 외형에 삶의 방식과 세계관을 섬세하게 반영했습니다.'
-  },
-  {
-    id: 'celestial',
-    title: 'Cellestial',
-    designer: '김지나',
-    genre: '멀티미디어 디자인',
-    description: '세포(Cell)를 모티브로 한 캐릭터가 오염된 행성을 정화하며 과거의 진실을 파헤칩니다. 오염과 정화를 몽환적으로 재해석했습니다.'
-  },
-  {
-    id: 'main-video',
-    title: '[점점점] 메인 영상',
-    designer: '안선민',
-    genre: 'main video',
-    description: '점에서 점으로, 점점. 흩어져 있던 점들이 연결되어 색과 질서를 찾고 각자의 의미로 확장되는 과정을 시각적으로 풀어낸 메인 영상입니다.'
-  }
 ];
+
+// designerDetailsData에서 모든 작품 추출
+const extractWorksFromDesignerData = () => {
+  const works = [];
+  Object.values(designerDetailsData).forEach((designer) => {
+    if (designer.works && Array.isArray(designer.works)) {
+      designer.works.forEach((work) => {
+        works.push({
+          id: work.id,
+          title: work.title,
+          designer: designer.displayName,
+          genre: work.genre,
+          description: work.summary || work.description || '',
+          thumbnail: work.thumbnail,
+        });
+      });
+    }
+  });
+  return works;
+};
+
+const WORKS_LIST = extractWorksFromDesignerData();
 
 export const normalizeTitle = (title = '') =>
   title
@@ -316,44 +80,85 @@ export const normalizeTitle = (title = '') =>
     .normalize('NFKD')
     .replace(/[^\p{L}\p{N}]+/gu, '');
 
+// 정렬 그룹 결정: 숫자(1), 영문(2), 한글(3)
+const getSortGroup = (title) => {
+  if (!title) return 3;
+  const firstChar = title.trim()[0];
+  if (/[0-9]/.test(firstChar)) return 1; // 숫자
+  if (/[a-zA-Z]/.test(firstChar)) return 2; // 영문
+  return 3; // 한글 및 기타
+};
+
 export { WORKS_LIST };
 
 const Works = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const categoryRefs = useRef([]);
+  const categoryLabelRefs = useRef([]);
+  const categorySplitTextsRef = useRef([]);
+  const categoryDescriptionRefs = useRef([]);
+
+  // 카테고리별 작품 필터링
+  const filteredWorks = useMemo(() => {
+    if (selectedCategory === 'all') {
+      return WORKS_LIST;
+    }
+    const category = CATEGORIES.find((cat) => cat.id === selectedCategory);
+    if (!category) return WORKS_LIST;
+    return WORKS_LIST.filter((work) => work.genre === category.genre);
+  }, [selectedCategory]);
+
   const sortedWorks = useMemo(
     () =>
-      [...WORKS_LIST].sort((a, b) =>
-        normalizeTitle(a.title).localeCompare(normalizeTitle(b.title), ['ko', 'en'], {
+      [...filteredWorks].sort((a, b) => {
+        const groupA = getSortGroup(a.title);
+        const groupB = getSortGroup(b.title);
+        
+        // 그룹이 다르면 그룹 순서로 정렬
+        if (groupA !== groupB) {
+          return groupA - groupB;
+        }
+        
+        // 같은 그룹 내에서는 제목으로 정렬
+        if (groupA === 1) {
+          // 숫자 그룹: 숫자 우선 정렬
+          return normalizeTitle(a.title).localeCompare(normalizeTitle(b.title), ['ko', 'en'], {
           numeric: true,
           sensitivity: 'base'
-        })
-      ),
-    []
+          });
+        } else if (groupA === 2) {
+          // 영문 그룹: 알파벳 순
+          return a.title.localeCompare(b.title, 'en', {
+            sensitivity: 'base',
+            ignorePunctuation: true
+          });
+        } else {
+          // 한글 그룹: 가나다 순
+          return a.title.localeCompare(b.title, 'ko', {
+            sensitivity: 'base',
+            ignorePunctuation: true
+          });
+        }
+      }),
+    [filteredWorks]
   );
-
-  const mediaMap = useMemo(() => {
-    const map = new Map();
-    WORK_THUMBNAILS.forEach((item) => {
-      map.set(normalizeTitle(item.title), resolveThumbSrc(item.file, item.title));
-    });
-    return map;
-  }, []);
 
   const worksWithMedia = useMemo(
     () =>
-      sortedWorks.map((work) => {
-        const key = normalizeTitle(work.title);
-        return {
+      sortedWorks.map((work) => ({
           ...work,
-          imageSrc: mediaMap.get(key) || ''
-        };
-      }),
-    [sortedWorks, mediaMap]
+        imageSrc: work.thumbnail || ''
+      })),
+    [sortedWorks]
   );
 
   const [modalState, setModalState] = useState({ active: false, index: 0 });
+  const [selectedWork, setSelectedWork] = useState(null);
+  const [selectedDesigner, setSelectedDesigner] = useState(null);
   const modalRef = useRef(null);
   const cursorRef = useRef(null);
   const labelRef = useRef(null);
+  const categoryContainerRef = useRef(null);
 
   useEffect(() => {
     const modalEl = modalRef.current;
@@ -441,13 +246,498 @@ const Works = () => {
   }, []);
 
   const handleCardClick = useCallback((work) => {
-    if (!work?.designer) return;
-    const encoded = encodeURIComponent(work.designer);
-    window.history.pushState({}, '', `/designer/${encoded}`);
-    window.dispatchEvent(new PopStateEvent('popstate'));
+    if (!work?.designer || !work?.id) return;
+    
+    // 디자이너 정보 찾기
+    const designer = Object.values(designerDetailsData).find(
+      (d) => d.displayName === work.designer
+    );
+    
+    if (!designer) return;
+    
+    // 작품 정보 찾기
+    const foundWork = designer.works?.find((w) => w.id === work.id);
+    
+    if (!foundWork) return;
+    
+    setSelectedDesigner(designer);
+    setSelectedWork(foundWork);
   }, []);
 
+  const closeWorkModal = useCallback(() => {
+    setSelectedWork(null);
+    setSelectedDesigner(null);
+  }, []);
+
+  useEffect(() => {
+    if (!selectedWork) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeWorkModal();
+      }
+    };
+
+    const scrollY = window.scrollY;
+    const html = document.documentElement;
+    const root = document.getElementById('root');
+
+    document.body.dataset.modalScrollY = String(scrollY);
+    document.body.style.top = `-${scrollY}px`;
+
+    document.body.classList.add('is-modal-open');
+    html.classList.add('is-modal-open');
+    root?.classList.add('is-modal-open');
+
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('visibilitychange', closeWorkModal);
+    const handleMouseMove = (event) => {
+      const modal = document.querySelector('.works-work-modal');
+      if (!modal) return;
+      const rect = modal.getBoundingClientRect();
+      const isInside =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+      if (isInside) {
+        document.body.classList.remove('kim-modal-cursor-cross');
+      } else {
+        document.body.classList.add('kim-modal-cursor-cross');
+      }
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('visibilitychange', closeWorkModal);
+      window.removeEventListener('mousemove', handleMouseMove);
+      document.body.classList.remove('kim-modal-cursor-cross');
+
+      document.body.classList.remove('is-modal-open');
+      html.classList.remove('is-modal-open');
+      root?.classList.remove('is-modal-open');
+
+      document.body.style.top = '';
+
+      const previousScrollY = Number(document.body.dataset.modalScrollY || '0');
+      window.scrollTo(0, previousScrollY);
+      delete document.body.dataset.modalScrollY;
+    };
+  }, [selectedWork, closeWorkModal]);
+
+  const handleWrapperClick = (event) => {
+    if (!selectedWork) {
+      return;
+    }
+
+    const modalSelector = '.works-work-modal';
+    const modalElement = event.target.closest(modalSelector);
+
+    if (modalElement) {
+      event.stopPropagation();
+      return;
+    }
+
+    closeWorkModal();
+  };
+
+  // 카테고리 클릭 핸들러
+  const handleCategoryClick = useCallback((categoryId) => {
+    setSelectedCategory(categoryId);
+  }, []);
+
+  // 카테고리 텍스트 애니메이션 초기화
+  useEffect(() => {
+    const labels = categoryLabelRefs.current.filter(Boolean);
+    if (labels.length === 0) return;
+
+    // 각 라벨에 splitText 적용
+    categorySplitTextsRef.current = labels.map((label) => {
+      if (!label) return null;
+      return splitText(label, 'chars');
+    });
+
+    // 초기 상태: 선택된 카테고리는 텍스트 숨김, 선택 안 된 카테고리는 텍스트 표시
+    // details__title과 동일하게 y 속성 사용
+    // 'all' 카테고리는 애니메이션 없이 항상 표시
+    categorySplitTextsRef.current.forEach((splitData, index) => {
+      if (!splitData || !splitData.chars) return;
+      const category = CATEGORIES[index];
+      if (!category) return;
+      
+      // 'all' 카테고리는 애니메이션 적용 안 함 (항상 표시)
+      if (category.id === 'all') {
+        splitData.chars.forEach((char) => {
+          gsap.set(char, { y: 0 });
+        });
+        return;
+      }
+      
+      const isActive = category.id === selectedCategory;
+      splitData.chars.forEach((char) => {
+        // 활성화된 카테고리는 텍스트 숨김, 비활성화된 카테고리는 텍스트 표시
+        gsap.set(char, { 
+          y: isActive ? '100%' : 0
+        });
+      });
+      
+      // description 초기 상태 설정
+      const descriptionEl = categoryDescriptionRefs.current[index];
+      if (descriptionEl) {
+        gsap.set(descriptionEl, {
+          opacity: isActive ? 1 : 0
+        });
+      }
+    });
+  }, [selectedCategory]);
+
+  // 카테고리 선택 시 텍스트 애니메이션
+  useEffect(() => {
+    const labels = categoryLabelRefs.current.filter(Boolean);
+    const splitTexts = categorySplitTextsRef.current;
+    if (labels.length === 0 || splitTexts.length === 0) return;
+
+    // 모든 진행 중인 애니메이션 kill
+    splitTexts.forEach((splitData) => {
+      if (!splitData || !splitData.chars) return;
+      splitData.chars.forEach((char) => {
+        gsap.killTweensOf(char);
+      });
+    });
+    categoryDescriptionRefs.current.forEach((descEl) => {
+      if (descEl) {
+        gsap.killTweensOf(descEl);
+      }
+    });
+
+    // 이전 선택된 카테고리 찾기 (현재 활성화된 요소 - 텍스트가 숨겨진 상태)
+    let previousActiveIndex = -1;
+    splitTexts.forEach((splitData, index) => {
+      if (!splitData || !splitData.chars) return;
+      const category = CATEGORIES[index];
+      if (!category || category.id === 'all') return;
+      
+      const firstCharY = gsap.getProperty(splitData.chars[0], 'y');
+      // 텍스트가 숨겨진 상태 (활성화된 상태)인 카테고리 찾기
+      if (firstCharY === '100%' || firstCharY === 100 || firstCharY === '100px') {
+        previousActiveIndex = index;
+      }
+    });
+
+    // 1단계: 현재 활성화된 카테고리의 description 사라짐 → label 텍스트 나타남 → 사라짐 (즉시 반응, 천천히 사라짐)
+    if (previousActiveIndex !== -1 && previousActiveIndex !== CATEGORIES.findIndex(cat => cat.id === selectedCategory)) {
+      const prevDescriptionEl = categoryDescriptionRefs.current[previousActiveIndex];
+      const prevSplitData = splitTexts[previousActiveIndex];
+      
+      // description이 보이는 상태인 경우 먼저 사라지게 (즉시 시작)
+      if (prevDescriptionEl && gsap.getProperty(prevDescriptionEl, 'opacity') > 0) {
+        gsap.to(prevDescriptionEl, {
+          opacity: 0,
+          duration: 0.4,
+          ease: 'power2.inOut',
+        });
+      }
+      
+      // description 사라진 후 label 텍스트 나타나게 한 다음 사라지게 (천천히)
+      if (prevSplitData && prevSplitData.chars) {
+        // 먼저 텍스트를 나타나게 함
+        gsap.set(prevSplitData.chars, { y: 0 });
+        // 그 다음 사라지게 함 (천천히)
+        gsap.to(prevSplitData.chars, {
+          y: '100%',
+          duration: 0.6,
+          delay: 0.4, // description 사라짐 후
+          ease: 'power3.inOut',
+          stagger: 0.01,
+        });
+      }
+    }
+
+    // 2단계: 너비는 updateCategoryWidths에서 즉시 변경 (label 텍스트 사라짐 시작 후)
+    // 3단계: 너비 변경 후 새로 활성화된 카테고리의 label 텍스트 사라지고 description 나타나기, 비활성화된 카테고리들의 description 사라지고 label 텍스트 나타나기
+    // label 텍스트 사라짐이 시작되면 너비 변경도 시작 (delay 최소화)
+    const textAnimationDelay = 0.2; // label 텍스트 사라짐 시작 후 약간의 delay
+    
+    labels.forEach((label, index) => {
+      const splitData = splitTexts[index];
+      if (!splitData || !splitData.chars) return;
+
+      const category = CATEGORIES[index];
+      if (!category) return;
+      
+      // 'all' 카테고리는 애니메이션 적용 안 함 (항상 표시)
+      if (category.id === 'all') {
+        splitData.chars.forEach((char) => {
+          gsap.set(char, { y: 0 });
+        });
+        return;
+      }
+
+      const isActive = category.id === selectedCategory;
+
+      if (isActive) {
+        // 새로 활성화된 카테고리: label 텍스트 사라짐 → description 나타남 (즉시 반응, 천천히 사라짐)
+        const firstCharY = gsap.getProperty(splitData.chars[0], 'y');
+        const descriptionEl = categoryDescriptionRefs.current[index];
+        
+        // 텍스트가 보이는 상태인 경우에만 사라지게
+        if (firstCharY === 0 || firstCharY === '0px' || firstCharY === '0') {
+          // 1. label 텍스트 먼저 사라지게 (즉시 시작, 천천히)
+          gsap.to(splitData.chars, {
+            y: '100%',
+            duration: 0.6,
+            delay: textAnimationDelay,
+            ease: 'power3.inOut',
+            stagger: 0.01,
+            onComplete: () => {
+              // 애니메이션 완료 후 최종 상태 확실히 설정
+              splitData.chars.forEach((char) => {
+                gsap.set(char, { y: '100%' });
+              });
+            }
+          });
+          
+          // 2. label 사라진 후 description 나타나게
+          if (descriptionEl) {
+            gsap.to(descriptionEl, {
+              opacity: 1,
+              duration: 0.4,
+              delay: textAnimationDelay + 0.6, // label 사라짐 후
+              ease: 'power2.inOut',
+              onComplete: () => {
+                // 애니메이션 완료 후 최종 상태 확실히 설정
+                gsap.set(descriptionEl, { opacity: 1 });
+              }
+            });
+          }
+        } else {
+          // 이미 숨겨진 상태라면 description만 나타나게
+          if (descriptionEl) {
+            gsap.set(descriptionEl, { opacity: 1 });
+          }
+        }
+      } else {
+        // 비활성화: description 사라짐 → label 텍스트 나타남
+        const descriptionEl = categoryDescriptionRefs.current[index];
+        const firstCharY = gsap.getProperty(splitData.chars[0], 'y');
+        
+        // description이 보이는 상태인 경우
+        if (descriptionEl && gsap.getProperty(descriptionEl, 'opacity') > 0) {
+          // 1. description 먼저 사라지게 (즉시 시작)
+          gsap.to(descriptionEl, {
+            opacity: 0,
+            duration: 0.4,
+            delay: textAnimationDelay,
+            ease: 'power2.inOut',
+            onComplete: () => {
+              // 애니메이션 완료 후 최종 상태 확실히 설정
+              gsap.set(descriptionEl, { opacity: 0 });
+            }
+          });
+          
+          // 2. description 사라진 후 label 텍스트 나타나게
+          if (firstCharY === '100%' || firstCharY === 100 || firstCharY === '100px') {
+            gsap.to(splitData.chars, {
+              y: 0,
+              duration: 1.1,
+              delay: textAnimationDelay + 0.4, // description 사라짐 후
+              ease: 'power3.inOut',
+              stagger: 0.025,
+              onComplete: () => {
+                // 애니메이션 완료 후 최종 상태 확실히 설정
+                splitData.chars.forEach((char) => {
+                  gsap.set(char, { y: 0 });
+                });
+              }
+            });
+          }
+        } else {
+          // description이 없는 경우 (이전 활성화된 카테고리가 아닌 경우)
+          // 텍스트가 숨겨진 상태인 경우에만 나타나게
+          if (firstCharY === '100%' || firstCharY === 100 || firstCharY === '100px') {
+            gsap.to(splitData.chars, {
+              y: 0,
+              duration: 1.1,
+              delay: textAnimationDelay,
+              ease: 'power3.inOut',
+              stagger: 0.025,
+              onComplete: () => {
+                // 애니메이션 완료 후 최종 상태 확실히 설정
+                splitData.chars.forEach((char) => {
+                  gsap.set(char, { y: 0 });
+                });
+              }
+            });
+          } else {
+            // 이미 보이는 상태라면 확실히 보이게 설정
+            splitData.chars.forEach((char) => {
+              gsap.set(char, { y: 0 });
+            });
+          }
+        }
+      }
+    });
+  }, [selectedCategory]);
+
+  // 카테고리 너비 계산 및 설정 함수 (애니메이션 없음)
+  const updateCategoryWidths = useCallback(() => {
+    if (!categoryContainerRef.current || categoryRefs.current.length === 0) return;
+
+    const container = categoryContainerRef.current;
+    const buttons = categoryRefs.current.filter(Boolean);
+    
+    // 버튼이 모두 렌더링되지 않았으면 리턴
+    if (buttons.length !== CATEGORIES.length) return;
+    
+    const selectedIndex = CATEGORIES.findIndex((cat) => cat.id === selectedCategory);
+
+    // 전체 너비 계산 (100vw 기준, border 포함)
+    const containerWidth = container.offsetWidth || window.innerWidth;
+    const padding = 0; // 패딩 없음
+    const totalButtons = CATEGORIES.length;
+    const borderWidth = 1; // 각 버튼의 border-right 너비
+    const totalBorderWidth = totalButtons * borderWidth; // 모든 border 너비 합계
+    const availableWidth = containerWidth - (padding * 2) - totalBorderWidth;
+    const baseWidth = availableWidth / totalButtons;
+
+    if (selectedIndex === -1) {
+      // 선택된 카테고리가 없으면 초기 너비로 설정 (애니메이션 없이)
+      buttons.forEach((button) => {
+        if (!button) return;
+        gsap.set(button, { width: baseWidth });
+      });
+      return;
+    }
+    
+    // 선택된 버튼의 확대 비율
+    const selectedScale = 2.5; // 선택된 버튼은 2.5배 확대
+    const selectedWidth = baseWidth * selectedScale;
+    
+    // 나머지 버튼들이 나눠가질 너비 계산
+    // 전체 너비가 정확히 유지되도록: selectedWidth + unselectedWidth * 4 = availableWidth
+    // unselectedWidth * 4 = availableWidth - selectedWidth
+    // unselectedWidth = (availableWidth - selectedWidth) / 4
+    const unselectedWidth = (availableWidth - selectedWidth) / (totalButtons - 1);
+
+    // 너비 애니메이션 없이 즉시 설정
+    buttons.forEach((button, index) => {
+      if (!button) return;
+      const isSelected = index === selectedIndex;
+      gsap.set(button, { 
+        width: isSelected ? selectedWidth : unselectedWidth 
+      });
+    });
+  }, [selectedCategory]);
+
+  // 카테고리 선택 변경 시 너비 즉시 변경 (빠른 반응)
+  useEffect(() => {
+    // 버튼이 모두 렌더링되었는지 확인
+    const buttons = categoryRefs.current.filter(Boolean);
+    if (buttons.length === CATEGORIES.length && categoryContainerRef.current) {
+      // label 텍스트 사라짐이 시작되면 너비도 즉시 변경 (delay 최소화)
+      const timer = setTimeout(() => {
+        updateCategoryWidths();
+      }, 200); // label 텍스트 사라짐 시작 후 약간의 delay
+      
+      return () => clearTimeout(timer);
+    }
+  }, [selectedCategory, updateCategoryWidths]);
+
+  // 초기 너비 설정 및 리사이즈 핸들러
+  useEffect(() => {
+    if (!categoryContainerRef.current) return;
+    
+      const setInitialWidths = () => {
+        const buttons = categoryRefs.current.filter(Boolean);
+        if (buttons.length !== CATEGORIES.length) return; // 모든 버튼이 렌더링될 때까지 대기
+        updateCategoryWidths(); // 초기 설정
+      };
+    
+    // 즉시 실행
+    setInitialWidths();
+    
+    // 약간의 지연 후에도 실행 (DOM 렌더링 완료 보장)
+    const timer = setTimeout(setInitialWidths, 10);
+    
+    // 리사이즈 이벤트 리스너 추가 - 실시간 애니메이션
+    let resizeTimer;
+    let rafId;
+    let isResizing = false;
+    
+    const handleResize = () => {
+      // 리사이즈 시작 시 플래그 설정
+      if (!isResizing) {
+        isResizing = true;
+      }
+      
+      clearTimeout(resizeTimer);
+      cancelAnimationFrame(rafId);
+      
+      // 디바운싱: 리사이즈가 끝난 후 애니메이션 실행
+      resizeTimer = setTimeout(() => {
+        rafId = requestAnimationFrame(() => {
+          // 버튼이 모두 렌더링되었는지 확인
+          const buttons = categoryRefs.current.filter(Boolean);
+          if (buttons.length === CATEGORIES.length && categoryContainerRef.current) {
+            updateCategoryWidths(); // 리사이즈 시 즉시 변경
+          }
+          isResizing = false;
+        });
+      }, 16); // 약 60fps로 제한
+    };
+    
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(resizeTimer);
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [updateCategoryWidths]);
+
+
   return (
+    <>
+      <div className="works-categories" ref={categoryContainerRef}>
+        {CATEGORIES.map((category, index) => (
+          <button
+            key={category.id}
+            ref={(el) => {
+              categoryRefs.current[index] = el;
+            }}
+            type="button"
+            className={`works-category ${selectedCategory === category.id ? 'works-category--active' : ''}`}
+            onClick={() => handleCategoryClick(category.id)}
+          >
+            {category.logo && (
+              <div className="works-category__logo">
+                <img src={category.logo} alt={`${category.label} 로고`} className="works-category__logo-image" />
+              </div>
+            )}
+            <span 
+              className="works-category__label"
+              ref={(el) => {
+                categoryLabelRefs.current[index] = el;
+              }}
+            >
+              {category.label}
+            </span>
+            {category.description && (
+              <div 
+                className="works-category__description"
+                ref={(el) => {
+                  categoryDescriptionRefs.current[index] = el;
+                }}
+              >
+                <h3 className="works-category__description-title">{category.label}</h3>
+                <p className="works-category__description-text">{category.description}</p>
+              </div>
+            )}
+          </button>
+        ))}
+      </div>
     <div className="works-gallery">
       <div className="works-gallery__overlay" aria-hidden="true">
         <div ref={modalRef} className="works-gallery__preview">
@@ -499,6 +789,22 @@ const Works = () => {
         <div className="works-gallery__item works-gallery__item--ghost" aria-hidden="true" />
       </div>
     </div>
+      {selectedWork && selectedDesigner && createPortal(
+        <div className="works-work-modal-overlay" role="dialog" aria-modal="true" onClick={closeWorkModal}>
+          <div className="works-work-modal-wrapper" onClick={handleWrapperClick}>
+            <div className="works-work-modal">
+              <DesignerShowcase
+                designer={selectedDesigner}
+                onBack={closeWorkModal}
+                initialWorkId={selectedWork.id}
+                renderOnlyWork={true}
+              />
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
   );
 };
 

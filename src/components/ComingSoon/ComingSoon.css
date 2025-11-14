@@ -16,13 +16,14 @@
 .coming-soon {
   display: flex;
   flex-direction: column;         /* 💡 메인은 위, 푸터는 아래로 분산 */
-  justify-content: center;        /* 중앙 정렬 */
-  align-items: center;            /* 좌우 중앙 정렬 */
+  justify-content: flex-start;    /* 상단 정렬로 변경 */
+  align-items: stretch;           /* 좌우 꽉 차게 */
   min-height: 100vh;              /* 최소 화면 높이 (스크롤 허용) */
   width: 100%;                    /* 화면 전체 너비 꽉 채움 */
+  max-width: 100%;                /* 최대 너비 제한 없음 */
   background: var(--color-background);
   box-sizing: border-box;
-  padding: 1rem;                   /* 모바일: 좌우 여백 */
+  padding: 0;
   margin: 0;
   position: relative;
   overflow: visible;              /* Mobile: overflow 제거 (body 스크롤 사용) */
@@ -34,9 +35,10 @@
    ============================================ */
 @media (min-width: 800px) and (max-width: 1279px) {
   .coming-soon {
-    justify-content: center; /* 태블릿: 중앙 정렬 */
-    overflow: visible;       /* 태블릿: overflow 제거 (body 스크롤 사용) */
-    padding: 2rem 2.5rem;    /* 태블릿: 상하 좌우 여백 */
+    justify-content: flex-start;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -45,9 +47,10 @@
    ============================================ */
 @media (min-width: 1280px) {
   .coming-soon {
-    justify-content: center; /* Desktop: 중앙 정렬 */
-    overflow: hidden;       /* Desktop: 스크롤 숨김 (휠 이벤트용) */
-    padding: 4vh 3rem;     /* Desktop: 상하 vh 단위, 좌우 고정 */
+    justify-content: flex-start;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
   }
 }
 

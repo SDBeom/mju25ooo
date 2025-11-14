@@ -110,24 +110,17 @@
     <!-- PWA 매니페스트 -->
     <link rel="manifest" href="/manifest.json" />
     
+    <!-- Pretendard 폰트 로드 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    
     <!-- 시스템 폰트 우선 사용 -->
     <style>
     /* Critical CSS 인라인 */
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    html, body { font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    * { font-family: inherit; }
     .coming-soon-title { font-weight: 700; }
     .coming-soon-description { font-weight: 400; }
     </style>
-    
-    <!-- Pretendard 폰트 - 지연 로딩 -->
-    <script>
-    // 폰트를 페이지 로드 완료 후 로딩
-    window.addEventListener('load', function() {
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css';
-      document.head.appendChild(link);
-    });
-    </script>
     
     <!-- Critical CSS 인라인 -->
     <style>

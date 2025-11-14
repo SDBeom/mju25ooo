@@ -1,376 +1,332 @@
-/* ============================================
-   ComingSoon Content Component - Media Query 방식
-   ============================================ */
-
-/* ============================================
-   💡 메인 컨텐츠 컨테이너 - Mobile First
-   ============================================ */
-.coming-soon-main-content {
-  display: flex;
-  flex-direction: column; /* Mobile: 세로 배치 */
-  align-items: center; /* 좌우 중앙 정렬 */
-  justify-content: center; /* 상하 중앙 정렬 */
-  gap: var(--spacing-xl);
+.about-main {
   width: 100%;
-  max-width: 100%; /* Mobile: 전체 너비 */
-  padding: 1.5rem 1rem; /* Mobile: 상하 좌우 패딩 */
-  margin: 0 auto;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-  min-height: auto; /* 높이 제한 제거 */
-}
-
-.coming-soon-main-content--simple {
-  width: 100%;
-  max-width: 480px;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #FF7700;
   min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
-.coming-soon-main-content--simple .coming-soon-left-section {
+/* Intro Section - Parallax Background */
+.about-intro {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-intro-image {
+  position: relative;
+  height: 100%;
   width: 100%;
-  max-width: 480px;
+}
+
+.about-intro-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Description Section */
+.about-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  padding: 0 40px;
+  margin: 0;
+  min-height: 50vh;
+  gap: 4rem;
+}
+
+.about-description-text {
+  font-size: clamp(3rem, 7.5vw, 8rem);
+  text-transform: uppercase;
   text-align: center;
-  justify-content: center;
-  gap: var(--spacing-lg);
-  margin: 0 auto;
-}
-
-.coming-soon-main-content--simple .coming-soon-right-section,
-.coming-soon-main-content--simple .social-links,
-.coming-soon-main-content--simple .countdown-timer {
-  display: none;
-}
-
-.coming-soon-main-content--simple .coming-soon-description {
-  color: rgba(17, 17, 17, 0.8);
-}
-
-/* Content Sections */
-.coming-soon-left-section,
-.coming-soon-right-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-md); /* Mobile 간격 */
-  width: 100%;
-  max-width: 100%;
-  padding: var(--spacing-sm) 0; /* Mobile 패딩 */
-  margin: 0;
-  text-align: justify; /* Mobile: 양쪽 정렬 */
-  text-align-last: center; /* 마지막 줄은 중앙 정렬 */
-}
-
-/* ============================================
-   LOGO
-   ============================================ */
-.coming-soon-main-content .signature-logo {
-  width: 80px; /* Mobile: 1.5배 축소 (120px → 80px) */
-  height: 80px;
-  object-fit: contain;
-  animation: logoFloat 3s ease-in-out infinite;
-  margin-bottom: var(--spacing-sm);
-}
-
-@keyframes logoFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* ============================================
-   TYPOGRAPHY
-   ============================================ */
-.coming-soon-main-content .coming-soon-title {
-  font-size: 2.5rem; /* Mobile */
-  font-weight: 800;
-  background: linear-gradient(135deg, rgba(255, 119, 0, 1) 0%, rgba(103, 197, 255, 1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--spacing-md);
-  text-align: center; /* 타이틀은 항상 중앙 정렬 */
-}
-
-.coming-soon-main-content .coming-soon-title span {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.coming-soon-main-content .coming-soon-description {
-  font-size: 1.1rem; /* Mobile */
-  color: var(--color-text-secondary);
-  line-height: 1.8;
-  font-weight: 500;
-  margin: 0;
-  text-align: center; /* Mobile: 중앙 정렬 */
-  text-align-last: center; /* 마지막 줄도 중앙 정렬 */
-  word-spacing: normal; /* 단어 간격 정상화 */
-}
-
-.coming-soon-main-content--simple .coming-soon-title {
-  background: none;
-  -webkit-text-fill-color: currentColor;
-  color: rgba(17, 17, 17, 0.95);
-  margin-bottom: 0;
-}
-
-/* ============================================
-   COUNTDOWN
-   ============================================ */
-.coming-soon-main-content .countdown-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm); /* Mobile 간격 */
-  width: 100%;
-  max-width: 100%; /* Mobile */
-  padding: var(--spacing-lg) var(--spacing-md); /* Mobile 패딩 */
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  overflow-x: hidden;
-}
-
-.coming-soon-main-content .countdown-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-xs);
-  flex: 1;
-  min-width: 0;
-  width: 100%;
-}
-
-.coming-soon-main-content .countdown-number {
-  font-size: 2rem; /* Mobile */
-  font-weight: 700;
-  color: var(--color-primary);
+  max-width: 50vw;
   line-height: 1;
+  margin: 0;
+  font-weight: 300;
 }
 
-.coming-soon-main-content .countdown-label {
-  display: none; /* Mobile: 숨김 */
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
+.about-description-images {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  height: 60vh;
+}
+
+.about-description-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  flex: 1 1 50%;
+  display: block;
+}
+
+/* Section with Text and Parallax */
+.about-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  background-color: #FF7700;
+}
+
+.about-section-content {
+  position: relative;
+  z-index: 10;
+  padding: 2rem 40px;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.about-section-text {
+  width: 50vw;
+  font-size: clamp(1rem, 2vw, 2rem);
+  text-transform: uppercase;
+  align-self: flex-end;
+  margin: 0;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.about-section-title {
+  font-size: clamp(3rem, 5vw, 6rem);
+  text-transform: uppercase;
+  margin: 0;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.about-section-background {
+  position: fixed;
+  top: -10vh;
+  left: 0;
+  height: 120vh;
+  width: 100%;
+  z-index: 0;
+}
+
+.about-section-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.about-section-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Brand Story Section */
+.about-brand-story {
+  padding: 0 40px;
+  margin: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.about-brand-story-title {
+  font-size: clamp(2rem, 4vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0 0 2rem 0;
+  font-weight: 300;
+}
+
+.about-brand-story-subtitle {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  margin: 0 0 4rem 0;
+  font-weight: 300;
+}
+
+.about-brand-story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.about-brand-story-item {
+  margin: 0 0 3rem 0;
+  padding: 0;
+}
+
+.about-brand-story-item-title {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  margin: 0 0 1.5rem 0;
+  font-weight: 400;
+}
+
+.about-brand-story-item-text {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+/* Exhibition Info Section */
+.about-exhibition-info {
+  padding: 0 40px;
+  margin: 0;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.about-exhibition-header {
+  margin: 0 0 4rem 0;
+  padding: 0;
+}
+
+.about-exhibition-university {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+.about-exhibition-department {
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+.about-exhibition-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+.about-exhibition-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.about-exhibition-label {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   font-weight: 500;
-  margin-top: var(--spacing-xs);
+  margin: 0 0 0.5rem 0;
+  padding: 0;
 }
 
-.coming-soon-main-content .countdown-separator {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-primary);
+.about-exhibition-address {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 0.3rem 0;
+  padding: 0;
 }
 
-/* ============================================
-   SOCIAL LINKS
-   ============================================ */
-.coming-soon-main-content .social-links {
+.about-exhibition-address-en {
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  line-height: 1.6;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+
+.about-exhibition-date {
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+/* Committee Section */
+.about-committee {
+  padding: 0 40px;
+  margin: 0;
+  background-color: #fff;
+  width: 100%;
+}
+
+.about-committee-section {
+  margin: 0 0 4rem 0;
+  padding: 0;
+}
+
+.about-committee-title {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.about-committee-names {
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+.about-committee-list {
   display: flex;
-  gap: var(--spacing-md); /* Mobile 간격 */
-  align-items: center;
-  justify-content: center;
-  margin-top: var(--spacing-md);
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
 }
 
-.coming-soon-main-content .social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px; /* Mobile */
-  height: 48px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  text-decoration: none;
+.about-committee-list p {
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.6;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
 }
 
-.coming-soon-main-content .social-link:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: var(--color-primary);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 4px 20px rgba(255, 119, 0, 0.3);
+.about-committee-role {
+  font-weight: 500;
+  margin: 0 1rem 0 0;
+  padding: 0;
 }
 
-.coming-soon-main-content .social-link img,
-.coming-soon-main-content .social-logo {
-  width: 24px; /* Mobile */
-  height: 24px;
-  object-fit: contain;
-  filter: brightness(0) invert(1); /* 로고를 흰색으로 변환 */
-}
-
-/* ============================================
-   Tablet (800px ~ 1279px)
-   ============================================ */
-@media (min-width: 800px) and (max-width: 1279px) {
-  .coming-soon-main-content {
-    display: flex;
-    flex-direction: column; /* Tablet: 세로 배치 */
-    max-width: 900px;
-    gap: calc(var(--spacing-xl) * 2);
-    padding: 2rem var(--spacing-xl);
-    align-items: center; /* 좌우 중앙 정렬 */
-    justify-content: center; /* 상하 중앙 정렬 */
+/* Responsive */
+@media (max-width: 768px) {
+  .about-description {
+    padding: 0 40px;
+    margin: 0;
   }
 
-  .coming-soon-left-section,
-  .coming-soon-right-section {
-    gap: var(--spacing-lg);
-    text-align: center; /* Tablet: 중앙 정렬로 변경 */
-    align-items: center; /* Tablet: 중앙 정렬 */
-    justify-content: center;
+  .about-brand-story,
+  .about-exhibition-info,
+  .about-committee {
+    padding: 0 40px;
+    margin: 0;
   }
 
-  .coming-soon-main-content .coming-soon-description {
-    text-align: center; /* Tablet: 중앙 정렬 */
-    text-align-last: auto;
-    word-spacing: normal;
-  }
-
-  .coming-soon-main-content .signature-logo {
-    width: 100px; /* Tablet: 1.5배 축소 (150px → 100px) */
-    height: 100px;
-  }
-
-  .coming-soon-main-content .coming-soon-title {
-    font-size: 3.5rem;
-  }
-
-  .coming-soon-main-content .coming-soon-description {
-    font-size: 1.3rem;
-  }
-
-  .coming-soon-main-content .countdown-container {
-    gap: var(--spacing-md);
-    max-width: 100%; /* 태블릿: 전체 너비 사용 */
-    padding: var(--spacing-xl);
-    width: 100%;
-  }
-
-  .coming-soon-main-content .countdown-number {
-    font-size: 2.5rem;
-  }
-
-  .coming-soon-main-content .countdown-label {
-    display: block; /* Tablet: 표시 */
-    font-size: 1rem;
-  }
-
-  .coming-soon-main-content .social-link {
-    width: 56px;
-    height: 56px;
-  }
-
-  .coming-soon-main-content .social-link img,
-  .coming-soon-main-content .social-logo {
-    width: 28px;
-    height: 28px;
+  .about-exhibition-details {
+    text-align: left;
   }
 }
-
-/* ============================================
-   Desktop (1280px 이상)
-   ============================================ */
-@media (min-width: 1280px) {
-  .coming-soon-main-content {
-    display: flex;
-    flex-direction: row; /* Desktop: 가로 배치 */
-    justify-content: space-between; /* 좌우 분리 */
-    align-items: center; /* 상하 중앙 정렬 */
-    gap: calc(var(--spacing-xl) * 3); /* Desktop 큰 간격 */
-    max-width: 1400px;
-    padding: 6vh var(--spacing-2xl);
-    margin: 0 auto;
-  }
-
-  .coming-soon-left-section {
-    flex: 0 0 45%; /* Desktop: 왼쪽 섹션 고정 너비 */
-    align-items: center; /* 섹션 내부 중앙 정렬 */
-    justify-content: center;
-    text-align: center; /* 텍스트 중앙 정렬 */
-    gap: calc(var(--spacing-lg) * 2);
-  }
-
-  .coming-soon-right-section {
-    flex: 0 0 45%; /* Desktop: 오른쪽 섹션 고정 너비 */
-    align-items: center; /* 섹션 내부 중앙 정렬 */
-    justify-content: center;
-    text-align: center;
-    gap: calc(var(--spacing-lg) * 2);
-  }
-
-  .coming-soon-main-content .coming-soon-description {
-    text-align: center; /* Desktop: 중앙 정렬 */
-    text-align-last: center;
-    word-spacing: normal;
-    line-height: 2;
-  }
-
-  .coming-soon-main-content .signature-logo {
-    width: 140px; /* Desktop: 크게 표시 */
-    height: 140px;
-  }
-
-  .coming-soon-main-content .coming-soon-title {
-    font-size: 5rem;
-    text-align: center; /* Desktop: 중앙 정렬 */
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .coming-soon-main-content .coming-soon-description {
-    font-size: 1.5rem;
-  }
-
-  .coming-soon-main-content .countdown-container {
-    max-width: 700px;
-    gap: var(--spacing-md);
-    padding: var(--spacing-xl);
-  }
-
-  .coming-soon-main-content .countdown-number {
-    font-size: 3rem;
-  }
-
-  .coming-soon-main-content .countdown-label {
-    display: block; /* Desktop: 표시 */
-    font-size: 1rem;
-  }
-
-  .coming-soon-main-content .countdown-unit {
-    font-size: 1.1rem;
-  }
-
-  .coming-soon-main-content .social-links {
-    gap: var(--spacing-lg);
-  }
-
-  .coming-soon-main-content .social-link {
-    width: 64px;
-    height: 64px;
-  }
-
-  .coming-soon-main-content .social-link img,
-  .coming-soon-main-content .social-logo {
-    width: 32px;
-    height: 32px;
-  }
-}
-

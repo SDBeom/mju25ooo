@@ -4,7 +4,7 @@ import ModalHeroSection from '../ModalHeroSection/ModalHeroSection';
 import { videoBadge, gameBadge, multimediaBadge, motionBadge } from '../../data/designerDetailsData';
 import './DesignerShowcase.css';
 
-const DesignerShowcase = ({ designer, onBack }) => {
+const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) => {
   // Get badge image based on genre
   const getBadgeForGenre = (genre) => {
     if (!genre) return videoBadge; // Default to video badge
@@ -21,6 +21,16 @@ const DesignerShowcase = ({ designer, onBack }) => {
     return videoBadge; // Default fallback
   };
   const [selectedWork, setSelectedWork] = useState(null);
+
+  // initialWorkId가 있으면 해당 작품을 자동으로 열기
+  useEffect(() => {
+    if (initialWorkId && designer?.works) {
+      const work = designer.works.find((w) => w.id === initialWorkId);
+      if (work) {
+        setSelectedWork(work);
+      }
+    }
+  }, [initialWorkId, designer]);
 
   // 컴포넌트 마운트 시 스크롤을 맨 위로 이동하고 모달 관련 스타일 초기화
   useEffect(() => {
@@ -905,6 +915,12 @@ const DesignerShowcase = ({ designer, onBack }) => {
     const useDotianhongIsometricLayout = work.layout === 'dotianhong-isometric' || work.id === 'dotianhong-see-tinh-isometric';
     
     if (useDotianhongIsometricLayout && work.gallery && work.notes && Array.isArray(work.notes)) {
+      const image1 = work.gallery[0]; // 아이소메트릭 방 모델링
+      const image2 = work.gallery[1]; // 카메라 각도
+      const image3 = work.gallery[2]; // 아이소메트릭 씬
+      const image4 = work.gallery[3]; // 아이소메트릭 애니메이션
+      const image5 = work.gallery[4]; // 아이소메트릭 애니메이션 2
+
       return (
         <div className="work-detail work-detail--dotianhong-isometric">
           <ModalHeroSection
@@ -918,23 +934,68 @@ const DesignerShowcase = ({ designer, onBack }) => {
             ctas={ctas}
           />
 
-          {/* Feature sections */}
-          {work.gallery.map((image, index) => {
-            const note = work.notes[index];
-            return (
-              <section key={image.src} className="work-detail__section work-detail__feature">
-                <div className="work-detail__image-block work-detail__image-block--feature">
-                  <img src={image.src} alt={image.alt} loading="lazy" />
+          {/* Marquee 섹션 (빈 섹션) */}
+          <section className="work-detail__section work-detail__marquee"></section>
+
+          {/* Section Header: INTERIOR AND CHARACTER DESIGN */}
+          <section className="work-detail__section work-detail__section-header">
+            <h3 className="work-detail__section-title">INTERIOR AND CHARACTER DESIGN</h3>
+          </section>
+
+          {/* Feature 1: 아이소메트릭 방 모델링 (이미지 위, 텍스트 아래) */}
+          {image1 && work.notes[0] && (
+            <section className="work-detail__section work-detail__feature">
+              <div className="work-detail__image-block work-detail__image-block--feature">
+                <img src={image1.src} alt={image1.alt} loading="lazy" />
+              </div>
+              {work.notes[0].description && (
+                <div className="work-detail__feature-text">
+                  <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[0].description}</p>
                 </div>
-                {note && note.description && (
-                  <div className="work-detail__feature-text">
-                    {note.title && <h3 className="work-detail__feature-title">{note.title}</h3>}
-                    <p style={{ whiteSpace: 'pre-wrap' }}>{note.description}</p>
-                  </div>
-                )}
-              </section>
-            );
-          })}
+              )}
+            </section>
+          )}
+
+          {/* Feature 2: 카메라 각도 (이미지 위, 텍스트 아래) */}
+          {image2 && work.notes[1] && (
+            <section className="work-detail__section work-detail__feature">
+              <div className="work-detail__image-block work-detail__image-block--feature">
+                <img src={image2.src} alt={image2.alt} loading="lazy" />
+              </div>
+              {work.notes[1].description && (
+                <div className="work-detail__feature-text">
+                  <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[1].description}</p>
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* Feature 3: 아이소메트릭 씬 (이미지만) */}
+          {image3 && (
+            <section className="work-detail__section work-detail__feature work-detail__feature--media-only">
+              <div className="work-detail__image-block work-detail__image-block--feature">
+                <img src={image3.src} alt={image3.alt} loading="lazy" />
+              </div>
+            </section>
+          )}
+
+          {/* Feature 4: 아이소메트릭 애니메이션 (이미지만, 중앙 정렬) */}
+          {image4 && (
+            <section className="work-detail__section work-detail__feature work-detail__feature--media-only work-detail__feature--center">
+              <div className="work-detail__image-block work-detail__image-block--feature">
+                <img src={image4.src} alt={image4.alt} loading="lazy" />
+              </div>
+            </section>
+          )}
+
+          {/* Feature 5: 아이소메트릭 애니메이션 2 (이미지만) */}
+          {image5 && (
+            <section className="work-detail__section work-detail__feature work-detail__feature--media-only">
+              <div className="work-detail__image-block work-detail__image-block--feature">
+                <img src={image5.src} alt={image5.alt} loading="lazy" />
+              </div>
+            </section>
+          )}
         </div>
       );
     }
@@ -943,6 +1004,11 @@ const DesignerShowcase = ({ designer, onBack }) => {
     const useDotianhongAnimatedLayout = work.layout === 'dotianhong-animated' || work.id === 'dotianhong-see-tinh-animated';
     
     if (useDotianhongAnimatedLayout && work.gallery && work.notes && Array.isArray(work.notes)) {
+      const image1 = work.gallery[0]; // 베트남 강 서부 배경
+      const image2 = work.gallery[1]; // 캐릭터 디자인
+      const image3 = work.gallery[2]; // 2D 애니메이션 씬
+      const image4 = work.gallery[3]; // 2D 애니메이션 씬 2
+
       return (
         <div className="work-detail work-detail--dotianhong-animated">
           <ModalHeroSection
@@ -956,23 +1022,54 @@ const DesignerShowcase = ({ designer, onBack }) => {
             ctas={ctas}
           />
 
-          {/* Feature sections */}
-          {work.gallery.map((image, index) => {
-            const note = work.notes[index];
-            return (
-              <section key={image.src} className="work-detail__section work-detail__feature">
-                <div className="work-detail__image-block work-detail__image-block--feature">
-                  <img src={image.src} alt={image.alt} loading="lazy" />
+          {/* Marquee 섹션 (빈 섹션) */}
+          <section className="work-detail__section work-detail__marquee"></section>
+
+          {/* Feature 1: 베트남 강 서부 배경 (이미지 위, 텍스트 아래) */}
+          {image1 && work.notes[0] && (
+            <section className="work-detail__section work-detail__feature">
+              <div className="work-detail__image-block work-detail__image-block--feature">
+                <img src={image1.src} alt={image1.alt} loading="lazy" />
+              </div>
+              {work.notes[0].description && (
+                <div className="work-detail__feature-text">
+                  <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[0].description}</p>
                 </div>
-                {note && note.description && (
-                  <div className="work-detail__feature-text">
-                    {note.title && <h3 className="work-detail__feature-title">{note.title}</h3>}
-                    <p style={{ whiteSpace: 'pre-wrap' }}>{note.description}</p>
-                  </div>
-                )}
-              </section>
-            );
-          })}
+              )}
+            </section>
+          )}
+
+          {/* Feature 2: 캐릭터 디자인 (이미지 위, 텍스트 아래) */}
+          {image2 && work.notes[1] && (
+            <section className="work-detail__section work-detail__feature">
+              <div className="work-detail__image-block work-detail__image-block--feature">
+                <img src={image2.src} alt={image2.alt} loading="lazy" />
+              </div>
+              {work.notes[1].description && (
+                <div className="work-detail__feature-text">
+                  <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[1].description}</p>
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* Feature 3: 2D 애니메이션 씬 (이미지만) */}
+          {image3 && (
+            <section className="work-detail__section work-detail__feature work-detail__feature--media-only">
+              <div className="work-detail__image-block work-detail__image-block--feature">
+                <img src={image3.src} alt={image3.alt} loading="lazy" />
+              </div>
+            </section>
+          )}
+
+          {/* Feature 4: 2D 애니메이션 씬 2 (이미지만, 중앙 정렬) */}
+          {image4 && (
+            <section className="work-detail__section work-detail__feature work-detail__feature--media-only work-detail__feature--center">
+              <div className="work-detail__image-block work-detail__image-block--feature">
+                <img src={image4.src} alt={image4.alt} loading="lazy" />
+              </div>
+            </section>
+          )}
         </div>
       );
     }
@@ -2760,7 +2857,8 @@ const DesignerShowcase = ({ designer, onBack }) => {
     
     if (useLeeun9e9e9eLayout && work.gallery && work.notes && Array.isArray(work.notes)) {
       const featureImage = work.gallery[0]; // 9e9e9e
-      const coreValueCards = work.gallery.slice(1); // Cute, Unconstrained, Joyful, Positive
+      const coreValueCards = work.gallery.slice(1, 5); // Cute, Unconstrained, Joyful, Positive (4 cards)
+      const itemsGallery = work.gallery.slice(5); // Items gallery (7 images)
 
       return (
         <div className="work-detail work-detail--leeun-9e9e9e">
@@ -2817,6 +2915,44 @@ const DesignerShowcase = ({ designer, onBack }) => {
               </ul>
             </section>
           )}
+
+          {/* Items Gallery */}
+          {itemsGallery.length > 0 && (
+            <section className="work-detail__section work-detail__gallery-section">
+              <div className="work-detail__gallery-header">
+                <h3 className="work-detail__gallery-title">9e9e9e Items</h3>
+              </div>
+              <div className="work-detail__gallery-masonry">
+                <div className="work-detail__gallery-column">
+                  <div className="work-detail__gallery-item">
+                    <img src={itemsGallery[0].src} alt={itemsGallery[0].alt} loading="lazy" />
+                  </div>
+                  <div className="work-detail__gallery-item">
+                    <img src={itemsGallery[1].src} alt={itemsGallery[1].alt} loading="lazy" />
+                  </div>
+                </div>
+                <div className="work-detail__gallery-column">
+                  <div className="work-detail__gallery-item">
+                    <img src={itemsGallery[2].src} alt={itemsGallery[2].alt} loading="lazy" />
+                  </div>
+                  <div className="work-detail__gallery-item">
+                    <img src={itemsGallery[3].src} alt={itemsGallery[3].alt} loading="lazy" />
+                  </div>
+                  <div className="work-detail__gallery-item">
+                    <img src={itemsGallery[4].src} alt={itemsGallery[4].alt} loading="lazy" />
+                  </div>
+                </div>
+                <div className="work-detail__gallery-column">
+                  <div className="work-detail__gallery-item">
+                    <img src={itemsGallery[5].src} alt={itemsGallery[5].alt} loading="lazy" />
+                  </div>
+                  <div className="work-detail__gallery-item">
+                    <img src={itemsGallery[6].src} alt={itemsGallery[6].alt} loading="lazy" />
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
         </div>
       );
     }
@@ -2825,11 +2961,11 @@ const DesignerShowcase = ({ designer, onBack }) => {
     const useLeeunLayeredLayout = work.layout === 'leeun-layered' || work.id === 'leeun-layered';
     
     if (useLeeunLayeredLayout && work.gallery && work.notes && Array.isArray(work.notes)) {
-      const lookGallery = work.gallery.slice(0, 6); // LOOK gallery
-      const featureRows1 = [work.gallery[6], work.gallery[7]]; // Self-Expression, Rich
-      const featureRows2 = [work.gallery[8], work.gallery[9]]; // Flexibility, Sustainability
-      const brandingCards = work.gallery.slice(10, 13); // package, brand book, gift box
-      const bentoCards = work.gallery.slice(13); // brand tag, Web
+      const lookGallery = work.gallery.slice(0, 7); // LOOK gallery (7 images)
+      const featureRows1 = [work.gallery[7], work.gallery[8]]; // Self-Expression, Rich
+      const featureRows2 = [work.gallery[9], work.gallery[10]]; // Flexibility, Sustainability
+      const brandingCards = work.gallery.slice(11, 14); // package, brand book, gift box
+      const bentoCards = work.gallery.slice(14); // brand tag, Web
 
       return (
         <div className="work-detail work-detail--leeun-layered">
@@ -2882,6 +3018,9 @@ const DesignerShowcase = ({ designer, onBack }) => {
                 <div className="work-detail__gallery-column">
                   <div className="work-detail__gallery-item">
                     <img src={lookGallery[5].src} alt={lookGallery[5].alt} loading="lazy" />
+                  </div>
+                  <div className="work-detail__gallery-item">
+                    <img src={lookGallery[6].src} alt={lookGallery[6].alt} loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -4964,6 +5103,11 @@ const DesignerShowcase = ({ designer, onBack }) => {
       </div>
     );
   };
+
+  // renderOnlyWork가 true면 작품 내용만 렌더링 (모달 모드)
+  if (renderOnlyWork && selectedWork) {
+    return renderWorkContent(selectedWork);
+  }
 
   return (
     <div className="kim-detail">

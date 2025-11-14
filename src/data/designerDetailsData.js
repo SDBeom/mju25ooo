@@ -135,7 +135,8 @@ import parkHaeinWork1_12 from '../assets/박해인/박해인_모션디자인_작
 import parkHaeinWork1_13 from '../assets/박해인/박해인_모션디자인_작품1_13.webp';
 import parkHaeinImage from '../assets/박해인/Image.webp';
 
-import parkHeechanReel from '../assets/박희찬/박희찬_게임콘텐츠_작품1_01.webp';
+import parkHeechanPledge from '../assets/박희찬/박희찬_게임콘텐츠_작품1_01.webp';
+import parkHeechanReel from '../assets/박희찬/박희찬_게임콘텐츠_작품2_01.webp';
 import parkHeechanWork1_02 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_02.webp';
 import parkHeechanWork1_03 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_03.webp';
 import parkHeechanWork1_04 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_04.webp';
@@ -148,7 +149,6 @@ import parkHeechanWork1_11 from '../assets/박희찬/박희찬_게임콘텐츠_�
 import parkHeechanWork1_12 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_12.webp';
 import parkHeechanWork1_13 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_13.webp';
 import parkHeechanWork1_14 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_14.webp';
-import parkHeechanPledge from '../assets/박희찬/박희찬_게임콘텐츠_작품2_01.webp';
 import parkHeechanWork2_02 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_02.webp';
 import parkHeechanWork2_03 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_03.webp';
 import parkHeechanWork2_04 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_04.webp';
@@ -156,8 +156,6 @@ import parkHeechanWork2_05 from '../assets/박희찬/박희찬_게임콘텐츠_�
 import parkHeechanWork2_06 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_06.webp';
 
 import thumbHiFive from '../assets/Thumb/썸네일_서동범_HiFive.webp';
-import thumbArcaneJinx from '../assets/Thumb/썸네일_서원준_ArcaneJinx.webp';
-import thumbAstra from '../assets/Thumb/썸네일_서원준_Astra.webp';
 
 import songDaheeCardOfLove from '../assets/송다희/송다희_영상콘텐츠_작품1_01.webp';
 import songDaheeWork1_02 from '../assets/송다희/송다희_영상콘텐츠_작품1_02.webp';
@@ -286,17 +284,17 @@ import leeWoonWork1_03 from '../assets/이운/이운_멀티미디어_작품1_03.
 import leeWoonWork1_04 from '../assets/이운/이운_멀티미디어_작품1_04.webp';
 import leeWoonWork1_05 from '../assets/이운/이운_멀티미디어_작품1_05.webp';
 import leeWoonWork1_06 from '../assets/이운/이운_멀티미디어_작품1_06.webp';
-// import leeWoonWork1_07 from '../assets/이운/이운_멀티미디어_작품1_07.webp';
-// import leeWoonWork1_08 from '../assets/이운/이운_멀티미디어_작품1_08.webp';
-// import leeWoonWork1_09 from '../assets/이운/이운_멀티미디어_작품1_09.webp';
-// import leeWoonWork1_10 from '../assets/이운/이운_멀티미디어_작품1_10.webp';
-// import leeWoonWork1_11 from '../assets/이운/이운_멀티미디어_작품1_11.webp';
-// import leeWoonWork1_12 from '../assets/이운/이운_멀티미디어_작품1_12.webp';
-// import leeWoonWork1_13 from '../assets/이운/이운_멀티미디어_작품1_13.webp';
-// import leeWoonWork1_14 from '../assets/이운/이운_멀티미디어_작품1_14.webp';
-// import leeWoonWork1_15 from '../assets/이운/이운_멀티미디어_작품1_15.webp';
-// import leeWoonWork1_16 from '../assets/이운/이운_멀티미디어_작품1_16.webp';
-// import leeWoonWork1_17 from '../assets/이운/이운_멀티미디어_작품1_17.webp';
+import leeWoonWork1_07 from '../assets/이운/이운_멀티미디어_작품1_07.webp';
+import leeWoonWork1_08 from '../assets/이운/이운_멀티미디어_작품1_08.webp';
+import leeWoonWork1_09 from '../assets/이운/이운_멀티미디어_작품1_09.webp';
+import leeWoonWork1_10 from '../assets/이운/이운_멀티미디어_작품1_10.webp';
+import leeWoonWork1_11 from '../assets/이운/이운_멀티미디어_작품1_11.webp';
+import leeWoonWork1_12 from '../assets/이운/이운_멀티미디어_작품1_12.webp';
+import leeWoonWork1_13 from '../assets/이운/이운_멀티미디어_작품1_13.webp';
+import leeWoonWork1_14 from '../assets/이운/이운_멀티미디어_작품1_14.webp';
+import leeWoonWork1_15 from '../assets/이운/이운_멀티미디어_작품1_15.webp';
+import leeWoonWork1_16 from '../assets/이운/이운_멀티미디어_작품1_16.webp';
+import leeWoonWork1_17 from '../assets/이운/이운_멀티미디어_작품1_17.webp';
 // Gallery images for Layered (작품2)
 import leeWoonWork2_02 from '../assets/이운/이운_멀티미디어_작품2_02.webp';
 import leeWoonWork2_03 from '../assets/이운/이운_멀티미디어_작품2_03.webp';
@@ -945,7 +943,7 @@ const designerDetailsData = {
       {
         id: 'dotianhong-see-tinh-isometric',
         title: '"SEE TINH" ISOMETIC',
-        summary: '3D 캐릭터 디자인 시장은 성장 가능성이 높다. 음악 분야의 아티스트들을 홍보하기 위한 제품일 뿐만 아니라 현재 젊은 이들을 위한 엔터테인먼트 상품이기도 하다. 졸업 후에 2D 3D 디자이너로 진로를 정하고 싶어 3D 캐릭터 디자인과 아이소메트릭 애니를 주제로 졸업 프로젝트를 만든다. 2022년에 베트남과 한국에서 매우 인기 있었던 노래 "See Tinh" 에서 영감을 받아 3D 아이소메트릭 애니를 만들기로 했다.',
+        summary: '3D 캐릭터 시장은 성장 가능성이 높고 젊은 층의 엔터테인먼트 상품입니다. 2D/3D 디자이너를 목표로, \'See Tinh\'에서 영감받은 3D 캐릭터와 아이소메트릭 애니를 졸업 프로젝트로 만듭니다.',
         genre: '영상 콘텐츠 디자인',
         thumbnail: dotianhongIsometric,
         description: '',
@@ -972,7 +970,7 @@ const designerDetailsData = {
       {
         id: 'dotianhong-see-tinh-animated',
         title: '"SEE TINH" ANIMATED MV',
-        summary: '졸업 후에 2D 3D 디자이너로 진로를 정하고 싶어 2D 애니 뮤직비디오를 주제로 졸업 프로젝트를 만든다. 2022년에 베트남뿐만 아니라 한국에서도 매우 인기 있었던 노래 "See Tinh" 에서 영감을 받아 노래를 오마주 하기로 했다.',
+        summary: '2D/3D 디자이너를 목표로, 2022년 한국과 베트남에서 인기였던 \'See Tinh\'을 오마주한 2D 애니메이션 뮤직비디오를 졸업 프로젝트로 만듭니다.',
         genre: '영상 콘텐츠 디자인',
         thumbnail: dotianhongAnimated,
         description: '',
@@ -1186,13 +1184,6 @@ const designerDetailsData = {
           { src: parkHeechanWork1_04, alt: '드레드노트' },
           { src: parkHeechanWork1_05, alt: '위협적인 적' },
           { src: parkHeechanWork1_06, alt: '타이라니드 워리어' },
-          { src: parkHeechanWork1_07, alt: '카니펙스' },
-          { src: parkHeechanWork1_08, alt: '스틸컷 1' },
-          { src: parkHeechanWork1_10, alt: '스틸컷 2' },
-          { src: parkHeechanWork1_11, alt: '스틸컷 3' },
-          { src: parkHeechanWork1_12, alt: '스틸컷 4' },
-          { src: parkHeechanWork1_13, alt: '스틸컷 5' },
-          { src: parkHeechanWork1_14, alt: '스틸컷 6' },
         ],
         notes: [
           {
@@ -1273,43 +1264,6 @@ const designerDetailsData = {
         meta: [
           'Medium — Interactive Motion Graphic',
           'Keyword — Spontaneous Spark',
-        ],
-      },
-    ],
-  },
-  서원준: {
-    displayName: '서원준',
-    role: '3D Character Artist',
-    tagline: '미래적 요원과 마법적 존재를 섬세한 피규어로 구현합니다.',
-    intro:
-      '스케이트보드와 요원 캐릭터, 미래 전투기 등, 다양한 세계관을 입체적으로 표현합니다.',
-    workSummary: 'Arcane Jinx와 Astra 피규어 프로젝트로 조형과 도색의 완성도를 보여줍니다.',
-    instagram: 'https://www.instagram.com/slowon13/',
-    works: [
-      {
-        id: 'seowonjun-arcane-jinx',
-        title: 'Arcane Jinx',
-        summary: '애니메이션 징크스를 재해석한 피규어 프로젝트.',
-        genre: '게임 콘텐츠 디자인',
-        thumbnail: thumbArcaneJinx,
-        description:
-          '징크스의 불안정한 에너지를 헤어, 표정, 소품으로 표현했습니다. 대조적인 컬러와 과감한 도색으로 캐릭터의 카오스를 강조합니다.',
-        meta: [
-          'Format — Character Figurine',
-          'Keyword — Chaotic Energy',
-        ],
-      },
-      {
-        id: 'seowonjun-astra',
-        title: 'Astra',
-        summary: '미래 도시의 특수 요원을 피규어 스타일로 구현한 프로젝트.',
-        genre: '게임 콘텐츠 디자인',
-        thumbnail: thumbAstra,
-        description:
-          '금속성 재질과 투명 소재를 혼합해 입체감과 시선을 유도했습니다. 포즈 변화를 통해 역동성을 살리고 세계관을 설명하는 설정 아트를 함께 구성했습니다.',
-        meta: [
-          'Format — Character Figurine',
-          'Keyword — Futuristic Agent',
         ],
       },
     ],
@@ -1414,7 +1368,7 @@ const designerDetailsData = {
         title: 'Linked',
         summary: 'Linked는 점과 선, 면을 활용하여 관계의 연결과 단절, 사회의 순환적 흐름을 표현한 아트워크이다.',
         genre: '영상 콘텐츠 디자인',
-        thumbnail: simSeongbinLinked,
+        thumbnail: simSeongbinBoom,
         description: '',
         meta: 'Format — Procedural Animation',
         layout: 'simseongbin-linked',
@@ -1468,7 +1422,7 @@ const designerDetailsData = {
         title: 'BOOM',
         summary: 'BOOM은 현대인들이 스트레스와 반복적인 일상에서 탈출하고자 하는 욕망을, 폭발이라는 현상을 매개로 표현한 아트워크이다.',
         genre: '영상 콘텐츠 디자인',
-        thumbnail: simSeongbinBoom,
+        thumbnail: simSeongbinLinked,
         description: '',
         meta: 'Format — 3D FX Cinematic',
         layout: 'simseongbin-boom',
@@ -2001,20 +1955,104 @@ const designerDetailsData = {
     instagram: 'https://www.instagram.com/leewoonii/',
     works: [
       {
+        id: 'leeun-layered',
+        title: 'Layered',
+        summary: '개인의 정체성을 형성하는 다층적인 \'겹쳐짐\'에 집중한 컨셔스 패션 브랜드 브랜딩',
+        genre: '멀티미디어 디자인',
+        thumbnail: leeWoon9e9e9e,
+        description: '',
+        meta: 'Format — Conscious Fashion Branding',
+        layout: 'leeun-layered',
+        gallery: [
+          // LOOK gallery (7 images)
+          { src: leeWoonWork1_02, alt: 'LOOK' },
+          { src: leeWoonWork1_03, alt: 'LOOK' },
+          { src: leeWoonWork1_04, alt: 'LOOK' },
+          { src: leeWoonWork1_05, alt: 'LOOK' },
+          { src: leeWoonWork1_06, alt: 'LOOK' },
+          { src: leeWoonWork1_07, alt: 'LOOK' },
+          { src: leeWoonWork1_08, alt: 'LOOK' },
+          // Feature rows images
+          { src: leeWoonWork1_09, alt: 'Self-Expression' },
+          { src: leeWoonWork1_10, alt: 'Rich' },
+          { src: leeWoonWork1_11, alt: 'Flexibility' },
+          { src: leeWoonWork1_12, alt: 'Sustainability' },
+          // Branding cards
+          { src: leeWoonWork1_13, alt: 'package' },
+          { src: leeWoonWork1_14, alt: 'brand book' },
+          { src: leeWoonWork1_15, alt: 'gift box' },
+          // Bento cards
+          { src: leeWoonWork1_16, alt: 'brand tag' },
+          { src: leeWoonWork1_17, alt: 'Web' },
+        ],
+        notes: [
+          {
+            title: 'Layered',
+            description: '겹쳐짐은 개인의 정체성을 형성하는 다층적인 요소들을 상징합니다. 인간의 정체성은 단일하지 않으며, 경험, 환경, 관계 등 수많은 요소들이 겹치면서\n완성됩니다. \'Layered\'는 시간이 지나 입지 못하게 되었지만 기억이 담긴 소중한 옷을 업사이클링하여 새로운 스타일로 재탄생시키는 브랜드입니다. 과거와 현재가 조화를 이루는 디자인을 통해, 우리는 단순한 리폼을 넘어 기억과 개성, 지속 가능성을 연결하는 패션을 제안합니다.\n\n또한, \'Layered\'는 패스트 패션을 지양하는 컨셔스 브랜드로서, 소유보다 활용 중심의 지속 가능한 스타일을 지향합니다. 버려지는 옷이 아닌, 소중한 기억이 담긴 옷을 새롭게 디자인함으로써 패션의 순환과 환경 보호를 실천합니다.',
+          },
+          {
+            title: 'Self-Expression',
+            description: '옷은 단순히 몸을 가리는 도구가 아니라, 나를 드러내는 가장 직접적인\n언어입니다. Layered는 과거와 현재의 옷을 새롭게 잇는 과정 속에서\n나만의 이야기를 담습니다. 더이상 입을 수 없지만 소중한 기억이 깃든\n옷을 리폼해  개인의 취향과 경험이 고스란히 반영된 스타일을\n완성합니다. 이 과정에서 옷은 단순한 패션 아이템을 넘어, 자기 표현의\n매개체가 됩니다.',
+          },
+          {
+            title: 'Rich',
+            description: '오래 함께한 옷에는 이미 그 시간을 함께한 기존의 기억이 스며 있고, 그\n옷을 새롭게 다듬고 변주하는 과정에서 또 다른 새로운 기억이 차곡차곡\n더해집니다. 이렇게 과거와 현재가 겹쳐지며 형성된 흔적은 옷을 단순한\n의복이 아닌 정체성과 기억이 중첩된 서사적 매체로 바꾸어 줍니다. Layered는 이 겹쳐진 기억과 정체성을 통해 풍부하고 입체적인\n아름다움을 완성합니다.',
+          },
+          {
+            title: 'Flexibility',
+            description: 'Layered의 옷은 하나의 형태에 머무르지 않습니다. 같은 옷이라도 \n타일링의 변주,시간이 더해지며 달라지는 해석에 따라 새로운 모습을\n드러냅니다. 이는 끊임없이 흐르고 변하는 자연, 구름의 층위와 닮아\n있으며, 입는 사람의 개성과 순간의 감정에 따라 다양하게 적응하는 옷으로 완성됩니다. Layered가 추구하는 유연성은 곧 오래도록 입을 수 있는\n지속성이자, 자신만의 스타일을 자유롭게 표현할 수 있는 가능성입니다.',
+          },
+          {
+            title: 'Sustainability',
+            description: '빠르게 소비되고 잊혀지는 패스트 패션과 달리, Layered는 옷이 가진\n시간을 존중합니다. 오래 입을 수 있도록 튼튼하게,  또 다른 방식으로 다시 활용할 수 있도록 유연하게 디자인합니다. 기존의 옷을 해체하고\n재구성하거나,  남겨진 원단을 새로운 옷으로 이어붙이며, 옷이 가진\n생명을 이어갑니다. Layered는 패스트 패션을 지양하고 옷을 오래\n활용하는 방식을 추구합니다. 기존의 옷을 새롭게 해석해, 오래도록\n이어지는 패션을 지향합니다.',
+          },
+          {
+            title: 'package',
+            description: '',
+          },
+          {
+            title: 'brand book',
+            description: '',
+          },
+          {
+            title: 'gift box',
+            description: '',
+          },
+          {
+            title: 'brand tag',
+            description: '',
+          },
+          {
+            title: 'Web',
+            description: '',
+          },
+        ],
+      },
+      {
         id: 'leeun-9e9e9e',
         title: '9e9e9e',
         summary: '리본과 마법소녀의 모티프로, 일상에 다정한 귀여움을 묶어주는 디자인 문구 & 액세서리 브랜드 브랜딩',
         genre: '멀티미디어 디자인',
-        thumbnail: leeWoon9e9e9e,
+        thumbnail: leeWoonLayered,
         description: '',
         meta: 'Format — Brand Identity',
         layout: 'leeun-9e9e9e',
         gallery: [
-          { src: leeWoonWork1_02, alt: '9e9e9e' },
-          { src: leeWoonWork1_03, alt: 'Cute' },
-          { src: leeWoonWork1_04, alt: 'Unconstrained' },
-          { src: leeWoonWork1_05, alt: 'Joyful' },
-          { src: leeWoonWork1_06, alt: 'Positive' },
+          // Feature image
+          { src: leeWoonWork2_02, alt: '9e9e9e' },
+          // Core Value cards (4 images)
+          { src: leeWoonWork2_03, alt: 'Cute' },
+          { src: leeWoonWork2_04, alt: 'Unconstrained' },
+          { src: leeWoonWork2_05, alt: 'Joyful' },
+          { src: leeWoonWork2_06, alt: 'Positive' },
+          // Items gallery (7 images)
+          { src: leeWoonWork2_07, alt: '9e9e9e Items' },
+          { src: leeWoonWork2_08, alt: '9e9e9e Items' },
+          { src: leeWoonWork2_09, alt: '9e9e9e Items' },
+          { src: leeWoonWork2_10, alt: '9e9e9e Items' },
+          { src: leeWoonWork2_11, alt: '9e9e9e Items' },
+          { src: leeWoonWork2_12, alt: '9e9e9e Items' },
+          { src: leeWoonWork2_13, alt: '9e9e9e Items' },
         ],
         notes: [
           {
@@ -2040,72 +2078,6 @@ const designerDetailsData = {
             title: 'Positive',
             subtitle: '긍정적인',
             description: '브랜드 자체의 긍정적인 사고와 그것을\n전파하려는 태도',
-          },
-        ],
-      },
-      {
-        id: 'leeun-layered',
-        title: 'Layered',
-        summary: '개인의 정체성을 형성하는 다층적인 \'겹쳐짐\'에 집중한 컨셔스 패션 브랜드 브랜딩',
-        genre: '멀티미디어 디자인',
-        thumbnail: leeWoonLayered,
-        description: '',
-        meta: 'Format — Conscious Fashion Branding',
-        layout: 'leeun-layered',
-        gallery: [
-          { src: leeWoonWork2_02, alt: 'LOOK' },
-          { src: leeWoonWork2_03, alt: 'LOOK' },
-          { src: leeWoonWork2_04, alt: 'LOOK' },
-          { src: leeWoonWork2_05, alt: 'LOOK' },
-          { src: leeWoonWork2_06, alt: 'LOOK' },
-          { src: leeWoonWork2_07, alt: 'LOOK' },
-          { src: leeWoonWork2_08, alt: 'Self-Expression' },
-          { src: leeWoonWork2_09, alt: 'Rich' },
-          { src: leeWoonWork2_10, alt: 'Flexibility' },
-          { src: leeWoonWork2_11, alt: 'Sustainability' },
-          { src: leeWoonWork2_12, alt: 'package' },
-          { src: leeWoonWork2_13, alt: 'brand book' },
-        ],
-        notes: [
-          {
-            title: 'Layered',
-            description: '겹쳐짐은 개인의 정체성을 형성하는 다층적인 요소들을 상징합니다. 인간의 정체성은 단일하지 않으며, 경험, 환경, 관계 등 수많은 요소들이 겹치면서 완성됩니다. \'Layered\'는 시간이 지나 입지 못하게 되었지만 기억이 담긴 소중한 옷을 업사이클링하여 새로운 스타일로 재탄생시키는 브랜드입니다. 과거와 현재가 조화를 이루는 디자인을 통해, 우리는 단순한 리폼을 넘어 기억과 개성, 지속 가능성을 연결하는 패션을 제안합니다.\n\n또한, \'Layered\'는 패스트 패션을 지양하는 컨셔스 브랜드로서, 소유보다 활용 중심의 지속 가능한 스타일을 지향합니다. 버려지는 옷이 아닌, 소중한 기억이 담긴 옷을 새롭게 디자인함으로써 패션의 순환과 환경 보호를 실천합니다.',
-          },
-          {
-            title: 'Self-Expression',
-            description: '옷은 단순히 몸을 가리는 도구가 아니라, 나를 드러내는 가장 직접적인 언어입니다. Layered는 과거와 현재의 옷을 새롭게 잇는 과정 속에서 나만의 이야기를 담습니다. 더이상 입을 수 없지만 소중한 기억이 깃든 옷을 리폼해  개인의 취향과 경험이 고스란히 반영된 스타일을 완성합니다. 이 과정에서 옷은 단순한 패션 아이템을 넘어, 자기 표현의 매개체가 됩니다.',
-          },
-          {
-            title: 'Rich',
-            description: '오래 함께한 옷에는 이미 그 시간을 함께한 기존의 기억이 스며 있고, 그 옷을 새롭게 다듬고 변주하는 과정에서 또 다른 새로운 기억이 차곡차곡 더해집니다. 이렇게 과거와 현재가 겹쳐지며 형성된 흔적은 옷을 단순한 의복이 아닌 정체성과 기억이 중첩된 서사적 매체로 바꾸어 줍니다. Layered는 이 겹쳐진 기억과 정체성을 통해 풍부하고 입체적인 아름다움을 완성합니다.',
-          },
-          {
-            title: 'Flexibility',
-            description: 'Layered의 옷은 하나의 형태에 머무르지 않습니다. 같은 옷이라도 타일링의 변주,시간이 더해지며 달라지는 해석에 따라 새로운 모습을 드러냅니다. 이는 끊임없이 흐르고 변하는 자연, 구름의 층위와 닮아 있으며, 입는 사람의 개성과 순간의 감정에 따라 다양하게 적응하는 옷으로 완성됩니다. Layered가 추구하는 유연성은 곧 오래도록 입을 수 있는 지속성이자, 자신만의 스타일을 자유롭게 표현할 수 있는 가능성입니다.',
-          },
-          {
-            title: 'Sustainability',
-            description: '빠르게 소비되고 잊혀지는 패스트 패션과 달리, Layered는 옷이 가진 시간을 존중합니다. 오래 입을 수 있도록 튼튼하게,  또 다른 방식으로 다시 활용할 수 있도록 유연하게 디자인합니다. 기존의 옷을 해체하고 재구성하거나,  남겨진 원단을 새로운 옷으로 이어붙이며, 옷이 가진 생명을 이어갑니다. Layered는 패스트 패션을 지양하고 옷을 오래 활용하는 방식을 추구합니다. 기존의 옷을 새롭게 해석해, 오래도록 이어지는 패션을 지향합니다.',
-          },
-          {
-            title: 'package',
-            description: '',
-          },
-          {
-            title: 'brand book',
-            description: '',
-          },
-          {
-            title: 'gift box',
-            description: '',
-          },
-          {
-            title: 'brand tag',
-            description: '',
-          },
-          {
-            title: 'Web',
-            description: '',
           },
         ],
       },

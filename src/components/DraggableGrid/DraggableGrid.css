@@ -47,6 +47,10 @@ body.cursor-cross {
   cursor: none;
 }
 
+body.cursor-cross .details {
+  cursor: auto;
+}
+
 body.cursor-cross .details button,
 body.cursor-cross .details a,
 body.cursor-cross .details [role='button'],
@@ -233,21 +237,22 @@ a:focus-visible {
   width: 100%;
   height: 100%;
   min-height: inherit;
-  padding: 0;
+  padding: 0 40px;
   box-sizing: border-box;
   transform-origin: center center;
   will-change: transform;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .container.--is-loaded {
+  overflow: hidden;
   height: 100%;
   min-height: inherit;
 }
 
 .container.--is-details-showing {
   overflow: visible;
-  height: 100vh;
+  height: auto;
   min-height: 100vh;
 }
 .container::before {
@@ -265,10 +270,12 @@ a:focus-visible {
   position: absolute;
   top: 0;
   left: 0;
-  width: max-content;
+  width: 100%;
   height: max-content;
   display: flex;
   gap: 0;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .--is-loaded {
@@ -289,7 +296,7 @@ a:focus-visible {
 
 .product {
   position: relative;
-  width: 15vw;
+  width: calc((100vw - 80px) / 5);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
@@ -336,6 +343,7 @@ a:focus-visible {
   flex-direction: column;
   gap: 3vw;
   overflow-y: auto;
+  cursor: auto;
 }
 
 @media (max-width: 800px) {
@@ -779,5 +787,34 @@ p {
 
 .--is-showing {
   opacity: 1;
+}
+
+.product-tooltip {
+  position: fixed;
+  pointer-events: none;
+  z-index: 5000;
+  padding: 12px 18px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+  transform: translate(0, 0);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform-origin: top left;
+}
+
+.product-tooltip__title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.product-tooltip__designer {
+  font-size: 12px;
+  opacity: 0.8;
+  font-weight: 400;
 }
 

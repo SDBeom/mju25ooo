@@ -274,6 +274,7 @@
   flex-direction: column;
   gap: 0;
   padding-bottom: clamp(48px, 8vh, 120px);
+  overflow: visible;
 }
 
 .kim-work2-modal {
@@ -371,7 +372,7 @@
 
 .work-detail__card-title {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -386,7 +387,7 @@
 .work-detail__card-text p {
   margin: 0;
   color: rgba(0, 0, 0, 0.55);
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', var(--font-primary), sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -403,6 +404,7 @@
 .work-detail__section {
   padding: clamp(64px, 7vw, 120px) clamp(32px, 6vw, 72px);
   background: #ffffff;
+  overflow: visible;
 }
 
 .work-detail__hero {
@@ -413,12 +415,15 @@
   justify-content: space-between;
   gap: 0;
   background: linear-gradient(180deg, rgba(243, 241, 238, 0.6) 0%, #ffffff 35%);
+  overflow: visible;
+  min-width: 0;
 }
 
 .work-detail__hero-text {
   flex: 0 0 640px;
   max-width: 640px;
   width: 100%;
+  min-width: 0;
   height: 513px;
   min-height: 513px;
   display: flex;
@@ -429,6 +434,8 @@
   color: rgba(0, 0, 0, 0.85);
   padding: 120px 64px;
   box-sizing: border-box;
+  overflow: visible;
+  flex-shrink: 0;
 }
 
 .work-detail__text-group {
@@ -462,7 +469,7 @@
 }
 
 .work-detail__title {
-  font-family: 'Inter', 'Noto Sans KR', var(--font-primary), sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: clamp(2.6rem, 4vw, 56px);
   line-height: 1.1;
   font-weight: 700;
@@ -471,7 +478,7 @@
 }
 
 .work-detail__title--extension {
-  font-family: 'Inter', 'Noto Sans KR', var(--font-primary), sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: clamp(2.6rem, 4vw, 56px);
   line-height: 1.1;
   font-weight: 700;
@@ -481,7 +488,7 @@
 
 .work-detail__lead {
   margin: 0;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -502,7 +509,7 @@
 .work-detail__cta {
   padding: 12px 22px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', var(--font-primary), sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -539,10 +546,12 @@
   flex: 0 0 640px;
   max-width: 640px;
   width: 100%;
+  min-width: 0;
   height: auto;
   align-self: flex-start;
   border-radius: 0;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .work-detail__hero-media img {
@@ -612,7 +621,7 @@
 
 .work-detail__feature-title {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -624,7 +633,7 @@
 .work-detail__feature-caption {
   margin: 0;
   color: rgba(0, 0, 0, 0.55);
-  font-family: 'Inter', 'Noto Sans KR', var(--font-primary), sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -656,7 +665,7 @@
 
 .work-detail__gallery-title {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -666,7 +675,7 @@
 
 .work-detail__gallery-description {
   margin: 0;
-  font-family: 'Inter', 'Noto Sans KR', var(--font-primary), sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -864,7 +873,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--caravan .work-detail__feature--alternating .work-detail__feature-text > div h3 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -874,7 +883,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--caravan .work-detail__feature--alternating .work-detail__feature-text > div p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -955,7 +964,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--caravan .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-text h3 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -965,7 +974,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--caravan .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -1025,7 +1034,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--caravan .work-detail__feature-row .work-detail__feature-text > div h3 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -1035,7 +1044,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--caravan .work-detail__feature-row .work-detail__feature-text > div p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -1106,7 +1115,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--caravan .work-detail__text-block-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
@@ -1117,7 +1126,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--caravan .work-detail__text-block-content {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -1158,7 +1167,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--cellestial .work-detail__feature--alternating .work-detail__feature-text > div h3 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -1168,7 +1177,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--cellestial .work-detail__feature--alternating .work-detail__feature-text > div p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -1217,7 +1226,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--cellestial .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-text h3 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -1227,7 +1236,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--cellestial .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-text p {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -1270,7 +1279,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--cellestial .work-detail__card-text h4 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -1325,7 +1334,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail__detail-card-text h4 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -1335,7 +1344,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail__detail-card-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -1367,10 +1376,122 @@ body.kim-modal-cursor-cross {
   padding: 120px 64px;
 }
 
-.work-detail--fate-boardgame .work-detail__feature--alternating {
-  gap: 64px;
+.work-detail--fate-boardgame .work-detail__feature {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--fate-boardgame .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__image-block--feature {
+  width: 100%;
+  height: 648px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--fate-boardgame .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__image-block--feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--fate-boardgame .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--fate-boardgame .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--fate-boardgame .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--fate-boardgame .work-detail__cards {
+  padding: 120px 64px;
+}
+
+.work-detail--fate-boardgame .work-detail__cards-grid {
+  display: flex;
+  gap: 32px;
+  list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+.work-detail--fate-boardgame .work-detail__card {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--fate-boardgame .work-detail__card-image {
+  height: 483px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--fate-boardgame .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--fate-boardgame .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--fate-boardgame .work-detail__card-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--fate-boardgame .work-detail__card-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--fate-boardgame .work-detail__feature--alternating {
+  padding: 120px 64px;
+  gap: 64px;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
 }
 
 .work-detail--fate-boardgame .work-detail__feature--alternating .work-detail__feature-text {
@@ -1388,12 +1509,40 @@ body.kim-modal-cursor-cross {
   width: 100%;
 }
 
+.work-detail--fate-boardgame .work-detail__feature--alternating .work-detail__feature-text > div h3 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--fate-boardgame .work-detail__feature--alternating .work-detail__feature-text > div p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
 .work-detail--fate-boardgame .work-detail__feature--alternating .work-detail__image-block {
   flex: 0 0 544px;
   max-width: 544px;
   width: 544px;
   height: 432px;
   border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--fate-boardgame .work-detail__feature--alternating .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Cyber Jesasang layout styles (김채영 작품 2) */
@@ -1407,12 +1556,12 @@ body.kim-modal-cursor-cross {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
   height: 505px;
 }
 
 .work-detail--cyber-jesasang .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -1422,7 +1571,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--cyber-jesasang .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -1431,10 +1580,62 @@ body.kim-modal-cursor-cross {
   margin: 0;
 }
 
+.work-detail--cyber-jesasang .work-detail__feature {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--cyber-jesasang .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__image-block--feature {
+  width: 100%;
+  height: 648px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--cyber-jesasang .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__image-block--feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--cyber-jesasang .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--cyber-jesasang .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--cyber-jesasang .work-detail__feature:not(.work-detail__feature--alternating) .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
 .work-detail--cyber-jesasang .work-detail__feature--alternating {
+  padding: 120px 64px;
   gap: 64px;
-  padding: 0;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
 }
 
 .work-detail--cyber-jesasang .work-detail__feature--alternating .work-detail__feature-text {
@@ -1452,12 +1653,40 @@ body.kim-modal-cursor-cross {
   width: 100%;
 }
 
+.work-detail--cyber-jesasang .work-detail__feature--alternating .work-detail__feature-text > div h3 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--cyber-jesasang .work-detail__feature--alternating .work-detail__feature-text > div p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
 .work-detail--cyber-jesasang .work-detail__feature--alternating .work-detail__image-block {
   flex: 0 0 544px;
   max-width: 544px;
   width: 544px;
   height: 432px;
   border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--cyber-jesasang .work-detail__feature--alternating .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .work-detail--cyber-jesasang .work-detail__feature-rows {
@@ -1521,6 +1750,204 @@ body.kim-modal-cursor-cross {
   object-fit: cover;
 }
 
+.work-detail--cyber-jesasang .work-detail__cards {
+  padding: 120px 64px;
+}
+
+.work-detail--cyber-jesasang .work-detail__cards-grid {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--cyber-jesasang .work-detail__card {
+  flex: 0 0 362.667px;
+  max-width: 362.667px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-detail--cyber-jesasang .work-detail__card-image {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--cyber-jesasang .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--cyber-jesasang .work-detail__card-text {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--cyber-jesasang .work-detail__card-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--cyber-jesasang .work-detail__card-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* Dotianhong Isometric layout styles (도티안홍 작품 1) */
+.work-detail--dotianhong-isometric .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--dotianhong-isometric .work-detail__marquee {
+  padding: 0;
+  height: 0;
+  min-height: 0;
+}
+
+.work-detail--dotianhong-isometric .work-detail__section-header {
+  padding: 120px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--dotianhong-isometric .work-detail__section-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+}
+
+.work-detail--dotianhong-isometric .work-detail__feature {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--dotianhong-isometric .work-detail__feature--center {
+  align-items: center;
+}
+
+.work-detail--dotianhong-isometric .work-detail__image-block--feature {
+  width: 100%;
+  height: 648px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--dotianhong-isometric .work-detail__feature--center .work-detail__image-block--feature {
+  width: 1152px;
+  max-width: 100%;
+}
+
+.work-detail--dotianhong-isometric .work-detail__image-block--feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--dotianhong-isometric .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--dotianhong-isometric .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* Dotianhong Animated layout styles (도티안홍 작품 2) */
+.work-detail--dotianhong-animated .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--dotianhong-animated .work-detail__marquee {
+  padding: 0;
+  height: 0;
+  min-height: 0;
+}
+
+.work-detail--dotianhong-animated .work-detail__feature {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--dotianhong-animated .work-detail__feature--center {
+  align-items: center;
+}
+
+.work-detail--dotianhong-animated .work-detail__image-block--feature {
+  width: 100%;
+  height: 648px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--dotianhong-animated .work-detail__feature--center .work-detail__image-block--feature {
+  width: 1152px;
+  max-width: 100%;
+}
+
+.work-detail--dotianhong-animated .work-detail__image-block--feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--dotianhong-animated .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--dotianhong-animated .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
 /* Parkjina Cross Cooty layout styles (박진아 작품 1) */
 .work-detail--parkjina-cross-cooty .work-detail__section {
   padding: 120px 64px;
@@ -1536,7 +1963,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--parkjina-cross-cooty .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -1546,7 +1973,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--parkjina-cross-cooty .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -1842,7 +2269,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--parkhaein-chrome4 .work-detail__gallery-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -1852,7 +2279,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--parkhaein-chrome4 .work-detail__gallery-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -1940,7 +2367,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--parkhaein-chrome4 .work-detail__instagram-card-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.45;
@@ -1950,7 +2377,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--parkhaein-chrome4 .work-detail__instagram-card-subtitle {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -1960,7 +2387,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--parkhaein-chrome4 .work-detail__instagram-card-link {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -1975,7 +2402,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--parkhaein-chrome4 .work-detail__footer-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -2046,7 +2473,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--parkheechan-pledge .work-detail__gallery-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -2179,7 +2606,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--songdahee-card-of-love .work-detail__gallery-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -2189,7 +2616,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--songdahee-card-of-love .work-detail__gallery-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -2294,7 +2721,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--songdahee-peony .work-detail__card--poem .work-detail__card-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.45;
@@ -2304,7 +2731,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--songdahee-peony .work-detail__card--poem .work-detail__card-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.4;
@@ -2502,7 +2929,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--anseonmin-dots .work-detail__feature-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -2621,7 +3048,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-sasindo .work-detail__gallery-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -2631,7 +3058,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-sasindo .work-detail__gallery-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -2701,7 +3128,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-sasindo .work-detail__text-section-label {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -2711,7 +3138,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-sasindo .work-detail__text-section-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -2721,7 +3148,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-sasindo .work-detail__text-section-content {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -2750,7 +3177,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-liminal .work-detail__pull-quote-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.3;
@@ -2760,7 +3187,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-liminal .work-detail__pull-quote-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.4;
@@ -2825,7 +3252,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-liminal .work-detail__testimonial-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -2835,7 +3262,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-liminal .work-detail__testimonial-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -2891,7 +3318,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-liminal .work-detail__testimonial-author-name {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
@@ -2900,7 +3327,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-liminal .work-detail__testimonial-author-role {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
@@ -2909,7 +3336,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--woosumin-liminal .work-detail__testimonial-content {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -2960,7 +3387,7 @@ body.kim-modal-cursor-cross {
 .work-detail--leegabi-overcooked .work-detail__gallery-section {
   padding: 120px 64px;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -2976,7 +3403,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leegabi-overcooked .work-detail__gallery-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -2986,7 +3413,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leegabi-overcooked .work-detail__gallery-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -3156,7 +3583,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__text-intro-label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -3166,7 +3593,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -3176,7 +3603,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -3211,7 +3638,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__text-block-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
@@ -3221,7 +3648,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__text-block-content {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -3334,7 +3761,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-card-text h4 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -3344,7 +3771,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-card-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -3387,7 +3814,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-plotting-room .work-detail__text-intro-label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -3397,7 +3824,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-plotting-room .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -3407,7 +3834,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-plotting-room .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -3498,7 +3925,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leeun-9e9e9e .work-detail__testimonial-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -3554,7 +3981,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leeun-9e9e9e .work-detail__testimonial-author-name {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
@@ -3563,7 +3990,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leeun-9e9e9e .work-detail__testimonial-author-role {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
@@ -3572,13 +3999,149 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leeun-9e9e9e .work-detail__testimonial-content {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
   letter-spacing: -0.09px;
   color: #000000;
   margin: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__feature {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__image-block--feature {
+  width: 100%;
+  height: 648px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__image-block--feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__feature-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-section {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-masonry {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-column:first-child {
+  flex: 0 0 362.667px;
+  max-width: 362.667px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child {
+  height: 251px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(3) {
+  height: 251px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:nth-child(2) {
+  height: 411px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* 이운 작품 2 (Layered) 스타일 */
@@ -3596,7 +4159,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leeun-layered .work-detail__text-intro-label {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -3606,7 +4169,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leeun-layered .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -3616,7 +4179,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leeun-layered .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -3644,7 +4207,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leeun-layered .work-detail__gallery-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -3687,8 +4250,16 @@ body.kim-modal-cursor-cross {
   height: 300px;
 }
 
+.work-detail--leeun-layered .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(3) {
+  height: 251px;
+}
+
 .work-detail--leeun-layered .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
   height: 300px;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:nth-child(2) {
+  height: 411px;
 }
 
 .work-detail--leeun-layered .work-detail__gallery-item {
@@ -3745,6 +4316,26 @@ body.kim-modal-cursor-cross {
   gap: 24px;
 }
 
+.work-detail--leeun-layered .work-detail__feature-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leeun-layered .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
 .work-detail--leeun-layered .work-detail__feature-row .work-detail__image-block {
   flex: 0 0 544px;
   max-width: 544px;
@@ -3784,6 +4375,325 @@ body.kim-modal-cursor-cross {
   overflow: hidden;
 }
 
+.work-detail--leeun-layered .work-detail__card-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leeun-layered .work-detail__cards {
+  padding: 120px 64px;
+}
+
+.work-detail--leeun-layered .work-detail__cards-grid {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--leeun-layered .work-detail__card {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leeun-layered .work-detail__card-image {
+  height: 483px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--leeun-layered .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leeun-layered .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 김재은 작품 1 (Go Fetch!) 스타일 */
+.work-detail--gofetch .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--gofetch .work-detail__feature {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--gofetch .work-detail__image-block--feature {
+  width: 100%;
+  height: 648px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--gofetch .work-detail__image-block--feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--gofetch .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--gofetch .work-detail__feature-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--gofetch .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--gofetch .work-detail__cards {
+  padding: 120px 64px;
+}
+
+.work-detail--gofetch .work-detail__cards-grid--character {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--gofetch .work-detail__card--character {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--gofetch .work-detail__card-image--character {
+  height: 483px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--gofetch .work-detail__card-image--character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--gofetch .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--gofetch .work-detail__card-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--gofetch .work-detail__card-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--gofetch .work-detail__gallery-section {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+}
+
+.work-detail--gofetch .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.work-detail--gofetch .work-detail__gallery-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--gofetch .work-detail__gallery-description {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--gofetch .work-detail__gallery-masonry {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.work-detail--gofetch .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--gofetch .work-detail__gallery-column:first-child {
+  flex: 0 0 362.667px;
+  max-width: 362.667px;
+}
+
+.work-detail--gofetch .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--gofetch .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--gofetch .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child {
+  height: 251px;
+}
+
+.work-detail--gofetch .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--gofetch .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(3) {
+  height: 251px;
+}
+
+.work-detail--gofetch .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--gofetch .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:nth-child(2) {
+  height: 411px;
+}
+
+.work-detail--gofetch .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--gofetch .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--gofetch .work-detail__cards-grid--story {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--gofetch .work-detail__card--story {
+  flex: 0 0 362.667px;
+  max-width: 362.667px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-detail--gofetch .work-detail__card-image--story {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--gofetch .work-detail__card-image--story img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--gofetch .work-detail__card-text--story {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--gofetch .work-detail__card-text--story .work-detail__card-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--gofetch .work-detail__card-text--story p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
 /* 이지민 작품 1 (Veneti) 스타일 */
 .work-detail--leejimin-veneti .work-detail__section {
   padding: 120px 64px;
@@ -3799,7 +4709,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__text-intro-label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -3809,7 +4719,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -3819,7 +4729,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -3901,7 +4811,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__bento-card-text h5 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -3911,7 +4821,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__bento-card-text p {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -3937,7 +4847,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__gallery-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -3947,7 +4857,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__gallery-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -4027,7 +4937,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__quote-text {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.3;
@@ -4065,7 +4975,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__quote-author-name {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.4;
@@ -4074,7 +4984,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-veneti .work-detail__quote-author-role {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -4097,7 +5007,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-lelabo .work-detail__text-intro-label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -4107,7 +5017,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-lelabo .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -4117,7 +5027,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-lelabo .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -4203,7 +5113,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-lelabo .work-detail__gallery-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -4213,7 +5123,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leejimin-lelabo .work-detail__gallery-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -4344,7 +5254,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeongitae-dolor-saga .work-detail__bento-card-text h5 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -4354,7 +5264,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeongitae-dolor-saga .work-detail__bento-card-text p {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -4489,7 +5399,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeongitae-war-orb .work-detail__bento-card-text h5 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -4499,7 +5409,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeongitae-war-orb .work-detail__bento-card-text p {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -4528,7 +5438,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeonseorin-raven-x .work-detail__text-intro-label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -4538,7 +5448,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeonseorin-raven-x .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -4548,7 +5458,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeonseorin-raven-x .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -4634,7 +5544,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeonseorin-raven-x .work-detail__gallery-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -4747,7 +5657,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeonseorin-raven-x .work-detail__card--turntable .work-detail__card-text h5 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.45;
@@ -4757,7 +5667,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeonseorin-raven-x .work-detail__card--turntable .work-detail__card-text p {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.4;
@@ -4782,7 +5692,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeonseorin-karon .work-detail__text-intro-label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -4792,7 +5702,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeonseorin-karon .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -4802,7 +5712,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jeonseorin-karon .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -5007,7 +5917,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jungjimin-the-gothic .work-detail__bento-card-text h5 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -5017,7 +5927,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jungjimin-the-gothic .work-detail__bento-card-text p {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -5162,7 +6072,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__bento-card-text h5 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -5172,7 +6082,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__bento-card-text p {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -5194,7 +6104,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-youth-dream .work-detail__text-intro-label {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -5204,7 +6114,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-youth-dream .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -5214,7 +6124,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-youth-dream .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -5247,7 +6157,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-youth-dream .work-detail__text-block h5 {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
@@ -5257,7 +6167,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-youth-dream .work-detail__text-block p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -5277,7 +6187,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-youth-dream .work-detail__gallery-title {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -5351,7 +6261,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-the-reason .work-detail__text-intro-label {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -5361,7 +6271,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-the-reason .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -5371,7 +6281,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-the-reason .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -5404,7 +6314,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-the-reason .work-detail__text-block h5 {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
@@ -5414,7 +6324,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-the-reason .work-detail__text-block p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -5482,7 +6392,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-the-reason .work-detail__bento-card-text h5 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -5492,7 +6402,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--johaneul-the-reason .work-detail__bento-card-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -5523,7 +6433,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-master-imagination .work-detail__quote-text {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.3;
@@ -5537,7 +6447,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-master-imagination .work-detail__text-intro-label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -5547,7 +6457,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-master-imagination .work-detail__text-intro-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -5557,7 +6467,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-master-imagination .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -5566,7 +6476,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-master-imagination .work-detail__gallery-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -5620,7 +6530,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-eternal-vision .work-detail__quote-text {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.3;
@@ -5634,7 +6544,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-eternal-vision .work-detail__text-intro-label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -5644,7 +6554,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-eternal-vision .work-detail__text-intro-title {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -5654,7 +6564,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-eternal-vision .work-detail__text-intro-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.45;
@@ -5663,7 +6573,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-eternal-vision .work-detail__feature-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -5672,7 +6582,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--heo-jihoon-eternal-vision .work-detail__feature-row .work-detail__feature-text h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
