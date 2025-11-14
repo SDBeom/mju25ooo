@@ -1983,3 +1983,3727 @@ body.kim-modal-cursor-cross {
   color: rgba(0, 0, 0, 0.45);
   margin: 0;
 }
+
+/* 박희찬 작품 1 (PLEDGE) 스타일 */
+.work-detail--parkheechan-pledge .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__cards-grid--bento {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__card--bento-1 {
+  flex: 1 0 0;
+  min-width: 336px;
+  max-width: 388px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__card--bento-2 {
+  flex: 1 0 0;
+  min-width: 516px;
+  max-width: none;
+}
+
+.work-detail--parkheechan-pledge .work-detail__card--bento-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+  max-width: none;
+}
+
+.work-detail--parkheechan-pledge .work-detail__card--bento-1 .work-detail__card-image,
+.work-detail--parkheechan-pledge .work-detail__card--bento-2 .work-detail__card-image,
+.work-detail--parkheechan-pledge .work-detail__card--bento-3 .work-detail__card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--parkheechan-pledge .work-detail__card--bento-3 .work-detail__card-text {
+  padding-right: 320px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-section {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-masonry {
+  display: flex;
+  gap: 32px;
+  width: 1141px;
+  max-width: 100%;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-column:first-child .work-detail__gallery-item {
+  height: 411px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item {
+  height: 251px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--parkheechan-pledge .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 박희찬 작품 2 (2025 Animation reel) 스타일 */
+.work-detail--parkheechan-animation-reel .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--parkheechan-animation-reel .work-detail__cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.work-detail--parkheechan-animation-reel .work-detail__card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--parkheechan-animation-reel .work-detail__card-image {
+  height: 483px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--parkheechan-animation-reel .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 송다희 작품 1 (A Card of Love) 스타일 */
+.work-detail--songdahee-card-of-love .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__card-image {
+  height: 483px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-section {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-masonry {
+  display: flex;
+  gap: 32px;
+  width: 1141px;
+  max-width: 100%;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-column:first-child .work-detail__gallery-item {
+  height: 411px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item {
+  height: 251px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--songdahee-card-of-love .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 송다희 작품 2 (Peony) 스타일 */
+.work-detail--songdahee-peony .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--songdahee-peony .work-detail__cards-grid--poem {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.work-detail--songdahee-peony .work-detail__card--poem {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 464px;
+}
+
+.work-detail--songdahee-peony .work-detail__card--poem .work-detail__card-image {
+  height: 240px;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.work-detail--songdahee-peony .work-detail__card--poem .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--songdahee-peony .work-detail__card--poem .work-detail__card-text {
+  flex: 1 0 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  height: 224px;
+}
+
+.work-detail--songdahee-peony .work-detail__card--poem .work-detail__card-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--songdahee-peony .work-detail__card--poem .work-detail__card-text p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* 심성빈 작품 1 (Linked) 스타일 */
+.work-detail--simseongbin-linked .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--simseongbin-linked .work-detail__cards-grid--bento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+}
+
+.work-detail--simseongbin-linked .work-detail__card--bento-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--simseongbin-linked .work-detail__card--bento-2 {
+  flex: 1 0 0;
+  min-width: 516px;
+}
+
+.work-detail--simseongbin-linked .work-detail__card--bento-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+}
+
+.work-detail--simseongbin-linked .work-detail__card--bento-1 .work-detail__card-image,
+.work-detail--simseongbin-linked .work-detail__card--bento-2 .work-detail__card-image,
+.work-detail--simseongbin-linked .work-detail__card--bento-3 .work-detail__card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--simseongbin-linked .work-detail__cards-grid--tech {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.work-detail--simseongbin-linked .work-detail__card--tech {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 384px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-detail--simseongbin-linked .work-detail__card--tech .work-detail__card-text {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--simseongbin-linked .work-detail__card--tech .work-detail__card-image--tech {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 234px;
+  border: 8px solid white;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.work-detail--simseongbin-linked .work-detail__card--tech .work-detail__card-image--tech img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 심성빈 작품 2 (BOOM) 스타일 */
+.work-detail--simseongbin-boom .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--simseongbin-boom .work-detail__cards-grid--bento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+}
+
+.work-detail--simseongbin-boom .work-detail__card--bento-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--simseongbin-boom .work-detail__card--bento-2 {
+  flex: 1 0 0;
+  min-width: 516px;
+}
+
+.work-detail--simseongbin-boom .work-detail__card--bento-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+}
+
+.work-detail--simseongbin-boom .work-detail__card--bento-1 .work-detail__card-image,
+.work-detail--simseongbin-boom .work-detail__card--bento-2 .work-detail__card-image,
+.work-detail--simseongbin-boom .work-detail__card--bento-3 .work-detail__card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--simseongbin-boom .work-detail__card--bento-3 .work-detail__card-text {
+  padding-right: 320px;
+}
+
+.work-detail--simseongbin-boom .work-detail__cards-grid--tech {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.work-detail--simseongbin-boom .work-detail__card--tech {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 384px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-detail--simseongbin-boom .work-detail__card--tech .work-detail__card-text {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--simseongbin-boom .work-detail__card--tech .work-detail__card-image--tech {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 234px;
+  border: 8px solid white;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.work-detail--simseongbin-boom .work-detail__card--tech .work-detail__card-image--tech img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 안선민 작품 1 (점점점) 스타일 */
+.work-detail--anseonmin-dots .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.work-detail--anseonmin-dots .work-detail__image-block--feature {
+  width: 100%;
+  max-width: 1152px;
+  height: 648px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--anseonmin-dots .work-detail__image-block--feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-rows {
+  padding: 0 64px;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--anseonmin-dots .work-detail__feature-row .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--anseonmin-dots .work-detail__cards-grid--bento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+}
+
+.work-detail--anseonmin-dots .work-detail__card--bento-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--anseonmin-dots .work-detail__card--bento-2 {
+  flex: 1 0 0;
+  min-width: 516px;
+}
+
+.work-detail--anseonmin-dots .work-detail__card--bento-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+}
+
+.work-detail--anseonmin-dots .work-detail__card--bento-1 .work-detail__card-image,
+.work-detail--anseonmin-dots .work-detail__card--bento-2 .work-detail__card-image,
+.work-detail--anseonmin-dots .work-detail__card--bento-3 .work-detail__card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--anseonmin-dots .work-detail__card--bento-3 .work-detail__card-text {
+  padding-right: 320px;
+}
+
+/* 우수민 작품 1 (사신도) 스타일 */
+.work-detail--woosumin-sasindo .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-section {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-masonry {
+  display: flex;
+  gap: 32px;
+  width: 1141px;
+  max-width: 100%;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-column:first-child .work-detail__gallery-item {
+  height: 411px;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item {
+  height: 251px;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--woosumin-sasindo .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--woosumin-sasindo .work-detail__text-section {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--woosumin-sasindo .work-detail__text-section-label {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--woosumin-sasindo .work-detail__text-section-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--woosumin-sasindo .work-detail__text-section-content {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* 우수민 작품 2 (리미널 가이드앱) 스타일 */
+.work-detail--woosumin-liminal .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--woosumin-liminal .work-detail__pull-quote {
+  padding: 129px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--woosumin-liminal .work-detail__pull-quote-content {
+  border-left: 2px solid #dadada;
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--woosumin-liminal .work-detail__pull-quote-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--woosumin-liminal .work-detail__pull-quote-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.36px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--woosumin-liminal .work-detail__cards-grid--tech {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.work-detail--woosumin-liminal .work-detail__card--tech {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 384px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-text {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-image--tech {
+  position: absolute;
+  bottom: 0;
+  left: 61px;
+  width: 240px;
+  height: 234px;
+  border: 8px solid white;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-image--tech img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-wall {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-author {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-author-info {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-author-name {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  color: #000000;
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-author-role {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.work-detail--woosumin-liminal .work-detail__testimonial-content {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: #000000;
+  margin: 0;
+}
+
+/* 이가비 작품 1 (Overcooked: 카페 대소동) 스타일 */
+.work-detail--leegabi-overcooked .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__cards-grid--bento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__card--bento-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__card--bento-2 {
+  flex: 1 0 0;
+  min-width: 516px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__card--bento-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__card--bento-1 .work-detail__card-image,
+.work-detail--leegabi-overcooked .work-detail__card--bento-2 .work-detail__card-image,
+.work-detail--leegabi-overcooked .work-detail__card--bento-3 .work-detail__card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--leegabi-overcooked .work-detail__card--bento-3 .work-detail__card-text {
+  padding-right: 320px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-section {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-masonry {
+  display: flex;
+  gap: 32px;
+  width: 1141px;
+  max-width: 100%;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-column:first-child .work-detail__gallery-item {
+  height: 411px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item {
+  height: 251px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--leegabi-overcooked .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 이가비 작품 2 (Abyss Racing: 세이렌의 보물) 스타일 */
+.work-detail--leegabi-abyss-racing .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__feature-rows {
+  padding: 0 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__feature-row .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__cards-grid--bento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__card--bento-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__card--bento-2 {
+  flex: 1 0 0;
+  min-width: 516px;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__card--bento-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__card--bento-1 .work-detail__card-image,
+.work-detail--leegabi-abyss-racing .work-detail__card--bento-2 .work-detail__card-image,
+.work-detail--leegabi-abyss-racing .work-detail__card--bento-3 .work-detail__card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--leegabi-abyss-racing .work-detail__card--bento-3 .work-detail__card-text {
+  padding-right: 320px;
+}
+
+/* 이다영 작품 1 (Ready to Merry) 스타일 */
+.work-detail--leedayoung-ready-to-merry .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__text-intro-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__text-blocks {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__text-blocks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__text-block {
+  flex: 1 0 0;
+  min-width: 324px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__text-block-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.48px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__text-block-content {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  width: min-content;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__feature-rows {
+  padding: 0 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__feature-row .work-detail__image-block img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 768px;
+  height: 432px;
+  object-fit: cover;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-grid {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  height: 723px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1 0 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card--center {
+  align-items: center;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card--large {
+  flex: 1 0 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card-text {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card-text h4 {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card-text p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card-image {
+  flex: 1 0 0;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 560 / 218;
+  overflow: hidden;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card--large .work-detail__detail-card-image {
+  aspect-ratio: 560 / 596;
+}
+
+/* 이다영 작품 2 (플롯팅룸) 스타일 */
+.work-detail--leedayoung-plotting-room .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__text-intro-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__feature-rows {
+  padding: 0 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--leedayoung-plotting-room .work-detail__feature-row .work-detail__image-block img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 768px;
+  height: 432px;
+  object-fit: cover;
+}
+
+/* 이운 작품 1 (9e9e9e) 스타일 */
+.work-detail--leeun-9e9e9e .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-wall {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-grid {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-card {
+  flex: 1 0 0;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-author {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 0 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-author-name {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  color: #000000;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-author-role {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.work-detail--leeun-9e9e9e .work-detail__testimonial-content {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: #000000;
+  margin: 0;
+}
+
+/* 이운 작품 2 (Layered) 스타일 */
+.work-detail--leeun-layered .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--leeun-layered .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leeun-layered .work-detail__text-intro-label {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leeun-layered .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leeun-layered .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-section {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-masonry {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-column:first-child {
+  flex: 0 0 362.667px;
+  max-width: 362.667px;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child {
+  height: 251px;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--leeun-layered .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leeun-layered .work-detail__feature-rows {
+  padding: 0 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leeun-layered .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--leeun-layered .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.work-detail--leeun-layered .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--leeun-layered .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--leeun-layered .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leeun-layered .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--leeun-layered .work-detail__feature-row .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leeun-layered .work-detail__cards-grid--bento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+}
+
+.work-detail--leeun-layered .work-detail__card--bento-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--leeun-layered .work-detail__card--bento-2 {
+  flex: 1 0 0;
+  min-width: 516px;
+}
+
+.work-detail--leeun-layered .work-detail__card--bento-1 .work-detail__card-image,
+.work-detail--leeun-layered .work-detail__card--bento-2 .work-detail__card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* 이지민 작품 1 (Veneti) 스타일 */
+.work-detail--leejimin-veneti .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--leejimin-veneti .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leejimin-veneti .work-detail__text-intro-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-grid {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 723px;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1 0 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card--center {
+  align-items: center;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card--large {
+  flex: 1 0 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card-image {
+  flex: 1 0 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card--center .work-detail__bento-card-image {
+  aspect-ratio: 560 / 359;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card:not(.work-detail__bento-card--center) .work-detail__bento-card-image {
+  aspect-ratio: 560 / 192.5;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card--large .work-detail__bento-card-image {
+  aspect-ratio: 560 / 570;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card-text {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card-text h5 {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__bento-card-text p {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-grid {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-column:first-child {
+  flex: 0 0 362.667px;
+  max-width: 362.667px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child {
+  height: 251px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:last-child {
+  height: 251px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--leejimin-veneti .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leejimin-veneti .work-detail__quote {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--leejimin-veneti .work-detail__quote-text {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.96px;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  font-style: normal;
+}
+
+.work-detail--leejimin-veneti .work-detail__quote-author {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.work-detail--leejimin-veneti .work-detail__quote-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__quote-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leejimin-veneti .work-detail__quote-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.work-detail--leejimin-veneti .work-detail__quote-author-name {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.36px;
+  color: #000000;
+}
+
+.work-detail--leejimin-veneti .work-detail__quote-author-role {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* 이지민 작품 2 (LE LABO) 스타일 */
+.work-detail--leejimin-lelabo .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__text-intro-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-rows {
+  padding: 0 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-row .work-detail__image-block img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 768px;
+  height: 432px;
+  object-fit: cover;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-grid {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-column:first-child {
+  flex: 0 0 362.667px;
+  max-width: 362.667px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child {
+  height: 251px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:last-child {
+  height: 251px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--leejimin-lelabo .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 전기태 작품 1 (Dolor Saga) 스타일 */
+.work-detail--jeongitae-dolor-saga .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento {
+  padding: 17px 64px 120px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-grid--jeongitae {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card--jeongitae-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card--jeongitae-2 {
+  flex: 1 0 0;
+  min-width: 516px;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card--jeongitae-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card-text h5 {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card-text p {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__bento-card--jeongitae-3 .work-detail__bento-card-text {
+  padding-right: 320px;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__feature-rows {
+  padding: 16px 64px 120px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--jeongitae-dolor-saga .work-detail__feature-row .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 전기태 작품 2 (War Orb) 스타일 */
+.work-detail--jeongitae-war-orb .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-grid--jeongitae {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card--jeongitae-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card--jeongitae-2 {
+  flex: 1 0 0;
+  min-width: 516px;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card--jeongitae-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card--jeongitae-2 .work-detail__bento-card-image {
+  width: 732px;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card--jeongitae-2 .work-detail__bento-card-text {
+  width: 732px;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card-text h5 {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card-text p {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.work-detail--jeongitae-war-orb .work-detail__bento-card--jeongitae-3 .work-detail__bento-card-text {
+  padding-right: 320px;
+}
+
+/* 전서린 작품 1 (RAVEN-X) 스타일 */
+.work-detail--jeonseorin-raven-x .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__text-intro-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__feature-rows {
+  padding: 0 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__feature-row .work-detail__image-block img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 768px;
+  height: 432px;
+  object-fit: cover;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-grid {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-column:first-child {
+  flex: 0 0 362.667px;
+  max-width: 362.667px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child {
+  height: 251px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:last-child {
+  height: 251px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__cards-grid--turntable {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__card--turntable {
+  flex: 1 0 0;
+  max-width: 362.667px;
+  min-width: 336px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__card--turntable .work-detail__card-image {
+  height: 240px;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__card--turntable .work-detail__card-image img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 427px;
+  height: 240px;
+  object-fit: cover;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__card--turntable .work-detail__card-text {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__card--turntable .work-detail__card-text h5 {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jeonseorin-raven-x .work-detail__card--turntable .work-detail__card-text p {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* 전서린 작품 2 (KARON) 스타일 */
+.work-detail--jeonseorin-karon .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--jeonseorin-karon .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--jeonseorin-karon .work-detail__text-intro-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--jeonseorin-karon .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jeonseorin-karon .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--jeonseorin-karon .work-detail__feature-rows {
+  padding: 0 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jeonseorin-karon .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--jeonseorin-karon .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.work-detail--jeonseorin-karon .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--jeonseorin-karon .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--jeonseorin-karon .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--jeonseorin-karon .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jeonseorin-karon .work-detail__feature-row .work-detail__image-block img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1032px;
+  height: 580px;
+  object-fit: cover;
+}
+
+/* 정지민 작품 1 (The Gothic) 스타일 */
+.work-detail--jungjimin-the-gothic .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-rows {
+  padding: 0 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-grid--jungjimin {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 723px;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1 0 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card--center {
+  align-items: center;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card--large {
+  flex: 1 0 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card-image {
+  flex: 1 0 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card--center .work-detail__bento-card-image {
+  aspect-ratio: 560 / 359;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card:not(.work-detail__bento-card--center) .work-detail__bento-card-image {
+  aspect-ratio: 560 / 192.5;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card--large .work-detail__bento-card-image {
+  aspect-ratio: 560 / 570;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card-text {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card-text h5 {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__bento-card-text p {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* 정지민 작품 2 (The Weapon) 스타일 */
+.work-detail--jungjimin-the-weapon .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-rows {
+  padding: 0 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-rows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-row {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+  padding: 40px 0 120px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-grid--jungjimin {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 723px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1 0 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--center {
+  align-items: center;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--large {
+  flex: 1 0 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card-image {
+  flex: 1 0 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--center .work-detail__bento-card-image {
+  aspect-ratio: 560 / 359;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card:not(.work-detail__bento-card--center) .work-detail__bento-card-image {
+  aspect-ratio: 560 / 192.5;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--large .work-detail__bento-card-image {
+  aspect-ratio: 560 / 570;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card-text {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card-text h5 {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card-text p {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* 조하늘 작품 1 (청춘몽) 스타일 */
+.work-detail--johaneul-youth-dream .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__text-intro-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 16px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin-bottom: 32px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.work-detail--johaneul-youth-dream .work-detail__text-blocks {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__text-blocks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 48px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__text-block {
+  flex: 1 0 0;
+  min-width: 324px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__text-block h5 {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.48px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__text-block p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-header {
+  margin-bottom: 24px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-grid--masonry {
+  display: flex;
+  gap: 32px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-column {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(1) {
+  height: 251px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(3) {
+  height: 251px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-column:last-child .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-column:last-child .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--johaneul-youth-dream .work-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 조하늘 작품 2 (The Reason that I Live) 스타일 */
+.work-detail--johaneul-the-reason .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--johaneul-the-reason .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--johaneul-the-reason .work-detail__text-intro-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 16px;
+}
+
+.work-detail--johaneul-the-reason .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin-bottom: 32px;
+}
+
+.work-detail--johaneul-the-reason .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.work-detail--johaneul-the-reason .work-detail__text-blocks {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--johaneul-the-reason .work-detail__text-blocks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 48px;
+}
+
+.work-detail--johaneul-the-reason .work-detail__text-block {
+  flex: 1 0 0;
+  min-width: 324px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--johaneul-the-reason .work-detail__text-block h5 {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.48px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.work-detail--johaneul-the-reason .work-detail__text-block p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-grid--johaneul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 48px;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card {
+  flex: 1 0 0;
+  min-width: 336px;
+  max-width: 388px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card:first-child {
+  max-width: 388px;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card:nth-child(2) {
+  min-width: 516px;
+  flex: 1 0 0;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card:last-child {
+  min-width: 1072px;
+  flex: 1 0 0;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card-image {
+  height: 348px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card-text h5 {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card-text p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.work-detail--johaneul-the-reason .work-detail__bento-card:last-child .work-detail__bento-card-text {
+  padding-right: 320px;
+}
+
+/* 허지훈 작품 1 (Master your Imagination) 스타일 */
+.work-detail--heo-jihoon-master-imagination .work-detail__section {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__quote {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__quote-text {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__text-intro-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 16px;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__text-intro-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin-bottom: 32px;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__gallery-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin-top: 24px;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(1) {
+  height: 251px;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(3) {
+  height: 251px;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__gallery-column:last-child .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--heo-jihoon-master-imagination .work-detail__gallery-column:last-child .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+/* 허지훈 작품 2 (Eternal Vision) 스타일 */
+.work-detail--heo-jihoon-eternal-vision .work-detail__section {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__quote {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__quote-text {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__text-intro {
+  padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__text-intro-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 16px;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__text-intro-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin-bottom: 32px;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__text-intro-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__feature-text p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__feature-row .work-detail__feature-text h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(1) {
+  height: 251px;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(3) {
+  height: 251px;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__gallery-column:last-child .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--heo-jihoon-eternal-vision .work-detail__gallery-column:last-child .work-detail__gallery-item:last-child {
+  height: 411px;
+}

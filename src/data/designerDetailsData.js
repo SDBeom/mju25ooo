@@ -136,31 +136,181 @@ import parkHaeinWork1_13 from '../assets/박해인/박해인_모션디자인_작
 import parkHaeinImage from '../assets/박해인/Image.png';
 
 import parkHeechanReel from '../assets/박희찬/박희찬_게임콘텐츠_작품1_01.webp';
+import parkHeechanWork1_02 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_02.png';
+import parkHeechanWork1_03 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_03.png';
+import parkHeechanWork1_04 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_04.png';
+import parkHeechanWork1_05 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_05.png';
+import parkHeechanWork1_06 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_06.png';
+import parkHeechanWork1_07 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_07.png';
+import parkHeechanWork1_08 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_08.png';
+import parkHeechanWork1_10 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_10.png';
+import parkHeechanWork1_11 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_11.png';
+import parkHeechanWork1_12 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_12.png';
+import parkHeechanWork1_13 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_13.png';
+import parkHeechanWork1_14 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_14.png';
 import parkHeechanPledge from '../assets/박희찬/박희찬_게임콘텐츠_작품2_01.webp';
+import parkHeechanWork2_02 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_02.png';
+import parkHeechanWork2_03 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_03.png';
+import parkHeechanWork2_04 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_04.png';
+import parkHeechanWork2_05 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_05.png';
+import parkHeechanWork2_06 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_06.png';
 
 import thumbHiFive from '../assets/Thumb/썸네일_서동범_HiFive.webp';
 import thumbArcaneJinx from '../assets/Thumb/썸네일_서원준_ArcaneJinx.webp';
 import thumbAstra from '../assets/Thumb/썸네일_서원준_Astra.webp';
 
 import songDaheeCardOfLove from '../assets/송다희/송다희_영상콘텐츠_작품1_01.webp';
+import songDaheeWork1_02 from '../assets/송다희/송다희_영상콘텐츠_작품1_02.png';
+import songDaheeWork1_03 from '../assets/송다희/송다희_영상콘텐츠_작품1_03.png';
+import songDaheeWork1_04 from '../assets/송다희/송다희_영상콘텐츠_작품1_04.png';
+import songDaheeWork1_05 from '../assets/송다희/송다희_영상콘텐츠_작품1_05.png';
+import songDaheeWork1_06 from '../assets/송다희/송다희_영상콘텐츠_작품1_06.png';
+import songDaheeWork1_07 from '../assets/송다희/송다희_영상콘텐츠_작품1_07.png';
+import songDaheeWork1_08 from '../assets/송다희/송다희_영상콘텐츠_작품1_08.png';
+import songDaheeWork1_09 from '../assets/송다희/송다희_영상콘텐츠_작품1_09.png';
+import songDaheeWork1_10 from '../assets/송다희/송다희_영상콘텐츠_작품1_10.png';
+import songDaheeWork1_11 from '../assets/송다희/송다희_영상콘텐츠_작품1_11.png';
 import songDaheePeony from '../assets/송다희/송다희_영상콘텐츠_작품2_01.webp';
+import songDaheeWork2_02 from '../assets/송다희/송다희_영상콘텐츠_작품2_02.png';
+import songDaheeWork2_03 from '../assets/송다희/송다희_영상콘텐츠_작품2_03.png';
+import songDaheeWork2_04 from '../assets/송다희/송다희_영상콘텐츠_작품2_04.png';
+import songDaheeWork2_05 from '../assets/송다희/송다희_영상콘텐츠_작품2_05.png';
+import songDaheeWork2_06 from '../assets/송다희/송다희_영상콘텐츠_작품2_06.png';
 
 import simSeongbinBoom from '../assets/심성빈/심성빈_영상콘텐츠_작품1_01.webp';
+import simSeongbinWork1_02 from '../assets/심성빈/심성빈_영상콘텐츠_작품1_02.png';
+import simSeongbinWork1_03 from '../assets/심성빈/심성빈_영상콘텐츠_작품1_03.png';
+import simSeongbinWork1_04 from '../assets/심성빈/심성빈_영상콘텐츠_작품1_04.png';
+import simSeongbinWork1_05 from '../assets/심성빈/심성빈_영상콘텐츠_작품1_05.png';
+import simSeongbinWork1_06 from '../assets/심성빈/심성빈_영상콘텐츠_작품1_06.png';
+import simSeongbinWork1_07 from '../assets/심성빈/심성빈_영상콘텐츠_작품1_07.png';
+import simSeongbinWork1_08 from '../assets/심성빈/심성빈_영상콘텐츠_작품1_08.png';
+import simSeongbinWork1_09 from '../assets/심성빈/심성빈_영상콘텐츠_작품1_09.png';
 import simSeongbinLinked from '../assets/심성빈/심성빈_영상_작품2_01.webp';
+import simSeongbinWork2_02 from '../assets/심성빈/심성빈_영상_작품2_02.png';
+import simSeongbinWork2_03 from '../assets/심성빈/심성빈_영상_작품2_03.png';
+import simSeongbinWork2_04 from '../assets/심성빈/심성빈_영상_작품2_04.png';
+import simSeongbinWork2_05 from '../assets/심성빈/심성빈_영상_작품2_05.png';
+import simSeongbinWork2_06 from '../assets/심성빈/심성빈_영상_작품2_06.png';
+import simSeongbinWork2_07 from '../assets/심성빈/심성빈_영상_작품2_07.png';
+import simSeongbinWork2_08 from '../assets/심성빈/심성빈_영상_작품2_08.png';
+import simSeongbinWork2_09 from '../assets/심성빈/심성빈_영상_작품2_09.png';
 
 import anSeonminDesktop from '../assets/안선민/안선민_브랜딩_작품101.webp';
+import anSeonminWork1_02 from '../assets/안선민/안선민_브랜딩_작품102.png';
+import anSeonminWork1_03 from '../assets/안선민/안선민_브랜딩_작품103.png';
+import anSeonminWork1_04 from '../assets/안선민/안선민_브랜딩_작품104.png';
+import anSeonminWork1_05 from '../assets/안선민/안선민_브랜딩_작품105.png';
+import anSeonminWork1_06 from '../assets/안선민/안선민_브랜딩_작품106.png';
 
 import wooSuminSasinDo from '../assets/우수민/우수민_멀티미디어_작품1_01.webp';
+import wooSuminWork1_02 from '../assets/우수민/우수민_멀티미디어_작품1_02.png';
+import wooSuminWork1_03 from '../assets/우수민/우수민_멀티미디어_작품1_03.png';
+import wooSuminWork1_04 from '../assets/우수민/우수민_멀티미디어_작품1_04.png';
+import wooSuminWork1_05 from '../assets/우수민/우수민_멀티미디어_작품1_05.png';
+import wooSuminWork1_06 from '../assets/우수민/우수민_멀티미디어_작품1_06.png';
+import wooSuminWork1_07 from '../assets/우수민/우수민_멀티미디어_작품1_07.png';
+import wooSuminWork1_08 from '../assets/우수민/우수민_멀티미디어_작품1_08.png';
+import wooSuminWork1_09 from '../assets/우수민/우수민_멀티미디어_작품1_09.png';
+import wooSuminWork1_10 from '../assets/우수민/우수민_멀티미디어_작품1_10.png';
+import wooSuminWork1_11 from '../assets/우수민/우수민_멀티미디어_작품1_11.png';
+import wooSuminWork1_12 from '../assets/우수민/우수민_멀티미디어_작품1_12.png';
+import wooSuminWork1_13 from '../assets/우수민/우수민_멀티미디어_작품1_13.png';
 import wooSuminLiminal from '../assets/우수민/우수민_멀티미디어_작품2_01.webp';
+import wooSuminWork2_02 from '../assets/우수민/우수민_멀티미디어_작품2_02.png';
+import wooSuminWork2_03 from '../assets/우수민/우수민_멀티미디어_작품2_03.png';
+import wooSuminWork2_04 from '../assets/우수민/우수민_멀티미디어_작품2_04.png';
+import wooSuminWork2_05 from '../assets/우수민/우수민_멀티미디어_작품2_05.png';
+import wooSuminWork2_06 from '../assets/우수민/우수민_멀티미디어_작품2_06.png';
+import wooSuminWork2_07 from '../assets/우수민/우수민_멀티미디어_작품2_07.png';
+import wooSuminWork2_08 from '../assets/우수민/우수민_멀티미디어_작품2_08.png';
+import wooSuminWork2_09 from '../assets/우수민/우수민_멀티미디어_작품2_09.png';
+import wooSuminWork2_10 from '../assets/우수민/우수민_멀티미디어_작품2_10.png';
+import wooSuminWork2_11 from '../assets/우수민/우수민_멀티미디어_작품2_11.png';
+import wooSuminWork2_12 from '../assets/우수민/우수민_멀티미디어_작품2_12.png';
+import wooSuminWork2_13 from '../assets/우수민/우수민_멀티미디어_작품2_13.png';
+import wooSuminWork2_14 from '../assets/우수민/우수민_멀티미디어_작품2_14.png';
+import wooSuminWork2_15 from '../assets/우수민/우수민_멀티미디어_작품2_15.png';
 
 import leeGabiWork1 from '../assets/이가비/이가비_게임콘텐츠_작품1_01.webp';
+import leeGabiWork1_02 from '../assets/이가비/이가비_게임콘텐츠_작품1_02.png';
+import leeGabiWork1_03 from '../assets/이가비/이가비_게임콘텐츠_작품1_03.png';
+import leeGabiWork1_04 from '../assets/이가비/이가비_게임콘텐츠_작품1_04.png';
+import leeGabiWork1_05 from '../assets/이가비/이가비_게임콘텐츠_작품1_05.png';
+import leeGabiWork1_06 from '../assets/이가비/이가비_게임콘텐츠_작품1_06.png';
+import leeGabiWork1_07 from '../assets/이가비/이가비_게임콘텐츠_작품1_07.png';
+import leeGabiWork1_08 from '../assets/이가비/이가비_게임콘텐츠_작품1_08.png';
+import leeGabiWork1_09 from '../assets/이가비/이가비_게임콘텐츠_작품1_09.png';
+import leeGabiWork1_11 from '../assets/이가비/이가비_게임콘텐츠_작품1_11.png';
+import leeGabiWork1_12 from '../assets/이가비/이가비_게임콘텐츠_작품1_12.png';
 import leeGabiWork2 from '../assets/이가비/이가비_게임콘텐츠_작품2_01.webp';
+import leeGabiWork2_02 from '../assets/이가비/이가비_게임콘텐츠_작품2_02.png';
+import leeGabiWork2_03 from '../assets/이가비/이가비_게임콘텐츠_작품2_03.png';
+import leeGabiWork2_04 from '../assets/이가비/이가비_게임콘텐츠_작품2_04.png';
+import leeGabiWork2_05 from '../assets/이가비/이가비_게임콘텐츠_작품2_05.png';
+import leeGabiWork2_06 from '../assets/이가비/이가비_게임콘텐츠_작품2_06.png';
+import leeGabiWork2_07 from '../assets/이가비/이가비_게임콘텐츠_작품2_07.png';
+import leeGabiWork2_08 from '../assets/이가비/이가비_게임콘텐츠_작품2_08.png';
+import leeGabiWork2_09 from '../assets/이가비/이가비_게임콘텐츠_작품2_09.png';
+import leeGabiWork2_10 from '../assets/이가비/이가비_게임콘텐츠_작품2_10.png';
+import leeGabiWork2_11 from '../assets/이가비/이가비_게임콘텐츠_작품2_11.png';
 
 import leeDayoungPlottingRoom from '../assets/이다영/이다영_모션디자인_작품2_01.webp';
 import leeDayoungReadyToMerry from '../assets/이다영/이다영_멀티미디어_작품1_01.webp';
+// Gallery images for Ready to Merry (작품1)
+import leeDayoungWork1_02 from '../assets/이다영/이다영_멀티미디어_작품1_02.png';
+import leeDayoungWork1_03 from '../assets/이다영/이다영_멀티미디어_작품1_03.webp';
+import leeDayoungWork1_04 from '../assets/이다영/이다영_멀티미디어_작품1_04.png';
+import leeDayoungWork1_05 from '../assets/이다영/이다영_멀티미디어_작품1_05.png';
+import leeDayoungWork1_06 from '../assets/이다영/이다영_멀티미디어_작품1_06.png';
+import leeDayoungWork1_07 from '../assets/이다영/이다영_멀티미디어_작품1_07.png';
+import leeDayoungWork1_08 from '../assets/이다영/이다영_멀티미디어_작품1_08.png';
+import leeDayoungWork1_09 from '../assets/이다영/이다영_멀티미디어_작품1_09.png';
+import leeDayoungWork1_10 from '../assets/이다영/이다영_멀티미디어_작품1_10.png';
+import leeDayoungWork1_11 from '../assets/이다영/이다영_멀티미디어_작품1_11.png';
+import leeDayoungWork1_12 from '../assets/이다영/이다영_멀티미디어_작품1_12.png';
+// Gallery images for 플롯팅룸 (작품2)
+import leeDayoungWork2_02 from '../assets/이다영/이다영_모션디자인_작품2_02.png';
+import leeDayoungWork2_03 from '../assets/이다영/이다영_모션디자인_작품2_03.webp';
+import leeDayoungWork2_04 from '../assets/이다영/이다영_모션디자인_작품2_04.png';
+import leeDayoungWork2_05 from '../assets/이다영/이다영_모션디자인_작품2_05.png';
+import leeDayoungWork2_06 from '../assets/이다영/이다영_모션디자인_작품2_06.png';
+import leeDayoungWork2_07 from '../assets/이다영/이다영_모션디자인_작품2_07.png';
+import leeDayoungWork2_08 from '../assets/이다영/이다영_모션디자인_작품2_08.png';
+import leeDayoungWork2_09 from '../assets/이다영/이다영_모션디자인_작품2_09.png';
 
-// import leeUnNine from '../assets/이운/이운_멀티미디어디자인_9e9e9e_Desktop.png';
-// import leeUnLayered from '../assets/이운/이운_멀티미디어디자인_Layered_Desktop.png';
+import leeWoon9e9e9e from '../assets/이운/이운_멀티미디어_작품1_01.webp';
+import leeWoonLayered from '../assets/이운/이운_멀티미디어_작품2_01.webp';
+// Gallery images for 9e9e9e (작품1)
+import leeWoonWork1_02 from '../assets/이운/이운_멀티미디어_작품1_02.png';
+import leeWoonWork1_03 from '../assets/이운/이운_멀티미디어_작품1_03.png';
+import leeWoonWork1_04 from '../assets/이운/이운_멀티미디어_작품1_04.png';
+import leeWoonWork1_05 from '../assets/이운/이운_멀티미디어_작품1_05.png';
+import leeWoonWork1_06 from '../assets/이운/이운_멀티미디어_작품1_06.png';
+// import leeWoonWork1_07 from '../assets/이운/이운_멀티미디어_작품1_07.png';
+// import leeWoonWork1_08 from '../assets/이운/이운_멀티미디어_작품1_08.png';
+// import leeWoonWork1_09 from '../assets/이운/이운_멀티미디어_작품1_09.png';
+// import leeWoonWork1_10 from '../assets/이운/이운_멀티미디어_작품1_10.png';
+// import leeWoonWork1_11 from '../assets/이운/이운_멀티미디어_작품1_11.png';
+// import leeWoonWork1_12 from '../assets/이운/이운_멀티미디어_작품1_12.png';
+// import leeWoonWork1_13 from '../assets/이운/이운_멀티미디어_작품1_13.png';
+// import leeWoonWork1_14 from '../assets/이운/이운_멀티미디어_작품1_14.png';
+// import leeWoonWork1_15 from '../assets/이운/이운_멀티미디어_작품1_15.png';
+// import leeWoonWork1_16 from '../assets/이운/이운_멀티미디어_작품1_16.png';
+// import leeWoonWork1_17 from '../assets/이운/이운_멀티미디어_작품1_17.png';
+// Gallery images for Layered (작품2)
+import leeWoonWork2_02 from '../assets/이운/이운_멀티미디어_작품2_02.png';
+import leeWoonWork2_03 from '../assets/이운/이운_멀티미디어_작품2_03.png';
+import leeWoonWork2_04 from '../assets/이운/이운_멀티미디어_작품2_04.png';
+import leeWoonWork2_05 from '../assets/이운/이운_멀티미디어_작품2_05.png';
+import leeWoonWork2_06 from '../assets/이운/이운_멀티미디어_작품2_06.png';
+import leeWoonWork2_07 from '../assets/이운/이운_멀티미디어_작품2_07.png';
+import leeWoonWork2_08 from '../assets/이운/이운_멀티미디어_작품2_08.png';
+import leeWoonWork2_09 from '../assets/이운/이운_멀티미디어_작품2_09.png';
+import leeWoonWork2_10 from '../assets/이운/이운_멀티미디어_작품2_10.png';
+import leeWoonWork2_11 from '../assets/이운/이운_멀티미디어_작품2_11.png';
+import leeWoonWork2_12 from '../assets/이운/이운_멀티미디어_작품2_12.png';
+import leeWoonWork2_13 from '../assets/이운/이운_멀티미디어_작품2_13.png';
 
 import leeJiminVenetiCharacter from '../assets/이지민/이지민_멀티미디어_작품1_01.webp';
 import leeJiminVenetiPerfume from '../assets/이지민/이지민_모션디자인_작품2_01.webp';
@@ -197,24 +347,126 @@ import leeJiminWork2_14 from '../assets/이지민/이지민_모션디자인_작�
 import leeJiminWork2_15 from '../assets/이지민/이지민_모션디자인_작품2_15.png';
 
 import jeonGiTaeDolor from '../assets/전기태/전기태_게임콘텐츠_작품1_01.webp';
+import jeonGiTaeWork1_02 from '../assets/전기태/전기태_게임콘텐츠_작품1_02.png';
+import jeonGiTaeWork1_03 from '../assets/전기태/전기태_게임콘텐츠_작품1_03.png';
+import jeonGiTaeWork1_04 from '../assets/전기태/전기태_게임콘텐츠_작품1_04.png';
+import jeonGiTaeWork1_05 from '../assets/전기태/전기태_게임콘텐츠_작품1_05.png';
+import jeonGiTaeWork1_06 from '../assets/전기태/전기태_게임콘텐츠_작품1_06.png';
 import jeonGiTaeWarOrb from '../assets/전기태/전기태_게임콘텐츠_작품2_01.webp';
+import jeonGiTaeWork2_02 from '../assets/전기태/전기태_게임콘텐츠_작품2_02.png';
+import jeonGiTaeWork2_03 from '../assets/전기태/전기태_게임콘텐츠_작품2_03.png';
+import jeonGiTaeWork2_04 from '../assets/전기태/전기태_게임콘텐츠_작품2_04.png';
+import jeonGiTaeWork2_05 from '../assets/전기태/전기태_게임콘텐츠_작품2_05.png';
 
 // import jeonSeoRinKaron from '../assets/전서린/전서린_게임콘텐츠_KARON_Desktop.png';
 // import jeonSeoRinRaven from '../assets/전서린/전서린_게임콘텐츠_RAVEN-X_Desktop.png';
 import jungJiminTheGothic from '../assets/정지민/정지민_게임콘텐츠_작품1_01.webp';
+import jungJiminWork1_02 from '../assets/정지민/정지민_게임콘텐츠_작품1_02.png';
+import jungJiminWork1_03 from '../assets/정지민/정지민_게임콘텐츠_작품1_03.png';
+import jungJiminWork1_04 from '../assets/정지민/정지민_게임콘텐츠_작품1_04.png';
+import jungJiminWork1_05 from '../assets/정지민/정지민_게임콘텐츠_작품1_05.png';
+import jungJiminWork1_06 from '../assets/정지민/정지민_게임콘텐츠_작품1_06.png';
+import jungJiminWork1_07 from '../assets/정지민/정지민_게임콘텐츠_작품1_07.png';
+import jungJiminWork1_08 from '../assets/정지민/정지민_게임콘텐츠_작품1_08.png';
+import jungJiminWork1_09 from '../assets/정지민/정지민_게임콘텐츠_작품1_09.png';
+import jungJiminWork1_10 from '../assets/정지민/정지민_게임콘텐츠_작품1_10.png';
+import jungJiminWork1_11 from '../assets/정지민/정지민_게임콘텐츠_작품1_11.png';
 import jungJiminTheWeapon from '../assets/정지민/정지민_게임콘텐츠_작품2_01.webp';
+import jungJiminWork2_02 from '../assets/정지민/정지민_게임콘텐츠_작품2_02.png';
+import jungJiminWork2_03 from '../assets/정지민/정지민_게임콘텐츠_작품2_03.png';
+import jungJiminWork2_04 from '../assets/정지민/정지민_게임콘텐츠_작품2_04.png';
+import jungJiminWork2_05 from '../assets/정지민/정지민_게임콘텐츠_작품2_05.png';
+import jungJiminWork2_06 from '../assets/정지민/정지민_게임콘텐츠_작품2_06.png';
+import jungJiminWork2_07 from '../assets/정지민/정지민_게임콘텐츠_작품2_07.png';
+import jungJiminWork2_08 from '../assets/정지민/정지민_게임콘텐츠_작품2_08.png';
+import jungJiminWork2_10 from '../assets/정지민/정지민_게임콘텐츠_작품2_10.png';
+import jungJiminWork2_11 from '../assets/정지민/정지민_게임콘텐츠_작품2_11.png';
 
 import joHaneulReason from '../assets/조하늘/조하늘_영상콘텐츠_작품2_01.webp';
+import joHaneulWork2_02 from '../assets/조하늘/조하늘_영상콘텐츠_작품2_02.png';
+import joHaneulWork2_03 from '../assets/조하늘/조하늘_영상콘텐츠_작품2_03.png';
+import joHaneulWork2_04 from '../assets/조하늘/조하늘_영상콘텐츠_작품2_04.png';
+import joHaneulWork2_05 from '../assets/조하늘/조하늘_영상콘텐츠_작품2_05.png';
+import joHaneulWork2_06 from '../assets/조하늘/조하늘_영상콘텐츠_작품2_06.png';
+import joHaneulWork2_07 from '../assets/조하늘/조하늘_영상콘텐츠_작품2_07.png';
+import joHaneulWork2_08 from '../assets/조하늘/조하늘_영상콘텐츠_작품2_08.png';
 import joHaneulYouth from '../assets/조하늘/조하늘_모션디자인_작품1_01.webp';
+import joHaneulWork1_02 from '../assets/조하늘/조하늘_모션디자인_작품1_02.png';
+import joHaneulWork1_03 from '../assets/조하늘/조하늘_모션디자인_작품1_03.png';
+import joHaneulWork1_04 from '../assets/조하늘/조하늘_모션디자인_작품1_04.png';
+import joHaneulWork1_05 from '../assets/조하늘/조하늘_모션디자인_작품1_05.png';
+import joHaneulWork1_06 from '../assets/조하늘/조하늘_모션디자인_작품1_06.png';
+import joHaneulWork1_07 from '../assets/조하늘/조하늘_모션디자인_작품1_07.png';
+import joHaneulWork1_08 from '../assets/조하늘/조하늘_모션디자인_작품1_08.png';
+import joHaneulWork1_09 from '../assets/조하늘/조하늘_모션디자인_작품1_09.png';
+import joHaneulWork1_10 from '../assets/조하늘/조하늘_모션디자인_작품1_10.png';
+import joHaneulWork1_11 from '../assets/조하늘/조하늘_모션디자인_작품1_11.png';
+import joHaneulWork1_12 from '../assets/조하늘/조하늘_모션디자인_작품1_12.png';
+import joHaneulWork1_13 from '../assets/조하늘/조하늘_모션디자인_작품1_13.png';
 
 import heoJiHoonMaster from '../assets/허지훈/허지훈_모션디자인_작품1_01.webp';
+import heoJiHoonWork1_02 from '../assets/허지훈/허지훈_모션디자인_작품1_02.png';
+import heoJiHoonWork1_03 from '../assets/허지훈/허지훈_모션디자인_작품1_03.png';
+import heoJiHoonWork1_04 from '../assets/허지훈/허지훈_모션디자인_작품1_04.png';
+import heoJiHoonWork1_05 from '../assets/허지훈/허지훈_모션디자인_작품1_05.png';
+import heoJiHoonWork1_06 from '../assets/허지훈/허지훈_모션디자인_작품1_06.png';
+import heoJiHoonWork1_07 from '../assets/허지훈/허지훈_모션디자인_작품1_07.png';
+import heoJiHoonWork1_08 from '../assets/허지훈/허지훈_모션디자인_작품1_08.png';
+import heoJiHoonWork1_09 from '../assets/허지훈/허지훈_모션디자인_작품1_09.png';
+import heoJiHoonWork1_10 from '../assets/허지훈/허지훈_모션디자인_작품1_10.png';
+import heoJiHoonWork1_11 from '../assets/허지훈/허지훈_모션디자인_작품1_11.png';
+import heoJiHoonWork1_12 from '../assets/허지훈/허지훈_모션디자인_작품1_12.png';
+import heoJiHoonWork1_13 from '../assets/허지훈/허지훈_모션디자인_작품1_13.png';
+import heoJiHoonWork1_14 from '../assets/허지훈/허지훈_모션디자인_작품1_14.png';
+import heoJiHoonWork1_15 from '../assets/허지훈/허지훈_모션디자인_작품1_15.png';
+import heoJiHoonWork1_16 from '../assets/허지훈/허지훈_모션디자인_작품1_16.png';
+import heoJiHoonWork1_17 from '../assets/허지훈/허지훈_모션디자인_작품1_17.png';
+import heoJiHoonWork1_18 from '../assets/허지훈/허지훈_모션디자인_작품1_18.png';
 import heoJiHoonEternal from '../assets/허지훈/허지훈_모션디자인_작품2_01.webp';
-
-import leeWoon9e9e9e from '../assets/이운/이운_멀티미디어_작품1_01.webp';
-import leeWoonLayered from '../assets/이운/이운_멀티미디어_작품2_01.webp';
+import heoJiHoonWork2_02 from '../assets/허지훈/허지훈_모션디자인_작품2_02.png';
+import heoJiHoonWork2_03 from '../assets/허지훈/허지훈_모션디자인_작품2_03.png';
+import heoJiHoonWork2_04 from '../assets/허지훈/허지훈_모션디자인_작품2_04.png';
+import heoJiHoonWork2_05 from '../assets/허지훈/허지훈_모션디자인_작품2_05.png';
+import heoJiHoonWork2_06 from '../assets/허지훈/허지훈_모션디자인_작품2_06.png';
+import heoJiHoonWork2_07 from '../assets/허지훈/허지훈_모션디자인_작품2_07.png';
+import heoJiHoonWork2_08 from '../assets/허지훈/허지훈_모션디자인_작품2_08.png';
+import heoJiHoonWork2_09 from '../assets/허지훈/허지훈_모션디자인_작품2_09.png';
+import heoJiHoonWork2_10 from '../assets/허지훈/허지훈_모션디자인_작품2_10.png';
+import heoJiHoonWork2_11 from '../assets/허지훈/허지훈_모션디자인_작품2_11.png';
+import heoJiHoonWork2_12 from '../assets/허지훈/허지훈_모션디자인_작품2_12.png';
+import heoJiHoonWork2_13 from '../assets/허지훈/허지훈_모션디자인_작품2_13.png';
+import heoJiHoonWork2_14 from '../assets/허지훈/허지훈_모션디자인_작품2_14.png';
+import heoJiHoonWork2_15 from '../assets/허지훈/허지훈_모션디자인_작품2_15.png';
+import heoJiHoonWork2_16 from '../assets/허지훈/허지훈_모션디자인_작품2_16.png';
 
 import jeonSeorinKaron from '../assets/전서린/전서린_게임콘텐츠_작품1_01.webp';
+import jeonSeorinWork1_02 from '../assets/전서린/전서린_게임콘텐츠_작품1_02.png';
+import jeonSeorinWork1_03 from '../assets/전서린/전서린_게임콘텐츠_작품1_03.png';
+import jeonSeorinWork1_04 from '../assets/전서린/전서린_게임콘텐츠_작품1_04.png';
+import jeonSeorinWork1_05 from '../assets/전서린/전서린_게임콘텐츠_작품1_05.png';
+import jeonSeorinWork1_06 from '../assets/전서린/전서린_게임콘텐츠_작품1_06.png';
+import jeonSeorinWork1_07 from '../assets/전서린/전서린_게임콘텐츠_작품1_07.png';
+import jeonSeorinWork1_08 from '../assets/전서린/전서린_게임콘텐츠_작품1_08.png';
+import jeonSeorinWork1_09 from '../assets/전서린/전서린_게임콘텐츠_작품1_09.png';
+import jeonSeorinWork1_10 from '../assets/전서린/전서린_게임콘텐츠_작품1_10.png';
+import jeonSeorinWork1_11 from '../assets/전서린/전서린_게임콘텐츠_작품1_11.png';
+import jeonSeorinWork1_12 from '../assets/전서린/전서린_게임콘텐츠_작품1_12.png';
+import jeonSeorinWork1_13 from '../assets/전서린/전서린_게임콘텐츠_작품1_13.png';
+import jeonSeorinWork1_14 from '../assets/전서린/전서린_게임콘텐츠_작품1_14.png';
+import jeonSeorinWork1_15 from '../assets/전서린/전서린_게임콘텐츠_작품1_15.png';
+import jeonSeorinWork1_16 from '../assets/전서린/전서린_게임콘텐츠_작품1_16.png';
+import jeonSeorinWork1_17 from '../assets/전서린/전서린_게임콘텐츠_작품1_17.png';
+import jeonSeorinWork1_18 from '../assets/전서린/전서린_게임콘텐츠_작품1_18.png';
+import jeonSeorinWork1_19 from '../assets/전서린/전서린_게임콘텐츠_작품1_19.png';
+import jeonSeorinWork1_20 from '../assets/전서린/전서린_게임콘텐츠_작품1_20.png';
+import jeonSeorinWork1_21 from '../assets/전서린/전서린_게임콘텐츠_작품1_21.png';
 import jeonSeorinRavenX from '../assets/전서린/전서린_게임디자인_작품2_01.webp';
+import jeonSeorinWork2_02 from '../assets/전서린/전서린_게임디자인_작품2_02.png';
+import jeonSeorinWork2_03 from '../assets/전서린/전서린_게임디자인_작품2_03.png';
+import jeonSeorinWork2_04 from '../assets/전서린/전서린_게임디자인_작품2_04.png';
+import jeonSeorinWork2_05 from '../assets/전서린/전서린_게임디자인_작품2_05.png';
+import jeonSeorinWork2_06 from '../assets/전서린/전서린_게임디자인_작품2_06.png';
+import jeonSeorinWork2_07 from '../assets/전서린/전서린_게임디자인_작품2_07.png';
 
 // import heoJihoonMasterImagination from '../assets/허지훈/허지훈_모션디자인_Master_your_Imagination_Desktop.png';
 
@@ -921,41 +1173,83 @@ const designerDetailsData = {
     instagram: 'https://www.instagram.com/parkhc000928/',
     works: [
       {
-        id: 'parkheechan-animation-reel',
-        title: '2025 Animation Reel',
-        summary: '케릭터 동작과 무게감을 중점에 둔 게임 애니메이션 포트폴리오.',
+        id: 'parkheechan-pledge',
+        title: 'PLEDGE',
+        summary: '영원한 충성, 서약',
         genre: '게임 콘텐츠 디자인',
-        thumbnail: parkHeechanReel,
-        description:
-          "박희찬 디자이너의 '2025 Animation Reel' 작품의 데스크톱 버전 메인 화면입니다. 게임 애니메이터 포트폴리오를 위해 제작된 애니메이션 릴로, 인간형 캐릭터의 경쾌한 동작과 거대한 몬스터의 묵직한 움직임을 대비적으로 담아냈습니다. 화면에는 다양한 전투 모션과 무게감이 느껴지는 캐릭터 애니메이션 스틸컷이 배치되어 있으며, 역동적인 액션과 섬세한 표현력이 돋보입니다.",
-        meta: [
-          'Focus — Natural Motion · Weight · Speed',
-          'Tools — Maya · Unreal Engine',
+        thumbnail: parkHeechanPledge,
+        description: '',
+        meta: 'Format — 3D Cinematic Short',
+        layout: 'parkheechan-pledge',
+        gallery: [
+          { src: parkHeechanWork1_02, alt: '영원한 충성, 서약에 관한 이야기' },
+          { src: parkHeechanWork1_03, alt: '스페이스 마린' },
+          { src: parkHeechanWork1_04, alt: '드레드노트' },
+          { src: parkHeechanWork1_05, alt: '위협적인 적' },
+          { src: parkHeechanWork1_06, alt: '타이라니드 워리어' },
+          { src: parkHeechanWork1_07, alt: '카니펙스' },
+          { src: parkHeechanWork1_08, alt: '스틸컷 1' },
+          { src: parkHeechanWork1_10, alt: '스틸컷 2' },
+          { src: parkHeechanWork1_11, alt: '스틸컷 3' },
+          { src: parkHeechanWork1_12, alt: '스틸컷 4' },
+          { src: parkHeechanWork1_13, alt: '스틸컷 5' },
+          { src: parkHeechanWork1_14, alt: '스틸컷 6' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=418-4&m=dev',
+            title: '영원한 충성, 서약에 관한 이야기',
+            description: '몰려드는 적들을 향해 그는 마지막 총을 들었다. 혼자 남은 그는 전혀 두렵지 않다.\n그 침묵 속에서 맹세는 불타오른다.',
+          },
+          {
+            title: '스페이스 마린',
+            description: '인류 제국의 강화인간이며 군사 집단에 속해있다.\n20가지가 넘는 수술을 받아 덩치, 감각과 근력 등 신체의 모든 부분이 강화가 되었다. 이러한 초인적인 신체능력을 토대로 강한 전투력을 가지고 있으며 인류 제국의 최후의 보루이자 희망이다.',
+          },
+          {
+            title: '드레드노트',
+            description: '초인적인 육체로도 버틸 수 없는 심각한 부상을 입은 스페이스 마린들 중 강인하고 의지가 불타오르는 베테랑 마린들을 수술을 통해 병기화 된 관, 드레드노트에 안치한다.',
+          },
+          {
+            title: '위협적인 적',
+            description: '타이라이드 종족은 무한에 가까운 개체 수, 시냅스로 이어진 정신, 파괴본능 등으로 인해 상대하기 까다로우며 휩쓸고 지나간 자리는 그 어떤것도 남지 않는 무자비한 종족이다.',
+          },
+          {
+            title: '타이라니드 워리어',
+            description: '주변의 하위 타이라니드에게 하이브 마인드의 명령을 전달해주는 시냅스 크리쳐이자 전투 크리쳐.\n두꺼운 외골격과 훙폭성으로 스페이스 마린들과의 상대에서도 밀리지 않고 오히려 더 강한 모습도 보여준다.',
+          },
+          {
+            title: '카니펙스',
+            description: '거대한 덩치, 대부분의 화력을 막는 키틴질 외골격, 강한 근력 등 전차의 포지션에 위치한 괴수.\n강력한 대전차병기로 상대하라는 지침이 있을정도로 위협수준이 높다.',
           },
         ],
       },
       {
-        id: 'parkheechan-pledge',
-        title: 'PLEDGE',
-        summary: '워해머 세계관의 서약을 시네마틱하게 표현한 단편.',
+        id: 'parkheechan-animation-reel',
+        title: '2025 Animation reel',
+        summary: '게임 애니메이션 포트폴리오 프로젝트',
         genre: '게임 콘텐츠 디자인',
-        thumbnail: parkHeechanPledge,
-        description:
-          "박희찬 디자이너의 'PLEDGE' 작품의 데스크톱 버전 메인 화면입니다. 워해머 40,000 세계관을 기반으로 한 단편 시네마틱 무비로, 치명상을 입었던 스페이스 마린이 드레드노트로 다시 깨어나는 순간을 담고 있습니다. 화면에는 드레드노트의 웅장한 모습과 전장의 긴장감이 느껴지는 장면들이 연출되어 있으며, 영원한 충성이라는 서약의 의미를 시각적으로 강렬하게 전달합니다.",
-        meta: [
-          'Format — 3D Cinematic Short',
-          'Keyword — Warhammer · Eternal Vow',
+        thumbnail: parkHeechanReel,
+        description: '',
+        meta: 'Focus — Natural Motion · Weight · Speed',
+        layout: 'parkheechan-animation-reel',
+        gallery: [
+          { src: parkHeechanWork2_02, alt: '3D 애니메이션' },
+          { src: parkHeechanWork2_03, alt: '목표' },
+          { src: parkHeechanWork2_04, alt: '자연스러움' },
+          { src: parkHeechanWork2_05, alt: '무게감' },
+          { src: parkHeechanWork2_06, alt: '속도감' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=418-316&m=dev',
+            title: '3D 애니메이션',
+            description: '3D 캐릭터들의 동작을 직접 만들어 살아 숨쉬게 만드는 과정',
           },
+          {
+            title: '목표',
+            description: '캐릭터의 특징을 파악하고 어울리는 동작을 구상, 애니메이팅 하는 능력을 향상하고 최종적으로 취업에 필요한 포트폴리오를 제작하는 것을 목표로 설정하였다.',
+          },
+          { title: '자연스러움', description: '보기에 어색함이 없는 자연스러운 모션' },
+          { title: '무게감', description: '각 캐릭터마다 가지고 있는 고유의 무게감을 표현' },
+          { title: '속도감', description: '무게감을 유지한 채 속도감을 살릴 수 있는 방법' },
         ],
       },
     ],
@@ -1033,38 +1327,75 @@ const designerDetailsData = {
       {
         id: 'songdahee-card-of-love',
         title: 'A Card of Love',
-        summary: '사랑의 감정을 카드로 기록하는 탐구 프로젝트.',
+        summary: 'A Card of Love는 사랑을 표현하는 데 서툰 이들을 위한 감정 탐구 프로젝트이자, 현대 사회 속 감정의 언어를 다시 배우기 위한 시도이다.',
         genre: '영상 콘텐츠 디자인',
         thumbnail: songDaheeCardOfLove,
-        description:
-          "송다희 디자이너의 'A Card of Love' 작품의 데스크톱 버전 메인 화면입니다. 사랑을 표현하는 데 서툰 우리 사회와 세대를 위해 기획된 인터랙티브 작품으로, 20장의 카드에 담긴 상징들을 통해 사랑의 다양한 감정과 질문을 탐구합니다. 화면에는 카드 디자인과 함께 점술적인 분위기를 연출하는 요소들이 배치되어 있으며, 관람자가 자신의 내면을 돌아보게 하는 경험을 제공합니다.",
-        meta: [
-          'Format — Motion Illustration Set',
-          'Keyword — Emotional Literacy',
+        description: '',
+        meta: 'Format — Motion Illustration Set',
+        layout: 'songdahee-card-of-love',
+        gallery: [
+          { src: songDaheeWork1_02, alt: 'Bouncy' },
+          { src: songDaheeWork1_03, alt: 'Explode' },
+          { src: songDaheeWork1_04, alt: 'Sweet' },
+          { src: songDaheeWork1_05, alt: 'A Card of Love 1' },
+          { src: songDaheeWork1_06, alt: 'A Card of Love 2' },
+          { src: songDaheeWork1_07, alt: 'A Card of Love 3' },
+          { src: songDaheeWork1_08, alt: 'A Card of Love 4' },
+          { src: songDaheeWork1_09, alt: 'A Card of Love 5' },
+          { src: songDaheeWork1_10, alt: 'A Card of Love 6' },
+          { src: songDaheeWork1_11, alt: 'A Card of Love 7' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=281-2&m=dev',
+            title: 'Bouncy',
+            description: '지금 당신의 마음은 부드럽고 예민하게 반응하고 있습니다.\n불안해하지 말고, 그 유연함을 받아들이세요.',
+          },
+          {
+            title: 'Explode',
+            description: '오랫동안 눌렀던 감정이 폭발하려 합니다.\n화가 될 수도 있고, 열정이 될 수도 있습니다.',
+          },
+          {
+            title: 'Sweet',
+            description: '사랑은 때때로 말없이 다정하게 다가옵니다.\n사과처럼 부드럽고, 달콤하게.',
           },
         ],
       },
       {
         id: 'songdahee-peony',
         title: 'Peony',
-        summary: '사랑의 움직임을 물과 꽃으로 은유한 영상 작품.',
+        summary: "'Peony'는 시집의 추상적이고 감각적인 문장을 영상의 호흡으로 번역한다. 본 전시는 이승희 시인의 '작약은 물속에서 더 환한데'라는 시집을 모티프 삼아 제작되었다.",
         genre: '영상 콘텐츠 디자인',
         thumbnail: songDaheePeony,
-        description:
-          "송다희 디자이너의 'Peony' 작품의 데스크톱 버전 메인 화면입니다. '물', '작약', '물고기'라는 상징을 통해 순환, 찰나의 아름다움, 자유로운 사랑의 움직임을 표현한 작품입니다. 화면에는 물의 흐름과 작약꽃, 물고기 이미지가 조화롭게 어우러져 있으며, 언어를 넘어 감각적으로 시를 경험하고 개인적 기억과 감정에 맞닿을 수 있도록 구성되었습니다. 몽환적이고 서정적인 분위기가 특징입니다.",
-        meta: [
-          'Format — Motion Illustration Set',
-          'Keyword — Fluid Love Narrative',
+        description: '',
+        meta: 'Format — Motion Illustration Set',
+        layout: 'songdahee-peony',
+        gallery: [
+          { src: songDaheeWork2_02, alt: '어떤 마음에 대하여' },
+          { src: songDaheeWork2_03, alt: '내 마음의 수몰 지구' },
+          { src: songDaheeWork2_04, alt: '어떤 마음에 대하여 카드' },
+          { src: songDaheeWork2_05, alt: '초록 물고기' },
+          { src: songDaheeWork2_06, alt: '슬픔은 다할 수 없어' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=303-244&m=dev',
+            title: '어떤 마음에 대하여',
+            description: '물속에\n연꽃은 연꽃이 아니고 모란은 모란이 아니고 복숭아는 복숭아가 아니어서',
+          },
+          {
+            title: '내 마음의 수몰 지구',
+            description: '불을 켜두어야 합니다.\n수국이 잘 자라도록 도와줘야 합니다.',
+          },
+          {
+            title: '어떤 마음에 대하여',
+            description: '내가 여기에 있는 것\n그리고 거기서부터 걸어와야 하는 것\n그리고 나를 지나가야 하는 것',
+          },
+          {
+            title: '초록 물고기',
+            description: '연못가 버드나무에선 바람이 불 때마다 몇 마리의 물고기가 툭툭 놓여났다.\n공중을 물들이며 스르르 잠기는 물고기',
+          },
+          {
+            title: '슬픔은 다할 수 없어',
+            description: '그가 물가에 두고 간 신발\n반짝 빛나는 마음 같아\n나도 나란히 신발을 벗어둔다.\n정말 슬픔을 다할 수 있을까.',
           },
         ],
       },
@@ -1080,40 +1411,110 @@ const designerDetailsData = {
     instagram: 'https://www.instagram.com/s_beenoo_/',
     works: [
       {
-        id: 'simseongbin-boom',
-        title: 'BOOM',
-        summary: '폭발이라는 메타포로 일상의 스트레스를 시각화한 아트워크.',
+        id: 'simseongbin-linked',
+        title: 'Linked',
+        summary: 'Linked는 점과 선, 면을 활용하여 관계의 연결과 단절, 사회의 순환적 흐름을 표현한 아트워크이다.',
         genre: '영상 콘텐츠 디자인',
-        thumbnail: simSeongbinBoom,
-        description:
-          "심성빈 디자이너의 'BOOM' 작품의 데스크톱 버전 메인 화면입니다. 직장과 학교에서 반복되는 일상과 과로, 억압에서 벗어나고자 하는 욕망을 '폭발'이라는 시각적 장치로 표현한 작품입니다. 화면에는 건물이 리드미컬하게 파괴되는 장면이 연출되어 있으며, 이는 해방의 순간을 시각적으로 형상화하여 관객에게 카타르시스를 전달합니다. 강렬하고 역동적인 비주얼이 특징입니다.",
-        meta: [
-          'Format — 3D FX Cinematic',
-          'Keyword — Stress Explosion',
+        thumbnail: simSeongbinLinked,
+        description: '',
+        meta: 'Format — Procedural Animation',
+        layout: 'simseongbin-linked',
+        gallery: [
+          { src: simSeongbinWork1_02, alt: 'Blue Orbs' },
+          { src: simSeongbinWork1_03, alt: 'Red Orbs' },
+          { src: simSeongbinWork1_04, alt: 'Green Orbs' },
+          { src: simSeongbinWork1_05, alt: 'Connection' },
+          { src: simSeongbinWork1_06, alt: 'Destruction' },
+          { src: simSeongbinWork1_07, alt: 'Harmonize' },
+          { src: simSeongbinWork1_08, alt: 'Geometry Node (Droplets)' },
+          { src: simSeongbinWork1_09, alt: 'Geometry Node (Structure)' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=264-3&m=dev',
+            title: 'Blue Orbs',
+            description: '사회를 구성하는 개개인을 의미한다. 서로 유기적으로 연결되어 공동체를 이룬다.',
+          },
+          {
+            title: 'Red Orbs',
+            description: '전쟁, 질병, 재앙 등 사회의 혼란을 의미한다. 공동체를 무너뜨리고 파괴하려 한다.',
+          },
+          {
+            title: 'Green Orbs',
+            description: '무너진 공동체가 다시 회복하려는 탄력성을 의미한다. 서로 조화롭게 연결되어 있다.',
+          },
+          {
+            title: 'Connection',
+            description: '각기 다른 구슬들은 서로 연결되어 거대한 공동체를 이룬다.',
+          },
+          {
+            title: 'Destruction',
+            description: '강렬한 붉은 색을 지닌 구슬이 수면 위로 튀어오르며 공동체를 파괴한다.',
+          },
+          {
+            title: 'Harmonize',
+            description: '거대한 초록색 구슬이 지나가자 파괴된 구슬들은 다시 수면위로 떠오른다. 빛을 잃은 구슬들이 다시 모여 다시 공동체를 회복해내고, 이전보다 더 큰 구조를 만들어낸다.',
+          },
+          {
+            title: 'Geometry Node (Droplets)',
+            description: '블렌더의 Geometry Node 기능을 사용하여 구체 위에 맺히는 물방울들을 표현하였다.',
+          },
+          {
+            title: 'Geometry Node (Structure)',
+            description: '블렌더의 Geometry Node 기능을 사용하여 여러개의 구슬들이 모여 만들어낸 구조를 표현했다.',
           },
         ],
       },
       {
-        id: 'simseongbin-linked',
-        title: 'Linked',
-        summary: '점과 선, 면으로 관계의 흐름을 시각화한 작품.',
+        id: 'simseongbin-boom',
+        title: 'BOOM',
+        summary: 'BOOM은 현대인들이 스트레스와 반복적인 일상에서 탈출하고자 하는 욕망을, 폭발이라는 현상을 매개로 표현한 아트워크이다.',
         genre: '영상 콘텐츠 디자인',
-        thumbnail: simSeongbinLinked,
-        description:
-          "심성빈 디자이너의 'Linked' 작품의 데스크톱 버전 메인 화면입니다. 하나의 점에서 시작해 관계라는 선을 만들고, 그 연결이 구조와 공동체로 확장되는 과정을 구현한 FX 아트워크입니다. 화면에는 다양한 형태의 점과 선이 유기적으로 연결되어 복잡한 구조를 이루는 모습이 표현되어 있으며, 서로 다른 존재들이 연결되어 만들어내는 공동체의 아름다움과 우리가 모두 관계 속에 연결된 존재임을 느끼게 합니다.",
-        meta: [
-          'Format — Procedural Animation',
-          'Keyword — Community Connection',
+        thumbnail: simSeongbinBoom,
+        description: '',
+        meta: 'Format — 3D FX Cinematic',
+        layout: 'simseongbin-boom',
+        gallery: [
+          { src: simSeongbinWork2_02, alt: 'Mannequin' },
+          { src: simSeongbinWork2_03, alt: 'Office' },
+          { src: simSeongbinWork2_04, alt: 'Laptop' },
+          { src: simSeongbinWork2_05, alt: 'Calm before the storm' },
+          { src: simSeongbinWork2_06, alt: 'Climax of the explosion' },
+          { src: simSeongbinWork2_07, alt: 'Plot twist' },
+          { src: simSeongbinWork2_08, alt: 'Fluid Simulation' },
+          { src: simSeongbinWork2_09, alt: 'Particle Simulation' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=275-2&m=dev',
+            title: 'Mannequin',
+            description: '과로와 스트레스에 억압받는 현대인이다. 시간이 흐름에 따라 인내심에 한계가 온다.',
+          },
+          {
+            title: 'Office',
+            description: '우리가 자주 접하는 사무실이다. 억압되고 자유가 없는 삭막한 공간이다.',
+          },
+          {
+            title: 'Laptop',
+            description: '영상의 모든 폭발이 결국 하나의 망상이였음을 보여주는 장치. 현실은 달라지는 것이 없음을 은유하였다.',
+          },
+          {
+            title: 'Calm before the storm',
+            description: '폭발 전, 주인공의 스트레스가 극에 달하며 긴장감이 점점 고조된다.',
+          },
+          {
+            title: 'Climax of the explosion',
+            description: '폭발이 연속적으로 일어나며 사무실, 계단실, 회의실 등 건물의 모든곳을 덮친다.',
+          },
+          {
+            title: 'Plot twist',
+            description: '방금까지 본 모든 폭발이 전부 망상이였음을 노트북을 통해 알 수 있다. 현실은 여전히 바뀌지 않았음을 시사한다.',
+          },
+          {
+            title: 'Fluid Simulation',
+            description: '블렌더의 Fluid Simulation 기능을 사용하여 폭발 장면의 불꽃, 화염, 연기 등을 구현하였다.',
+          },
+          {
+            title: 'Particle Simulation',
+            description: '블렌더의 Particle Simulation 기능을 사용하여 폭발 잔해들과 깨진 벽 등을 표현하였다.',
           },
         ],
       },
@@ -1131,19 +1532,43 @@ const designerDetailsData = {
       {
         id: 'anseonmin-dots',
         title: '점점점',
-        summary: '서로 다른 점이 만나 확장되는 과정을 그린 모션 그래픽.',
+        summary: '서로 다른 24개의 점이 만나 연결되고, 확장됩니다. 각자의 개성이 모여 하나의 흐름을 만들고, 그 안에서 새로운 세계가 공유됩니다. 지금, 점과 점 사이에서 펼쳐지는 변화의 순간을 영상으로 만나보세요!',
         genre: '모션 디자인',
         thumbnail: anSeonminDesktop,
-        description:
-          "안선민 디자이너의 '브랜딩 영상' 작품의 데스크톱 버전 메인 화면입니다. 이 이미지는 브랜딩 영상의 핵심 컨셉과 시각적 아이덴티티를 보여주는 스틸컷입니다. 화면에는 브랜드의 로고, 컬러 팔레트, 타이포그래피 등 주요 시각 요소들이 조화롭게 배치되어 있으며, 영상의 전반적인 분위기와 메시지를 함축적으로 전달합니다. 깔끔하고 세련된 디자인으로 브랜드의 전문성을 강조합니다.",
-        meta: [
-          'Format — Motion Graphic',
-          'Keyword — Flow of Connection',
+        description: '',
+        meta: 'Format — Motion Graphic',
+        layout: 'anseonmin-dots',
+        gallery: [
+          { src: anSeonminWork1_02, alt: '우리는 모두 각자의 점으로부터 시작합니다' },
+          { src: anSeonminWork1_03, alt: '보이지 않는 흐름 속에서 점들은 서로를 인식하고' },
+          { src: anSeonminWork1_04, alt: '하나의 결을 만들어 갑니다' },
+          { src: anSeonminWork1_05, alt: '점과 점 사이, 작은 간격 속에 관계가 자라납니다' },
+          { src: anSeonminWork1_06, alt: '서로 다른 리듬들이 이어지며 하나의 궤적을 완성합니다' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=650-87&m=dev',
+            title: '우리는 모두 각자의 \'점\'으로부터 시작합니다.',
+            description: '',
+          },
+          {
+            title: '보이지 않는 흐름 속에서 점들은 서로를 인식하고',
+            description: '',
+          },
+          {
+            title: '하나의 결을 만들어 갑니다.',
+            description: '',
+          },
+          {
+            title: '점과 점 사이, 작은 간격 속에 관계가 자라납니다.',
+            description: '',
+          },
+          {
+            title: '다채로운 색들이 만나 새로운 질서를 만듭니다.',
+            description: '',
+          },
+          {
+            title: '서로 다른 리듬들이 이어지며 하나의 궤적을 완성합니다.',
+            description: '서로 다른 점들이 만나 연결되고, 확장되는 순간. \'점점점\'은 우리가 함께 만들어가는 성장의 흐름을 담습니다.',
           },
         ],
       },
@@ -1160,39 +1585,143 @@ const designerDetailsData = {
     works: [
       {
         id: 'woosumin-sasindo',
-        title: '피에르 위그: 리미널 가이드앱 UX/UI',
-        summary: '리움미술관 전시를 위한 리미널 가이드앱의 메인 화면.',
+        title: '사신도',
+        summary: '고분벽화 속 사신도를 현대적으로 재해석해 동서남북을 수호하는 신수의 상징성을 인물과 결합한 작품이다. 전통적 요소를 현대 조형 언어로 조화롭게 풀어냈다.',
         genre: '멀티미디어 디자인',
         thumbnail: wooSuminSasinDo,
-        description:
-          "우수민 디자이너의 '피에르 위그: 리미널 가이드앱 UX/UI' 작품의 데스크톱 버전 메인 화면입니다. 리움미술관 전시를 위해 고안된 피에르 위그: 리미널 전시 가이드 앱의 UI/UX 디자인을 보여줍니다. 화면에는 앱의 주요 기능인 전시 및 작가 소개, 전시장 동선 안내, 관람객 참여형 인터랙티브 체험 화면이 깔끔하게 배치되어 있습니다. 직관적인 인터페이스와 현대적인 디자인으로 전시에 몰입할 수 있는 새로운 경험을 제안합니다.",
-        meta: [
-          'Format — UX/UI Design',
-          'Keyword — Exhibition Companion',
+        description: '',
+        meta: 'Format — Multimedia Design',
+        layout: 'woosumin-sasindo',
+        gallery: [
+          { src: wooSuminWork1_02, alt: '사신도 역사 리플렛' },
+          { src: wooSuminWork1_03, alt: '네 신수 정보' },
+          { src: wooSuminWork1_04, alt: '백호 애니메이션 포스터' },
+          { src: wooSuminWork1_05, alt: '주작 애니메이션 포스터' },
+          { src: wooSuminWork1_06, alt: '현무 애니메이션 포스터' },
+          { src: wooSuminWork1_07, alt: '일러스트 포스터 1' },
+          { src: wooSuminWork1_08, alt: '일러스트 포스터 2' },
+          { src: wooSuminWork1_09, alt: '일러스트 포스터 3' },
+          { src: wooSuminWork1_10, alt: '일러스트 포스터 4' },
+          { src: wooSuminWork1_11, alt: '일러스트 포스터 5' },
+          { src: wooSuminWork1_12, alt: '일러스트 포스터 6' },
+          { src: wooSuminWork1_13, alt: '일러스트 포스터 7' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=669-387&m=dev',
+            title: '사신도 역사 리플렛',
+            description: '표지에 청룡의 이미지를 담아 사신도 역사를 담은 리플렛을 제작, 뒷면 QR을 통해 사신도 정보 확인 가능',
+          },
+          {
+            title: '네 신수 정보',
+            description: '역사적 사실을 기반하여 네 신수에 대한 정보를 담아, 그들의 상징과 특징, 역할 기재',
+          },
+          {
+            title: '백호 애니메이션 포스터',
+            description: '서쪽, 백호 특유의 우아하고 신비로운 모습을 담아내고자 부드러운 외형의 캐릭터 디자인',
+          },
+          {
+            title: '주작 애니메이션 포스터',
+            description: '남쪽, 불을 다룰 수 있는 사신으로 활력있고 장난스러운 남자 아이 외형의 캐릭터 디자인',
+          },
+          {
+            title: '현무 애니메이션 포스터',
+            description: '북쪽, 조용하고 느긋한 현무의 성격을 표현하고자 권위 있고 차분한 외형의 캐릭터 디자인',
           },
         ],
+        footerText: '사신도는 단순한 신화적 상상물이 아닌, 자연의 원리와 인간의 삶, 죽음 이후의 세계를 통합적으로 표현한 시각 체계이다. 동서남북의 네 신수는 곧 인간의 생애와 우주의 순환을 상징하며, 고분벽화 속 사신도는 고대인이 죽음을 \'끝\'이 아닌 또 다른 세계로의 이동으로 인식했음을 알 수 있다.',
       },
       {
         id: 'woosumin-liminal-guide',
-        title: '리미널 가이드앱 · 인터랙티브 화면',
-        summary: '사용자 참여형 섹션을 강조한 리미널 가이드앱의 상세 화면.',
+        title: 'Pierre Huyghe: Liminal 가이드앱 UXUI',
+        summary: '리미널 전시를 위한 전시 가이드 UXUI로, 전시 정보·동선 안내·인터랙티브 체험을 제공한다. 사용자 중심 설계로 몰입도를 높이며 전통적 안내를 넘어 새로운 전시 경험을 제안한다.',
         genre: '멀티미디어 디자인',
         thumbnail: wooSuminLiminal,
-        description:
-          "우수민 디자이너의 '피에르 위그: 리미널 가이드앱 UX/UI' 작품의 세부 화면입니다. 이 이미지는 앱의 특정 인터랙티브 체험 또는 정보 제공 섹션을 보여줍니다. 화면에는 전시 콘텐츠와 관련된 상세 정보, 혹은 사용자가 직접 참여할 수 있는 요소들이 디자인되어 있습니다. 사용자의 편의성을 고려한 레이아웃과 시각적 계층 구조가 돋보이며, 전시 경험을 풍부하게 만드는 데 기여합니다.",
-        meta: [
-          'Format — UX/UI Detail Screen',
-          'Keyword — Interactive Exhibition Guide',
+        description: '',
+        meta: 'Format — UX/UI Design',
+        layout: 'woosumin-liminal',
+        gallery: [
+          { src: wooSuminWork2_02, alt: '그냥 보는 것만으로' },
+          { src: wooSuminWork2_03, alt: '리미널 가이드와 함께 전시 시작' },
+          { src: wooSuminWork2_04, alt: '간편한 티켓 등록' },
+          { src: wooSuminWork2_05, alt: '전시장 맵과 동선 안내' },
+          { src: wooSuminWork2_06, alt: 'AI 피에르 위그 채팅' },
+          { src: wooSuminWork2_07, alt: '나만의 Liminal 생명체' },
+          { src: wooSuminWork2_08, alt: '나의 전시 감상 감정 변화' },
+          { src: wooSuminWork2_09, alt: '전시 소개' },
+          { src: wooSuminWork2_10, alt: '위그 타임랩스' },
+          { src: wooSuminWork2_11, alt: '작품 정보' },
+          { src: wooSuminWork2_12, alt: '큐레이터 아티클' },
+          { src: wooSuminWork2_13, alt: 'AR 카메라' },
+          { src: wooSuminWork2_14, alt: '위그 인터뷰' },
+          { src: wooSuminWork2_15, alt: '뉴스 기사' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=669-3&m=dev',
+            title: '그냥 \'보는 것\'만으로 전시를 이해할 수 있을까?',
+            description: '기분 좋은 데이트로, 혹은 잠시 생긴 여유 속에 찾은 전시장. 하지만 막상 마주한 전시 공간과 작품들은 낯설고 어렵기만 하다. 실험적이고 복잡한 전시의 세계, 과연 제대로 보고, 느끼고 있는 것일까!',
+          },
+          {
+            title: '전시를 이해하고, 참여하다! 작품 정보부터 전시 안내, 그리고 당신만을 위한 특별한 체험까지. "리미널 가이드"',
+            description: '인간과 비인간이 공존하며 반응하고 진화하는 설치 전시 <피에르 위그: 리미널>, 이 앱은 실험적이고 복잡한 전시 특성에 맞춰 작품별 해설과 공간 안내는 물론, 남녀노소 누구나 참여할 수 있는 인터랙티브 체험을 제공한다.',
+          },
+          {
+            title: '리미널 가이드와 함께 전시 시작!',
+            description: '리움 로그인으로 빠르게 티켓 확인',
+          },
+          {
+            title: '간편한 티켓 등록',
+            description: '오프라인에서 구매한 티켓도 QR 스캔 한 번으로 간편하게 등록',
+          },
+          {
+            title: '전시장 맵과 동선 안내',
+            description: '전시장 내 방향과 관람 순서는 물론, 작품 설명까지 자동 표시',
+          },
+          {
+            title: 'AI 피에르 위그 채팅',
+            description: '키워드로 질문하거나 사진을 전송, 음성으로 대화하며 AI 작가와 자유롭게 소통 가능',
+          },
+          {
+            title: '나만의 Liminal 생명체',
+            description: '간단한 스케치로 개성 있는 형태를 만들고, 색상과 질감, 악세서리까지 자유롭게 커스텀 가능',
+          },
+          {
+            title: '나의 전시 감상 감정 변화',
+            description: '어떤 작품에서 어던 감정을 느꼈는지, 오늘의 전시에서 가장 강하게 느껴진 감정은 무엇이었는지 한눈에 확인',
+          },
+          {
+            title: '전시 소개',
+            subtitle: '리움 공식 홈페이지 제공 전시 정보',
+            description: '번거롭게 검색하고 찾아볼 필요 없이 전시 정보 확인 가능',
+          },
+          {
+            title: '위그 타임랩스',
+            subtitle: '피에르 위그의 전시 역사',
+            description: '그동안의 피에르 위그의 작품 여정을 담은 타임랩스를 통해 그의 예술 세계를 더욱 깊이 있게 이해 가능',
+          },
+          {
+            title: '작품 정보',
+            subtitle: '작품 사진, 작품 이름, 작품 설명',
+            description: '작품의 의미와 전시 방식을 쉽게 이해하고 고화질 이미지를 통해 세부까지 감상 가능',
+          },
+          {
+            title: '큐레이터 아티클',
+            subtitle: '전시 관련 큐레이터 아티클',
+            description: '큐레이터 아티클을 통해 전시와 피에르 위그에 관한 다양한 담론과 관점 확인',
+          },
+          {
+            title: 'AR 카메라',
+            subtitle: '전시장 내 사용 가능한 AR 카메라',
+            description: '나만의 Liminal 생명체를 제작하고 B1 전시 공간에서 AR 카메라로 실제 살아숨쉬는 생명체 모습 체험',
+          },
+          {
+            title: '위그 인터뷰',
+            subtitle: '피에르 위그의 단독 인터뷰',
+            description: '인간과 비인간의 경계를 넘나드는 작가, 피에르 위그의 작품 가치관을 직접 들을 수 있는 인터뷰 콘텐츠',
+          },
+          {
+            title: '뉴스 기사',
+            subtitle: '전시 관련 뉴스 기사',
+            description: '단순 관람을 넘어, 피에르 위그를 향한 세계의 관심을 한눈에 파악',
           },
         ],
       },
@@ -1209,39 +1738,102 @@ const designerDetailsData = {
     works: [
       {
         id: 'leegabi-overcooked',
-        title: 'Overcooked: 카페 대소동',
-        summary: '망해버린 요리사들이 카페 운영에 도전하는 유쾌한 이야기.',
+        title: 'OVERCOOKED: 카페 대소동',
+        summary: '이전 식당을 운영하다 폭싹 망해버린 요리사들. 이번엔 카페다! 양파왕의 제안으로 카페에서 일하며 벌어지는 재미난 이야기.',
         genre: '게임 콘텐츠 디자인',
         thumbnail: leeGabiWork1,
-        description:
-          "이가비 디자이너의 'Overcooked: 카페대소동' 작품의 데스크톱 버전 메인 화면입니다. 이전 식당 운영에 실패한 요리사들이 카페를 운영하며 벌어지는 유쾌한 해프닝을 다룬 게임 콘텐츠입니다. 화면에는 오버쿡드 특유의 아기자기한 캐릭터와 카페 배경이 그려져 있으며, 혼란스러운 주방 상황과 요리사들의 좌충우돌 스토리가 시각적으로 표현되어 있습니다. 밝고 코믹한 분위기가 특징입니다.",
-        meta: [
-          'Format — 3D Animated Short',
-          'Keyword — Teamwork Comedy',
+        description: '',
+        meta: 'Format — 3D Animated Short',
+        layout: 'leegabi-overcooked',
+        gallery: [
+          { src: leeGabiWork1_02, alt: '양파왕의 고민' },
+          { src: leeGabiWork1_03, alt: '양파왕의 제안' },
+          { src: leeGabiWork1_04, alt: '카페 운영 시작' },
+          { src: leeGabiWork1_05, alt: '얼렁뚱땅 카페운영 1' },
+          { src: leeGabiWork1_06, alt: '얼렁뚱땅 카페운영 2' },
+          { src: leeGabiWork1_07, alt: '얼렁뚱땅 카페운영 3' },
+          { src: leeGabiWork1_08, alt: '얼렁뚱땅 카페운영 4' },
+          { src: leeGabiWork1_09, alt: '얼렁뚱땅 카페운영 5' },
+          { src: leeGabiWork1_11, alt: '얼렁뚱땅 카페운영 6' },
+          { src: leeGabiWork1_12, alt: 'MISSION CLEAR!' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=855-837&m=dev',
+            title: '양파왕의 고민',
+            description: '망해버린 가게를 걱정하는 양파왕',
+          },
+          {
+            title: '양파왕의 제안',
+            description: '식당이 아닌 다른 방법을 제안한다.',
+          },
+          {
+            title: '카페 운영 시작!',
+            description: '호기롭게 시작된 카페운영, 하지만 넘처나는 주문에 당황하는 요리사들',
           },
         ],
+        footerText: '많은 주문을 해치운 요리사들, 그 점수는?!',
       },
       {
         id: 'leegabi-abyss-racing',
         title: 'Abyss Racing: 세이렌의 보물',
-        summary: '카트라이더 드리프트 신규 캐릭터 세이렌을 주인공으로 한 시네마틱 트레일러.',
+        summary: '<카트라이더:드리프트> 신규캐릭터 세이렌의 등장! 수중도시에서 \'레전드 컵\'을 되찾기 위한 치열한 레이싱 대결이 펼쳐진다.',
         genre: '게임 콘텐츠 디자인',
         thumbnail: leeGabiWork2,
-        description:
-          "이가비 디자이너의 'Abyss Racing: 세이렌의 보물' 작품의 데스크톱 버전 메인 화면입니다. <카트라이더: 드리프트>의 신규 캐릭터 세이렌의 등장을 다룬 게임 콘텐츠로, 수중 신전에서 펼쳐지는 치열한 레이싱 대결을 보여줍니다. 화면에는 세이렌 캐릭터와 함께 다오, 배찌 등 카트라이더 캐릭터들이 수중 도시를 배경으로 레이싱하는 모습이 역동적으로 표현되어 있습니다. 시원하고 박진감 넘치는 분위기가 특징입니다.",
-        meta: [
-          'Format — 3D Cinematic Trailer',
-          'Keyword — Underwater Adventure',
+        description: '',
+        meta: 'Format — 3D Cinematic Trailer',
+        layout: 'leegabi-abyss-racing',
+        gallery: [
+          { src: leeGabiWork2_02, alt: 'Abyss Racing: 세이렌의 보물' },
+          { src: leeGabiWork2_03, alt: '수중신전으로' },
+          { src: leeGabiWork2_04, alt: '잃어버린 레전드 컵을 찾기 위한 여정' },
+          { src: leeGabiWork2_05, alt: '세이렌의 보물' },
+          { src: leeGabiWork2_06, alt: '레전드 컵을 되찾다' },
+          { src: leeGabiWork2_07, alt: '세이렌의 분노' },
+          { src: leeGabiWork2_08, alt: '물폭탄 발동' },
+          { src: leeGabiWork2_09, alt: '분노의 시작' },
+          { src: leeGabiWork2_10, alt: '세이렌의 등장' },
+          { src: leeGabiWork2_11, alt: '마지막 질주' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=855-502&m=dev',
+            title: 'Abyss Racing: 세이렌의 보물',
+            description: '<카트라이더:드리프트> 가상 신규 캐릭터 \'세이렌\'을 소개하는 트레일러 영상',
+          },
+          {
+            title: '수중신전으로',
+            description: '잃어버린 \'레전드 컵\'이 수중신전에 있다는 소문이 돌고있다. 하지만 그곳엔 세이렌이 자리를 지키고 있다.',
+          },
+          {
+            title: '잃어버린 \'레전드 컵\'을 찾기 위한 여정',
+            description: '소문을 따라 그녀가 있는 수중도시로 향한다.',
+          },
+          {
+            title: '세이렌의 보물',
+            description: '반짝이는 물건을 좋아하는 세이렌. 레전드 컵이 요즘 그녀의 보물이 된 듯하다.',
+          },
+          {
+            title: '레전드 컵을 되찾다.',
+            description: '세이렌의 눈을 피해 레전드 컵을 다시 손에 넣은 다오.',
+          },
+          {
+            title: '세이렌의 분노',
+            description: '본인의 보물을 가져간 다오와 배찌를 쫓는다.',
+          },
+          {
+            title: '물폭탄 발동!',
+            description: '세이렌의 공격이 시작된다.',
+          },
+          {
+            title: '분노의 시작',
+            description: '다오와 배찌가 레전드 컵을 가져가는 장면을 목격한다.',
+          },
+          {
+            title: '세이렌의 등장',
+            description: '신규 캐릭터 세이렌의 첫 등장.',
+          },
+          {
+            title: '마지막 질주',
+            description: '세이렌에게 잡히기 전에 빠르게 돌악가는 포탈을 타야한다. 그들은 무사히 수중신전에서 빠져나갈 수 있을까?',
           },
         ],
       },
@@ -1257,40 +1849,145 @@ const designerDetailsData = {
     instagram: 'https://www.instagram.com/dyoiiii_/',
     works: [
       {
-        id: 'leedayoung-plotting-room',
-        title: '플롯팅룸',
-        summary: '다양한 작가들이 모여 이야기를 나누는 타이틀 시퀀스.',
-        genre: '모션 디자인',
-        thumbnail: leeDayoungPlottingRoom,
-        description:
-          "이다영 디자이너의 'Floating Room' 작품의 데스크톱 버전 메인 화면입니다. 'Plot-ting', 'Float-ing', 'Flirt-ing'의 의미를 담은 가상의 토크 예능 프로그램 <플롯팅룸>의 타이틀 시퀀스입니다. 화면에는 다양한 작가들이 모여 작품과 글쓰기 과정을 나누고 새로운 이야기를 창작하는 콘셉트가 시각적으로 표현되어 있습니다. 부유하는 듯한 오브제와 감각적인 타이포그래피가 특징이며, 창의적인 분위기를 연출합니다.",
-        meta: [
-          'Format — Motion Title Sequence',
-          'Keyword — Storytelling Process',
+        id: 'leedayoung-ready-to-merry',
+        title: 'Ready to Merry',
+        summary: '<Ready to Merry>는 크리스마스를 주제로 한 케이팝 음악을 아카이빙한 앨범이다. 크리스마스를 앞둔 일주일 동안 하루에 한 곡씩, 총 일곱 곡으로 이어지는 곡들은 다가올 날에 대한 설렘을 점차 고조시킨다.',
+        genre: '멀티미디어 디자인',
+        thumbnail: leeDayoungReadyToMerry,
+        description: '',
+        meta: 'Format — Experience Design · Package',
+        layout: 'leedayoung-ready-to-merry',
+        gallery: [
+          { src: leeDayoungWork1_02, alt: 'Ready to Merry' },
+          { src: leeDayoungWork1_03, alt: 'Postcard' },
+          { src: leeDayoungWork1_04, alt: 'Lyrics Paper' },
+          { src: leeDayoungWork1_05, alt: 'Sticker Pack' },
+          { src: leeDayoungWork1_06, alt: 'Acrylic Keyring' },
+          { src: leeDayoungWork1_07, alt: '전단지형 포스터' },
+          { src: leeDayoungWork1_08, alt: '캘린더형 포스터' },
+          { src: leeDayoungWork1_09, alt: '앨범 사양 포스터' },
+          { src: leeDayoungWork1_10, alt: '앨범 굿즈 형태를 직관적으로' },
+          { src: leeDayoungWork1_11, alt: '곡의 분위기를 직접 느낄 수 있도록' },
+          { src: leeDayoungWork1_12, alt: '앨범의 콘셉트를 보다 명확하게' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=398-1373&m=dev',
+            title: 'COUNTDOWN TO WISHFUL CHRISTMAS',
+            description: '그래픽 디자인 능력 향상을 목표로, 서로 다른 특징을 지닌 곡들의 분위기를 다양하게 재해석하였다. 이를 위해 실사 이미지는 배제하고, 타이틀 레터링부터 굿즈까지 전 과정을 그래픽으로만 구성하였다.\n\n디자인된 굿즈는 3D로 구현하여, 현재 트렌드에 맞게 앨범의 실사 패키징 영상을 제작하였으며 이를 통해 앨범의 구성 요소를 더욱 직관적으로 전달하고자 하였다. 패키지는 \'소원을 담는 산타의 우편함\'이라는 콘셉트로, 내부는 서랍형 구조로 구성되어 각 곡의 굿즈를 개별적으로 담을 수 있도록 디자인된 형태이다.',
+          },
+          {
+            title: 'Are you ready to Merry?',
+            description: '크리스마스를 앞둔 일주일, 하루에 한 곡씩, 케이팝 캐롤과 함께하는 7일간의 여정을 담았다.',
+          },
+          {
+            title: '재해석한 곡들의 분위기를 담은 굿즈',
+            description: '수록된 7곡을 재해석하여 서로 다른 분위기를 담아 굿즈를 디자인하였다. 구성품은 엽서, 가사지, 스티커, 키링으로 구성하였다.',
+          },
+          {
+            title: '다양한 형태의 포스터',
+            description: '3종으로 구성된 포스터는 각각 다른방식으로 앨범의 콘셉트를 담아냈다. 뜯어내는 전단지형, 캘린더형, 그리고 앨범의 구성요소를 보여주는 사양 포스터로 이루어져있다.',
+          },
+          {
+            title: '앨범 3D 패키징 영상',
+            description: '트렌드에 맞춘 앨범 실사 패키징 영상에 수록곡의 일부를 담아 하이라이트 메들리 형식으로 연출하였다. 이를 통해 패키지의 구성 요소를 보다 직관적으로 확인할 수 있다.',
+          },
+          {
+            title: 'Postcard',
+            description: 'W 100 X H 150 (mm) / 7ea\n\n재해석한 곡의 분위기를 토대로 제작된 레터링을 포함하여 디자인되었다. 앞면은 그래픽 디자인 위주로, 뒷면은 편지를 쓸 수 있는 공간을 위주로 구성하였다.',
+          },
+          {
+            title: 'Lyrics Paper',
+            description: 'W 200 X H 150 (mm) / 7ea\n\n엽서의 주요 그래픽을 모티프로 한 2단 접지형 가사지이다. 표지는 엽서와의 통일성을 유지하면서도 차별화된 포인트를 더했으며, 내지는 전형적인 가사지의 형태를 벗어나 개성적인 디자인을 시도하였다.',
+          },
+          {
+            title: 'Sticker Pack',
+            description: 'W 100 X H 150 (mm) / 6ea X 7set\n\n수록곡의 제목과 가사, 포인트 그래픽을 녹여냈다. 레터링 디자인과 타이포그래피, 그래픽적 요소를 다양하게 담고자 하였다.',
+          },
+          {
+            title: 'Acrylic Keyring',
+            description: 'W 40 X H 40 (mm) / 7ea\n\n곡의 분위기와 어울리는 오브제를 선정해 레터링과 함께 구성했다. 크리스마스 트리에 장식 오너먼트로 활용할 수 있다.',
+          },
+          {
+            title: '전단지형 포스터',
+            description: '크리스마스까지 7일간의 카운트다운을 효과적으로 담아내기 위해 상단에는 시계형태를, 하단에는 곡별로 선택해 뜯어낼 수 있는 구조로 디자인하였다.',
+          },
+          {
+            title: '캘린더형 포스터',
+            description: '수록곡과 함께하는 7일동안의 여정을 표현하고자 캘린더 형식를 차용해 디자인하였다. 날짜와 디데이, 그리고 각 곡의 포인트 그래픽을 함께 담았다.',
+          },
+          {
+            title: '앨범 사양 포스터',
+            description: '앨범 패키지에 포함된 구성 요소를 한눈에 보기 쉽게 정리해 디자인하였다.',
+          },
+          {
+            title: '앨범 굿즈 형태를 직관적으로',
+            description: '패키지가 열리며 굿즈가 나오고 펼쳐지는 모션을 적용했다.',
+          },
+          {
+            title: '곡의 분위기를 직접 느낄 수 있도록',
+            description: '곡의 정보와 하이라이트 부분을 함께 보고 들을 수 있도록 제작하였다.',
+          },
+          {
+            title: '앨범의 콘셉트를 보다 명확하게',
+            description: '산타의 우편함이라는 콘셉트를 명확히 전달하기 위해 패키지 디자인, 배경, 그리고 이펙트에 중점을 뒀다.',
           },
         ],
       },
       {
-        id: 'leedayoung-ready-to-merry',
-        title: 'Ready to Merry',
-        summary: '크리스마스를 기다리는 카운트다운 아카이빙 앨범.',
-        genre: '멀티미디어 디자인',
-        thumbnail: leeDayoungReadyToMerry,
-        description:
-          "이다영 디자이너의 'Ready to Merry' 작품의 데스크톱 버전 메인 화면입니다. 한국의 크리스마스 캐롤을 아카이빙한 앨범으로, 하루에 한 곡씩 이어지는 카운트다운 형식의 경험을 제공합니다. 화면에는 크리스마스 분위기를 물씬 풍기는 일러스트와 함께 앨범 커버, 트랙 리스트 등이 디자인되어 있습니다. 따뜻하고 감성적인 비주얼로 관람자가 크리스마스를 함께 기다리는 특별한 순간을 느끼게 합니다.",
-        meta: [
-          'Format — Experience Design · Package',
-          'Keyword — Advent Calendar Story',
+        id: 'leedayoung-plotting-room',
+        title: '플롯팅룸',
+        summary: '분야를 넘나드는 다양한 작가들이 매회 새로운 조합으로 모여 자신의 작품과 글쓰기 과정, 그리고 좋아하는 소재에 대해 깊이 이야기를 나누며, 한 회차의 마지막에는 즉석에서 새로운 이야기를 창작해 선보이는 가상의 토크 예능 <플롯팅룸>의 타이틀 시퀀스를 제작한 프로젝트이다.',
+        genre: '모션 디자인',
+        thumbnail: leeDayoungPlottingRoom,
+        description: '',
+        meta: 'Format — Motion Title Sequence',
+        layout: 'leedayoung-plotting-room',
+        gallery: [
+          { src: leeDayoungWork2_02, alt: 'SCENE #01' },
+          { src: leeDayoungWork2_03, alt: 'SCENE #02' },
+          { src: leeDayoungWork2_04, alt: 'SCENE #03' },
+          { src: leeDayoungWork2_05, alt: '작가들의 글이 스토리보드 속으로' },
+          { src: leeDayoungWork2_06, alt: '스토리보드 속 인물들이 살아움직이는' },
+          { src: leeDayoungWork2_07, alt: '다양한 분야와' },
+          { src: leeDayoungWork2_08, alt: '다양한 장르의 이야기로' },
+          { src: leeDayoungWork2_09, alt: '작가들의 소통과 창작의 순간들이 모여' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=398-1874&m=dev',
+            title: 'PLOTTING ROOM',
+            description: '\'플롯팅룸(Plotting Room)\'은 Plot-ting: 이야기를 짜는 / Float-ing: 이야기가 떠다니는 / Flirt-ing: 이야기로 사람을 매료시키는 방이라는 다층적 의미를 담고 있다.\n\n이러한 제목의 의미와 프로그램의 콘셉트를 시각적으로 표현하기 위해, 다양한 시대와 방식으로 이야기를 만들어가는 작가들의 모습을 그리고, 그들이 써 내려간 이야기들이 실사처럼 살아 움직이는 장면을 연출하였다. 작가들의 소통과 창작의 순간들이 모여 또 하나의 서사를 이루고, 그 서사로 방이 채워지는 과정을 통해 프로그램의 주제를 완성하고자 하였다.\n\n전반적인 장면은 2D로 구성하여 서정적인 분위기를 구현하였다. 평면적인 화면에서도 밀도가 느껴지도록 그레인 그라데이션, 양감, 텍스처링에 중점을 두었다. 타이틀 레터링은 토크 예능의 경쾌함을 담되, 전체 시퀀스의 서정적인 톤과 조화를 이루며 프로그램의 개성을 시각적으로 드러내고자 하였다.',
+          },
+          {
+            title: 'SCENE #01',
+            description: '원고지와 만년필, 손으로 글을 써내려가는 모습이 나타난다.',
+          },
+          {
+            title: 'SCENE #02',
+            description: '타자기로 글을 써내려가는 모습으로 변화한다.',
+          },
+          {
+            title: 'SCENE #03',
+            description: '노트북 키보드로 글을 써내려가는 모습이 보여진다.',
+          },
+          {
+            title: '작가들의 글이 스토리보드 속으로',
+            description: '자신의 방식대로 써내려간 글들이 스토리보드 속으로 하나 둘 자리잡으며 작가들이 글로 하여금 하나의 새로운 세상을 창조해내는 모습을 보여준다.',
+          },
+          {
+            title: '스토리보드 속 인물들이 살아움직이는',
+            description: '스토리보드를 통해 생명력을 갖게된 인물들이 살아움직이며 청춘 멜로드라마의 한 장면으로 보여진다.',
+          },
+          {
+            title: '다양한 분야와',
+            description: '장면이 전환되며 추리 예능의 한 장면으로 변화하고,',
+          },
+          {
+            title: '다양한 장르의 이야기로',
+            description: '또 다시 판타지 영화의 한 장면로 변화하며 작가로부터 생명력을 얻게된 다양한 분야와 장르의 이야기들이 보여진다.',
+          },
+          {
+            title: '작가들의 소통과 창작의 순간들이 모여',
+            description: '이런 작가들이 한 방에 모여 이야기를 나누며 또 하나의 서사를 이루고, 그 서사들로 채워진 방은, 비로소 <플롯팅룸>이 된다.',
           },
         ],
       },
@@ -1308,38 +2005,109 @@ const designerDetailsData = {
       {
         id: 'leeun-9e9e9e',
         title: '9e9e9e',
-        summary: '디자인 문구와 액세서리 브랜드 9e9e9e의 브랜딩 프로젝트.',
+        summary: '리본과 마법소녀의 모티프로, 일상에 다정한 귀여움을 묶어주는 디자인 문구 & 액세서리 브랜드 브랜딩',
         genre: '멀티미디어 디자인',
         thumbnail: leeWoon9e9e9e,
-        description:
-          "이운 디자이너의 '9e9e9e' 브랜드의 데스크톱 버전 메인 화면입니다. '9e9e9e'는 디자인 문구와 액세서리 브랜드로, 반복되는 알파벳과 숫자로 이루어진 이름이 리본을 닮아 일상에 다정한 마법을 더한다는 콘셉트를 가지고 있습니다. 화면에는 브랜드의 로고, 제품 이미지(문구, 액세서리), 그리고 '누구나 귀여워질 수 있다'는 긍정적인 메시지가 깔끔하게 배치되어 있습니다. 심플하면서도 귀여운 디자인이 특징입니다.",
-        meta: [
-          'Format — Brand Identity',
-          'Keyword — Charming Stationery',
+        description: '',
+        meta: 'Format — Brand Identity',
+        layout: 'leeun-9e9e9e',
+        gallery: [
+          { src: leeWoonWork1_02, alt: '9e9e9e' },
+          { src: leeWoonWork1_03, alt: 'Cute' },
+          { src: leeWoonWork1_04, alt: 'Unconstrained' },
+          { src: leeWoonWork1_05, alt: 'Joyful' },
+          { src: leeWoonWork1_06, alt: 'Positive' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=510-3&m=dev',
+            title: '9e9e9e',
+            description: '\'9e9e9e\'는 디자인 문구 & 액세서리 브랜드로,\n어떤 모습이든, 어떤 상황이든, 어디에 있든 누구나 귀여워질 수 있다는 긍정적인 메세지를 전합니다.\n반복되는 알파벳과 숫자로 이루어진 브랜드 이름은 리본의 형태를 닮아, 일상 속에서 자연스럽게 묶이는 귀여움의 상징이 됩니다.\n\n\'9e9e9e\'는 리본과 마법소녀의 이미지를 모티프로 작은 소품이 평범한 하루에 다정한 마법으로 스며들길 바랍니다.',
+          },
+          {
+            title: 'Cute',
+            subtitle: '귀여운',
+            description: '누구나 즐길 수 있는 가장 보편적인\n감정으로 접근성이 좋도록 함',
+          },
+          {
+            title: 'Unconstrained',
+            subtitle: '제한 받지 않는, 자유로운',
+            description: '어떤 상황에서도 자신을 표현할 수\n있는 자유',
+          },
+          {
+            title: 'Joyful',
+            subtitle: '유쾌함',
+            description: '일상속의 예상치 못한 무겁고 심각한\n순간들을 가볍고 유쾌하게 넘어가는\n태도',
+          },
+          {
+            title: 'Positive',
+            subtitle: '긍정적인',
+            description: '브랜드 자체의 긍정적인 사고와 그것을\n전파하려는 태도',
           },
         ],
       },
       {
         id: 'leeun-layered',
         title: 'Layered',
-        summary: '기억과 정체성을 겹겹이 담은 업사이클 패션 브랜드.',
+        summary: '개인의 정체성을 형성하는 다층적인 \'겹쳐짐\'에 집중한 컨셔스 패션 브랜드 브랜딩',
         genre: '멀티미디어 디자인',
         thumbnail: leeWoonLayered,
-        description:
-          "이운 디자이너의 'Layered' 브랜드의 데스크톱 버전 메인 화면입니다. '겹쳐짐'이 개인의 정체성을 형성하는 다층적 요소를 상징한다는 콘셉트의 컨셔스 브랜드입니다. 화면에는 기억이 담긴 소중한 옷을 업사이클링하여 새로운 스타일로 재탄생시키는 과정과 결과물이 시각적으로 표현되어 있습니다. 패션의 순환과 환경 보호를 실천하는 메시지를 담고 있으며, 감각적이고 지속 가능한 디자인을 보여줍니다.",
-        meta: [
-          'Format — Conscious Fashion Branding',
-          'Keyword — Layered Identity',
+        description: '',
+        meta: 'Format — Conscious Fashion Branding',
+        layout: 'leeun-layered',
+        gallery: [
+          { src: leeWoonWork2_02, alt: 'LOOK' },
+          { src: leeWoonWork2_03, alt: 'LOOK' },
+          { src: leeWoonWork2_04, alt: 'LOOK' },
+          { src: leeWoonWork2_05, alt: 'LOOK' },
+          { src: leeWoonWork2_06, alt: 'LOOK' },
+          { src: leeWoonWork2_07, alt: 'LOOK' },
+          { src: leeWoonWork2_08, alt: 'Self-Expression' },
+          { src: leeWoonWork2_09, alt: 'Rich' },
+          { src: leeWoonWork2_10, alt: 'Flexibility' },
+          { src: leeWoonWork2_11, alt: 'Sustainability' },
+          { src: leeWoonWork2_12, alt: 'package' },
+          { src: leeWoonWork2_13, alt: 'brand book' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=510-513&m=dev',
+            title: 'Layered',
+            description: '겹쳐짐은 개인의 정체성을 형성하는 다층적인 요소들을 상징합니다. 인간의 정체성은 단일하지 않으며, 경험, 환경, 관계 등 수많은 요소들이 겹치면서 완성됩니다. \'Layered\'는 시간이 지나 입지 못하게 되었지만 기억이 담긴 소중한 옷을 업사이클링하여 새로운 스타일로 재탄생시키는 브랜드입니다. 과거와 현재가 조화를 이루는 디자인을 통해, 우리는 단순한 리폼을 넘어 기억과 개성, 지속 가능성을 연결하는 패션을 제안합니다.\n\n또한, \'Layered\'는 패스트 패션을 지양하는 컨셔스 브랜드로서, 소유보다 활용 중심의 지속 가능한 스타일을 지향합니다. 버려지는 옷이 아닌, 소중한 기억이 담긴 옷을 새롭게 디자인함으로써 패션의 순환과 환경 보호를 실천합니다.',
+          },
+          {
+            title: 'Self-Expression',
+            description: '옷은 단순히 몸을 가리는 도구가 아니라, 나를 드러내는 가장 직접적인 언어입니다. Layered는 과거와 현재의 옷을 새롭게 잇는 과정 속에서 나만의 이야기를 담습니다. 더이상 입을 수 없지만 소중한 기억이 깃든 옷을 리폼해  개인의 취향과 경험이 고스란히 반영된 스타일을 완성합니다. 이 과정에서 옷은 단순한 패션 아이템을 넘어, 자기 표현의 매개체가 됩니다.',
+          },
+          {
+            title: 'Rich',
+            description: '오래 함께한 옷에는 이미 그 시간을 함께한 기존의 기억이 스며 있고, 그 옷을 새롭게 다듬고 변주하는 과정에서 또 다른 새로운 기억이 차곡차곡 더해집니다. 이렇게 과거와 현재가 겹쳐지며 형성된 흔적은 옷을 단순한 의복이 아닌 정체성과 기억이 중첩된 서사적 매체로 바꾸어 줍니다. Layered는 이 겹쳐진 기억과 정체성을 통해 풍부하고 입체적인 아름다움을 완성합니다.',
+          },
+          {
+            title: 'Flexibility',
+            description: 'Layered의 옷은 하나의 형태에 머무르지 않습니다. 같은 옷이라도 타일링의 변주,시간이 더해지며 달라지는 해석에 따라 새로운 모습을 드러냅니다. 이는 끊임없이 흐르고 변하는 자연, 구름의 층위와 닮아 있으며, 입는 사람의 개성과 순간의 감정에 따라 다양하게 적응하는 옷으로 완성됩니다. Layered가 추구하는 유연성은 곧 오래도록 입을 수 있는 지속성이자, 자신만의 스타일을 자유롭게 표현할 수 있는 가능성입니다.',
+          },
+          {
+            title: 'Sustainability',
+            description: '빠르게 소비되고 잊혀지는 패스트 패션과 달리, Layered는 옷이 가진 시간을 존중합니다. 오래 입을 수 있도록 튼튼하게,  또 다른 방식으로 다시 활용할 수 있도록 유연하게 디자인합니다. 기존의 옷을 해체하고 재구성하거나,  남겨진 원단을 새로운 옷으로 이어붙이며, 옷이 가진 생명을 이어갑니다. Layered는 패스트 패션을 지양하고 옷을 오래 활용하는 방식을 추구합니다. 기존의 옷을 새롭게 해석해, 오래도록 이어지는 패션을 지향합니다.',
+          },
+          {
+            title: 'package',
+            description: '',
+          },
+          {
+            title: 'brand book',
+            description: '',
+          },
+          {
+            title: 'gift box',
+            description: '',
+          },
+          {
+            title: 'brand tag',
+            description: '',
+          },
+          {
+            title: 'Web',
+            description: '',
           },
         ],
       },
@@ -1357,36 +2125,65 @@ const designerDetailsData = {
       {
         id: 'leejimin-veneti-character',
         title: 'Veneti',
-        summary: '문어 마녀 우르슬라를 현대적 시선으로 재해석한 캐릭터 프로젝트.',
+        summary: '문어마녀 우르슬라를 현대적인 시선으로 재해석해 제작한 캐릭터로, 3D 모델링을 통해 턴테이블 영상과 2D 일러스트를 수록한 아트북을 제작했다.',
         genre: '멀티미디어 디자인',
         thumbnail: leeJiminVenetiCharacter,
-        description:
-          "이지민 디자이너의 'Veneti (베네티)' 작품입니다. 월트 디즈니 애니메이션 스튜디오의 인어공주에 등장하는 문어 마녀 '우르슬라'를 재해석한 캐릭터 작품으로, 3D 캐릭터 모델링과 2D 일러스트를 결합해 Veneti의 세계관을 구축했습니다. Dream of freedom을 주제로, 자유를 갈망하는 캐릭터의 여정을 스토리로 담았습니다. Book cover, Poster, Postcard, Illustration 시리즈와 Skate Board, Character 섹션을 통해 다양한 그래픽 스타일과 라이프스타일을 제안합니다.",
-        meta: [
-          'Format — 3D Character · Artbook',
-          'Keyword — Freedom & Reinterpretation',
-        ],
+        description: '',
+        meta: 'Format — 3D Character · Artbook',
+        layout: 'leejimin-veneti',
         gallery: [
-          { src: leeJiminWork1_02, alt: 'Veneti 작품 갤러리 1' },
-          { src: leeJiminWork1_03, alt: 'Veneti 작품 갤러리 2' },
-          { src: leeJiminWork1_04, alt: 'Veneti 작품 갤러리 3' },
-          { src: leeJiminWork1_05, alt: 'Veneti 작품 갤러리 4' },
-          { src: leeJiminWork1_06, alt: 'Veneti 작품 갤러리 5' },
-          { src: leeJiminWork1_07, alt: 'Veneti 작품 갤러리 6' },
-          { src: leeJiminWork1_08, alt: 'Veneti 작품 갤러리 7' },
-          { src: leeJiminWork1_09, alt: 'Veneti 작품 갤러리 8' },
-          { src: leeJiminWork1_10, alt: 'Veneti 작품 갤러리 9' },
-          { src: leeJiminWork1_11, alt: 'Veneti 작품 갤러리 10' },
-          { src: leeJiminWork1_12, alt: 'Veneti 작품 갤러리 11' },
-          { src: leeJiminWork1_13, alt: 'Veneti 작품 갤러리 12' },
-          { src: leeJiminWork1_14, alt: 'Veneti 작품 갤러리 13' },
-          { src: leeJiminWork1_15, alt: 'Veneti 작품 갤러리 14' },
-          { src: leeJiminWork1_16, alt: 'Veneti 작품 갤러리 15' },
+          { src: leeJiminWork1_02, alt: 'Book cover' },
+          { src: leeJiminWork1_03, alt: 'Poster' },
+          { src: leeJiminWork1_04, alt: 'Postcard' },
+          { src: leeJiminWork1_05, alt: 'Illustration' },
+          { src: leeJiminWork1_06, alt: 'This outstanding object' },
+          { src: leeJiminWork1_07, alt: 'Skate Board' },
+          { src: leeJiminWork1_08, alt: 'Character' },
+          { src: leeJiminWork1_09, alt: 'Artbook' },
+          { src: leeJiminWork1_10, alt: 'Artbook' },
+          { src: leeJiminWork1_11, alt: 'Artbook' },
+          { src: leeJiminWork1_12, alt: 'Artbook' },
+          { src: leeJiminWork1_13, alt: 'Artbook' },
+          { src: leeJiminWork1_14, alt: 'Artbook' },
+          { src: leeJiminWork1_15, alt: 'Artbook' },
+          { src: leeJiminWork1_16, alt: '이지민 프로필' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=460-2627&m=dev',
+            title: 'Dream of freedom',
+            description: '이 프로젝트는 3D 스컬프팅 실력과 인체 이해도를 향상시키고, 블렌더를 활용해 캐릭터 제작을 완성하는 것을 목표로 기획했다. 월트 디즈니 스튜디오의 애니메이션 영화 \'인어공주\'에 등장하는 마녀 우르슬라를 현대적인 시선으로 재해석하여 새로운 캐릭터로 탄생시켰으며, \'자유를 찾아 떠나는 여정\'이라는 스토리를 바탕으로 캐릭터가 꿈꾸는 자유를 상징하기 위해 스케이트보드를 타는 설정을 부여했다.\n\n또한 캐릭터의 활기찬 모습을 표현하기 위해 리깅 후 역동적인 포즈를 연출하였고, 세계관의 완성도를 높이기 위해 러프한 2D 아트워크부터 세부 디자인까지 과정을 정리해 아트북으로 제작했다.',
+          },
+          {
+            title: 'Book cover',
+            description: '에너지가 느껴지는 색상을 활용해 캐릭터의 활기찬 이미지를 담은 책 표지를 디자인하였다.',
+          },
+          {
+            title: 'Poster',
+            description: '2D 일러스트와 3D 모델링의 역동적인 자세로 동일한 디자인의 포스터를 제작하였다.',
+          },
+          {
+            title: 'Postcard',
+            description: '눈에 띄는 마젠타로 시선을 끌고 SNS와 연동되는 큐알 코드와 함께 2D 일러스트로 엽서를 디자인 하였다.',
+          },
+          {
+            title: 'Illustration',
+            description: '2D 일러스트를 통해 포스터와 엽서 디자인을 진행하고 아트북에 수록하였다.',
+          },
+          {
+            title: 'This outstanding object',
+            description: 'Call out a feature, benefit, or value that can stand on its own.',
+          },
+          {
+            title: 'Skate Board',
+            description: '스케이트보드 텍스쳐로 캐릭터의 개성이 느껴지는 그라피티를 디자인 하였고, 이를 실물로 제작에 전시하였다.',
+          },
+          {
+            title: 'Character',
+            description: '메인 캐릭터와 서브 케릭터를 모델링 하여 함께 회전하는 영상을 제작했다.',
+          },
+          {
+            title: 'Artbook',
+            description: '캐릭터의 제작 과정부터 세계관 가이드, 2D 일러스트와 3D 모델링까지 모두 수록한 아트북을 제작하였다.',
           },
         ],
       },
@@ -1396,32 +2193,61 @@ const designerDetailsData = {
         summary: '르 라보(LE LABO) 시티 익스클루시브 컬렉션을 주제로 한 프로모션 영상.',
         genre: '모션 디자인',
         thumbnail: leeJiminVenetiPerfume,
-        description:
-          "이지민 디자이너의 'LE LABO-CITY EXCLUSIVE' 작품입니다. LE LABO의 시티 익스클루시브 컬렉션 중 CITRON 28, GAIAC 10, MUSC 25 세 가지 향수를 영상으로 표현해, 각 도시의 분위기를 감각적으로 전달했습니다. 레몬, 나무, 석양 등 상징적 오브제를 활용해 향의 특징을 시각화했습니다. Imagine a city, Fresh/Woody/Sunset, City Exclusives, Photo shoot 섹션을 통해 브랜드의 디테일과 도시 풍경을 기록했습니다.",
-        meta: [
-          'Format — Promotional Video',
-          'Keyword — City Exclusive Senses',
-        ],
+        description: '',
+        meta: 'Format — Promotional Video',
+        layout: 'leejimin-lelabo',
         gallery: [
-          { src: leeJiminWork2_02, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 1' },
-          { src: leeJiminWork2_03, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 2' },
-          { src: leeJiminWork2_04, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 3' },
-          { src: leeJiminWork2_05, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 4' },
-          { src: leeJiminWork2_06, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 5' },
-          { src: leeJiminWork2_07, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 6' },
-          { src: leeJiminWork2_08, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 7' },
-          { src: leeJiminWork2_09, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 8' },
-          { src: leeJiminWork2_10, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 9' },
-          { src: leeJiminWork2_11, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 10' },
-          { src: leeJiminWork2_12, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 11' },
-          { src: leeJiminWork2_13, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 12' },
-          { src: leeJiminWork2_14, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 13' },
-          { src: leeJiminWork2_15, alt: 'LE LABO-CITY EXCLUSIVE 갤러리 14' },
+          { src: leeJiminWork2_02, alt: 'Fresh' },
+          { src: leeJiminWork2_03, alt: 'Woody' },
+          { src: leeJiminWork2_04, alt: 'Sunset' },
+          { src: leeJiminWork2_05, alt: 'City Exclusives' },
+          { src: leeJiminWork2_06, alt: 'CITRON 28' },
+          { src: leeJiminWork2_07, alt: 'GAIAC 10' },
+          { src: leeJiminWork2_08, alt: 'MUSC 25' },
+          { src: leeJiminWork2_09, alt: 'Photo shoot' },
+          { src: leeJiminWork2_10, alt: 'Photo shoot' },
+          { src: leeJiminWork2_11, alt: 'Photo shoot' },
+          { src: leeJiminWork2_12, alt: 'Photo shoot' },
+          { src: leeJiminWork2_13, alt: 'Photo shoot' },
+          { src: leeJiminWork2_14, alt: 'Photo shoot' },
+          { src: leeJiminWork2_15, alt: 'Photo shoot' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=460-2084&m=dev',
+            title: 'Imagine a city',
+            description: '이 프로젝트는 단순히 제품을 소개하는 영상을 넘어서, "향이 인간의 감정에 어떻게 닿는가"라는 질문에서 출발한 프로젝트이다. 향은 눈에 보이지 않지만, 공기 속에 기억을 남긴다. 그래서 이번 작업에서는 향이 지닌 기억의 잔상과 도시가 품은 감정의 결을 시각적으로 구현하는 데 집중하였다. 각 도시를 대표하는 메인 컬러를 중심으로, 그곳의 기온, 빛의 방향, 공기의 밀도, 사람들의 움직임 등 향으로는 포착할 수 없는 요소들을 영상으로 표현하고자 했다.',
+          },
+          {
+            title: 'Fresh',
+            description: 'CITRON28은 서울의 아침에서 느껴지는 시원함을 표현하고자 전체적으로 화사하면서도 따스한 느낌의 색감을 사용했다.',
+          },
+          {
+            title: 'Woody',
+            description: 'GAIAC10은 도시에서도 느껴지는 풀내음을 표현하고자 싱그러우면서도 습한 느낌의 색감을 사용했다.',
+          },
+          {
+            title: 'Sunset',
+            description: 'MUSC25는 아침과 저녁이 주는 서로 다른 느낌의 긴 여운을 시각적으로 표현하고자 영상의 초반부에는 따스한 색감을, 후반부에는 짙고 어두운 색감을 사용했다.',
+          },
+          {
+            title: 'City Exclusives',
+            description: '마지막 컷을 통해 LE LABO 향수임을 명확히 드러내고, City Exclusive Collection과 주요 향료 정보를 함께 제시했다. 이를 통해 시청자가 향수의 향과 그에 어울리는 도시의 이미지를 자연스럽게 떠올릴 수 있도록 연출했다.',
+          },
+          {
+            title: 'CITRON 28',
+            description: '서울에서 영감 받아 제작된 시티 익스클루시브의 비교적 최신 컬렉션.',
+          },
+          {
+            title: 'GAIAC 10',
+            description: '도쿄에서 영감 받아 제작된 시티 익스클루시브의 오래된 컬렉션 중 하나.',
+          },
+          {
+            title: 'MUSC 25',
+            description: '로스엔젤레스에서 영감 받아 제작된 시티 익스클루시브의 오래된 컬렉션 중 하나.',
+          },
+          {
+            title: 'Photo shoot',
+            description: '직접 촬영한 사진을 활용해 도시의 이미지를 더욱 생생하게 전달하고자 했다.',
           },
         ],
       },
@@ -1439,38 +2265,73 @@ const designerDetailsData = {
       {
         id: 'jeongitae-dolor-saga',
         title: 'Dolor Saga',
-        summary: '용족과 전사들의 다크 판타지 세계관을 담은 설정집.',
+        summary: '돌로르사가. 세상의 최고위 종족. 용에 대항하는 인류 대항군의 스토리를 담은 아트북.',
         genre: '게임 콘텐츠 디자인',
         thumbnail: jeonGiTaeDolor,
-        description:
-          "전기태 디자이너의 '돌로르사가' 작품의 데스크톱 버전 메인 화면입니다. '돌로르(Dolor)'는 라틴어로 '고통스러운', '통증'이라는 뜻을 가지며, 세계를 멸망시키려는 용족과 그에 맞서는 전사들의 이야기를 담은 설정집입니다. 화면에는 다양한 종족의 캐릭터 디자인과 처절한 싸움이 펼쳐지는 세계관의 배경 이미지가 배치되어 있습니다. 웅장하고 다크 판타지적인 분위기가 특징입니다.",
-        meta: [
-          'Format — Game World Bible',
-          'Keyword — Dark Fantasy Conflict',
+        description: '',
+        meta: 'Format — Game World Bible',
+        layout: 'jeongitae-dolor-saga',
+        gallery: [
+          { src: jeonGiTaeWork1_02, alt: '용은 그 존재 자체로 영엄하고도 파괴적이다' },
+          { src: jeonGiTaeWork1_03, alt: '인류 대항군 종족 제 3종족' },
+          { src: jeonGiTaeWork1_04, alt: '전투' },
+          { src: jeonGiTaeWork1_05, alt: '압도적인 절망' },
+          { src: jeonGiTaeWork1_06, alt: '약자의 발버둥' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=339-3521&m=dev',
+            title: '용은 그 존재 자체로 영엄하고도 파괴적이다',
+            description: '돌로르사가 속 등장하는 용은 자신들의 발 아래 땅을 지배하기 위해 파괴를 일삼는 종족으로 묘사된다.\n그들의 힘은 일반적인 존재인 인간, 엘프, 드워프보다 훨씬 월등하다.',
+          },
+          {
+            title: '인류 대항군 종족 제 3종족',
+            description: '인류 대항군으로 용에게 대적하는 종족은 인간, 엘프, 드워프로 총 3 종족이다.',
+          },
+          {
+            title: '전투',
+            description: '이들은 자신의 목숨을 바쳐 자신들의 고향과 가족, 사랑하는 이들이 살아가는 이 세상을 지키기위해 싸운다.',
+          },
+          {
+            title: '압도적인 절망',
+            description: '인류 대항군이 약 1,000명 정도 전투에 참여한다고 가정했을 때다.\n대략 대항군 900명의 희생으로 1마리의 용을 사냥하는 것이 평균적인 결과값이다.\n인류는 처절하게 싸우지만 그들의 목숨을 비웃듯 용들의 브레스는 멈추지 않는다.',
+          },
+          {
+            title: '약자의 발버둥',
+            description: '인류는 수많은 전멸에도 굴복하지 않고 계속해서 나아간다. 시간이 쌓이면서 인류 대항군 내에서도 단신으로 용을 죽이는 존재들이 등장한다. 이로써 이들의 처절한 대항은 계속된다.',
           },
         ],
       },
       {
         id: 'jeongitae-war-orb',
         title: 'War Orb',
-        summary: '빛나는 오브를 둘러싼 선과 악의 대립을 그린 게임 영상.',
+        summary: '"세계의 신비로움과 그 창대함이 담긴 오브. 이 오브는 누가 바라보느냐에 따라 선의 정의가 될 수도, 악의 신념이 될 수도 있는 존재이다." 작품 워오브는 그 중 선의 오브를 쫓는 4가지의 클래스를 소개하는 영상물이다.',
         genre: '게임 콘텐츠 디자인',
         thumbnail: jeonGiTaeWarOrb,
-        description:
-          "전기태 디자이너의 'War Orb' 작품의 데스크톱 버전 메인 화면입니다. 빛나는 오브를 둘러싼 선과 악의 대립을 그린 세계관 일부를 게임 영상으로 제작한 작품입니다. 화면에는 오브를 중심으로 네 가지 클래스 캐릭터들이 등장하며, 선으로 보이는 존재가 악이 될 수도 있는 세계관의 반전 요소를 시각적으로 표현합니다. Live 2D 애니메이션으로 구현된 역동적인 전투 장면이 특징입니다.",
-        meta: [
-          'Format — Cinematic Game Trailer',
-          'Keyword — Light vs Shadow',
+        description: '',
+        meta: 'Format — Cinematic Game Trailer',
+        layout: 'jeongitae-war-orb',
+        gallery: [
+          { src: jeonGiTaeWork2_02, alt: '모두의 염원이자 신비의 존재, 오브' },
+          { src: jeonGiTaeWork2_03, alt: '제 4클래스' },
+          { src: jeonGiTaeWork2_04, alt: '영광이 있으리' },
+          { src: jeonGiTaeWork2_05, alt: '라이브 2D 애니메이션' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=339-3663&m=dev',
+            title: '모두의 염원이자 신비의 존재, 오브',
+            description: '오브는 어느 날. 혹은 이 세계의 시작의 순간부터 존재했을지도 모르는 신비로운 존재이다.\n이 오브는 그것을 취한 자들에게 원하는 힘을 하사한다.',
+          },
+          {
+            title: '제 4클래스',
+            description: '각자의 신념으로 선의 입장을 자처하며 오브를 쫓는 자들이 있다.',
+          },
+          {
+            title: '영광이 있으리',
+            description: '그들은 각자의 갑옷과 무기, 혹은 마나 창고에 오브를 심어 힘을 발휘하는 존재들. 그들은 더욱 많은 오브를 취해 자신들의 선을 세상에 뿌리 심으려 한다.',
+          },
+          {
+            title: '라이브 2D 애니메이션',
+            description: 'Spine 2D 프로그램을 사용해 2.5D 라이브 2D 애니메이션 효과를 넣어 더욱 생동감 있는 움직임을 연출했다.',
           },
         ],
       },
@@ -1486,40 +2347,144 @@ const designerDetailsData = {
     instagram: 'https://www.instagram.com/lynshuu/',
     works: [
       {
-        id: 'jeonseorin-karon',
-        title: 'Karon',
-        summary: '미래 도시의 은밀한 특수 요원 카론의 세계관 프로젝트.',
+        id: 'jeonseorin-raven-x',
+        title: 'RAVEN-X',
+        summary: '매끄러운 곡선 속 숨은 날카로운 실루엣, RAVEN-X는 까마귀 형상으로 디자인된 미래 전투기이다.',
         genre: '게임 콘텐츠 디자인',
         thumbnail: jeonSeorinKaron,
-        description:
-          "전서린 디자이너의 'Karon' 작품의 데스크톱 버전 메인 화면입니다. 기술과 권력이 충돌하는 미래 도시의 음지에서 활동하는 특수 요원 카론을 그리는 작품입니다. 화면에는 카론 캐릭터의 세련된 디자인과 함께, 초록빛 귀걸이가 통신 장치이자 정체성의 상징으로 강조되어 있습니다. 그림자처럼 도시를 누비는 은밀한 수호자의 모습을 담고 있으며, 사이버펑크적인 분위기가 특징입니다.",
-        meta: [
-          'Format — Character Concept Art',
-          'Keyword — Cyberpunk Agent',
+        description: '',
+        meta: 'Format — Vehicle Concept Art',
+        layout: 'jeonseorin-raven-x',
+        gallery: [
+          { src: jeonSeorinWork1_02, alt: 'RAVEN-X' },
+          { src: jeonSeorinWork1_03, alt: 'Main body' },
+          { src: jeonSeorinWork1_04, alt: 'Engine Part' },
+          { src: jeonSeorinWork1_05, alt: 'Tail Structure' },
+          { src: jeonSeorinWork1_06, alt: 'Beauty Render' },
+          { src: jeonSeorinWork1_07, alt: 'Wireframe Render' },
+          { src: jeonSeorinWork1_08, alt: 'Highlights' },
+          { src: jeonSeorinWork1_09, alt: 'Highlights' },
+          { src: jeonSeorinWork1_10, alt: 'Highlights' },
+          { src: jeonSeorinWork1_11, alt: 'Highlights' },
+          { src: jeonSeorinWork1_12, alt: 'Highlights' },
+          { src: jeonSeorinWork1_13, alt: 'Highlights' },
+          { src: jeonSeorinWork1_14, alt: 'Highlights' },
+          { src: jeonSeorinWork1_15, alt: 'The moment RAVEN-X takes off from the hangar' },
+          { src: jeonSeorinWork1_16, alt: 'Beauty' },
+          { src: jeonSeorinWork1_17, alt: 'Grey' },
+          { src: jeonSeorinWork1_18, alt: 'Wireframe' },
+          { src: jeonSeorinWork1_19, alt: 'Landing mode' },
+          { src: jeonSeorinWork1_20, alt: 'Low-speed flight mode' },
+          { src: jeonSeorinWork1_21, alt: 'High-speed flight mode' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=580-2&m=dev',
+            title: 'DARK FLIGHT, RAVEN-X',
+            description: '첨단 기술이 고도로 발전한 시대 RAVEN-X는 내부의 위협과 테러로부터 인간을 수호하는 임무를 수행한다. 강인한 외관 속에 정교하게 설계된 구조는 위협적이면서도 우아한 곡선을 이루며 미래 전투기의 가능성을 직관적으로 느끼게 한다.\n\nRAVEN-X는 지구의 대기권은 물론 광활한 우주 공간까지 자유롭게 비행할 수 있도록 설계되었다. 각 비행 모드에 따라 자동으로 최적화되는 꼬리 구조는 상황에 맞게 접혀 공기 저항을 최소화하고, 폭발적인 가속력을 발휘한다. 또한 360도 회전이 가능한 엔진 시스템은 전방위 기동을 가능하게 한다. RAVEN-X는 기계적 구조의 완성도와 모션의 리얼리티를 탐구한 작품으로 구조적 설득력과 움직임의 자연스러움을 영상으로 표현한다.',
+          },
+          {
+            title: 'RAVEN-X',
+            description: '이 전투기는 단순한 형태를 넘어 실제로 동작 가능한 구조와 메커니즘을 고려하여 제작되었다. 특히 엔진 회전축의 분할 구조, 꼬리의 접힘 각도, 동체의 회전 중심 등 기계적 연결 관계를 기반으로 모델링되었으며 실제 작동 원리를 바탕으로 한 자연스러운 움직임을 구현하고자 했다.',
+          },
+          {
+            title: 'Main body',
+            description: 'RAVEN-X의 실루엣을 보여주는 탑뷰이다. 매끄럽게 이어지는 곡선과 날카로운 엣지가 공존한다.',
+          },
+          {
+            title: 'Engine Part',
+            description: '정교한 구조를 통해 엔진의 강력한 추진력과 기술적 완성도를 드러낸다.',
+          },
+          {
+            title: 'Tail Structure',
+            description: '공기 역학적 라인을 따라 설계된 꼬리 구조로, 고속 비행 중에도 안정적인 밸런스를 유지한다.',
+          },
+          {
+            title: 'Beauty Render',
+            description: '이 이미지는 Autodesk MAYA를 사용하여 텍스처와 라이팅을 적용한 RAVEN-X의 최종 렌더이다.',
+          },
+          {
+            title: 'Wireframe Render',
+            description: '같은 컷을 기준으로 RAVEN-X의 모델링 구조와 폴리곤 디테일을 확인할 수 있도록 와이어 프레임으로 렌더한 이미지이다.',
+          },
+          {
+            title: 'Highlights',
+            description: '',
+          },
+          {
+            title: 'The moment RAVEN-X takes off from the hangar',
+            description: '어둠 속 격납고를 벗어나, RAVEN-X는 빛을 향해 비상한다.',
+          },
+          {
+            title: 'Beauty',
+            description: '완성된 텍스처와 라이팅을 통해 작품의 분위기와 질감을 표현한 뷰티 이미지이다.',
+          },
+          {
+            title: 'Grey',
+            description: '텍스처를 제외하고 형태와 구조에 집중하여 모델링의 형태미를 보여주는 그레이 이미지이다.',
+          },
+          {
+            title: 'Wireframe',
+            description: '모델링의 폴리곤 구조와 디테일을 확인할 수 있는 와이어프레임 이미지이다.',
+          },
+          {
+            title: 'Landing mode',
+            description: '지면 착륙 시 안정성을 확보하기 위해 착륙 장치가 전개되어 부드럽게 착지할 수 있는 형태로 전환된다.',
+          },
+          {
+            title: 'Low-speed flight mode',
+            description: '저속 비행 시에는 공기 흐름을 안정적으로 제어하도록 설계된 형태로 변한다.',
+          },
+          {
+            title: 'High-speed flight mode',
+            description: '고속 비행 시에는 꼬리 구조가 접히며 위로 상승해 공기 저항을 최소화하고 속도를 극대화할 수 있는 형태로 전환된다.',
           },
         ],
       },
       {
-        id: 'jeonseorin-raven-x',
-        title: 'RAVEN-X',
-        summary: '거대한 까마귀 형상에서 영감을 받은 고속 전투기 디자인.',
+        id: 'jeonseorin-karon',
+        title: 'Karon',
+        summary: 'KARON은 기술과 권력이 충돌하는 미래 도시의 어둠 속에서 임무를 수행하는 특수 요원 캐릭터이다.',
         genre: '게임 콘텐츠 디자인',
         thumbnail: jeonSeorinRavenX,
-        description:
-          "전서린 디자이너의 'RAVEN-X' 작품의 데스크톱 버전 메인 화면입니다. 거대한 까마귀의 형상을 모티브로 한 고속 전투기 RAVEN-X를 소개하는 작품입니다. 화면에는 RAVEN-X 전투기의 날렵하고 위협적인 디자인이 강조되어 있으며, 내부의 위협과 테러로부터 인간을 수호하는 첨단 기술 시대의 파괴적 힘을 상징합니다. 강렬하고 미래지향적인 디자인이 특징입니다.",
-        meta: [
-          'Format — Vehicle Concept Art',
-          'Keyword — Aerial Strike Craft',
+        description: '',
+        meta: 'Format — Character Concept Art',
+        layout: 'jeonseorin-karon',
+        gallery: [
+          { src: jeonSeorinWork2_02, alt: 'KARON\'s Personality' },
+          { src: jeonSeorinWork2_03, alt: 'The Green Earring' },
+          { src: jeonSeorinWork2_04, alt: 'Cold-hearted Agent' },
+          { src: jeonSeorinWork2_05, alt: 'Beauty' },
+          { src: jeonSeorinWork2_06, alt: 'Grey' },
+          { src: jeonSeorinWork2_07, alt: 'Wireframe' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=580-434&m=dev',
+            title: 'MODELING DEMO REEL',
+            description: '이 작품은 Autodesk MAYA와 Adobe Substance 3D Painter를 활용해 제작한 카툰 캐릭터 모델링 데모릴이다.\n\n이 작품의 KARON의 강인한 성격과 내면의 균형을 시각적으로 표현하는 것을 목표로 했다. 카툰 스타일의 생동감과 현실적인 비례를 조화롭게 결합하여, 사실적인 구조 속에 카툰 특유의 감각을 녹여낸 캐릭터로 완성하였다. 단순한 만화적 표현에 머무르지 않고, 실제 인체 구조를 기반으로 한 비례와 균형을 유지하며 모델링한 작품이다.',
+          },
+          {
+            title: 'KARON\'s Personality',
+            description: '검은 전투복을 입은 KARON은 언제나 자신감이 넘치며, 눈빛만으로 상대를 제압할 만큼 강한 카리스마를 지닌다. 외향적이고 에너지 넘치는 성격으로, 위험한 상황에서도 여유를 잃지 않는다. 그녀는 자존감이 높아 자신의 능력에 확신을 가지고 있으며, 실패조차 성장의 일부로 받아들이는 인물이다.',
+          },
+          {
+            title: 'The Green Earring',
+            description: 'KARON의 초록빛 귀걸이는 단순한 통신 장치를 넘어 어둠 속에서도 자신을 잃지 않는 의지의 상징이다.',
+          },
+          {
+            title: 'Cold-hearted Agent',
+            description: '그녀는 누구보다 냉철하게 상황을 판단하고, 임무를 위해 감정조차 절제하는 냉정한 요원이다.',
+          },
+          {
+            title: 'Beauty',
+            description: '완성된 텍스처와 라이팅을 통해 작품의 분위기와 질감을 표현한 뷰티 이미지이다.',
+          },
+          {
+            title: 'Grey',
+            description: '텍스처를 제외하고 형태와 구조에 집중하여 모델링의 형태미를 보여주는 그레이 이미지이다.',
+          },
+          {
+            title: 'Wireframe',
+            description: '모델링의 폴리곤 구조와 디테일을 확인할 수 있는 와이어프레임 이미지이다.',
           },
         ],
       },
@@ -1537,38 +2502,127 @@ const designerDetailsData = {
       {
         id: 'jungjimin-the-gothic',
         title: 'The Gothic',
-        summary: '고딕 양식 갑옷의 아름다움과 상처를 담은 컨셉 아트.',
+        summary: '갑옷, 캐릭터 모델링',
         genre: '게임 콘텐츠 디자인',
         thumbnail: jungJiminTheGothic,
-        description:
-          "정지민 디자이너의 '더 고딕' 작품의 데스크톱 버전 메인 화면입니다. 고딕풍 갑옷과 문양, 낡았지만 아름다운 갑옷을 표현한 작품입니다. 화면에는 실제 고증을 토대로 제작된 기본 갑옷 틀에 판타지적인 디자인 요소가 더해진 갑옷이 전시되어 있습니다. 섬세한 문양과 질감 표현이 돋보이며, 고딕 판타지 세계관의 분위기를 잘 살려줍니다.",
-        meta: [
-          'Format — Armor Concept Art',
-          'Keyword — Gothic Ornamentation',
+        description: '',
+        meta: 'Format — Armor Concept Art',
+        layout: 'jungjimin-the-gothic',
+        gallery: [
+          { src: jungJiminWork1_02, alt: '씬1' },
+          { src: jungJiminWork1_03, alt: '씬2' },
+          { src: jungJiminWork1_04, alt: '씬3' },
+          { src: jungJiminWork1_05, alt: '씬3' },
+          { src: jungJiminWork1_06, alt: '상세샷 갑옷' },
+          { src: jungJiminWork1_07, alt: '상세샷 투구' },
+          { src: jungJiminWork1_08, alt: '상세샷 하체' },
+          { src: jungJiminWork1_09, alt: '문양' },
+          { src: jungJiminWork1_10, alt: '벨트' },
+          { src: jungJiminWork1_11, alt: '하체 갑옷' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=339-4784&m=dev',
+            title: '씬1',
+            description: '어두운 분위기 강조',
+          },
+          {
+            title: '씬2',
+            description: '라이트 강조',
+          },
+          {
+            title: '씬3',
+            description: '구도 강조',
+          },
+          {
+            title: '씬3',
+            description: '숲 속 연출',
+          },
+          {
+            title: '상세샷',
+            description: '갑옷',
+          },
+          {
+            title: '상세샷',
+            description: '투구',
+          },
+          {
+            title: '상세샷',
+            description: '하체',
+          },
+          {
+            title: '문양',
+            description: '상세',
+          },
+          {
+            title: '벨트',
+            description: '상세',
+          },
+          {
+            title: '하체 갑옷',
+            description: '상세',
           },
         ],
       },
       {
         id: 'jungjimin-the-weapon',
         title: 'The Weapon',
-        summary: '고딕 양식 무기에 사용감을 더한 사실적 디자인.',
+        summary: '무기 모델링',
         genre: '게임 콘텐츠 디자인',
         thumbnail: jungJiminTheWeapon,
-        description:
-          "정지민 디자이너의 '더 웨폰' 작품의 데스크톱 버전 메인 화면입니다. 고딕 양식의 무기에 다양한 문양과 사용감을 더해 현실감을 높인 작품입니다. 화면에는 피가 튀긴 흔적 등 디테일이 강조된 무기들이 전시되어 있으며, 실제 사람이 사용할 크기로 모델링되어 생동감을 더합니다. 강렬하고 사실적인 무기 디자인이 특징입니다.",
-        meta: [
-          'Format — Weapon Concept Art',
-          'Keyword — Battle-Worn Detail',
+        description: '',
+        meta: 'Format — Weapon Concept Art',
+        layout: 'jungjimin-the-weapon',
+        gallery: [
+          { src: jungJiminWork2_02, alt: '장검' },
+          { src: jungJiminWork2_03, alt: '해머' },
+          { src: jungJiminWork2_04, alt: '대검' },
+          { src: jungJiminWork2_05, alt: '단검' },
+          { src: jungJiminWork2_06, alt: '상세샷 대검 단검' },
+          { src: jungJiminWork2_07, alt: '상세샷 장검' },
+          { src: jungJiminWork2_08, alt: '상세샷 해머' },
+          { src: jungJiminWork2_10, alt: '해머 상세' },
+          { src: jungJiminWork2_11, alt: '장검 상세' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=339-5026&m=dev',
+            title: '장검',
+            description: '문양 강조',
+          },
+          {
+            title: '해머',
+            description: '문양 강조',
+          },
+          {
+            title: '대검',
+            description: '라이트 강조',
+          },
+          {
+            title: '단검',
+            description: '텍스쳐 강조',
+          },
+          {
+            title: '상세샷',
+            description: '대검, 단검',
+          },
+          {
+            title: '상세샷',
+            description: '장검',
+          },
+          {
+            title: '상세샷',
+            description: '해머',
+          },
+          {
+            title: '문양',
+            description: '상세',
+          },
+          {
+            title: '해머',
+            description: '상세',
+          },
+          {
+            title: '장검',
+            description: '상세',
           },
         ],
       },
@@ -1584,40 +2638,117 @@ const designerDetailsData = {
     instagram: 'https://www.instagram.com/heavencho_/',
     works: [
       {
-        id: 'johaneul-the-reason',
-        title: 'The Reason that I Live',
-        summary: '히키코모리 주인공이 세상으로 다가가는 성장 스토리.',
-        genre: '영상 콘텐츠 디자인',
-        thumbnail: joHaneulReason,
-        description:
-          "조하늘 디자이너의 'The Reason that I Live' 작품의 데스크톱 버전 메인 화면입니다. 히키코모리의 삶을 살던 주인공이 친구의 위로와 응원을 통해 다시 세상으로 한 걸음 내딛는 이야기를 그리는 작품입니다. 화면에는 주인공과 친구의 관계를 상징하는 따뜻한 일러스트와 함께, 희망적인 메시지를 전달하는 요소들이 배치되어 있습니다. 감성적이고 위로를 주는 분위기가 특징입니다.",
-        meta: [
-          'Format — Narrative Illustration',
-          'Keyword — Rebirth Through Friendship',
+        id: 'johaneul-youth-dream',
+        title: '청춘몽',
+        summary: '\'청춘\'이라는 시간 속에서 느껴지는 감정들을, 음악에 맞춰 비주얼을 실시간으로 믹싱하여 시각적으로 표현한 VJ 퍼포먼스',
+        genre: '모션 디자인',
+        thumbnail: joHaneulYouth,
+        description: '',
+        meta: 'Format — Video Performance',
+        layout: 'johaneul-youth-dream',
+        gallery: [
+          { src: joHaneulWork1_02, alt: 'Music' },
+          { src: joHaneulWork1_03, alt: 'Generative AI' },
+          { src: joHaneulWork1_04, alt: 'Visual performance' },
+          { src: joHaneulWork1_05, alt: 'Resolume Arena' },
+          { src: joHaneulWork1_06, alt: 'MIDI Controller' },
+          { src: joHaneulWork1_07, alt: 'Visual Highlights' },
+          { src: joHaneulWork1_08, alt: 'Visual Highlights' },
+          { src: joHaneulWork1_09, alt: 'Visual Highlights' },
+          { src: joHaneulWork1_10, alt: 'Visual Highlights' },
+          { src: joHaneulWork1_11, alt: 'Visual Highlights' },
+          { src: joHaneulWork1_12, alt: 'Visual Highlights' },
+          { src: joHaneulWork1_13, alt: 'Visual Highlights' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=346-5751&m=dev',
+            title: '青春夢 (청춘몽)',
+            description: '청춘몽(靑春夢)은 현실과 이상, 불안과 희망이 공존하는 \'청춘\'이라는 시간 속에서 느껴지는 감정들을, 음악에 맞춰 비주얼을 실시간으로 믹싱하여 시각적으로 표현한 VJ 퍼포먼스이다.\n\n청춘을 주제로 음악을 선곡해 믹싱한 뒤, 생성형 AI를 활용해 청춘의 정서에 어울리는 비주얼을 생성하고 가공하였다. 이렇게 제작한 시각 요소들을 Resolume Arena와 MIDI 패드 컨트롤러를 활용해 맵핑하고, 실시간으로 믹싱하여, 복합적인 청춘의 감정을 시각적으로 경험할 수 있는 라이브 퍼포먼스로 구현했다.',
+          },
+          {
+            title: 'Concept',
+            description: '청춘의 순간들을 음악과 비주얼을 통해 표현하고자 했다',
+          },
+          {
+            title: 'Genre',
+            description: 'Media Art · VJ Performance',
+          },
+          {
+            title: 'Tools',
+            description: 'Midjourney · Adobe Premiere Pro · Adobe After Effects · Resolume Arena',
+          },
+          {
+            title: 'Music',
+            description: '청춘의 시간 속에서 느껴지는 감정들을 바탕으로 음악을 선곡하고 믹싱했다.',
+          },
+          {
+            title: 'Generative AI',
+            description: '불안과 희망의 감정들을 바탕으로 생성형 AI를 활용해 비주얼을 제작하고 가공했다.',
+          },
+          {
+            title: 'Visual performance',
+            description: '제작된 비주얼을 Resolume Arena와 MIDI 컨트롤러에 맵핑하여 실시간으로 믹싱했다.',
+          },
+          {
+            title: 'Resolume Arena',
+            description: '',
+          },
+          {
+            title: 'MIDI Controller',
+            description: '',
+          },
+          {
+            title: 'Visual Highlights',
+            description: '',
           },
         ],
       },
       {
-        id: 'johaneul-youth-dream',
-        title: '청춘몽',
-        summary: '청춘의 파편적인 순간을 VJ 퍼포먼스로 재구성한 영상.',
-        genre: '모션 디자인',
-        thumbnail: joHaneulYouth,
-        description:
-          "조하늘 디자이너의 '청춘몽' 작품의 데스크톱 버전 메인 화면입니다. 영상의 파편을 엮어내는 VJ 퍼포먼스를 통해 청춘의 순간을 몽환적으로 표현하는 작품입니다. 화면에는 다양한 영상 소스들이 콜라주처럼 조합되어 있으며, 청춘의 복합적인 감정과 꿈을 시각적으로 은유합니다. 추상적이고 감각적인 비주얼로 관람자에게 깊은 인상을 남깁니다.",
-        meta: [
-          'Format — Video Performance',
-          'Keyword — Dreamlike Youth Montage',
+        id: 'johaneul-the-reason',
+        title: 'The Reason that I Live',
+        summary: '히키코모리의 삶를 살아가던 코모리가 친구의 위로와 응원을 통해 다시 세상으로 한걸음 내딛는 이야기',
+        genre: '영상 콘텐츠 디자인',
+        thumbnail: joHaneulReason,
+        description: '',
+        meta: 'Format — Narrative Illustration',
+        layout: 'johaneul-the-reason',
+        gallery: [
+          { src: joHaneulWork2_02, alt: '캐릭터 시트' },
+          { src: joHaneulWork2_03, alt: 'Komori 코모리' },
+          { src: joHaneulWork2_04, alt: 'Cloudi 구르미' },
+          { src: joHaneulWork2_05, alt: 'Style Frame' },
+          { src: joHaneulWork2_06, alt: 'Style Frame' },
+          { src: joHaneulWork2_07, alt: 'Style Frame' },
+          { src: joHaneulWork2_08, alt: 'Style Frame' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=346-6000&m=dev',
+            title: 'The Reason that I Live (삶의 이유)',
+            description: '어두운 방 안, 멈춰있는 시간 속의 코모리. 구르미의 따뜻한 손길이 닿는 순간, 멈춰 있던 시간은 다시 흐르기 시작한다. 사라져가던 마음에서, 다시 피어나는 소망으로. "You are the reason that I live"\n\n현대 사회에서 우리는 끊임없이 연결되어 있지만, 역설적으로 동시에 점점 더 외로워지고 있다. 관계 속에서 위로받지 못한 감정은 서서히 마음을 닫게 만들고, 결국 자신을 잃게 만든다.\n\n<The Reason that I Live> 는 \'진정한 위로\'는 무엇인가에 대한 질문을 던진다. 누군가의 손길, 한마디의 말, 작은 관심이 멈춰 있던 마음을 다시 움직이게 만들 수 있다는 믿음에서 시작된 작업이다.\n\n이 이야기가 누군가의 닫힌 마음에 작은 온기로 닿을 수 있기를 바란다.',
+          },
+          {
+            title: 'Concept',
+            description: '개인적인 경험을 토대로, \'삶의 이유는 무엇인가\'라는 질문의 답을 애니메이션으로 담아내고자 했다',
+          },
+          {
+            title: 'Genre',
+            description: '2d Animation',
+          },
+          {
+            title: 'Tools',
+            description: 'Adobe Illustrator · Adobe Premiere Pro · Adobe After Effects',
+          },
+          {
+            title: 'Komori 코모리',
+            description: '우울하고 외로움을 많이 느끼고, 주변환경에 잘 휩쓸린다. 히키코모리의 삶을 살고 있지만, 어떠한 사건을 계기로 변화하여 긍정적인 사고를 하려고 노력한다.',
+          },
+          {
+            title: 'Cloudi 구르미',
+            description: '따뜻한 마음을 지닌, 희망과 위로를 전하는 구름 같은 친구이다. 코모리의 소중한 친구로서, 불안 속에 있을 때 살며시 다가와 곁을 지키며 위로가 되어주었다.',
+          },
+          {
+            title: 'Style Frame',
+            description: '',
           },
         ],
       },
@@ -1635,38 +2766,136 @@ const designerDetailsData = {
       {
         id: 'heo-jihoon-master-imagination',
         title: 'Master your Imagination',
-        summary: '로지텍 MX Master 3S의 창의성을 강조한 모션 캠페인.',
+        summary: 'MX Master 3S를 통해 당신의 상상을 현실로 이끌어내라는 메시지를 담은 시네마틱 브랜딩 영상.',
         genre: '모션 디자인',
         thumbnail: heoJiHoonMaster,
-        description:
-          "허지훈 디자이너의 'Master your Imagination' 작품의 데스크톱 버전 메인 화면입니다. '상상은 머릿속에서 피어나지만, 창조는 손에서 시작된다'는 메시지를 로지텍 MX Master 3S를 통해 감각적으로 보여주는 모션 디자인 작품입니다. 화면에는 마우스와 함께 상상이 현실로 이어지는 순간을 표현하는 다양한 시각적 효과들이 연출되어 있습니다. 기술과 창의성의 조화를 강조하며, 영감을 주는 분위기가 특징입니다.",
-        meta: [
-          'Format — Motion Graphic Campaign',
-          'Keyword — Creative Workflow',
+        description: '',
+        meta: 'Format — Motion Graphic Campaign',
+        layout: 'heo-jihoon-master-imagination',
+        gallery: [
+          { src: heoJiHoonWork1_02, alt: '바위 실루엣' },
+          { src: heoJiHoonWork1_03, alt: '펼쳐지는 상상의 세계' },
+          { src: heoJiHoonWork1_04, alt: '창작의 도구 마우스' },
+          { src: heoJiHoonWork1_05, alt: '생성형 AI 활용' },
+          { src: heoJiHoonWork1_06, alt: 'RUNWAY와 Cinema 4D의 만남' },
+          { src: heoJiHoonWork1_07, alt: 'Stylize + 4K Upscale' },
+          { src: heoJiHoonWork1_08, alt: '다양한 프롬프트' },
+          { src: heoJiHoonWork1_09, alt: '다양한 프롬프트' },
+          { src: heoJiHoonWork1_10, alt: '다양한 프롬프트' },
+          { src: heoJiHoonWork1_11, alt: '다양한 프롬프트' },
+          { src: heoJiHoonWork1_12, alt: '다양한 프롬프트' },
+          { src: heoJiHoonWork1_13, alt: '다양한 프롬프트' },
+          { src: heoJiHoonWork1_14, alt: '다양한 프롬프트' },
+          { src: heoJiHoonWork1_15, alt: '부드러운 무한 스크롤' },
+          { src: heoJiHoonWork1_16, alt: '인체공학적 비대칭 디자인' },
+          { src: heoJiHoonWork1_17, alt: '가로 스크롤 휠' },
+          { src: heoJiHoonWork1_18, alt: 'Master your Imagination' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=365-881&m=dev',
+            title: 'Quote',
+            description: '"상상은 머릿속에서 피어나지만, 창조는 손 끝에서 시작된다."',
+          },
+          {
+            title: '마우스를 창작의 도구로서 바라보다',
+            description: '이 영상은 Logitech MX Master 3S를 주제로, \'상상을 현실로 이끄는 창작의 도구\'라는 메시지를 시각적으로 풀어낸 브랜딩 영상이다.\n\n마우스가 단순한 사무용 기기를 넘어, 디자이너 등 창의적인 작업을 하는 이들에게 손의 연장으로 작용하며 상상을 현실로 구현해내는 창작의 도구가 된다는 생각에서 출발했다.',
+          },
+          {
+            title: '바위 실루엣',
+            description: '마우스의 형태를 연상시키는 바위. 그 윤곽을 따라 상상의 세계가 폭발하듯 펼쳐진다.',
+          },
+          {
+            title: '펼쳐지는 상상의 세계',
+            description: '이어지는 수많은 상상의 세계. 폭발하는 상상력과 함께 벅찬 감정이 밀려온다.',
+          },
+          {
+            title: '창작의 도구, 마우스',
+            description: '무한한 상상의 세계가 현실의 마우스로 모인다. 모든 상상을 현실로 이끄는 창작의 도구가 바로 마우스임을 전한다.',
+          },
+          {
+            title: '생성형 AI 활용',
+            description: '이번 작업에서는 생성형 AI를 실험적으로 활용하여 영상 제작의 효율성을 높였다. 반복적인 테스트를 통해 장면과 연출 등을 빠르게 구상할 수 있었으며, 특히 바다와 같은 자연을 사실적으로 표현할 수 있었다. 프롬프트로 이미지 생성, 이미지로 영상 생성이 기본적인 작업 과정이다.',
+          },
+          {
+            title: 'RUNWAY와 Cinema 4D의 만남',
+            description: '의도한대로 장면을 구현하기 위해 먼저 C4D에서 카메라 움직임과 구도를 간단하게 잡고 렌더하였으며, 이를 Runway로 불러왔다.',
+          },
+          {
+            title: 'Stylize + 4K Upscale',
+            description: 'Runway로 불러온 C4D의 뷰포트 영상을 Stylize 기능을 이용해 원하는 질감으로 변환하였으며, 변환된 영상은 4K로 업스케일링을 진행했다.',
+          },
+          {
+            title: '다양한 프롬프트',
+            description: '동일한 과정을 반복하며 다양한 프롬프트를 입력하여 수많은 장면들을 생성할 수 있었다. AI는 단번에 원하는 결과물을 얻기가 어려운데, 지속적인 연구와 시행착오를 통해 AI를 또 하나의 창작 도구로 받아들이게 된 의미있는 경험이었다.',
+          },
+          {
+            title: '부드러운 무한 스크롤',
+            description: '부드럽게 회전하는 스크롤 휠 강조',
+          },
+          {
+            title: '인체공학적 비대칭 디자인',
+            description: '인체공학적 디자인 강조',
+          },
+          {
+            title: '가로 스크롤 휠',
+            description: '부드럽게 회전하는 가로 휠 강조',
+          },
+          {
+            title: 'Master your Imagination',
+            description: '제목 <Master your Imagination>에는 이 마우스를 통해 상상력을 주도하고, 그것을 현실로 실현하라는 메시지를 담았다.',
           },
         ],
       },
       {
         id: 'heo-jihoon-eternal-vision',
         title: 'Eternal Vision',
-        summary: '포니 쿠페와 N74의 헤리티지를 잇는 모션 디자인.',
+        summary: '현대자동차의 상징적 모델 \'포니 쿠페\'의 유산과 이를 계승한 \'N74\'의 탄생을 감각적으로 담은 시네마틱 브랜딩 영상.',
         genre: '모션 디자인',
         thumbnail: heoJiHoonEternal,
-        description:
-          "허지훈 디자이너의 'Eternal Vision' 작품의 데스크톱 버전 메인 화면입니다. 현대자동차의 상징적 모델 포니 쿠페의 유산과 이를 계승한 N74의 탄생을 감각적으로 담아낸 모션 디자인 작품입니다. 화면에는 포니 쿠페와 N74의 디자인 요소들이 유려하게 연결되며, 헤리티지가 미래의 비전으로 확장되는 가능성을 시각적으로 보여줍니다. 세련되고 미래지향적인 분위기가 특징입니다.",
-        meta: [
-          'Format — Automotive Motion Design',
-          'Keyword — Heritage to Future',
+        description: '',
+        meta: 'Format — Automotive Motion Design',
+        layout: 'heo-jihoon-eternal-vision',
+        gallery: [
+          { src: heoJiHoonWork2_02, alt: 'Cinematic Branding Film' },
+          { src: heoJiHoonWork2_03, alt: 'Card 1' },
+          { src: heoJiHoonWork2_04, alt: 'Card 2' },
+          { src: heoJiHoonWork2_05, alt: 'Card 3' },
+          { src: heoJiHoonWork2_06, alt: 'Feature' },
+          { src: heoJiHoonWork2_07, alt: '푸른 하늘과 설원' },
+          { src: heoJiHoonWork2_08, alt: 'Cinema 4D Pyro' },
+          { src: heoJiHoonWork2_09, alt: 'Gallery' },
+          { src: heoJiHoonWork2_10, alt: 'Gallery' },
+          { src: heoJiHoonWork2_11, alt: 'Gallery' },
+          { src: heoJiHoonWork2_12, alt: 'Gallery' },
+          { src: heoJiHoonWork2_13, alt: 'Gallery' },
+          { src: heoJiHoonWork2_14, alt: 'Gallery' },
+          { src: heoJiHoonWork2_15, alt: 'Gallery' },
+          { src: heoJiHoonWork2_16, alt: 'Eternal Vision' },
         ],
-        links: [
+        notes: [
           {
-            label: 'Figma',
-            url: 'https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=365-1204&m=dev',
+            title: 'Quote',
+            description: '영원한 비전',
+          },
+          {
+            title: 'N Vision 74',
+            description: '포니가 지닌 직선적 디자인 언어와 미래적 공간이 교차하며, 과거의 상징이 새로운 형태로 되살아나는 순간을 담았다.\n\n어두운 미지의 공간을 벗어나 밝은 세계로 질주하는 장면은 헤리티지가 미래의 비전으로 확장되는 가능성을 상징한다.',
+          },
+          {
+            title: 'Cinematic Branding Film',
+            description: 'N Vision 74의 스펙을 직접적으로 드러내기보다, 포니 쿠페의 디자인과 정신을 계승한 브랜드 철학에 집중했다.\n\n영상의 분위기와 연출은 영화 <블레이드 러너 2049>에서 영감을 받았다.',
+          },
+          {
+            title: '푸른 하늘과 설원',
+            description: '극적인 색상 반전을 통해 영상의 분위기를 전환하며, 감정의 흐름을 더욱 극대화하고자 했다. 특히 차가운 블루 톤의 설원을 배경으로 N74가 자유롭게 질주하는 장면은 이전까지의 긴장감과 대비되며 해방감과 역동성을 동시에 전달한다.',
+          },
+          {
+            title: 'Cinema 4D Pyro',
+            description: 'Pyro를 이용하여 바퀴에서 흩날리는 눈 입자를 표현했으며, 하늘에서 내리는 눈은 후보정으로 추가했다.',
+          },
+          {
+            title: 'Eternal Vision',
+            description: '제목 <Eternal Vision>에는 나의 비전이 영원히 빛나길 바라는 소망을 담았다.',
           },
         ],
       },
