@@ -1,167 +1,34 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
-import './DesignerDetail.css';
-import KimYunjungDetail from './KimYunjungDetail';
-import KimJaeEunDetail from './KimJaeEunDetail';
-
-// 디자이너 데이터
-const DESIGNERS = [
-  { 
-    id: 1, 
-    name: '김윤정', 
-    role: 'UI/UX Designer', 
-    description: '사용자 중심의 직관적인 디자인을 추구합니다.',
-    skills: ['Figma', 'Adobe XD', 'Sketch', 'Principle'],
-    projects: ['모바일 뱅킹 앱 리디자인', '전자상거래 플랫폼 UX 개선'],
-    email: 'kimyunjung@mju.ac.kr',
-    portfolio: 'https://portfolio.kimyunjung.com',
-    instagram: 'https://www.instagram.com/zlz_300/'
-  },
-  { 
-    id: 2, 
-    name: '김재은', 
-    role: 'Graphic Designer', 
-    description: '브랜드 아이덴티티와 시각 커뮤니케이션에 특화되어 있습니다.',
-    skills: ['Photoshop', 'Illustrator', 'InDesign', 'After Effects'],
-    projects: ['브랜드 아이덴티티 개발', '프로모션 디자인'],
-    email: 'kimjaeeun@mju.ac.kr',
-    portfolio: 'https://portfolio.kimjaeeun.com',
-    instagram: 'https://instagram.com/kimjaeeun_design'
-  },
-  { 
-    id: 3, 
-    name: '김지나', 
-    role: 'Motion Designer', 
-    description: '동적인 시각 요소로 스토리를 전달합니다.',
-    skills: ['After Effects', 'Cinema 4D', 'Blender', 'Premiere Pro'],
-    projects: ['브랜드 모션 그래픽', 'UI 애니메이션'],
-    email: 'kimjina@mju.ac.kr',
-    portfolio: 'https://portfolio.kimjina.com',
-    instagram: 'https://instagram.com/kimjina_motion'
-  },
-  { 
-    id: 4, 
-    name: '김채영', 
-    role: 'Web Designer', 
-    description: '반응형 웹 디자인과 사용자 경험에 집중합니다.',
-    skills: ['HTML/CSS', 'JavaScript', 'React', 'Figma'],
-    projects: ['기업 웹사이트 리뉴얼', '포트폴리오 웹사이트'],
-    email: 'kimchaeyoung@mju.ac.kr',
-    portfolio: 'https://portfolio.kimchaeyoung.com',
-    instagram: 'https://instagram.com/kimchaeyoung_web'
-  },
-  { 
-    id: 5, 
-    name: '도티안홍', 
-    role: 'Creative Director', 
-    description: '창의적 비전과 전략적 사고로 프로젝트를 이끕니다.',
-    skills: ['Creative Strategy', 'Team Management', 'Project Planning'],
-    projects: ['종합 브랜딩 캠페인', '크리에이티브 디렉션'],
-    email: 'dotianhong@mju.ac.kr',
-    portfolio: 'https://portfolio.dotianhong.com',
-    instagram: 'https://instagram.com/dotianhong_creative'
-  }
-];
+import React, { useEffect, useState } from 'react';
+import DesignerShowcase from './DesignerShowcase';
+import designerDetailsData from '../../data/designerDetailsData';
 
 const DesignerDetail = () => {
   const [designer, setDesigner] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [activeProjectIndex, setActiveProjectIndex] = useState(null);
-  const [modalRoot, setModalRoot] = useState(null);
-  const closeButtonRef = useRef(null);
-  const projectModalRef = useRef(null);
-  const lastFocusedRef = useRef(null);
 
   useEffect(() => {
-    // URL에서 디자이너 이름 추출
+    // 페이지 진입 시 스크롤을 맨 위로 이동
+    window.scrollTo(0, 0);
+    
     const fullPath = window.location.href;
     const pathWithoutQuery = fullPath.split('?')[0];
     const pathParts = pathWithoutQuery.replace(window.location.origin, '').split('/');
     const encodedName = pathParts[2];
     const designerName = encodedName ? decodeURIComponent(encodedName) : '';
-    
-    // 디자이너 찾기
-    const foundDesigner = DESIGNERS.find(d => d.name === designerName);
-    setDesigner(foundDesigner);
+    const foundDesigner = designerDetailsData[designerName];
+    setDesigner(foundDesigner || null);
     setLoading(false);
-    const root = document.getElementById('modal-root') || document.body;
-    setModalRoot(root);
   }, []);
-
-  useEffect(() => {
-    if (activeProjectIndex !== null) {
-      const originalOverflow = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-
-      const handleKeyDown = (event) => {
-        if (event.key === 'Escape') {
-          setActiveProjectIndex(null);
-        } else if (event.key === 'Tab' && projectModalRef.current) {
-          const focusableSelectors =
-            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
-          const focusable = Array.from(projectModalRef.current.querySelectorAll(focusableSelectors));
-          if (!focusable.length) {
-            event.preventDefault();
-            return;
-          }
-          const firstElement = focusable[0];
-          const lastElement = focusable[focusable.length - 1];
-          const isShift = event.shiftKey;
-          const active = document.activeElement;
-
-          if (!isShift && active === lastElement) {
-            event.preventDefault();
-            firstElement.focus();
-          } else if (isShift && active === firstElement) {
-            event.preventDefault();
-            lastElement.focus();
-          }
-        }
-      };
-
-      document.addEventListener('keydown', handleKeyDown);
-      requestAnimationFrame(() => closeButtonRef.current?.focus());
-
-      return () => {
-        document.body.style.overflow = originalOverflow;
-        document.removeEventListener('keydown', handleKeyDown);
-        lastFocusedRef.current?.focus();
-      };
-    }
-    return undefined;
-  }, [activeProjectIndex]);
-
-  const openProjectModal = (index, event) => {
-    event.preventDefault();
-    lastFocusedRef.current = event.currentTarget;
-    setActiveProjectIndex(index);
-  };
-
-  const closeProjectModal = () => {
-    setActiveProjectIndex(null);
-  };
 
   const handleBackToDesigners = () => {
     window.history.pushState({}, '', '/designer');
     window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
-  const handleContactClick = (email) => {
-    window.open(`mailto:${email}`, '_blank');
-  };
-
-  const handlePortfolioClick = (url) => {
-    window.open(url, '_blank');
-  };
-
-  const handleInstagramClick = (url) => {
-    window.open(url, '_blank');
-  };
-
   if (loading) {
     return (
       <div className="designer-detail-loading">
-        <div className="loading-spinner"></div>
+        <div className="loading-spinner" />
         <p>Loading...</p>
       </div>
     );
@@ -171,173 +38,15 @@ const DesignerDetail = () => {
     return (
       <div className="designer-detail-error">
         <h1>Designer Not Found</h1>
-        <p>The designer you're looking for doesn't exist.</p>
-        <button onClick={handleBackToDesigners} className="back-button">
+        <p>The designer you&apos;re looking for doesn&apos;t exist.</p>
+        <button type="button" onClick={handleBackToDesigners} className="back-button">
           Back to Designers
         </button>
       </div>
     );
   }
 
-  if (designer.name === '김윤정') {
-    return <KimYunjungDetail designer={designer} onBack={handleBackToDesigners} />;
-  }
-
-  if (designer.name === '김재은') {
-    return <KimJaeEunDetail designer={designer} onBack={handleBackToDesigners} />;
-  }
-
-  return (
-    <div className="designer-detail">
-      {/* 헤더 */}
-      <header className="designer-detail-header">
-        <button onClick={handleBackToDesigners} className="back-button">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          Back to Designers
-        </button>
-      </header>
-
-      {/* 메인 컨텐츠 */}
-      <main className="designer-detail-main">
-        <div className="designer-profile">
-          {/* 프로필 이미지 */}
-          <div className="designer-avatar">
-            <div className="avatar-placeholder">
-              <span className="avatar-initial">{designer.name.charAt(0)}</span>
-            </div>
-          </div>
-
-          {/* 기본 정보 */}
-          <div className="designer-info">
-            <h1 className="designer-name">{designer.name}</h1>
-            <h2 className="designer-role">{designer.role}</h2>
-            <p className="designer-description">{designer.description}</p>
-          </div>
-
-          {/* 액션 버튼들 */}
-          <div className="designer-actions">
-            <button 
-              onClick={() => handleContactClick(designer.email)} 
-              className="action-button primary"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
-                <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
-              </svg>
-              Contact
-            </button>
-            
-            <button 
-              onClick={() => handlePortfolioClick(designer.portfolio)} 
-              className="action-button secondary"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" strokeWidth="2"/>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="2"/>
-              </svg>
-              Portfolio
-            </button>
-            
-            <button 
-              onClick={() => handleInstagramClick(designer.instagram)} 
-              className="action-button secondary"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" strokeWidth="2"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" strokeWidth="2"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" strokeWidth="2"/>
-              </svg>
-              Instagram
-            </button>
-          </div>
-        </div>
-
-        {/* 스킬 섹션 */}
-        <section className="designer-skills">
-          <h3>Skills</h3>
-          <div className="skills-grid">
-            {designer.skills.map((skill, index) => (
-              <div key={index} className="skill-tag">
-                {skill}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 프로젝트 섹션 */}
-        <section className="designer-projects">
-          <h3>Featured Projects</h3>
-          <div className="projects-list">
-            {designer.projects.map((project, index) => (
-              <div
-                key={index}
-                className="project-item"
-                role="button"
-                tabIndex={0}
-                onClick={(event) => openProjectModal(index, event)}
-                onKeyDown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    openProjectModal(index, event);
-                  }
-                }}
-              >
-                <div className="project-number">{String(index + 1).padStart(2, '0')}</div>
-                <div className="project-content">
-                  <h4>{project}</h4>
-                  <p>Detailed project description and process...</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <button 
-            className="contact-button"
-            onClick={() => handleContactClick(designer.email)}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
-              <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-            이메일로 연락하기
-          </button>
-        </section>
-      </main>
-      {designer && activeProjectIndex !== null && modalRoot &&
-        createPortal(
-          <div className="project-modal-overlay" role="dialog" aria-modal="true" onClick={closeProjectModal}>
-            <div
-              className="project-modal"
-              role="document"
-              onClick={(event) => event.stopPropagation()}
-              ref={projectModalRef}
-            >
-              <button
-                type="button"
-                className="project-modal__close"
-                aria-label="닫기"
-                onClick={closeProjectModal}
-                ref={closeButtonRef}
-              >
-                <span></span>
-                <span></span>
-              </button>
-              <div className="project-modal__body">
-                <h2>{designer.projects[activeProjectIndex]}</h2>
-                <p>
-                  {designer.name} 디자이너의 프로젝트 “{designer.projects[activeProjectIndex]}”에 대한 상세
-                  설명을 준비 중입니다. 작품 프로세스, 컨셉, 사용 툴 등을 여기에 채워 넣을 수 있어요.
-                </p>
-                <button type="button" className="project-modal__cta" onClick={closeProjectModal}>
-                  닫기
-                </button>
-              </div>
-            </div>
-          </div>,
-          modalRoot,
-        )}
-    </div>
-  );
+  return <DesignerShowcase designer={designer} onBack={handleBackToDesigners} />;
 };
 
 export default DesignerDetail;

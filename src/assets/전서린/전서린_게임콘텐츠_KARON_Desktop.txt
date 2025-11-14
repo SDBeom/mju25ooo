@@ -1,0 +1,13 @@
+KARON
+기술과 권력이 충돌하는 미래 도시의 특수 요원을 주인공으로 한 캐릭터 모델링 프로젝트
+
+프로젝트 개요
+- Autodesk Maya와 Substance 3D Painter를 활용해 카툰 렌더 스타일의 캐릭터를 제작했습니다.
+- 에너지 넘치는 요원 KARON의 개성과 세계관을 다양한 포즈와 렌더로 소개합니다.
+
+콘텐츠 구성
+- Personality: KARON의 자신감 넘치는 태도와 눈빛, 임무에 대한 결의를 설명합니다.
+- Green Earring: 캐릭터를 상징하는 초록 귀걸이의 의미를 강조합니다.
+- Cold-hearted Agent: 임무를 위해 감정을 절제하는 냉철한 요원이라는 설정을 전달합니다.
+- Turntable Renders: Beauty, Grey, Wireframe 상태를 비교해 모델링 과정을 보여 줍니다.
+

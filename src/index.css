@@ -54,12 +54,7 @@ html {
   padding: 0;
   margin-bottom: 0; /* 하단 마진 명시적 제거 */
   padding-bottom: 0; /* 하단 패딩 명시적 제거 */
-  -ms-overflow-style: none; /* IE, Edge 스크롤바 숨기기 */
-  scrollbar-width: none; /* Firefox 스크롤바 숨기기 */
-}
-
-html::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge 스크롤바 숨기기 */
+  overflow-y: auto;
 }
 
 body {
@@ -72,16 +67,11 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   overscroll-behavior-y: contain; /* 모바일 pull-to-refresh 방지 */
-  -ms-overflow-style: none; /* IE, Edge 스크롤바 숨기기 */
-  scrollbar-width: none; /* Firefox 스크롤바 숨기기 */
+  overflow-y: auto;
 }
 
 body.details-open {
   overflow: hidden;
-}
-
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge 스크롤바 숨기기 */
 }
 
 a {
@@ -114,18 +104,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* 스크롤바 숨기기 (스크롤 기능은 유지) */
-* {
-  -ms-overflow-style: none; /* IE, Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-*::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
-  width: 0;
-  height: 0;
-}
-
 /* Selection styles */
 ::selection {
   background: rgba(255, 107, 53, 0.3);
@@ -147,4 +125,34 @@ button:focus-visible {
   :root {
     --header-offset: 100px;
   }
+}
+
+/* Custom Scrollbar */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: rgba(8, 9, 13, 0.55);
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(255, 107, 53, 0.95), rgba(79, 195, 247, 0.95));
+  border-radius: 999px;
+  border: 2px solid rgba(8, 9, 13, 0.55);
+  box-shadow: 0 0 8px rgba(255, 107, 53, 0.45);
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(255, 150, 90, 1), rgba(99, 210, 255, 1));
+}
+
+* {
+  scrollbar-color: rgba(255, 107, 53, 0.95) rgba(8, 9, 13, 0.55);
+  scrollbar-width: thin;
 }
