@@ -5507,16 +5507,18 @@ body.kim-modal-cursor-cross {
 }
 
 /* 허지훈 작품 1 (Master your Imagination) 스타일 */
+.work-detail--heo-jihoon-master-imagination {
+  width: 1280px;
+  max-width: calc(100vw - clamp(40px, 6vw, 120px));
+  margin: 0 auto;
+}
+
 .work-detail--heo-jihoon-master-imagination .work-detail__section {
   padding: 120px 64px;
-  max-width: 1280px;
-  margin: 0 auto;
 }
 
 .work-detail--heo-jihoon-master-imagination .work-detail__quote {
   padding: 120px 64px;
-  max-width: 1280px;
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -5532,8 +5534,6 @@ body.kim-modal-cursor-cross {
 
 .work-detail--heo-jihoon-master-imagination .work-detail__text-intro {
   padding: 120px 64px;
-  max-width: 1280px;
-  margin: 0 auto;
 }
 
 .work-detail--heo-jihoon-master-imagination .work-detail__text-intro-label {
@@ -5604,16 +5604,18 @@ body.kim-modal-cursor-cross {
 }
 
 /* 허지훈 작품 2 (Eternal Vision) 스타일 */
+.work-detail--heo-jihoon-eternal-vision {
+  width: 1280px;
+  max-width: calc(100vw - clamp(40px, 6vw, 120px));
+  margin: 0 auto;
+}
+
 .work-detail--heo-jihoon-eternal-vision .work-detail__section {
   padding: 120px 64px;
-  max-width: 1280px;
-  margin: 0 auto;
 }
 
 .work-detail--heo-jihoon-eternal-vision .work-detail__quote {
   padding: 120px 64px;
-  max-width: 1280px;
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -5629,8 +5631,6 @@ body.kim-modal-cursor-cross {
 
 .work-detail--heo-jihoon-eternal-vision .work-detail__text-intro {
   padding: 120px 64px;
-  max-width: 1280px;
-  margin: 0 auto;
 }
 
 .work-detail--heo-jihoon-eternal-vision .work-detail__text-intro-label {

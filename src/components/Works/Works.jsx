@@ -310,11 +310,13 @@ const WORKS_LIST = [
   }
 ];
 
-const normalizeTitle = (title = '') =>
+export const normalizeTitle = (title = '') =>
   title
     .toLocaleLowerCase('ko')
     .normalize('NFKD')
     .replace(/[^\p{L}\p{N}]+/gu, '');
+
+export { WORKS_LIST };
 
 const Works = () => {
   const sortedWorks = useMemo(
@@ -331,7 +333,7 @@ const Works = () => {
   const mediaMap = useMemo(() => {
     const map = new Map();
     WORK_THUMBNAILS.forEach((item) => {
-      map.set(normalizeTitle(item.title), resolveThumbSrc(item.file));
+      map.set(normalizeTitle(item.title), resolveThumbSrc(item.file, item.title));
     });
     return map;
   }, []);

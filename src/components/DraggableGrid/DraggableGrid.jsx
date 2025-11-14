@@ -5,116 +5,15 @@ import { Flip } from 'gsap/Flip';
 import { preloadImages, splitText } from './js/utils.js';
 import { WORK_THUMBNAILS } from '../../data/workThumbsData.js';
 import resolveThumbSrc from '../../utils/resolveThumbSrc.js';
-import loveHero from '../../assets/김윤정/김윤정_Video_작품1_01.webp';
-import loveScene02 from '../../assets/김윤정/김윤정_Video_작품1_02.webp';
-import loveScene03 from '../../assets/김윤정/김윤정_Video_작품1_03.webp';
-import loveScene04 from '../../assets/김윤정/김윤정_Video_작품1_04.webp';
-import loveScene05 from '../../assets/김윤정/김윤정_Video_작품1_05.webp';
-import loveScene06 from '../../assets/김윤정/김윤정_Video_작품1_06.webp';
-import videoBadge from '../../assets/branding_logo/Video.webp';
-import ModalHeroSection from '../ModalHeroSection/ModalHeroSection.jsx';
+import { WORKS_LIST } from '../Works/Works.jsx';
 import './DraggableGrid.css';
 
 const PRODUCTS = WORK_THUMBNAILS.map((image, index) => ({
   id: index + 1,
-  img: resolveThumbSrc(image.file),
+  img: resolveThumbSrc(image.file, image.title),
   ...image,
 }));
 
-const LOVE_AT_RUST_SIGHT_ID =
-  WORK_THUMBNAILS.find((item) => item.title === 'Love at Rust Sight')?.id ?? null;
-
-const LOVE_AT_RUST_SIGHT_MEDIA = {
-  hero: loveHero,
-  gallery: [loveScene02, loveScene03, loveScene04, loveScene05, loveScene06],
-};
-
-const LOVE_AT_RUST_SIGHT_FEATURES = [
-  {
-    id: 'feature-1',
-    type: 'text-image',
-    image: loveScene02,
-    alt: 'Love at Rust Sight 장면 1',
-    paragraphs: [
-      '〈Love at Rust Sight〉는 로봇과 천사가 등장하는 이야기로, 가족에게 버림받은 청소로봇이 우연히 천사를 만난 후 자신을 가족으로 맞이해주길 바라며 죽으려 한다는 내용의 2D 애니메이션이다.',
-      "함께했던 가족과 헤어지고 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 '천사'를 찾아다닌다.",
-    ],
-  },
-  {
-    id: 'feature-2',
-    type: 'media-caption',
-    image: loveScene03,
-    alt: 'Love at Rust Sight 장면 2',
-    caption:
-      '영상이 시작되는 초반부는 한색, 후반부로 진행될수록 난색으로 분위기를 전환시켜 희망적이고 따뜻한 전개를 표현하고자 했습니다.',
-  },
-  {
-    id: 'feature-3',
-    type: 'media',
-    image: loveScene04,
-    alt: 'Love at Rust Sight 장면 3',
-  },
-  {
-    id: 'feature-4',
-    type: 'media',
-    image: loveScene05,
-    alt: 'Love at Rust Sight 장면 4',
-  },
-  {
-    id: 'feature-5',
-    type: 'media',
-    image: loveScene06,
-    alt: 'Love at Rust Sight 장면 5',
-  },
-];
-
-const KIM_YUNJUNG_INSTAGRAM =
-  WORK_THUMBNAILS.find((item) => item.title === 'Love at Rust Sight')?.instagram ||
-  'https://www.instagram.com/zlz_300/';
-
-const LoveAtRustSightDetail = () => (
-  <div className="work-detail">
-    <ModalHeroSection
-      eyebrowImageSrc={videoBadge}
-      eyebrowImageAlt="Video Content 로고"
-      eyebrowText="Video Content"
-      title="Love at Rust Sight"
-      lead="함께했던 가족과 헤어진 후 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 ‘천사’를 찾아다닌다."
-      mediaSrc={LOVE_AT_RUST_SIGHT_MEDIA.hero}
-      mediaAlt="Love at Rust Sight 대표 장면"
-      ctas={[
-        { label: '디자이너의 다른 작품', variant: 'primary', onClick: undefined },
-        {
-          label: '개인 SNS',
-          variant: 'secondary',
-          onClick: () => window.open(KIM_YUNJUNG_INSTAGRAM, '_blank', 'noopener,noreferrer'),
-        },
-      ]}
-    />
-    {LOVE_AT_RUST_SIGHT_FEATURES.map((feature, index) => (
-      <section
-        key={feature.id}
-        className={`work-detail__section work-detail__feature work-detail__feature--${index + 1} ${
-          feature.type !== 'text-image' ? 'work-detail__feature--media-only' : ''
-        }`}
-      >
-        <div className="work-detail__image-block">
-          <img src={feature.image} alt={feature.alt} loading="lazy" />
-        </div>
-        {feature.type === 'text-image' && (
-          <div className="work-detail__feature-text">
-            {feature.paragraphs.map((text) => (
-              <p key={text}>{text}</p>
-            ))}
-          </div>
-        )}
-        {feature.type === 'media-caption' && feature.caption && (
-          <p className="work-detail__feature-caption">{feature.caption}</p>
-        )}
-      </section>
-    ))}
-  </div>
-);
 
 const PRODUCT_COUNT = PRODUCTS.length;
 const GRID_COLUMNS = 6;
@@ -145,6 +44,27 @@ const DraggableGrid = () => {
   const boundsRef = useRef({ minX: 0, maxX: 0, minY: 0, maxY: 0 });
 
   productRefs.current = [];
+
+  const handleViewWork = () => {
+    if (!activeDetailId) return;
+    
+    const activeProduct = PRODUCTS.find((p) => p.id === activeDetailId);
+    if (!activeProduct) return;
+
+    // 작품 제목으로 WORKS_LIST에서 디자이너 찾기
+    const work = WORKS_LIST.find((w) => {
+      // 제목 정규화하여 비교
+      const normalizeTitle = (title) => 
+        title.toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu, '');
+      return normalizeTitle(w.title) === normalizeTitle(activeProduct.title);
+    });
+
+    if (work && work.designer) {
+      const encoded = encodeURIComponent(work.designer);
+      window.history.pushState({}, '', `/designer/${encoded}`);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+  };
 
   useEffect(() => {
     document.body.classList.add('loading');
@@ -443,28 +363,13 @@ const DraggableGrid = () => {
 
       const productId = product.dataset.id;
       const numericProductId = Number(productId);
-      const isLoveDetail = numericProductId === LOVE_AT_RUST_SIGHT_ID;
       const titleIndex = detailsData.findIndex((detail) => detail.id.toString() === productId);
 
       setActiveDetailId(numericProductId);
 
-      if (isLoveDetail) {
-        if (detailsThumb) {
-          detailsThumb.innerHTML = '';
-        }
-        if (cross) {
-          gsap.to(cross, {
-            scale: 1,
-            duration: 0.4,
-            delay: 0.5,
-            ease: 'power2.out',
-          });
-        }
-      } else {
-        flipProduct(product);
-      }
+      flipProduct(product);
 
-      if (titleIndex >= 0 && !isLoveDetail) {
+      if (titleIndex >= 0) {
         titles.forEach((title) => title.classList.remove('is-active'));
         texts.forEach((text) => text.classList.remove('is-active'));
 
@@ -695,8 +600,6 @@ const DraggableGrid = () => {
     };
   }, []);
 
-  const isLoveAtRustSightActive = activeDetailId === LOVE_AT_RUST_SIGHT_ID;
-
   return (
     <div className="draggable-stage">
       <div className="container" ref={containerRef}>
@@ -727,7 +630,7 @@ const DraggableGrid = () => {
         </div>
       </div>
 
-      <div className={`details${isLoveAtRustSightActive ? ' details--love' : ''}`} ref={detailsRef}>
+      <div className="details" ref={detailsRef}>
         <div className="details__title">
           {detailsData.map((detail) => (
             <p key={detail.id} data-title={detail.id} data-text>
@@ -735,25 +638,19 @@ const DraggableGrid = () => {
             </p>
           ))}
         </div>
-        <div className={`details__body${isLoveAtRustSightActive ? ' details__body--love' : ''}`}>
+        <div className="details__body">
           <div className="details__thumb" ref={detailsThumbRef} />
-          <div className={`details__content${isLoveAtRustSightActive ? ' details__content--love' : ''}`}>
-            {isLoveAtRustSightActive ? (
-              <LoveAtRustSightDetail />
-            ) : (
-              <>
-                <div className="details__texts">
-                  {detailsData.map((detail) => (
-                    <p key={detail.id} data-desc={detail.id} data-text>
-                      {detail.description}
-                    </p>
-                  ))}
-                </div>
-                <button type="button" className="details__cta-button">
-                  작품 보러가기
-                </button>
-              </>
-            )}
+          <div className="details__content">
+            <div className="details__texts">
+              {detailsData.map((detail) => (
+                <p key={detail.id} data-desc={detail.id} data-text>
+                  {detail.description}
+                </p>
+              ))}
+            </div>
+            <button type="button" className="details__cta-button" onClick={handleViewWork}>
+              작품 보러가기
+            </button>
           </div>
         </div>
       </div>

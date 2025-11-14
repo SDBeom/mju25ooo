@@ -295,13 +295,16 @@ a:focus-visible {
   overflow: hidden;
   background: #67C5FF;
   border: 2px solid rgba(0, 0, 0, 0.08);
+  isolation: isolate;
 }
 
 .product div {
+  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: inherit;
   overflow: hidden;
+  mix-blend-mode: multiply;
 }
 
 .product img {
