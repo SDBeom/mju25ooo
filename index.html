@@ -147,47 +147,47 @@
     <!-- GitHub Pages SPA 라우팅 처리 -->
     <script>
       // GitHub Pages SPA 라우팅 처리
+      // storage-guard가 초기화되기 전에 실행되도록 최상단에 배치
       (function() {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
+        try {
+          var redirect = sessionStorage.redirect;
+          delete sessionStorage.redirect;
+          if (redirect && redirect !== location.href) {
+            history.replaceState(null, null, redirect);
+          }
+        } catch (e) {
+          // sessionStorage 접근 실패 시 무시
+          console.warn('SessionStorage access failed:', e);
         }
       })();
     </script>
     
     <div id="root"></div> <!-- React 앱이 렌더링될 컨테이너 -->
     
-    <!-- 즉시 실행되는 에러 핸들러 - 스크립트 로드 전에도 에러 감지 -->
+    <!-- 프로덕션 에러 핸들러 -->
     <script>
-      (function() {
-        // 글로벌 에러 핸들러 - 스크립트 로드 전에 등록
-        window.addEventListener('error', function(event) {
-          console.error('Global error caught:', event.error || event.message);
-          var rootElement = document.getElementById('root');
-          if (rootElement && !rootElement.innerHTML.includes('Error')) {
-            rootElement.innerHTML = '<div style="color: white; padding: 2rem; text-align: center; background: #2A2A2A; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;"><div><h1 style="font-size: 2rem; margin-bottom: 1rem;">JavaScript Error</h1><p style="font-size: 1rem; margin-bottom: 1rem;">An error occurred: ' + (event.error?.message || event.message) + '</p><pre style="text-align: left; margin-top: 1rem; padding: 1rem; background: #1a1a1a; border-radius: 4px; overflow: auto; max-width: 800px; max-height: 400px; font-size: 0.8rem;">' + (event.error?.stack || event.filename + ':' + event.lineno + ':' + event.colno) + '</pre><button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">Refresh Page</button></div></div>';
-          }
-        });
-        
-        window.addEventListener('unhandledrejection', function(event) {
-          console.error('Unhandled promise rejection:', event.reason);
-          var rootElement = document.getElementById('root');
-          if (rootElement && !rootElement.innerHTML.includes('Error')) {
-            rootElement.innerHTML = '<div style="color: white; padding: 2rem; text-align: center; background: #2A2A2A; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;"><div><h1 style="font-size: 2rem; margin-bottom: 1rem;">Promise Rejection Error</h1><p style="font-size: 1rem; margin-bottom: 1rem;">' + (event.reason?.message || String(event.reason)) + '</p><button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">Refresh Page</button></div></div>';
-          }
-        });
-        
-        // 스크립트 로드 상태 확인
-        window.addEventListener('load', function() {
-          setTimeout(function() {
-            var rootElement = document.getElementById('root');
-            if (rootElement && rootElement.innerHTML === '' && !document.querySelector('script[type="module"]')) {
-              rootElement.innerHTML = '<div style="color: white; padding: 2rem; text-align: center; background: #2A2A2A; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;"><div><h1 style="font-size: 2rem; margin-bottom: 1rem;">Script Loading Error</h1><p style="font-size: 1rem; margin-bottom: 1rem;">Failed to load JavaScript files. Please check your internet connection and try again.</p><button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">Refresh Page</button></div></div>';
-            }
-          }, 5000);
-        });
-      })();
+      // 프로덕션에서 발생하는 에러를 화면에 표시
+      window.addEventListener('error', function(event) {
+        var root = document.getElementById('root');
+        if (root && !root.hasChildNodes()) {
+          root.innerHTML = '<div style="color: white; padding: 2rem; text-align: center; background: #2A2A2A; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;"><h1 style="font-size: 2rem; margin-bottom: 1rem;">Application Error</h1><p style="font-size: 1rem; margin-bottom: 1rem;">Failed to load the application.</p><pre style="text-align: left; background: #1a1a1a; padding: 1rem; border-radius: 4px; max-width: 800px; overflow: auto; font-size: 0.8rem; color: #ff6b6b;">' + event.error + '</pre><button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">Refresh Page</button></div>';
+        }
+      });
+      
+      window.addEventListener('unhandledrejection', function(event) {
+        var root = document.getElementById('root');
+        if (root && !root.hasChildNodes()) {
+          root.innerHTML = '<div style="color: white; padding: 2rem; text-align: center; background: #2A2A2A; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;"><h1 style="font-size: 2rem; margin-bottom: 1rem;">Application Error</h1><p style="font-size: 1rem; margin-bottom: 1rem;">Unhandled promise rejection.</p><pre style="text-align: left; background: #1a1a1a; padding: 1rem; border-radius: 4px; max-width: 800px; overflow: auto; font-size: 0.8rem; color: #ff6b6b;">' + event.reason + '</pre><button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">Refresh Page</button></div>';
+        }
+      });
+      
+      // React 앱이 5초 내에 렌더링되지 않으면 에러 표시
+      setTimeout(function() {
+        var root = document.getElementById('root');
+        if (root && (!root.hasChildNodes() || root.innerHTML.trim() === '')) {
+          root.innerHTML = '<div style="color: white; padding: 2rem; text-align: center; background: #2A2A2A; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;"><h1 style="font-size: 2rem; margin-bottom: 1rem;">Loading Timeout</h1><p style="font-size: 1rem; margin-bottom: 1rem;">The application is taking longer than expected to load.</p><button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">Refresh Page</button></div>';
+        }
+      }, 5000);
     </script>
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"></script>

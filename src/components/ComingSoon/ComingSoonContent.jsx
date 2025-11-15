@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { useScroll, useTransform, motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
+// eslint-disable-next-line no-unused-vars
+import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
 import dorokImage1 from '../../assets/도록/image 2141.png';
 import dorokImage2 from '../../assets/도록/image 2143.png';
@@ -19,50 +20,27 @@ const ComingSoonContent = () => {
   const introContainer = useRef(null);
   const sectionContainer = useRef(null);
 
-  // useScroll을 안전하게 사용 - ref가 있을 때만 작동
   const introScroll = useScroll({
     target: introContainer,
-    offset: ['start start', 'end start'],
-    layoutEffect: false
+    offset: ['start start', 'end start']
   });
   const introY = useTransform(introScroll.scrollYProgress, [0, 1], ["0vh", "150vh"]);
 
   const sectionScroll = useScroll({
     target: sectionContainer,
-    offset: ["start end", 'end start'],
-    layoutEffect: false
+    offset: ["start end", 'end start']
   });
   const sectionY = useTransform(sectionScroll.scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   useEffect(() => {
-    let animationFrameId;
-    let lenis;
-    
-    try {
-      lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      });
+    const lenis = new Lenis();
 
-      function raf(time) {
-        lenis.raf(time);
-        animationFrameId = requestAnimationFrame(raf);
-      }
-
-      animationFrameId = requestAnimationFrame(raf);
-    } catch (error) {
-      console.error('Error initializing Lenis:', error);
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    // Cleanup
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-      if (lenis) {
-        lenis.destroy();
-      }
-    };
+    requestAnimationFrame(raf);
   }, []);
 
   return (

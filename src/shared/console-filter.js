@@ -86,27 +86,30 @@ const setupConsoleFilter = () => {
 
 /**
  * 글로벌 오류 이벤트 필터링
+ * 주의: 실제 애플리케이션 에러를 숨기지 않도록 신중하게 처리
  */
 const setupGlobalErrorFilter = () => {
   // JavaScript 오류 필터링
-  window.addEventListener('error', (event) => {
-    if (shouldIgnoreError(event.message, event.filename)) {
-      event.preventDefault();
-      event.stopPropagation();
-      return false;
-    }
-  });
+  // 프로덕션에서 에러를 확인할 수 있도록 주석 처리
+  // window.addEventListener('error', (event) => {
+  //   if (shouldIgnoreError(event.message, event.filename)) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //     return false;
+  //   }
+  // });
 
   // Promise rejection 필터링
-  window.addEventListener('unhandledrejection', (event) => {
-    const reason = event.reason;
-    const message = reason instanceof Error ? reason.message : String(reason);
-    
-    if (shouldIgnoreError(message)) {
-      event.preventDefault();
-      return false;
-    }
-  });
+  // 프로덕션에서 에러를 확인할 수 있도록 주석 처리
+  // window.addEventListener('unhandledrejection', (event) => {
+  //   const reason = event.reason;
+  //   const message = reason instanceof Error ? reason.message : String(reason);
+  //   
+  //   if (shouldIgnoreError(message)) {
+  //     event.preventDefault();
+  //     return false;
+  //   }
+  // });
 };
 
 /**
@@ -138,7 +141,8 @@ export const disableConsoleFilter = () => {
   }
 };
 
-// 개발 모드에서만 자동 초기화
-if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
-  initConsoleFilter();
-}
+// 프로덕션 모드에서만 자동 초기화 (Vite에서는 import.meta.env 사용)
+// 하지만 실제 에러를 확인하기 위해 일단 비활성화
+// if (typeof window !== 'undefined' && import.meta.env.PROD) {
+//   initConsoleFilter();
+// }
