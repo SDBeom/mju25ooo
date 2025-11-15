@@ -3,8 +3,10 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
 import dorokImage1 from '../../assets/도록/image 2141.png';
 import dorokImage2 from '../../assets/도록/image 2143.png';
-import brandingVideo from '../../assets/branding_logo/branding_video.mp4';
 import './ComingSoonContent.css';
+
+// 비디오 파일은 public 폴더에 있으므로 절대 경로 사용
+const brandingVideo = '/branding_video.mp4';
 
 // 비디오 로드 에러 핸들링
 const handleVideoError = (e) => {
