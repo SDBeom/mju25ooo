@@ -19,17 +19,27 @@ const ComingSoonContent = () => {
   const introContainer = useRef(null);
   const sectionContainer = useRef(null);
 
-  const introScroll = useScroll({
-    target: introContainer,
-    offset: ['start start', 'end start']
-  });
-  const introY = useTransform(introScroll.scrollYProgress, [0, 1], ["0vh", "150vh"]);
+  // useScroll과 useTransform을 안전하게 사용하기 위한 에러 핸들링
+  let introScroll, introY, sectionScroll, sectionY;
+  
+  try {
+    introScroll = useScroll({
+      target: introContainer,
+      offset: ['start start', 'end start']
+    });
+    introY = useTransform(introScroll.scrollYProgress, [0, 1], ["0vh", "150vh"]);
 
-  const sectionScroll = useScroll({
-    target: sectionContainer,
-    offset: ["start end", 'end start']
-  });
-  const sectionY = useTransform(sectionScroll.scrollYProgress, [0, 1], ["-10%", "10%"]);
+    sectionScroll = useScroll({
+      target: sectionContainer,
+      offset: ["start end", 'end start']
+    });
+    sectionY = useTransform(sectionScroll.scrollYProgress, [0, 1], ["-10%", "10%"]);
+  } catch (error) {
+    console.error('Error initializing scroll transforms:', error);
+    // 기본값 설정
+    introY = "0vh";
+    sectionY = "0%";
+  }
 
   useEffect(() => {
     const lenis = new Lenis();
