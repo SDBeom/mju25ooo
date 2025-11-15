@@ -1,7 +1,10 @@
 import React, { createContext, useContext } from 'react';
 import { useBreakpoint } from '../hooks/useBreakpoint';
 
-// Context 생성
+// Context 생성 - React가 제대로 로드되었는지 확인
+if (typeof React === 'undefined' || typeof createContext === 'undefined') {
+  throw new Error('React is not properly loaded. createContext is undefined.');
+}
 const BreakpointContext = createContext(null);
 
 // Provider 컴포넌트

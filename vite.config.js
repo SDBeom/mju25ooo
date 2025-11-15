@@ -13,10 +13,11 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        // 청크 분할 최적화 - 더 세분화
+        // 청크 분할 최적화 - React를 항상 먼저 로드하도록 보장
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
+            // React와 React-DOM을 같은 청크에 포함하여 단일 인스턴스 보장
+            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
               return 'react-vendor';
             }
             return 'vendor';
