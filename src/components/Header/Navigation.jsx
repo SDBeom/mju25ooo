@@ -12,8 +12,16 @@ const Navigation = ({ items = [], mobile = false }) => {
   }
 
   const navigateTo = (path) => {
-    window.history.pushState({}, '', path);
-    window.dispatchEvent(new PopStateEvent('popstate'));
+    // 전역 navigate 함수가 있으면 사용, 없으면 기본 방식 사용
+    if (window.__navigate) {
+      window.__navigate(path);
+    } else {
+      window.history.pushState({}, '', path);
+      // 커스텀 이벤트를 발생시켜 App.jsx에서 라우팅 업데이트
+      window.dispatchEvent(new PopStateEvent('popstate'));
+      // 추가로 커스텀 이벤트도 발생시켜 확실하게 처리
+      window.dispatchEvent(new Event('locationchange'));
+    }
   };
 
   const handleNavigationClick = (e, item) => {

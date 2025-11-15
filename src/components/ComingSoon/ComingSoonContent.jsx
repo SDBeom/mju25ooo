@@ -3,9 +3,15 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
 import dorokImage1 from '../../assets/도록/image 2141.png';
 import dorokImage2 from '../../assets/도록/image 2143.png';
+import brandingVideo from '../../assets/branding_logo/branding_video.mp4';
 import './ComingSoonContent.css';
 
-const brandingVideo = '/branding-video.mp4';
+// 비디오 로드 에러 핸들링
+const handleVideoError = (e) => {
+  console.warn('비디오 파일을 로드할 수 없습니다:', brandingVideo);
+  // 비디오가 없어도 페이지는 계속 표시됨
+  e.target.style.display = 'none';
+};
 
 const ComingSoonContent = () => {
   const introContainer = useRef(null);
@@ -39,7 +45,7 @@ const ComingSoonContent = () => {
       {/* Intro Section - Parallax Background */}
       <div ref={introContainer} className="about-intro">
         <motion.div style={{ y: introY }} className="about-intro-image">
-          <video autoPlay muted loop playsInline>
+          <video autoPlay muted loop playsInline onError={handleVideoError}>
             <source src={brandingVideo} type="video/mp4" />
           </video>
         </motion.div>
@@ -157,7 +163,7 @@ const ComingSoonContent = () => {
         </div>
         <div className="about-section-background">
           <motion.div style={{ y: sectionY }} className="about-section-image">
-            <video autoPlay muted loop playsInline>
+            <video autoPlay muted loop playsInline onError={handleVideoError}>
               <source src={brandingVideo} type="video/mp4" />
             </video>
           </motion.div>

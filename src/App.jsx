@@ -84,8 +84,21 @@ function App() {
       setCurrentPath(nextPath);
     };
 
+    // popstate와 커스텀 locationchange 이벤트 모두 처리
     window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+    window.addEventListener('locationchange', handlePopState);
+    
+    // Navigation 컴포넌트에서 경로 변경 시 호출할 수 있도록 전역 함수 등록
+    window.__navigate = (path) => {
+      window.history.pushState({}, '', path);
+      handlePopState();
+    };
+    
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('locationchange', handlePopState);
+      delete window.__navigate;
+    };
   }, []);
 
   const normalizedPath = ROUTES[currentPath]
