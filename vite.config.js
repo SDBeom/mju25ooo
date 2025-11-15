@@ -38,9 +38,9 @@ export default defineConfig({
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // 프로덕션에서 console 제거
+        drop_console: false, // 프로덕션에서도 console 유지 (디버깅용)
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn']
+        pure_funcs: [] // console 제거하지 않음
       },
       mangle: {
         safari10: true

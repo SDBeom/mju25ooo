@@ -4,9 +4,34 @@ import './index.css';
 import App from './App.jsx';
 import './shared/storage-guard'; // 저장소 접근 가드 초기화
 // 개발 모드에서는 콘솔 필터 비활성화하여 모든 에러 확인 가능
-if (import.meta.env.PROD) {
-  import('./shared/console-filter'); // 프로덕션에서만 콘솔 오류 필터링
-}
+// 프로덕션에서도 에러를 확인할 수 있도록 콘솔 필터는 조건부로 로드
+// if (import.meta.env.PROD) {
+//   import('./shared/console-filter'); // 프로덕션에서만 콘솔 오류 필터링
+// }
+
+// 글로벌 에러 핸들러 - 프로덕션에서도 에러 표시
+window.addEventListener('error', (event) => {
+  console.error('Global error:', event.error);
+  const rootElement = document.getElementById('root');
+  if (rootElement && !rootElement.innerHTML.includes('Application Error')) {
+    rootElement.innerHTML = `
+      <div style="color: white; padding: 2rem; text-align: center; background: #2A2A2A; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <div>
+          <h1 style="font-size: 2rem; margin-bottom: 1rem;">JavaScript Error</h1>
+          <p style="font-size: 1rem; margin-bottom: 1rem;">An error occurred while loading the application.</p>
+          <pre style="text-align: left; margin-top: 1rem; padding: 1rem; background: #1a1a1a; border-radius: 4px; overflow: auto; max-width: 800px; max-height: 400px; font-size: 0.8rem;">${event.error?.toString() || event.message}\n\n${event.error?.stack || event.filename}:${event.lineno}:${event.colno}</pre>
+          <button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">
+            Refresh Page
+          </button>
+        </div>
+      </div>
+    `;
+  }
+});
+
+window.addEventListener('unhandledrejection', (event) => {
+  console.error('Unhandled promise rejection:', event.reason);
+});
 
 // React 앱 마운트 확인
 const rootElement = document.getElementById('root');
@@ -37,7 +62,7 @@ if (!rootElement) {
         <div>
           <h1 style="font-size: 2rem; margin-bottom: 1rem;">Application Error</h1>
           <p style="font-size: 1rem; margin-bottom: 1rem;">Failed to load the application. Please refresh the page.</p>
-          ${import.meta.env.DEV ? `<pre style="text-align: left; margin-top: 1rem; padding: 1rem; background: #1a1a1a; border-radius: 4px; overflow: auto; max-width: 800px; max-height: 400px;">${error.toString()}\n\n${error.stack || ''}</pre>` : ''}
+          <pre style="text-align: left; margin-top: 1rem; padding: 1rem; background: #1a1a1a; border-radius: 4px; overflow: auto; max-width: 800px; max-height: 400px; font-size: 0.8rem;">${error.toString()}\n\n${error.stack || ''}</pre>
           <button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">
             Refresh Page
           </button>
