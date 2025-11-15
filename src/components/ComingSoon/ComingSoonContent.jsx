@@ -162,7 +162,7 @@ const ComingSoonContent = () => {
           <p className="about-section-text">
             학생들의 창의적인 영상과 애니메이션 작품을 만나보세요.
           </p>
-          <p className="about-section-title">About</p>
+          <p className="about-section-title">점에서 점으로 점점</p>
         </div>
         <div className="about-section-background">
           <motion.div style={{ y: sectionY }} className="about-section-image">

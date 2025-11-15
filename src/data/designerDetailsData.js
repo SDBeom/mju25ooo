@@ -156,6 +156,12 @@ import parkHeechanWork2_05 from '../assets/박희찬/박희찬_게임콘텐츠_�
 import parkHeechanWork2_06 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_06.webp';
 
 import thumbHiFive from '../assets/Thumb/썸네일_서동범_HiFive.webp';
+import seoDongbeomWork1_01 from '../assets/서동범/서동범_멀티미디어_작품1_01.png';
+import seoDongbeomWork1_02 from '../assets/서동범/서동범_멀티미디어_작품1_02.png';
+import seoDongbeomWork1_03 from '../assets/서동범/서동범_멀티미디어_작품1_03.png';
+import seoDongbeomWork1_04 from '../assets/서동범/서동범_멀티미디어_작품1_04.png';
+import seoDongbeomWork1_05 from '../assets/서동범/서동범_멀티미디어_작품1_05.png';
+import seoDongbeomWork1_06 from '../assets/서동범/서동범_멀티미디어_작품1_06.png';
 
 import songDaheeCardOfLove from '../assets/송다희/송다희_영상콘텐츠_작품1_01.webp';
 import songDaheeWork1_02 from '../assets/송다희/송다희_영상콘텐츠_작품1_02.webp';
@@ -1256,14 +1262,47 @@ const designerDetailsData = {
       {
         id: 'seodongbeom-hifive',
         title: 'HiFive',
-        summary: '순간의 스파크를 시각화한 인터랙티브 브랜딩 경험.',
+        summary: 'HiFive는 프로필이나 관계의 부담 없이, 같은 현장에 모인 사람들이 커서(cursor)가 되어 순간의 분위기(vibe)를 공유하는 실시간 소셜 미디어입니다.',
         genre: '멀티미디어 디자인',
-        thumbnail: thumbHiFive,
+        thumbnail: seoDongbeomWork1_01,
         description:
           '우연한 하이파이브 순간의 전기적 에너지를 네온 그래픽과 인터랙션으로 구현했습니다. 손끝에서 번지는 스파크와 리듬감 있는 타이포그래피가 즉각적인 즐거움을 전달합니다.',
         meta: [
           'Medium — Interactive Motion Graphic',
           'Keyword — Spontaneous Spark',
+        ],
+        layout: 'hifive',
+        gallery: [
+          { src: seoDongbeomWork1_01, alt: 'HiFive 메인 이미지' },
+          { src: seoDongbeomWork1_02, alt: 'Background 섹션 이미지' },
+          { src: seoDongbeomWork1_03, alt: 'Feature 이미지' },
+          { src: seoDongbeomWork1_04, alt: '월드맵과 플레이그라운드 기능' },
+          { src: seoDongbeomWork1_05, alt: '휘발성 세션 기능' },
+          { src: seoDongbeomWork1_06, alt: '커서 중심 UI' },
+        ],
+        notes: [
+          {
+            title: 'Background',
+            description: '우리는 관계를 맺기 위해 너무 많은 과정을 거칩니다. 새로운 사람과 소통하려면 앱에서 프로필을 교환하고, 약속 일정을 잡아야 했습니다. 혹은 공통점도 모르는 상대에게 먼저 말을 거는 부담을 감수해야 했습니다.',
+          },
+          {
+            title: null,
+            description: '"지속적인 관계가 아닌,순간의 현장감을 극대화하는 소셜 미디어."',
+            subtitle: '우리는 왜 군중 속에서 단절을 느낄까?',
+            content: '사람들은 \'순간의 접촉(contact)\'은 무시하고, \'지속적인 관계(connection)\'만 관리하도록 강요받는다. 관계의 피로감이 만연한 지금, 사용자가 즉시 교감하게 만드는 인터페이스가 필요하다.',
+          },
+          {
+            title: '월드맵과 플레이그라운드 기능',
+            description: '하이파이브는 이 모든 과정을 생략합니다. 사용자는 월드맵에서 지금 가장 뜨거운 현장을 발견하고, 같은 현장을 경험한다는 단 하나의 공통분모만으로 즉시 플레이그라운드에 입장합니다.',
+          },
+          {
+            title: '휘발성 세션 기능',
+            description: '하이파이브의 연결은 관계가 아닌 순간입니다. 사용자가 설정된 현장을 벗어나면, 플레이그라운드와의 연결은 하이파이브처럼 그 즉시, 그리고 자동으로 종료됩니다.',
+          },
+          {
+            title: '커서 중심 UI',
+            description: '하이파이브는 에너지를 즉시 배출할 수 있는 도구를 제공합니다. 커서를 탭하여가벼운 커서챗을 날리고, Radial UI로 제스처를 보내며, 현장의 분위기를 함께 만들어갑니다.',
+          },
         ],
       },
     ],

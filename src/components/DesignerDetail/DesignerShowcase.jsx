@@ -4964,6 +4964,96 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
       );
     }
 
+    // hifive 레이아웃이 필요한 경우 (서동범 작품)
+    const useHifiveLayout = work.layout === 'hifive' || work.id === 'seodongbeom-hifive';
+    
+    if (useHifiveLayout && work.gallery && work.notes && Array.isArray(work.notes) && work.notes[0] && typeof work.notes[0] === 'object') {
+      const mainImage = work.gallery[0]; // 메인 이미지
+      const backgroundImage = work.gallery[1]; // Background 섹션 이미지
+      const featureImage = work.gallery[2]; // Feature 이미지
+      const featureCards = work.gallery.slice(3, 6); // 3개의 Feature 카드
+
+      return (
+        <div className="work-detail work-detail--hifive">
+          <ModalHeroSection
+            eyebrowImageSrc={badgeSrc}
+            eyebrowImageAlt={badgeAlt}
+            eyebrowText={work.genre || designer.role || 'Content'}
+            title={work.title}
+            lead={work.summary}
+            mediaSrc={mainImage.src}
+            mediaAlt={mainImage.alt}
+            ctas={ctas}
+          />
+
+          {/* Feature Bento: Background 섹션 */}
+          {backgroundImage && work.notes[0] && (
+            <section className="work-detail__section work-detail__feature-bento">
+              <div className="work-detail__feature-bento-text">
+                <h3 className="work-detail__feature-title">{work.notes[0].title}</h3>
+                <p>{work.notes[0].description}</p>
+              </div>
+              <div className="work-detail__feature-bento-image">
+                <img src={backgroundImage.src} alt={backgroundImage.alt} loading="lazy" />
+              </div>
+            </section>
+          )}
+
+          {/* Pull Quote 섹션 */}
+          {work.notes[1] && (
+            <section className="work-detail__section work-detail__pull-quote">
+              <figure className="work-detail__pull-quote-figure">
+                <p className="work-detail__pull-quote-text">{work.notes[1].description}</p>
+                {work.notes[1].subtitle && (
+                  <p className="work-detail__pull-quote-subtitle">{work.notes[1].subtitle}</p>
+                )}
+                {work.notes[1].content && (
+                  <p className="work-detail__pull-quote-content">{work.notes[1].content}</p>
+                )}
+              </figure>
+            </section>
+          )}
+
+          {/* Feature 이미지 섹션 */}
+          {featureImage && (
+            <section className="work-detail__section work-detail__feature work-detail__feature--media-only">
+              <div className="work-detail__image-block">
+                <img src={featureImage.src} alt={featureImage.alt} loading="lazy" />
+              </div>
+            </section>
+          )}
+
+          {/* Feature Cards: 3개의 카드 */}
+          {featureCards.length > 0 && (
+            <section className="work-detail__section work-detail__cards">
+              <ul className="work-detail__cards-grid work-detail__cards-grid--hifive">
+                {featureCards.map((card, index) => {
+                  const note = work.notes[index + 2];
+                  return (
+                    <li key={card.src} className="work-detail__card work-detail__card--hifive">
+                      <div className="work-detail__card-image">
+                        <img src={card.src} alt={card.alt} loading="lazy" />
+                      </div>
+                      {note && (
+                        <div className="work-detail__card-text">
+                          {note.title && (
+                            <ol className="work-detail__card-title-list" start={index + 1}>
+                              <li>{note.title}</li>
+                            </ol>
+                          )}
+                          {note.description && <p>{note.description}</p>}
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          )}
+        </div>
+      );
+    }
+
     // cards 레이아웃이 필요한 경우 (김윤정 작품 2 등)
     const useCardsLayout = work.layout === 'cards' || work.id === 'kimyunjung-hello-universe';
     

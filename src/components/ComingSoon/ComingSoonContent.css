@@ -135,7 +135,7 @@
 
 /* Brand Story Section */
 .about-brand-story {
-  padding: 0 40px;
+  padding: 80px 40px;
   margin: 0;
   width: 100%;
   background-color: #fff;
@@ -185,7 +185,7 @@
 
 /* Exhibition Info Section */
 .about-exhibition-info {
-  padding: 0 40px;
+  padding: 80px 40px;
   margin: 0;
   background-color: #f5f5f5;
   text-align: center;
@@ -260,7 +260,7 @@
 
 /* Committee Section */
 .about-committee {
-  padding: 0 40px;
+  padding: 80px 40px;
   margin: 0;
   background-color: #fff;
   width: 100%;
@@ -322,7 +322,7 @@
   .about-brand-story,
   .about-exhibition-info,
   .about-committee {
-    padding: 0 40px;
+    padding: 80px 40px;
     margin: 0;
   }
 
