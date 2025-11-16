@@ -2684,36 +2684,42 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
             <section className="work-detail__section work-detail__cards">
               <ul className="work-detail__detail-grid">
                 <li className="work-detail__detail-column">
-                  <div className="work-detail__detail-card work-detail__detail-card--center">
-                    <div className="work-detail__detail-card-text">
-                      {work.notes[12] && work.notes[12].title && <h4>{work.notes[12].title}</h4>}
-                      {work.notes[12] && work.notes[12].description && <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[12].description}</p>}
+                  {detailCards[0] && (
+                    <div className="work-detail__detail-card work-detail__detail-card--center">
+                      <div className="work-detail__detail-card-text">
+                        {work.notes[12] && work.notes[12].title && <h4>{work.notes[12].title}</h4>}
+                        {work.notes[12] && work.notes[12].description && <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[12].description}</p>}
+                      </div>
+                      <div className="work-detail__detail-card-image">
+                        <img src={detailCards[0].src} alt={detailCards[0].alt} loading="lazy" />
+                      </div>
                     </div>
-                    <div className="work-detail__detail-card-image">
-                      <img src={detailCards[0].src} alt={detailCards[0].alt} loading="lazy" />
+                  )}
+                  {detailCards[1] && (
+                    <div className="work-detail__detail-card">
+                      <div className="work-detail__detail-card-text">
+                        {work.notes[13] && work.notes[13].title && <h4>{work.notes[13].title}</h4>}
+                        {work.notes[13] && work.notes[13].description && <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[13].description}</p>}
+                      </div>
+                      <div className="work-detail__detail-card-image">
+                        <img src={detailCards[1].src} alt={detailCards[1].alt} loading="lazy" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="work-detail__detail-card">
-                    <div className="work-detail__detail-card-text">
-                      {work.notes[13] && work.notes[13].title && <h4>{work.notes[13].title}</h4>}
-                      {work.notes[13] && work.notes[13].description && <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[13].description}</p>}
-                    </div>
-                    <div className="work-detail__detail-card-image">
-                      <img src={detailCards[1].src} alt={detailCards[1].alt} loading="lazy" />
-                    </div>
-                  </div>
+                  )}
                 </li>
-                <li className="work-detail__detail-column">
-                  <div className="work-detail__detail-card work-detail__detail-card--large">
-                    <div className="work-detail__detail-card-text">
-                      {work.notes[14] && work.notes[14].title && <h4>{work.notes[14].title}</h4>}
-                      {work.notes[14] && work.notes[14].description && <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[14].description}</p>}
+                {detailCards[2] && (
+                  <li className="work-detail__detail-column">
+                    <div className="work-detail__detail-card work-detail__detail-card--large">
+                      <div className="work-detail__detail-card-text">
+                        {work.notes[14] && work.notes[14].title && <h4>{work.notes[14].title}</h4>}
+                        {work.notes[14] && work.notes[14].description && <p style={{ whiteSpace: 'pre-wrap' }}>{work.notes[14].description}</p>}
+                      </div>
+                      <div className="work-detail__detail-card-image">
+                        <img src={detailCards[2].src} alt={detailCards[2].alt} loading="lazy" />
+                      </div>
                     </div>
-                    <div className="work-detail__detail-card-image">
-                      <img src={detailCards[2].src} alt={detailCards[2].alt} loading="lazy" />
-                    </div>
-                  </div>
-                </li>
+                  </li>
+                )}
               </ul>
             </section>
           )}

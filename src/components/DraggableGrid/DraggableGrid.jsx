@@ -120,12 +120,7 @@ const DraggableGrid = () => {
       return { width: rect.width, height: rect.height };
     };
 
-    // Removed unused getResponsivePadding function as per lint error
-      const { width } = getViewportSize();
-      if (width < 768) return '100vw'; // 모바일: 전체 화면
-      if (width < 1024) return '60vw'; // 태블릿: 60%
-      return '50vw'; // 데스크탑: 50%
-    };
+    // getResponsiveDetailsWidth 함수는 더 이상 사용되지 않아 제거되었습니다.
 
     const getResponsiveDetailsX = (isOpen) => {
       const { width } = getViewportSize();

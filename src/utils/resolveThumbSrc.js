@@ -112,6 +112,10 @@ try {
 const normalizeKey = (filePath) => filePath.replace(/\\/g, '/');
 
 export const resolveThumbSrc = (file, title) => {
+  // Hard override for Product #16 (HiFive) to ensure main page uses 작품1 썸네일
+  if (title === 'HiFive' || /(?:^|\/)썸네일_서동범_HiFive\.webp$/u.test(file || '')) {
+    return seoDongbeomHiFive;
+  }
   // If title is provided, use 작품번호_01 image
   if (title && workThumbnailMap[title]) {
     return workThumbnailMap[title];
