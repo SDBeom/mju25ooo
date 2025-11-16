@@ -4,10 +4,10 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
 import dorokImage1 from '../../assets/도록/image 2141.webp';
 import dorokImage2 from '../../assets/도록/image 2143.webp';
-import brandingVideoSrc from '../../assets/branding_logo/branding_video.mp4';
 import './ComingSoonContent.css';
 
-// Vite/webpack이 자산을 번들링하도록 mp4를 import로 참조
+// 프로덕션 빌드에서 mp4 번들 해석 이슈를 피하기 위해 Public 절대 경로 사용
+const brandingVideo = '/@branding_video.mp4';
 
 const ComingSoonContent = () => {
   const introContainer = useRef(null);
@@ -62,14 +62,8 @@ const ComingSoonContent = () => {
       {/* Intro Section - Parallax Background */}
       <div ref={introContainer} className="about-intro">
         <motion.div style={{ y: introY }} className="about-intro-image">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls={false}
-          >
-            <source src={brandingVideoSrc} type="video/mp4" />
+          <video autoPlay muted loop playsInline controls={false}>
+            <source src={brandingVideo} type="video/mp4" />
           </video>
         </motion.div>
       </div>
@@ -186,14 +180,8 @@ const ComingSoonContent = () => {
         </div>
         <div className="about-section-background">
           <motion.div style={{ y: sectionY }} className="about-section-image">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls={false}
-            >
-              <source src={brandingVideoSrc} type="video/mp4" />
+            <video autoPlay muted loop playsInline controls={false}>
+              <source src={brandingVideo} type="video/mp4" />
             </video>
           </motion.div>
         </div>
