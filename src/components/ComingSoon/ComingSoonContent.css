@@ -22,6 +22,7 @@
 .about-intro-image video {
   width: 100%;
   height: 100%;
+  -webkit-object-fit: cover;
   object-fit: cover;
 }
 
@@ -63,6 +64,7 @@
 .about-description-image {
   width: 50%;
   height: 100%;
+  -webkit-object-fit: cover;
   object-fit: cover;
   flex: 1 1 50%;
   display: block;
@@ -76,6 +78,7 @@
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
+  -webkit-clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
   clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
   background-color: #FF7700;
 }
@@ -90,6 +93,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  -webkit-mix-blend-mode: difference;
   mix-blend-mode: difference;
   color: white;
 }
@@ -100,6 +104,7 @@
   text-transform: uppercase;
   align-self: flex-end;
   margin: 0;
+  -webkit-mix-blend-mode: difference;
   mix-blend-mode: difference;
   color: white;
 }
@@ -108,6 +113,7 @@
   font-size: clamp(3rem, 5vw, 6rem);
   text-transform: uppercase;
   margin: 0;
+  -webkit-mix-blend-mode: difference;
   mix-blend-mode: difference;
   color: white;
 }
@@ -130,6 +136,7 @@
 .about-section-image video {
   width: 100%;
   height: 100%;
+  -webkit-object-fit: cover;
   object-fit: cover;
 }
 

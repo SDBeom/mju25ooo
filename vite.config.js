@@ -56,11 +56,34 @@ export default defineConfig({
   // 개발 서버 최적화
   server: {
     port: 5173,
-    strictPort: true,
+    strictPort: false, // 포트가 사용 중이면 자동으로 다른 포트 사용
+    host: true, // 외부 접근 허용
     headers: {
       // 캐싱 헤더 설정
       'Cache-Control': 'public, max-age=31536000'
+    },
+    // 대용량 파일 처리 최적화
+    fs: {
+      // 상위 디렉토리 접근 제한 (보안 및 성능)
+      strict: true,
+      // 허용할 디렉토리
+      allow: ['..']
+    },
+    // 워처 최적화 (대용량 파일 스캔 방지)
+    watch: {
+      // node_modules 제외
+      ignored: ['**/node_modules/**', '**/.git/**'],
+      // 폴링 간격 증가 (성능 향상)
+      usePolling: false
     }
+  },
+  
+  // 개발 모드 최적화
+  optimizeDeps: {
+    // 사전 번들링할 의존성
+    include: ['react', 'react-dom', 'framer-motion', 'gsap'],
+    // 제외할 의존성
+    exclude: []
   },
   
   // CSS 최적화

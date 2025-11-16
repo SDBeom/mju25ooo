@@ -14,7 +14,7 @@ import parkJinaRemain from '../assets/박진아/박진아_멀티미디어_작품
 import parkHaeinChrome from '../assets/박해인/박해인_모션디자인_작품1_01.webp';
 import parkHeechanPledge from '../assets/박희찬/박희찬_게임콘텐츠_작품1_01.webp';
 import parkHeechanReel from '../assets/박희찬/박희찬_게임콘텐츠_작품2_01.webp';
-import thumbHiFive from '../assets/Thumb/썸네일_서동범_HiFive.webp';
+import seoDongbeomHiFive from '../assets/서동범/서동범_멀티미디어_작품1_01.webp';
 import songDaheeCardOfLove from '../assets/송다희/송다희_영상콘텐츠_작품1_01.webp';
 import songDaheePeony from '../assets/송다희/송다희_영상콘텐츠_작품2_01.webp';
 import simSeongbinBoom from '../assets/심성빈/심성빈_영상콘텐츠_작품1_01.webp';
@@ -62,7 +62,7 @@ const workThumbnailMap = {
   'Chrome 4: Seasons': parkHaeinChrome,
   '2025 Animation Reel': parkHeechanReel,
   'PLEDGE': parkHeechanPledge,
-  'HiFive': thumbHiFive,
+  'HiFive': seoDongbeomHiFive,
   'Abyss Racing: 세이렌의 보물': leeGabiWork1,
   'Overcooked: 카페대소동': leeGabiWork2,
   'A Card of Love': songDaheeCardOfLove,
@@ -97,10 +97,17 @@ const workThumbnailMap = {
 };
 
 // Fallback to Thumb folder for backward compatibility
-const thumbImports = import.meta.glob('../assets/Thumb/*.webp', {
-  eager: true,
-  import: 'default',
-});
+// Use try-catch to handle case where Thumb folder doesn't exist
+let thumbImports = {};
+try {
+  thumbImports = import.meta.glob('../assets/Thumb/*.webp', {
+    eager: true,
+    import: 'default',
+  }) || {};
+} catch {
+  // Thumb folder doesn't exist or is empty - use empty object
+  thumbImports = {};
+}
 
 const normalizeKey = (filePath) => filePath.replace(/\\/g, '/');
 
@@ -115,6 +122,12 @@ export const resolveThumbSrc = (file, title) => {
     return '';
   }
 
+  // If thumbImports is empty (folder doesn't exist), return empty string
+  const thumbKeys = Object.keys(thumbImports);
+  if (thumbKeys.length === 0) {
+    return '';
+  }
+
   const normalized = normalizeKey(file);
   const directKey = `../assets/Thumb/${normalized}`;
 
@@ -122,7 +135,7 @@ export const resolveThumbSrc = (file, title) => {
     return thumbImports[directKey];
   }
 
-  const fallbackKey = Object.keys(thumbImports).find((key) => key.endsWith(`/${normalized}`));
+  const fallbackKey = thumbKeys.find((key) => key.endsWith(`/${normalized}`));
   return fallbackKey ? thumbImports[fallbackKey] : '';
 };
 

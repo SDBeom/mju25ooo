@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
-import dorokImage1 from '../../assets/도록/image 2141.png';
-import dorokImage2 from '../../assets/도록/image 2143.png';
+import dorokImage1 from '../../assets/도록/image 2141.webp';
+import dorokImage2 from '../../assets/도록/image 2143.webp';
 import './ComingSoonContent.css';
 
 // 비디오 파일은 public 폴더에 있으므로 절대 경로 사용
@@ -33,7 +33,16 @@ const ComingSoonContent = () => {
   const sectionY = useTransform(sectionScroll.scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
 
     function raf(time) {
       lenis.raf(time);
@@ -41,6 +50,18 @@ const ComingSoonContent = () => {
     }
 
     requestAnimationFrame(raf);
+
+    // Safari 비디오 자동재생 보장
+    const videos = document.querySelectorAll('video');
+    videos.forEach((video) => {
+      video.play().catch((error) => {
+        console.warn('비디오 자동재생 실패:', error);
+      });
+    });
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return (
