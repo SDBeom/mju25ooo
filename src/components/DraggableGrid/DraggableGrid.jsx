@@ -120,14 +120,7 @@ const DraggableGrid = () => {
       return { width: rect.width, height: rect.height };
     };
 
-    const getResponsivePadding = () => {
-      const { width } = getViewportSize();
-      if (width < 768) return { paddingX: 20, paddingY: 40 }; // 모바일
-      if (width < 1024) return { paddingX: 40, paddingY: 60 }; // 태블릿
-      return { paddingX: 40, paddingY: 120 }; // 데스크탑
-    };
-
-    const getResponsiveDetailsWidth = () => {
+    // Removed unused getResponsivePadding function as per lint error
       const { width } = getViewportSize();
       if (width < 768) return '100vw'; // 모바일: 전체 화면
       if (width < 1024) return '60vw'; // 태블릿: 60%
@@ -136,7 +129,6 @@ const DraggableGrid = () => {
 
     const getResponsiveDetailsX = (isOpen) => {
       const { width } = getViewportSize();
-      const detailsWidth = getResponsiveDetailsWidth();
       if (width < 768) {
         return isOpen ? '0' : '100vw'; // 모바일
       }
@@ -468,7 +460,8 @@ const DraggableGrid = () => {
       
       // 상세창 초기 위치 설정
       const initialDetailsX = getResponsiveDetailsX(false);
-      gsap.set(details, { x: initialDetailsX, opacity: 1, display: 'flex' });
+      // 보이는 순간 상/하 패딩을 100px로 강제 고정 (스타일 우선순위 무관하게 보장)
+      gsap.set(details, { x: initialDetailsX, opacity: 1, display: 'flex', paddingTop: 100, paddingBottom: 100 });
       
       details.classList.add('--is-showing');
       container.classList.add('--is-details-showing');
@@ -504,6 +497,10 @@ const DraggableGrid = () => {
         x: detailsX,
         duration: 1.2,
         ease: 'power3.inOut',
+        onStart: () => {
+          // 애니메이션 시작 시에도 한 번 더 보장
+          gsap.set(details, { paddingTop: 100, paddingBottom: 100 });
+        },
       });
 
       const productId = product.dataset.id;

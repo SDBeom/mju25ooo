@@ -919,21 +919,27 @@ p {
 }
 
 .details.--is-showing {
-  padding: 100px 4vw 3vw 4vw;
+  padding: 100px 4vw 100px 4vw;
 }
 
 /* 태블릿 */
 @media (max-width: 1023px) and (min-width: 768px) {
   .details.--is-showing {
-    padding: 80px 5vw 4vw 5vw;
+    padding: 100px 5vw 100px 5vw;
   }
 }
 
 /* 모바일 */
 @media (max-width: 767px) {
   .details.--is-showing {
-    padding: 60px 6vw 5vw 6vw;
+    padding: 100px 6vw 100px 6vw;
   }
+}
+
+/* Override to guarantee exact paddings regardless of earlier rules */
+.details.--is-showing {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
 }
 
 .product-tooltip {
