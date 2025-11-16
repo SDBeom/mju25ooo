@@ -6,8 +6,7 @@ import dorokImage1 from '../../assets/도록/image 2141.webp';
 import dorokImage2 from '../../assets/도록/image 2143.webp';
 import './ComingSoonContent.css';
 
-// 로컬 개발은 번들 import, 프로덕션은 Public 절대 경로를 폴백으로 사용
-import brandingVideoSrc from '../../assets/branding_logo/branding_video.mp4';
+// 번들 해석 이슈를 피하기 위해 Public 절대 경로만 사용
 const brandingVideo = '/@branding_video.mp4';
 
 const ComingSoonContent = () => {
@@ -64,7 +63,6 @@ const ComingSoonContent = () => {
       <div ref={introContainer} className="about-intro">
         <motion.div style={{ y: introY }} className="about-intro-image">
           <video autoPlay muted loop playsInline controls={false} preload="auto" crossOrigin="anonymous">
-            <source src={brandingVideoSrc} type="video/mp4" />
             <source src={brandingVideo} type="video/mp4" />
           </video>
         </motion.div>
@@ -183,7 +181,6 @@ const ComingSoonContent = () => {
         <div className="about-section-background">
           <motion.div style={{ y: sectionY }} className="about-section-image">
             <video autoPlay muted loop playsInline controls={false} preload="auto" crossOrigin="anonymous">
-              <source src={brandingVideoSrc} type="video/mp4" />
               <source src={brandingVideo} type="video/mp4" />
             </video>
           </motion.div>
