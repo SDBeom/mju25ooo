@@ -170,52 +170,36 @@ const DraggableGrid = () => {
       const gridWidth = grid.offsetWidth;
       const gridHeight = grid.offsetHeight;
       
-      // 원본 예제처럼 여유 공간을 주어서 드래그 가능하게 함
-      const extraX = 200;
-      const extraY = 100;
+      // 작은 여유 영역 (그리드가 더 작을 때만 사용)
+      const extraX = 120;
+      const extraY = 80;
       
-      // 그리드가 container보다 큰 경우
+      // 가로가 컨테이너보다 큰 경우: 가장자리에 정확히 맞춰 끝까지 이동 가능
+      let minX;
+      let maxX;
       if (gridWidth > width) {
-        // 중앙 기준으로 bounds 계산
+        minX = width - gridWidth; // 음수, 가장 오른쪽 끝
+        maxX = 0;                 // 좌측 끝
+      } else {
+        // 컨테이너보다 작으면 중앙 기준 약간의 여유만 제공
         const centerX = (width - gridWidth) / 2;
-        const minCenterX = 0; // 오른쪽 끝이 잘리지 않는 최소 위치
-        const actualCenterX = Math.max(centerX, minCenterX);
-        
-        // 중앙 기준으로 드래그 범위 설정
-        const minX = actualCenterX - extraX; // 왼쪽으로 드래그
-        const maxX = actualCenterX + extraX; // 오른쪽으로 드래그
-        
-        if (gridHeight > height) {
-          const centerY = (height - gridHeight) / 2;
-          const minY = centerY - extraY;
-          const maxY = centerY + extraY;
-          return { minX, maxX, minY, maxY };
-        } else {
-          // 높이는 작지만 너비는 큰 경우
-          const centerY = (height - gridHeight) / 2;
-          return { minX, maxX, minY: centerY - extraY, maxY: centerY + extraY };
-        }
+        minX = centerX - extraX;
+        maxX = centerX + extraX;
       }
       
-      // 그리드가 container보다 작은 경우에도 드래그 가능하도록
+      // 세로가 컨테이너보다 큰 경우: 위/아래 끝까지 이동 가능
+      let minY;
+      let maxY;
       if (gridHeight > height) {
-        // 너비는 작지만 높이는 큰 경우
-        const centerX = (width - gridWidth) / 2;
+        minY = height - gridHeight; // 음수, 하단 끝
+        maxY = 0;                   // 상단 끝
+      } else {
         const centerY = (height - gridHeight) / 2;
-        const minY = centerY - extraY;
-        const maxY = centerY + extraY;
-        return { minX: centerX - extraX, maxX: centerX + extraX, minY, maxY };
+        minY = centerY - extraY;
+        maxY = centerY + extraY;
       }
       
-      // 그리드가 container보다 작은 경우에도 드래그 가능하도록
-      const centerX = (width - gridWidth) / 2;
-      const centerY = (height - gridHeight) / 2;
-      return {
-        minX: centerX - extraX,
-        maxX: centerX + extraX,
-        minY: centerY - extraY,
-        maxY: centerY + extraY,
-      };
+      return { minX, maxX, minY, maxY };
     };
 
     const centerGrid = () => {
