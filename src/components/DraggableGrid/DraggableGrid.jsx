@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/Draggable';
-import { Flip } from 'gsap/Flip';
 import { preloadImages, splitText } from './js/utils.js';
 import { WORK_THUMBNAILS } from '../../data/workThumbsData.js';
 import resolveThumbSrc from '../../utils/resolveThumbSrc.js';
@@ -41,67 +40,18 @@ const DraggableGrid = () => {
   const productRefs = useRef([]);
   const boundsRef = useRef({ minX: 0, maxX: 0, minY: 0, maxY: 0 });
   const tooltipRef = useRef(null);
-  const tooltipMoveXRef = useRef(null);
-  const tooltipMoveYRef = useRef(null);
   const hoverTimeoutRef = useRef(null);
 
   productRefs.current = [];
 
-  // 툴팁 애니메이션 처리
+  // 마우스 이동 시 툴팁 위치 업데이트
   useEffect(() => {
-    if (!tooltipRef.current) return;
-
-    if (tooltip.show) {
-      const wasAlreadyShowing = tooltipMoveXRef.current !== null;
-      
-      // GSAP quickTo 초기화 (아직 없을 때만)
-      if (!tooltipMoveXRef.current) {
-        tooltipMoveXRef.current = gsap.quickTo(tooltipRef.current, 'left', { duration: 0.5, ease: 'power3' });
-        tooltipMoveYRef.current = gsap.quickTo(tooltipRef.current, 'top', { duration: 0.5, ease: 'power3' });
-      }
-      
-      // 초기 위치 설정
-      tooltipMoveXRef.current(tooltip.x + 15);
-      tooltipMoveYRef.current(tooltip.y + 15);
-      
-      // 나타나는 애니메이션 (처음 나타날 때만)
-      if (!wasAlreadyShowing) {
-        gsap.fromTo(tooltipRef.current,
-          { opacity: 0, scale: 0.8 },
-          { opacity: 1, scale: 1, duration: 0.2, ease: 'power2.out' }
-        );
-      }
-    } else {
-      // 사라지는 애니메이션
-      gsap.to(tooltipRef.current, {
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.15,
-        ease: 'power2.in',
-      });
-      
-      // 정리
-      tooltipMoveXRef.current = null;
-      tooltipMoveYRef.current = null;
-    }
-  }, [tooltip.show, tooltip.x, tooltip.y, tooltip.title, tooltip.designer]);
-  
-  // 툴팁 초기 위치 업데이트
-  useEffect(() => {
-    if (tooltip.show && tooltipMoveXRef.current && tooltipMoveYRef.current) {
-      tooltipMoveXRef.current(tooltip.x + 15);
-      tooltipMoveYRef.current(tooltip.y + 15);
-    }
-  }, [tooltip.x, tooltip.y, tooltip.show]);
-
-  // 툴팁 마우스 이동 처리
-  useEffect(() => {
-    if (!tooltip.show || !tooltipMoveXRef.current || !tooltipMoveYRef.current) return;
+    if (!tooltip.show) return;
 
     const handleMouseMove = (event) => {
-      if (tooltipMoveXRef.current && tooltipMoveYRef.current) {
-        tooltipMoveXRef.current(event.clientX + 15);
-        tooltipMoveYRef.current(event.clientY + 15);
+      if (tooltipRef.current) {
+        tooltipRef.current.style.left = `${event.clientX + 15}px`;
+        tooltipRef.current.style.top = `${event.clientY + 15}px`;
       }
     };
 
@@ -110,15 +60,6 @@ const DraggableGrid = () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [tooltip.show]);
-  
-  // cleanup: 타이머 정리
-  useEffect(() => {
-    return () => {
-      if (hoverTimeoutRef.current) {
-        clearTimeout(hoverTimeoutRef.current);
-      }
-    };
-  }, []);
 
   // 작품 상세 페이지로 이동
   const handleViewWork = () => {
@@ -143,7 +84,7 @@ const DraggableGrid = () => {
 
   useEffect(() => {
     document.body.classList.add('loading');
-    gsap.registerPlugin(Draggable, Flip);
+    gsap.registerPlugin(Draggable);
 
     const container = containerRef.current;
     const grid = gridRef.current;
@@ -174,15 +115,46 @@ const DraggableGrid = () => {
 
     // ========== 유틸리티 함수 ==========
     const getViewportSize = () => {
+      // container의 실제 크기 사용
       const rect = container.getBoundingClientRect();
       return { width: rect.width, height: rect.height };
     };
 
     const getResponsivePadding = () => {
       const { width } = getViewportSize();
-      if (width < 640) return { paddingX: 60, paddingY: 40 };
-      if (width < 1200) return { paddingX: 120, paddingY: 80 };
-      return { paddingX: 200, paddingY: 120 };
+      if (width < 768) return { paddingX: 20, paddingY: 40 }; // 모바일
+      if (width < 1024) return { paddingX: 40, paddingY: 60 }; // 태블릿
+      return { paddingX: 40, paddingY: 120 }; // 데스크탑
+    };
+
+    const getResponsiveDetailsWidth = () => {
+      const { width } = getViewportSize();
+      if (width < 768) return '100vw'; // 모바일: 전체 화면
+      if (width < 1024) return '60vw'; // 태블릿: 60%
+      return '50vw'; // 데스크탑: 50%
+    };
+
+    const getResponsiveDetailsX = (isOpen) => {
+      const { width } = getViewportSize();
+      const detailsWidth = getResponsiveDetailsWidth();
+      if (width < 768) {
+        return isOpen ? '0' : '100vw'; // 모바일
+      }
+      if (width < 1024) {
+        return isOpen ? '0' : '60vw'; // 태블릿
+      }
+      return isOpen ? '0' : '50vw'; // 데스크탑
+    };
+
+    const getResponsiveContainerX = (isOpen) => {
+      const { width } = getViewportSize();
+      if (width < 768) {
+        return isOpen ? '-100vw' : '0'; // 모바일
+      }
+      if (width < 1024) {
+        return isOpen ? '-60vw' : '0'; // 태블릿
+      }
+      return isOpen ? '-50vw' : '0'; // 데스크탑
     };
 
     const clampToBounds = (x, y, bounds) => ({
@@ -191,42 +163,82 @@ const DraggableGrid = () => {
     });
 
     const computeBounds = () => {
+      // container의 실제 크기 사용
       const { width, height } = getViewportSize();
-      const { paddingY } = getResponsivePadding(); // paddingX not used, remove to fix lint
-      const gridPadding = 40; // grid의 좌우 패딩
-      const availableWidth = width - (gridPadding * 2);
-      const rawMinX = 0; // grid가 padding으로 설정되어 있으므로 0부터 시작
-      const rawMinY = height - grid.offsetHeight - paddingY;
-      const centerX = 0; // grid가 padding으로 설정되어 있으므로 중앙 정렬은 x: 0
-      const centerY = (height - grid.offsetHeight) / 2;
       
-      // 그리드가 뷰포트보다 작으면 중앙 정렬 허용
-      if (grid.offsetWidth < availableWidth && grid.offsetHeight < height) {
-        return {
-          minX: centerX,
-          maxX: centerX,
-          minY: centerY,
-          maxY: centerY,
-        };
+      // grid의 실제 크기
+      const gridWidth = grid.offsetWidth;
+      const gridHeight = grid.offsetHeight;
+      
+      // 원본 예제처럼 여유 공간을 주어서 드래그 가능하게 함
+      const extraX = 200;
+      const extraY = 100;
+      
+      // 그리드가 container보다 큰 경우
+      if (gridWidth > width) {
+        // 중앙 기준으로 bounds 계산
+        const centerX = (width - gridWidth) / 2;
+        const minCenterX = 0; // 오른쪽 끝이 잘리지 않는 최소 위치
+        const actualCenterX = Math.max(centerX, minCenterX);
+        
+        // 중앙 기준으로 드래그 범위 설정
+        const minX = actualCenterX - extraX; // 왼쪽으로 드래그
+        const maxX = actualCenterX + extraX; // 오른쪽으로 드래그
+        
+        if (gridHeight > height) {
+          const centerY = (height - gridHeight) / 2;
+          const minY = centerY - extraY;
+          const maxY = centerY + extraY;
+          return { minX, maxX, minY, maxY };
+        } else {
+          // 높이는 작지만 너비는 큰 경우
+          const centerY = (height - gridHeight) / 2;
+          return { minX, maxX, minY: centerY - extraY, maxY: centerY + extraY };
+        }
       }
-
-      // 그리드가 뷰포트보다 크면 bounds 설정
+      
+      // 그리드가 container보다 작은 경우에도 드래그 가능하도록
+      if (gridHeight > height) {
+        // 너비는 작지만 높이는 큰 경우
+        const centerX = (width - gridWidth) / 2;
+        const centerY = (height - gridHeight) / 2;
+        const minY = centerY - extraY;
+        const maxY = centerY + extraY;
+        return { minX: centerX - extraX, maxX: centerX + extraX, minY, maxY };
+      }
+      
+      // 그리드가 container보다 작은 경우에도 드래그 가능하도록
+      const centerX = (width - gridWidth) / 2;
+      const centerY = (height - gridHeight) / 2;
       return {
-        minX: Math.min(rawMinX, availableWidth - grid.offsetWidth),
-        maxX: 0,
-        minY: Math.min(rawMinY, paddingY),
-        maxY: paddingY,
+        minX: centerX - extraX,
+        maxX: centerX + extraX,
+        minY: centerY - extraY,
+        maxY: centerY + extraY,
       };
     };
 
     const centerGrid = () => {
+      const gridWidth = grid.offsetWidth;
       const gridHeight = grid.offsetHeight;
-      const windowHeight = window.innerHeight;
-
-      const centerY = (windowHeight - gridHeight) / 2;
-
+      const { width, height } = getViewportSize();
+      
+      // container의 실제 크기를 기준으로 중앙 정렬
+      // grid는 container 내부에 있고, position: absolute
+      // grid의 x 위치는 container의 왼쪽 상단(0, 0)을 기준
+      let centerX = (width - gridWidth) / 2;
+      
+      // 그리드가 container보다 크면 오른쪽 칼럼이 잘리지 않도록 조정
+      if (gridWidth > width) {
+        // 오른쪽 끝이 잘리지 않는 최소 위치
+        const minCenterX = 0;
+        centerX = Math.max(centerX, minCenterX);
+      }
+      
+      const centerY = (height - gridHeight) / 2;
+      
       gsap.set(grid, {
-        x: 0,
+        x: centerX,
         y: centerY,
       });
     };
@@ -346,15 +358,38 @@ const DraggableGrid = () => {
 
       if (observer) observer.unobserve(product);
 
-      const state = Flip.getState(product);
-      detailsThumb.appendChild(product);
-
-      Flip.from(state, {
-        absolute: true,
-        duration: 1.2,
+      // 그리드의 thumb 작아지기
+      gsap.to(product, {
+        scale: 0,
+        duration: 0.6,
         ease: 'power3.inOut',
-        nested: true,
       });
+
+      // 상세창 thumb 생성 및 나타나기
+      const productImg = product.querySelector('img');
+      if (productImg && detailsThumb) {
+        const thumbImg = document.createElement('img');
+        thumbImg.src = productImg.src;
+        thumbImg.alt = productImg.alt || '';
+        thumbImg.style.width = '100%';
+        thumbImg.style.height = '100%';
+        thumbImg.style.objectFit = 'cover';
+        thumbImg.style.borderRadius = 'inherit';
+        
+        detailsThumb.appendChild(thumbImg);
+        
+        // 상세창 thumb 나타나기
+        gsap.fromTo(thumbImg,
+          { scale: 0, opacity: 0 },
+          { 
+            scale: 1, 
+            opacity: 1, 
+            duration: 0.6, 
+            delay: 0.3,
+            ease: 'power3.inOut' 
+          }
+        );
+      }
 
       if (cross) {
         gsap.to(cross, {
@@ -377,26 +412,49 @@ const DraggableGrid = () => {
         });
       }
 
-      const state = Flip.getState(currentProduct);
-      originalParent.appendChild(currentProduct);
+      // 상세창 thumb 사라지기와 상세창 닫기를 거의 동시에 실행
+      const thumbImg = detailsThumb?.querySelector('img');
+      if (thumbImg) {
+        gsap.to(thumbImg, {
+          scale: 0,
+          opacity: 0,
+          duration: 0.3,
+          ease: 'power3.inOut',
+          onComplete: () => {
+            if (detailsThumb) detailsThumb.innerHTML = '';
+          },
+        });
+      }
 
-      if (detailsThumb) detailsThumb.innerHTML = '';
-
-      Flip.from(state, {
+      // 상세창 닫기 (thumb 사라지기와 거의 동시에)
+      container.classList.remove('--is-details-showing');
+      container.style.height = '';
+      
+      const containerX = getResponsiveContainerX(false);
+      const detailsX = getResponsiveDetailsX(false);
+      
+      gsap.to(container, {
+        x: containerX,
         duration: 1.2,
-        delay: 0.3,
         ease: 'power3.inOut',
-        nested: true,
-        onComplete: () => {
-          gsap.set(currentProduct, {
-            position: '',
-            top: '',
-            left: '',
-            width: '',
-            height: '',
-            zIndex: '',
-          });
+      });
 
+      gsap.to(details, {
+        x: detailsX,
+        duration: 1.2,
+        ease: 'power3.inOut',
+        onComplete: () => {
+          details.classList.remove('--is-showing');
+        },
+      });
+
+      // 그리드의 thumb 커지기
+      gsap.to(currentProduct, {
+        scale: 1,
+        duration: 0.4,
+        delay: 0.1,
+        ease: 'power3.inOut',
+        onComplete: () => {
           if (observer && currentProduct) {
             observer.observe(currentProduct);
           }
@@ -423,6 +481,11 @@ const DraggableGrid = () => {
     const showDetails = (product) => {
       if (showDetailsActive) return;
       showDetailsActive = true;
+      
+      // 상세창 초기 위치 설정
+      const initialDetailsX = getResponsiveDetailsX(false);
+      gsap.set(details, { x: initialDetailsX, opacity: 1, display: 'flex' });
+      
       details.classList.add('--is-showing');
       container.classList.add('--is-details-showing');
       
@@ -444,14 +507,17 @@ const DraggableGrid = () => {
       
       document.body.classList.add('cursor-cross', 'cross-locked', 'header-hidden', 'details-open');
 
+      const containerX = getResponsiveContainerX(true);
+      const detailsX = getResponsiveDetailsX(true);
+
       gsap.to(container, {
-        x: '-50vw',
+        x: containerX,
         duration: 1.2,
         ease: 'power3.inOut',
       });
 
       gsap.to(details, {
-        x: 0,
+        x: detailsX,
         duration: 1.2,
         ease: 'power3.inOut',
       });
@@ -463,6 +529,13 @@ const DraggableGrid = () => {
       setActiveDetailId(numericProductId);
 
       flipProduct(product);
+
+      // CTA 버튼 초기 상태 설정
+      const ctaButton = details.querySelector('.details__cta-button');
+      if (ctaButton) {
+        gsap.set(ctaButton, { y: '100%', opacity: 0 });
+        ctaButton.style.pointerEvents = 'none';
+      }
 
       if (titleIndex >= 0) {
         titles.forEach((title) => title.classList.remove('is-active'));
@@ -502,13 +575,25 @@ const DraggableGrid = () => {
           });
         }
       }
+      
+      // CTA 버튼 애니메이션 (항상 실행)
+      if (ctaButton) {
+        gsap.to(ctaButton, {
+          y: 0,
+          opacity: 1,
+          duration: 1.1,
+          delay: 0.4,
+          ease: 'power3.inOut',
+          onComplete: () => {
+            ctaButton.style.pointerEvents = 'auto';
+          },
+        });
+      }
     };
 
     const hideDetails = () => {
       if (!showDetailsActive) return;
       showDetailsActive = false;
-      container.classList.remove('--is-details-showing');
-      container.style.height = '';
       
       // 상세창 영역 마우스 이벤트 제거
       details.removeEventListener('mouseenter', handleDetailsMouseEnter);
@@ -521,23 +606,6 @@ const DraggableGrid = () => {
       }
       
       document.body.classList.remove('cursor-cross', 'cross-locked', 'header-hidden', 'details-open');
-
-      gsap.to(container, {
-        x: 0,
-        duration: 1.2,
-        delay: 0.3,
-        ease: 'power3.inOut',
-        onComplete: () => {
-          details.classList.remove('--is-showing');
-        },
-      });
-
-      gsap.to(details, {
-        x: '50vw',
-        duration: 1.2,
-        delay: 0.3,
-        ease: 'power3.inOut',
-      });
 
       titles.forEach((title) => {
         const chars = title.querySelectorAll('.char');
@@ -565,6 +633,18 @@ const DraggableGrid = () => {
         }
       });
 
+      // CTA 버튼 애니메이션
+      const ctaButton = details.querySelector('.details__cta-button');
+      if (ctaButton) {
+        ctaButton.style.pointerEvents = 'none';
+        gsap.to(ctaButton, {
+          y: '100%',
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.inOut',
+        });
+      }
+
       unFlipProduct();
       if (!currentProduct && cross) {
         gsap.to(cross, {
@@ -576,33 +656,19 @@ const DraggableGrid = () => {
       setActiveDetailId(null);
     };
 
+    // 작품 호버 시 툴팁 표시
     const handleProductHover = (event, productId) => {
       const product = PRODUCTS.find((p) => p.id === productId);
       if (!product) return;
 
-      // 제목 정규화 함수 (더 강력한 버전)
+      // 제목 정규화
       const normalizeTitle = (title) => {
         if (!title) return '';
-        return title
-          .toLowerCase()
-          .normalize('NFKD')
-          .replace(/[^\p{L}\p{N}]+/gu, '')
-          .trim();
+        return title.toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu, '').trim();
       };
       
-      // 특별한 제목 매칭 맵 (한글/영문 변형 처리)
-      // workThumbsData 제목 -> designerDetailsData 제목 매핑
-      const titleMapping = {
-        '더고딕': ['thegothic', 'gothic'],
-        '더웨폰': ['theweapon', 'weapon'],
-        '돌로르사가': ['dolorsaga', 'dolor'],
-        '피에르위그리미널가이드앱uxui': ['pierreygheliminalguideuxui', 'liminal', 'uxui', 'pierrehuygheliminal'],
-        '2025animationreel': ['2025animationreel', 'animationreel', 'reel'],
-        'pledge': ['pledge'],
-      };
-      
-      // 직접 제목 매핑 (정확한 매칭)
-      const directTitleMap = {
+      // 제목 매핑
+      const titleMap = {
         '더 고딕': 'The Gothic',
         '더 웨폰': 'The Weapon',
         '돌로르사가': 'Dolor Saga',
@@ -611,164 +677,86 @@ const DraggableGrid = () => {
         'PLEDGE': 'PLEDGE',
       };
       
-      // 제목 매칭 헬퍼 함수
-      const matchTitle = (title1, title2) => {
-        const norm1 = normalizeTitle(title1);
-        const norm2 = normalizeTitle(title2);
-        
-        // 정확히 일치
-        if (norm1 === norm2) return true;
-        
-        // 특별한 매칭 맵 확인
-        for (const [key, variations] of Object.entries(titleMapping)) {
-          const hasKey1 = norm1.includes(key);
-          const hasKey2 = norm2.includes(key);
-          
-          if (hasKey1 || hasKey2) {
-            for (const variation of variations) {
-              if (norm1.includes(variation) && norm2.includes(variation)) {
-                return true;
-              }
-            }
-            // 키 자체가 포함되어 있으면 매칭
-            if (hasKey1 && hasKey2) {
-              return true;
-            }
-          }
-        }
-        
-        // 부분 매칭
-        if (norm1.length > 3 && norm2.length > 3) {
-          if (norm1.includes(norm2) || norm2.includes(norm1)) {
-            return true;
-          }
-        }
-        
-        return false;
-      };
-      
-      // 여러 방법으로 매칭 시도
+      // 작품 정보 찾기
       let work = null;
-      
-      // 1. 직접 제목 매핑 확인
-      const mappedTitle = directTitleMap[product.title];
+      const mappedTitle = titleMap[product.title];
       if (mappedTitle) {
         work = WORKS_LIST.find((w) => w.title === mappedTitle);
       }
-      
-      // 2. 정확한 제목 매칭
       if (!work) {
-        work = WORKS_LIST.find((w) => 
-          normalizeTitle(w.title) === normalizeTitle(product.title)
-        );
+        work = WORKS_LIST.find((w) => normalizeTitle(w.title) === normalizeTitle(product.title));
       }
       
-      // 3. 개선된 제목 매칭 (특별한 케이스 포함)
-      if (!work) {
-        work = WORKS_LIST.find((w) => 
-          matchTitle(w.title, product.title)
-        );
-      }
+      // 표시할 정보
+      let displayTitle = product.title;
+      let displayDesigner = '';
       
-      // 4. 부분 매칭 (제목이 포함되어 있는지)
-      if (!work) {
-        const productNormalized = normalizeTitle(product.title);
-        work = WORKS_LIST.find((w) => {
-          const workNormalized = normalizeTitle(w.title);
-          return workNormalized.includes(productNormalized) || 
-                 productNormalized.includes(workNormalized);
-        });
-      }
-      
-      // 5. 파일명에서 추출한 제목과 매칭
-      if (!work && product.file) {
-        // 파일명에서 제목 추출 시도 (예: "썸네일_김윤정_안녕우주.webp" -> "안녕우주")
-        // 마지막 언더스코어 이후의 부분 추출
-        const lastUnderscoreIndex = product.file.lastIndexOf('_');
-        if (lastUnderscoreIndex !== -1) {
-          const extractedTitle = product.file
-            .substring(lastUnderscoreIndex + 1)
-            .replace(/\.webp$/i, '')
-            .trim();
-          
-          work = WORKS_LIST.find((w) => 
-            matchTitle(w.title, extractedTitle)
-          );
-        }
-      }
-      
-      // 6. 디자이너 이름과 파일명으로 매칭 (최후의 수단)
-      if (!work && product.file) {
-        // 파일명에서 디자이너 이름 추출 (예: "썸네일_정지민_더고딕.webp" -> "정지민")
+      if (work) {
+        displayTitle = work.title;
+        displayDesigner = work.designer;
+      } else if (product.file) {
         const fileParts = product.file.split('_');
         if (fileParts.length >= 2) {
-          const designerName = fileParts[1];
-          const extractedTitle = fileParts.slice(2).join('_').replace(/\.webp$/i, '').trim();
-          
-          work = WORKS_LIST.find((w) => {
-            const matchesDesigner = w.designer === designerName;
-            const matchesTitle = matchTitle(w.title, extractedTitle) || 
-                                normalizeTitle(w.title).includes(normalizeTitle(extractedTitle)) ||
-                                normalizeTitle(extractedTitle).includes(normalizeTitle(w.title));
-            return matchesDesigner && matchesTitle;
-          });
+          displayDesigner = fileParts[1];
         }
       }
-
-      if (work) {
-        // 제품 간 이동 시 툴팁 숨김 타이머 취소
-        if (hoverTimeoutRef.current) {
-          clearTimeout(hoverTimeoutRef.current);
-          hoverTimeoutRef.current = null;
-        }
-        
-        // 제품 간 이동 시 툴팁을 부드럽게 업데이트
-        const isAlreadyShowing = tooltip.show;
-        const isSameWork = tooltip.title === work.title && tooltip.designer === work.designer;
-        
-        // 같은 작품이면 위치만 업데이트
-        if (isAlreadyShowing && isSameWork) {
-          if (tooltipMoveXRef.current && tooltipMoveYRef.current) {
-            tooltipMoveXRef.current(event.clientX + 15);
-            tooltipMoveYRef.current(event.clientY + 15);
-          }
-          return;
-        }
-        
-        setTooltip({
-          show: true,
-          title: work.title,
-          designer: work.designer,
-          x: event.clientX,
-          y: event.clientY,
-        });
-        
-        // 이미 표시 중이면 위치만 즉시 업데이트
-        if (isAlreadyShowing && tooltipMoveXRef.current && tooltipMoveYRef.current) {
-          tooltipMoveXRef.current(event.clientX + 15);
-          tooltipMoveYRef.current(event.clientY + 15);
-        }
+      
+      // 타이머 취소
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+        hoverTimeoutRef.current = null;
+      }
+      
+      // 툴팁 표시 및 초기 위치 설정
+      setTooltip({
+        show: true,
+        title: displayTitle,
+        designer: displayDesigner,
+        x: event.clientX,
+        y: event.clientY,
+      });
+      
+      // 초기 위치 즉시 설정
+      if (tooltipRef.current) {
+        tooltipRef.current.style.left = `${event.clientX + 15}px`;
+        tooltipRef.current.style.top = `${event.clientY + 15}px`;
       }
     };
 
-    const handleProductHoverLeave = () => {
-      // 제품 간 이동을 감지하기 위해 약간의 지연 추가
+    // 작품 호버 해제
+    const handleProductHoverLeave = (event) => {
+      // 다른 작품 요소로 이동하는 경우 타이머 설정하지 않음
+      const relatedTarget = event.relatedTarget;
+      if (relatedTarget && (
+        relatedTarget.closest('.product') || 
+        relatedTarget.closest('.product div')
+      )) {
+        return;
+      }
+      
       hoverTimeoutRef.current = setTimeout(() => {
         setTooltip({ show: false, title: '', designer: '', x: 0, y: 0 });
-      }, 50);
+      }, 150);
     };
 
     const handleDetails = () => {
       titles = Array.from(details.querySelectorAll('.details__title p'));
       texts = Array.from(details.querySelectorAll('.details__body [data-text]'));
+      const ctaButton = details.querySelector('.details__cta-button');
 
       splitTitlesData = titles.map((title) => splitText(title, 'lines, chars'));
       splitTextsData = texts.map(() => ({ lines: [] }));
 
       titles.forEach((title) => title.classList.remove('is-active'));
       texts.forEach((text) => text.classList.remove('is-active'));
+      
+      // CTA 버튼 초기 상태 설정
+      if (ctaButton) {
+        gsap.set(ctaButton, { y: '100%', opacity: 0 });
+        ctaButton.style.pointerEvents = 'none';
+      }
 
-      // 제품 클릭 핸들러
+      // 제품 클릭 및 호버 핸들러
       productClickHandlers = products.map((product) => {
         const handler = (event) => {
           event.stopPropagation();
@@ -776,7 +764,7 @@ const DraggableGrid = () => {
         };
         product.addEventListener('click', handler);
         
-        // 호버 핸들러 추가
+        // 호버 핸들러
         const productId = Number(product.dataset.id);
         const hoverEnterHandler = (e) => handleProductHover(e, productId);
         const hoverLeaveHandler = handleProductHoverLeave;
@@ -808,7 +796,13 @@ const DraggableGrid = () => {
       // 로딩 화면 제거 (애니메이션이 보이도록)
       document.body.classList.remove('loading');
       
+      // 그리드를 중앙에 배치 (애니메이션 시작 전)
       centerGrid();
+      
+      // container의 transform-origin을 중앙으로 설정
+      gsap.set(container, {
+        transformOrigin: 'center center',
+      });
 
       const timeline = gsap.timeline({
         onComplete: () => {
@@ -828,7 +822,11 @@ const DraggableGrid = () => {
         },
       });
 
-      timeline.set(container, { scale: 0.5 });
+      // 초기 상태 설정 (중앙에서 시작)
+      timeline.set(container, { 
+        scale: 0.5,
+        transformOrigin: 'center center',
+      });
       timeline.set(products, {
         scale: 0.5,
         opacity: 0,
@@ -889,6 +887,10 @@ const DraggableGrid = () => {
         if (hoverEnterHandler) product.removeEventListener('mouseenter', hoverEnterHandler);
         if (hoverLeaveHandler) product.removeEventListener('mouseleave', hoverLeaveHandler);
       });
+      
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
 
       if (containerClickHandler) {
         container.removeEventListener('click', containerClickHandler);
@@ -975,10 +977,7 @@ const DraggableGrid = () => {
       </div>
 
       {tooltip.show && (
-        <div
-          ref={tooltipRef}
-          className="product-tooltip"
-        >
+        <div ref={tooltipRef} className="product-tooltip">
           <div className="product-tooltip__title">{tooltip.title}</div>
           <div className="product-tooltip__designer">{tooltip.designer}</div>
         </div>

@@ -155,13 +155,12 @@ import parkHeechanWork2_04 from '../assets/박희찬/박희찬_게임콘텐츠_�
 import parkHeechanWork2_05 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_05.webp';
 import parkHeechanWork2_06 from '../assets/박희찬/박희찬_게임콘텐츠_작품2_06.webp';
 
-import thumbHiFive from '../assets/Thumb/썸네일_서동범_HiFive.webp';
-import seoDongbeomWork1_01 from '../assets/서동범/서동범_멀티미디어_작품1_01.png';
-import seoDongbeomWork1_02 from '../assets/서동범/서동범_멀티미디어_작품1_02.png';
-import seoDongbeomWork1_03 from '../assets/서동범/서동범_멀티미디어_작품1_03.png';
-import seoDongbeomWork1_04 from '../assets/서동범/서동범_멀티미디어_작품1_04.png';
-import seoDongbeomWork1_05 from '../assets/서동범/서동범_멀티미디어_작품1_05.png';
-import seoDongbeomWork1_06 from '../assets/서동범/서동범_멀티미디어_작품1_06.png';
+import seoDongbeomWork1_01 from '../assets/서동범/서동범_멀티미디어_작품1_01.webp';
+import seoDongbeomWork1_02 from '../assets/서동범/서동범_멀티미디어_작품1_02.webp';
+import seoDongbeomWork1_03 from '../assets/서동범/서동범_멀티미디어_작품1_03.webp';
+import seoDongbeomWork1_04 from '../assets/서동범/서동범_멀티미디어_작품1_04.webp';
+import seoDongbeomWork1_05 from '../assets/서동범/서동범_멀티미디어_작품1_05.webp';
+import seoDongbeomWork1_06 from '../assets/서동범/서동범_멀티미디어_작품1_06.webp';
 
 import songDaheeCardOfLove from '../assets/송다희/송다희_영상콘텐츠_작품1_01.webp';
 import songDaheeWork1_02 from '../assets/송다희/송다희_영상콘텐츠_작품1_02.webp';

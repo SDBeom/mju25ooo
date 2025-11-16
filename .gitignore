@@ -25,3 +25,29 @@ dist-ssr
 
 # Media files
 *.mp4
+*.mov
+*.avi
+
+# Other project folders
+background-image-parallax-main/
+text-clip-mask-on-scroll-master/
+draggable-colorizer/
+
+# Development documentation
+BACKLINK_STRATEGY.md
+COMPONENT_STRATEGY_GUIDE.md
+CSS_FOOTER_ANALYSIS.md
+CSS_PRIORITY_GUIDE.md
+FINAL_REFACTORING_COMPLETE.md
+GOOGLE_SEO_GUIDE.md
+REFACTORING_SUMMARY.md
+RESPONSIVE_CSS_METHODS.md
+RESPONSIVE_SYSTEM_README.md
+SOCIAL_MEDIA_SEO.md
+CSS_CONFLICT_EXAMPLE.html
+image_compression_info.html
+
+# Temporary scripts
+convert-all-png-to-webp.mjs
+convert-urgent.mjs
+verify-and-convert.mjs

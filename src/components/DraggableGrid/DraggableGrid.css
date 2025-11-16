@@ -242,6 +242,21 @@ a:focus-visible {
   transform-origin: center center;
   will-change: transform;
   overflow: visible;
+  z-index: 1;
+}
+
+/* 태블릿 */
+@media (max-width: 1023px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
 }
 
 .container.--is-loaded {
@@ -278,6 +293,20 @@ a:focus-visible {
   box-sizing: border-box;
 }
 
+/* 태블릿 */
+@media (max-width: 1023px) {
+  .grid {
+    padding: 0 20px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .grid {
+    padding: 0 20px;
+  }
+}
+
 .--is-loaded {
   overflow: hidden;
 }
@@ -303,6 +332,21 @@ a:focus-visible {
   background: #67C5FF;
   border: 2px solid rgba(0, 0, 0, 0.08);
   isolation: isolate;
+  cursor: pointer;
+}
+
+/* 태블릿: 3컬럼 */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .product {
+    width: calc((100vw - 60px) / 3);
+  }
+}
+
+/* 모바일: 2컬럼 */
+@media (max-width: 767px) {
+  .product {
+    width: calc((100vw - 60px) / 2);
+  }
 }
 
 .product div {
@@ -320,10 +364,11 @@ a:focus-visible {
   height: 100%;
   object-fit: cover;
   will-change: transform;
-  transition: transform 300ms ease-in-out;
+  transition: transform 0.3s ease-in-out;
   border-radius: inherit;
 }
 
+/* 호버 효과 */
 .product:hover img {
   transform: scale(1.05);
 }
@@ -346,9 +391,21 @@ a:focus-visible {
   cursor: auto;
 }
 
-@media (max-width: 800px) {
+/* 태블릿: 60vw */
+@media (max-width: 1023px) and (min-width: 768px) {
   .details {
-    display: none;
+    width: 60vw;
+    transform: translate3d(60vw, 0, 0);
+    padding: 4vw 5vw;
+  }
+}
+
+/* 모바일: 100vw */
+@media (max-width: 767px) {
+  .details {
+    width: 100vw;
+    transform: translate3d(100vw, 0, 0);
+    padding: 5vw 6vw;
   }
 }
 
@@ -372,9 +429,17 @@ a:focus-visible {
   white-space: normal;
 }
 
-@media (max-width: 800px) {
+/* 태블릿 */
+@media (max-width: 1023px) and (min-width: 768px) {
   .details__title p {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .details__title p {
+    font-size: clamp(1.5rem, 5vw, 2rem);
   }
 }
 
@@ -400,6 +465,22 @@ a:focus-visible {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2vw;
+}
+
+/* 태블릿 */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .details__body {
+    gap: 3vw;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .details__body {
+    flex-direction: column;
+    align-items: center;
+    gap: 4vw;
+  }
 }
 
 .details__content {
@@ -428,6 +509,10 @@ a:focus-visible {
   position: relative;
   z-index: 3;
   will-change: transform;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #67C5FF;
+  border: 2px solid rgba(0, 0, 0, 0.08);
 }
 
 .details__thumb div,
@@ -436,11 +521,23 @@ a:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: inherit;
 }
 
-@media (max-width: 800px) {
+/* 태블릿 */
+@media (max-width: 1023px) and (min-width: 768px) {
   .details__thumb {
-    width: 100%;
+    width: 30vw;
+    max-width: 200px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .details__thumb {
+    width: 50vw;
+    max-width: 180px;
+    align-self: center;
   }
 }
 
@@ -743,16 +840,18 @@ a:focus-visible {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .details__cta-button:hover,
 .details__cta-button:focus-visible {
   background: rgba(0, 0, 0, 0.08);
   color: #000000;
-  transform: translateY(-2px);
 }
 
 p {
@@ -777,6 +876,36 @@ p {
   height: 3vw;
 }
 
+/* 태블릿 */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .cross {
+    width: 4vw;
+    height: 4vw;
+    min-width: 24px;
+    min-height: 24px;
+  }
+  
+  .cross svg {
+    width: 4vw;
+    height: 4vw;
+    min-width: 24px;
+    min-height: 24px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .cross {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .cross svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .--is-details-showing {
   cursor: pointer;
 }
@@ -787,6 +916,24 @@ p {
 
 .--is-showing {
   opacity: 1;
+}
+
+.details.--is-showing {
+  padding: 100px 4vw 3vw 4vw;
+}
+
+/* 태블릿 */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .details.--is-showing {
+    padding: 80px 5vw 4vw 5vw;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .details.--is-showing {
+    padding: 60px 6vw 5vw 6vw;
+  }
 }
 
 .product-tooltip {
@@ -800,11 +947,9 @@ p {
   font-size: 14px;
   line-height: 1.4;
   white-space: nowrap;
-  transform: translate(0, 0);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transform-origin: top left;
+  transition: opacity 0.2s ease;
 }
 
 .product-tooltip__title {
@@ -817,4 +962,5 @@ p {
   opacity: 0.8;
   font-weight: 400;
 }
+
 

@@ -216,12 +216,12 @@ body.is-modal-open {
 
 @media (max-width: 800px) {
   .main-window--grid {
-    min-height: auto;
+    min-height: calc(100vh - var(--header-offset, 60px));
   }
 
   .main-window__container,
   .main-window__container--grid {
-    min-height: auto;
+    min-height: calc(100vh - var(--header-offset, 60px));
   }
 
   .main-hero {
