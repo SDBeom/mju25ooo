@@ -5,7 +5,7 @@ import Lenis from 'lenis';
 import dorokImage1 from '../../assets/도록/image 2141.webp';
 import dorokImage2 from '../../assets/도록/image 2143.webp';
 import posterFinal from '../../assets/poster_final.webp';
-import goodsList from '../../assets/goods_list.png';
+import goodsList from '../../assets/goods_list.webp';
 import './ComingSoonContent.css';
 
 // 번들 해석 이슈를 피하기 위해 Public 절대 경로만 사용
