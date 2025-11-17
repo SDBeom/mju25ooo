@@ -177,6 +177,29 @@
   gap: 20px;
 }
 
+.about-brand-story-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.about-brand-story-poster {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-brand-story-poster-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .about-brand-story-content {
   display: flex;
   flex-direction: column;
@@ -209,6 +232,29 @@
   word-break: keep-all;
   overflow-wrap: break-word;
   white-space: normal;
+}
+
+.about-goods-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.about-goods-list-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 800px) {
+  .about-goods-list-image {
+    max-width: 800px;
+    width: auto;
+  }
 }
 
 .about-brand-story-header {
@@ -275,7 +321,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .about-exhibition-label {
@@ -350,6 +396,10 @@
   white-space: normal;
 }
 
+.about-committee-names strong {
+  font-weight: 500;
+}
+
 .about-committee-list {
   display: flex;
   flex-direction: column;
@@ -415,8 +465,24 @@
     padding: 70px 28px;
   }
 
+  .about-brand-story-body {
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .about-brand-story-poster {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
   .about-brand-story-content {
+    flex: 1;
     gap: 3.5rem;
+  }
+
+  .about-goods-list {
+    padding: 0;
   }
 
   .about-exhibition-info {
@@ -466,12 +532,28 @@
     padding: 80px 40px;
   }
 
+  .about-brand-story-body {
+    flex-direction: row;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .about-brand-story-poster {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
   .about-brand-story-content {
+    flex: 1;
     gap: 4rem;
   }
 
   .about-brand-story-item {
     margin: 0 0 3rem 0;
+  }
+
+  .about-goods-list {
+    padding: 0;
   }
 
   .about-exhibition-info {

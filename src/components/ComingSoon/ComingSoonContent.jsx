@@ -4,6 +4,8 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
 import dorokImage1 from '../../assets/도록/image 2141.webp';
 import dorokImage2 from '../../assets/도록/image 2143.webp';
+import posterFinal from '../../assets/poster_final.webp';
+import goodsList from '../../assets/goods_list.png';
 import './ComingSoonContent.css';
 
 // 번들 해석 이슈를 피하기 위해 Public 절대 경로만 사용
@@ -76,6 +78,11 @@ const ComingSoonContent = () => {
         </div>
       </div>
 
+      {/* Goods List Section */}
+      <div className="about-goods-list">
+        <img src={goodsList} alt="굿즈 리스트" className="about-goods-list-image" />
+      </div>
+
       {/* Brand Story Section */}
       <div className="about-brand-story">
         <div className="about-brand-story-header">
@@ -83,7 +90,12 @@ const ComingSoonContent = () => {
           <h3 className="about-brand-story-subtitle">점에서 점으로 점점</h3>
         </div>
         
-        <div className="about-brand-story-content">
+        <div className="about-brand-story-body">
+          <div className="about-brand-story-poster">
+            <img src={posterFinal} alt="포스터" className="about-brand-story-poster-image" />
+          </div>
+          
+          <div className="about-brand-story-content">
           <div className="about-brand-story-item">
             <h4 className="about-brand-story-item-title">점(에서)</h4>
             <p className="about-brand-story-item-text">
@@ -104,6 +116,7 @@ const ComingSoonContent = () => {
               각자의 점에서 출발한 형상들은 이제 서로를 마주하고, 관객과 마주하며 점점 변화합니다. 점과 점 사이에서 흐르는 시선과 대화, 감정과 기억이 이 전시를 완성합니다. 불확실성과 가능성 사이에서 이 점들은 점점 성장하고 진화하며, 또 다른 점을 향한 새로운 움직임을 준비합니다.
             </p>
           </div>
+          </div>
         </div>
       </div>
 
@@ -117,13 +130,13 @@ const ComingSoonContent = () => {
 
         <div className="about-exhibition-details">
           <div className="about-exhibition-location">
-            <p className="about-exhibition-label">* 마루아트센터 특별관</p>
+            <p className="about-exhibition-label">마루아트센터 특별관</p>
             <p className="about-exhibition-address">서울 종로구 인사동길 35-4, 35-6, B1</p>
             <p className="about-exhibition-address-en">B1, 35-4, Insadong-gil, Jongno-gu, Seoul</p>
           </div>
 
           <div className="about-exhibition-date">
-            <p className="about-exhibition-label">* 2025. 11. 12 - 11. 17</p>
+            <p className="about-exhibition-label">2025. 11. 12 - 11. 17</p>
           </div>
         </div>
       </div>
@@ -146,17 +159,17 @@ const ComingSoonContent = () => {
 
         <div className="about-committee-section">
           <h4 className="about-committee-title">그래픽팀</h4>
-          <p className="about-committee-names">이운 / 이다영 김윤정 김지나 박희찬 송다희</p>
+          <p className="about-committee-names"><strong>이운</strong> <strong>이다영</strong> | 김윤정 김지나 박희찬 송다희</p>
         </div>
 
         <div className="about-committee-section">
           <h4 className="about-committee-title">컨텐츠팀</h4>
-          <p className="about-committee-names">이가비 / 전서린 심성빈 정지민 조하늘</p>
+          <p className="about-committee-names"><strong>이가비</strong> <strong>전서린</strong> | 심성빈 정지민 조하늘</p>
         </div>
 
         <div className="about-committee-section">
           <h4 className="about-committee-title">디피팀</h4>
-          <p className="about-committee-names">김재은 / 전기태 박진아 서원준 우수민</p>
+          <p className="about-committee-names"><strong>김재은</strong> <strong>전기태</strong> | 박진아 서원준 우수민</p>
         </div>
 
         <div className="about-committee-section">
@@ -176,9 +189,8 @@ const ComingSoonContent = () => {
       >
         <div className="about-section-content">
           <p className="about-section-text">
-            학생들의 창의적인 영상과 애니메이션 작품을 만나보세요.
+            학생들의 창의적인 작품을 만나보세요.
           </p>
-          <p className="about-section-title">점에서 점으로 점점</p>
         </div>
         <div className="about-section-background">
           <motion.div style={{ y: sectionY }} className="about-section-image">
