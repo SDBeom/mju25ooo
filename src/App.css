@@ -54,18 +54,18 @@ body.is-modal-open {
 .main-page {
   display: block;
   min-height: 100vh;
-  padding-top: 0;
+  padding: 0 !important;
   overflow: visible;
 }
 
 .main-page:has(.main-window--content) {
-  padding-top: var(--header-height, 100px);
+  padding: 0 !important;
   display: block;
   overflow: visible;
 }
 
 .main-page--grid {
-  padding-top: var(--header-offset);
+  padding: 0 !important;
   display: flex;
   flex-direction: column;
 }
@@ -87,8 +87,9 @@ body.is-modal-open {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  height: auto;
   background: #ff7700;
-  padding: 0 40px;
+  padding: 40px 40px;
   box-sizing: border-box;
 }
 
@@ -192,6 +193,15 @@ body.is-modal-open {
   justify-content: center;
   padding: 0;
   overflow: hidden;
+  min-height: auto;
+  height: auto;
+}
+
+/* 모바일: ~799px (375px 기준) - 드래그 가능하도록 */
+@media (max-width: 799px) {
+  .main-window__container--grid {
+    overflow: hidden;
+  }
 }
 
 .main-window__container--content {
@@ -216,12 +226,14 @@ body.is-modal-open {
 
 @media (max-width: 800px) {
   .main-window--grid {
-    min-height: calc(100vh - var(--header-offset, 60px));
+    min-height: auto;
+    height: auto;
   }
 
   .main-window__container,
   .main-window__container--grid {
-    min-height: calc(100vh - var(--header-offset, 60px));
+    min-height: auto;
+    height: auto;
   }
 
   .main-hero {

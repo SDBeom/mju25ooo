@@ -26,16 +26,16 @@
   object-fit: cover;
 }
 
-/* Description Section */
+/* Description Section - Mobile First */
 .about-description {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
+  padding: 0;
   margin: 0;
-  min-height: 50vh;
-  gap: 4rem;
+  min-height: 40vh;
+  gap: 2rem;
 }
 
 .about-description-text {
@@ -58,15 +58,16 @@
   width: 100vw;
   padding: 0;
   margin: 0;
-  height: 60vh;
+  height: auto;
+  flex-direction: column;
 }
 
 .about-description-image {
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  height: 50vh;
   -webkit-object-fit: cover;
   object-fit: cover;
-  flex: 1 1 50%;
+  flex: 1 1 100%;
   display: block;
 }
 
@@ -86,7 +87,7 @@
 .about-section-content {
   position: relative;
   z-index: 10;
-  padding: 2rem 40px;
+  padding: 2rem 20px;
   width: 100%;
   height: auto;
   min-height: 100vh;
@@ -99,14 +100,17 @@
 }
 
 .about-section-text {
-  width: 50vw;
+  width: 100%;
   font-size: clamp(1rem, 2vw, 2rem);
   text-transform: uppercase;
-  align-self: flex-end;
+  align-self: flex-start;
   margin: 0;
   -webkit-mix-blend-mode: difference;
   mix-blend-mode: difference;
   color: white;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-section-title {
@@ -116,6 +120,9 @@
   -webkit-mix-blend-mode: difference;
   mix-blend-mode: difference;
   color: white;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-section-background {
@@ -140,9 +147,9 @@
   object-fit: cover;
 }
 
-/* Brand Story Section */
+/* Brand Story Section - Mobile First */
 .about-brand-story {
-  padding: 80px 40px;
+  padding: 60px 20px;
   margin: 0;
   width: 100%;
   background-color: #fff;
@@ -152,14 +159,22 @@
   font-size: clamp(2rem, 4vw, 4rem);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  margin: 0 0 2rem 0;
+  margin: 0;
   font-weight: 300;
 }
 
 .about-brand-story-subtitle {
   font-size: clamp(1.5rem, 3vw, 3rem);
-  margin: 0 0 4rem 0;
+  margin: 0;
   font-weight: 300;
+}
+
+.about-brand-story-header {
+  margin: 0 0 4rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .about-brand-story-content {
@@ -171,13 +186,16 @@
 }
 
 .about-brand-story-item {
-  margin: 0 0 3rem 0;
+  margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .about-brand-story-item-title {
   font-size: clamp(1.2rem, 2vw, 1.8rem);
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   font-weight: 400;
 }
 
@@ -188,35 +206,55 @@
   font-weight: 300;
   margin: 0;
   padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
-/* Exhibition Info Section */
+.about-brand-story-header {
+  margin: 0 0 4rem 0;
+  padding: 0;
+}
+
+/* Exhibition Info Section - Mobile First */
 .about-exhibition-info {
-  padding: 80px 40px;
+  padding: 60px 20px;
   margin: 0;
   background-color: #f5f5f5;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .about-exhibition-header {
-  margin: 0 0 4rem 0;
+  margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .about-exhibition-university {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   letter-spacing: 0.1em;
-  margin: 0 0 1rem 0;
+  margin: 0;
   padding: 0;
   font-weight: 300;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-exhibition-department {
   font-size: clamp(0.9rem, 1.3vw, 1.1rem);
   letter-spacing: 0.1em;
-  margin: 0 0 1rem 0;
+  margin: 0;
   padding: 0;
   font-weight: 300;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-exhibition-title {
@@ -225,15 +263,19 @@
   margin: 0;
   padding: 0;
   font-weight: 400;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-exhibition-details {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   max-width: 800px;
   margin: 0 auto;
   padding: 0;
+  text-align: left;
 }
 
 .about-exhibition-label {
@@ -241,6 +283,9 @@
   font-weight: 500;
   margin: 0 0 0.5rem 0;
   padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-exhibition-address {
@@ -249,6 +294,9 @@
   color: #666;
   margin: 0 0 0.3rem 0;
   padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-exhibition-address-en {
@@ -258,6 +306,9 @@
   font-style: italic;
   margin: 0;
   padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-exhibition-date {
@@ -265,16 +316,16 @@
   padding: 0;
 }
 
-/* Committee Section */
+/* Committee Section - Mobile First */
 .about-committee {
-  padding: 80px 40px;
+  padding: 60px 20px;
   margin: 0;
   background-color: #fff;
   width: 100%;
 }
 
 .about-committee-section {
-  margin: 0 0 4rem 0;
+  margin: 0 0 3rem 0;
   padding: 0;
 }
 
@@ -294,6 +345,9 @@
   font-weight: 300;
   margin: 0;
   padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-committee-list {
@@ -311,6 +365,9 @@
   font-weight: 300;
   margin: 0;
   padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about-committee-role {
@@ -319,21 +376,118 @@
   padding: 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ============================================
+   Mobile (375px ~ 799px) - 기본 스타일이 이미 모바일 기준
+   ============================================ */
+/* 기본 스타일이 모바일 기준이므로 추가 조정이 필요한 경우만 여기에 작성 */
+
+/* ============================================
+   Tablet (800px ~ 1279px)
+   ============================================ */
+@media (min-width: 800px) and (max-width: 1279px) {
   .about-description {
-    padding: 0 40px;
-    margin: 0;
+    padding: 0;
+    gap: 3rem;
+    min-height: 45vh;
   }
 
-  .about-brand-story,
-  .about-exhibition-info,
-  .about-committee {
-    padding: 80px 40px;
-    margin: 0;
+  .about-description-images {
+    flex-direction: row;
+    height: 55vh;
+  }
+
+  .about-description-image {
+    width: 50%;
+    height: 100%;
+    flex: 1 1 50%;
+  }
+
+  .about-section-content {
+    padding: 2rem 28px;
+  }
+
+  .about-section-text {
+    width: 60vw;
+    align-self: flex-end;
+  }
+
+  .about-brand-story {
+    padding: 70px 28px;
+  }
+
+  .about-brand-story-content {
+    gap: 3.5rem;
+  }
+
+  .about-exhibition-info {
+    padding: 70px 28px;
   }
 
   .about-exhibition-details {
-    text-align: left;
+    text-align: center;
+  }
+
+  .about-committee {
+    padding: 70px 28px;
+  }
+}
+
+/* ============================================
+   Desktop (1280px 이상)
+   ============================================ */
+@media (min-width: 1280px) {
+  .about-description {
+    padding: 0;
+    gap: 4rem;
+    min-height: 50vh;
+  }
+
+  .about-description-images {
+    flex-direction: row;
+    height: 60vh;
+  }
+
+  .about-description-image {
+    width: 50%;
+    height: 100%;
+    flex: 1 1 50%;
+  }
+
+  .about-section-content {
+    padding: 2rem 40px;
+  }
+
+  .about-section-text {
+    width: 50vw;
+    align-self: flex-end;
+  }
+
+  .about-brand-story {
+    padding: 80px 40px;
+  }
+
+  .about-brand-story-content {
+    gap: 4rem;
+  }
+
+  .about-brand-story-item {
+    margin: 0 0 3rem 0;
+  }
+
+  .about-exhibition-info {
+    padding: 80px 40px;
+  }
+
+  .about-exhibition-details {
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .about-committee {
+    padding: 80px 40px;
+  }
+
+  .about-committee-section {
+    margin: 0 0 4rem 0;
   }
 }

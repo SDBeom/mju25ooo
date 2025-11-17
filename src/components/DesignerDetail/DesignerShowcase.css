@@ -127,6 +127,8 @@
   line-height: 1.75;
   color: rgba(26, 26, 26, 0.68);
   word-break: keep-all;
+  white-space: normal;
+  overflow-wrap: break-word;
   margin: 0;
 }
 
@@ -368,6 +370,9 @@
 
 .work-detail__card-text--story p {
   line-height: 1.4;
+  word-break: keep-all;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .work-detail__card-title {
@@ -394,7 +399,8 @@
   line-height: 1.45;
   letter-spacing: -0.09px;
   word-break: keep-all;
-  text-wrap: balance;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .work-detail__card--3 {
@@ -640,7 +646,16 @@
   line-height: 145%;
   letter-spacing: -0.1px;
   word-break: keep-all;
-  text-wrap: balance;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* 모든 상세창 텍스트에 띄어쓰기 기준 줄바꿈 적용 */
+.work-detail p,
+.work-detail__text-intro-description {
+  word-break: keep-all;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .work-detail__gallery {

@@ -8,6 +8,7 @@ import gameLogo from '../../assets/branding_logo/Game.svg';
 import motionLogo from '../../assets/branding_logo/Motion.svg';
 import multimediaLogo from '../../assets/branding_logo/Multimedia.svg';
 import videoLogo from '../../assets/branding_logo/Video.svg';
+import symbolImage from '../../assets/Symbol.webp';
 import './Works.css';
 import '../DesignerDetail/DesignerShowcase.css';
 
@@ -787,6 +788,9 @@ const Works = () => {
           );
         })}
         <div className="works-gallery__item works-gallery__item--ghost" aria-hidden="true" />
+      </div>
+      <div className="works-gallery__footer">
+        <img src={symbolImage} alt="MJU MCD Symbol" className="works-gallery__footer-symbol" />
       </div>
     </div>
       {selectedWork && selectedDesigner && createPortal(

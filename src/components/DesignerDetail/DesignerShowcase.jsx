@@ -118,6 +118,12 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
       return;
     }
 
+    // 버튼이나 클릭 가능한 요소를 클릭한 경우 이벤트 전파 허용
+    const isClickableElement = event.target.closest('button, a, [role="button"]');
+    if (isClickableElement) {
+      return; // 버튼 클릭은 그대로 전파되도록 함
+    }
+
     const modalSelector = '.kim-love-modal';
     const modalElement = event.target.closest(modalSelector);
 

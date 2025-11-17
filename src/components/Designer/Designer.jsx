@@ -313,9 +313,251 @@ const Designer = () => {
     window.dispatchEvent(new PopStateEvent('popstate'));
   }, []);
 
+  // 모바일 모드에서 스크롤 기반 호버 효과 적용
+  useEffect(() => {
+    const container = galleryRef.current;
+    if (!container) return undefined;
+
+    // 모바일 모드(799px 이하)에서만 적용
+    const isMobile = window.innerWidth <= 799;
+    if (!isMobile) return undefined;
+
+    const items = Array.from(container.querySelectorAll('.designer-gallery__item:not(.designer-gallery__item--ghost)'));
+    
+    // 현재 활성화된 아이템 추적
+    let activeItem = null;
+    let scrollTimeout = null;
+    let isInitialLoad = true;
+    
+    const updateActiveItem = () => {
+      // 화면 중앙 기준으로 활성화
+      const viewportCenter = window.innerHeight / 2;
+      const viewportHeight = window.innerHeight;
+      
+      // 모든 아이템의 위치 계산
+      const itemVisibility = items.map((item, index) => {
+        const rect = item.getBoundingClientRect();
+        
+        // 아이템의 위치 (뷰포트 기준)
+        const itemTop = rect.top;
+        const itemBottom = rect.bottom;
+        const itemCenter = itemTop + (itemBottom - itemTop) / 2;
+        
+        // 뷰포트 내에 있는지 확인 (더 넓은 범위)
+        const isVisible = itemBottom > -100 && itemTop < viewportHeight + 100;
+        
+        // 화면 중앙으로부터의 거리 (절대값)
+        const distanceFromCenter = Math.abs(itemCenter - viewportCenter);
+        
+        // 디자이너 이름 가져오기
+        const designerName = item.querySelector('.designer-gallery__text')?.textContent || '';
+        
+        return { 
+          item, 
+          index, 
+          isVisible, 
+          distanceFromCenter,
+          itemTop,
+          itemCenter,
+          itemBottom,
+          designerName
+        };
+      });
+      
+      // 김윤정 아이템 찾기 (인덱스 0)
+      const yunjungItem = itemVisibility.find(item => item.designerName === '김윤정' || item.index === 0);
+      // 김재은 아이템 찾기 (인덱스 1)
+      const jaeunItem = itemVisibility.find(item => item.designerName === '김재은' || item.index === 1);
+      // 김지나 아이템 찾기 (인덱스 2)
+      const jinaItem = itemVisibility.find(item => item.designerName === '김지나' || item.index === 2);
+      
+      // 스크롤 위치 확인
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const isAtTop = scrollTop < 50; // 스크롤이 맨 위에 있을 때 (50px 이내)
+      
+      // 김지나 영역 내에서 세분화된 반응 영역 설정
+      let bestItem = null;
+      
+      // 초기 로드 시에만 김윤정 활성화 (스크롤이 맨 위에 있을 때는 제외)
+      if (isInitialLoad && yunjungItem && yunjungItem.isVisible) {
+        bestItem = yunjungItem;
+        isInitialLoad = false;
+      } else if (jinaItem && jinaItem.isVisible) {
+        // 김지나 아이템의 영역 범위
+        const jinaZoneTop = jinaItem.itemTop;
+        const jinaZoneBottom = jinaItem.itemBottom;
+        const jinaZoneHeight = jinaZoneBottom - jinaZoneTop;
+        
+        // 김지나 영역을 3등분: 김윤정 20%, 김재은 33%, 김지나 47% (김윤정을 제일 적게 하고 김지나에게 줌)
+        const jinaSubZone1Top = jinaZoneTop; // 김윤정 영역 (김지나 영역의 상단 20%)
+        const jinaSubZone1Bottom = jinaZoneTop + jinaZoneHeight * 0.20;
+        const jinaSubZone2Top = jinaZoneTop + jinaZoneHeight * 0.20; // 김재은 영역 (김지나 영역의 20% ~ 53%)
+        const jinaSubZone2Bottom = jinaZoneTop + jinaZoneHeight * 0.53;
+        const jinaSubZone3Top = jinaZoneTop + jinaZoneHeight * 0.53; // 김지나 영역 (김지나 영역의 하단 47%)
+        const jinaSubZone3Bottom = jinaZoneBottom;
+        
+        // 화면 중앙이 김지나 영역 내에 있는지 확인
+        const isInJinaZone = viewportCenter >= jinaZoneTop && viewportCenter <= jinaZoneBottom;
+        
+        // 디버깅 로그
+        console.log('김지나 영역:', {
+          jinaZoneTop,
+          jinaZoneBottom,
+          viewportCenter,
+          isInJinaZone,
+          jinaSubZone2Top,
+          jinaSubZone2Bottom,
+          isInJaeunZone: viewportCenter >= jinaSubZone2Top && viewportCenter < jinaSubZone2Bottom,
+          jaeunItem: jaeunItem ? { isVisible: jaeunItem.isVisible, designerName: jaeunItem.designerName } : null
+        });
+        
+        if (isInJinaZone) {
+          // 화면 중앙이 김지나 영역의 어느 부분에 있는지 확인
+          if (viewportCenter >= jinaSubZone2Top && viewportCenter < jinaSubZone2Bottom) {
+            // 김재은 활성화 (인덱스 1) - 중간 33%
+            if (jaeunItem && jaeunItem.isVisible) {
+              bestItem = jaeunItem;
+            } else {
+              bestItem = itemVisibility.find(item => item.index === 1);
+            }
+            console.log('김재은 활성화 시도:', bestItem);
+          } else if (viewportCenter >= jinaSubZone1Top && viewportCenter < jinaSubZone1Bottom) {
+            // 김윤정 활성화 (인덱스 0) - 상단 20%
+            if (yunjungItem && yunjungItem.isVisible) {
+              bestItem = yunjungItem;
+            } else {
+              bestItem = itemVisibility.find(item => item.index === 0);
+            }
+          } else if (viewportCenter >= jinaSubZone3Top && viewportCenter <= jinaSubZone3Bottom) {
+            // 김지나 활성화 (인덱스 2) - 하단 47%
+            bestItem = jinaItem;
+          }
+        }
+      }
+      
+      // 스크롤이 맨 위에 있고 초기 로드가 아니면 김윤정 활성화
+      if (!bestItem && isAtTop && !isInitialLoad && yunjungItem && yunjungItem.isVisible) {
+        bestItem = yunjungItem;
+      }
+      
+      // 김지나 영역 밖이면 기존 로직 사용 (화면 중앙에 가장 가까운 아이템)
+      // 단, 각 아이템이 조금씩 양보하도록 활성화 범위를 조정
+      if (!bestItem) {
+        const eligibleItems = itemVisibility.filter(({ isVisible }) => isVisible);
+        
+        if (eligibleItems.length === 0) {
+          if (activeItem) {
+            handleCardLeave({ currentTarget: activeItem });
+            activeItem = null;
+          }
+          return;
+        }
+        
+        // 각 아이템의 활성화 범위를 조금씩 줄여서 더 균등하게 활성화되도록 조정
+        // 각 아이템의 중심점 기준으로 일정 범위 내에 화면 중앙이 있으면 활성화
+        // 범위를 조금씩 줄여서 다른 아이템들도 활성화될 수 있도록 함
+        const activationRange = viewportHeight * 0.15; // 각 아이템의 활성화 범위 (화면 높이의 15%)
+        
+        const itemsInRange = eligibleItems.filter(({ distanceFromCenter }) => {
+          return distanceFromCenter <= activationRange;
+        });
+        
+        if (itemsInRange.length > 0) {
+          // 활성화 범위 내에 있는 아이템 중에서 가장 가까운 것 선택
+          bestItem = itemsInRange
+            .sort((a, b) => {
+              // 화면 중앙으로부터의 거리로 정렬
+              const distanceDiff = Math.abs(a.distanceFromCenter - b.distanceFromCenter);
+              if (distanceDiff < 20) {
+                // 거리가 비슷하면 위에 있는 것(인덱스가 작은 것) 우선
+                return a.index - b.index;
+              }
+              // 화면 중앙에 가까운 것 우선
+              return a.distanceFromCenter - b.distanceFromCenter;
+            })[0];
+        } else {
+          // 활성화 범위 내에 아이템이 없으면 기존 로직 사용
+          bestItem = eligibleItems
+            .sort((a, b) => {
+              const distanceDiff = Math.abs(a.distanceFromCenter - b.distanceFromCenter);
+              if (distanceDiff < 20) {
+                return a.index - b.index;
+              }
+              return a.distanceFromCenter - b.distanceFromCenter;
+            })[0];
+        }
+      }
+      
+      // 디버깅: 활성화되는 아이템 확인
+      if (bestItem) {
+        console.log('활성화되는 아이템:', bestItem.designerName, '인덱스:', bestItem.index, '거리:', bestItem.distanceFromCenter);
+      }
+      
+      // 이전 활성 아이템과 다르면 업데이트
+      if (bestItem && bestItem.item !== activeItem) {
+        // 이전 활성 아이템 효과 제거
+        if (activeItem) {
+          handleCardLeave({ currentTarget: activeItem });
+        }
+        
+        // 새로운 활성 아이템 효과 적용
+        activeItem = bestItem.item;
+        // color를 아이템의 인덱스로부터 계산
+        const itemIndex = items.indexOf(activeItem);
+        const color = GALLERY_COLORS[itemIndex % GALLERY_COLORS.length];
+        handleCardEnter({ currentTarget: activeItem }, color);
+      } else if (!bestItem && activeItem) {
+        // 뷰포트에 보이는 아이템이 없으면 모든 효과 제거
+        handleCardLeave({ currentTarget: activeItem });
+        activeItem = null;
+      }
+    };
+    
+    // requestAnimationFrame을 사용하여 더 부드럽고 빠른 업데이트
+    let rafId = null;
+    const handleScrollRAF = () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+      rafId = requestAnimationFrame(() => {
+        updateActiveItem();
+      });
+    };
+    
+    // requestAnimationFrame을 사용한 스크롤 핸들러
+    window.addEventListener('scroll', handleScrollRAF, { passive: true });
+    window.addEventListener('resize', handleScrollRAF, { passive: true });
+    
+    // 초기 로드 시 스크롤을 맨 위로 이동
+    window.scrollTo(0, 0);
+    
+    // 초기 실행 (레이아웃이 완전히 계산된 후)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        updateActiveItem();
+      });
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollRAF);
+      window.removeEventListener('resize', handleScrollRAF);
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+      // 정리 시 활성 아이템 효과 제거
+      if (activeItem) {
+        handleCardLeave({ currentTarget: activeItem });
+      }
+    };
+  }, [handleCardEnter, handleCardLeave]);
+
   return (
     <div className="designer-gallery">
       <div className="designer-gallery__inner" ref={galleryRef}>
+        <h1 className="designer-gallery__title">Designer</h1>
         {DESIGNERS.map((designer, index) => {
           const color = GALLERY_COLORS[index % GALLERY_COLORS.length];
           const instagramHandle =

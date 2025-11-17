@@ -22,16 +22,32 @@ const detailsData = PRODUCTS.map((product) => ({
   description: product.description,
 }));
 
-const columns = Array.from({ length: GRID_COLUMNS }, (_, columnIndex) => {
-  return Array.from({ length: GRID_ROWS }, (_, rowIndex) => {
-    const productIndex = columnIndex * GRID_ROWS + rowIndex;
-    return PRODUCTS[productIndex]?.id ?? null;
-  }).filter(Boolean);
-});
+// 모바일용 그리드 구조 (4열 x 10행)
+const getMobileColumns = () => {
+  const MOBILE_COLUMNS = 4;
+  const MOBILE_ROWS = 10;
+  return Array.from({ length: MOBILE_COLUMNS }, (_, columnIndex) => {
+    return Array.from({ length: MOBILE_ROWS }, (_, rowIndex) => {
+      const productIndex = columnIndex * MOBILE_ROWS + rowIndex;
+      return PRODUCTS[productIndex]?.id ?? null;
+    }).filter(Boolean);
+  });
+};
+
+// 데스크탑용 그리드 구조 (5열 x 8행)
+const getDesktopColumns = () => {
+  return Array.from({ length: GRID_COLUMNS }, (_, columnIndex) => {
+    return Array.from({ length: GRID_ROWS }, (_, rowIndex) => {
+      const productIndex = columnIndex * GRID_ROWS + rowIndex;
+      return PRODUCTS[productIndex]?.id ?? null;
+    }).filter(Boolean);
+  });
+};
 
 const DraggableGrid = () => {
   const [activeDetailId, setActiveDetailId] = useState(null);
   const [tooltip, setTooltip] = useState({ show: false, title: '', designer: '', x: 0, y: 0 });
+  const [isMobileView, setIsMobileView] = useState(() => window.innerWidth <= 799);
   const containerRef = useRef(null);
   const gridRef = useRef(null);
   const detailsRef = useRef(null);
@@ -43,6 +59,18 @@ const DraggableGrid = () => {
   const hoverTimeoutRef = useRef(null);
 
   productRefs.current = [];
+
+  // 모바일 여부 확인
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 799);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // 모바일/데스크탑에 따라 다른 columns 사용
+  const displayColumns = isMobileView ? getMobileColumns() : getDesktopColumns();
 
   // 마우스 이동 시 툴팁 위치 업데이트
   useEffect(() => {
@@ -88,7 +116,8 @@ const DraggableGrid = () => {
 
     const container = containerRef.current;
     const grid = gridRef.current;
-    const products = [...grid.querySelectorAll('.product div')];
+    const productDivs = [...grid.querySelectorAll('.product div')];
+    const products = [...grid.querySelectorAll('.product')];
     const details = detailsRef.current;
     const detailsThumb = detailsThumbRef.current;
     const cross = crossRef.current;
@@ -96,6 +125,45 @@ const DraggableGrid = () => {
     if (!container || !grid || !details || !detailsThumb || products.length === 0) {
       document.body.classList.remove('loading');
       return undefined;
+    }
+
+    // 상세창 초기 위치 설정 (화면 밖으로)
+    const width = window.innerWidth;
+    let initialDetailsX;
+    if (width <= 799) {
+      initialDetailsX = '100vw'; // 모바일
+    } else if (width <= 1279) {
+      initialDetailsX = '60vw'; // 태블릿
+    } else {
+      initialDetailsX = '50vw'; // 데스크탑
+    }
+    gsap.set(details, { 
+      x: initialDetailsX, 
+      opacity: 0, 
+      display: 'none',
+      pointerEvents: 'none'
+    });
+    
+    // cross 버튼 초기 상태 설정
+    if (cross) {
+      const isMobileDevice = window.innerWidth <= 799;
+      if (isMobileDevice) {
+        // 모바일: 위치 고정 (CSS에서 right: 16px, top: 16px)
+        gsap.set(cross, {
+          scale: 0,
+          opacity: 0,
+          pointerEvents: 'none',
+          x: 0,
+          y: 0,
+        });
+      } else {
+        // 데스크탑: 초기 위치 설정
+        gsap.set(cross, {
+          scale: 0,
+          opacity: 0,
+          pointerEvents: 'none',
+        });
+      }
     }
 
     let draggable;
@@ -206,17 +274,62 @@ const DraggableGrid = () => {
         centerX = Math.max(centerX, minCenterX);
       }
       
-      const centerY = (height - gridHeight) / 2;
+      // 세로 중앙 정렬
+      // scale 0.5일 때도 그리드가 화면 안에 있도록 위치 계산
+      // container가 scale 0.5일 때 container의 높이도 height * 0.5
+      // grid의 높이도 gridHeight * 0.5
+      // scale 0.5 기준으로 위치를 계산한 후, scale 1 기준으로 역산
+      const scaledHeight = height * 0.5;
+      const scaledGridHeight = gridHeight * 0.5;
+      
+      let centerY = (scaledHeight - scaledGridHeight) / 2;
+      
+      // 그리드가 container보다 크면 위아래가 잘리지 않도록 조정
+      if (scaledGridHeight > scaledHeight) {
+        // 그리드가 container보다 크면 상단에 맞춤 (하단이 잘리지 않도록)
+        centerY = 0;
+      } else {
+        // 그리드가 container보다 작으면 중앙 정렬
+        // 하지만 하단이 잘리지 않도록 확인
+        const maxCenterY = scaledHeight - scaledGridHeight;
+        if (centerY > maxCenterY) {
+          centerY = maxCenterY;
+        }
+        // 상단도 확인
+        if (centerY < 0) {
+          centerY = 0;
+        }
+      }
+      
+      // scale 1 기준으로 위치를 역산
+      // scale 0.5일 때 centerY가 되려면, scale 1일 때는 centerY * 2
+      // transform-origin이 center center이므로, container의 중심점을 기준으로 scale됨
+      // container의 중심점은 height / 2
+      // scale 0.5일 때: grid의 중심점이 container의 중심점에 가까워짐
+      // scale 1일 때: grid의 중심점이 원래 위치로 돌아감
+      // 따라서 scale 1일 때의 위치는: centerY * 2
+      const scale1Y = centerY * 2;
       
       gsap.set(grid, {
         x: centerX,
-        y: centerY,
+        y: scale1Y,
       });
     };
 
     // ========== 드래그 및 스크롤 관련 ==========
+    const isMobile = () => {
+      return window.innerWidth <= 799;
+    };
+
     const setupDraggable = () => {
       container.classList.add('--is-loaded');
+      
+      // 모바일에서도 드래그 활성화
+      if (isMobile()) {
+        container.classList.add('--is-mobile');
+        grid.classList.add('--is-mobile');
+      }
+
       const bounds = computeBounds();
       boundsRef.current = bounds;
 
@@ -224,10 +337,16 @@ const DraggableGrid = () => {
         type: 'x,y',
         bounds,
         inertia: true,
-        allowEventDefault: true,
+        allowEventDefault: false,
         edgeResistance: 0.9,
-        onDragStart: () => grid.classList.add('--is-dragging'),
-        onDragEnd: () => grid.classList.remove('--is-dragging'),
+        touchAction: 'none',
+        dragClickables: false,
+        onDragStart: () => {
+          grid.classList.add('--is-dragging');
+        },
+        onDragEnd: () => {
+          grid.classList.remove('--is-dragging');
+        },
       })[0];
 
       centerGrid(bounds);
@@ -318,19 +437,21 @@ const DraggableGrid = () => {
         threshold: 0.1,
       });
 
-      products.forEach((product) => observer.observe(product));
+      productDivs.forEach((product) => observer.observe(product));
     };
 
     const flipProduct = (product) => {
       if (detailsThumb) detailsThumb.innerHTML = '';
 
-      currentProduct = product;
-      originalParent = product.parentNode;
+      // product는 .product 요소이므로, 내부 div를 찾아야 함
+      const productDiv = product.querySelector('div[data-id]') || product;
+      currentProduct = productDiv;
+      originalParent = productDiv.parentNode;
 
-      if (observer) observer.unobserve(product);
+      if (observer) observer.unobserve(productDiv);
 
       // 그리드의 thumb 작아지기
-      gsap.to(product, {
+      gsap.to(productDiv, {
         scale: 0,
         duration: 0.6,
         ease: 'power3.inOut',
@@ -363,6 +484,27 @@ const DraggableGrid = () => {
       }
 
       if (cross) {
+        // cross 버튼 초기 상태 설정
+        // 모바일에서는 위치가 다르므로 확인
+        const isMobileDevice = window.innerWidth <= 799;
+        if (isMobileDevice) {
+          // 모바일: right: 16px, top: 16px 위치로 고정
+          // CSS에서 이미 위치가 설정되어 있으므로, x, y를 0으로 설정하고 scale만 조정
+          gsap.set(cross, {
+            opacity: 1,
+            pointerEvents: 'auto',
+            x: 0,
+            y: 0,
+            scale: 0,
+          });
+        } else {
+          // 데스크탑: 마우스 위치로 설정
+          gsap.set(cross, {
+            opacity: 1,
+            pointerEvents: 'auto',
+            scale: 0,
+          });
+        }
         gsap.to(cross, {
           scale: 1,
           duration: 0.4,
@@ -416,6 +558,12 @@ const DraggableGrid = () => {
         ease: 'power3.inOut',
         onComplete: () => {
           details.classList.remove('--is-showing');
+          // 상세창 완전히 숨기기
+          gsap.set(details, {
+            opacity: 0,
+            display: 'none',
+            pointerEvents: 'none'
+          });
         },
       });
 
@@ -456,7 +604,14 @@ const DraggableGrid = () => {
       // 상세창 초기 위치 설정
       const initialDetailsX = getResponsiveDetailsX(false);
       // 보이는 순간 상/하 패딩을 100px로 강제 고정 (스타일 우선순위 무관하게 보장)
-      gsap.set(details, { x: initialDetailsX, opacity: 1, display: 'flex', paddingTop: 100, paddingBottom: 100 });
+      gsap.set(details, { 
+        x: initialDetailsX, 
+        opacity: 1, 
+        display: 'flex', 
+        paddingTop: 100, 
+        paddingBottom: 100,
+        pointerEvents: 'auto'
+      });
       
       details.classList.add('--is-showing');
       container.classList.add('--is-details-showing');
@@ -498,7 +653,9 @@ const DraggableGrid = () => {
         },
       });
 
-      const productId = product.dataset.id;
+      // product는 .product 요소이므로, 내부 div에서 data-id를 가져와야 함
+      const productDiv = product.querySelector('div[data-id]');
+      const productId = productDiv ? productDiv.dataset.id : product.dataset.id;
       const numericProductId = Number(productId);
       const titleIndex = detailsData.findIndex((detail) => detail.id.toString() === productId);
 
@@ -733,23 +890,104 @@ const DraggableGrid = () => {
       }
 
       // 제품 클릭 및 호버 핸들러
+      const productDragStates = new Map();
+      const isMobileDevice = isMobile();
+      
       productClickHandlers = products.map((product) => {
+        const productDiv = product.querySelector('div[data-id]');
+        if (!productDiv) return null;
+        
+        const productId = productDiv.dataset.id;
+        const numericProductId = Number(productId);
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let hasMoved = false;
+        
         const handler = (event) => {
+          // 모바일에서만 드래그 상태 확인
+          const dragState = productDragStates.get(productId);
+          if (isMobileDevice && dragState === true) {
+            event.preventDefault();
+            event.stopPropagation();
+            return;
+          }
           event.stopPropagation();
           showDetails(product);
         };
-        product.addEventListener('click', handler);
         
-        // 호버 핸들러
-        const productId = Number(product.dataset.id);
-        const hoverEnterHandler = (e) => handleProductHover(e, productId);
+        // 터치 시작 (모바일만)
+        const touchStartHandler = (e) => {
+          if (!isMobileDevice) return;
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          hasMoved = false;
+          productDragStates.set(productId, false);
+        };
+        
+        // 터치 이동 (모바일만)
+        const touchMoveHandler = (e) => {
+          if (!isMobileDevice) return;
+          if (!touchStartX || !touchStartY) return;
+          const touchX = e.touches[0].clientX;
+          const touchY = e.touches[0].clientY;
+          const deltaX = Math.abs(touchX - touchStartX);
+          const deltaY = Math.abs(touchY - touchStartY);
+          
+          // 15px 이상 이동하면 드래그로 간주
+          if (deltaX > 15 || deltaY > 15) {
+            hasMoved = true;
+            productDragStates.set(productId, true);
+          }
+        };
+        
+        // 터치 종료 (모바일만)
+        const touchEndHandler = (e) => {
+          if (!isMobileDevice) return;
+          // 드래그가 아니었다면 클릭 이벤트 발생
+          if (!hasMoved && !productDragStates.get(productId)) {
+            // 약간의 지연 후 클릭 이벤트 발생
+            setTimeout(() => {
+              if (!productDragStates.get(productId)) {
+                handler(e);
+              }
+            }, 50);
+          }
+          
+          setTimeout(() => {
+            productDragStates.set(productId, false);
+            touchStartX = 0;
+            touchStartY = 0;
+            hasMoved = false;
+          }, 100);
+        };
+        
+        // .product 요소에 클릭 이벤트 등록 (pointer-events가 작동하도록)
+        product.addEventListener('click', handler);
+        // 모바일에서만 터치 이벤트 리스너 추가
+        if (isMobileDevice) {
+          product.addEventListener('touchstart', touchStartHandler, { passive: true });
+          product.addEventListener('touchmove', touchMoveHandler, { passive: true });
+          product.addEventListener('touchend', touchEndHandler, { passive: true });
+        }
+        
+        // 호버 핸들러 - .product 요소에 등록
+        const hoverEnterHandler = (e) => handleProductHover(e, numericProductId);
         const hoverLeaveHandler = handleProductHoverLeave;
         
         product.addEventListener('mouseenter', hoverEnterHandler);
         product.addEventListener('mouseleave', hoverLeaveHandler);
         
-        return { product, handler, hoverEnterHandler, hoverLeaveHandler };
-      });
+        return { 
+          product, 
+          productElement: product,
+          handler, 
+          hoverEnterHandler, 
+          hoverLeaveHandler,
+          touchStartHandler: isMobileDevice ? touchStartHandler : null,
+          touchMoveHandler: isMobileDevice ? touchMoveHandler : null,
+          touchEndHandler: isMobileDevice ? touchEndHandler : null
+        };
+      }).filter(Boolean);
 
       // 컨테이너 클릭 핸들러
       containerClickHandler = () => {
@@ -772,58 +1010,142 @@ const DraggableGrid = () => {
       // 로딩 화면 제거 (애니메이션이 보이도록)
       document.body.classList.remove('loading');
       
-      // 그리드를 중앙에 배치 (애니메이션 시작 전)
-      centerGrid();
-      
-      // container의 transform-origin을 중앙으로 설정
-      gsap.set(container, {
-        transformOrigin: 'center center',
-      });
-
-      const timeline = gsap.timeline({
-        onComplete: () => {
-          setupDraggable();
-          updateBounds();
-          observeProducts();
-          handleDetails();
-          wheelListenerTarget = container;
-          wheelListenerTarget.addEventListener('wheel', handleWheel, { passive: false });
-          window.addEventListener('resize', updateBounds);
-          onMouseMove = (event) => {
-            if (showDetailsActive) {
-              handleCursor(event);
+      // 모바일과 데스크탑 애니메이션 분기
+      if (isMobile()) {
+        // 모바일: 먼저 모바일 클래스 추가 (레이아웃 적용)
+        container.classList.add('--is-mobile');
+        grid.classList.add('--is-mobile');
+        
+        // 모바일: 레이아웃이 적용될 때까지 기다린 후 그리드 중앙 배치
+        // 여러 프레임을 기다려서 레이아웃이 완전히 계산되도록 함
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            // container의 높이를 grid의 높이에 맞춤
+            // grid가 absolute이므로 container의 높이를 동적으로 설정해야 함
+            // grid.offsetHeight는 padding을 포함한 높이
+            const gridHeight = grid.offsetHeight;
+            if (gridHeight > 0) {
+              // container의 높이를 grid 높이에 맞춤
+              // grid가 container보다 클 경우를 대비해 최소 높이도 고려
+              const { height: viewportHeight } = getViewportSize();
+              const finalHeight = Math.max(gridHeight, viewportHeight);
+              container.style.height = `${finalHeight}px`;
+            } else {
+              // grid 높이가 아직 계산되지 않았으면 기본 높이 유지
+              const { height: viewportHeight } = getViewportSize();
+              container.style.height = `${viewportHeight}px`;
             }
-          };
-          window.addEventListener('mousemove', onMouseMove);
-        },
-      });
+            
+            // container의 transform-origin을 중앙으로 설정
+            gsap.set(container, {
+              transformOrigin: 'center center',
+            });
+            
+            // 그리드를 중앙에 배치 (애니메이션 시작 전)
+            centerGrid();
+          
+          const timeline = gsap.timeline({
+            onComplete: () => {
+              setupDraggable();
+              updateBounds();
+              observeProducts();
+              handleDetails();
+              wheelListenerTarget = container;
+              wheelListenerTarget.addEventListener('wheel', handleWheel, { passive: false });
+              window.addEventListener('resize', updateBounds);
+              onMouseMove = (event) => {
+                if (showDetailsActive) {
+                  handleCursor(event);
+                }
+              };
+              window.addEventListener('mousemove', onMouseMove);
+            },
+          });
 
-      // 초기 상태 설정 (중앙에서 시작)
-      timeline.set(container, { 
-        scale: 0.5,
-        transformOrigin: 'center center',
-      });
-      timeline.set(products, {
-        scale: 0.5,
-        opacity: 0,
-      });
+          // 초기 상태 설정 (중앙에서 시작)
+          timeline.set(container, { 
+            scale: 0.5,
+            transformOrigin: 'center center',
+          });
+          timeline.set(productDivs, {
+            scale: 0.5,
+            opacity: 0,
+          });
 
-      timeline.to(products, {
-        scale: 1,
-        opacity: 1,
-        duration: 0.6,
-        ease: 'power3.out',
-        stagger: {
-          amount: 1.2,
-          from: 'random',
-        },
-      });
+          timeline.to(productDivs, {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            ease: 'power3.out',
+            stagger: {
+              amount: 1.2,
+              from: 'random',
+            },
+          });
 
-      timeline.to(container, {
-        scale: 1,
-        duration: 1.2,
-        ease: 'power3.inOut',
-      });
+          timeline.to(container, {
+            scale: 1,
+            duration: 1.2,
+            ease: 'power3.inOut',
+          });
+          });
+        });
+      } else {
+        // 데스크탑: 기존 애니메이션
+        // 그리드를 중앙에 배치 (애니메이션 시작 전)
+        centerGrid();
+        
+        // container의 transform-origin을 중앙으로 설정
+        gsap.set(container, {
+          transformOrigin: 'center center',
+        });
+        
+
+        const timeline = gsap.timeline({
+          onComplete: () => {
+            setupDraggable();
+            updateBounds();
+            observeProducts();
+            handleDetails();
+            wheelListenerTarget = container;
+            wheelListenerTarget.addEventListener('wheel', handleWheel, { passive: false });
+            window.addEventListener('resize', updateBounds);
+            onMouseMove = (event) => {
+              if (showDetailsActive) {
+                handleCursor(event);
+              }
+            };
+            window.addEventListener('mousemove', onMouseMove);
+          },
+        });
+
+        // 초기 상태 설정 (중앙에서 시작)
+        timeline.set(container, { 
+          scale: 0.5,
+          transformOrigin: 'center center',
+        });
+        timeline.set(productDivs, {
+          scale: 0.5,
+          opacity: 0,
+        });
+
+        timeline.to(productDivs, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.6,
+          ease: 'power3.out',
+          stagger: {
+            amount: 1.2,
+            from: 'random',
+          },
+        });
+
+        timeline.to(container, {
+          scale: 1,
+          duration: 1.2,
+          ease: 'power3.inOut',
+        });
+      }
     };
 
     preloadImages('.grid img')
@@ -844,6 +1166,14 @@ const DraggableGrid = () => {
         draggable.kill();
       }
 
+      // 모바일 클래스 제거
+      if (container) {
+        container.classList.remove('--is-mobile');
+      }
+      if (grid) {
+        grid.classList.remove('--is-mobile');
+      }
+
       if (observer) {
         observer.disconnect();
       }
@@ -853,15 +1183,28 @@ const DraggableGrid = () => {
       if (cross) {
         gsap.killTweensOf(cross);
       }
-      gsap.killTweensOf(products);
+      gsap.killTweensOf(productDivs);
 
       container.classList.remove('--is-details-showing');
       details.classList.remove('--is-showing');
 
-      productClickHandlers.forEach(({ product, handler, hoverEnterHandler, hoverLeaveHandler }) => {
+      productClickHandlers.forEach(({ 
+        product, 
+        productElement,
+        handler, 
+        hoverEnterHandler, 
+        hoverLeaveHandler,
+        touchStartHandler,
+        touchMoveHandler,
+        touchEndHandler
+      }) => {
         product.removeEventListener('click', handler);
-        if (hoverEnterHandler) product.removeEventListener('mouseenter', hoverEnterHandler);
-        if (hoverLeaveHandler) product.removeEventListener('mouseleave', hoverLeaveHandler);
+        const targetElement = productElement || product;
+        if (hoverEnterHandler) targetElement.removeEventListener('mouseenter', hoverEnterHandler);
+        if (hoverLeaveHandler) targetElement.removeEventListener('mouseleave', hoverLeaveHandler);
+        if (touchStartHandler) product.removeEventListener('touchstart', touchStartHandler);
+        if (touchMoveHandler) product.removeEventListener('touchmove', touchMoveHandler);
+        if (touchEndHandler) product.removeEventListener('touchend', touchEndHandler);
       });
       
       if (hoverTimeoutRef.current) {
@@ -894,7 +1237,7 @@ const DraggableGrid = () => {
     <div className="draggable-stage">
       <div className="container" ref={containerRef}>
         <div className="grid" ref={gridRef}>
-          {columns.map((column, columnIndex) => (
+          {displayColumns.map((column, columnIndex) => (
             <div className="column" key={`column-${columnIndex}`}>
               {column.map((productId) => (
                 <div className="product" key={`product-${productId}`}>

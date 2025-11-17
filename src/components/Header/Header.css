@@ -5,10 +5,8 @@
 
 /* Header Component Styles - Mobile First */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  width: 100%;
   z-index: 1000;
   background: rgba(8, 9, 13, 0.35);
   backdrop-filter: blur(12px);
@@ -19,6 +17,13 @@
   --header-horizontal-padding: 20px;
   color: #000000;
   opacity: 1;
+  height: var(--header-height);
+}
+
+/* grid 모드일 때만 relative로 오버라이드 */
+.header-grid-mode,
+.header--mobile {
+  position: relative;
 }
 
 .header--hidden {
@@ -114,7 +119,10 @@
 
 /* DraggableGrid 모드 - 투명하고 미니멀 */
 .header-grid-mode {
+  position: relative;
   pointer-events: none; /* 클릭 이벤트를 통과시킴 */
+  width: 100%;
+  height: var(--header-height);
 }
 
 /* DraggableGrid 모드에서 로고와 네비게이션은 클릭 가능 */
@@ -132,6 +140,13 @@
 
 .header-grid-mode.header--desktop {
   --header-height: 100px;
+}
+
+/* 모바일 헤더도 relative로 */
+.header--mobile {
+  position: relative;
+  width: 100%;
+  height: var(--header-height);
 }
 
 /* 디자이너 모드 - 크리에이티브한 스타일 */

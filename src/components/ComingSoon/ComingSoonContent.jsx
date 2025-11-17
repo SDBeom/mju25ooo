@@ -78,8 +78,10 @@ const ComingSoonContent = () => {
 
       {/* Brand Story Section */}
       <div className="about-brand-story">
-        <h2 className="about-brand-story-title">BRAND STORY</h2>
-        <h3 className="about-brand-story-subtitle">점에서 점으로 점점</h3>
+        <div className="about-brand-story-header">
+          <h2 className="about-brand-story-title">BRAND STORY</h2>
+          <h3 className="about-brand-story-subtitle">점에서 점으로 점점</h3>
+        </div>
         
         <div className="about-brand-story-content">
           <div className="about-brand-story-item">
@@ -144,7 +146,7 @@ const ComingSoonContent = () => {
 
         <div className="about-committee-section">
           <h4 className="about-committee-title">그래픽팀</h4>
-          <p className="about-committee-names">이윤 / 이다영 김윤정 김지나 박희찬 송다희</p>
+          <p className="about-committee-names">이운 / 이다영 김윤정 김지나 박희찬 송다희</p>
         </div>
 
         <div className="about-committee-section">

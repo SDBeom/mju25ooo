@@ -7,8 +7,17 @@
 .logo-container img {
   height: 50px;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(73%) sepia(13%)
-    saturate(1756%) hue-rotate(178deg) brightness(103%) contrast(102%);
+  filter: brightness(0) invert(1) !important;
+}
+
+/* 모든 헤더 모드에서 로고가 흰색으로 보이도록 */
+.header .logo-container img,
+.header-comingsoon-mode .logo-container img,
+.header-grid-mode .logo-container img,
+.header-design-mode .logo-container img,
+.header-works-mode .logo-container img,
+.header-default-mode .logo-container img {
+  filter: brightness(0) invert(1) !important;
 }
 
 @media (max-width: 800px) {
