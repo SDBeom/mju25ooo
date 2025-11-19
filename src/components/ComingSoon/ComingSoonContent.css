@@ -4,6 +4,8 @@
   padding: 0;
   background-color: #FF7700;
   min-height: calc(100vh - var(--header-height, 60px));
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 /* Intro Section - Parallax Background */
@@ -17,6 +19,7 @@
   position: relative;
   height: 100%;
   width: 100%;
+  z-index: 1;
 }
 
 .about-intro-image video {
@@ -138,6 +141,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 
 .about-section-image video {
@@ -236,11 +240,16 @@
 
 .about-goods-list {
   margin: 0;
-  padding: 0;
+  padding: 60px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  min-height: 200px;
+  overflow: visible;
 }
 
 .about-goods-list-image {
@@ -248,12 +257,19 @@
   max-width: 100%;
   height: auto;
   display: block;
+  visibility: visible;
+  opacity: 1;
+  object-fit: contain;
 }
 
 @media (min-width: 800px) {
   .about-goods-list-image {
     max-width: 800px;
     width: auto;
+    height: auto;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
@@ -482,7 +498,7 @@
   }
 
   .about-goods-list {
-    padding: 0;
+    padding: 70px 28px;
   }
 
   .about-exhibition-info {
@@ -553,7 +569,7 @@
   }
 
   .about-goods-list {
-    padding: 0;
+    padding: 80px 40px;
   }
 
   .about-exhibition-info {

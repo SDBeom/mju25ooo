@@ -5,11 +5,11 @@ import Lenis from 'lenis';
 import dorokImage1 from '../../assets/도록/image 2141.webp';
 import dorokImage2 from '../../assets/도록/image 2143.webp';
 import posterFinal from '../../assets/poster_final.webp';
-import goodsList from '../../assets/goods_list.webp';
+import goodsList from '../../assets/goods_list.png';
 import './ComingSoonContent.css';
 
 // 번들 해석 이슈를 피하기 위해 Public 절대 경로만 사용
-const brandingVideo = '/@branding_video.mp4';
+const brandingVideo = '/branding_video.mp4';
 
 const ComingSoonContent = () => {
   const introContainer = useRef(null);
@@ -28,6 +28,13 @@ const ComingSoonContent = () => {
   const sectionY = useTransform(sectionScroll.scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   useEffect(() => {
+    // Lenis 사용 시 body overflow 제어
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+    
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -56,6 +63,9 @@ const ComingSoonContent = () => {
 
     return () => {
       lenis.destroy();
+      // 원래 overflow 값 복원
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
     };
   }, []);
 
@@ -80,7 +90,18 @@ const ComingSoonContent = () => {
 
       {/* Goods List Section */}
       <div className="about-goods-list">
-        <img src={goodsList} alt="굿즈 리스트" className="about-goods-list-image" />
+        <img 
+          src={goodsList} 
+          alt="굿즈 리스트" 
+          className="about-goods-list-image"
+          onError={(e) => {
+            console.error('굿즈 리스트 이미지 로드 실패:', goodsList);
+            e.target.style.display = 'none';
+          }}
+          onLoad={() => {
+            console.log('굿즈 리스트 이미지 로드 성공:', goodsList);
+          }}
+        />
       </div>
 
       {/* Brand Story Section */}
