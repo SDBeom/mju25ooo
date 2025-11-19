@@ -27,6 +27,7 @@
   --breakpoint-desktop: 1280px;
   --breakpoint-large: 1440px;
   --header-offset: 60px;
+  --header-height: 60px; /* 전역 헤더 높이 변수 */
   
   --animation-fast: 150ms;
   --animation-normal: 300ms;
@@ -121,12 +122,14 @@ button:focus-visible {
 @media (min-width: 800px) {
   :root {
     --header-offset: 68px;
+    --header-height: 68px; /* 태블릿 헤더 높이 */
   }
 }
 
 @media (min-width: 1280px) {
   :root {
     --header-offset: 100px;
+    --header-height: 100px; /* 데스크탑 헤더 높이 */
   }
 }
 

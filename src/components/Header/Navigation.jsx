@@ -1,8 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ERROR_MESSAGES } from '../../shared/constants';
 import './Navigation.css';
 
-const Navigation = ({ items = [], mobile = false }) => {
+const Navigation = ({ items = [], mobile = false, onItemClick }) => {
   if (!Array.isArray(items) || items.length === 0) {
     return (
       <nav className={`nav-menu ${mobile ? 'nav-mobile' : ''} nav-error`}>
@@ -26,44 +27,102 @@ const Navigation = ({ items = [], mobile = false }) => {
 
   const handleNavigationClick = (e, item) => {
     e.preventDefault();
+    e.stopPropagation();
     
     // 각 네비게이션 아이템에 따른 페이지 이동
+    let targetPath = item.href;
+    
     switch (item.id) {
       case 'home':
-        navigateTo('/main');
+        targetPath = '/main';
         break;
       case 'about':
-        navigateTo('/about');
+        targetPath = '/about';
         break;
       case 'works':
-        navigateTo('/works');
+        targetPath = '/works';
         break;
       case 'designer':
-        navigateTo('/designer');
+        targetPath = '/designer';
         break;
       case 'archive':
-        navigateTo('/archive');
+        targetPath = '/archive';
         break;
       default:
-        if (item.href) {
-          navigateTo(item.href);
-        } else {
+        if (!targetPath) {
           console.warn(ERROR_MESSAGES.NAVIGATION_FAILED);
+          return;
         }
+    }
+    
+    // 페이지 이동 실행
+    navigateTo(targetPath);
+    
+    // 모바일 메뉴에서 아이템 클릭 시 메뉴 닫기 (약간의 지연을 두어 네비게이션이 완료되도록)
+    if (mobile && onItemClick) {
+      setTimeout(() => {
+        onItemClick();
+      }, 100);
+    }
+  };
+
+  // 모바일 메뉴 애니메이션 variants
+  const perspectiveVariants = {
+    initial: {
+      opacity: 0,
+      rotateX: 90,
+      translateY: 40,
+      translateX: -10,
+    },
+    enter: (i) => ({
+      opacity: 1,
+      rotateX: 0,
+      translateY: 0,
+      translateX: 0,
+      transition: {
+        duration: 0.6,
+        delay: 0.3 + (i * 0.1),
+        ease: [0.215, 0.61, 0.355, 1],
+        opacity: { duration: 0.4 }
+      }
+    }),
+    exit: {
+      opacity: 0,
+      transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] }
     }
   };
 
   return (
     <nav className={`nav-menu ${mobile ? 'nav-mobile' : ''}`}>
-      {items.map((item) => (
-        <a
-          key={item.id}
-          href={item.href}
-          className="nav-link"
-          onClick={(e) => handleNavigationClick(e, item)}
-        >
-          {item.label}
-        </a>
+      {items.map((item, i) => (
+        mobile ? (
+          <motion.div
+            key={item.id}
+            className="nav-link-container"
+            custom={i}
+            variants={perspectiveVariants}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+          >
+            <a
+              href={item.href}
+              className="nav-link"
+              onClick={(e) => handleNavigationClick(e, item)}
+            >
+              {item.label}
+            </a>
+          </motion.div>
+        ) : (
+          <a
+            key={item.id}
+            href={item.href}
+            className="nav-link"
+            onClick={(e) => handleNavigationClick(e, item)}
+          >
+            {item.label}
+          </a>
+        )
       ))}
     </nav>
   );

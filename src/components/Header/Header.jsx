@@ -3,6 +3,7 @@ import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import { NAVIGATION_ITEMS } from '../../shared/constants';
 import Logo from './Logo';
 import Navigation from './Navigation';
+import MobileMenu from './MobileMenu';
 import './Header.css';
 
 const Header = ({ currentPage = 'mainPage' }) => {
@@ -22,6 +23,10 @@ const Header = ({ currentPage = 'mainPage' }) => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   useEffect(() => {
@@ -59,7 +64,7 @@ const Header = ({ currentPage = 'mainPage' }) => {
   const getHeaderMode = () => {
     switch (currentPage) {
       case 'mainPage':
-        return 'header-grid-mode'; // DraggableGrid 모드
+        return 'header-default-mode'; // 메인페이지도 기본 모드 사용
       case 'designer':
       case 'designerDetail':
         return 'header-design-mode'; // 디자이너 모드
@@ -88,7 +93,7 @@ const Header = ({ currentPage = 'mainPage' }) => {
         <div className="header-section header-section--right">
           {showMobileToggle && (
             <button
-              className="mobile-menu-toggle"
+              className={`mobile-menu-toggle ${isMobileMenuOpen ? 'mobile-menu-toggle--active' : ''}`}
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
             >
@@ -100,10 +105,12 @@ const Header = ({ currentPage = 'mainPage' }) => {
         </div>
       </div>
 
-      {showMobileToggle && isMobileMenuOpen && (
-        <div className="mobile-menu">
-          <Navigation items={NAVIGATION_ITEMS} mobile />
-        </div>
+      {showMobileToggle && (
+        <MobileMenu 
+          isOpen={isMobileMenuOpen} 
+          onClose={closeMobileMenu} 
+          items={NAVIGATION_ITEMS} 
+        />
       )}
     </header>
   );

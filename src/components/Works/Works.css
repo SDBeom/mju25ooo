@@ -165,7 +165,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height, 60px));
   background: var(--color-background, #0f0f0f);
   box-sizing: border-box;
   width: 100vw;
@@ -401,7 +401,7 @@
 @media (max-width: 768px) {
   .works-gallery__item {
     margin-bottom: clamp(-18vw, -120px, -90px);
-    padding: clamp(28px, 12vw, 40px) 40px;
+    padding: clamp(28px, 12vw, 40px) 16px;
     gap: clamp(14px, 6vw, 24px);
   }
 

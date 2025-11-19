@@ -5,25 +5,28 @@
 
 /* Header Component Styles - Mobile First */
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10000;
   background: rgba(8, 9, 13, 0.35);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: none;
   transition: all 0.3s ease;
   --header-height: 60px;
-  --header-horizontal-padding: 20px;
+  --header-horizontal-padding: 16px; /* 모바일 기본값 16px */
   color: #000000;
   opacity: 1;
   height: var(--header-height);
 }
 
-/* grid 모드일 때만 relative로 오버라이드 */
+/* grid 모드일 때도 fixed 유지 */
 .header-grid-mode,
 .header--mobile {
-  position: relative;
+  position: fixed;
 }
 
 .header--hidden {
@@ -117,12 +120,15 @@
    모드별 헤더 스타일
    ============================================ */
 
-/* DraggableGrid 모드 - 투명하고 미니멀 */
-.header-grid-mode {
-  position: relative;
+/* DraggableGrid 모드 - 다른 페이지와 동일한 스타일 */
+.header.header-grid-mode {
+  position: fixed;
   pointer-events: none; /* 클릭 이벤트를 통과시킴 */
   width: 100%;
   height: var(--header-height);
+  background: rgba(8, 9, 13, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* DraggableGrid 모드에서 로고와 네비게이션은 클릭 가능 */
@@ -142,11 +148,22 @@
   --header-height: 100px;
 }
 
-/* 모바일 헤더도 relative로 */
+/* 모바일 헤더도 fixed로 */
 .header--mobile {
-  position: relative;
+  position: fixed;
   width: 100%;
   height: var(--header-height);
+}
+
+/* 모든 헤더 모드에 동일한 배경색 적용 (특이성 증가) */
+.header.header-design-mode,
+.header.header-works-mode,
+.header.header-comingsoon-mode,
+.header.header-default-mode {
+  position: fixed;
+  background: rgba(8, 9, 13, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* 디자이너 모드 - 크리에이티브한 스타일 */
@@ -177,17 +194,20 @@
   background: #FF6B35;
 }
 
-/* Mobile menu */
-.mobile-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(8, 9, 13, 0.95);
-  border-top: 1px solid rgba(103, 197, 255, 0.25);
-  padding: 24px 0;
-  animation: slideDown 0.3s ease;
+/* 햄버거 아이콘 활성화 상태 (X로 변환) */
+.mobile-menu-toggle--active .hamburger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
 }
+
+.mobile-menu-toggle--active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-menu-toggle--active .hamburger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 
 @keyframes slideDown {
   from {
@@ -218,6 +238,8 @@
 }
 
 .header--tablet .mobile-menu,
-.header--desktop .mobile-menu {
+.header--tablet .mobile-menu-overlay,
+.header--desktop .mobile-menu,
+.header--desktop .mobile-menu-overlay {
   display: none;
 }

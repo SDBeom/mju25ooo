@@ -134,15 +134,15 @@ function App() {
     <BreakpointProvider>
       <ErrorBoundary>
         <div className="app-layout">
+          <Header currentPage={headerMode} />
           <main className={mainClasses.join(' ')}>
-            <Header currentPage={headerMode} />
             <section className={mainWindowClasses.join(' ')} aria-labelledby="main-gallery-title">
               <div className={containerClasses.join(' ')}>
                 <PageComponent key={currentPath} />
               </div>
             </section>
-            <Footer />
           </main>
+          <Footer />
         </div>
       </ErrorBoundary>
     </BreakpointProvider>

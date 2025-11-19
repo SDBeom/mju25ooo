@@ -3,7 +3,7 @@
    ============================================ */
 
 .designer-detail {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height, 60px));
   background: linear-gradient(135deg, #2A2A2A 0%, #1a1a1a 100%);
   color: #FFFFFF;
   padding: 0;
@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height, 60px));
   text-align: center;
   padding: 2rem;
 }
@@ -546,7 +546,7 @@
   }
 
   .project-modal__body {
-    padding: 40px 24px;
+    padding: 40px 16px;
   }
 
   .project-modal__body p {

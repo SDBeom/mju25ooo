@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height, 60px));
   background: var(--color-background, #0f0f0f);
   box-sizing: border-box;
   width: 100vw;
@@ -186,14 +186,14 @@
 
   .designer-gallery__title {
     font-size: clamp(1.8rem, 10vw, 3rem);
-    padding: 50px 20px 50px;
+    padding: 50px 16px 50px;
   }
 
   .designer-gallery__item {
     flex-direction: column;
     align-items: flex-start;
     gap: clamp(12px, 4vw, 20px);
-    padding: clamp(20px, 8vw, 40px) 20px;
+    padding: clamp(20px, 8vw, 40px) 16px;
   }
 
   .designer-gallery__meta {

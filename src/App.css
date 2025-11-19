@@ -54,20 +54,25 @@ body.is-modal-open {
 .main-page {
   display: block;
   min-height: 100vh;
-  padding: 0 !important;
+  padding: 0;
+  padding-top: var(--header-height, 60px);
   overflow: visible;
 }
 
 .main-page:has(.main-window--content) {
-  padding: 0 !important;
+  padding: 0;
+  padding-top: var(--header-height, 60px);
   display: block;
   overflow: visible;
 }
 
 .main-page--grid {
-  padding: 0 !important;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
+  background-color: transparent; /* 배경색 제거 - 헤더 뒤에 보이지 않도록 */
+  min-height: calc(100vh - var(--header-height, 60px));
 }
 
 .main-window {
@@ -86,15 +91,13 @@ body.is-modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  height: auto;
-  background: #ff7700;
-  padding: 40px 40px;
+  flex: 1;
+  min-height: 0;
+  background: #ff7700; /* 배경색은 여기에만 적용 - 헤더 아래에서 시작 */
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-}
-
-.main-page--grid {
-  background-color: #ff7700;
+  overflow: hidden; /* 그리드가 밖으로 나가지 않도록 */
 }
 
 .main-hero {
@@ -108,7 +111,7 @@ body.is-modal-open {
 }
 
 .main-page--grid .main-window {
-  background-color: transparent;
+  /* background-color 제거 - .main-window--grid의 배경색이 적용되도록 */
 }
 
 .main-hero__video {
@@ -193,14 +196,17 @@ body.is-modal-open {
   justify-content: center;
   padding: 0;
   overflow: hidden;
-  min-height: auto;
-  height: auto;
+  flex: 1;
+  min-height: 0;
+  box-sizing: border-box;
 }
 
 /* 모바일: ~799px (375px 기준) - 드래그 가능하도록 */
 @media (max-width: 799px) {
   .main-window__container--grid {
     overflow: hidden;
+    flex: 1;
+    min-height: 0;
   }
 }
 
@@ -219,28 +225,27 @@ body.is-modal-open {
   overflow: visible;
 }
 
-.main-page > footer {
+.app-layout > footer {
   margin: 0;
   width: 100%;
 }
 
 @media (max-width: 800px) {
   .main-window--grid {
-    min-height: auto;
-    height: auto;
+    flex: 1;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
   }
 
   .main-window__container,
   .main-window__container--grid {
-    min-height: auto;
-    height: auto;
+    flex: 1;
+    min-height: 0;
   }
 
   .main-hero {
-    padding: 40px 20px 32px;
-  }
-  .main-window--grid {
-    padding: 0 20px;
+    padding: 40px 16px 32px;
   }
 
   .main-hero__video {

@@ -134,87 +134,6 @@ a:focus-visible {
   background: transparent;
 }
 
-.frame {
-  display: grid;
-  z-index: 1000;
-  grid-row-gap: 1rem;
-  grid-column-gap: 2rem;
-  pointer-events: none;
-  justify-items: start;
-  align-content: start;
-  padding: var(--page-padding);
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  grid-template-columns: auto auto auto 1fr;
-  grid-template-rows: auto auto 1fr;
-  grid-template-areas:
-    'title title title title'
-    'back github archive ...'
-    'sponsor sponsor sponsor sponsor';
-}
-
-.frame #cdawrap {
-  max-width: 260px;
-  align-self: end;
-}
-
-.frame a,
-.frame button {
-  pointer-events: auto;
-}
-
-.frame .frame__title {
-  grid-area: title;
-  font-size: inherit;
-  margin: 0;
-}
-
-.frame .frame__back {
-  grid-area: back;
-  justify-self: start;
-}
-
-.frame .frame__archive {
-  grid-area: archive;
-  justify-self: start;
-}
-
-.frame .frame__github {
-  grid-area: github;
-}
-
-.frame .frame__tags {
-  grid-area: tags;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.frame .frame__demos {
-  grid-area: demos;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.content {
-  padding: var(--page-padding);
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  position: relative;
-}
-
-@media (min-width: 800px) {
-  .content {
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
-}
 
 .line,
 .char {
@@ -225,19 +144,20 @@ a:focus-visible {
   position: relative;
   flex: 1 0 auto;
   width: 100%;
-  min-height: 100vh;
-  height: auto;
+  min-height: calc(100vh - var(--header-height, 60px));
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .container {
   position: relative;
   flex: 1 0 auto;
   width: 100%;
-  min-height: 100vh;
-  height: auto;
+  min-height: calc(100vh - var(--header-height, 60px));
+  height: 100%;
   padding: 0 40px;
   box-sizing: border-box;
   transform-origin: center center;
@@ -262,29 +182,29 @@ a:focus-visible {
 
 .container.--is-loaded {
   overflow: hidden;
-  min-height: 100vh;
-  height: auto;
+  min-height: calc(100vh - var(--header-height, 60px));
+  height: 100%;
 }
 
 /* 모바일: ~799px (375px 기준) - 드래그 가능하도록 */
 @media (max-width: 799px) {
   .container.--is-mobile {
     overflow: hidden;
-    min-height: 100vh;
-    height: 100vh;
+    min-height: calc(100vh - var(--header-height, 60px));
+    height: 100%;
   }
   
   .container.--is-loaded.--is-mobile {
     overflow: hidden;
-    min-height: 100vh;
-    height: 100vh;
+    min-height: calc(100vh - var(--header-height, 60px));
+    height: 100%;
   }
 }
 
 .container.--is-details-showing {
   overflow: visible;
-  height: auto;
-  min-height: 100vh;
+  height: 100%;
+  min-height: calc(100vh - var(--header-height, 60px));
 }
 .container::before {
   content: '';
@@ -357,21 +277,6 @@ a:focus-visible {
 
 .--is-loaded .grid {
   transition: transform 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-  cursor: grab;
-  touch-action: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-/* 모바일: 드래그 가능하도록 스타일 유지 */
-@media (max-width: 799px) {
-  .--is-loaded .grid.--is-mobile {
-    transition: transform 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-    cursor: grab;
-    touch-action: none;
-    -webkit-user-select: none;
-    user-select: none;
-  }
 }
 
 .column {
@@ -391,7 +296,6 @@ a:focus-visible {
   border: 2px solid rgba(0, 0, 0, 0.08);
   isolation: isolate;
   cursor: pointer;
-  touch-action: none;
 }
 
 /* 태블릿: 800px ~ 1279px - 3컬럼 */
@@ -420,7 +324,6 @@ a:focus-visible {
   border-radius: inherit;
   overflow: hidden;
   mix-blend-mode: multiply;
-  touch-action: none;
   pointer-events: none;
 }
 
@@ -453,7 +356,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 3vw;
-  overflow-y: auto;
+  overflow: hidden;
   cursor: auto;
 }
 
@@ -471,15 +374,20 @@ a:focus-visible {
   .details {
     width: 100vw;
     transform: translate3d(100vw, 0, 0);
-    padding: 20px 20px 80px 20px;
+    padding: 20px 16px 80px 16px;
     gap: 20px;
+  }
+  
+  .details__title {
+    margin: 0;
   }
 }
 
 .details__title {
-  margin-bottom: 0;
+  margin: 0;
   position: relative;
   display: grid;
+  padding: 0;
 }
 
 .details__title p {
@@ -645,42 +553,6 @@ a:focus-visible {
   overflow-wrap: break-word !important;
 }
 
-.details--love {
-  width: min(1280px, calc(100vw - clamp(40px, 6vw, 120px)));
-  padding: 0;
-  background: #ffffff;
-  color: #0b0b0b;
-  box-shadow: -24px 0 80px rgba(0, 0, 0, 0.18);
-}
-
-.details--love .details__title {
-  display: none;
-}
-
-.details__body--love {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0;
-  width: 100%;
-}
-
-.details__body--love .details__thumb {
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-.details__content--love {
-  width: 100%;
-  gap: 0;
-}
-
-.details__content--love .details__texts,
-.details__content--love .details__cta-button {
-  display: none;
-}
 
 .work-detail {
   width: 1280px;
@@ -886,10 +758,6 @@ a:focus-visible {
 }
 
 @media (max-width: 1024px) {
-  .details--love {
-    width: 100vw;
-  }
-
   .work-detail__section {
     padding: clamp(48px, 12vw, 64px) clamp(20px, 8vw, 32px);
   }
@@ -960,15 +828,16 @@ p {
 }
 
 .cross {
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 3vw;
   height: 3vw;
-  transform: translate3d(-50%, -50%, 0) scale(0);
+  transform: scale(0);
   transform-origin: center;
   z-index: 3200;
   pointer-events: none;
+  cursor: pointer;
 }
 
 .cross svg {
@@ -983,6 +852,8 @@ p {
     height: 4vw;
     min-width: 24px;
     min-height: 24px;
+    top: 0;
+    right: 0;
   }
   
   .cross svg {
@@ -991,6 +862,10 @@ p {
     min-width: 24px;
     min-height: 24px;
   }
+  
+  .details__title {
+    padding: 0;
+  }
 }
 
 /* 모바일: ~799px (375px 기준) */
@@ -998,15 +873,28 @@ p {
   .cross {
     width: 32px;
     height: 32px;
-    top: 16px;
+    top: 80px;
     left: 16px;
     right: auto;
-    transform: translate3d(0, 0, 0) scale(0);
+    transform: scale(0);
+    z-index: 3201; /* 상세창 위에 표시 */
   }
   
   .cross svg {
     width: 32px;
     height: 32px;
+  }
+  
+  .details__title {
+    padding: 0;
+    margin-top: 122px; /* X 버튼(80px top + 32px height) + 10px gap = 122px */
+  }
+}
+
+/* 모바일: ~799px (375px 기준) - details.--is-showing와 X 버튼을 하나로 묶음 */
+@media (max-width: 799px) {
+  .details.--is-showing .cross {
+    pointer-events: auto;
   }
 }
 
@@ -1036,7 +924,7 @@ p {
 /* 모바일: ~799px (375px 기준) */
 @media (max-width: 799px) {
   .details.--is-showing {
-    padding: 60px 20px 80px 20px;
+    padding: 60px 16px 80px 16px;
   }
 }
 
@@ -1049,7 +937,7 @@ p {
 /* 모바일: ~799px (375px 기준) - 패딩 override */
 @media (max-width: 799px) {
   .details.--is-showing {
-    padding-top: 60px !important;
+    padding-top: 120px !important;
     padding-bottom: 80px !important;
   }
 }
