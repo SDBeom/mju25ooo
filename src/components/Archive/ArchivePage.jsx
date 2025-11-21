@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useBreakpointContext } from '../../contexts/BreakpointContext';
-import '../About/About.css';
 import './ArchivePage.css';
 
 // Achieve 폴더의 이미지들을 동적으로 import (Vite 방식) - webp만 사용
@@ -79,9 +78,9 @@ const ArchivePage = () => {
       // Update index to use the next image next time (loops around)
       currentImageIndexRef.current = (currentImageIndexRef.current + 1) % images.length;
 
-      // Position the image centered on the cursor (원형이므로 100px씩 빼기)
-      image.style.left = `${e.clientX - 100}px`;
-      image.style.top = `${e.clientY - 100}px`;
+      // Position the image centered on the cursor (원형이므로 150px씩 빼기)
+      image.style.left = `${e.clientX - 150}px`;
+      image.style.top = `${e.clientY - 150}px`;
 
       // Add the cloned image to the trailer container
       trailer.appendChild(image);

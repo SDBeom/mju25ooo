@@ -1,3 +1,21 @@
+/* About page 기본 레이아웃 스타일 (ArchivePage에서도 사용) */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: calc(100vh - var(--header-height, 60px));
+  width: 100%;
+  max-width: 100%;
+  background: var(--color-background);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: visible;
+  overscroll-behavior: contain;
+}
+
 .archive-page {
   position: relative;
   overflow: hidden;
@@ -107,8 +125,8 @@
 
 /* Styling for the images used in the trail */
 .image-item {
-  width: 200px; /* image width */
-  height: 200px; /* image height - 원형을 위해 width와 동일하게 */
+  width: 300px; /* image width */
+  height: 300px; /* image height - 원형을 위해 width와 동일하게 */
   object-fit: cover; /* ensures the image fills the box without distortion */
   position: absolute; /* lets us place them at mouse position */
   opacity: 0; /* start invisible until animated in */
