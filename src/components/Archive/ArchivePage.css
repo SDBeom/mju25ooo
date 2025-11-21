@@ -101,6 +101,7 @@
   text-align: center;
   word-break: keep-all;
   white-space: normal;
+  text-decoration: none;
 }
 
 .archive-page__button:hover {

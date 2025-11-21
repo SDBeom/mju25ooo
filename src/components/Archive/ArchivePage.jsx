@@ -168,13 +168,6 @@ const ArchivePage = () => {
     };
   }, [isMobile]);
 
-  const handleButtonClick = () => {
-    // 갤러리로 스크롤하거나 특정 동작 수행
-    if (galleryRef.current) {
-      galleryRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
     <div className="about-page archive-page" ref={containerRef}>
       {/* Container for the images that follow the mouse */}
@@ -192,13 +185,14 @@ const ArchivePage = () => {
             그리고 갤러리 밖에서의 '웃픈' 에피소드 대방출!<br />
             앨범 속에만 두기 아까운 그날의 생생한 현장을 공개합니다.
           </p>
-          <button 
+          <a 
+            href="https://knowing-cricket-66a.notion.site/276f20db80ad81f9b351ee21fec61c3e#276f20db80ad81988447fffb99a2b69b"
+            target="_blank"
+            rel="noopener noreferrer"
             className="archive-page__button"
-            onClick={handleButtonClick}
-            type="button"
           >
             아래 버튼을 눌러 우리들의 진짜 이야기를 만나보세요.
-          </button>
+          </a>
         </div>
       </div>
 
