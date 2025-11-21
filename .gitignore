@@ -23,13 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 
-# Media files (except public folder)
+# Media files
 *.mp4
 *.mov
 *.avi
-!public/**/*.mp4
-!public/**/*.mov
-!public/**/*.avi
+# Exception: branding video is needed for production
+!public/branding_video.mp4
 
 # Other project folders
 background-image-parallax-main/
