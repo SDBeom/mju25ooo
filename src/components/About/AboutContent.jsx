@@ -108,8 +108,7 @@ const AboutContent = () => {
             loop 
             playsInline 
             controls={false} 
-            preload="auto" 
-            crossOrigin="anonymous"
+            preload="auto"
             style={{ 
               width: '100%', 
               height: '100%', 
@@ -127,7 +126,9 @@ const AboutContent = () => {
                 src: brandingVideo,
                 target: e.target,
                 networkState: e.target.networkState,
-                readyState: e.target.readyState
+                readyState: e.target.readyState,
+                errorCode: e.target.error?.code,
+                errorMessage: e.target.error?.message
               });
             }}
             onLoadedData={() => {
@@ -141,9 +142,11 @@ const AboutContent = () => {
             onCanPlay={() => {
               console.log('Intro 비디오 재생 가능');
             }}
+            onLoadStart={() => {
+              console.log('Intro 비디오 로드 시작:', brandingVideo);
+            }}
           >
             <source src={brandingVideo} type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         </motion.div>
       </div>
@@ -402,8 +405,7 @@ const AboutContent = () => {
               loop 
               playsInline 
               controls={false} 
-              preload="auto" 
-              crossOrigin="anonymous"
+              preload="auto"
               style={{ 
                 width: '100%', 
                 height: '100%', 
@@ -421,7 +423,9 @@ const AboutContent = () => {
                   src: brandingVideo,
                   target: e.target,
                   networkState: e.target.networkState,
-                  readyState: e.target.readyState
+                  readyState: e.target.readyState,
+                  errorCode: e.target.error?.code,
+                  errorMessage: e.target.error?.message
                 });
               }}
               onLoadedData={() => {
@@ -435,9 +439,11 @@ const AboutContent = () => {
               onCanPlay={() => {
                 console.log('Section 비디오 재생 가능');
               }}
+              onLoadStart={() => {
+                console.log('Section 비디오 로드 시작:', brandingVideo);
+              }}
             >
               <source src={brandingVideo} type="video/mp4" />
-              Your browser does not support the video tag.
             </video>
           </motion.div>
         </div>
