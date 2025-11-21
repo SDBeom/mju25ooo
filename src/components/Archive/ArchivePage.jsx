@@ -168,10 +168,39 @@ const ArchivePage = () => {
     };
   }, [isMobile]);
 
+  const handleButtonClick = () => {
+    // 갤러리로 스크롤하거나 특정 동작 수행
+    if (galleryRef.current) {
+      galleryRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="about-page archive-page" ref={containerRef}>
       {/* Container for the images that follow the mouse */}
       <div className="image-trailer" ref={trailerRef}></div>
+
+      {/* Content Section */}
+      <div className="archive-page__overlay">
+        <div className="archive-page__content">
+          <h1 className="archive-page__title">
+            졸전 1년, 멋짐 뒤에 숨겨진<br />
+            우리들의 '찐' 비하인드
+          </h1>
+          <p className="archive-page__description">
+            완벽한 졸업전시를 위해 우리가 흘린 땀과 눈물,<br />
+            그리고 갤러리 밖에서의 '웃픈' 에피소드 대방출!<br />
+            앨범 속에만 두기 아까운 그날의 생생한 현장을 공개합니다.
+          </p>
+          <button 
+            className="archive-page__button"
+            onClick={handleButtonClick}
+            type="button"
+          >
+            아래 버튼을 눌러 우리들의 진짜 이야기를 만나보세요.
+          </button>
+        </div>
+      </div>
 
       {/* Hidden gallery with images that will be cloned */}
       <div className="image-gallery" ref={galleryRef}>
