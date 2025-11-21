@@ -362,40 +362,7 @@ const Works = () => {
   const closeWorkModal = useCallback(() => {
     setSelectedWork(null);
     setSelectedDesigner(null);
-    
-    // 스크롤 복원 보장 - 모달이 닫힌 후 스크롤이 제대로 복원되도록
-    requestAnimationFrame(() => {
-      // removeModalOpenState가 이미 호출되었지만, 추가 보장
-      const body = document.body;
-      const html = document.documentElement;
-      
-      // 모든 모달 관련 클래스 제거
-      body.classList.remove('is-modal-open');
-      html.classList.remove('is-modal-open');
-      const root = document.getElementById('root');
-      if (root) {
-        root.classList.remove('is-modal-open');
-      }
-      
-      // 모든 인라인 스타일 제거
-      body.style.top = '';
-      body.style.position = '';
-      body.style.inset = '';
-      body.style.width = '';
-      
-      // 스크롤 위치 복원
-      const previousScrollY = Number(body.dataset.modalScrollY || '0');
-      if (previousScrollY > 0) {
-        window.scrollTo(0, previousScrollY);
-        // 추가 보장
-        setTimeout(() => {
-          window.scrollTo(0, previousScrollY);
-        }, 0);
-      }
-      
-      // 데이터 속성 제거
-      delete body.dataset.modalScrollY;
-    });
+    // 스크롤 복원은 Modal 컴포넌트의 removeModalOpenState가 처리합니다
   }, []);
 
   // WorkDetailContent에 필요한 props 생성

@@ -124,17 +124,19 @@ export const removeModalOpenState = () => {
   document.body.style.inset = '';
   document.body.style.width = '';
   
+  // 스크롤 복원 (리플로우 완료 후) - 저장된 위치가 유효한 경우에만
+  if (previousScrollY > 0) {
+    requestAnimationFrame(() => {
+      window.scrollTo(0, previousScrollY);
+      // 추가 보장을 위해 한 번 더 시도
+      setTimeout(() => {
+        window.scrollTo(0, previousScrollY);
+      }, 0);
+    });
+  }
+  
   // 데이터 속성 제거
   delete document.body.dataset[MODAL_DATA_ATTR];
-  
-  // 스크롤 복원 (리플로우 완료 후)
-  requestAnimationFrame(() => {
-    window.scrollTo(0, previousScrollY);
-    // 추가 보장을 위해 한 번 더 시도
-    setTimeout(() => {
-      window.scrollTo(0, previousScrollY);
-    }, 0);
-  });
   
   return previousScrollY;
 };
