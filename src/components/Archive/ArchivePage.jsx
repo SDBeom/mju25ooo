@@ -15,6 +15,14 @@ const ArchivePage = () => {
   const currentImageIndexRef = useRef(0);
   const lastMousePosRef = useRef({ x: 0, y: 0 });
   const lastImageTimeRef = useRef(Date.now());
+  
+  // Text clip mask on scroll effect
+  const maskContainerRef = useRef(null);
+  const stickyMaskRef = useRef(null);
+  const initialMaskSize = useRef(0.8);
+  const targetMaskSize = useRef(30);
+  const easing = useRef(0.15);
+  const easedScrollProgress = useRef(0);
 
   // GitHub Gist 스크립트 로드
   useEffect(() => {
@@ -129,6 +137,34 @@ const ArchivePage = () => {
     };
   }, [achieveImages.length]);
 
+  // Text clip mask on scroll effect
+  useEffect(() => {
+    if (!maskContainerRef.current || !stickyMaskRef.current) {
+      return;
+    }
+
+    const getScrollProgress = () => {
+      if (!stickyMaskRef.current || !maskContainerRef.current) return 0;
+      
+      const containerHeight = maskContainerRef.current.getBoundingClientRect().height;
+      const scrollProgress = stickyMaskRef.current.offsetTop / (containerHeight - window.innerHeight);
+      const delta = scrollProgress - easedScrollProgress.current;
+      easedScrollProgress.current += delta * easing.current;
+      return easedScrollProgress.current;
+    };
+
+    const animate = () => {
+      if (!stickyMaskRef.current) return;
+      
+      const maskSizeProgress = targetMaskSize.current * getScrollProgress();
+      stickyMaskRef.current.style.webkitMaskSize = (initialMaskSize.current + maskSizeProgress) * 100 + "%";
+      stickyMaskRef.current.style.maskSize = (initialMaskSize.current + maskSizeProgress) * 100 + "%";
+      requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+  }, []);
+
   useEffect(() => {
     if (!isMobile) {
       return;
@@ -173,7 +209,32 @@ const ArchivePage = () => {
       {/* Container for the images that follow the mouse */}
       <div className="image-trailer" ref={trailerRef}></div>
 
-      {/* Content Section */}
+      {/* Text Clip Mask on Scroll Effect */}
+      <div ref={maskContainerRef} className="archive-page__mask-container">
+        <div ref={stickyMaskRef} className="archive-page__sticky-mask">
+          <div className="archive-page__mask-content">
+            <h1 className="archive-page__title">
+              졸전 1년, 멋짐 뒤에 숨겨진<br />
+              우리들의 '찐' 비하인드
+            </h1>
+            <p className="archive-page__description">
+              완벽한 졸업전시를 위해 우리가 흘린 땀과 눈물,<br />
+              그리고 갤러리 밖에서의 '웃픈' 에피소드 대방출!<br />
+              앨범 속에만 두기 아까운 그날의 생생한 현장을 공개합니다.
+            </p>
+            <a 
+              href="https://knowing-cricket-66a.notion.site/276f20db80ad81f9b351ee21fec61c3e#276f20db80ad81988447fffb99a2b69b"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="archive-page__button"
+            >
+              아래 버튼을 눌러 우리들의 진짜 이야기를 만나보세요.
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Content Section (fallback for non-supported browsers) */}
       <div className="archive-page__overlay">
         <div className="archive-page__content">
           <h1 className="archive-page__title">
