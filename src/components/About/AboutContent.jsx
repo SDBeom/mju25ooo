@@ -110,15 +110,36 @@ const AboutContent = () => {
             controls={false} 
             preload="auto" 
             crossOrigin="anonymous"
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'cover',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              visibility: 'visible',
+              opacity: 1
+            }}
             onError={(e) => {
               console.error('Intro 비디오 로드 실패:', {
                 error: e,
                 src: brandingVideo,
-                target: e.target
+                target: e.target,
+                networkState: e.target.networkState,
+                readyState: e.target.readyState
               });
             }}
             onLoadedData={() => {
-              console.log('Intro 비디오 로드 성공');
+              console.log('Intro 비디오 로드 성공:', brandingVideo);
+              if (introVideoRef.current) {
+                introVideoRef.current.play().catch((err) => {
+                  console.warn('Intro 비디오 재생 실패:', err);
+                });
+              }
+            }}
+            onCanPlay={() => {
+              console.log('Intro 비디오 재생 가능');
             }}
           >
             <source src={brandingVideo} type="video/mp4" />
@@ -383,15 +404,36 @@ const AboutContent = () => {
               controls={false} 
               preload="auto" 
               crossOrigin="anonymous"
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                zIndex: 1,
+                visibility: 'visible',
+                opacity: 1
+              }}
               onError={(e) => {
                 console.error('Section 비디오 로드 실패:', {
                   error: e,
                   src: brandingVideo,
-                  target: e.target
+                  target: e.target,
+                  networkState: e.target.networkState,
+                  readyState: e.target.readyState
                 });
               }}
               onLoadedData={() => {
-                console.log('Section 비디오 로드 성공');
+                console.log('Section 비디오 로드 성공:', brandingVideo);
+                if (sectionVideoRef.current) {
+                  sectionVideoRef.current.play().catch((err) => {
+                    console.warn('Section 비디오 재생 실패:', err);
+                  });
+                }
+              }}
+              onCanPlay={() => {
+                console.log('Section 비디오 재생 가능');
               }}
             >
               <source src={brandingVideo} type="video/mp4" />

@@ -31,6 +31,9 @@
   top: 0;
   left: 0;
   display: block;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
 }
 
 /* Description Section - Mobile First */
@@ -192,6 +195,9 @@
   top: 0;
   left: 0;
   display: block;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
 }
 
 /* Brand Story Section - Mobile First */
