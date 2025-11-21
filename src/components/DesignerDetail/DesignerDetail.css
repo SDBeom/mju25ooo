@@ -35,6 +35,15 @@
   margin-bottom: 1rem;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 /* Back Button */
 .back-to-designers {
@@ -42,7 +51,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: calc(var(--z-header) - 1);
   background: rgba(42, 42, 42, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -442,7 +451,7 @@
   align-items: center;
   justify-content: center;
   padding: clamp(20px, 4vw, 40px);
-  z-index: 3000;
+  z-index: var(--z-modal);
 }
 
 .project-modal {
@@ -536,6 +545,10 @@
 }
 
 @media (max-width: 799px) {
+  .project-modal-overlay {
+    padding: clamp(12px, 3vw, 20px);
+  }
+
   .project-modal {
     border-radius: 16px;
   }
@@ -556,5 +569,28 @@
   .project-modal__cta {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .project-modal-overlay {
+    padding: 0;
+  }
+
+  .project-modal {
+    width: 375px;
+    max-width: 375px;
+  }
+
+  .project-modal__body {
+    padding: 32px 12px;
+  }
+
+  .project-modal__body h2 {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+  }
+
+  .project-modal__body p {
+    font-size: clamp(0.9rem, 2.2vw, 1rem);
   }
 }

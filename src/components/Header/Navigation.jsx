@@ -13,7 +13,9 @@ const Navigation = ({ items = [], mobile = false, onItemClick }) => {
   }
 
   const navigateTo = (path) => {
-    // 전역 navigate 함수가 있으면 사용, 없으면 기본 방식 사용
+    // SSR 안전 체크 및 전역 navigate 함수가 있으면 사용, 없으면 기본 방식 사용
+    if (typeof window === 'undefined') return;
+    
     if (window.__navigate) {
       window.__navigate(path);
     } else {
@@ -29,30 +31,12 @@ const Navigation = ({ items = [], mobile = false, onItemClick }) => {
     e.preventDefault();
     e.stopPropagation();
     
-    // 각 네비게이션 아이템에 따른 페이지 이동
-    let targetPath = item.href;
+    // NAVIGATION_ITEMS에 이미 href가 정의되어 있으므로 직접 사용 (One Source of Truth)
+    const targetPath = item.href;
     
-    switch (item.id) {
-      case 'home':
-        targetPath = '/main';
-        break;
-      case 'about':
-        targetPath = '/about';
-        break;
-      case 'works':
-        targetPath = '/works';
-        break;
-      case 'designer':
-        targetPath = '/designer';
-        break;
-      case 'archive':
-        targetPath = '/archive';
-        break;
-      default:
         if (!targetPath) {
           console.warn(ERROR_MESSAGES.NAVIGATION_FAILED);
           return;
-        }
     }
     
     // 페이지 이동 실행
@@ -82,8 +66,7 @@ const Navigation = ({ items = [], mobile = false, onItemClick }) => {
       transition: {
         duration: 0.6,
         delay: 0.3 + (i * 0.1),
-        ease: [0.215, 0.61, 0.355, 1],
-        opacity: { duration: 0.4 }
+        ease: [0.215, 0.61, 0.355, 1]
       }
     }),
     exit: {
@@ -94,8 +77,8 @@ const Navigation = ({ items = [], mobile = false, onItemClick }) => {
 
   return (
     <nav className={`nav-menu ${mobile ? 'nav-mobile' : ''}`}>
-      {items.map((item, i) => (
-        mobile ? (
+      {items.map((item, i) => {
+        return mobile ? (
           <motion.div
             key={item.id}
             className="nav-link-container"
@@ -122,8 +105,8 @@ const Navigation = ({ items = [], mobile = false, onItemClick }) => {
           >
             {item.label}
           </a>
-        )
-      ))}
+        );
+      })}
     </nav>
   );
 };

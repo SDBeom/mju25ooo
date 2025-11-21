@@ -567,15 +567,20 @@ const Designer = () => {
           const hasEmail = Boolean(designer.email);
           const hasInstagram = Boolean(instagramHandle);
           return (
-            <button
+            <div
               key={designer.id}
-              type="button"
               className="designer-gallery__item"
               onClick={() => handleCardClick(designer.name)}
               onMouseEnter={(event) => handleCardEnter(event, color)}
               onMouseLeave={handleCardLeave}
-              onFocus={(event) => handleCardEnter(event, color)}
-              onBlur={handleCardLeave}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  handleCardClick(designer.name);
+                }
+              }}
             >
               <span className="designer-gallery__text">{designer.name}</span>
               {(hasEmail || hasInstagram) && (
@@ -611,7 +616,7 @@ const Designer = () => {
                   </button>
                 </span>
               )}
-            </button>
+            </div>
           );
         })}
         <div className="designer-gallery__item designer-gallery__item--ghost" aria-hidden="true" />

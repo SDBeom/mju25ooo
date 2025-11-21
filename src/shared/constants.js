@@ -242,3 +242,76 @@ export const FOOTER_CONFIG = {
     MOBILE: '0.8rem'
   }
 };
+
+// Route paths - One Source of Truth
+export const ROUTE_PATHS = {
+  MAIN: '/main',
+  ABOUT: '/about',
+  WORKS: '/works',
+  DESIGNER: '/designer',
+  DESIGNER_DETAIL: '/designer/detail',
+  ARCHIVE: '/archive',
+  ROOT: '/',
+};
+
+// Route configuration - One Source of Truth
+// Note: This requires component imports, so it's exported as a function
+// Components should be imported where needed
+export const ROUTE_CONFIG = {
+  [ROUTE_PATHS.MAIN]: {
+    headerMode: 'mainPage',
+    containerVariant: 'grid',
+    windowVariant: 'grid',
+  },
+  [ROUTE_PATHS.ABOUT]: {
+    headerMode: 'about',
+    containerVariant: 'full',
+    windowVariant: 'content',
+  },
+  [ROUTE_PATHS.WORKS]: {
+    headerMode: 'works',
+    containerVariant: 'content',
+    windowVariant: 'content',
+  },
+  [ROUTE_PATHS.DESIGNER]: {
+    headerMode: 'designer',
+    containerVariant: 'content',
+    windowVariant: 'content',
+  },
+  [ROUTE_PATHS.DESIGNER_DETAIL]: {
+    headerMode: 'designer',
+    containerVariant: 'full',
+    windowVariant: 'content',
+  },
+  [ROUTE_PATHS.ARCHIVE]: {
+    headerMode: 'about',
+    containerVariant: 'full',
+    windowVariant: 'content',
+  },
+};
+
+// Modal constants - One Source of Truth
+export const MODAL = {
+  // CSS class names
+  CLASS_NAMES: {
+    MODAL_OPEN: 'is-modal-open',
+    MODAL_CONTENT: 'modal-content', // 기본 클래스명 (중립적)
+  },
+  // Data attributes
+  DATA_ATTRIBUTES: {
+    SCROLL_Y: 'modalScrollY',
+  },
+  // Default values
+  DEFAULTS: {
+    DESIGNER_NAME: '디자이너',
+  },
+  // Keyboard keys
+  KEYS: {
+    ESCAPE: 'Escape',
+  },
+  // Z-index values (from index.css)
+  Z_INDEX: {
+    MODAL: 1000,
+    HEADER: 100,
+  },
+};

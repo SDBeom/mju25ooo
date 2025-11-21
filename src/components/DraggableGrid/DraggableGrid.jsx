@@ -43,10 +43,19 @@ const getDesktopColumns = () => {
   });
 };
 
+// 모드 감지 헬퍼 함수들
+const getCurrentMode = () => {
+  const width = window.innerWidth;
+  if (width <= 799) return 'mobile';
+  if (width <= 1279) return 'tablet';
+  return 'desktop';
+};
+
 const DraggableGrid = () => {
   const [activeDetailId, setActiveDetailId] = useState(null);
   const [tooltip, setTooltip] = useState({ show: false, title: '', designer: '', x: 0, y: 0 });
   const [isMobileView, setIsMobileView] = useState(() => window.innerWidth <= 799);
+  const [currentMode, setCurrentMode] = useState(() => getCurrentMode());
   const containerRef = useRef(null);
   const gridRef = useRef(null);
   const detailsRef = useRef(null);
@@ -55,17 +64,43 @@ const DraggableGrid = () => {
   const productRefs = useRef([]);
   const tooltipRef = useRef(null);
   const hoverTimeoutRef = useRef(null);
+  const resizeTimeoutRef = useRef(null);
 
   productRefs.current = [];
 
-  // 모바일 여부 확인
+  // 화면 크기 변경 시 모드 감지 및 페이지 리로드
   useEffect(() => {
     const handleResize = () => {
       setIsMobileView(window.innerWidth <= 799);
+      
+      const newMode = getCurrentMode();
+      
+      // 모드가 변경되었을 때만 페이지 리로드
+      if (newMode !== currentMode) {
+        // 디바운싱을 위해 약간의 지연 추가
+        if (resizeTimeoutRef.current) {
+          clearTimeout(resizeTimeoutRef.current);
+        }
+        
+        resizeTimeoutRef.current = setTimeout(() => {
+          // 모드 변경 확인 (사이즈 변경이 완료된 후)
+          const finalMode = getCurrentMode();
+          if (finalMode !== currentMode) {
+            // 페이지 리로드하여 시작 애니메이션부터 다시 보여지게
+            window.location.reload();
+          }
+        }, 300); // 300ms 디바운스
+      }
     };
+    
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (resizeTimeoutRef.current) {
+        clearTimeout(resizeTimeoutRef.current);
+      }
+    };
+  }, [currentMode]);
 
   // 모바일/데스크탑에 따라 다른 columns 사용
   const displayColumns = isMobileView ? getMobileColumns() : getDesktopColumns();
@@ -94,14 +129,43 @@ const DraggableGrid = () => {
     const activeProduct = PRODUCTS.find((p) => p.id === activeDetailId);
     if (!activeProduct) return;
 
-      const normalizeTitle = (title) => 
-        title.toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu, '');
+    const normalizeTitle = (title) => 
+      title.toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu, '');
     
     const work = WORKS_LIST.find((w) => 
       normalizeTitle(w.title) === normalizeTitle(activeProduct.title)
     );
 
     if (work?.designer) {
+      // 상세창 닫기 및 상태 초기화
+      const details = detailsRef.current;
+      const container = containerRef.current;
+      
+      if (details && container) {
+        // 클래스 제거
+        details.classList.remove('--is-showing');
+        container.classList.remove('--is-details-showing');
+        
+        // body 클래스 제거 (헤더 표시를 위해)
+        document.body.classList.remove('cursor-cross', 'cross-locked', 'header-hidden', 'details-open');
+        document.body.classList.remove('is-modal-open');
+        document.documentElement.classList.remove('is-modal-open');
+        const root = document.getElementById('root');
+        if (root) {
+          root.classList.remove('is-modal-open');
+        }
+        
+        // 헤더 다시 표시
+        const header = document.querySelector('.header');
+        if (header) {
+          gsap.set(header, {
+            y: 0,
+            opacity: 1,
+          });
+          header.style.pointerEvents = 'auto';
+        }
+      }
+      
       const encoded = encodeURIComponent(work.designer);
       window.history.pushState({}, '', `/designer/${encoded}`);
       window.dispatchEvent(new PopStateEvent('popstate'));
@@ -165,6 +229,8 @@ const DraggableGrid = () => {
 
     let observer;
     let showDetailsActive = false;
+    let isShowingDetails = false; // 연타 방지용 플래그
+    let lockedGridY = null; // 상세창이 열려있을 때 그리드 Y 위치 고정값
     let currentProduct = null;
     let originalParent = null;
     let productClickHandlers = [];
@@ -182,14 +248,16 @@ const DraggableGrid = () => {
       // 높이는 헤더 높이를 고려한 뷰포트 높이 사용
       const rect = container.getBoundingClientRect();
       const gridWidth = grid.offsetWidth;
+      const gridHeight = grid.offsetHeight;
       
       // 헤더 높이 가져오기
       const headerHeight = window.innerWidth <= 799 ? 60 : window.innerWidth <= 1279 ? 68 : 100;
       // 뷰포트 높이에서 헤더 높이를 뺀 값 사용
       const viewportHeight = window.innerHeight - headerHeight;
       
-      // container의 실제 높이와 뷰포트 높이 중 더 큰 값 사용 (그리드가 더 클 수 있음)
-      const height = Math.max(rect.height, viewportHeight);
+      // container의 실제 높이, 뷰포트 높이, 그리드 높이 중 가장 큰 값 사용
+      // 그리드가 container보다 크면 그리드 높이를 사용하여 잘림 방지
+      const height = Math.max(rect.height, viewportHeight, gridHeight || 0);
       
       return { width: rect.width, height: height };
     };
@@ -219,9 +287,39 @@ const DraggableGrid = () => {
     };
 
     const centerGrid = () => {
+      // 상세창이 열려있을 때는 그리드 위치를 전혀 변경하지 않음
+      if (showDetailsActive && lockedGridY !== null) {
+        // 상세창이 열려있으면 그리드 위치를 절대 변경하지 않음
+        return;
+      }
+      
+      const currentGridY = parseFloat(gsap.getProperty(grid, 'y')) || 0;
+      
       const gridWidth = grid.offsetWidth;
       const gridHeight = grid.offsetHeight;
+      
+      // container의 높이가 그리드 높이 이상인지 확인하고 필요시 업데이트
+      // 애니메이션 시작 시 그리드가 잘리지 않도록 보장
+      if (gridHeight > 0) {
+        const containerHeight = container.offsetHeight;
+        if (containerHeight < gridHeight) {
+          container.style.height = `${gridHeight}px`;
+          // 관련 컨테이너들도 업데이트
+          const draggableStage = container.closest('.draggable-stage');
+          if (draggableStage) {
+            draggableStage.style.height = `${gridHeight}px`;
+          }
+          const mainPage = document.querySelector('.main-page--grid');
+          if (mainPage) {
+            mainPage.style.height = `${gridHeight}px`;
+          }
+        }
+      }
+      
       const { width, height } = getViewportSize();
+      
+      // 모바일에서는 그리드가 상단에 고정되고 드래그 가능해야 함
+      const isMobileDevice = isMobile();
       
       // container의 실제 크기를 기준으로 중앙 정렬
       // grid는 container 내부에 있고, position: absolute
@@ -240,54 +338,61 @@ const DraggableGrid = () => {
         }
       }
       
-      // 세로 중앙 정렬
-      // scale 0.5일 때도 그리드가 화면 안에 있도록 위치 계산
-      // container가 scale 0.5일 때 container의 높이도 height * 0.5
-      // grid의 높이도 gridHeight * 0.5
-      // scale 0.5 기준으로 위치를 계산한 후, scale 1 기준으로 역산
-      const scaledHeight = height * 0.5;
-      const scaledGridHeight = gridHeight * 0.5;
+      let finalY = 0;
+      let finalX = Math.max(0, Math.min(centerX, width - gridWidth));
       
-      let centerY = (scaledHeight - scaledGridHeight) / 2;
-      
-      // 그리드가 container보다 크면 위아래가 잘리지 않도록 조정
-      if (scaledGridHeight > scaledHeight) {
-        // 그리드가 container보다 크면 상단에 맞춤 (하단이 잘리지 않도록)
-        centerY = 0;
-      } else {
-        // 그리드가 container보다 작으면 중앙 정렬
-        // 하지만 하단이 잘리지 않도록 확인
-        const maxCenterY = scaledHeight - scaledGridHeight;
-        if (centerY > maxCenterY) {
-          centerY = maxCenterY;
-        }
-        // 상단도 확인
-        if (centerY < 0) {
+      // 모바일이 아닐 때만 Y 위치 중앙 정렬 계산
+      if (!isMobileDevice) {
+        // Y 위치 계산
+        // 세로 중앙 정렬
+        // scale 0.5일 때도 그리드가 화면 안에 있도록 위치 계산
+        // container가 scale 0.5일 때 container의 높이도 height * 0.5
+        // grid의 높이도 gridHeight * 0.5
+        // scale 0.5 기준으로 위치를 계산한 후, scale 1 기준으로 역산
+        const scaledHeight = height * 0.5;
+        const scaledGridHeight = gridHeight * 0.5;
+        
+        let centerY = (scaledHeight - scaledGridHeight) / 2;
+        
+        // 그리드가 container보다 크면 위아래가 잘리지 않도록 조정
+        if (scaledGridHeight > scaledHeight) {
+          // 그리드가 container보다 크면 상단에 맞춤 (하단이 잘리지 않도록)
           centerY = 0;
+        } else {
+          // 그리드가 container보다 작으면 중앙 정렬
+          // 하지만 하단이 잘리지 않도록 확인
+          const maxCenterY = scaledHeight - scaledGridHeight;
+          if (centerY > maxCenterY) {
+            centerY = maxCenterY;
+          }
+          // 상단도 확인
+          if (centerY < 0) {
+            centerY = 0;
+          }
         }
+        
+        // scale 1 기준으로 위치를 역산
+        // scale 0.5일 때 centerY가 되려면, scale 1일 때는 centerY * 2
+        // transform-origin이 center center이므로, container의 중심점을 기준으로 scale됨
+        // container의 중심점은 height / 2
+        // scale 0.5일 때: grid의 중심점이 container의 중심점에 가까워짐
+        // scale 1일 때: grid의 중심점이 원래 위치로 돌아감
+        // 따라서 scale 1일 때의 위치는: centerY * 2
+        const scale1Y = centerY * 2;
+        
+        // 상단 경계 확인
+        finalY = Math.max(0, Math.min(scale1Y, height - gridHeight));
+        // 하단 경계 확인 (그리드가 container 밖으로 나가지 않도록)
+        const maxY = height - gridHeight;
+        finalY = Math.min(finalY, maxY);
+      } else {
+        // 모바일: Y 위치는 항상 0 (상단 고정, 드래그 가능)
+        finalY = 0;
       }
-      
-      // scale 1 기준으로 위치를 역산
-      // scale 0.5일 때 centerY가 되려면, scale 1일 때는 centerY * 2
-      // transform-origin이 center center이므로, container의 중심점을 기준으로 scale됨
-      // container의 중심점은 height / 2
-      // scale 0.5일 때: grid의 중심점이 container의 중심점에 가까워짐
-      // scale 1일 때: grid의 중심점이 원래 위치로 돌아감
-      // 따라서 scale 1일 때의 위치는: centerY * 2
-      const scale1Y = centerY * 2;
-      
-      // 그리드가 container 밖으로 나가지 않도록 최종 확인
-      // 왼쪽 경계 확인
-      const finalX = Math.max(0, Math.min(centerX, width - gridWidth));
-      // 상단 경계 확인
-      const finalY = Math.max(0, Math.min(scale1Y, height - gridHeight));
-      // 하단 경계 확인 (그리드가 container 밖으로 나가지 않도록)
-      const maxY = height - gridHeight;
-      const clampedY = Math.min(finalY, maxY);
       
       gsap.set(grid, {
         x: finalX,
-        y: Math.max(0, clampedY),
+        y: finalY,
       });
     };
 
@@ -296,16 +401,41 @@ const DraggableGrid = () => {
       return window.innerWidth <= 799;
     };
 
+    const isTablet = () => {
+      return window.innerWidth >= 800 && window.innerWidth <= 1279;
+    };
+
+    const isDesktop = () => {
+      return window.innerWidth >= 1280;
+    };
+
     const setupGrid = () => {
       container.classList.add('--is-loaded');
       
-      // 모바일 클래스 추가
+      // 디바이스별 클래스 추가 (이미 있으면 추가하지 않음)
       if (isMobile()) {
-        container.classList.add('--is-mobile');
-        grid.classList.add('--is-mobile');
+        if (!container.classList.contains('--is-mobile')) {
+          container.classList.add('--is-mobile');
+        }
+        if (!grid.classList.contains('--is-mobile')) {
+          grid.classList.add('--is-mobile');
+        }
+      } else if (isTablet()) {
+        if (!grid.classList.contains('--is-tablet')) {
+          grid.classList.add('--is-tablet');
+        }
+      } else if (isDesktop()) {
+        if (!grid.classList.contains('--is-desktop')) {
+          grid.classList.add('--is-desktop');
+        }
       }
 
-      centerGrid();
+      // 레이아웃이 완전히 계산되기를 기다린 후 centerGrid 호출
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          centerGrid();
+        });
+      });
     };
 
     const updateBounds = () => {
@@ -343,6 +473,7 @@ const DraggableGrid = () => {
       if (!showDetailsActive) {
         centerGrid();
       }
+      // 상세창이 열려있을 때는 그리드 위치를 전혀 변경하지 않음
     };
 
 
@@ -582,17 +713,40 @@ const DraggableGrid = () => {
     };
 
     const showDetails = (product) => {
-      if (showDetailsActive) return;
-      showDetailsActive = true;
+      // 연타 방지 및 유효성 검사
+      if (!product) {
+        console.warn('showDetails: product is null or undefined');
+        return;
+      }
+      if (showDetailsActive || isShowingDetails) {
+        console.warn('showDetails: already showing details or in progress', { showDetailsActive, isShowingDetails });
+        return;
+      }
+      if (!details || !container || !grid) {
+        console.warn('showDetails: required elements not found', { details: !!details, container: !!container, grid: !!grid });
+        return;
+      }
+      
+      try {
+        isShowingDetails = true;
+        showDetailsActive = true;
+      
+      // 그리드 Y 위치를 미리 저장하고 고정 (container 높이 변경 전에 저장)
+      const currentGridY = parseFloat(gsap.getProperty(grid, 'y')) || 0;
+      // container의 padding-top을 제거했으므로 그리드 위치는 그대로 유지
+      lockedGridY = currentGridY;
       
       // 상세창 초기 위치 설정
       const initialDetailsX = getResponsiveDetailsX(false);
-      // 보이는 순간 상/하 패딩을 100px로 강제 고정 (스타일 우선순위 무관하게 보장)
+      // 디바이스별 상단 패딩 (그리드 상단 패딩과 동일하게)
+      const headerHeight = window.innerWidth <= 799 ? 60 : window.innerWidth <= 1279 ? 68 : 100;
+      const topPadding = window.innerWidth <= 799 ? 40 : window.innerWidth <= 1279 ? headerHeight + 28 : headerHeight + 40;
+      // 보이는 순간 상/하 패딩을 그리드 상단 패딩과 동일하게 설정
       gsap.set(details, { 
         x: initialDetailsX, 
         opacity: 1, 
         display: 'flex', 
-        paddingTop: 100, 
+        paddingTop: topPadding, 
         paddingBottom: 100,
         pointerEvents: 'auto'
       });
@@ -601,15 +755,67 @@ const DraggableGrid = () => {
       container.classList.add('--is-details-showing');
       
       // 그리드 높이에 맞춰 container 높이 설정
-      const gridHeight = grid.offsetHeight;
-      const gridY = parseFloat(gsap.getProperty(grid, 'y')) || 0;
-      const containerHeight = Math.max(100, gridHeight + Math.abs(gridY) + 100);
-      container.style.height = `${containerHeight}px`;
+      // 상세창이 열릴 때 그리드 위치를 고정하여 올라가지 않도록 함
+      // 푸터가 사라진 후 레이아웃이 변경되므로, 약간의 지연 후 높이 재계산
+      const updateContainerHeight = () => {
+        const gridHeight = grid.offsetHeight;
+        // grid는 position: absolute이고 top: 0이므로, container의 padding-top과 grid의 padding이 겹침
+        // container 높이를 grid의 offsetHeight와 정확히 일치시켜야 함
+        // grid의 offsetHeight는 이미 패딩을 포함한 전체 높이이므로, container 높이도 동일하게 설정
+        const containerHeight = gridHeight;
+        container.style.height = `${containerHeight}px`;
+      };
+      
+      // 즉시 높이 설정 및 그리드 위치 고정
+      updateContainerHeight();
+      const currentGridX = parseFloat(gsap.getProperty(grid, 'x')) || 0;
+      gsap.set(grid, { 
+        x: currentGridX,
+        y: lockedGridY 
+      });
+      
+      // 푸터가 사라진 후 레이아웃 재계산을 위해 한 번만 확인
+      requestAnimationFrame(() => {
+        if (showDetailsActive && lockedGridY !== null) {
+          updateContainerHeight();
+          gsap.set(grid, { 
+            x: currentGridX,
+            y: lockedGridY 
+          });
+        }
+      });
+      
+      // isShowingDetails 플래그 해제 (초기화 완료 후)
+      requestAnimationFrame(() => {
+        isShowingDetails = false;
+      });
       
       // 상세창이 열렸을 때는 그리드 조작 비활성화
       
       // 상세창 영역에 마우스 이벤트 추가 (모바일 제외)
       const isMobileDevice = window.innerWidth <= 799;
+      
+      // 헤더 요소 찾기 및 애니메이션
+      const header = document.querySelector('.header');
+      if (header) {
+        // 헤더의 현재 transform을 확인하고 GSAP로 애니메이션
+        gsap.fromTo(header, 
+          {
+            y: 0,
+            opacity: 1
+          },
+          {
+            y: -header.offsetHeight,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power3.inOut',
+            onComplete: () => {
+              header.style.pointerEvents = 'none';
+            }
+          }
+        );
+      }
+      
       if (!isMobileDevice) {
         details.addEventListener('mouseenter', handleDetailsMouseEnter);
         details.addEventListener('mouseleave', handleDetailsMouseLeave);
@@ -632,27 +838,58 @@ const DraggableGrid = () => {
       const containerX = getResponsiveContainerX(true);
       const detailsX = getResponsiveDetailsX(true);
 
+      // container만 왼쪽으로 이동 (그리드는 container 내부에 있어서 함께 이동)
+      // 그리드 자체의 위치는 변경하지 않음
       gsap.to(container, {
         x: containerX,
-        duration: 1.2,
+        duration: 0.8,
         ease: 'power3.inOut',
+        onUpdate: () => {
+          // 애니메이션 중에도 그리드 위치 고정 유지
+          gsap.set(grid, { 
+            x: currentGridX,
+            y: lockedGridY 
+          });
+        },
       });
 
       gsap.to(details, {
         x: detailsX,
-        duration: 1.2,
+        duration: 0.8,
         ease: 'power3.inOut',
         onStart: () => {
-          // 애니메이션 시작 시에도 한 번 더 보장
-          gsap.set(details, { paddingTop: 100, paddingBottom: 100 });
+          // 애니메이션 시작 시에도 한 번 더 보장 (그리드 상단 패딩과 동일하게)
+          gsap.set(details, { paddingTop: topPadding, paddingBottom: 100 });
         },
       });
 
       // product는 .product 요소이므로, 내부 div에서 data-id를 가져와야 함
       const productDiv = product.querySelector('div[data-id]');
       const productId = productDiv ? productDiv.dataset.id : product.dataset.id;
+      
+      // product 유효성 검사
+      if (!productId) {
+        console.warn('Product ID not found', product, { productDiv, product });
+        isShowingDetails = false;
+        showDetailsActive = false;
+        lockedGridY = null;
+        return;
+      }
+      
       const numericProductId = Number(productId);
+      
+      // 유효하지 않은 productId인 경우
+      if (isNaN(numericProductId) || numericProductId <= 0) {
+        console.warn('Invalid product ID', productId, { product, productDiv });
+        isShowingDetails = false;
+        showDetailsActive = false;
+        lockedGridY = null;
+        return;
+      }
+      
       const titleIndex = detailsData.findIndex((detail) => detail.id.toString() === productId);
+      
+      // titleIndex가 -1이어도 상세창은 열 수 있도록 허용 (에러 방지)
 
       setActiveDetailId(numericProductId);
 
@@ -717,11 +954,22 @@ const DraggableGrid = () => {
           },
         });
       }
+      } catch (error) {
+        // 에러 발생 시 상태 리셋
+        console.error('Error in showDetails:', error, { product, productId: product?.querySelector('div[data-id]')?.dataset?.id });
+        isShowingDetails = false;
+        showDetailsActive = false;
+        lockedGridY = null;
+      }
     };
 
     const hideDetails = () => {
       if (!showDetailsActive) return;
+      
+      // 상태 초기화
+      isShowingDetails = false;
       showDetailsActive = false;
+      lockedGridY = null; // 그리드 Y 위치 고정 해제
       
       // 상세창 영역 마우스 이벤트 제거
       // 모바일에서는 마우스 이벤트 리스너가 없을 수 있음
@@ -733,11 +981,30 @@ const DraggableGrid = () => {
       
       // 상세창이 닫혔을 때는 그리드 조작 활성화
       
+      // 헤더 다시 표시 애니메이션
+      const header = document.querySelector('.header');
+      if (header) {
+        gsap.to(header, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.inOut',
+        });
+      }
+      
       // 모바일에서는 cursor-cross 클래스가 없을 수 있음
       if (!isMobileDevice) {
         document.body.classList.remove('cursor-cross', 'cross-locked', 'header-hidden', 'details-open');
       } else {
         document.body.classList.remove('header-hidden', 'details-open');
+      }
+      
+      // is-modal-open 클래스 제거 (다른 모달 시스템과 호환을 위해)
+      document.body.classList.remove('is-modal-open');
+      document.documentElement.classList.remove('is-modal-open');
+      const root = document.getElementById('root');
+      if (root) {
+        root.classList.remove('is-modal-open');
       }
 
       titles.forEach((title) => {
@@ -895,7 +1162,10 @@ const DraggableGrid = () => {
       
       productClickHandlers = products.map((product) => {
         const productDiv = product.querySelector('div[data-id]');
-        if (!productDiv) return null;
+        if (!productDiv) {
+          console.warn('Product div not found for product:', product);
+          return null;
+        }
         
         const productId = productDiv.dataset.id;
         const numericProductId = Number(productId);
@@ -904,15 +1174,19 @@ const DraggableGrid = () => {
         let hasMoved = false;
         
         const handler = (event) => {
-          // 모바일에서만 드래그 상태 확인
-          const dragState = productDragStates.get(productId);
-          if (isMobileDevice && dragState === true) {
-            event.preventDefault();
+          try {
+            // 모바일에서만 드래그 상태 확인
+            const dragState = productDragStates.get(productId);
+            if (isMobileDevice && dragState === true) {
+              event.preventDefault();
+              event.stopPropagation();
+              return;
+            }
             event.stopPropagation();
-            return;
+            showDetails(product);
+          } catch (error) {
+            console.error('Error in product click handler:', error, { product, productId });
           }
-          event.stopPropagation();
-          showDetails(product);
         };
         
         // 터치 시작 (모바일만)
@@ -1010,16 +1284,36 @@ const DraggableGrid = () => {
       // 로딩 화면 제거 (애니메이션이 보이도록)
       document.body.classList.remove('loading');
       
-      // 모바일과 데스크탑 애니메이션 분기
+      // 이전 상태 초기화 (다른 페이지에서 돌아올 때를 대비)
+      // --is-loaded 클래스만 제거 (다른 클래스는 유지)
+      if (container) {
+        container.classList.remove('--is-loaded', '--is-details-showing');
+        // 인라인 스타일은 유지하되, 레이아웃 재계산을 위해 강제 리플로우
+        void container.offsetHeight;
+      }
+      
+      // 디바이스별 클래스 추가 (이미 있으면 추가하지 않음)
       if (isMobile()) {
         // 모바일: 먼저 모바일 클래스 추가 (레이아웃 적용)
-        container.classList.add('--is-mobile');
-        grid.classList.add('--is-mobile');
+        if (!container.classList.contains('--is-mobile')) {
+          container.classList.add('--is-mobile');
+        }
+        if (!grid.classList.contains('--is-mobile')) {
+          grid.classList.add('--is-mobile');
+        }
+        
+        // 클래스 추가 후 레이아웃이 적용되도록 강제 리플로우
+        void container.offsetHeight;
+        void grid.offsetHeight;
         
         // 모바일: 레이아웃이 적용될 때까지 기다린 후 그리드 중앙 배치
         // 여러 프레임을 기다려서 레이아웃이 완전히 계산되도록 함
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
+            // 강제로 레이아웃 재계산 (offsetHeight 호출)
+            void container.offsetHeight;
+            void grid.offsetHeight;
+            
             // container의 높이를 grid의 높이에 맞춤 (헤더 높이 고려)
             // grid가 absolute이므로 container의 높이를 동적으로 설정해야 함
             // grid.offsetHeight는 padding을 포함한 높이
@@ -1052,10 +1346,34 @@ const DraggableGrid = () => {
                 mainPage.style.height = `${finalHeight}px`;
                 mainPage.style.minHeight = `${minHeight}px`;
               }
+              
+              // 높이 변경 후 강제로 레이아웃 재계산
+              void container.offsetHeight;
+              void grid.offsetHeight;
             } else {
               // grid 높이가 아직 계산되지 않았으면 기본 높이 유지
               const baseHeight = window.innerHeight - (window.innerWidth <= 799 ? 60 : window.innerWidth <= 1279 ? 68 : 100);
               container.style.height = `${baseHeight}px`;
+              // 다시 한 번 시도
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                  const retryGridHeight = grid.offsetHeight;
+                  if (retryGridHeight > 0) {
+                    const retryFinalHeight = Math.max(retryGridHeight, baseHeight);
+                    container.style.height = `${retryFinalHeight}px`;
+                    const draggableStage = container.closest('.draggable-stage');
+                    if (draggableStage) {
+                      draggableStage.style.height = `${retryFinalHeight}px`;
+                    }
+                    const mainPage = document.querySelector('.main-page--grid');
+                    if (mainPage) {
+                      mainPage.style.height = `${retryFinalHeight}px`;
+                    }
+                    void container.offsetHeight;
+                    void grid.offsetHeight;
+                  }
+                });
+              });
             }
             
             // container의 transform-origin을 중앙으로 설정
@@ -1063,8 +1381,33 @@ const DraggableGrid = () => {
               transformOrigin: 'center center',
             });
             
+            // container 높이가 그리드 높이 이상인지 확인하고 필요시 업데이트
+            const currentContainerHeight = container.offsetHeight;
+            const actualGridHeight = grid.offsetHeight;
+            if (actualGridHeight > 0 && currentContainerHeight < actualGridHeight) {
+              container.style.height = `${actualGridHeight}px`;
+              // 관련 컨테이너들도 업데이트
+              const draggableStage = container.closest('.draggable-stage');
+              if (draggableStage) {
+                draggableStage.style.height = `${actualGridHeight}px`;
+              }
+              const mainPage = document.querySelector('.main-page--grid');
+              if (mainPage) {
+                mainPage.style.height = `${actualGridHeight}px`;
+              }
+              // 업데이트 후 레이아웃 재계산
+              void container.offsetHeight;
+              void grid.offsetHeight;
+            }
+            
             // 그리드를 중앙에 배치 (애니메이션 시작 전)
-            centerGrid();
+            // 한 번 더 requestAnimationFrame으로 레이아웃이 완전히 계산되도록 함
+            requestAnimationFrame(() => {
+              // 마지막으로 레이아웃 재계산
+              void container.offsetHeight;
+              void grid.offsetHeight;
+              centerGrid();
+            });
           
           const timeline = gsap.timeline({
             onComplete: () => {
@@ -1115,10 +1458,21 @@ const DraggableGrid = () => {
           });
         });
       } else {
-        // 데스크탑: 기존 애니메이션
+        // 태블릿/데스크탑: 클래스 추가
+        if (isTablet()) {
+          grid.classList.add('--is-tablet');
+        } else if (isDesktop()) {
+          grid.classList.add('--is-desktop');
+        }
+        
+        // 태블릿/데스크탑: 기존 애니메이션
         // 여러 프레임을 기다려서 레이아웃이 완전히 계산되도록 함
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
+            // 강제로 레이아웃 재계산 (offsetHeight 호출)
+            void container.offsetHeight;
+            void grid.offsetHeight;
+            
             // container의 높이를 grid의 높이에 맞춤 (헤더 높이 고려)
             const gridHeight = grid.offsetHeight;
             const headerHeight = window.innerWidth <= 799 ? 60 : window.innerWidth <= 1279 ? 68 : 100;
@@ -1149,20 +1503,48 @@ const DraggableGrid = () => {
                 mainPage.style.height = `${finalHeight}px`;
                 mainPage.style.minHeight = `${minHeight}px`;
               }
+              
+              // 높이 변경 후 강제로 레이아웃 재계산
+              void container.offsetHeight;
+              void grid.offsetHeight;
             } else {
               // grid 높이가 아직 계산되지 않았으면 기본 높이 유지
               const baseHeight = window.innerHeight - (window.innerWidth <= 799 ? 60 : window.innerWidth <= 1279 ? 68 : 100);
               container.style.height = `${baseHeight}px`;
             }
             
-            // 그리드를 중앙에 배치 (애니메이션 시작 전)
-            centerGrid();
+            // container 높이가 그리드 높이 이상인지 확인하고 필요시 업데이트
+            const currentContainerHeight = container.offsetHeight;
+            const actualGridHeight = grid.offsetHeight;
+            if (actualGridHeight > 0 && currentContainerHeight < actualGridHeight) {
+              container.style.height = `${actualGridHeight}px`;
+              // 관련 컨테이너들도 업데이트
+              const draggableStage = container.closest('.draggable-stage');
+              if (draggableStage) {
+                draggableStage.style.height = `${actualGridHeight}px`;
+              }
+              const mainPage = document.querySelector('.main-page--grid');
+              if (mainPage) {
+                mainPage.style.height = `${actualGridHeight}px`;
+              }
+              // 업데이트 후 레이아웃 재계산
+              void container.offsetHeight;
+              void grid.offsetHeight;
+            }
             
             // container의 transform-origin을 중앙으로 설정
             gsap.set(container, {
               transformOrigin: 'center center',
             });
             
+            // 그리드를 중앙에 배치 (애니메이션 시작 전)
+            // 한 번 더 requestAnimationFrame으로 레이아웃이 완전히 계산되도록 함
+            requestAnimationFrame(() => {
+              // 마지막으로 레이아웃 재계산
+              void container.offsetHeight;
+              void grid.offsetHeight;
+              centerGrid();
+            });
 
             const timeline = gsap.timeline({
           onComplete: () => {
@@ -1226,12 +1608,12 @@ const DraggableGrid = () => {
 
       window.removeEventListener('resize', updateBounds);
 
-      // 모바일 클래스 제거
+      // 디바이스별 클래스 제거
       if (container) {
         container.classList.remove('--is-mobile');
       }
       if (grid) {
-        grid.classList.remove('--is-mobile');
+        grid.classList.remove('--is-mobile', '--is-tablet', '--is-desktop');
       }
 
       if (observer) {

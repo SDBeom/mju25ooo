@@ -1,0 +1,154 @@
+/* Modal Component Styles */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18, 18, 18, 0.74);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: var(--z-modal, 1000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(20px, 6vw, 40px) 0 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 0 auto;
+  pointer-events: auto;
+  align-self: center;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 1280px;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: 0 40px 96px rgba(11, 11, 11, 0.38);
+  overflow-y: auto;
+  pointer-events: auto;
+  margin: 0 auto;
+}
+
+.modal-topbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(12px, 2vw, 20px) 24px;
+  min-height: 60px;
+  font-weight: 600;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.08em;
+  pointer-events: auto;
+  z-index: 10;
+  background: rgba(103, 197, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Desktop (min-width: 1280px) - 1280px 너비 고정 */
+@media (min-width: 1280px) {
+  .modal-wrapper {
+    width: 1280px;
+    max-width: 1280px;
+  }
+
+  .modal-content {
+    width: 1280px;
+    max-width: 1280px;
+  }
+
+  .modal-topbar {
+    display: none;
+  }
+}
+
+.modal-topbar__name {
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.modal-topbar__close {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(244, 246, 248, 0.94);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.modal-topbar__close span {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: #101728;
+  border-radius: 999px;
+}
+
+.modal-topbar__close span:first-child {
+  transform: rotate(45deg);
+}
+
+.modal-topbar__close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.modal-topbar__close:hover {
+  background: rgba(255, 153, 102, 0.22);
+  transform: translateY(-1px);
+}
+
+/* Mobile (max-width: 799px) - 375px 너비 고정 */
+@media (max-width: 799px) {
+  .modal-overlay {
+    padding: 0;
+  }
+
+  .modal-wrapper {
+    width: 375px;
+    max-width: 375px;
+    margin: 0 auto;
+    align-self: center;
+  }
+
+  .modal-content {
+    width: 375px;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+
+  .modal-topbar {
+    width: 375px;
+    max-width: 375px;
+    padding: clamp(12px, 2vw, 16px) 24px;
+    min-height: 56px;
+  }
+}

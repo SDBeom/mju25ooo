@@ -57,7 +57,7 @@ export default defineConfig({
   server: {
     port: 5173,
     strictPort: false, // 포트가 사용 중이면 자동으로 다른 포트 사용
-    host: true, // 외부 접근 허용
+    host: '0.0.0.0', // 모든 네트워크 인터페이스에서 접근 허용
     headers: {
       // 캐싱 헤더 설정
       'Cache-Control': 'public, max-age=31536000'
@@ -76,6 +76,14 @@ export default defineConfig({
       // 폴링 간격 증가 (성능 향상)
       usePolling: false
     }
+  },
+  
+  // 미리보기 서버 설정
+  preview: {
+    port: 5173,
+    strictPort: false, // 포트가 사용 중이면 자동으로 다른 포트 사용
+    host: '0.0.0.0', // 모든 네트워크 인터페이스에서 접근 허용
+    open: false // 자동으로 브라우저 열지 않음
   },
   
   // 개발 모드 최적화

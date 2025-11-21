@@ -1,81 +1,62 @@
 ﻿import React, { useEffect, useState } from 'react';
 import './App.css';
 import { BreakpointProvider } from './contexts/BreakpointContext';
+import { ROUTE_PATHS, ROUTE_CONFIG } from './shared/constants';
+import { resolvePath, safeWindowAccess } from './shared/utils';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import DraggableGrid from './components/DraggableGrid/DraggableGrid';
-import ComingSoonV2 from './components/ComingSoon/ComingSoonV2';
+import About from './components/About/About';
 import ArchivePage from './components/Archive/ArchivePage';
 import Works from './components/Works/Works';
 import DesignerDetail from './components/DesignerDetail/DesignerDetail';
 import Designer from './components/Designer/Designer';
 
+// Component mapping - routes with components (One Source of Truth: config from constants)
 const ROUTES = {
-  '/main': {
+  [ROUTE_PATHS.MAIN]: {
     Component: DraggableGrid,
-    headerMode: 'mainPage',
-    containerVariant: 'grid',
-    windowVariant: 'grid',
+    ...ROUTE_CONFIG[ROUTE_PATHS.MAIN],
   },
-  '/about': {
-    Component: ComingSoonV2,
-    headerMode: 'comingsoon',
-    containerVariant: 'full',
-    windowVariant: 'content',
+  [ROUTE_PATHS.ABOUT]: {
+    Component: About,
+    ...ROUTE_CONFIG[ROUTE_PATHS.ABOUT],
   },
-  '/works': {
+  [ROUTE_PATHS.WORKS]: {
     Component: Works,
-    headerMode: 'works',
-    containerVariant: 'content',
-    windowVariant: 'content',
+    ...ROUTE_CONFIG[ROUTE_PATHS.WORKS],
   },
-  '/designer': {
+  [ROUTE_PATHS.DESIGNER]: {
     Component: Designer,
-    headerMode: 'designer',
-    containerVariant: 'content',
-    windowVariant: 'content',
+    ...ROUTE_CONFIG[ROUTE_PATHS.DESIGNER],
   },
-  '/designer/detail': {
+  [ROUTE_PATHS.DESIGNER_DETAIL]: {
     Component: DesignerDetail,
-    headerMode: 'designer',
-    containerVariant: 'full',
-    windowVariant: 'content',
+    ...ROUTE_CONFIG[ROUTE_PATHS.DESIGNER_DETAIL],
   },
-  '/archive': {
+  [ROUTE_PATHS.ARCHIVE]: {
     Component: ArchivePage,
-    headerMode: 'comingsoon',
-    containerVariant: 'full',
-    windowVariant: 'content',
+    ...ROUTE_CONFIG[ROUTE_PATHS.ARCHIVE],
   },
-};
-
-const resolvePath = (path) => {
-  if (path === '/') {
-    return '/main';
-  }
-
-  if (ROUTES[path]) {
-    return path;
-  }
-
-  if (path.startsWith('/designer/') && path !== '/designer/') {
-    return path;
-  }
-
-  return '/main';
 };
 
 function App() {
   const [currentPath, setCurrentPath] = useState(() => {
+    return safeWindowAccess(
+      (window) => {
     const initialPath = resolvePath(window.location.pathname);
     if (initialPath !== window.location.pathname) {
       window.history.replaceState({}, '', initialPath);
     }
     return initialPath;
+      },
+      ROUTE_PATHS.MAIN
+    );
   });
 
   useEffect(() => {
+    return safeWindowAccess((window) => {
     const handlePopState = () => {
       const nextPath = resolvePath(window.location.pathname);
       if (nextPath !== window.location.pathname) {
@@ -99,16 +80,64 @@ function App() {
       window.removeEventListener('locationchange', handlePopState);
       delete window.__navigate;
     };
+    });
   }, []);
+
+  // 페이지 전환 시 스크롤 위치 초기화 및 레이아웃 재계산
+  useEffect(() => {
+    if (!safeWindowAccess(() => true, false)) return;
+    
+    // 스크롤을 맨 위로 이동
+    safeWindowAccess((window) => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    });
+
+    // main-page의 높이를 자동으로 재설정
+    const mainPage = document.querySelector('.main-page');
+    if (mainPage instanceof HTMLElement) {
+      // 인라인 스타일로 설정된 높이 제거
+      mainPage.style.height = '';
+      mainPage.style.minHeight = '';
+    }
+
+    // 레이아웃 재계산을 위해 약간의 지연 후 실행
+    const timeoutId = setTimeout(() => {
+      // 컨테이너 높이 재계산 강제 (리플로우 발생)
+      const containers = document.querySelectorAll('.main-window__container, .main-window, .main-page, .app-layout');
+      containers.forEach((container) => {
+        if (container instanceof HTMLElement) {
+          // 인라인 스타일로 설정된 높이 제거 (main-page 제외)
+          if (!container.classList.contains('main-page')) {
+            container.style.height = '';
+            container.style.minHeight = '';
+          }
+          // 강제로 리플로우 발생시켜 레이아웃 재계산
+          void container.offsetHeight;
+        }
+      });
+
+      // 푸터 위치도 재계산
+      const footer = document.querySelector('footer');
+      if (footer) {
+        footer.style.height = '';
+        footer.style.minHeight = '';
+        void footer.offsetHeight;
+      }
+    }, 0);
+
+    return () => clearTimeout(timeoutId);
+  }, [currentPath]);
 
   const normalizedPath = ROUTES[currentPath]
     ? currentPath
-    : currentPath.startsWith('/designer/') && currentPath !== '/designer'
-      ? '/designer/detail'
-      : '/main';
+    : currentPath.startsWith('/designer/') && currentPath !== ROUTE_PATHS.DESIGNER
+      ? ROUTE_PATHS.DESIGNER_DETAIL
+      : ROUTE_PATHS.MAIN;
 
   const { Component: PageComponent, headerMode, containerVariant, windowVariant } =
-    ROUTES[normalizedPath] || ROUTES['/main'];
+    ROUTES[normalizedPath] || ROUTES[ROUTE_PATHS.MAIN];
 
   const mainWindowClasses = ['main-window'];
   if (windowVariant === 'grid') {

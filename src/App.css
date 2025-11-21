@@ -15,18 +15,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-primary);
-  background-color: #08090d;
+  background-color: #ff7700;
   color: #000000;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  word-break: keep-all; /* 한글 텍스트가 단어 단위로 줄바꿈되도록 */
+  overflow-wrap: break-word; /* 컨테이너보다 긴 단어는 강제로 줄바꿈 */
 }
 
 html.is-modal-open,
 body.is-modal-open,
 #root.is-modal-open {
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 body.is-modal-open {
@@ -39,7 +41,7 @@ body.is-modal-open {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #08090d;
+  background-color: #ff7700;
   overflow-x: hidden;
 }
 
@@ -47,13 +49,15 @@ body.is-modal-open {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: radial-gradient(circle at 20% -10%, rgba(111, 122, 255, 0.06), transparent 55%), #08090d;
+  height: auto;
+  background: #ff7700;
   overflow: visible;
 }
 
 .main-page {
   display: block;
   min-height: 100vh;
+  height: auto;
   padding: 0;
   padding-top: var(--header-height, 60px);
   overflow: visible;
@@ -63,6 +67,8 @@ body.is-modal-open {
   padding: 0;
   padding-top: var(--header-height, 60px);
   display: block;
+  height: auto;
+  min-height: 100vh;
   overflow: visible;
 }
 
@@ -73,6 +79,7 @@ body.is-modal-open {
   flex-direction: column;
   background-color: transparent; /* 배경색 제거 - 헤더 뒤에 보이지 않도록 */
   min-height: calc(100vh - var(--header-height, 60px));
+  height: auto;
 }
 
 .main-window {
@@ -147,6 +154,7 @@ body.is-modal-open {
 
 .main-window--content {
   min-height: 100vh;
+  height: auto;
   background: transparent;
   box-sizing: border-box;
   display: block;
@@ -157,6 +165,7 @@ body.is-modal-open {
   position: relative;
   width: 100vw;
   min-height: 100vh;
+  height: auto;
   box-sizing: border-box;
   padding: 0;
   margin: 0 calc((100vw - 100%) / -2);
@@ -215,9 +224,12 @@ body.is-modal-open {
   width: 100vw;
   max-width: none;
   margin: 0;
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
   background: #ffffff;
   margin-top: 0;
+  height: auto;
+  min-height: 100vh;
 }
 
 .main-window__container--full {
@@ -285,6 +297,18 @@ body.is-modal-open {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #E55A2B 0%, #29B6F6 100%);
+}
+
+/* 메인 페이지 전체 스크롤바 숨김 */
+html:has(.main-page--grid),
+body:has(.main-page--grid) {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html:has(.main-page--grid) ::-webkit-scrollbar,
+body:has(.main-page--grid) ::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 /* Selection styles */

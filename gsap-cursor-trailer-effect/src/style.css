@@ -1,0 +1,24 @@
+/* Container for the images that follow the mouse */
+.image-trailer {
+  position: fixed;      /* stays in place relative to the viewport */
+  pointer-events: none; /* prevents blocking clicks on the page */
+  z-index: 9999;        /* always stays on top of everything else */
+}
+
+/* Styling for the images used in the trail */
+.image-item {
+  width: 200px;         /* image width */
+  height: 300px;        /* image height */
+  object-fit: cover;    /* ensures the image fills the box without distortion */
+  position: absolute;   /* lets us place them at mouse position */
+  opacity: 0;           /* start invisible until animated in */
+  pointer-events: none; /* makes sure these images don't block interaction */
+  border-radius: 3px;   /* slightly rounded corners */
+  transform-origin: center; /* scaling/rotations will happen from the center */
+}
+
+/* The original gallery is hidden from view,
+   but we still keep the images in the DOM to clone them */
+.image-gallery {
+  display: none;
+}

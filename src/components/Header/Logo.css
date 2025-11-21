@@ -7,17 +7,17 @@
 .logo-container img {
   height: 50px;
   width: auto;
-  filter: brightness(0) invert(1) !important;
+  filter: brightness(0) invert(1);
 }
 
 /* 모든 헤더 모드에서 로고가 흰색으로 보이도록 */
 .header .logo-container img,
-.header-comingsoon-mode .logo-container img,
+.header-about-mode .logo-container img,
 .header-grid-mode .logo-container img,
 .header-design-mode .logo-container img,
 .header-works-mode .logo-container img,
 .header-default-mode .logo-container img {
-  filter: brightness(0) invert(1) !important;
+  filter: brightness(0) invert(1);
 }
 
 @media (max-width: 800px) {

@@ -19,7 +19,7 @@ import songDaheeCardOfLove from '../assets/송다희/송다희_영상콘텐츠_�
 import songDaheePeony from '../assets/송다희/송다희_영상콘텐츠_작품2_01.webp';
 import simSeongbinBoom from '../assets/심성빈/심성빈_영상콘텐츠_작품1_01.webp';
 import simSeongbinLinked from '../assets/심성빈/심성빈_영상_작품2_01.webp';
-import anSeonminDesktop from '../assets/안선민/안선민_브랜딩_작품101.webp';
+import anSeonminDesktop from '../assets/안선민/안선민_브랜딩_작품1_01.webp';
 import wooSuminSasinDo from '../assets/우수민/우수민_멀티미디어_작품1_01.webp';
 import wooSuminLiminal from '../assets/우수민/우수민_멀티미디어_작품2_01.webp';
 import leeGabiWork1 from '../assets/이가비/이가비_게임콘텐츠_작품1_01.webp';
@@ -63,13 +63,13 @@ const workThumbnailMap = {
   '2025 Animation Reel': parkHeechanReel,
   'PLEDGE': parkHeechanPledge,
   'HiFive': seoDongbeomHiFive,
-  'Abyss Racing: 세이렌의 보물': leeGabiWork1,
-  'Overcooked: 카페대소동': leeGabiWork2,
+  'Abyss Racing: 세이렌의 보물': leeGabiWork2,
+  'Overcooked: 카페대소동': leeGabiWork1,
   'A Card of Love': songDaheeCardOfLove,
   'A card of love': songDaheeCardOfLove,
   'Peony': songDaheePeony,
-  'Linked': simSeongbinLinked,
-  'BOOM': simSeongbinBoom,
+  'Linked': simSeongbinBoom,
+  'BOOM': simSeongbinLinked,
   '피에르 위그: 리미널 가이드앱 UX/UI': wooSuminLiminal,
   '피에르 위그: <리미널 Liminal> 가이드앱 UX/UI': wooSuminLiminal,
   '四神圖 (사신도)': wooSuminSasinDo,
@@ -84,8 +84,8 @@ const workThumbnailMap = {
   '돌로르사가 (Dolor Saga)': jeonGiTaeDolor,
   'War Orb': jeonGiTaeWarOrb,
   '워오브 (War Orb)': jeonGiTaeWarOrb,
-  'Karon': jeonSeorinKaron,
-  'RAVEN-X': jeonSeorinRavenX,
+  'Karon': jeonSeorinRavenX,
+  'RAVEN-X': jeonSeorinKaron,
   '더 고딕': jungJiminTheGothic,
   '더 웨폰': jungJiminTheWeapon,
   'The Reason that I Live': joHaneulReason,

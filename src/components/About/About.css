@@ -1,0 +1,76 @@
+/* ============================================
+   About Page - 레이아웃 뼈대
+   ============================================ */
+
+/* ============================================
+   💡 페이지 전체 레이아웃 (가장 중요)
+   ============================================ */
+/* ============================================
+   .about-page
+   - About 페이지의 전체 레이아웃을 담당하는 최상위 컨테이너
+   - flex column으로 메인 컨텐츠와 푸터를 위/아래로 분리 배치
+   - 화면 전체 높이(min-height: 100vh)로 항상 꽉 차게 표시
+   - 좌우 중앙 정렬 및 배경 그라데이션 적용
+   - 오버플로우 숨김 및 박스 사이징, 여백 초기화
+   ============================================ */
+.about-page {
+  display: flex;
+  flex-direction: column;         /* 💡 메인은 위, 푸터는 아래로 분산 */
+  justify-content: flex-start;    /* 상단 정렬로 변경 */
+  align-items: stretch;           /* 좌우 꽉 차게 */
+  min-height: calc(100vh - var(--header-height, 60px));              /* 최소 화면 높이 (스크롤 허용) */
+  width: 100%;                    /* 화면 전체 너비 꽉 채움 */
+  max-width: 100%;                /* 최대 너비 제한 없음 */
+  background: var(--color-background);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: visible;              /* Mobile: overflow 제거 (body 스크롤 사용) */
+  overscroll-behavior: contain;   /* Mobile: 스크롤 바운싱 방지 */
+}
+
+/* ============================================
+   Tablet (800px ~ 1279px)
+   ============================================ */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .about-page {
+    justify-content: flex-start;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* ============================================
+   Desktop (1280px 이상)
+   ============================================ */
+@media (min-width: 1280px) {
+  .about-page {
+    justify-content: flex-start;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.about-main-content--simple {
+  width: 100%;
+  max-width: 100%;
+  min-height: calc(100vh - var(--header-height, 100px));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.about-main-content--simple .about-left-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+

@@ -10,6 +10,7 @@ const Header = ({ currentPage = 'mainPage' }) => {
   const { deviceType, isMobile, isTablet, isDesktop } = useBreakpointContext();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const lastScrollYRef = useRef(0);
 
   const showInlineNavigation = isDesktop || isTablet;
@@ -31,6 +32,11 @@ const Header = ({ currentPage = 'mainPage' }) => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // 모달이 열려있으면 스크롤 이벤트 무시
+      if (isModalOpen) {
+        return;
+      }
+
       const currentScrollY = window.scrollY;
       const lastScrollY = lastScrollYRef.current;
       const scrollingDown = currentScrollY > lastScrollY;
@@ -53,12 +59,35 @@ const Header = ({ currentPage = 'mainPage' }) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, isModalOpen]);
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
     setIsHidden(false);
   }, [isMobileMenuOpen]);
+
+  // 모달이 열렸을 때 헤더 숨기기
+  useEffect(() => {
+    const checkModalOpen = () => {
+      const modalOpen = document.body.classList.contains('is-modal-open');
+      setIsModalOpen(modalOpen);
+      if (modalOpen) {
+        setIsHidden(true);
+      }
+    };
+
+    // 초기 확인
+    checkModalOpen();
+
+    // MutationObserver로 body 클래스 변경 감지
+    const observer = new MutationObserver(checkModalOpen);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   // 모드별 클래스명 결정
   const getHeaderMode = () => {
@@ -70,8 +99,8 @@ const Header = ({ currentPage = 'mainPage' }) => {
         return 'header-design-mode'; // 디자이너 모드
       case 'works':
         return 'header-works-mode'; // 작품 모드
-      case 'comingsoon':
-        return 'header-comingsoon-mode'; // 커밍순 모드
+      case 'about':
+        return 'header-about-mode'; // About 모드
       default:
         return 'header-default-mode'; // 기본 모드
     }

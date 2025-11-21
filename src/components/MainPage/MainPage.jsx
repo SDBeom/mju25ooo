@@ -215,12 +215,12 @@ const MainPage = () => {
     if (crossRef.current) {
       const isMobileDevice = window.innerWidth <= 799;
       if (isMobileDevice) {
-        gsap.set(crossRef.current, {
-          opacity: 1,
-          pointerEvents: 'auto',
-          scale: 0,
-          x: 0,
-          y: 0,
+      gsap.set(crossRef.current, {
+        opacity: 1,
+        pointerEvents: 'auto',
+        scale: 0,
+        x: 0,
+        y: 0,
           visibility: 'visible'
         });
       } else {
@@ -229,7 +229,7 @@ const MainPage = () => {
           pointerEvents: 'auto',
           scale: 0,
           visibility: 'visible'
-        });
+      });
       }
       gsap.to(crossRef.current, {
         scale: 1,
@@ -612,11 +612,11 @@ const MainPage = () => {
     }
 
     // 그리드 클릭 핸들러
-    const handleGridClick = (e) => {
+      const handleGridClick = (e) => {
       if (showDetailsActiveRef.current && !details.contains(e.target) && !cross.contains(e.target)) {
-        hideDetails();
-      }
-    };
+          hideDetails();
+        }
+      };
     
     // 문서 전체 클릭 핸들러 (상세창 외부 클릭 시 닫기)
     const handleDocumentClick = (e) => {
@@ -628,7 +628,7 @@ const MainPage = () => {
           gridRef.current &&
           !gridRef.current.contains(e.target)) {
         hideDetails();
-      }
+    }
     };
 
     // 닫기 버튼 클릭 핸들러
@@ -732,37 +732,37 @@ const MainPage = () => {
       {/* 상세창과 닫기 버튼을 body에 직접 렌더링 (fixed 위치를 위해) */}
       {createPortal(
         <>
-          <div className="details" ref={detailsRef}>
-            <div className="details__title">
+      <div className="details" ref={detailsRef}>
+        <div className="details__title">
+          {detailsData.map((detail) => (
+            <p key={detail.id} data-title={detail.id} data-text>
+              {detail.title}
+            </p>
+          ))}
+        </div>
+        <div className="details__body">
+          <div className="details__thumb" ref={detailsThumbRef} />
+          <div className="details__content">
+            <div className="details__texts">
               {detailsData.map((detail) => (
-                <p key={detail.id} data-title={detail.id} data-text>
-                  {detail.title}
+                <p key={detail.id} data-desc={detail.id} data-text>
+                  {detail.description}
                 </p>
               ))}
             </div>
-            <div className="details__body">
-              <div className="details__thumb" ref={detailsThumbRef} />
-              <div className="details__content">
-                <div className="details__texts">
-                  {detailsData.map((detail) => (
-                    <p key={detail.id} data-desc={detail.id} data-text>
-                      {detail.description}
-                    </p>
-                  ))}
-                </div>
-                <button type="button" className="details__cta-button" onClick={handleViewWork}>
-                  작품 보러가기
-                </button>
-              </div>
-            </div>
+            <button type="button" className="details__cta-button" onClick={handleViewWork}>
+              작품 보러가기
+            </button>
           </div>
+        </div>
+      </div>
 
-          <div className="cross" ref={crossRef}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 6L6 18" stroke="#313131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M6 6L18 18" stroke="#313131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
+      <div className="cross" ref={crossRef}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18" stroke="#313131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M6 6L18 18" stroke="#313131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
         </>,
         document.body
       )}

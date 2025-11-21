@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DesignerShowcase from './DesignerShowcase';
 import designerDetailsData from '../../data/designerDetailsData';
+import './DesignerDetail.css';
 
 const DesignerDetail = () => {
   const [designer, setDesigner] = useState(null);
@@ -46,6 +47,7 @@ const DesignerDetail = () => {
     );
   }
 
+  // 모든 디자이너는 DesignerShowcase 사용
   return <DesignerShowcase designer={designer} onBack={handleBackToDesigners} />;
 };
 

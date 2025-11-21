@@ -68,41 +68,41 @@
 /* Responsive typography */
 @media (max-width: 800px) {
   .typography-h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
   
   .typography-h2 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
   
   .typography-h3 {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem;
   }
   
   .typography-h4 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
   
   .typography-h5 {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
   
   .typography-h6 {
-    font-size: 1.125rem !important;
+    font-size: 1.125rem;
   }
 }
 
 @media (max-width: 375px) {
   .typography-h1 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
   
   .typography-h2 {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem;
   }
   
   .typography-h3 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
 }
 

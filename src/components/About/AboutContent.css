@@ -1,0 +1,1240 @@
+.about-main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #FF7700;
+  min-height: calc(100vh - var(--header-height, 60px));
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* Intro Section - Parallax Background */
+.about-intro {
+  height: calc(100vh - var(--header-height, 60px));
+  overflow: hidden;
+  position: relative;
+}
+
+.about-intro-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.about-intro-image video {
+  width: 100%;
+  height: 100%;
+  -webkit-object-fit: cover;
+  object-fit: cover;
+}
+
+/* Description Section - Mobile First */
+.about-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  min-height: auto;
+  gap: 0;
+}
+
+.about-description-text {
+  font-size: clamp(3rem, 7.5vw, 8rem);
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 50vw;
+  line-height: 1;
+  margin: 0;
+  font-weight: 300;
+}
+
+.about-description-images {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  flex-direction: column;
+}
+
+.about-description-image {
+  width: 100%;
+  height: 50vh;
+  -webkit-object-fit: cover;
+  object-fit: cover;
+  flex: 1 1 100%;
+  display: block;
+}
+
+/* Section with Text and Parallax */
+.about-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height, 60px));
+  overflow: hidden;
+  -webkit-clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  background-color: #FF7700;
+}
+
+.about-section-content {
+  position: relative;
+  z-index: var(--z-dropdown);
+  padding: 2rem 16px;
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - var(--header-height, 60px));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  -webkit-mix-blend-mode: difference;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.about-section-text {
+  width: 100%;
+  font-size: clamp(1rem, 2vw, 2rem);
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin: 0;
+  -webkit-mix-blend-mode: difference;
+  mix-blend-mode: difference;
+  color: white;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-section-button-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--z-sticky);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-section-button {
+  padding: 1rem 2.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-mix-blend-mode: difference;
+  mix-blend-mode: difference;
+  display: inline-block;
+  font-weight: 400;
+}
+
+.about-section-button:hover {
+  background-color: white;
+  color: #FF7700;
+  -webkit-mix-blend-mode: normal;
+  mix-blend-mode: normal;
+}
+
+.about-section-title {
+  font-size: clamp(3rem, 5vw, 6rem);
+  text-transform: uppercase;
+  margin: 0;
+  -webkit-mix-blend-mode: difference;
+  mix-blend-mode: difference;
+  color: white;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-section-background {
+  position: fixed;
+  top: -10vh;
+  left: 0;
+  height: 120vh;
+  width: 100%;
+  z-index: 0;
+}
+
+.about-section-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about-section-image video {
+  width: 100%;
+  height: 100%;
+  -webkit-object-fit: cover;
+  object-fit: cover;
+}
+
+/* Brand Story Section - Mobile First */
+.about-brand-story {
+  padding: 60px 16px;
+  margin: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.about-brand-story-title {
+  font-size: clamp(2rem, 4vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+  font-weight: 300;
+}
+
+.about-brand-story-subtitle {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  margin: 0;
+  font-weight: 300;
+}
+
+.about-brand-story-header {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-brand-story-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+  align-items: flex-start;
+}
+
+.about-brand-story-poster {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.about-brand-story-poster-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+}
+
+.about-brand-story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.about-branding-logo-main--inline {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-brand-story-item {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-brand-story-item-title {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  margin: 0;
+  font-weight: 400;
+}
+
+.about-brand-story-item-text {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-goods-list {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.about-goods-list-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  object-fit: contain;
+}
+
+@media (min-width: 800px) {
+  .about-goods-list .about-goods-list-image,
+  .about-goods-list-item .about-goods-list-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.about-brand-story-header {
+  margin: 0;
+  padding: 0;
+}
+
+/* Branding Logo Section - Mobile First */
+.about-branding-logo {
+  padding: 60px 16px;
+  margin: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-branding-logo-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-branding-logo-symbol {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-branding-logo-symbol-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.about-branding-logo-symbol-description {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-branding-logo-symbol-title {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  margin: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #333;
+}
+
+.about-branding-logo-symbol-text {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-branding-logo-logotype {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-branding-logo-logotype-image {
+  width: 100%;
+  max-width: 267px;
+  height: auto;
+  display: block;
+}
+
+.about-branding-logo-logotype-description {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-branding-logo-motifs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-branding-logo-motifs-description {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-branding-logo-motifs-description-text {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-branding-logo-motifs-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-branding-logo-motif-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-branding-logo-motif-image {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+}
+
+.about-branding-logo-motif-description {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Category Descriptions Section - Mobile First */
+.about-category-descriptions {
+  padding: 60px 16px;
+  margin: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.about-category-descriptions-header {
+  margin: 0 0 4rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-category-descriptions-title {
+  font-size: clamp(2rem, 4vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+  font-weight: 300;
+}
+
+.about-category-descriptions-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  justify-items: start;
+  align-items: start;
+}
+
+.about-category-description-item {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-category-description-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.about-category-description-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.about-category-description-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-category-description-text {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Exhibition Info Section - Mobile First */
+.about-exhibition-info {
+  padding: 60px 16px;
+  margin: 0;
+  background-color: #ff7700;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-exhibition-circle {
+  position: absolute;
+  background-color: #67C5FF;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-exhibition-circle:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+}
+
+.about-exhibition-circle:nth-child(2) {
+  width: 180px;
+  height: 180px;
+  top: 150px;
+  left: 100px;
+}
+
+.about-exhibition-circle:nth-child(3) {
+  width: 200px;
+  height: 200px;
+  top: -80px;
+  left: 250px;
+}
+
+.about-exhibition-circle:nth-child(4) {
+  width: 220px;
+  height: 220px;
+  bottom: -80px;
+  left: -80px;
+}
+
+.about-exhibition-circle:nth-child(5) {
+  width: 190px;
+  height: 190px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-exhibition-circle:nth-child(6) {
+  width: 200px;
+  height: 200px;
+  bottom: 100px;
+  right: 50px;
+}
+
+.about-exhibition-circle:nth-child(7) {
+  width: 180px;
+  height: 180px;
+  top: 20%;
+  right: -40px;
+}
+
+.about-exhibition-circle:nth-child(8) {
+  width: 210px;
+  height: 210px;
+  bottom: -60px;
+  right: 100px;
+}
+
+.about-exhibition-circle:nth-child(9) {
+  width: 170px;
+  height: 170px;
+  top: 70%;
+  left: 30%;
+}
+
+.about-exhibition-header,
+.about-exhibition-details {
+  position: relative;
+  z-index: 2;
+}
+
+.about-exhibition-header {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-exhibition-university {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-exhibition-department {
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-exhibition-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-exhibition-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.about-exhibition-label {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-exhibition-address {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 0.3rem 0;
+  padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-exhibition-address-en {
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  line-height: 1.6;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-exhibition-date {
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+/* Committee Section - Mobile First */
+.about-committee {
+  padding: 60px 16px;
+  margin: 0;
+  background-color: #fff;
+  width: 100%;
+}
+
+.about-committee-section {
+  margin: 0 0 3rem 0;
+  padding: 0;
+}
+
+.about-committee-title {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.about-committee-names {
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-committee-names strong {
+  font-weight: 500;
+}
+
+.about-committee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.about-committee-list p {
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.6;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about-committee-role {
+  font-weight: 500;
+  margin: 0 1rem 0 0;
+  padding: 0;
+}
+
+/* ============================================
+   Mobile (375px ~ 799px) - 기본 스타일이 이미 모바일 기준
+   ============================================ */
+/* 기본 스타일이 모바일 기준이므로 추가 조정이 필요한 경우만 여기에 작성 */
+
+/* ============================================
+   Tablet (800px ~ 1279px)
+   ============================================ */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .about-description {
+    padding: 0;
+    gap: 0;
+    min-height: 45vh;
+  }
+
+  .about-description-images {
+    flex-direction: row;
+    height: 55vh;
+  }
+
+  .about-description-image {
+    width: 50%;
+    height: 100%;
+    flex: 1 1 50%;
+  }
+
+  .about-section-content {
+    padding: 2rem 28px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .about-section-text {
+    width: 100%;
+    max-width: none;
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .about-brand-story {
+    padding: 70px 28px;
+    gap: 4rem;
+  }
+
+  .about-brand-story-body {
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .about-brand-story-poster {
+    flex: 0 0 40%;
+    max-width: 40%;
+    justify-content: flex-start;
+  }
+
+  .about-brand-story-poster-image {
+    max-width: 500px;
+  }
+
+  .about-brand-story-content {
+    flex: 1;
+    gap: 3.5rem;
+  }
+
+  .about-goods-list {
+    padding: 0;
+  }
+
+  .about-branding-logo {
+    padding: 70px 28px;
+    gap: 5rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .about-branding-logo-main {
+    flex: 1;
+    gap: 3rem;
+  }
+
+  .about-branding-logo-motifs {
+    flex: 1;
+  }
+
+  .about-branding-logo-motifs-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .about-branding-logo-motif-item {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+  }
+
+  .about-category-descriptions {
+    padding: 70px 28px;
+  }
+
+  .about-category-descriptions-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .about-category-description-item {
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .about-category-description-image-wrapper {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .about-category-description-image {
+    max-width: 350px;
+  }
+
+  .about-category-description-content {
+    flex: 1;
+  }
+
+  .about-exhibition-circle:nth-child(1) {
+    width: 280px;
+    height: 280px;
+    top: -70px;
+    left: -70px;
+  }
+
+  .about-exhibition-circle:nth-child(2) {
+    width: 250px;
+    height: 250px;
+    top: 200px;
+    left: 150px;
+  }
+
+  .about-exhibition-circle:nth-child(3) {
+    width: 280px;
+    height: 280px;
+    top: -100px;
+    left: 400px;
+  }
+
+  .about-exhibition-circle:nth-child(4) {
+    width: 300px;
+    height: 300px;
+    bottom: -100px;
+    left: -100px;
+  }
+
+  .about-exhibition-circle:nth-child(5) {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-exhibition-circle:nth-child(6) {
+    width: 280px;
+    height: 280px;
+    bottom: 150px;
+    right: 80px;
+  }
+
+  .about-exhibition-circle:nth-child(7) {
+    width: 250px;
+    height: 250px;
+    top: 25%;
+    right: -50px;
+  }
+
+  .about-exhibition-circle:nth-child(8) {
+    width: 290px;
+    height: 290px;
+    bottom: -80px;
+    right: 150px;
+  }
+
+  .about-exhibition-circle:nth-child(9) {
+    width: 240px;
+    height: 240px;
+    top: 75%;
+    left: 35%;
+  }
+
+  .about-exhibition-details {
+    text-align: center;
+  }
+
+  .about-committee {
+    padding: 70px 28px;
+  }
+}
+
+/* ============================================
+   Desktop (1280px 이상)
+   ============================================ */
+@media (min-width: 1280px) {
+  .about-description {
+    padding: 0;
+    gap: 0;
+    min-height: 50vh;
+  }
+
+  .about-description-images {
+    flex-direction: row;
+    height: 60vh;
+  }
+
+  .about-description-image {
+    width: 50%;
+    height: 100%;
+    flex: 1 1 50%;
+  }
+
+  .about-section-content {
+    padding: 2rem 40px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .about-section-text {
+    width: 100%;
+    max-width: none;
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .about-brand-story {
+    padding: 80px 40px;
+    gap: 4rem;
+  }
+
+  .about-brand-story-body {
+    flex-direction: row;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .about-brand-story-poster {
+    flex: 0 0 30%;
+    max-width: 30%;
+    justify-content: flex-start;
+  }
+
+  .about-brand-story-poster-image {
+    max-width: 500px;
+  }
+
+  .about-brand-story-content {
+    flex: 0 0 35%;
+    max-width: 35%;
+    gap: 4rem;
+  }
+
+  .about-branding-logo-main--inline {
+    flex: 0 0 35%;
+    max-width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .about-brand-story-item {
+    margin: 0 0 3rem 0;
+  }
+
+  .about-goods-list {
+    padding: 0;
+  }
+
+  .about-branding-logo {
+    padding: 80px 40px;
+    gap: 6rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .about-branding-logo-main:not(.about-branding-logo-main--inline) {
+    display: none;
+  }
+
+  .about-branding-logo-main {
+    flex: 1;
+    gap: 4rem;
+  }
+
+  .about-branding-logo-motifs {
+    flex: 1;
+  }
+
+  .about-branding-logo-motifs-list {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .about-branding-logo-motif-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+  }
+
+  .about-branding-logo-motif-image {
+    max-width: 300px;
+    height: 300px;
+  }
+
+  .about-category-descriptions {
+    padding: 80px 40px;
+  }
+
+  .about-category-descriptions-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: start;
+    align-items: start;
+  }
+
+  .about-category-description-item {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .about-category-description-image-wrapper {
+    flex: 0 0 40%;
+    max-width: 40%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .about-category-description-image {
+    max-width: 350px;
+  }
+
+  .about-category-description-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-exhibition-info {
+    padding: 80px 40px;
+  }
+
+  .about-exhibition-circle:nth-child(1) {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+  }
+
+  .about-exhibition-circle:nth-child(2) {
+    width: 350px;
+    height: 350px;
+    top: 250px;
+    left: 200px;
+  }
+
+  .about-exhibition-circle:nth-child(3) {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    left: 600px;
+  }
+
+  .about-exhibition-circle:nth-child(4) {
+    width: 450px;
+    height: 450px;
+    bottom: -150px;
+    left: -150px;
+  }
+
+  .about-exhibition-circle:nth-child(5) {
+    width: 380px;
+    height: 380px;
+  }
+
+  .about-exhibition-circle:nth-child(6) {
+    width: 400px;
+    height: 400px;
+    bottom: 200px;
+    right: 120px;
+  }
+
+  .about-exhibition-circle:nth-child(7) {
+    width: 350px;
+    height: 350px;
+    top: 30%;
+    right: -70px;
+  }
+
+  .about-exhibition-circle:nth-child(8) {
+    width: 420px;
+    height: 420px;
+    bottom: -120px;
+    right: 220px;
+  }
+
+  .about-exhibition-circle:nth-child(9) {
+    width: 340px;
+    height: 340px;
+    top: 80%;
+    left: 40%;
+  }
+
+  .about-exhibition-details {
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .about-committee {
+    padding: 80px 40px;
+  }
+
+  .about-committee-section {
+    margin: 0 0 4rem 0;
+  }
+}
+

@@ -9,7 +9,7 @@
   height: 100vh;
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 9998;
+  z-index: var(--z-mobile-menu);
   animation: fadeIn 0.3s ease;
   margin: 0;
 }
@@ -29,7 +29,7 @@
   background: rgba(8, 9, 13, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  z-index: 9999;
+  z-index: calc(var(--z-mobile-menu) + 1);
   display: flex;
   flex-direction: column;
   justify-content: center;

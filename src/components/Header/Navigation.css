@@ -3,9 +3,82 @@
   display: flex;
   gap: 2rem;
   align-items: center;
-  mix-blend-mode: difference;
+  mix-blend-mode: normal;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  z-index: 1;
 }
 
+/* Header 내부의 nav-menu는 항상 표시 (모바일 제외) */
+.header.header--tablet .header-content .header-section--center .nav-menu,
+.header.header--desktop .header-content .header-section--center .nav-menu,
+.header.header-default-mode.header--tablet .header-content .header-section--center .nav-menu,
+.header.header-default-mode.header--desktop .header-content .header-section--center .nav-menu,
+.header.header-design-mode.header--tablet .header-content .header-section--center .nav-menu,
+.header.header-design-mode.header--desktop .header-content .header-section--center .nav-menu,
+.header.header-works-mode.header--tablet .header-content .header-section--center .nav-menu,
+.header.header-works-mode.header--desktop .header-content .header-section--center .nav-menu,
+.header.header-about-mode.header--tablet .header-content .header-section--center .nav-menu,
+.header.header-about-mode.header--desktop .header-content .header-section--center .nav-menu {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* header--hidden일 때도 네비게이션 표시 */
+.header.header--hidden.header--tablet .header-content .header-section--center .nav-menu,
+.header.header--hidden.header--desktop .header-content .header-section--center .nav-menu,
+.header.header--hidden.header-default-mode.header--tablet .header-content .header-section--center .nav-menu,
+.header.header--hidden.header-default-mode.header--desktop .header-content .header-section--center .nav-menu,
+.header.header--hidden.header-design-mode.header--tablet .header-content .header-section--center .nav-menu,
+.header.header--hidden.header-design-mode.header--desktop .header-content .header-section--center .nav-menu,
+.header.header--hidden.header-works-mode.header--tablet .header-content .header-section--center .nav-menu,
+.header.header--hidden.header-works-mode.header--desktop .header-content .header-section--center .nav-menu,
+.header.header--hidden.header-about-mode.header--tablet .header-content .header-section--center .nav-menu,
+.header.header--hidden.header-about-mode.header--desktop .header-content .header-section--center .nav-menu {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  z-index: var(--z-navigation);
+}
+
+.header.header--hidden.header--tablet .header-content .header-section--center .nav-menu a,
+.header.header--hidden.header--tablet .header-content .header-section--center .nav-menu .nav-link,
+.header.header--hidden.header--desktop .header-content .header-section--center .nav-menu a,
+.header.header--hidden.header--desktop .header-content .header-section--center .nav-menu .nav-link {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  color: #FFFFFF;
+}
+
+/* 네비게이션 링크 스타일 - 전역 a 스타일보다 우선순위 높음 */
+.header.header--tablet .header-content .header-section--center .nav-menu a,
+.header.header--tablet .header-content .header-section--center .nav-menu .nav-link,
+.header.header--desktop .header-content .header-section--center .nav-menu a,
+.header.header--desktop .header-content .header-section--center .nav-menu .nav-link,
+.header.header-default-mode.header--tablet .header-content .header-section--center .nav-menu a,
+.header.header-default-mode.header--tablet .header-content .header-section--center .nav-menu .nav-link,
+.header.header-default-mode.header--desktop .header-content .header-section--center .nav-menu a,
+.header.header-default-mode.header--desktop .header-content .header-section--center .nav-menu .nav-link,
+.header.header-design-mode.header--tablet .header-content .header-section--center .nav-menu a,
+.header.header-design-mode.header--tablet .header-content .header-section--center .nav-menu .nav-link,
+.header.header-design-mode.header--desktop .header-content .header-section--center .nav-menu a,
+.header.header-design-mode.header--desktop .header-content .header-section--center .nav-menu .nav-link,
+.header.header-works-mode.header--tablet .header-content .header-section--center .nav-menu a,
+.header.header-works-mode.header--tablet .header-content .header-section--center .nav-menu .nav-link,
+.header.header-works-mode.header--desktop .header-content .header-section--center .nav-menu a,
+.header.header-works-mode.header--desktop .header-content .header-section--center .nav-menu .nav-link,
+.header.header-about-mode.header--tablet .header-content .header-section--center .nav-menu a,
+.header.header-about-mode.header--tablet .header-content .header-section--center .nav-menu .nav-link,
+.header.header-about-mode.header--desktop .header-content .header-section--center .nav-menu a,
+.header.header-about-mode.header--desktop .header-content .header-section--center .nav-menu .nav-link,
+.nav-menu a,
+.nav-menu .nav-link,
 .nav-link {
   color: #FFFFFF;
   text-decoration: none;
@@ -16,9 +89,17 @@
   position: relative;
   padding: 8px 0;
   transition: all 0.3s ease;
-  opacity: 0.8;
+  opacity: 1;
+  mix-blend-mode: normal;
+  display: inline-block;
+  pointer-events: auto;
+  z-index: 2;
+  visibility: visible;
+  cursor: pointer;
 }
 
+.nav-menu a:hover,
+.nav-menu .nav-link:hover,
 .nav-link:hover {
   color: #4FC3F7;
   opacity: 1;
@@ -40,6 +121,8 @@
   height: 2px;
   background: linear-gradient(90deg, rgba(79, 195, 247, 0) 0%, #4FC3F7 50%, rgba(79, 195, 247, 0) 100%);
   transition: width 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .nav-link::before {
@@ -54,6 +137,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
+  z-index: -1;
 }
 
 .nav-link:hover::after {
@@ -70,7 +154,7 @@
   gap: 0;
   padding: 0;
   mix-blend-mode: normal;
-  display: flex !important;
+  display: flex;
   justify-content: center;
   align-items: flex-start;
   height: 100%;
@@ -85,15 +169,16 @@
   transform-style: preserve-3d;
 }
 
-.nav-mobile .nav-link {
+.nav-mobile .nav-link,
+.nav-mobile a {
   font-size: 42px;
   font-weight: 600;
   padding: 16px 0;
   width: 100%;
   text-align: left;
   border-bottom: none;
-  color: #FFFFFF !important;
-  opacity: 1 !important;
+  color: #FFFFFF;
+  opacity: 1;
   mix-blend-mode: normal;
   cursor: pointer;
   pointer-events: auto;
@@ -106,16 +191,18 @@
   position: relative;
 }
 
+.nav-mobile .nav-link:hover,
+.nav-mobile a:hover {
+  color: #FFFFFF;
+  opacity: 0.7;
+}
+
 .nav-mobile .nav-link:last-child {
   border-bottom: none;
 }
 
 .nav-mobile .nav-link::after {
   display: none;
-}
-
-.nav-mobile .nav-link:hover {
-  opacity: 0.7;
 }
 
 .nav-mobile .nav-link:active {
@@ -131,14 +218,16 @@
 
 /* Responsive design */
 @media (max-width: 800px) {
-  .nav-menu:not(.nav-mobile) {
+  /* 모바일에서는 인라인 네비게이션 숨김 */
+  .header--mobile .header-content .header-section--center .nav-menu:not(.nav-mobile),
+  .header.header--mobile .header-content .header-section--center .nav-menu:not(.nav-mobile) {
     display: none;
   }
 }
 
 @media (max-width: 375px) {
   .nav-mobile .nav-link {
-    font-size: 18px;
+    font-size: 42px;
     padding: 10px 0;
   }
 }

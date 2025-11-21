@@ -29,6 +29,22 @@
   --header-offset: 60px;
   --header-height: 60px; /* 전역 헤더 높이 변수 */
   
+  /* Z-Index Layer System - 작은 단위로 관리 */
+  --z-back: -1;
+  --z-default: 0;
+  --z-base: 1;
+  --z-elevated: 2;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-overlay: 50;
+  --z-header: 100;
+  --z-navigation: 101;
+  --z-mobile-menu: 150;
+  --z-tooltip: 200;
+  --z-modal: 1000;
+  --z-toast: 2000;
+  
   --animation-fast: 150ms;
   --animation-normal: 300ms;
   --animation-slow: 500ms;
@@ -72,21 +88,26 @@ body {
   font-family: var(--font-primary);
   overscroll-behavior-y: contain; /* 모바일 pull-to-refresh 방지 */
   overflow-y: auto;
+  word-break: keep-all; /* 한글 텍스트가 단어 단위로 줄바꿈되도록 */
+  overflow-wrap: break-word; /* 컨테이너보다 긴 단어는 강제로 줄바꿈 */
 }
 
 body.details-open {
   overflow: hidden;
 }
 
-a {
+/* 네비게이션 링크를 제외한 모든 링크에 스타일 적용 */
+a:not(.nav-link):not(.nav-menu a) {
   color: var(--color-orange);
   text-decoration: none;
   transition: color var(--animation-normal) ease;
 }
 
-a:hover {
+a:not(.nav-link):not(.nav-menu a):hover {
   color: var(--color-blue);
 }
+
+/* 네비게이션 링크는 전역 스타일에서 제외 - Navigation.css에서 처리 */
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;

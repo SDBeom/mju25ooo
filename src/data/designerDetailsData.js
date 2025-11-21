@@ -11,12 +11,14 @@ import loveScene04 from '../assets/김윤정/김윤정_Video_작품1_04.webp';
 import loveScene05 from '../assets/김윤정/김윤정_Video_작품1_05.webp';
 import loveScene06 from '../assets/김윤정/김윤정_Video_작품1_06.webp';
 import goodbyeUniverseHero from '../assets/김윤정/김윤정_Video_작품2_01.webp';
-import goodbyeUniverseScene02 from '../assets/김윤정/김윤정_Video_작품2_02.webp';
-import goodbyeUniverseScene06 from '../assets/김윤정/김윤정_Video_작품2_06.webp';
-import goodbyeUniverseScene07 from '../assets/김윤정/김윤정_Video_작품2_07.webp';
-import goodbyeUniverseScene08 from '../assets/김윤정/김윤정_Video_작품2_08.webp';
-import goodbyeUniverseScene09 from '../assets/김윤정/김윤정_Video_작품2_09.webp';
-import goodbyeUniverseScene10 from '../assets/김윤정/김윤정_Video_작품2_10.webp';
+import goodbyeUniverseScene02 from '../assets/김윤정/source/Page_001.png';
+import goodbyeUniverseScene03 from '../assets/김윤정/source/Page_016.png';
+import goodbyeUniverseScene04 from '../assets/김윤정/source/Page_019.png';
+import goodbyeUniverseScene05 from '../assets/김윤정/source/Page_019.png';
+import goodbyeUniverseScene06 from '../assets/김윤정/source/Page_029.png';
+import goodbyeUniverseScene06b from '../assets/김윤정/source/Page_021.png';
+import goodbyeUniverseScene07 from '../assets/김윤정/source/Page_031.png';
+import goodbyeUniverseScene08 from '../assets/김윤정/source/Page_036.png';
 
 import kimJaeEunWork1 from '../assets/김재은/김재은_Video_작품1_01.webp';
 import kimJaeEunWork1_02 from '../assets/김재은/김재은_Video_작품1_02.webp';
@@ -144,6 +146,7 @@ import parkHeechanWork1_05 from '../assets/박희찬/박희찬_게임콘텐츠_�
 import parkHeechanWork1_06 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_06.webp';
 import parkHeechanWork1_07 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_07.webp';
 import parkHeechanWork1_08 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_08.webp';
+import parkHeechanWork1_09 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_09.webp';
 import parkHeechanWork1_10 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_10.webp';
 import parkHeechanWork1_11 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_11.webp';
 import parkHeechanWork1_12 from '../assets/박희찬/박희찬_게임콘텐츠_작품1_12.webp';
@@ -199,12 +202,13 @@ import simSeongbinWork2_07 from '../assets/심성빈/심성빈_영상_작품2_07
 import simSeongbinWork2_08 from '../assets/심성빈/심성빈_영상_작품2_08.webp';
 import simSeongbinWork2_09 from '../assets/심성빈/심성빈_영상_작품2_09.webp';
 
-import anSeonminDesktop from '../assets/안선민/안선민_브랜딩_작품101.webp';
-import anSeonminWork1_02 from '../assets/안선민/안선민_브랜딩_작품102.webp';
-import anSeonminWork1_03 from '../assets/안선민/안선민_브랜딩_작품103.webp';
-import anSeonminWork1_04 from '../assets/안선민/안선민_브랜딩_작품104.webp';
-import anSeonminWork1_05 from '../assets/안선민/안선민_브랜딩_작품105.webp';
-import anSeonminWork1_06 from '../assets/안선민/안선민_브랜딩_작품106.webp';
+import anSeonminDesktop from '../assets/안선민/안선민_브랜딩_작품1_01.webp';
+import anSeonminWork1_02 from '../assets/안선민/안선민_브랜딩_작품1_02.webp';
+import anSeonminWork1_03 from '../assets/안선민/안선민_브랜딩_작품1_03.webp';
+import anSeonminWork1_04 from '../assets/안선민/안선민_브랜딩_작품1_04.webp';
+import anSeonminWork1_05 from '../assets/안선민/안선민_브랜딩_작품1_05.webp';
+import anSeonminWork1_06 from '../assets/안선민/안선민_브랜딩_작품1_06.webp';
+import anSeonminWork1_07 from '../assets/안선민/안선민_브랜딩_작품1_07.webp';
 
 import wooSuminSasinDo from '../assets/우수민/우수민_멀티미디어_작품1_01.webp';
 import wooSuminWork1_02 from '../assets/우수민/우수민_멀티미디어_작품1_02.webp';
@@ -243,6 +247,7 @@ import leeGabiWork1_06 from '../assets/이가비/이가비_게임콘텐츠_작�
 import leeGabiWork1_07 from '../assets/이가비/이가비_게임콘텐츠_작품1_07.webp';
 import leeGabiWork1_08 from '../assets/이가비/이가비_게임콘텐츠_작품1_08.webp';
 import leeGabiWork1_09 from '../assets/이가비/이가비_게임콘텐츠_작품1_09.webp';
+import leeGabiWork1_10 from '../assets/이가비/이가비_게임콘텐츠_작품1_10.webp';
 import leeGabiWork1_11 from '../assets/이가비/이가비_게임콘텐츠_작품1_11.webp';
 import leeGabiWork1_12 from '../assets/이가비/이가비_게임콘텐츠_작품1_12.webp';
 import leeGabiWork2 from '../assets/이가비/이가비_게임콘텐츠_작품2_01.webp';
@@ -526,12 +531,14 @@ const designerDetailsData = {
           'Theme — Memory, Grief, and Acceptance',
         ],
         gallery: [
-          { src: goodbyeUniverseScene02, alt: '안녕 우주 장면 1' },
-          { src: goodbyeUniverseScene06, alt: '안녕 우주 스틸컷 - 기억의 페이지' },
-          { src: goodbyeUniverseScene07, alt: '안녕 우주 스틸컷 - 친구와의 추억' },
-          { src: goodbyeUniverseScene08, alt: '안녕 우주 스틸컷 - 스토리보드 장면' },
-          { src: goodbyeUniverseScene09, alt: '안녕 우주 장면 4' },
-          { src: goodbyeUniverseScene10, alt: '안녕 우주 장면 5' },
+          { src: goodbyeUniverseScene02, alt: '안녕 우주 장면 1' }, // Page_001.png
+          { src: goodbyeUniverseScene03, alt: '안녕 우주 장면 2' }, // Page_016.png
+          { src: goodbyeUniverseScene04, alt: '안녕 우주 장면 3' }, // Page_019.png
+          { src: goodbyeUniverseScene05, alt: '안녕 우주 장면 4' }, // Page_019.png
+          { src: goodbyeUniverseScene06, alt: '안녕 우주 스틸컷 - 기억의 페이지' }, // Page_029.png - Card 3용
+          { src: goodbyeUniverseScene06b, alt: '안녕 우주 스틸컷 - Feature 3' }, // Page_021.png - image-block--3용
+          { src: goodbyeUniverseScene07, alt: '안녕 우주 스틸컷 - 친구와의 추억' }, // Page_031.png - image-block--4용
+          { src: goodbyeUniverseScene08, alt: '안녕 우주 스틸컷 - 스토리보드 장면' }, // Page_036.png - image-block--5용
         ],
         notes: [
           '혼자 마음의 짐을 끌어안은 사람들에게 그 짐을 떨쳐내지 못하더라도 어렵지 않게 안고 살아갈 수 있다는 메시지를 전하고 싶었다.',
@@ -948,7 +955,7 @@ const designerDetailsData = {
       {
         id: 'dotianhong-see-tinh-isometric',
         title: '"SEE TINH" ISOMETIC',
-        summary: '3D 캐릭터 시장은 성장 가능성이 높고 젊은 층의 엔터테인먼트 상품입니다. 2D/3D 디자이너를 목표로, \'See Tinh\'에서 영감받은 3D 캐릭터와 아이소메트릭 애니를 졸업 프로젝트로 만듭니다.',
+        summary: '2D/3D 디자이너를 목표로, \'See Tinh\'에서 영감받은 3D 캐릭터와 아이소메트릭 애니를 졸업 프로젝트로 만들었습니다.',
         genre: '영상 콘텐츠 디자인',
         thumbnail: dotianhongIsometric,
         description: '',
@@ -975,7 +982,7 @@ const designerDetailsData = {
       {
         id: 'dotianhong-see-tinh-animated',
         title: '"SEE TINH" ANIMATED MV',
-        summary: '2D/3D 디자이너를 목표로, 2022년 한국과 베트남에서 인기였던 \'See Tinh\'을 오마주한 2D 애니메이션 뮤직비디오를 졸업 프로젝트로 만듭니다.',
+        summary: '2D/3D 디자이너를 목표로, 2022년 한국과 베트남에서 인기였던 \'See Tinh\'을 오마주한 2D 애니메이션 뮤직비디오를 졸업 프로젝트로 만들었습니다.',
         genre: '영상 콘텐츠 디자인',
         thumbnail: dotianhongAnimated,
         description: '',
@@ -1189,6 +1196,14 @@ const designerDetailsData = {
           { src: parkHeechanWork1_04, alt: '드레드노트' },
           { src: parkHeechanWork1_05, alt: '위협적인 적' },
           { src: parkHeechanWork1_06, alt: '타이라니드 워리어' },
+          { src: parkHeechanWork1_07, alt: '카니펙스' },
+          { src: parkHeechanWork1_08, alt: 'Additional Image 1' },
+          { src: parkHeechanWork1_09, alt: 'Additional Image 1-1' },
+          { src: parkHeechanWork1_10, alt: 'Additional Image 2' },
+          { src: parkHeechanWork1_11, alt: 'Additional Image 3' },
+          { src: parkHeechanWork1_12, alt: 'Additional Image 4' },
+          { src: parkHeechanWork1_13, alt: 'Additional Image 5' },
+          { src: parkHeechanWork1_14, alt: 'Additional Image 6' },
         ],
         notes: [
           {
@@ -1534,7 +1549,8 @@ const designerDetailsData = {
           { src: anSeonminWork1_03, alt: '보이지 않는 흐름 속에서 점들은 서로를 인식하고' },
           { src: anSeonminWork1_04, alt: '하나의 결을 만들어 갑니다' },
           { src: anSeonminWork1_05, alt: '점과 점 사이, 작은 간격 속에 관계가 자라납니다' },
-          { src: anSeonminWork1_06, alt: '서로 다른 리듬들이 이어지며 하나의 궤적을 완성합니다' },
+          { src: anSeonminWork1_06, alt: '다채로운 색들이 만나 새로운 질서를 만듭니다' },
+          { src: anSeonminWork1_07, alt: '서로 다른 리듬들이 이어지며 하나의 궤적을 완성합니다' },
         ],
         notes: [
           {
@@ -1744,7 +1760,8 @@ const designerDetailsData = {
           { src: leeGabiWork1_07, alt: '얼렁뚱땅 카페운영 3' },
           { src: leeGabiWork1_08, alt: '얼렁뚱땅 카페운영 4' },
           { src: leeGabiWork1_09, alt: '얼렁뚱땅 카페운영 5' },
-          { src: leeGabiWork1_11, alt: '얼렁뚱땅 카페운영 6' },
+          { src: leeGabiWork1_10, alt: '얼렁뚱땅 카페운영 6' },
+          { src: leeGabiWork1_11, alt: '얼렁뚱땅 카페운영 7' },
           { src: leeGabiWork1_12, alt: 'MISSION CLEAR!' },
         ],
         notes: [
@@ -1926,7 +1943,7 @@ const designerDetailsData = {
       {
         id: 'leedayoung-plotting-room',
         title: '플롯팅룸',
-        summary: '분야를 넘나드는 다양한 작가들이 매회 새로운 조합으로 모여 자신의 작품과 글쓰기 과정, 그리고 좋아하는 소재에 대해 깊이 이야기를 나누며, 한 회차의 마지막에는 즉석에서 새로운 이야기를 창작해 선보이는 가상의 토크 예능 <플롯팅룸>의 타이틀 시퀀스를 제작한 프로젝트이다.',
+        summary: '매회 다양한 분야의 작가들이 새로운 조합으로 모여 작품과 글쓰기 소재에 대해 깊이 이야기하고, 즉석에서 이야기를 창작해 선보이는 가상 예능 <플롯팅룸>의 타이틀 시퀀스 제작 프로젝트이다.',
         genre: '모션 디자인',
         thumbnail: leeDayoungPlottingRoom,
         description: '',
@@ -2100,22 +2117,22 @@ const designerDetailsData = {
           {
             title: 'Cute',
             subtitle: '귀여운',
-            description: '누구나 즐길 수 있는 가장 보편적인\n감정으로 접근성이 좋도록 함',
+            description: '누구나 즐길 수 있는 가장\n보편적인 감정으로\n접근성이 좋도록 함',
           },
           {
             title: 'Unconstrained',
             subtitle: '제한 받지 않는, 자유로운',
-            description: '어떤 상황에서도 자신을 표현할 수\n있는 자유',
+            description: '어떤 상황에서도 자신을\n표현할 수 있는 자유',
           },
           {
             title: 'Joyful',
             subtitle: '유쾌함',
-            description: '일상속의 예상치 못한 무겁고 심각한\n순간들을 가볍고 유쾌하게 넘어가는\n태도',
+            description: '일상속의 예상치 못한 무겁고\n심각한 순간들을 가볍고\n유쾌하게 넘어가는 태도',
           },
           {
             title: 'Positive',
             subtitle: '긍정적인',
-            description: '브랜드 자체의 긍정적인 사고와 그것을\n전파하려는 태도',
+            description: '브랜드 자체의 긍정적인\n사고와 그것을 전파하려는 태도',
           },
         ],
       },
@@ -2179,7 +2196,7 @@ const designerDetailsData = {
           },
           {
             title: 'This outstanding object',
-            description: 'Call out a feature, benefit, or value that can stand on its own.',
+            description: '',
           },
           {
             title: 'Skate Board',
