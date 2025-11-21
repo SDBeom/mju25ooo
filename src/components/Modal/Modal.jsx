@@ -27,8 +27,7 @@ const Modal = ({ isOpen, onClose, designerName, modalClass, children }) => {
   useEffect(() => {
     if (!isOpen) {
       // 모달이 닫힐 때
-      const previousScrollY = removeModalOpenState();
-      safeExecute(() => window.scrollTo(0, previousScrollY), null);
+      removeModalOpenState();
       return;
     }
 

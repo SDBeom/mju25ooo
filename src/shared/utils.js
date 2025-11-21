@@ -110,6 +110,7 @@ export const removeModalOpenState = () => {
   const root = getRootElement();
   const previousScrollY = Number(document.body.dataset[MODAL_DATA_ATTR] || '0');
   
+  // 클래스 제거
   document.body.classList.remove(MODAL_CLASS_NAME);
   document.documentElement.classList.remove(MODAL_CLASS_NAME);
   
@@ -117,8 +118,23 @@ export const removeModalOpenState = () => {
     root.classList.remove(MODAL_CLASS_NAME);
   }
   
+  // 인라인 스타일 제거
   document.body.style.top = '';
+  document.body.style.position = '';
+  document.body.style.inset = '';
+  document.body.style.width = '';
+  
+  // 데이터 속성 제거
   delete document.body.dataset[MODAL_DATA_ATTR];
+  
+  // 스크롤 복원 (리플로우 완료 후)
+  requestAnimationFrame(() => {
+    window.scrollTo(0, previousScrollY);
+    // 추가 보장을 위해 한 번 더 시도
+    setTimeout(() => {
+      window.scrollTo(0, previousScrollY);
+    }, 0);
+  });
   
   return previousScrollY;
 };
