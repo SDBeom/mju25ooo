@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  min-height: calc(100vh - var(--header-height, 60px));
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
   max-width: 100%;
   background: var(--color-background);
@@ -19,75 +20,18 @@
 .archive-page {
   position: relative;
   overflow: hidden;
-  background: #FF7700;
-  margin-bottom: 100vh; /* 스크롤 공간 확보 */
-}
-
-/* Text Clip Mask on Scroll Effect */
-.archive-page__mask-container {
-  position: relative;
-  height: 300vh; /* 스크롤 공간 확보 */
-  background-color: #FF7700;
-}
-
-.archive-page__sticky-mask {
-  display: flex;
-  overflow: hidden;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  mask-image: url('/medias/mask.svg');
-  mask-position: center center;
-  mask-repeat: no-repeat;
-  mask-size: 80%;
-  -webkit-mask-image: url('/medias/mask.svg');
-  -webkit-mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 80%;
-  z-index: 3;
-}
-
-.archive-page__mask-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
-  width: 100%;
-  max-width: 720px;
-  padding: var(--spacing-3xl) var(--spacing-2xl);
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 32px;
-  backdrop-filter: blur(14px);
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-}
-
-.archive-page__sticky-mask .archive-page__title,
-.archive-page__sticky-mask .archive-page__description {
-  color: var(--color-text-primary);
-}
-
-.archive-page__sticky-mask .archive-page__button {
-  color: var(--color-text-primary);
+  background: #E8E8E8;
 }
 
 .archive-page__overlay {
   position: relative;
-  z-index: 1; /* 마스크 효과 뒤에 배치 */
+  z-index: 2;
   width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: var(--spacing-3xl) var(--spacing-md);
-}
-
-/* 마스크 효과를 지원하지 않는 브라우저를 위한 fallback */
-@supports not (mask-image: url('/medias/mask.svg')) {
-  .archive-page__overlay {
-    z-index: 2;
-  }
 }
 
 .archive-page__content {
@@ -96,13 +40,9 @@
   gap: var(--spacing-xl);
   width: 100%;
   max-width: 720px;
-  padding: var(--spacing-3xl) var(--spacing-2xl);
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 32px;
-  backdrop-filter: blur(14px);
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  margin: 0 auto;
+  /* 박스 스타일 제거: background, border, border-radius, backdrop-filter, box-shadow, padding */
 }
 
 .archive-page__label {
@@ -124,7 +64,7 @@
   line-height: 1.25;
   font-weight: 800;
   letter-spacing: -0.015em;
-  color: var(--color-text-primary);
+  color: #ff7700;
 }
 
 .archive-page__description {
@@ -141,43 +81,48 @@
   white-space: normal;
 }
 
-.archive-page__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 32px;
-  margin-top: var(--spacing-md);
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
-  font-weight: 600;
-  color: var(--color-text-primary);
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
+.archive-page__instruction {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  color: #ff7700;
+  margin: var(--spacing-md) 0 0 0;
   text-align: center;
+  opacity: 0.9;
   word-break: keep-all;
   white-space: normal;
+}
+
+.archive-page__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 80px;
+  height: 80px;
+  margin-top: var(--spacing-md);
+  background: transparent;
+  border: 2px solid #ff7700;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-decoration: none;
+  padding: 0;
 }
 
 .archive-page__button:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 119, 0, 0.1);
+  border-color: #ff7700;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .archive-page__button:active {
   transform: translateY(0);
 }
 
-@media (max-width: 799px) {
-  .archive-page__button {
-    padding: 14px 24px;
-    font-size: 0.9rem;
-  }
+.archive-page__button-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 799px) {
@@ -187,13 +132,22 @@
 
   .archive-page__content {
     gap: var(--spacing-lg);
-    padding: var(--spacing-2xl) var(--spacing-lg);
-    border-radius: 24px;
+    /* 박스 스타일 제거: padding, border-radius */
   }
 
   .archive-page__label {
     font-size: 0.75rem;
     padding: 4px 14px;
+  }
+
+  .archive-page__button {
+    width: 64px;
+    height: 64px;
+  }
+
+  .archive-page__button-icon {
+    width: 36px;
+    height: 36px;
   }
 }
 
@@ -204,7 +158,7 @@
 
   .archive-page__content {
     max-width: 840px;
-    padding: var(--spacing-4xl);
+    /* 박스 스타일 제거: padding */
   }
 }
 
@@ -241,6 +195,61 @@
    but we still keep the images in the DOM to clone them */
 .image-gallery {
   display: none;
+}
+
+/* Text Scroll Effect Styles */
+.text-scroll-effect {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+
+.text-scroll-effect__word {
+  position: relative;
+  margin-right: 0.2em;
+}
+
+.text-scroll-effect__char {
+  position: relative;
+  display: inline-block;
+}
+
+.text-scroll-effect__shadow {
+  position: absolute;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.text-scroll-effect__space {
+  margin-right: 0.2em;
+}
+
+/* Archive page title with scroll effect */
+.archive-page__title.text-scroll-effect {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #ff7700;
+  word-break: keep-all;
+  white-space: normal;
+  justify-content: center;
+}
+
+/* Archive page description with scroll effect */
+.archive-page__description.text-scroll-effect {
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-align: center;
+  word-break: keep-all;
+  white-space: normal;
+  justify-content: center;
 }
 
 
