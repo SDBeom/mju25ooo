@@ -4,6 +4,8 @@ import HelloUniverse from './HelloUniverse';
 import GoFetch from './GoFetch';
 import Petrichor from './Petrichor';
 import Caravan from './Caravan';
+import LeeJiminVeneti from './LeeJiminVeneti';
+import LeeJiminLeLabo from './LeeJiminLeLabo';
 import DefaultWorkLayout from './DefaultWorkLayout';
 import '../DesignerShowcase.css';
 
@@ -76,6 +78,32 @@ const WorkDetailContent = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
   if (work.id === 'kimjina-caravan' || work.layout === 'caravan') {
     return (
       <Caravan
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 이지민 작품1 (Veneti)
+  if (work.id === 'leejimin-veneti-character' || work.layout === 'leejimin-veneti') {
+    return (
+      <LeeJiminVeneti
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 이지민 작품2 (LE LABO)
+  if (work.id === 'leejimin-veneti-perfume' || work.layout === 'leejimin-lelabo') {
+    return (
+      <LeeJiminLeLabo
         work={work}
         designer={designer}
         badgeSrc={badgeSrc}

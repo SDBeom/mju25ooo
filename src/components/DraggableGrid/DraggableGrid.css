@@ -70,8 +70,10 @@ body.cursor-cross .details__cta-button {
   .loading::before {
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background: var(--color-bg);
   }
 
@@ -358,11 +360,21 @@ a:focus-visible {
   color: #000000;
   transform: translate3d(50vw, 0, 0);
   z-index: var(--z-modal);
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 3vw;
   overflow: hidden;
   cursor: auto;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.details.--is-showing {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
 }
 
 /* 태블릿: 800px ~ 1279px - 60vw */
@@ -847,6 +859,22 @@ a:focus-visible {
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
+  position: relative;
+  z-index: 10;
+}
+
+.details__cta-button[style*="pointer-events: auto"],
+.details.--is-showing .details__cta-button {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* CTA 버튼이 항상 클릭 가능하도록 보장 */
+.details__content .details__cta-button {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  z-index: 100;
+  position: relative;
 }
 
 .details__cta-button:hover,
@@ -868,7 +896,7 @@ p {
   height: 3vw;
   transform: scale(0);
   transform-origin: center;
-  z-index: calc(var(--z-modal) + 1);
+  z-index: calc(var(--z-modal) + 10);
   pointer-events: none;
   cursor: pointer;
 }
@@ -928,6 +956,7 @@ p {
 @media (max-width: 799px) {
   .details.--is-showing .cross {
     pointer-events: auto;
+    z-index: calc(var(--z-modal) + 10);
   }
 }
 
@@ -936,6 +965,11 @@ p {
 }
 
 .--is-details-showing .grid {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.--is-details-showing .product {
   pointer-events: none;
 }
 

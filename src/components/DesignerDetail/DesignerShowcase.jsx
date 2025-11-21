@@ -22,6 +22,7 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
     }
     return videoBadge; // Default fallback
   };
+  
   const [selectedWork, setSelectedWork] = useState(null);
 
   // initialWorkId가 있으면 해당 작품을 자동으로 열기
@@ -43,6 +44,11 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
     removeModalOpenState();
   }, []);
 
+  // designer가 없으면 null 반환 (Hooks 호출 후)
+  if (!designer) {
+    return null;
+  }
+
   const openWorkModal = (work) => {
     setSelectedWork(work);
   };
@@ -52,13 +58,17 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
   };
 
   // 모든 작품은 동일한 모달 클래스 사용 (작품별 차별화 불필요)
-  const getModalClassForWork = (work) => {
+  const getModalClassForWork = () => {
     return MODAL.CLASS_NAMES.MODAL_CONTENT;
   };
 
   // 모달 열림/닫힘은 Modal 컴포넌트에서 처리
 
   const getWorkContentProps = (work) => {
+    if (!work || !designer) {
+      return { work: null, designer: null, badgeSrc: null, badgeAlt: '', ctas: [] };
+    }
+
     const instagramUrl = work.instagram || designer?.instagram;
     const badgeSrc = getBadgeForGenre(work.genre);
     const badgeAlt = work.genre || 'Content Logo';
@@ -69,7 +79,7 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
         onClick: () => {
           closeWorkModal();
           setTimeout(() => {
-            const gallery = document.querySelector(`[aria-label="${designer.displayName} 대표 작품"]`);
+            const gallery = document.querySelector(`[aria-label="${designer?.displayName || ''} 대표 작품"]`);
             gallery?.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 200);
         },
@@ -120,36 +130,40 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
         </header>
 
         <section className="designer-showcase__gallery" aria-label={`${designer.displayName} 대표 작품`}>
-          {designer.works.map((work) => (
-            <article key={work.id} className="work-card">
-              <button
-                type="button"
-                className="work-card__thumb"
-                onClick={() => openWorkModal(work)}
-                aria-label={`${work.title} 상세 보기`}
-              >
-                <img src={work.thumbnail} alt={work.title} loading="lazy" />
-              </button>
-              <div className="work-card__body">
-                <h2 className="work-card__title">{work.title}</h2>
-                <p className="work-card__summary">{work.summary}</p>
+          {designer.works && Array.isArray(designer.works) && designer.works.length > 0 ? (
+            designer.works.map((work) => (
+              <article key={work.id} className="work-card">
                 <button
                   type="button"
-                  className="work-card__cta"
+                  className="work-card__thumb"
                   onClick={() => openWorkModal(work)}
+                  aria-label={`${work.title} 상세 보기`}
                 >
-                  상세 보기
+                  <img src={work.thumbnail} alt={work.title || '작품 이미지'} loading="lazy" />
                 </button>
-              </div>
-            </article>
-          ))}
+                <div className="work-card__body">
+                  <h2 className="work-card__title">{work.title || '제목 없음'}</h2>
+                  <p className="work-card__summary">{work.summary || ''}</p>
+                  <button
+                    type="button"
+                    className="work-card__cta"
+                    onClick={() => openWorkModal(work)}
+                  >
+                    상세 보기
+                  </button>
+                </div>
+              </article>
+            ))
+          ) : (
+            <p className="designer-showcase__no-works">작품이 없습니다.</p>
+          )}
         </section>
       </div>
 
       <Modal
         isOpen={!!selectedWork}
         onClose={closeWorkModal}
-        designerName={designer?.displayName}
+        designerName={designer?.displayName || ''}
         modalClass={selectedWork ? getModalClassForWork(selectedWork) : undefined}
       >
         {selectedWork && <WorkDetailContent {...getWorkContentProps(selectedWork)} />}

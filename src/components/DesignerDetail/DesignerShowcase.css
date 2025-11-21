@@ -2,11 +2,23 @@
   min-height: 100vh;
   background: #f8f6f4;
   color: #1a1a1a;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 전역 스타일 덮어쓰기 */
+.main-window__container--full .designer-showcase,
+.main-window--content .designer-showcase {
+  background: #f8f6f4 !important;
 }
 
 .designer-showcase__inner {
-  max-width: 960px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 40px 16px;
   display: flex;
   flex-direction: column;
@@ -65,24 +77,26 @@
 
 .designer-showcase__gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(18px, 4vw, 32px);
 }
 
 .work-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: clamp(18px, 3vw, 24px);
   padding: clamp(20px, 3vw, 28px);
   border-radius: clamp(18px, 4vw, 24px);
   background: #ffffff;
   box-shadow: 0 18px 42px rgba(17, 17, 17, 0.08);
   border: 1.5px solid rgba(26, 26, 26, 0.06);
+  align-items: center;
 }
 
 .work-card__thumb {
   position: relative;
-  width: 100%;
+  flex-shrink: 0;
+  width: clamp(200px, 25vw, 320px);
   aspect-ratio: 16 / 9;
   border-radius: clamp(12px, 3vw, 18px);
   overflow: hidden;
@@ -114,6 +128,8 @@
   display: flex;
   flex-direction: column;
   gap: clamp(10px, 1.8vw, 14px);
+  flex: 1;
+  min-width: 0;
 }
 
 .work-card__title {
@@ -159,6 +175,26 @@
   outline-offset: 3px;
 }
 
+/* 모바일 모드: work-card 세로 배치 */
+@media (max-width: 799px) {
+  .work-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .work-card__thumb {
+    width: 100%;
+  }
+}
+
+.designer-showcase__no-works {
+  text-align: center;
+  padding: clamp(40px, 8vw, 80px) 16px;
+  color: rgba(15, 23, 42, 0.5);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  margin: 0;
+}
+
 .kim-modal-overlay {
   position: fixed;
   top: 0;
@@ -170,7 +206,7 @@
   background: rgba(18, 18, 18, 0.74);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: var(--z-modal);
+  z-index: calc(var(--z-modal) + 5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -249,7 +285,7 @@
 
 
 .kim-modal__close {
-  position: static;
+  position: relative;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -260,6 +296,8 @@
   align-items: center;
   justify-content: center;
   transition: background 0.25s ease, transform 0.25s ease;
+  z-index: calc(var(--z-modal) + 11);
+  pointer-events: auto;
 }
 
 .kim-modal__close span {
@@ -296,6 +334,8 @@
   color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.08em;
   pointer-events: auto;
+  z-index: calc(var(--z-modal) + 10);
+  position: relative;
 }
 
 .kim-modal__topbar-name {
@@ -8381,8 +8421,236 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 }
 
 /* 이지민 작품 1 (Veneti) 스타일 */
+.work-detail--leejimin-veneti {
+  background: #ffffff;
+  color: #000000;
+}
+
 .work-detail--leejimin-veneti .work-detail__section {
   padding: 120px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.work-detail--leejimin-veneti .work-detail__hero {
+  padding: 0;
+  height: 540px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leejimin-veneti .work-detail__hero-content {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.work-detail--leejimin-veneti .work-detail__hero-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 120px 64px;
+  justify-content: center;
+  min-width: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leejimin-veneti .work-detail__title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.12px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__lead {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.12px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leejimin-veneti .work-detail__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.work-detail--leejimin-veneti .work-detail__cta {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.work-detail--leejimin-veneti .work-detail__cta--primary {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--leejimin-veneti .work-detail__cta--primary:hover {
+  background: #333333;
+}
+
+.work-detail--leejimin-veneti .work-detail__cta--secondary {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--leejimin-veneti .work-detail__cta--secondary:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.work-detail--leejimin-veneti .work-detail__hero-media {
+  width: 640px;
+  height: 540px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Feature Section */
+.work-detail--leejimin-veneti .work-detail__feature {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--leejimin-veneti .work-detail__image-block {
+  height: 648px;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+}
+
+.work-detail--leejimin-veneti .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-detail--leejimin-veneti .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--leejimin-veneti .work-detail__feature-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* Feature Cards */
+.work-detail--leejimin-veneti .work-detail__feature-list {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.work-detail--leejimin-veneti .work-detail__feature-card {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 8px;
+}
+
+.work-detail--leejimin-veneti .work-detail__card-image {
+  height: 483px;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+}
+
+.work-detail--leejimin-veneti .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-detail--leejimin-veneti .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--leejimin-veneti .work-detail__card-text h5 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__card-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
 }
 
 .work-detail--leejimin-veneti .work-detail__text-intro {
@@ -8392,6 +8660,12 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.work-detail--leejimin-veneti .work-detail__text-intro-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .work-detail--leejimin-veneti .work-detail__text-intro-label {
@@ -8683,6 +8957,123 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   padding: 120px 64px;
 }
 
+.work-detail--leejimin-lelabo {
+  background: #ffffff;
+  color: #000000;
+}
+
+.work-detail--leejimin-lelabo .work-detail__hero {
+  padding: 0;
+  height: 540px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leejimin-lelabo .work-detail__hero-content {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.work-detail--leejimin-lelabo .work-detail__hero-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 120px 64px;
+  justify-content: center;
+  min-width: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.12px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__lead {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.12px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leejimin-lelabo .work-detail__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.work-detail--leejimin-lelabo .work-detail__cta {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.work-detail--leejimin-lelabo .work-detail__cta--primary {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--leejimin-lelabo .work-detail__cta--primary:hover {
+  background: #333333;
+}
+
+.work-detail--leejimin-lelabo .work-detail__cta--secondary {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--leejimin-lelabo .work-detail__cta--secondary:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.work-detail--leejimin-lelabo .work-detail__hero-media {
+  width: 640px;
+  height: 540px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .work-detail--leejimin-lelabo .work-detail__text-intro {
   padding: 120px 64px;
   max-width: 1280px;
@@ -8690,6 +9081,12 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__text-intro-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .work-detail--leejimin-lelabo .work-detail__text-intro-label {
@@ -8755,12 +9152,35 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   display: flex;
   flex-direction: column;
   gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .work-detail--leejimin-lelabo .work-detail__feature-row .work-detail__feature-text > div {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-row .work-detail__feature-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-row .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
 }
 
 .work-detail--leejimin-lelabo .work-detail__feature-row .work-detail__image-block {
@@ -8771,16 +9191,124 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  flex-shrink: 0;
 }
 
 .work-detail--leejimin-lelabo .work-detail__feature-row .work-detail__image-block img {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 768px;
-  height: 432px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+}
+
+/* Feature Section - City Exclusives */
+.work-detail--leejimin-lelabo .work-detail__feature {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature .work-detail__image-block {
+  height: 648px;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+  width: 100%;
+  flex: none;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature .work-detail__feature-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature .work-detail__feature-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* Feature Cards */
+.work-detail--leejimin-lelabo .work-detail__feature-list {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.work-detail--leejimin-lelabo .work-detail__feature-card {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 8px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__card-image {
+  height: 483px;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+}
+
+.work-detail--leejimin-lelabo .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-detail--leejimin-lelabo .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__card-text h5 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leejimin-lelabo .work-detail__card-text p {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  white-space: pre-wrap;
+  margin: 0;
 }
 
 .work-detail--leejimin-lelabo .work-detail__gallery {

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Lenis from 'lenis';
+import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import dorokImage1 from '../../assets/도록/image 2141.webp';
 import dorokImage2 from '../../assets/도록/image 2143.webp';
 import posterFinal from '../../assets/poster_final.webp';
@@ -21,6 +22,7 @@ import './AboutContent.css';
 const brandingVideo = '/branding_video.mp4';
 
 const AboutContent = () => {
+  const { isMobile } = useBreakpointContext();
   const introContainer = useRef(null);
   const sectionContainer = useRef(null);
   const introVideoRef = useRef(null);
@@ -39,6 +41,11 @@ const AboutContent = () => {
   const sectionY = useTransform(sectionScroll.scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   useEffect(() => {
+    // 모바일에서는 Lenis를 사용하지 않고 기본 스크롤 사용
+    if (isMobile) {
+      return;
+    }
+
     // Lenis 사용 시 body overflow 제어
     const originalBodyOverflow = document.body.style.overflow;
     const originalHtmlOverflow = document.documentElement.style.overflow;
@@ -94,7 +101,7 @@ const AboutContent = () => {
       document.body.style.overflow = originalBodyOverflow;
       document.documentElement.style.overflow = originalHtmlOverflow;
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <main className="about-main">

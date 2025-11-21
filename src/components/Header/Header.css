@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  z-index: var(--z-header);
+  z-index: calc(var(--z-modal) + 20);
   background: rgba(8, 9, 13, 0.35);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -23,6 +23,7 @@
   height: var(--header-height);
   isolation: isolate; /* 별도의 stacking context 생성하여 transform 영향 방지 */
   transform: translateZ(0); /* GPU 가속 및 별도 레이어 생성 */
+  pointer-events: auto;
 }
 
 /* grid 모드일 때도 fixed 유지 */

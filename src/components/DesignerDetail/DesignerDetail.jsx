@@ -1,25 +1,96 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import DesignerShowcase from './DesignerShowcase';
 import designerDetailsData from '../../data/designerDetailsData';
+import { extractDesignerNameFromUrl } from '../../shared/urlUtils';
 import './DesignerDetail.css';
 
 const DesignerDetail = () => {
   const [designer, setDesigner] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [initialWorkId, setInitialWorkId] = useState(null);
+
+  /**
+   * URL에서 작품 ID 추출
+   */
+  const extractWorkIdFromUrl = useCallback(() => {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const workId = urlParams.get('work');
+      return workId ? decodeURIComponent(workId) : null;
+    } catch (error) {
+      console.warn('Failed to extract work ID from URL:', error);
+      return null;
+    }
+  }, []);
+
+  /**
+   * 디자이너 데이터 로드
+   * 가드 절 패턴 적용으로 중첩 제거
+   */
+  const loadDesigner = useCallback(() => {
+    try {
+      // 페이지 진입 시 스크롤을 맨 위로 이동
+      window.scrollTo(0, 0);
+      
+      // URL에서 디자이너 이름 추출
+      const designerName = extractDesignerNameFromUrl(window.location.pathname);
+      
+      // 가드 절: 디자이너 이름이 없으면 조기 리턴
+      if (!designerName) {
+        setDesigner(null);
+        setLoading(false);
+        setInitialWorkId(null);
+        return;
+      }
+      
+      // 데이터에서 디자이너 찾기
+      const foundDesigner = designerDetailsData[designerName];
+      
+      // 가드 절: 디자이너를 찾지 못하면 조기 리턴
+      if (!foundDesigner) {
+        console.warn(
+          'Designer not found:', 
+          designerName, 
+          'Available designers:', 
+          Object.keys(designerDetailsData)
+        );
+        setDesigner(null);
+        setLoading(false);
+        setInitialWorkId(null);
+        return;
+      }
+      
+      // URL에서 작품 ID 추출
+      const workId = extractWorkIdFromUrl();
+      
+      setDesigner(foundDesigner);
+      setInitialWorkId(workId);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error loading designer:', error);
+      setDesigner(null);
+      setLoading(false);
+      setInitialWorkId(null);
+    }
+  }, [extractWorkIdFromUrl]);
 
   useEffect(() => {
-    // 페이지 진입 시 스크롤을 맨 위로 이동
-    window.scrollTo(0, 0);
+    loadDesigner();
     
-    const fullPath = window.location.href;
-    const pathWithoutQuery = fullPath.split('?')[0];
-    const pathParts = pathWithoutQuery.replace(window.location.origin, '').split('/');
-    const encodedName = pathParts[2];
-    const designerName = encodedName ? decodeURIComponent(encodedName) : '';
-    const foundDesigner = designerDetailsData[designerName];
-    setDesigner(foundDesigner || null);
-    setLoading(false);
-  }, []);
+    // locationchange 이벤트도 처리
+    const handleLocationChange = () => {
+      setLoading(true);
+      loadDesigner();
+    };
+    
+    window.addEventListener('locationchange', handleLocationChange);
+    window.addEventListener('popstate', handleLocationChange);
+    
+    return () => {
+      window.removeEventListener('locationchange', handleLocationChange);
+      window.removeEventListener('popstate', handleLocationChange);
+    };
+  }, [loadDesigner]);
 
   const handleBackToDesigners = () => {
     window.history.pushState({}, '', '/designer');
@@ -48,7 +119,7 @@ const DesignerDetail = () => {
   }
 
   // 모든 디자이너는 DesignerShowcase 사용
-  return <DesignerShowcase designer={designer} onBack={handleBackToDesigners} />;
+  return <DesignerShowcase designer={designer} onBack={handleBackToDesigners} initialWorkId={initialWorkId} />;
 };
 
 export default DesignerDetail;

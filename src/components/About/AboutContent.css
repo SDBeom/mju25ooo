@@ -15,6 +15,15 @@
   position: relative;
 }
 
+/* Mobile: 스크롤 가능하도록 overflow 변경 */
+@media (max-width: 799px) {
+  .about-intro {
+    overflow: visible;
+    min-height: calc(100vh - var(--header-height, 60px));
+    height: auto;
+  }
+}
+
 .about-intro-image {
   position: relative;
   height: 100%;
@@ -92,6 +101,15 @@
   -webkit-clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
   clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
   background-color: #FF7700;
+}
+
+/* Mobile: 스크롤 가능하도록 overflow 변경 */
+@media (max-width: 799px) {
+  .about-section {
+    overflow: visible;
+    min-height: auto;
+    height: auto;
+  }
 }
 
 .about-section-content {

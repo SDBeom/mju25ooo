@@ -18,7 +18,8 @@
   flex-direction: column;         /* 💡 메인은 위, 푸터는 아래로 분산 */
   justify-content: flex-start;    /* 상단 정렬로 변경 */
   align-items: stretch;           /* 좌우 꽉 차게 */
-  min-height: calc(100vh - var(--header-height, 60px));              /* 최소 화면 높이 (스크롤 허용) */
+  min-height: 100vh;              /* 최소 화면 높이 (main-window--content와 동일) */
+  height: 100%;                    /* 부모 높이에 맞춤 */
   width: 100%;                    /* 화면 전체 너비 꽉 채움 */
   max-width: 100%;                /* 최대 너비 제한 없음 */
   background: var(--color-background);

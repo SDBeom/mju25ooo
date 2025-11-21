@@ -6,6 +6,11 @@ import '../DesignerShowcase.css';
  * 대부분의 작품이 사용하는 표준 레이아웃
  */
 const DefaultWorkLayout = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+  // work나 designer가 없으면 null 반환
+  if (!work || !designer) {
+    return null;
+  }
+
   return (
     <div className="work-detail">
       {/* Hero Section - 모든 작품과 동일한 구조 */}
@@ -14,44 +19,46 @@ const DefaultWorkLayout = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <div className="work-detail__hero-text">
             <div className="work-detail__text-group">
               <div className="work-detail__eyebrow">
-                {badgeSrc && <img src={badgeSrc} alt={badgeAlt || work.genre || designer.role || 'Content'} />}
-                <span className="work-detail__eyebrow-text">{work.genre || designer.role || 'Content'}</span>
+                {badgeSrc && <img src={badgeSrc} alt={badgeAlt || work.genre || designer?.role || 'Content'} />}
+                <span className="work-detail__eyebrow-text">{work.genre || designer?.role || 'Content'}</span>
               </div>
-              <h2 className="work-detail__title">{work.title}</h2>
-              <p className="work-detail__lead">{work.summary}</p>
+              <h2 className="work-detail__title">{work.title || '제목 없음'}</h2>
+              <p className="work-detail__lead">{work.summary || ''}</p>
             </div>
             <div className="work-detail__ctas">
-              {ctas.map(({ label, onClick, variant = 'primary' }) => (
-                <button
-                  key={label}
-                  type="button"
-                  className={`work-detail__cta work-detail__cta--${variant === 'secondary' ? 'secondary' : 'primary'}`}
-                  onClick={onClick}
-                >
-                  {label}
-                </button>
-              ))}
+              {ctas && Array.isArray(ctas) && ctas.length > 0 ? (
+                ctas.map(({ label, onClick, variant = 'primary' }) => (
+                  <button
+                    key={label}
+                    type="button"
+                    className={`work-detail__cta work-detail__cta--${variant === 'secondary' ? 'secondary' : 'primary'}`}
+                    onClick={onClick}
+                  >
+                    {label}
+                  </button>
+                ))
+              ) : null}
             </div>
           </div>
           {work.thumbnail && (
             <div className="work-detail__hero-media">
-              <img src={work.thumbnail} alt={`${work.title} 대표 장면`} loading="lazy" />
+              <img src={work.thumbnail} alt={`${work.title || '작품'} 대표 장면`} loading="lazy" />
             </div>
           )}
         </div>
       </section>
       
-      {work.gallery && work.gallery.length > 0 ? (
+      {work.gallery && Array.isArray(work.gallery) && work.gallery.length > 0 ? (
         <>
           {/* 첫 번째 섹션: 이미지 + 텍스트 */}
-          {work.gallery[0] && (
+          {work.gallery[0] && work.gallery[0].src && (
             <section className="work-detail__section work-detail__feature work-detail__feature--1">
               <div className="work-detail__image-block">
                 <img src={work.gallery[0].src} alt={work.gallery[0].alt || ''} loading="lazy" />
               </div>
               <div className="work-detail__feature-text">
                 {work.description && <p>{work.description}</p>}
-                {work.notes && work.notes.length > 0 && (
+                {work.notes && Array.isArray(work.notes) && work.notes.length > 0 && work.notes[0] && (
                   <>
                     {typeof work.notes[0] === 'string' ? (
                       <p>{work.notes[0]}</p>
@@ -69,8 +76,10 @@ const DefaultWorkLayout = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 
           {/* 나머지 갤러리 이미지들 - notes와 매칭 */}
           {work.gallery.slice(1).map((item, index) => {
+            if (!item || !item.src) return null;
+            
             const noteIndex = index + 1;
-            const note = work.notes && work.notes[noteIndex] ? work.notes[noteIndex] : null;
+            const note = work.notes && Array.isArray(work.notes) && work.notes[noteIndex] ? work.notes[noteIndex] : null;
             const hasText = note || item.caption;
             
             return (
@@ -106,7 +115,7 @@ const DefaultWorkLayout = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <section className="work-detail__section work-detail__feature">
             <div className="work-detail__feature-text">
               <p>{work.description}</p>
-              {work.notes && work.notes.map((note, idx) => (
+              {work.notes && Array.isArray(work.notes) && work.notes.length > 0 && work.notes.map((note, idx) => (
                 <p key={idx}>
                   {typeof note === 'string' ? note : note?.description || note?.title || ''}
                 </p>
