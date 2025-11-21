@@ -93,4 +93,39 @@
   }
 }
 
+/* GSAP Cursor Trailer Effect Styles */
+/* Container for the images that follow the mouse */
+.image-trailer {
+  position: fixed; /* stays in place relative to the viewport */
+  pointer-events: none; /* prevents blocking clicks on the page */
+  z-index: 9999; /* always stays on top of everything else */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Styling for the images used in the trail */
+.image-item {
+  width: 200px; /* image width */
+  height: 200px; /* image height - 원형을 위해 width와 동일하게 */
+  object-fit: cover; /* ensures the image fills the box without distortion */
+  position: absolute; /* lets us place them at mouse position */
+  opacity: 0; /* start invisible until animated in */
+  pointer-events: none; /* makes sure these images don't block interaction */
+  border-radius: 50%; /* 원형으로 만들기 */
+  transform-origin: center; /* scaling/rotations will happen from the center */
+  
+  /* 🚀 성능 최적화 코드 추가 */
+  will-change: transform, opacity; /* 브라우저에게 변할 속성을 미리 알림 */
+  backface-visibility: hidden; /* 3D 렌더링 강제 활성화 */
+  transform: translateZ(0); /* GPU 가속 강제 */
+}
+
+/* The original gallery is hidden from view,
+   but we still keep the images in the DOM to clone them */
+.image-gallery {
+  display: none;
+}
+
 
