@@ -23,6 +23,8 @@ const brandingVideo = '/branding_video.mp4';
 const AboutContent = () => {
   const introContainer = useRef(null);
   const sectionContainer = useRef(null);
+  const introVideoRef = useRef(null);
+  const sectionVideoRef = useRef(null);
 
   const introScroll = useScroll({
     target: introContainer,
@@ -65,6 +67,22 @@ const AboutContent = () => {
     // Safari 비디오 자동재생 보장
     const videos = document.querySelectorAll('video');
     videos.forEach((video) => {
+      // 비디오 로드 에러 핸들링
+      video.addEventListener('error', (e) => {
+        console.error('비디오 로드 실패:', {
+          error: e,
+          src: video.currentSrc || video.src,
+          networkState: video.networkState,
+          readyState: video.readyState
+        });
+      });
+      
+      // 비디오 로드 성공 확인
+      video.addEventListener('loadeddata', () => {
+        console.log('비디오 로드 성공:', video.currentSrc || video.src);
+      });
+      
+      // 비디오 재생 시도
       video.play().catch((error) => {
         console.warn('비디오 자동재생 실패:', error);
       });
@@ -83,8 +101,28 @@ const AboutContent = () => {
       {/* Intro Section - Parallax Background */}
       <div ref={introContainer} className="about-intro">
         <motion.div style={{ y: introY }} className="about-intro-image">
-          <video autoPlay muted loop playsInline controls={false} preload="auto" crossOrigin="anonymous">
+          <video 
+            ref={introVideoRef}
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            controls={false} 
+            preload="auto" 
+            crossOrigin="anonymous"
+            onError={(e) => {
+              console.error('Intro 비디오 로드 실패:', {
+                error: e,
+                src: brandingVideo,
+                target: e.target
+              });
+            }}
+            onLoadedData={() => {
+              console.log('Intro 비디오 로드 성공');
+            }}
+          >
             <source src={brandingVideo} type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
         </motion.div>
       </div>
@@ -336,8 +374,28 @@ const AboutContent = () => {
         </div>
         <div className="about-section-background">
           <motion.div style={{ y: sectionY }} className="about-section-image">
-            <video autoPlay muted loop playsInline controls={false} preload="auto" crossOrigin="anonymous">
+            <video 
+              ref={sectionVideoRef}
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              controls={false} 
+              preload="auto" 
+              crossOrigin="anonymous"
+              onError={(e) => {
+                console.error('Section 비디오 로드 실패:', {
+                  error: e,
+                  src: brandingVideo,
+                  target: e.target
+                });
+              }}
+              onLoadedData={() => {
+                console.log('Section 비디오 로드 성공');
+              }}
+            >
               <source src={brandingVideo} type="video/mp4" />
+              Your browser does not support the video tag.
             </video>
           </motion.div>
         </div>
