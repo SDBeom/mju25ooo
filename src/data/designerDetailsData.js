@@ -324,7 +324,7 @@ import leeJiminVenetiPerfume from '../assets/이지민/이지민_모션디자인
 // Gallery images for 작품1 (멀티미디어)
 import leeJiminWork1_02 from '../assets/이지민/이지민_멀티미디어_작품1_02.webp';
 import leeJiminWork1_03 from '../assets/이지민/이지민_멀티미디어_작품1_03.webp';
-import leeJiminWork1_04 from '../assets/이지민/이지민_멀티미디어_작품1_041.webp';
+import leeJiminWork1_04 from '../assets/이지민/이지민_멀티미디어_작품1_04.webp';
 import leeJiminWork1_05 from '../assets/이지민/이지민_멀티미디어_작품1_05.webp';
 import leeJiminWork1_06 from '../assets/이지민/이지민_멀티미디어_작품1_06.webp';
 import leeJiminWork1_07 from '../assets/이지민/이지민_멀티미디어_작품1_07.webp';
