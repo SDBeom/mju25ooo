@@ -135,7 +135,7 @@ import parkHaeinWork1_10 from '../assets/박해인/박해인_모션디자인_작
 import parkHaeinWork1_11 from '../assets/박해인/박해인_모션디자인_작품1_11.webp';
 import parkHaeinWork1_12 from '../assets/박해인/박해인_모션디자인_작품1_12.webp';
 import parkHaeinWork1_13 from '../assets/박해인/박해인_모션디자인_작품1_13.webp';
-import parkHaeinImage from '../assets/박해인/Image.webp';
+import parkHaeinImage from '../assets/박해인/source/image.webp';
 
 import parkHeechanPledge from '../assets/박희찬/박희찬_게임콘텐츠_작품1_01.webp';
 import parkHeechanReel from '../assets/박희찬/박희찬_게임콘텐츠_작품2_01.webp';
