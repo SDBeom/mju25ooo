@@ -13,6 +13,12 @@
   height: calc(100vh - var(--header-height, 60px));
   overflow: hidden;
   position: relative;
+  pointer-events: none;
+  background-color: #000;
+}
+
+.about-intro * {
+  pointer-events: none;
 }
 
 /* Mobile: 스크롤 가능하도록 overflow 변경 */
@@ -22,6 +28,10 @@
     min-height: calc(100vh - var(--header-height, 60px));
     height: auto;
   }
+  
+  .about-intro-image {
+    min-height: calc(100vh - var(--header-height, 60px));
+  }
 }
 
 .about-intro-image {
@@ -29,20 +39,38 @@
   height: 100%;
   width: 100%;
   z-index: 1;
+  min-height: 100%;
+  overflow: hidden;
+  display: block;
 }
 
-.about-intro-image video {
+.about-intro-parallax {
+  position: absolute;
+  top: -10%;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 120%;
+  z-index: 1;
+  will-change: transform;
+  overflow: hidden;
+}
+
+.about-intro-image video,
+.about-intro-video {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
   -webkit-object-fit: cover;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  display: block;
-  visibility: visible;
-  opacity: 1;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   z-index: 1;
+  background-color: #000;
 }
 
 /* Description Section - Mobile First */
@@ -97,9 +125,9 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - var(--header-height, 60px));
-  overflow: hidden;
-  -webkit-clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
-  clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  overflow: visible;
+  -webkit-clip-path: none;
+  clip-path: none;
   background-color: #FF7700;
 }
 
@@ -125,6 +153,7 @@
   -webkit-mix-blend-mode: difference;
   mix-blend-mode: difference;
   color: white;
+  pointer-events: auto;
 }
 
 .about-section-text {
@@ -189,12 +218,14 @@
 }
 
 .about-section-background {
-  position: fixed;
-  top: -10vh;
+  position: absolute;
+  top: 0;
   left: 0;
-  height: 120vh;
+  height: 100%;
   width: 100%;
   z-index: 0;
+  pointer-events: none;
+  background-color: #000;
 }
 
 .about-section-image {
@@ -202,20 +233,25 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  min-height: 100%;
 }
 
-.about-section-image video {
-  width: 100%;
-  height: 100%;
+.about-section-image video,
+.about-section-video {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
   -webkit-object-fit: cover;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  display: block;
-  visibility: visible;
-  opacity: 1;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   z-index: 1;
+  background-color: #000;
 }
 
 /* Brand Story Section - Mobile First */

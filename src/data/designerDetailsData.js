@@ -367,27 +367,28 @@ import jeonGiTaeWork2_05 from '../assets/전기태/전기태_게임콘텐츠_작
 
 // import jeonSeoRinKaron from '../assets/전서린/전서린_게임콘텐츠_KARON_Desktop.webp';
 // import jeonSeoRinRaven from '../assets/전서린/전서린_게임콘텐츠_RAVEN-X_Desktop.webp';
-import jungJiminTheGothic from '../assets/정지민/정지민_게임콘텐츠_작품1_01.webp';
-import jungJiminWork1_02 from '../assets/정지민/정지민_게임콘텐츠_작품1_02.webp';
-import jungJiminWork1_03 from '../assets/정지민/정지민_게임콘텐츠_작품1_03.webp';
-import jungJiminWork1_04 from '../assets/정지민/정지민_게임콘텐츠_작품1_04.webp';
-import jungJiminWork1_05 from '../assets/정지민/정지민_게임콘텐츠_작품1_05.webp';
-import jungJiminWork1_06 from '../assets/정지민/정지민_게임콘텐츠_작품1_06.webp';
-import jungJiminWork1_07 from '../assets/정지민/정지민_게임콘텐츠_작품1_07.webp';
-import jungJiminWork1_08 from '../assets/정지민/정지민_게임콘텐츠_작품1_08.webp';
-import jungJiminWork1_09 from '../assets/정지민/정지민_게임콘텐츠_작품1_09.webp';
-import jungJiminWork1_10 from '../assets/정지민/정지민_게임콘텐츠_작품1_10.webp';
-import jungJiminWork1_11 from '../assets/정지민/정지민_게임콘텐츠_작품1_11.webp';
-import jungJiminTheWeapon from '../assets/정지민/정지민_게임콘텐츠_작품2_01.webp';
-import jungJiminWork2_02 from '../assets/정지민/정지민_게임콘텐츠_작품2_02.webp';
-import jungJiminWork2_03 from '../assets/정지민/정지민_게임콘텐츠_작품2_03.webp';
-import jungJiminWork2_04 from '../assets/정지민/정지민_게임콘텐츠_작품2_04.webp';
-import jungJiminWork2_05 from '../assets/정지민/정지민_게임콘텐츠_작품2_05.webp';
-import jungJiminWork2_06 from '../assets/정지민/정지민_게임콘텐츠_작품2_06.webp';
-import jungJiminWork2_07 from '../assets/정지민/정지민_게임콘텐츠_작품2_07.webp';
-import jungJiminWork2_08 from '../assets/정지민/정지민_게임콘텐츠_작품2_08.webp';
-import jungJiminWork2_10 from '../assets/정지민/정지민_게임콘텐츠_작품2_10.webp';
-import jungJiminWork2_11 from '../assets/정지민/정지민_게임콘텐츠_작품2_11.webp';
+import jungJiminTheGothic from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_01.webp';
+import jungJiminWork1_02 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_02.webp';
+import jungJiminWork1_03 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_03.webp';
+import jungJiminWork1_04 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_04.webp';
+import jungJiminWork1_05 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_05.webp';
+import jungJiminWork1_06 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_06.webp';
+import jungJiminWork1_07 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_07.webp';
+import jungJiminWork1_08 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_08.webp';
+import jungJiminWork1_09 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_09.webp';
+import jungJiminWork1_10 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_10.webp';
+import jungJiminWork1_11 from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_11.webp';
+import jungJiminTheWeapon from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_01.webp';
+import jungJiminWork2_02 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_02.webp';
+import jungJiminWork2_03 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_03.webp';
+import jungJiminWork2_04 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_04.webp';
+import jungJiminWork2_05 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_05.webp';
+import jungJiminWork2_06 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_06.webp';
+import jungJiminWork2_07 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_07.webp';
+import jungJiminWork2_08 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_08.webp';
+import jungJiminWork2_09 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_09.webp';
+import jungJiminWork2_10 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_10.webp';
+import jungJiminWork2_11 from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_11.webp';
 
 import joHaneulReason from '../assets/조하늘/조하늘_영상콘텐츠_작품2_01.webp';
 import joHaneulWork2_02 from '../assets/조하늘/조하늘_영상콘텐츠_작품2_02.webp';
@@ -2605,6 +2606,7 @@ const designerDetailsData = {
           { src: jungJiminWork2_06, alt: '상세샷 대검 단검' },
           { src: jungJiminWork2_07, alt: '상세샷 장검' },
           { src: jungJiminWork2_08, alt: '상세샷 해머' },
+          { src: jungJiminWork2_09, alt: '무기 상세' },
           { src: jungJiminWork2_10, alt: '해머 상세' },
           { src: jungJiminWork2_11, alt: '장검 상세' },
         ],

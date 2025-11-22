@@ -363,6 +363,23 @@ const Works = () => {
     setSelectedWork(null);
     setSelectedDesigner(null);
     // 스크롤 복원은 Modal 컴포넌트의 removeModalOpenState가 처리합니다
+    // 추가 보장: 모달이 완전히 닫힌 후 스크롤 복원 확인
+    setTimeout(() => {
+      // body와 html의 overflow 스타일이 제대로 제거되었는지 확인
+      if (document.body.style.overflow === 'hidden') {
+        document.body.style.overflow = '';
+      }
+      if (document.documentElement.style.overflow === 'hidden') {
+        document.documentElement.style.overflow = '';
+      }
+      // is-modal-open 클래스가 남아있으면 제거
+      document.body.classList.remove('is-modal-open');
+      document.documentElement.classList.remove('is-modal-open');
+      const root = document.getElementById('root');
+      if (root) {
+        root.classList.remove('is-modal-open');
+      }
+    }, 100);
   }, []);
 
   // WorkDetailContent에 필요한 props 생성

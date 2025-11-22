@@ -34,8 +34,8 @@ import jeonGiTaeDolor from '../assets/전기태/전기태_게임콘텐츠_작품
 import jeonGiTaeWarOrb from '../assets/전기태/전기태_게임콘텐츠_작품2_01.webp';
 import jeonSeorinKaron from '../assets/전서린/전서린_게임콘텐츠_작품1_01.webp';
 import jeonSeorinRavenX from '../assets/전서린/전서린_게임디자인_작품2_01.webp';
-import jungJiminTheGothic from '../assets/정지민/정지민_게임콘텐츠_작품1_01.webp';
-import jungJiminTheWeapon from '../assets/정지민/정지민_게임콘텐츠_작품2_01.webp';
+import jungJiminTheGothic from '../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_01.webp';
+import jungJiminTheWeapon from '../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_01.webp';
 import joHaneulYouth from '../assets/조하늘/조하늘_모션디자인_작품1_01.webp';
 import joHaneulReason from '../assets/조하늘/조하늘_영상콘텐츠_작품2_01.webp';
 import heoJiHoonMaster from '../assets/허지훈/허지훈_모션디자인_작품1_01.webp';

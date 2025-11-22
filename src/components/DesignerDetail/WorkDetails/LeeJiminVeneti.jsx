@@ -5,7 +5,7 @@ import '../DesignerShowcase.css';
  * 이지민 작품 1 (Veneti) 전용 레이아웃 컴포넌트
  * Figma 디자인에 맞춘 구조
  */
-const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeJiminVeneti = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -77,10 +77,10 @@ const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 
       {/* Feature Cards - Poster, Postcard, Illustration */}
       {work.gallery && work.gallery.length >= 4 && work.notes && work.notes.length >= 5 && (
-        <ul className="work-detail__section work-detail__feature-list">
+        <section className="work-detail__section work-detail__feature-list">
           {/* Poster */}
           {work.gallery[1] && work.notes[2] && (
-            <li className="work-detail__feature-card">
+            <div className="work-detail__feature-card">
               <div className="work-detail__card-image">
                 <img src={work.gallery[1].src} alt={work.gallery[1].alt || 'Poster'} loading="lazy" />
               </div>
@@ -90,12 +90,12 @@ const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                   <p key={idx}>{line}</p>
                 ))}
               </div>
-            </li>
+            </div>
           )}
 
           {/* Postcard */}
           {work.gallery[2] && work.notes[3] && (
-            <li className="work-detail__feature-card">
+            <div className="work-detail__feature-card">
               <div className="work-detail__card-image">
                 <img src={work.gallery[2].src} alt={work.gallery[2].alt || 'Postcard'} loading="lazy" />
               </div>
@@ -105,12 +105,12 @@ const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                   <p key={idx}>{line}</p>
                 ))}
               </div>
-            </li>
+            </div>
           )}
 
           {/* Illustration */}
           {work.gallery[3] && work.notes[4] && (
-            <li className="work-detail__feature-card">
+            <div className="work-detail__feature-card">
               <div className="work-detail__card-image">
                 <img src={work.gallery[3].src} alt={work.gallery[3].alt || 'Illustration'} loading="lazy" />
               </div>
@@ -120,14 +120,14 @@ const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                   <p key={idx}>{line}</p>
                 ))}
               </div>
-            </li>
+            </div>
           )}
-        </ul>
+        </section>
       )}
 
       {/* Bento Grid Section */}
       {work.gallery && work.gallery.length >= 7 && work.notes && work.notes.length >= 8 && (
-        <ul className="work-detail__section work-detail__bento">
+        <section className="work-detail__section work-detail__bento">
           <div className="work-detail__bento-grid">
             {/* Left Column */}
             <div className="work-detail__bento-column">
@@ -136,10 +136,6 @@ const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                 <div className="work-detail__bento-card work-detail__bento-card--center">
                   <div className="work-detail__bento-card-image">
                     <img src={work.gallery[4].src} alt={work.gallery[4].alt || 'This outstanding object'} loading="lazy" />
-                  </div>
-                  <div className="work-detail__bento-card-text">
-                    <h5>{work.notes[5].title || 'This outstanding object'}</h5>
-                    <p>Call out a feature, benefit, or value that can stand on its own.</p>
                   </div>
                 </div>
               )}
@@ -175,7 +171,7 @@ const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
               </div>
             )}
           </div>
-        </ul>
+        </section>
       )}
 
       {/* Gallery Section - Artbook */}
@@ -237,15 +233,15 @@ const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       )}
 
       {/* Quote Section */}
-      {work.gallery && work.gallery[15] && (
+      {work.gallery && work.gallery.length >= 15 && work.gallery[14] && (
         <section className="work-detail__section work-detail__quote">
           <div className="work-detail__quote-text">
-            <p>"이 캐릭터가 단순한 조형물이 아닌, 살아 숨 쉬는 존재로</p>
-            <p>확장되는 그날을 꿈꾸며 이 여정을 이어갈 것입니다."</p>
+            <h3>"이 캐릭터가 단순한 조형물이 아닌, 살아 숨 쉬는 존재로</h3>
+            <h3>확장되는 그날을 꿈꾸며 이 여정을 이어갈 것입니다."</h3>
           </div>
           <div className="work-detail__quote-author">
             <div className="work-detail__quote-avatar">
-              <img src={work.gallery[15].src} alt={designer.displayName || '이지민'} loading="lazy" />
+              <img src={work.gallery[14].src} alt={designer.displayName || '이지민'} loading="lazy" />
             </div>
             <div className="work-detail__quote-author-info">
               <p className="work-detail__quote-author-name">{designer.displayName || '이지민'}</p>

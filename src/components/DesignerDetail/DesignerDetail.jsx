@@ -2,7 +2,11 @@ import React, { useEffect, useState, useCallback } from 'react';
 import DesignerShowcase from './DesignerShowcase';
 import designerDetailsData from '../../data/designerDetailsData';
 import { extractDesignerNameFromUrl } from '../../shared/urlUtils';
+import { guardCSSImport } from '../../shared/cssImportGuard';
 import './DesignerDetail.css';
+
+// CSS import 보장 (개발 모드에서만 체크)
+guardCSSImport('./DesignerDetail.css', 'designer-detail', 'DesignerDetail');
 
 const DesignerDetail = () => {
   const [designer, setDesigner] = useState(null);

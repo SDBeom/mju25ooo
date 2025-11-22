@@ -39,8 +39,8 @@ const Caravan = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 
       {/* Feature 1: 로고 */}
       {work.gallery && work.gallery[0] && work.notes && work.notes[0] && (
-        <section className="work-detail__section work-detail__feature work-detail__feature--1">
-          <div className="work-detail__image-block">
+        <section className="work-detail__section work-detail__feature--1">
+          <div className="work-detail__image-block work-detail__image-block--1">
             <img src={work.gallery[0].src} alt={work.gallery[0].alt || ''} loading="lazy" />
           </div>
           <div className="work-detail__feature-text">
@@ -52,10 +52,10 @@ const Caravan = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 
       {/* Feature 2: 사막 진영 & 도시 진영 */}
       {work.gallery && work.gallery.length >= 3 && work.notes && work.notes.length >= 3 && (
-        <ul className="work-detail__section work-detail__feature-list">
+        <section className="work-detail__section">
           {/* Row 1: 사막 진영 */}
           {work.gallery[1] && work.notes[1] && (
-            <li className="work-detail__feature-row work-detail__feature-row--1">
+            <div className="work-detail__feature-row work-detail__feature-row--1">
               <div className="work-detail__feature-image">
                 <img src={work.gallery[1].src} alt={work.gallery[1].alt || ''} loading="lazy" />
               </div>
@@ -63,12 +63,12 @@ const Caravan = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                 <h4 className="work-detail__feature-title">{work.notes[1].title}</h4>
                 <p>{work.notes[1].description}</p>
               </div>
-            </li>
+            </div>
           )}
 
           {/* Row 2: 도시 진영 */}
           {work.gallery[2] && work.notes[2] && (
-            <li className="work-detail__feature-row work-detail__feature-row--2">
+            <div className="work-detail__feature-row work-detail__feature-row--2">
               <div className="work-detail__feature-image">
                 <img src={work.gallery[2].src} alt={work.gallery[2].alt || ''} loading="lazy" />
               </div>
@@ -76,14 +76,14 @@ const Caravan = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                 <h4 className="work-detail__feature-title">{work.notes[2].title}</h4>
                 <p>{work.notes[2].description}</p>
               </div>
-            </li>
+            </div>
           )}
-        </ul>
+        </section>
       )}
 
       {/* Feature 3: 메인 스토리 */}
       {work.gallery && work.gallery[3] && work.notes && work.notes[3] && (
-        <section className="work-detail__section work-detail__feature work-detail__feature--3">
+        <section className="work-detail__section">
           <div className="work-detail__image-block">
             <img src={work.gallery[3].src} alt={work.gallery[3].alt || ''} loading="lazy" />
           </div>
@@ -99,7 +99,7 @@ const Caravan = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 
       {/* Feature 4: 스토리 설명 (제목 없음, 이미지 + 텍스트만) */}
       {work.gallery && work.gallery[4] && work.notes && work.notes[4] && (
-        <section className="work-detail__section work-detail__feature work-detail__feature--4">
+        <section className="work-detail__section">
           <div className="work-detail__image-block">
             <img src={work.gallery[4].src} alt={work.gallery[4].alt || ''} loading="lazy" />
           </div>
@@ -111,29 +111,29 @@ const Caravan = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 
       {/* Text Row: 작업 양식 & 작업 목표 */}
       {work.notes && work.notes.length >= 7 && (
-        <ul className="work-detail__section work-detail__text-blocks">
+        <section className="work-detail__section work-detail__text-blocks">
           {/* 작업 양식 */}
           {work.notes[5] && (
-            <li className="work-detail__text-block">
+            <div className="work-detail__text-block work-detail__text-block--caravan-1">
               <h5 className="work-detail__text-block-title">{work.notes[5].title}</h5>
               <div className="work-detail__text-block-content">
                 {work.notes[5].description.split('\n').map((line, idx) => (
                   <p key={idx} style={{ margin: 0 }}>{line}</p>
                 ))}
               </div>
-            </li>
+            </div>
           )}
 
           {/* 작업 목표 */}
           {work.notes[6] && (
-            <li className="work-detail__text-block">
+            <div className="work-detail__text-block work-detail__text-block--caravan-2">
               <h5 className="work-detail__text-block-title">{work.notes[6].title}</h5>
               <div className="work-detail__text-block-content">
                 <p style={{ margin: 0 }}>{work.notes[6].description}</p>
               </div>
-            </li>
+            </div>
           )}
-        </ul>
+        </section>
       )}
     </div>
   );

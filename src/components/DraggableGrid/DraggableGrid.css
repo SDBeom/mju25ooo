@@ -371,10 +371,18 @@ a:focus-visible {
 }
 
 .details.--is-showing {
-  display: flex !important;
-  opacity: 1 !important;
-  pointer-events: auto !important;
-  visibility: visible !important;
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* details.--is-showing 상태가 다른 스타일보다 우선하도록 더 구체적인 선택자 추가 */
+body .details.--is-showing {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 
 /* 태블릿: 800px ~ 1279px - 60vw */
@@ -863,16 +871,13 @@ a:focus-visible {
   z-index: 10;
 }
 
+/* CTA 버튼이 항상 클릭 가능하도록 보장 - 더 구체적인 선택자 사용 */
 .details__cta-button[style*="pointer-events: auto"],
-.details.--is-showing .details__cta-button {
-  pointer-events: auto !important;
-  cursor: pointer !important;
-}
-
-/* CTA 버튼이 항상 클릭 가능하도록 보장 */
-.details__content .details__cta-button {
-  pointer-events: auto !important;
-  cursor: pointer !important;
+.details.--is-showing .details__cta-button,
+.details__content .details__cta-button,
+body .details__content .details__cta-button {
+  pointer-events: auto;
+  cursor: pointer;
   z-index: 100;
   position: relative;
 }

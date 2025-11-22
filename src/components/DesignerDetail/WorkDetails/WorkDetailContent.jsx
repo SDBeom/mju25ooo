@@ -4,8 +4,18 @@ import HelloUniverse from './HelloUniverse';
 import GoFetch from './GoFetch';
 import Petrichor from './Petrichor';
 import Caravan from './Caravan';
+import Cellestial from './Cellestial';
+import JungJiminTheGothic from './JungJiminTheGothic';
+import JungJiminTheWeapon from './JungJiminTheWeapon';
+import HiFive from './HiFive';
+import ParkHaeinChrome4Seasons from './ParkHaeinChrome4Seasons';
 import LeeJiminVeneti from './LeeJiminVeneti';
 import LeeJiminLeLabo from './LeeJiminLeLabo';
+import LeeUn9e9e9e from './LeeUn9e9e9e';
+import LeeUnLayered from './LeeUnLayered';
+import LeeDayoungReadyToMerry from './LeeDayoungReadyToMerry';
+import LeeDayoungPlottingRoom from './LeeDayoungPlottingRoom';
+import WoosuminLiminal from './WoosuminLiminal';
 import DefaultWorkLayout from './DefaultWorkLayout';
 import '../DesignerShowcase.css';
 
@@ -87,10 +97,10 @@ const WorkDetailContent = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     );
   }
 
-  // 이지민 작품1 (Veneti)
-  if (work.id === 'leejimin-veneti-character' || work.layout === 'leejimin-veneti') {
+  // 김지나 작품2 (Cellestial)
+  if (work.id === 'kimjina-cellestial' || work.layout === 'cellestial') {
     return (
-      <LeeJiminVeneti
+      <Cellestial
         work={work}
         designer={designer}
         badgeSrc={badgeSrc}
@@ -100,10 +110,138 @@ const WorkDetailContent = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     );
   }
 
+  // 정지민 작품1 (The Gothic)
+  if (work.id === 'jungjimin-the-gothic' || work.layout === 'jungjimin-the-gothic') {
+    return (
+      <JungJiminTheGothic
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 정지민 작품2 (The Weapon)
+  if (work.id === 'jungjimin-the-weapon' || work.layout === 'jungjimin-the-weapon') {
+    return (
+      <JungJiminTheWeapon
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 서동범 작품 (HiFive)
+  if (work.id === 'seodongbeom-hifive' || work.layout === 'hifive' || work.title === 'HiFive') {
+    return (
+      <HiFive
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 박해인 작품 (Chrome 4: Seasons)
+  if (work.id === 'parkhaein-chrome4' || work.layout === 'parkhaein-chrome4') {
+    return (
+      <ParkHaeinChrome4Seasons
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 우수민 작품2 (Liminal Guide)
+  if (work.id === 'woosumin-liminal-guide' || work.layout === 'woosumin-liminal') {
+    return (
+      <WoosuminLiminal
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 이지민 작품1 (Veneti)
+  if (work.id === 'leejimin-veneti-character' || work.layout === 'leejimin-veneti') {
+    return (
+      <LeeJiminVeneti
+        work={work}
+        designer={designer}
+        ctas={ctas}
+      />
+    );
+  }
+
   // 이지민 작품2 (LE LABO)
   if (work.id === 'leejimin-veneti-perfume' || work.layout === 'leejimin-lelabo') {
     return (
       <LeeJiminLeLabo
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 이운 작품1 (9e9e9e)
+  if (work.id === 'leeun-9e9e9e' || work.layout === 'leeun-9e9e9e') {
+    return (
+      <LeeUn9e9e9e
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 이운 작품2 (Layered)
+  if (work.id === 'leeun-layered' || work.layout === 'leeun-layered') {
+    return (
+      <LeeUnLayered
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 이다영 작품1 (Ready to Merry)
+  if (work.id === 'leedayoung-ready-to-merry' || work.layout === 'leedayoung-ready-to-merry') {
+    return (
+      <LeeDayoungReadyToMerry
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 이다영 작품2 (플롯팅룸)
+  if (work.id === 'leedayoung-plotting-room' || work.layout === 'leedayoung-plotting-room' || work.title === '플롯팅룸') {
+    return (
+      <LeeDayoungPlottingRoom
         work={work}
         designer={designer}
         badgeSrc={badgeSrc}

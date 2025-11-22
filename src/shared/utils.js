@@ -118,20 +118,26 @@ export const removeModalOpenState = () => {
     root.classList.remove(MODAL_CLASS_NAME);
   }
   
-  // 인라인 스타일 제거
+  // 인라인 스타일 제거 (overflow 포함)
   document.body.style.top = '';
   document.body.style.position = '';
   document.body.style.inset = '';
   document.body.style.width = '';
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
   
   // 스크롤 복원 (리플로우 완료 후) - 저장된 위치가 유효한 경우에만
-  if (previousScrollY > 0) {
+  if (previousScrollY >= 0) {
+    // 즉시 스크롤 복원 시도
+    window.scrollTo(0, previousScrollY);
+    
+    // 리플로우 후 다시 한 번 보장
     requestAnimationFrame(() => {
       window.scrollTo(0, previousScrollY);
       // 추가 보장을 위해 한 번 더 시도
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         window.scrollTo(0, previousScrollY);
-      }, 0);
+      });
     });
   }
   

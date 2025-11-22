@@ -21,6 +21,18 @@ import './AboutContent.css';
 // 번들 해석 이슈를 피하기 위해 Public 절대 경로만 사용
 const brandingVideo = '/branding_video.mp4';
 
+// 비디오 로드 확인을 위한 헬퍼 함수
+const checkVideoExists = (src) => {
+  const video = document.createElement('video');
+  video.src = src;
+  video.addEventListener('loadedmetadata', () => {
+    console.log('비디오 메타데이터 로드 성공:', src);
+  });
+  video.addEventListener('error', (e) => {
+    console.error('비디오 파일을 찾을 수 없습니다:', src, e);
+  });
+};
+
 const AboutContent = () => {
   const { isMobile } = useBreakpointContext();
   const introContainer = useRef(null);
@@ -107,26 +119,31 @@ const AboutContent = () => {
     <main className="about-main">
       {/* Intro Section - Parallax Background */}
       <div ref={introContainer} className="about-intro">
-        <motion.div style={{ y: introY }} className="about-intro-image">
-          <video 
-            ref={introVideoRef}
-            autoPlay 
-            muted 
-            loop 
-            playsInline 
-            controls={false} 
-            preload="auto"
-            style={{ 
-              width: '100%', 
-              height: '100%', 
-              objectFit: 'cover',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 1,
-              visibility: 'visible',
-              opacity: 1
-            }}
+        <div className="about-intro-image">
+          <motion.div style={{ y: introY }} className="about-intro-parallax">
+            <video 
+              ref={introVideoRef}
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              controls={false} 
+              preload="auto"
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                zIndex: 1,
+                visibility: 'visible',
+                opacity: 1,
+                pointerEvents: 'none',
+                display: 'block',
+                minHeight: '100%',
+                minWidth: '100%'
+              }}
             onError={(e) => {
               console.error('Intro 비디오 로드 실패:', {
                 error: e,
@@ -137,10 +154,19 @@ const AboutContent = () => {
                 errorCode: e.target.error?.code,
                 errorMessage: e.target.error?.message
               });
+              // 비디오 로드 실패 시 요소를 표시
+              if (e.target) {
+                e.target.style.display = 'block';
+                e.target.style.visibility = 'visible';
+                e.target.style.opacity = '1';
+              }
             }}
             onLoadedData={() => {
               console.log('Intro 비디오 로드 성공:', brandingVideo);
               if (introVideoRef.current) {
+                introVideoRef.current.style.display = 'block';
+                introVideoRef.current.style.visibility = 'visible';
+                introVideoRef.current.style.opacity = '1';
                 introVideoRef.current.play().catch((err) => {
                   console.warn('Intro 비디오 재생 실패:', err);
                 });
@@ -156,6 +182,7 @@ const AboutContent = () => {
             <source src={brandingVideo} type="video/mp4" />
           </video>
         </motion.div>
+        </div>
       </div>
 
       {/* Description Section */}
@@ -390,7 +417,7 @@ const AboutContent = () => {
 
       {/* Section with Text and Parallax */}
       <div
-        ref={sectionContainer} 
+        ref={sectionContainer}
         className="about-section"
       >
         <div className="about-section-content">
@@ -422,7 +449,11 @@ const AboutContent = () => {
                 left: 0,
                 zIndex: 1,
                 visibility: 'visible',
-                opacity: 1
+                opacity: 1,
+                pointerEvents: 'none',
+                display: 'block',
+                minHeight: '100%',
+                minWidth: '100%'
               }}
               onError={(e) => {
                 console.error('Section 비디오 로드 실패:', {
@@ -434,10 +465,19 @@ const AboutContent = () => {
                   errorCode: e.target.error?.code,
                   errorMessage: e.target.error?.message
                 });
+                // 비디오 로드 실패 시 요소를 표시
+                if (e.target) {
+                  e.target.style.display = 'block';
+                  e.target.style.visibility = 'visible';
+                  e.target.style.opacity = '1';
+                }
               }}
               onLoadedData={() => {
                 console.log('Section 비디오 로드 성공:', brandingVideo);
                 if (sectionVideoRef.current) {
+                  sectionVideoRef.current.style.display = 'block';
+                  sectionVideoRef.current.style.visibility = 'visible';
+                  sectionVideoRef.current.style.opacity = '1';
                   sectionVideoRef.current.play().catch((err) => {
                     console.warn('Section 비디오 재생 실패:', err);
                   });

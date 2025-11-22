@@ -64,11 +64,11 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 
       {/* Feature Sections - Fresh, Woody, Sunset */}
       {work.gallery && work.gallery.length >= 3 && work.notes && work.notes.length >= 4 && (
-        <ul className="work-detail__section work-detail__feature-rows">
+        <section className="work-detail__section work-detail__feature-rows">
           <div className="work-detail__feature-rows-list">
             {/* Fresh (이미지 왼쪽, 텍스트 오른쪽) */}
             {work.gallery[0] && work.notes[1] && (
-              <li className="work-detail__feature-row">
+              <div className="work-detail__feature-row">
                 <div className="work-detail__image-block">
                   <img src={work.gallery[0].src} alt={work.gallery[0].alt || 'Fresh'} loading="lazy" />
                 </div>
@@ -80,12 +80,12 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                     )}
                   </div>
                 </div>
-              </li>
+              </div>
             )}
 
             {/* Woody (텍스트 왼쪽, 이미지 오른쪽) */}
             {work.gallery[1] && work.notes[2] && (
-              <li className="work-detail__feature-row work-detail__feature-row--reverse">
+              <div className="work-detail__feature-row work-detail__feature-row--reverse">
                 <div className="work-detail__feature-text">
                   <div>
                     <h4 className="work-detail__feature-title">{work.notes[2].title || 'Woody'}</h4>
@@ -97,12 +97,12 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                 <div className="work-detail__image-block">
                   <img src={work.gallery[1].src} alt={work.gallery[1].alt || 'Woody'} loading="lazy" />
                 </div>
-              </li>
+              </div>
             )}
 
             {/* Sunset (이미지 왼쪽, 텍스트 오른쪽) */}
             {work.gallery[2] && work.notes[3] && (
-              <li className="work-detail__feature-row">
+              <div className="work-detail__feature-row">
                 <div className="work-detail__image-block">
                   <img src={work.gallery[2].src} alt={work.gallery[2].alt || 'Sunset'} loading="lazy" />
                 </div>
@@ -114,10 +114,10 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                     )}
                   </div>
                 </div>
-              </li>
+              </div>
             )}
           </div>
-        </ul>
+        </section>
       )}
 
       {/* Feature Section - City Exclusives */}
@@ -137,10 +137,10 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 
       {/* Feature Cards - CITRON 28, GAIAC 10, MUSC 25 */}
       {work.gallery && work.gallery.length >= 6 && work.notes && work.notes.length >= 7 && (
-        <ul className="work-detail__section work-detail__feature-list">
+        <section className="work-detail__section work-detail__feature-list">
           {/* CITRON 28 */}
           {work.gallery[4] && work.notes[5] && (
-            <li className="work-detail__feature-card">
+            <div className="work-detail__feature-card">
               <div className="work-detail__card-image">
                 <img src={work.gallery[4].src} alt={work.gallery[4].alt || 'CITRON 28'} loading="lazy" />
               </div>
@@ -150,12 +150,12 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                   <p>{work.notes[5].description}</p>
                 )}
               </div>
-            </li>
+            </div>
           )}
 
           {/* GAIAC 10 */}
           {work.gallery[5] && work.notes[6] && (
-            <li className="work-detail__feature-card">
+            <div className="work-detail__feature-card">
               <div className="work-detail__card-image">
                 <img src={work.gallery[5].src} alt={work.gallery[5].alt || 'GAIAC 10'} loading="lazy" />
               </div>
@@ -165,12 +165,12 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                   <p>{work.notes[6].description}</p>
                 )}
               </div>
-            </li>
+            </div>
           )}
 
           {/* MUSC 25 */}
           {work.gallery[6] && work.notes[7] && (
-            <li className="work-detail__feature-card">
+            <div className="work-detail__feature-card">
               <div className="work-detail__card-image">
                 <img src={work.gallery[6].src} alt={work.gallery[6].alt || 'MUSC 25'} loading="lazy" />
               </div>
@@ -180,9 +180,9 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                   <p>{work.notes[7].description}</p>
                 )}
               </div>
-            </li>
+            </div>
           )}
-        </ul>
+        </section>
       )}
 
       {/* Gallery Section - Photo shoot */}

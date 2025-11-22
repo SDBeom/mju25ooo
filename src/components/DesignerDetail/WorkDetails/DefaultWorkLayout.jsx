@@ -11,8 +11,13 @@ const DefaultWorkLayout = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     return null;
   }
 
+  // layout에 따라 클래스 추가
+  const workDetailClass = work.layout 
+    ? `work-detail work-detail--${work.layout}`
+    : 'work-detail';
+
   return (
-    <div className="work-detail">
+    <div className={workDetailClass}>
       {/* Hero Section - 모든 작품과 동일한 구조 */}
       <section className="work-detail__section work-detail__hero">
         <div className="work-detail__hero-content">
@@ -28,14 +33,14 @@ const DefaultWorkLayout = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
             <div className="work-detail__ctas">
               {ctas && Array.isArray(ctas) && ctas.length > 0 ? (
                 ctas.map(({ label, onClick, variant = 'primary' }) => (
-                  <button
-                    key={label}
-                    type="button"
-                    className={`work-detail__cta work-detail__cta--${variant === 'secondary' ? 'secondary' : 'primary'}`}
-                    onClick={onClick}
-                  >
-                    {label}
-                  </button>
+                <button
+                  key={label}
+                  type="button"
+                  className={`work-detail__cta work-detail__cta--${variant === 'secondary' ? 'secondary' : 'primary'}`}
+                  onClick={onClick}
+                >
+                  {label}
+                </button>
                 ))
               ) : null}
             </div>

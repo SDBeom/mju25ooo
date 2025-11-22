@@ -1,25 +1,35 @@
-.designer-showcase {
-  min-height: 100vh;
-  background: #f8f6f4;
-  color: #1a1a1a;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* 디자이너 상세페이지 메인 컨테이너 - 높은 우선순위 보장 */
+.designer-showcase,
+body .designer-showcase,
+body .main-window__container--full .designer-showcase,
+#root .designer-showcase,
+#root .main-window__container--full .designer-showcase,
+.main-window__container--full .designer-showcase,
+html body .designer-showcase,
+html body .main-window__container--full .designer-showcase {
+  min-height: 100vh !important;
+  background: #f8f6f4 !important;
+  color: #1a1a1a !important;
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* 전역 스타일 덮어쓰기 */
 .main-window__container--full .designer-showcase,
-.main-window--content .designer-showcase {
+.main-window--content .designer-showcase,
+body .main-window__container--full .designer-showcase,
+body .main-window--content .designer-showcase {
   background: #f8f6f4 !important;
 }
 
 .designer-showcase__inner {
   width: 100%;
   margin: 0;
-  padding: 40px 16px;
+  padding: 40px 64px;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -621,6 +631,16 @@
   color: #000000;
 }
 
+.work-detail__meta {
+  margin: 0;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: -0.09px;
+  line-height: 1.45;
+}
+
 .work-detail__lead {
   margin: 0;
   font-family: var(--font-primary), sans-serif;
@@ -942,8 +962,12 @@ section.work-detail__section.work-detail__gallery-section,
 
 /* Mobile (max-width: 799px) */
 @media (max-width: 799px) {
+  .designer-showcase__inner {
+    padding: 40px 24px;
+  }
+
   .work-detail__section {
-    padding: clamp(48px, 12vw, 64px) clamp(20px, 8vw, 32px);
+    padding: clamp(48px, 12vw, 64px) 24px;
   }
 
   .work-detail__hero {
@@ -1688,6 +1712,11 @@ body.kim-modal-cursor-cross {
 /* Feature 1: Logo - Desktop */
 .work-detail--caravan .work-detail__feature--1.work-detail__section {
   padding: 120px 64px;
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
 }
 
 .work-detail--caravan .work-detail__feature--1 {
@@ -1695,7 +1724,7 @@ body.kim-modal-cursor-cross {
   gap: 64px;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: row-reverse;
 }
 
 .work-detail--caravan .work-detail__feature-content {
@@ -1807,13 +1836,8 @@ body.kim-modal-cursor-cross {
 }
 
 /* Feature 2: Desert & City Camp - Desktop */
-/* 모든 ul, li 요소의 기본 패딩 제거 */
-.work-detail ul,
-.work-detail li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
+/* 모든 section, div 요소의 기본 패딩 제거 (ul, li에서 변경됨) */
+/* 기본 패딩은 개별적으로 설정 */
 
 .work-detail--caravan .work-detail__feature-list {
   list-style: none;
@@ -1830,24 +1854,54 @@ body.kim-modal-cursor-cross {
   padding-bottom: 0;
 }
 
-/* Feature 2의 섹션 패딩 제거 (개별 row에 패딩 적용) - Desktop Only */
+/* Feature List 섹션 패딩 및 갭 설정 - Desktop */
 @media (min-width: 1280px) {
   .work-detail__section.work-detail__feature-list,
   .work-detail__feature-list.work-detail__section {
+    padding: 120px 64px;
+  }
+
+  .work-detail__section.work-detail__feature-list .work-detail__feature-list,
+  .work-detail__feature-list.work-detail__section .work-detail__feature-list {
+    gap: 32px;
+  }
+
+  .work-detail--caravan .work-detail__feature-list.work-detail__section {
     padding-top: 0;
     padding-bottom: 0;
   }
-
-  .work-detail--caravan .work-detail__feature-list.work-detail__section,
+  
   .work-detail--petrichor .work-detail__feature-list.work-detail__section {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 120px 64px;
+  }
+  
+  .work-detail--petrichor .work-detail__feature-list.work-detail__section .work-detail__feature-list {
+    gap: 32px;
   }
 
   .work-detail__feature-row--1 {
     padding: 0;
   }
+}
 
+/* Feature List 섹션 패딩 및 갭 설정 - 태블릿/모바일 */
+@media (max-width: 799px) {
+  .work-detail__section.work-detail__feature-list,
+  .work-detail__feature-list.work-detail__section {
+    padding: 0;
+  }
+
+  .work-detail__section.work-detail__feature-list .work-detail__feature-list,
+  .work-detail__feature-list.work-detail__section .work-detail__feature-list {
+    gap: 48px;
+  }
+  
+  .work-detail--petrichor .work-detail__feature-list.work-detail__section .work-detail__feature-list {
+    gap: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
   .work-detail--caravan .work-detail__feature-row--1 {
     padding-top: 0;
     padding-bottom: 40px;
@@ -1865,7 +1919,7 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--caravan .work-detail__feature-row--1 {
-  flex-direction: row;
+  flex-direction: row-reverse;
   display: flex;
   gap: 64px;
   align-items: center;
@@ -1881,7 +1935,7 @@ body.kim-modal-cursor-cross {
   gap: 64px;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: row-reverse;
   width: 100%;
 }
 
@@ -2174,7 +2228,71 @@ body.kim-modal-cursor-cross {
   white-space: pre-wrap;
 }
 
-/* Feature 4: Story Description - Desktop */
+/* Feature 3 & 4: 좌우 정렬을 위한 Row Container - Desktop & Tablet */
+.work-detail--caravan .work-detail__sections-row {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 120px 64px;
+  box-sizing: border-box;
+}
+
+.work-detail--caravan .work-detail__section--caravan-pair {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.work-detail--caravan .work-detail__section--caravan-pair .work-detail__image-block {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--caravan .work-detail__section--caravan-pair .work-detail__image-block img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.work-detail--caravan .work-detail__section--caravan-pair .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.work-detail--caravan .work-detail__section--caravan-pair .work-detail__feature-title {
+  font-family: var(--font-primary), 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--caravan .work-detail__section--caravan-pair .work-detail__feature-text p {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature 4: Story Description - Desktop (기존 스타일 유지) */
 .work-detail--caravan .work-detail__feature--4.work-detail__section {
   padding: 120px 64px;
 }
@@ -2322,6 +2440,10 @@ body.kim-modal-cursor-cross {
 
 /* Tablet Mode - Caravan */
 @media (min-width: 800px) and (max-width: 1279px) {
+  .work-detail--caravan .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 96px 32px;
+  }
+  
   .work-detail--caravan .work-detail__section {
     padding: 96px 32px;
   }
@@ -2372,9 +2494,26 @@ body.kim-modal-cursor-cross {
   }
 
   /* Feature 1: Logo - Tablet */
+  /* Feature 3 & 4: 좌우 정렬 Row - Tablet: 좌우 배치 유지 */
+  .work-detail--caravan .work-detail__sections-row {
+    flex-direction: row;
+    gap: 32px;
+    padding: 96px 32px;
+  }
+
+  .work-detail--caravan .work-detail__section--caravan-pair {
+    flex: 1 1 0;
+    gap: 32px;
+  }
+
+  .work-detail--caravan .work-detail__feature--1.work-detail__section {
+    gap: 32px;
+    flex-direction: row-reverse;
+  }
+  
   .work-detail--caravan .work-detail__feature--1 {
     gap: 32px;
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 
   .work-detail--caravan .work-detail__feature--1 .work-detail__feature-text {
@@ -2402,6 +2541,7 @@ body.kim-modal-cursor-cross {
   .work-detail--caravan .work-detail__feature-row--1 {
     padding-left: 64px;
     padding-right: 64px;
+    flex-direction: row-reverse;
   }
 
   .work-detail--caravan .work-detail__feature-row--2 {
@@ -2528,6 +2668,10 @@ body.kim-modal-cursor-cross {
 
 /* Mobile Mode - Caravan */
 @media (max-width: 799px) {
+  .work-detail--caravan .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 80px 24px;
+  }
+  
   .work-detail--caravan .work-detail__section {
     padding: 0;
   }
@@ -2572,11 +2716,12 @@ body.kim-modal-cursor-cross {
     display: block;
   }
 
-  .work-detail--caravan .work-detail__hero-text {
-    flex: none !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
+  .work-detail--caravan .work-detail__section.work-detail__hero .work-detail__hero-text,
+  .work-detail--caravan .work-detail__hero.work-detail__section .work-detail__hero-text {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     padding: 56px 24px;
     gap: 32px;
     text-align: center;
@@ -2654,27 +2799,17 @@ body.kim-modal-cursor-cross {
   }
 
   /* Caravan 모바일 - Hero Section */
-  .work-detail--caravan .work-detail__section.work-detail__hero {
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .work-detail--caravan .work-detail__section.work-detail__hero.work-detail__hero--caravan {
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
+  .work-detail--caravan .work-detail__section.work-detail__hero,
+  .work-detail--caravan .work-detail__section.work-detail__hero.work-detail__hero--caravan,
   .work-detail--caravan .work-detail__hero.work-detail__section {
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
   }
 
   /* Feature 1: 로고 - Mobile */
   .work-detail--caravan .work-detail__feature--1.work-detail__section {
-    padding: 80px 24px !important;
+    padding: 80px 24px;
   }
 
   .work-detail--caravan .work-detail__feature--1 {
@@ -2771,8 +2906,20 @@ body.kim-modal-cursor-cross {
   }
 
   /* Feature 3: Main Story - Mobile */
+  /* Feature 3 & 4: 좌우 정렬 Row - Mobile: 세로 배치 */
+  .work-detail--caravan .work-detail__sections-row {
+    flex-direction: column;
+    gap: 48px;
+    padding: 80px 24px;
+  }
+
+  .work-detail--caravan .work-detail__section--caravan-pair {
+    width: 100%;
+    gap: 24px;
+  }
+
   .work-detail--caravan .work-detail__feature--3.work-detail__section {
-    padding: 80px 24px !important;
+    padding: 80px 24px;
   }
 
   .work-detail--caravan .work-detail__feature--3 {
@@ -2819,7 +2966,7 @@ body.kim-modal-cursor-cross {
 
   /* Feature 4: Story Description - Mobile */
   .work-detail--caravan .work-detail__feature--4.work-detail__section {
-    padding: 80px 24px !important;
+    padding: 80px 24px;
   }
 
   .work-detail--caravan .work-detail__feature--4 {
@@ -2861,7 +3008,7 @@ body.kim-modal-cursor-cross {
 
   /* Text Blocks - Mobile */
   .work-detail--caravan .work-detail__text-blocks.work-detail__section {
-    padding: 80px 24px !important;
+    padding: 80px 24px;
   }
 
   .work-detail--caravan .work-detail__text-blocks {
@@ -3398,28 +3545,31 @@ body.kim-modal-cursor-cross {
   margin: 0;
 }
 
-/* Cellestial detail grid */
-.work-detail__detail-grid {
+/* Cellestial detail grid - Desktop */
+.work-detail--cellestial .work-detail__detail-grid {
   display: flex;
   gap: 32px;
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   height: 723px;
 }
 
-.work-detail__detail-column {
+.work-detail--cellestial .work-detail__detail-column {
   display: flex;
   flex-direction: column;
   gap: 32px;
   flex: 1 0 0;
 }
 
-.work-detail__detail-card {
+.work-detail--cellestial .work-detail__detail-card {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   flex: 1 0 0;
+  min-height: 0;
 }
 
 .work-detail__detail-card--center {
@@ -3435,6 +3585,66 @@ body.kim-modal-cursor-cross {
   flex-direction: column;
 }
 
+.work-detail--cellestial .work-detail__detail-card-text {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.work-detail--cellestial .work-detail__detail-card-text h5 {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--cellestial .work-detail__detail-card-text p {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--cellestial .work-detail__detail-card-image {
+  flex: 1 0 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 왼쪽 컬럼의 카드 이미지 (디테일 컷_1, 디테일 컷_2) */
+.work-detail--cellestial .work-detail__detail-column:first-child .work-detail__detail-card-image {
+  aspect-ratio: 560 / 218;
+  min-height: 218px;
+}
+
+/* 오른쪽 컬럼의 카드 이미지 (몬스터) */
+.work-detail--cellestial .work-detail__detail-column:last-child .work-detail__detail-card-image {
+  aspect-ratio: 560 / 596;
+  min-height: 596px;
+}
+
+.work-detail--cellestial .work-detail__detail-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 기존 스타일 유지 (다른 작품용) */
 .work-detail__detail-card-text {
   padding: 32px;
   display: flex;
@@ -4415,6 +4625,13 @@ body.kim-modal-cursor-cross {
 /* Parkhaein Chrome4 layout styles (박해인 작품 1) */
 .work-detail--parkhaein-chrome4 .work-detail__section {
   padding: 120px 64px;
+}
+
+.work-detail--parkhaein-chrome4 .work-detail__section.work-detail__section--parkhaein-bento {
+  padding: 120px 64px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .work-detail--parkhaein-chrome4 .work-detail__bento-grid {
@@ -5964,6 +6181,14 @@ body.kim-modal-cursor-cross {
   padding: 120px 64px;
 }
 
+.work-detail--woosumin-liminal .work-detail__section.work-detail__hero {
+  padding: 0;
+}
+
+.work-detail--woosumin-liminal .work-detail__hero-content {
+  padding: 120px 64px;
+}
+
 .work-detail--woosumin-liminal .work-detail__feature--alternating {
   display: flex;
   gap: 64px;
@@ -6293,6 +6518,399 @@ body.kim-modal-cursor-cross {
   overflow-wrap: break-word;
 }
 
+.work-detail--woosumin-liminal .work-detail__liminal-footer {
+  padding: 64px 64px 120px;
+  text-align: center;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.18px;
+  color: #000000;
+}
+
+@media (min-width: 800px) and (max-width: 1279px) {
+  .work-detail--woosumin-liminal .work-detail__section {
+    padding: 96px 32px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__section.work-detail__hero {
+    padding: 0;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__hero-content {
+    gap: 32px;
+    padding: 96px 32px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__hero-media {
+    flex: 0 0 400px;
+    width: 400px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__feature--alternating {
+    gap: 32px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__feature--alternating .work-detail__image-block {
+    flex: 0 0 352px;
+    width: 352px;
+    height: 264px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__feature--alternating .work-detail__feature-title {
+    font-size: 28px;
+    letter-spacing: -0.56px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__pull-quote {
+    padding: 96px 32px;
+    max-width: 800px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__pull-quote-title {
+    font-size: 40px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__pull-quote-description {
+    font-size: 20px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cards-grid .work-detail__card-image {
+    height: 299px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cards-grid--tech {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech {
+    height: 367px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-image--tech {
+    left: 248px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-wall {
+    padding: 96px 32px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__liminal-footer {
+    padding: 48px 32px 96px;
+  }
+}
+
+@media (max-width: 799px) {
+  .work-detail--woosumin-liminal .work-detail__section {
+    padding: 0;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__section.work-detail__hero {
+    padding: 0;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__hero-content {
+    gap: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__hero-media {
+    width: 100%;
+    height: 298px;
+    order: -1;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__hero-text {
+    width: 100%;
+    padding: 56px 24px;
+    gap: 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__hero-text .work-detail__text-group {
+    text-align: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__title {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__lead {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__ctas {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cta {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    letter-spacing: -0.08px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__feature--alternating {
+    flex-direction: column;
+    gap: 32px;
+    padding: 80px 24px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__feature--alternating .work-detail__image-block {
+    flex: none;
+    width: 100%;
+    height: 243px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__feature--alternating .work-detail__image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__feature--alternating .work-detail__feature-text {
+    gap: 40px;
+    width: 100%;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__feature--alternating .work-detail__feature-title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__feature--alternating .work-detail__feature-text p {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__pull-quote {
+    padding: 80px 24px;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__pull-quote-content {
+    gap: 32px;
+    padding-left: 24px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__pull-quote-title {
+    font-size: 32px;
+    line-height: 1.3;
+    letter-spacing: -0.64px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__pull-quote-description {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: -0.24px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__section:not(.work-detail__hero):not(.work-detail__pull-quote):not(.work-detail__testimonial-wall):not(:has(.work-detail__cards-grid--tech)):has(.work-detail__cards-grid) {
+    padding: 80px 24px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cards-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 0;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cards-grid .work-detail__card {
+    gap: 24px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cards-grid .work-detail__card-image {
+    height: 436px;
+    border-radius: 16px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cards-grid .work-detail__card-title {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cards-grid .work-detail__card-text p {
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.08px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cards-grid .work-detail__card:nth-child(2) .work-detail__card-text p,
+  .work-detail--woosumin-liminal .work-detail__cards-grid .work-detail__card:nth-child(3) .work-detail__card-text p {
+    font-size: 18px;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__section:has(.work-detail__cards-grid--tech) {
+    padding: 80px 24px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__cards-grid--tech {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech {
+    height: 352px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech-inner {
+    padding: 0;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-text {
+    padding: 24px;
+    gap: 8px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-title {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-text p {
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.08px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-text p:nth-of-type(2) {
+    font-size: 18px;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-image--tech {
+    position: absolute;
+    left: 54px;
+    top: 184px;
+    width: 218px;
+    height: 212px;
+    border: 8px solid white;
+    border-radius: 32px;
+    overflow: hidden;
+    transform: none;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech:nth-child(2) .work-detail__card-image--tech {
+    left: 55px;
+    top: 176px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech:nth-child(3) .work-detail__card-image--tech {
+    left: 55px;
+    top: 177px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__card--tech .work-detail__card-image--tech img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-wall {
+    padding: 80px 24px;
+    gap: 48px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-header {
+    gap: 12px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-title {
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.64px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-description {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-card {
+    padding: 32px;
+    gap: 32px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-author {
+    gap: 16px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-author-name {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.08px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-author-role {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: -0.08px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__testimonial-content {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--woosumin-liminal .work-detail__liminal-footer {
+    padding: 0 24px 64px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.32px;
+  }
+}
+
 /* 이가비 작품 1 (Overcooked: 카페 대소동) 스타일 */
 .work-detail--leegabi-overcooked .work-detail__section {
   padding: 120px 64px;
@@ -6566,8 +7184,74 @@ body.kim-modal-cursor-cross {
 }
 
 /* 이다영 작품 1 (Ready to Merry) 스타일 */
-.work-detail--leedayoung-ready-to-merry .work-detail__section {
+.work-detail--leedayoung-ready-to-merry .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero):not(.work-detail__cards-grid):not(.work-detail__text-blocks):not(.work-detail__feature-rows):not(.work-detail__detail-grid) {
   padding: 120px 64px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__section.work-detail__cards-grid,
+.work-detail--leedayoung-ready-to-merry .work-detail__cards-grid {
+  padding: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__cards {
+  padding: 120px 64px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__cards-grid {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__cards-grid .work-detail__card {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__card-image {
+  height: 483px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__card-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__card-description {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__text-intro {
@@ -6758,32 +7442,62 @@ body.kim-modal-cursor-cross {
   position: relative;
 }
 
+.work-detail--leedayoung-ready-to-merry .work-detail__feature-row .work-detail__image-block {
+  position: relative;
+  overflow: hidden;
+}
+
 .work-detail--leedayoung-ready-to-merry .work-detail__feature-row .work-detail__image-block img {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 768px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   height: 432px;
   object-fit: cover;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__section.work-detail__detail-grid {
+  padding: 120px 64px;
+  height: 963px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-grid {
   display: flex;
   gap: 32px;
   width: 100%;
-  height: 723px;
   max-width: 1280px;
-  margin: 0 auto;
+  height: 963px;
+  align-items: flex-start;
   list-style: none;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-column {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  flex: 1 0 0;
+  align-items: flex-start;
+  height: 723px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-column:first-child {
+  flex: 0 0 calc((100% - 32px) * 0.45); /* gap을 제외한 너비의 45% */
+  max-width: 576px;
+  gap: 32px;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-column:last-child {
+  flex: 1 1 auto; /* 나머지 공간 차지 */
+  max-width: 672px;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-card {
@@ -6792,15 +7506,27 @@ body.kim-modal-cursor-cross {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  flex: 1 0 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-column:first-child .work-detail__detail-card {
+  height: auto;
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-card--center {
   align-items: center;
+  height: 371px; /* text 153px + image 218px */
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-column:first-child .work-detail__detail-card:not(.work-detail__detail-card--center) {
+  align-items: flex-start;
+  height: 346px; /* text 153px + image 193px */
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-card--large {
-  flex: 1 0 0;
+  height: 723px; /* text 153px + image 570px */
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-card-text {
@@ -6809,9 +7535,23 @@ body.kim-modal-cursor-cross {
   flex-direction: column;
   gap: 8px;
   width: 100%;
+  flex-shrink: 0;
+  height: 153px;
+  flex: 0 0 153px;
 }
 
-.work-detail--leedayoung-ready-to-merry .work-detail__detail-card-text h4 {
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card--center .work-detail__detail-card-text {
+  padding: 32px;
+  flex-shrink: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card--large .work-detail__detail-card-text {
+  padding: 32px;
+  flex-shrink: 0;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card-text h4,
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card-text h5 {
   font-family: var(--font-primary), sans-serif;
   font-size: 24px;
   font-weight: 600;
@@ -6833,31 +7573,35 @@ body.kim-modal-cursor-cross {
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-card-image {
-  flex: 1 0 0;
   position: relative;
   width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1 1 auto;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card--center .work-detail__detail-card-image {
+  height: 218px;
+  flex: 0 0 218px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-column:first-child .work-detail__detail-card:not(.work-detail__detail-card--center) .work-detail__detail-card-image {
+  height: 193px;
+  flex: 0 0 193px;
+}
+
+.work-detail--leedayoung-ready-to-merry .work-detail__detail-card--large .work-detail__detail-card-image {
+  height: 570px;
+  flex: 0 0 570px;
 }
 
 .work-detail--leedayoung-ready-to-merry .work-detail__detail-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-.work-detail--leedayoung-ready-to-merry .work-detail__detail-card--center .work-detail__detail-card-image {
-  height: 218px;
-}
-
-.work-detail--leedayoung-ready-to-merry .work-detail__detail-card:not(.work-detail__detail-card--large) .work-detail__detail-card-image {
-  height: 193px;
-}
-
-.work-detail--leedayoung-ready-to-merry .work-detail__detail-card--large .work-detail__detail-card-image {
-  height: 570px;
+  object-fit: contain;
+  display: block;
 }
 
 /* 이다영 작품 2 (플롯팅룸) 스타일 */
@@ -6966,8 +7710,88 @@ body.kim-modal-cursor-cross {
 }
 
 /* 이운 작품 1 (9e9e9e) 스타일 */
-.work-detail--leeun-9e9e9e .work-detail__section {
+.work-detail--leeun-9e9e9e .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero):not(.work-detail__testimonial-grid) {
   padding: 120px 64px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__section.work-detail__testimonial-grid {
+  padding: 0;
+}
+
+/* Hero Section - Desktop/Tablet */
+.work-detail--leeun-9e9e9e .work-detail__section.work-detail__hero.work-detail__hero--leeun-9e9e9e,
+.work-detail--leeun-9e9e9e .work-detail__hero.work-detail__section {
+  padding: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__eyebrow img {
+  width: auto;
+  height: 24px;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__eyebrow-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.work-detail--leeun-9e9e9e .work-detail__title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__lead {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__hero-media {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-detail--leeun-9e9e9e .work-detail__hero-media img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 
 .work-detail--leeun-9e9e9e .work-detail__testimonial-wall {
@@ -7226,8 +8050,307 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   object-fit: cover;
 }
 
+/* 이운 작품 1 (9e9e9e) 태블릿 스타일 */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .work-detail--leeun-9e9e9e .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero):not(.work-detail__testimonial-grid) {
+    padding: 96px 32px;
+  }
+  
+  .work-detail--leeun-9e9e9e .work-detail__section.work-detail__testimonial-grid {
+    padding: 0;
+  }
+  
+  .work-detail--leeun-9e9e9e .work-detail__hero-content {
+    gap: 48px;
+    padding: 0 32px;
+  }
+  
+  .work-detail--leeun-9e9e9e .work-detail__hero-media {
+    max-width: 50%;
+  }
+}
+
+/* 이운 작품 1 (9e9e9e) 모바일 스타일 */
+@media (max-width: 799px) {
+  .work-detail--leeun-9e9e9e .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero):not(.work-detail__testimonial-grid) {
+    padding: 80px 24px;
+  }
+  
+  .work-detail--leeun-9e9e9e .work-detail__section.work-detail__testimonial-grid {
+    padding: 0;
+  }
+  
+  .work-detail--leeun-9e9e9e .work-detail__section {
+    padding: 0;
+  }
+
+  /* Hero Section - 모바일 */
+  .work-detail--leeun-9e9e9e .work-detail__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__hero-media {
+    width: 388px;
+    height: 308px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 -12px;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__hero-media img {
+    width: 400px;
+    height: 296px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    position: absolute;
+    left: -12px;
+    top: 2px;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__hero-content {
+    width: 100%;
+    padding: 56px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__hero-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__text-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    color: #000000;
+    text-align: center;
+    margin: 0;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__lead {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+    color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    margin: 0;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__ctas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__cta {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.08px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__cta--primary {
+    background: #000000;
+    color: #ffffff;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__cta--secondary {
+    background: transparent;
+    color: #000000;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+  }
+
+  /* Feature Section - 모바일 */
+  .work-detail--leeun-9e9e9e .work-detail__feature {
+    padding: 80px 24px;
+    gap: 24px;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__image-block--feature {
+    width: 100%;
+    height: 184px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__image-block--feature img {
+    width: 327px;
+    height: 206px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    position: absolute;
+    left: 0;
+    top: -11px;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__feature-text {
+    gap: 16px;
+    max-width: 1440px;
+    width: 100%;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__feature-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+    color: #000000;
+    margin: 0;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__feature-text p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.08px;
+    color: rgba(0, 0, 0, 0.55);
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  /* Core Value Section - 모바일 */
+  .work-detail--leeun-9e9e9e .work-detail__testimonial-wall {
+    padding: 80px 24px;
+    gap: 48px;
+    max-width: 100%;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__testimonial-header {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__testimonial-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.64px;
+    color: #000000;
+    margin: 0;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__testimonial-grid {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__testimonial-card {
+    width: 100%;
+    padding: 32px;
+    gap: 32px;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__testimonial-content {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.08px;
+    color: #000000;
+    margin: 0;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__testimonial-content p {
+    margin-bottom: 16px;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__testimonial-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Gallery Section - 모바일 */
+  .work-detail--leeun-9e9e9e .work-detail__gallery-section {
+    padding: 80px 24px;
+    gap: 48px;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__gallery-header {
+    gap: 16px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__gallery-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.64px;
+    color: #000000;
+    margin: 0;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__gallery-masonry {
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__gallery-column {
+    width: 100%;
+    flex: none;
+    max-width: 327px;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__gallery-column:first-child {
+    flex: none;
+    max-width: 327px;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child,
+  .work-detail--leeun-9e9e9e .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child,
+  .work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child,
+  .work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2),
+  .work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(3),
+  .work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child,
+  .work-detail--leeun-9e9e9e .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:nth-child(2) {
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__gallery-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .work-detail--leeun-9e9e9e .work-detail__gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
 /* 이운 작품 2 (Layered) 스타일 */
-.work-detail--leeun-layered .work-detail__section {
+.work-detail--leeun-layered .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero):not(.work-detail__section--leeun-4):not(.work-detail__section--leeun-5) {
   padding: 120px 64px;
 }
 
@@ -7355,6 +8478,28 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+/* DefaultWorkLayout에서 사용하는 image-block에도 레이어드 스타일 적용 */
+.work-detail--leeun-layered .work-detail__image-block {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-detail--leeun-layered .work-detail__image-block img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* 레이어드 작품의 feature 섹션 이미지 크기 조정 */
+.work-detail--leeun-layered .work-detail__feature .work-detail__image-block {
+  max-width: 100%;
+  height: auto;
 }
 
 .work-detail--leeun-layered .work-detail__feature-rows {
@@ -7486,11 +8631,22 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   margin: 0;
 }
 
-.work-detail--leeun-layered .work-detail__cards {
-  padding: 120px 64px;
+.work-detail--leeun-layered .work-detail__section.work-detail__section--leeun-4 {
+  padding: 0;
 }
 
-.work-detail--leeun-layered .work-detail__cards-grid {
+.work-detail--leeun-layered .work-detail__section.work-detail__section--leeun-5 {
+  padding: 0;
+}
+
+.work-detail--leeun-layered .work-detail__cards-grid--leeun-5 {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.work-detail--leeun-layered .work-detail__cards-grid--leeun-4 {
   display: flex;
   gap: 32px;
   list-style: none;
@@ -7498,7 +8654,7 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   margin: 0;
 }
 
-.work-detail--leeun-layered .work-detail__cards-grid:not(.work-detail__cards-grid--bento) .work-detail__card {
+.work-detail--leeun-layered .work-detail__cards-grid--leeun-4 .work-detail__card {
   flex: 1 0 0;
   max-width: 388px;
   min-width: 336px;
@@ -7526,8 +8682,22 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   gap: 8px;
 }
 
+/* 이운 작품 2 (Layered) 태블릿 스타일 */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .work-detail--leeun-layered .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 96px 32px;
+  }
+}
+
+/* 이운 작품 2 (Layered) 모바일 스타일 */
+@media (max-width: 799px) {
+  .work-detail--leeun-layered .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 80px 24px;
+  }
+}
+
 /* 김재은 작품 1 (Go Fetch!) 스타일 */
-.work-detail--gofetch .work-detail__section {
+.work-detail--gofetch .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
   padding: 120px 64px;
 }
 
@@ -7892,6 +9062,10 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 
 /* Tablet (800px ~ 1279px) */
 @media (min-width: 800px) and (max-width: 1279px) {
+  .work-detail--gofetch .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 96px 32px;
+  }
+  
   .work-detail--gofetch .work-detail__section {
     padding: 96px 32px;
   }
@@ -8150,6 +9324,10 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 
 /* Mobile (max-width: 799px) */
 @media (max-width: 799px) {
+  .work-detail--gofetch .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 80px 24px;
+  }
+  
   .work-detail--gofetch .work-detail__section {
     padding: 80px 0;
   }
@@ -8426,10 +9604,18 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   color: #000000;
 }
 
+.work-detail--leejimin-veneti .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+  padding: 120px 64px;
+}
+
 .work-detail--leejimin-veneti .work-detail__section {
   padding: 120px 64px;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.work-detail--leejimin-veneti .work-detail__section.work-detail__feature-list {
+  padding: 120px 64px;
 }
 
 /* Hero Section */
@@ -8885,10 +10071,11 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   object-fit: cover;
 }
 
+.work-detail--leejimin-veneti .work-detail__section.work-detail__quote,
 .work-detail--leejimin-veneti .work-detail__quote {
   padding: 120px 64px;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -8906,6 +10093,22 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   text-align: center;
   margin: 0;
   font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-detail--leejimin-veneti .work-detail__quote-text h3 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.96px;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  font-style: normal;
+  display: block;
 }
 
 .work-detail--leejimin-veneti .work-detail__quote-author {
@@ -8952,8 +10155,27 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   color: rgba(0, 0, 0, 0.55);
 }
 
+/* 이지민 작품 1 (Veneti) 태블릿/모바일 스타일 */
+@media (max-width: 799px) {
+  .work-detail--leejimin-veneti .work-detail__section.work-detail__feature-list {
+    padding: 0;
+  }
+  
+  .work-detail--leejimin-veneti .work-detail__feature-list {
+    gap: 48px;
+  }
+}
+
 /* 이지민 작품 2 (LE LABO) 스타일 */
+.work-detail--leejimin-lelabo .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+  padding: 120px 64px;
+}
+
 .work-detail--leejimin-lelabo .work-detail__section {
+  padding: 120px 64px;
+}
+
+.work-detail--leejimin-lelabo .work-detail__section.work-detail__feature-list {
   padding: 120px 64px;
 }
 
@@ -9390,6 +10612,42 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 
 .work-detail--leejimin-lelabo .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child {
   height: 411px;
+}
+
+/* 이지민 작품 1 (Veneti) 태블릿 스타일 */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .work-detail--leejimin-veneti .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 96px 32px;
+  }
+}
+
+/* 이지민 작품 1 (Veneti) 모바일 스타일 */
+@media (max-width: 799px) {
+  .work-detail--leejimin-veneti .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 80px 24px;
+  }
+}
+
+/* 이지민 작품 2 (LE LABO) 태블릿 스타일 */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .work-detail--leejimin-lelabo .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 96px 32px;
+  }
+}
+
+/* 이지민 작품 2 (LE LABO) 모바일 스타일 */
+@media (max-width: 799px) {
+  .work-detail--leejimin-lelabo .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 80px 24px;
+  }
+  
+  .work-detail--leejimin-lelabo .work-detail__section.work-detail__feature-list {
+    padding: 0;
+  }
+  
+  .work-detail--leejimin-lelabo .work-detail__feature-list {
+    gap: 48px;
+  }
 }
 
 .work-detail--leejimin-lelabo .work-detail__gallery-item {
@@ -9996,15 +11254,103 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   object-fit: cover;
 }
 
-/* 정지민 작품 1 (The Gothic) 스타일 */
+/* 정지민 작품 1 (The Gothic) 스타일 - Desktop */
 .work-detail--jungjimin-the-gothic .work-detail__section {
   padding: 120px 64px;
+}
+
+/* Feature 1: 씬1 - 텍스트 왼쪽, 이미지 오른쪽 */
+.work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type,
+.work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 64px;
+}
+
+/* 데스크탑, 태블릿 모드: 좌우 배치 */
+@media (min-width: 800px) {
+  .work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type,
+  .work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 {
+    flex-direction: row;
+  }
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__feature-content,
+.work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__feature-text,
+.work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__feature-text > div,
+.work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__feature-title,
+.work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__feature-title {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__feature-text p,
+.work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__feature-text p {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__image-block,
+.work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__image-block img,
+.work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .work-detail--jungjimin-the-gothic .work-detail__feature-rows {
   padding: 0 64px;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .work-detail--jungjimin-the-gothic .work-detail__feature-rows-list {
@@ -10013,20 +11359,62 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 80px;
 }
 
 .work-detail--jungjimin-the-gothic .work-detail__feature-row {
   display: flex;
+  flex-direction: column;
   gap: 64px;
   align-items: center;
   justify-content: center;
-  padding: 120px 0;
 }
 
+/* 데스크탑, 태블릿 모드: 좌우 배치 */
+@media (min-width: 800px) {
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row {
+    flex-direction: row;
+  }
+}
+
+/* Row 1: 씬2 - 이미지 왼쪽, 텍스트 오른쪽 (반전) */
+.work-detail--jungjimin-the-gothic .work-detail__feature-row--jungjimin-scene2 {
+  padding: 0;
+}
+
+/* 데스크탑, 태블릿 모드: 씬2 좌우 배치 (반전) */
+@media (min-width: 800px) {
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row--jungjimin-scene2 {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Row 2: 씬3 - 이미지 왼쪽, 텍스트 오른쪽 (reverse) */
+.work-detail--jungjimin-the-gothic .work-detail__feature-row--jungjimin-scene3 {
+  padding: 0;
+}
+
+/* 데스크탑, 태블릿 모드: 씬3 reverse 좌우 배치 */
+@media (min-width: 800px) {
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row--jungjimin-scene3 {
+    flex-direction: row-reverse;
+  }
+}
+
+/* 기존 reverse 클래스도 유지 (하위 호환성) */
 .work-detail--jungjimin-the-gothic .work-detail__feature-row--reverse {
   flex-direction: row-reverse;
-  padding: 40px 0 120px;
+  padding: 40px 64px 120px;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+  flex: 1 0 0;
+  align-self: stretch;
 }
 
 .work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-text {
@@ -10034,12 +11422,15 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   display: flex;
   flex-direction: column;
   gap: 48px;
+  align-items: flex-start;
+  min-width: 0;
 }
 
 .work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-text > div {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
 }
 
 .work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__image-block {
@@ -10056,6 +11447,138 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-title {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-text p {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* Feature 3: 씬3 큰 이미지 - 이미지 상단, 텍스트 하단 */
+.work-detail--jungjimin-the-gothic .work-detail__feature--image-top {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  padding: 120px 64px;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature--image-top .work-detail__image-block--feature {
+  width: 100%;
+  aspect-ratio: 1152 / 648;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature--image-top .work-detail__image-block--feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature--image-top .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature--image-top .work-detail__feature-title {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__feature--image-top .work-detail__feature-text p {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* Feature Cards 1: 상세샷 3개 */
+.work-detail--jungjimin-the-gothic .work-detail__cards {
+  padding: 120px 64px;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__cards-grid {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__card {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__card-image {
+  width: 100%;
+  aspect-ratio: 362.667 / 483;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__card-title {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-gothic .work-detail__card-text p {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
 }
 
 .work-detail--jungjimin-the-gothic .work-detail__bento {
@@ -10156,10 +11679,89 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   padding: 120px 64px;
 }
 
+/* Feature 1: 장검 - 텍스트 왼쪽, 이미지 오른쪽 */
+.work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 64px;
+}
+
+/* 데스크탑, 태블릿 모드: 좌우 배치 */
+@media (min-width: 800px) {
+  .work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 {
+    flex-direction: row;
+  }
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__feature-text {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__feature-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__feature-title {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__feature-text p {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__image-block {
+  flex: 0 0 544px;
+  max-width: 544px;
+  width: 544px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .work-detail--jungjimin-the-weapon .work-detail__feature-rows {
   padding: 0 64px;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__feature-rows-list {
@@ -10173,15 +11775,57 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 
 .work-detail--jungjimin-the-weapon .work-detail__feature-row {
   display: flex;
+  flex-direction: column;
   gap: 64px;
   align-items: center;
   justify-content: center;
-  padding: 120px 0 40px;
 }
 
+/* 데스크탑, 태블릿 모드: 좌우 배치 */
+@media (min-width: 800px) {
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row {
+    flex-direction: row;
+  }
+}
+
+/* Row 1: 해머 - 텍스트 왼쪽, 이미지 오른쪽 */
+.work-detail--jungjimin-the-weapon .work-detail__feature-row--jungjimin-weapon2 {
+  padding: 120px 64px 40px;
+}
+
+/* 데스크탑, 태블릿 모드: 해머 좌우 배치 */
+@media (min-width: 800px) {
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row--jungjimin-weapon2 {
+    flex-direction: row;
+  }
+}
+
+/* Row 2: 대검 - 이미지 왼쪽, 텍스트 오른쪽 (reverse) */
+.work-detail--jungjimin-the-weapon .work-detail__feature-row--jungjimin-weapon3 {
+  padding: 40px 64px 120px;
+}
+
+/* 데스크탑, 태블릿 모드: 대검 reverse 좌우 배치 */
+@media (min-width: 800px) {
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row--jungjimin-weapon3 {
+    flex-direction: row-reverse;
+  }
+}
+
+/* 기존 reverse 클래스도 유지 (하위 호환성) */
 .work-detail--jungjimin-the-weapon .work-detail__feature-row--reverse {
   flex-direction: row-reverse;
   padding: 40px 0 120px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+  flex: 1 0 0;
+  align-self: stretch;
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-text {
@@ -10189,12 +11833,35 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   display: flex;
   flex-direction: column;
   gap: 48px;
+  align-items: flex-start;
+  min-width: 0;
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-text > div {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-title {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-text p {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__image-block {
@@ -10213,26 +11880,151 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   object-fit: cover;
 }
 
+/* Feature 3: 단검 큰 이미지 - 이미지 상단, 텍스트 하단 */
+.work-detail--jungjimin-the-weapon .work-detail__feature--image-top {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  padding: 120px 64px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--image-top .work-detail__image-block--feature {
+  width: 100%;
+  aspect-ratio: 1152 / 648;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--image-top .work-detail__image-block--feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--image-top .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--image-top .work-detail__feature-title {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__feature--image-top .work-detail__feature-text p {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* Feature Cards 1: 상세샷 3개 */
+.work-detail--jungjimin-the-weapon .work-detail__cards {
+  padding: 120px 64px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__cards-grid {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__card {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__card-image {
+  width: 100%;
+  aspect-ratio: 362.667 / 483;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__card-title {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+}
+
 .work-detail--jungjimin-the-weapon .work-detail__bento {
   padding: 120px 64px;
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.work-detail--jungjimin-the-weapon .work-detail__bento-grid--jungjimin {
+.work-detail--jungjimin-the-weapon .work-detail__bento-grid--weapon {
   display: flex;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 48px 32px;
   list-style: none;
   padding: 0;
   margin: 0;
-  height: 723px;
+  width: 100%;
+  max-width: 1280px;
 }
 
-.work-detail--jungjimin-the-weapon .work-detail__bento-column {
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-2 {
   flex: 1 0 0;
+  min-width: 516px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow: hidden;
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__bento-card {
@@ -10253,10 +12045,26 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__bento-card-image {
-  flex: 1 0 0;
   position: relative;
   width: 100%;
+  height: 348px;
   overflow: hidden;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-1 .work-detail__bento-card-image {
+  height: 348px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-2 .work-detail__bento-card-image {
+  height: 348px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-3 .work-detail__bento-card-image {
+  height: 348px;
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__bento-card--center .work-detail__bento-card-image {
@@ -10272,17 +12080,54 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__bento-card-image img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   object-fit: cover;
 }
 
+/* Card 1: 문양 - 이미지 크기 542px */
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-1 .work-detail__bento-card-image img {
+  width: 542px;
+  height: auto;
+  max-height: 348px;
+}
+
+/* Card 2: 해머 - 이미지 크기 732px */
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-2 .work-detail__bento-card-image img {
+  width: 732px;
+  height: auto;
+  max-height: 348px;
+}
+
+/* Card 3: 해머 - 이미지 크기 1152px */
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-3 .work-detail__bento-card-image img {
+  width: 1152px;
+  height: auto;
+  max-height: 348px;
+}
+
 .work-detail--jungjimin-the-weapon .work-detail__bento-card-text {
-  padding: 32px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
   width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card--weapon-3 .work-detail__bento-card-text {
+  padding-right: 320px;
+}
+
+.work-detail--jungjimin-the-weapon .work-detail__bento-card-title {
+  font-family: var(--font-primary), 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
 }
 
 .work-detail--jungjimin-the-weapon .work-detail__bento-card-text h5 {
@@ -10304,6 +12149,490 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   color: rgba(0, 0, 0, 0.55);
   white-space: pre-wrap;
   margin: 0;
+}
+
+/* 정지민 작품 1 (The Gothic) 모바일 스타일 */
+@media (max-width: 799px) {
+  .work-detail--jungjimin-the-gothic .work-detail__section {
+    padding: 0;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__section.work-detail__hero {
+    padding: 0;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__hero-content {
+    gap: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__hero-media {
+    width: 100%;
+    height: 298px;
+    order: -1;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__hero-text {
+    width: 100%;
+    padding: 56px 24px;
+    gap: 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__hero-text .work-detail__text-group {
+    text-align: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__title {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__lead {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__ctas {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__cta {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    letter-spacing: -0.08px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type,
+  .work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 {
+    padding: 80px 24px;
+    gap: 32px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__image-block,
+  .work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__image-block {
+    flex: none;
+    width: 100%;
+    height: 243px;
+    max-width: 100%;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__feature-text,
+  .work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__feature-text {
+    gap: 40px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__feature-text > div,
+  .work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__feature-text > div {
+    gap: 16px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__feature-title,
+  .work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__feature-title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature:first-of-type .work-detail__feature-text p,
+  .work-detail--jungjimin-the-gothic .work-detail__feature--jungjimin-scene1 .work-detail__feature-text p {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature-rows {
+    padding: 0;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature-rows-list {
+    gap: 0;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row {
+    padding: 80px 24px 32px;
+    gap: 32px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row:last-child {
+    padding-bottom: 80px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__image-block {
+    flex: none;
+    width: 100%;
+    height: 243px;
+    max-width: 100%;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-text {
+    gap: 40px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-text > div {
+    gap: 16px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature-row .work-detail__feature-text p {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature--image-top {
+    padding: 80px 24px;
+    gap: 24px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature--image-top .work-detail__image-block--feature {
+    width: 100%;
+    height: 184px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature--image-top .work-detail__feature-text {
+    gap: 16px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature--image-top .work-detail__feature-title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__feature--image-top .work-detail__feature-text p {
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.08px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__cards {
+    padding: 80px 24px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__cards-grid {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__card {
+    max-width: 100%;
+    min-width: 0;
+    gap: 24px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__card-image {
+    height: 436px;
+    aspect-ratio: auto;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__card-title {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__bento {
+    padding: 80px 24px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__bento-grid--jungjimin {
+    flex-direction: column;
+    height: auto;
+    gap: 32px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__bento-column {
+    flex: none;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__bento-card {
+    flex: none;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__bento-card-image {
+    height: 208px;
+    aspect-ratio: auto;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__bento-card-text {
+    padding: 24px;
+  }
+
+  .work-detail--jungjimin-the-gothic .work-detail__bento-card-text h5 {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+}
+
+/* 정지민 작품 2 (The Weapon) 모바일 스타일 */
+@media (max-width: 799px) {
+  .work-detail--jungjimin-the-weapon .work-detail__section {
+    padding: 0;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__section.work-detail__hero {
+    padding: 0;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__hero-content {
+    gap: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__hero-media {
+    width: 100%;
+    height: 298px;
+    order: -1;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__hero-text {
+    width: 100%;
+    padding: 56px 24px;
+    gap: 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__hero-text .work-detail__text-group {
+    text-align: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__title {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__lead {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__ctas {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__cta {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    letter-spacing: -0.08px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 {
+    padding: 80px 24px;
+    gap: 32px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__image-block {
+    flex: none;
+    width: 100%;
+    height: 243px;
+    max-width: 100%;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__feature-text {
+    gap: 40px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__feature-text > div {
+    gap: 16px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__feature-title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--jungjimin-weapon1 .work-detail__feature-text p {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature-rows {
+    padding: 0;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature-rows-list {
+    gap: 0;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row {
+    padding: 80px 24px 32px;
+    gap: 32px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row:last-child {
+    padding-bottom: 80px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__image-block {
+    flex: none;
+    width: 100%;
+    height: 243px;
+    max-width: 100%;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-text {
+    gap: 40px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-text > div {
+    gap: 16px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature-row .work-detail__feature-text p {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--image-top {
+    padding: 80px 24px;
+    gap: 24px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--image-top .work-detail__image-block--feature {
+    width: 100%;
+    height: 184px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--image-top .work-detail__feature-text {
+    gap: 16px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--image-top .work-detail__feature-title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__feature--image-top .work-detail__feature-text p {
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.08px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__cards {
+    padding: 80px 24px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__cards-grid {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__card {
+    max-width: 100%;
+    min-width: 0;
+    gap: 24px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__card-image {
+    height: 436px;
+    aspect-ratio: auto;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__card-title {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__bento {
+    padding: 80px 24px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__bento-grid--weapon {
+    flex-direction: column;
+    height: auto;
+    gap: 32px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__bento-card {
+    flex: none;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__bento-card-image {
+    height: 208px;
+    aspect-ratio: auto;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__bento-card-text {
+    padding: 24px;
+  }
+
+  .work-detail--jungjimin-the-weapon .work-detail__bento-card-title {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
 }
 
 /* 조하늘 작품 1 (청춘몽) 스타일 */
@@ -10875,180 +13204,274 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   background: #ffffff;
 }
 
-.work-detail--hifive .work-detail__section {
-  padding: 120px 64px;
-  width: 100%;
-}
+/* 데스크탑 모드 스타일 */
+@media (min-width: 1280px) {
+  .work-detail--hifive .work-detail__section {
+    padding: 120px 64px;
+    width: 100%;
+  }
 
-/* Feature Bento 섹션 */
-.work-detail--hifive .work-detail__feature-bento {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
+  /* Feature Bento 섹션 */
+  .work-detail--hifive .work-detail__feature-bento {
+    padding: 120px 64px;
+  }
 
-.work-detail--hifive .work-detail__feature-bento-text {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-width: 1072px;
-}
+  .work-detail--hifive .work-detail__bento-grid--hifive {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
 
-.work-detail--hifive .work-detail__feature-bento-text h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #000000;
-  letter-spacing: -0.48px;
-  margin: 0;
-  line-height: 1.2;
-}
+  .work-detail--hifive .work-detail__bento-card--hifive-background {
+    flex: 1 0 0;
+    min-width: 1072px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow: hidden;
+  }
 
-.work-detail--hifive .work-detail__feature-bento-text p {
-  font-size: 18px;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.55);
-  letter-spacing: -0.09px;
-  line-height: 1.45;
-  margin: 0;
-}
+  .work-detail--hifive .work-detail__feature-bento-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 1072px;
+    padding-right: 320px;
+  }
 
-.work-detail--hifive .work-detail__feature-bento-image {
-  width: 100%;
-  height: 348px;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-}
+  .work-detail--hifive .work-detail__feature-bento-text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: -0.48px;
+    margin: 0;
+    line-height: 1.2;
+  }
 
-.work-detail--hifive .work-detail__feature-bento-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .work-detail--hifive .work-detail__feature-bento-text p {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.55);
+    letter-spacing: -0.09px;
+    line-height: 1.45;
+    margin: 0;
+  }
 
-/* Pull Quote 섹션 */
-.work-detail--hifive .work-detail__pull-quote {
-  padding: 129px 64px;
-}
+  .work-detail--hifive .work-detail__feature-bento-image {
+    width: 100%;
+    height: 348px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
 
-.work-detail--hifive .work-detail__pull-quote-figure {
-  border-left: 2px solid #dadada;
-  padding-left: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-  margin: 0;
-}
+  .work-detail--hifive .work-detail__feature-bento-image img {
+    width: 1152px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
 
-.work-detail--hifive .work-detail__pull-quote-text {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.96px;
-  color: #000000;
-  margin: 0;
-  white-space: pre-wrap;
-}
+  /* 채팅 버블 오버레이 */
+  .work-detail--hifive .work-detail__chat-bubbles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
 
-.work-detail--hifive .work-detail__pull-quote-subtitle {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: -0.36px;
-  color: rgba(0, 0, 0, 0.45);
-  margin: 0;
-  text-align: center;
-}
+  .work-detail--hifive .work-detail__chat-bubble {
+    position: absolute;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.48px;
+    white-space: nowrap;
+    pointer-events: none;
+  }
 
-.work-detail--hifive .work-detail__pull-quote-content {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: -0.36px;
-  color: rgba(0, 0, 0, 0.45);
-  margin: 0;
-  white-space: pre-wrap;
-  max-width: 1120px;
-}
+  .work-detail--hifive .work-detail__chat-bubble--1 {
+    background: #ffd8c5;
+    border: 1px solid #815410;
+    color: #1a1a1a;
+    left: 438px;
+    top: 83px;
+    border-radius: 8px 8px 8px 0;
+  }
 
-/* Feature 이미지 섹션 */
-.work-detail--hifive .work-detail__feature--media-only {
-  padding: 120px 64px;
-}
+  .work-detail--hifive .work-detail__chat-bubble--2 {
+    background: #289eff;
+    border: 1px solid #106fdd;
+    color: #ffffff;
+    left: 50%;
+    top: 227px;
+    transform: translateX(-50%);
+    border-radius: 8px 8px 8px 0;
+  }
 
-.work-detail--hifive .work-detail__feature--media-only .work-detail__image-block {
-  width: 100%;
-  height: 648px;
-  border-radius: 16px;
-  overflow: hidden;
-}
+  .work-detail--hifive .work-detail__chat-bubble--3 {
+    background: #ffffff;
+    border: 1px solid #4d4d4d;
+    color: grey;
+    left: 362px;
+    top: 155px;
+    border-radius: 8px 8px 0 8px;
+  }
 
-.work-detail--hifive .work-detail__feature--media-only .work-detail__image-block img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  /* Pull Quote 섹션 */
+  .work-detail--hifive .work-detail__pull-quote {
+    padding: 129px 64px;
+  }
 
-/* Feature Cards */
-.work-detail--hifive .work-detail__cards-grid--hifive {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  .work-detail--hifive .work-detail__pull-quote-figure {
+    border-left: 2px solid #dadada;
+    padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 0;
+  }
 
-.work-detail--hifive .work-detail__card--hifive {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  flex: 1 1 0;
-  min-width: 336px;
-  max-width: 388px;
-}
+  .work-detail--hifive .work-detail__pull-quote-text {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.96px;
+    color: #000000;
+    margin: 0;
+    white-space: pre-wrap;
+  }
 
-.work-detail--hifive .work-detail__card--hifive .work-detail__card-image {
-  width: 100%;
-  height: 483px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
-}
+  .work-detail--hifive .work-detail__pull-quote-subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.36px;
+    color: rgba(0, 0, 0, 0.45);
+    margin: 0;
+    text-align: center;
+  }
 
-.work-detail--hifive .work-detail__card--hifive .work-detail__card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .work-detail--hifive .work-detail__pull-quote-content {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.36px;
+    color: rgba(0, 0, 0, 0.45);
+    margin: 0;
+    white-space: pre-wrap;
+    max-width: 1120px;
+  }
 
-.work-detail--hifive .work-detail__card--hifive .work-detail__card-text {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+  /* Feature 이미지 섹션 */
+  .work-detail--hifive .work-detail__feature--media-only {
+    padding: 120px 64px;
+  }
 
-.work-detail--hifive .work-detail__card-title-list {
-  font-size: 24px;
-  font-weight: 600;
-  color: #000000;
-  letter-spacing: -0.48px;
-  line-height: 1.45;
-  margin: 0;
-  padding-left: 36px;
-  list-style: decimal;
-}
+  .work-detail--hifive .work-detail__feature--media-only .work-detail__image-block {
+    width: 100%;
+    height: 648px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
 
-.work-detail--hifive .work-detail__card-title-list li {
-  margin: 0;
-}
+  .work-detail--hifive .work-detail__image-block--hifive-feature {
+    position: relative;
+  }
 
-.work-detail--hifive .work-detail__card--hifive .work-detail__card-text p {
-  font-size: 18px;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.55);
-  letter-spacing: -0.09px;
-  line-height: 1.4;
-  margin: 0;
-  white-space: pre-wrap;
+  .work-detail--hifive .work-detail__feature--media-only .work-detail__image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* HiFive 오버레이 (로고, 태그라인) */
+
+
+  /* Feature Cards */
+  .work-detail--hifive .work-detail__cards-grid--hifive {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .work-detail--hifive .work-detail__card--hifive {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1 1 0;
+    min-width: 336px;
+    max-width: 388px;
+  }
+
+  .work-detail--hifive .work-detail__card--hifive .work-detail__card-image {
+    width: 100%;
+    height: 483px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
+    position: relative;
+  }
+
+  .work-detail--hifive .work-detail__card--hifive .work-detail__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .work-detail--hifive .work-detail__card-image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .work-detail--hifive .work-detail__card--hifive .work-detail__card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .work-detail--hifive .work-detail__card-title-list {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: -0.48px;
+    line-height: 1.45;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .work-detail--hifive .work-detail__card-title-list li {
+    margin: 0;
+  }
+
+  .work-detail--hifive .work-detail__card--hifive .work-detail__card-text p {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.55);
+    letter-spacing: -0.09px;
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre-wrap;
+  }
 }
 
 /* 반응형 스타일 */
@@ -13564,12 +15987,13 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
    ======================================== */
 
 /* Desktop Mode - Default */
-.work-detail--petrichor .work-detail__section.work-detail__hero.work-detail__hero--petrichor {
-  padding: 0;
+.work-detail--petrichor .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+  padding: 120px 64px;
 }
 
+.work-detail--petrichor .work-detail__section.work-detail__hero.work-detail__hero--petrichor,
 .work-detail--petrichor .work-detail__hero--petrichor {
-  padding: 0;
+  padding: 120px 64px;
 }
 
 .work-detail--petrichor .work-detail__hero-content {
@@ -13622,6 +16046,7 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   height: 540px;
   overflow: hidden;
   position: relative;
+  border-radius: 16px;
 }
 
 .work-detail--petrichor .work-detail__hero-media img {
@@ -13638,7 +16063,7 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 32px;
 }
 
 
@@ -13647,11 +16072,15 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   gap: 64px;
   align-items: center;
   justify-content: center;
-  padding: 120px 64px 40px 64px;
+  padding: 0;
+}
+
+.work-detail--petrichor .work-detail__feature-row--1 {
+  flex-direction: row-reverse;
 }
 
 .work-detail--petrichor .work-detail__feature-row--2 {
-  padding: 40px 64px 120px 64px;
+  padding: 0;
 }
 
 .work-detail--petrichor .work-detail__feature-text {
@@ -13703,15 +16132,16 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   object-position: center 75%;
 }
 
-/* Bento Cards */
 .work-detail--petrichor .work-detail__cards--bento {
   list-style: none;
-  padding: 120px 64px;
+  padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
-  align-items: stretch;
+  column-gap: 32px;
+  row-gap: 48px;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .work-detail--petrichor .work-detail__card--bento {
@@ -13726,28 +16156,24 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 }
 
 .work-detail--petrichor .work-detail__card--1 {
-  flex: 1 0 auto;
-  min-width: 336px;
-  max-width: 388px;
-  height: auto;
-  min-height: auto;
-  align-self: stretch;
+  flex: 1 0 100%;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
 }
 
 .work-detail--petrichor .work-detail__card--2 {
-  flex: 1 0 auto;
-  min-width: 516px;
-  height: auto;
-  min-height: auto;
-  align-self: stretch;
+  flex: 1 0 100%;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
 }
 
 .work-detail--petrichor .work-detail__card--3 {
-  flex: 1 0 auto;
-  min-width: 1072px;
-  height: auto;
-  min-height: auto;
-  align-self: stretch;
+  flex: 1 0 100%;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
 }
 
 .work-detail--petrichor .work-detail__card--bento .work-detail__card-image {
@@ -13763,7 +16189,7 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 .work-detail--petrichor .work-detail__card-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -13834,6 +16260,15 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 
 /* Tablet Mode (800px ~ 1279px) */
 @media (min-width: 800px) and (max-width: 1279px) {
+  .work-detail--petrichor .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 96px 32px;
+  }
+  
+  .work-detail--petrichor .work-detail__section.work-detail__hero.work-detail__hero--petrichor,
+  .work-detail--petrichor .work-detail__hero--petrichor {
+    padding: 96px 32px;
+  }
+  
   .work-detail--petrichor .work-detail__hero-content {
     padding: 0;
     gap: 0;
@@ -13873,11 +16308,11 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 
   .work-detail--petrichor .work-detail__feature-row {
     gap: 32px;
-    padding: 96px 32px 32px 32px;
+    padding: 0;
   }
 
   .work-detail--petrichor .work-detail__feature-row--2 {
-    padding: 32px 32px 96px 32px;
+    padding: 0;
   }
 
   .work-detail--petrichor .work-detail__feature-text {
@@ -13908,33 +16343,31 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   }
 
   .work-detail--petrichor .work-detail__cards--bento {
-    padding: 96px 32px;
+    padding: 0;
     gap: 32px;
+    margin: 0;
+    width: 100%;
   }
 
   .work-detail--petrichor .work-detail__card--1 {
-    min-width: 224px;
-    max-width: 256px;
-    height: auto;
-    min-height: auto;
-    flex: 1 0 auto;
-    align-self: stretch;
+    flex: 1 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
   }
 
   .work-detail--petrichor .work-detail__card--2 {
-    min-width: 352px;
-    height: auto;
-    min-height: auto;
-    flex: 1 0 auto;
-    align-self: stretch;
+    flex: 1 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
   }
 
   .work-detail--petrichor .work-detail__card--3 {
-    min-width: 496px;
-    height: auto;
-    min-height: auto;
-    flex: 1 0 auto;
-    align-self: stretch;
+    flex: 1 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
   }
 
   .work-detail--petrichor .work-detail__card--bento .work-detail__card-image {
@@ -13945,7 +16378,7 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   .work-detail--petrichor .work-detail__card-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
   }
 
@@ -13986,6 +16419,10 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
 }
 
 @media (max-width: 799px) {
+  .work-detail--petrichor .work-detail__section:not(.work-detail__feature-list):not(.work-detail__hero) {
+    padding: 80px 24px;
+  }
+  
   /* Hero Section - Mobile */
   .work-detail--petrichor .work-detail__section.work-detail__hero.work-detail__hero--petrichor {
     padding: 0;
@@ -14041,23 +16478,24 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
     width: 100%;
   }
 
-  .work-detail--petrichor .work-detail__feature-list {
+  .work-detail--petrichor .work-detail__section.work-detail__feature-list {
     padding: 0;
+  }
+  
+  .work-detail--petrichor .work-detail__feature-list {
+    gap: 48px;
   }
 
   .work-detail--petrichor .work-detail__feature-row {
     flex-direction: column;
     gap: 32px;
-    padding: 80px 0 32px;
+    padding: 0;
     align-items: center;
     justify-content: center;
   }
 
   .work-detail--petrichor .work-detail__feature-row--1 {
-    padding-top: 80px;
-    padding-bottom: 32px;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
   }
 
   .work-detail--petrichor .work-detail__feature-row--1 .work-detail__feature-text {
@@ -14079,10 +16517,7 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   }
 
   .work-detail--petrichor .work-detail__feature-row--2 {
-    padding-top: 32px;
-    padding-bottom: 80px;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
   }
 
   .work-detail--petrichor .work-detail__feature-row--2 .work-detail__feature-image {
@@ -14168,9 +16603,11 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   }
 
   .work-detail--petrichor .work-detail__cards--bento {
-    padding: 80px 0;
+    padding: 0;
     flex-direction: column;
     gap: 32px;
+    margin: 0;
+    width: 100%;
   }
 
   .work-detail--petrichor .work-detail__card--bento {
@@ -15987,5 +18424,456 @@ div.work-detail--leeun-9e9e9e .work-detail__testimonial-card div.work-detail__te
   .work-detail--linked .work-detail__cards--linked-technical .work-detail__card-text p {
     font-size: 16px;
     letter-spacing: -0.08px;
+  }
+}
+
+/* ============================================
+   박해인 Chrome 4: Seasons 작품 스타일
+   ============================================ */
+
+.work-detail--parkhaein-chrome4 {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+/* 데스크탑 모드 스타일 */
+@media (min-width: 1280px) {
+  .work-detail--parkhaein-chrome4 .work-detail__section {
+    padding: 120px 64px;
+    width: 100%;
+  }
+
+  /* Hero Section */
+  .work-detail--parkhaein-chrome4 .work-detail__hero {
+    height: 540px;
+    padding: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__hero-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    gap: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__hero-text {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 120px 64px;
+    justify-content: center;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.12px;
+    color: #000000;
+    margin: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__lead {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.12px;
+    color: rgba(0, 0, 0, 0.55);
+    margin: 0;
+  }
+
+.work-detail--parkhaein-chrome4 .work-detail__hero-media {
+  width: 640px;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-detail--parkhaein-chrome4 .work-detail__hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  /* Feature 3: 큰 이미지와 텍스트 */
+  .work-detail--parkhaein-chrome4 .work-detail__feature {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__image-block--parkhaein-feature {
+    width: 100%;
+    height: 648px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__image-block--parkhaein-feature img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__feature-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.72px;
+    color: #000000;
+    margin: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__feature-description {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.1px;
+    color: rgba(0, 0, 0, 0.55);
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__feature-description p {
+    margin: 0;
+  }
+
+  /* Feature Cards 1: 포스터 카드 */
+  .work-detail--parkhaein-chrome4 .work-detail__cards-grid--parkhaein-posters {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__card--parkhaein {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1 0 0;
+    min-width: 336px;
+    max-width: 388px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__card--parkhaein .work-detail__card-image {
+    width: 100%;
+    height: 483px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__card--parkhaein .work-detail__card-image img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__card--parkhaein .work-detail__card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__card-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+    color: #000000;
+    margin: 0;
+  }
+
+  /* Feature Bento 1: 계절 카드 */
+.work-detail--parkhaein-chrome4 .work-detail__bento-grid--parkhaein-seasons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 48px 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+  .work-detail--parkhaein-chrome4 .work-detail__bento-card--parkhaein {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 1 calc(50% - 16px);
+    min-width: 0;
+    max-width: calc(50% - 16px);
+    width: calc(50% - 16px);
+    overflow: hidden;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__bento-card--parkhaein-spring {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 1 calc(50% - 16px);
+    min-width: 0;
+    max-width: calc(50% - 16px);
+    width: calc(50% - 16px);
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__bento-card--parkhaein-winter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 0 0 1072px;
+    width: 1072px;
+    max-width: 1072px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__bento-image {
+    width: 100%;
+    height: 348px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__bento-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 1279px) {
+    .work-detail--parkhaein-chrome4 .work-detail__bento-card--parkhaein,
+    .work-detail--parkhaein-chrome4 .work-detail__bento-card--parkhaein-spring,
+    .work-detail--parkhaein-chrome4 .work-detail__bento-card--parkhaein-winter {
+      flex: 1 0 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__bento-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__bento-card--parkhaein-winter .work-detail__bento-text {
+    padding-right: 320px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__bento-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+    color: #000000;
+    margin: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__bento-description {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+    color: rgba(0, 0, 0, 0.55);
+    margin: 0;
+  }
+
+  /* Feature Gallery 1 */
+  .work-detail--parkhaein-chrome4 .work-detail__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.96px;
+    color: #000000;
+    margin: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.1px;
+    color: rgba(0, 0, 0, 0.55);
+    margin: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-grid--parkhaein {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    width: 1141px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1 0 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-column:first-child .work-detail__gallery-item {
+    height: 411px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item {
+    height: 251px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item {
+    height: 300px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-item {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Feature Card 1: Instagram Card */
+  .work-detail--parkhaein-chrome4 .work-detail__instagram-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 64px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__instagram-card-inner {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    max-width: 800px;
+    min-width: 640px;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__instagram-card-image {
+    width: 160px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__instagram-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__instagram-card-body {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    justify-content: center;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__instagram-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__instagram-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.48px;
+    color: #000000;
+    margin: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__instagram-card-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+    color: rgba(0, 0, 0, 0.55);
+    margin: 0;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__instagram-card-content {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+    color: #000000;
+    margin: 0;
+  }
+
+  /* Text 1: Footer Text */
+  .work-detail--parkhaein-chrome4 .work-detail__footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .work-detail--parkhaein-chrome4 .work-detail__footer-text-content {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.09px;
+    color: rgba(0, 0, 0, 0.45);
+    text-align: center;
+    margin: 0;
   }
 }
