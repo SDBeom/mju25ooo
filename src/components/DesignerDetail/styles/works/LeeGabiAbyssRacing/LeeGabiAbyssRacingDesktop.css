@@ -1,0 +1,526 @@
+/* 이가비 - Abyss Racing: 세이렌의 보물 (작품2) Desktop 버전 스타일 */
+/* Figma 디자인 기반 구현 (1280px) */
+
+.work-detail--leegabi-abyss-racing-desktop {
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--leegabi-abyss-racing-desktop .work-detail__hero--leegabi-abyss-racing-desktop {
+  padding: 0;
+  margin: 0;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  flex-direction: row;}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__hero-content--leegabi-abyss-racing-desktop {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  padding: 120px 64px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__title--leegabi-abyss-racing-desktop {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.12px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__title--leegabi-abyss-racing-desktop .block {
+  display: block;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__lead--leegabi-abyss-racing-desktop {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.12px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__lead--leegabi-abyss-racing-desktop p {
+  margin: 0;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__ctas--leegabi-abyss-racing-desktop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__cta--leegabi-abyss-racing-desktop {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__cta--primary.work-detail__cta--leegabi-abyss-racing-desktop {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__cta--primary.work-detail__cta--leegabi-abyss-racing-desktop:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__cta--secondary.work-detail__cta--leegabi-abyss-racing-desktop {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__cta--secondary.work-detail__cta--leegabi-abyss-racing-desktop:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__hero-image-wrapper--leegabi-abyss-racing-desktop {overflow: hidden;
+  position: relative;
+  
+  flex-shrink: 0;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__hero-image-wrapper--leegabi-abyss-racing-desktop .work-detail__hero-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+/* Feature Section */
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature--leegabi-abyss-racing-desktop {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-image-wrapper--leegabi-abyss-racing-desktop {position: relative;border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature--leegabi-abyss-racing-desktop:first-of-type .work-detail__feature-image-wrapper--leegabi-abyss-racing-desktop {}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature--leegabi-abyss-racing-desktop:first-of-type .work-detail__feature-image-wrapper--leegabi-abyss-racing-desktop .work-detail__feature-image {}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature--leegabi-abyss-racing-desktop:nth-of-type(2) .work-detail__feature-image-wrapper--leegabi-abyss-racing-desktop .work-detail__feature-image {}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-image-wrapper--leegabi-abyss-racing-desktop .work-detail__feature-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature--leegabi-abyss-racing-desktop:first-of-type .work-detail__feature-image-wrapper--leegabi-abyss-racing-desktop .work-detail__feature-image {left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature--leegabi-abyss-racing-desktop:nth-of-type(2) .work-detail__feature-image-wrapper--leegabi-abyss-racing-desktop .work-detail__feature-image {left: -53px;
+  top: -30px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-description p {
+  margin: 0;
+}
+
+/* Feature Rows Section */
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-rows--leegabi-abyss-racing-desktop {
+  padding: 0;
+  margin: 0 auto;
+  width: 1280px;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-row--leegabi-abyss-racing-desktop {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-row--leegabi-abyss-racing-desktop:first-child {
+  padding: 120px 64px 40px 64px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-row--leegabi-abyss-racing-desktop:last-child {
+  padding: 40px 64px 120px 64px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-image-wrapper {position: relative;
+  border-radius: 16px;
+  
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-row--leegabi-abyss-racing-desktop:first-child .work-detail__feature-image-wrapper .work-detail__feature-image {}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-row--leegabi-abyss-racing-desktop:last-child .work-detail__feature-image-wrapper .work-detail__feature-image {}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-row--leegabi-abyss-racing-desktop:first-child .work-detail__feature-image-wrapper .work-detail__feature-image {left: -214px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-row--leegabi-abyss-racing-desktop:last-child .work-detail__feature-image-wrapper .work-detail__feature-image {left: -390px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-content {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-content .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-content .work-detail__text-group .work-detail__feature-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-content .work-detail__text-group .work-detail__feature-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-content .work-detail__text-group .work-detail__feature-description p {
+  margin: 0;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-button {
+  background: #000000;
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-button:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__feature-row--leegabi-abyss-racing-desktop:last-child .work-detail__feature-button {
+  width: 162px;
+}
+
+/* Feature Cards Section */
+.work-detail--leegabi-abyss-racing-desktop .work-detail__cards--leegabi-abyss-racing-desktop {
+  padding: 120px 64px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card--leegabi-abyss-racing-desktop {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  max-width: 388px;
+  min-width: 336px;
+  padding: 0;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card--leegabi-abyss-racing-desktop:first-child {
+  max-width: 362.667px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card--leegabi-abyss-racing-desktop:first-child .work-detail__card-image {height: auto;}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card--leegabi-abyss-racing-desktop:nth-child(2) .work-detail__card-image {height: auto;}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card--leegabi-abyss-racing-desktop:nth-child(3) .work-detail__card-image {height: auto;}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card-image-wrapper {overflow: hidden;
+  position: relative;
+  border-radius: 16px;flex-shrink: 0;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card--leegabi-abyss-racing-desktop:first-child .work-detail__card-image {height: auto;left: -83px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card--leegabi-abyss-racing-desktop:nth-child(2) .work-detail__card-image {height: auto;left: -200.67px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card--leegabi-abyss-racing-desktop:nth-child(3) .work-detail__card-image {height: auto;left: -9.33px;
+  top: -19px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card--leegabi-abyss-racing-desktop:first-child .work-detail__card-text {
+  width: 362.667px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__card-description p {
+  margin: 0;
+}
+
+/* Feature Bento Section */
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento--leegabi-abyss-racing-desktop {
+  padding: 120px 64px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+  align-items: flex-start;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-card--leegabi-abyss-racing-desktop {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-card--leegabi-abyss-racing-desktop:first-child {
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-card--leegabi-abyss-racing-desktop:nth-child(2) {
+  min-width: 516px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-card--large {
+  min-width: 1072px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-image-wrapper {position: relative;
+  border-radius: 16px;overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-card--leegabi-abyss-racing-desktop:first-child .work-detail__bento-image {height: auto;left: -58px;
+  top: -6px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-card--leegabi-abyss-racing-desktop:nth-child(2) .work-detail__bento-image {height: auto;left: -34px;
+  top: -94px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-card--large .work-detail__bento-image {height: auto;left: 0;
+  top: -125px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-card--large .work-detail__bento-text {
+  padding-right: 320px;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leegabi-abyss-racing-desktop .work-detail__bento-description p {
+  margin: 0;
+}
+

@@ -1,0 +1,17 @@
+[
+  {
+    "workId": "허지훈-작품2",
+    "componentName": "허지훈작품2",
+    "condition": "work.id === '허지훈-작품2' || work.layout === '허지훈-작품2'"
+  },
+  {
+    "workId": "김윤정-Love at Rust Sight",
+    "componentName": "김윤정LoveAtRustSight",
+    "condition": "work.id === '김윤정-Love at Rust Sight' || work.layout === '김윤정-Love at Rust Sight'"
+  },
+  {
+    "workId": "허지훈-작품1",
+    "componentName": "허지훈작품1",
+    "condition": "work.id === '허지훈-작품1' || work.layout === '허지훈-작품1'"
+  }
+]

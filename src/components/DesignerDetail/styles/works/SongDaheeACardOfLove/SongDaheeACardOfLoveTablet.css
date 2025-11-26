@@ -1,0 +1,360 @@
+/* 송다희 - A Card of Love (작품1) Tablet 버전 스타일 */
+/* Figma 디자인 기반 구현 (800px) */
+
+.work-detail--song-dahee-a-card-of-love-tablet {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__hero--song-dahee-a-card-of-love-tablet {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__hero-content--song-dahee-a-card-of-love-tablet {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  height: 540px;
+  min-height: 0;
+  min-width: 0;
+  padding: 64px 32px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__title--song-dahee-a-card-of-love-tablet {
+  font-family: 'Inter', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.12px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__lead--song-dahee-a-card-of-love-tablet {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.12px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__lead--song-dahee-a-card-of-love-tablet p {
+  margin: 0;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__ctas--song-dahee-a-card-of-love-tablet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  content-align: center;
+  width: 100%;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__cta--song-dahee-a-card-of-love-tablet {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__cta--primary.work-detail__cta--song-dahee-a-card-of-love-tablet {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__cta--primary.work-detail__cta--song-dahee-a-card-of-love-tablet:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__cta--secondary.work-detail__cta--song-dahee-a-card-of-love-tablet {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__cta--secondary.work-detail__cta--song-dahee-a-card-of-love-tablet:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__hero-image-wrapper--song-dahee-a-card-of-love-tablet {position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__hero-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__hero-image-wrapper--song-dahee-a-card-of-love-tablet .work-detail__hero-image {left: -35px;
+  top: -199px;
+}
+
+/* Feature Cards 1 Section */
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__cards--song-dahee-a-card-of-love-tablet {
+  padding: 96px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  list-style: none;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card--song-dahee-a-card-of-love-tablet {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  max-width: 400px;
+  min-height: 0;
+  min-width: 224px;
+  padding: 0;
+  border-radius: 8px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card-image-wrapper {position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card--song-dahee-a-card-of-love-tablet:first-child .work-detail__card-image {height: auto;left: 0;
+  top: -50px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card--song-dahee-a-card-of-love-tablet:nth-child(2) .work-detail__card-image {height: auto;left: 0;
+  top: -27px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card--song-dahee-a-card-of-love-tablet:nth-child(3) .work-detail__card-image {height: auto;left: 0;
+  top: -50px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__card-description p {
+  margin: 0;
+}
+
+/* Feature Gallery Section */
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery--song-dahee-a-card-of-love-tablet {
+  padding: 96px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--1 {
+  height: 803px;
+  width: 224px;
+  overflow: hidden;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--2,
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--3 {
+  flex: 1 0 0;
+  min-height: 0;
+  min-width: 0;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-item {
+  width: 100%;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--1 .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--1 .work-detail__gallery-item:nth-child(2) {
+  height: 360px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:first-child,
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:nth-child(3) {
+  height: 251px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--3 .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--3 .work-detail__gallery-item:nth-child(2) {
+  height: 411px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+/* Column 1 images */
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--1 .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: -3px;
+  top: 0;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--1 .work-detail__gallery-item:nth-child(2) .work-detail__gallery-image {height: auto;left: 0;
+  top: -20px;
+}
+
+/* Column 2 images */
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: -5px;
+  top: -86px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:nth-child(2) .work-detail__gallery-image {height: auto;left: 0;
+  top: 0;
+  transform: rotate(180deg) scaleY(-1);
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:nth-child(3) .work-detail__gallery-image {height: auto;left: 0;
+  top: -101px;
+}
+
+/* Column 3 images */
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--3 .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: 0;
+  top: -22px;
+}
+
+.work-detail--song-dahee-a-card-of-love-tablet .work-detail__gallery-column--3 .work-detail__gallery-item:nth-child(2) .work-detail__gallery-image {height: auto;left: -6px;
+  top: -13px;
+}
+

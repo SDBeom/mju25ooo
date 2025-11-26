@@ -1,0 +1,369 @@
+/* 조하늘 - The Reason that I Live (작품2) Mobile 버전 스타일 */
+/* Figma 디자인 기반 구현 (375px) */
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile {
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__hero--cho-haneul-mobile {
+  padding: 0;
+  margin: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__hero-image-wrapper--cho-haneul-mobile {overflow: hidden;
+  position: relative;order: -1;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__hero-image-wrapper--cho-haneul-mobile .work-detail__hero-image {position: absolute;left: 0;
+  top: 0;display: block;
+  order: -1;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__hero-content--cho-haneul-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px;
+  width: 100%;
+  order: 1;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__title--cho-haneul-mobile {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__lead--cho-haneul-mobile {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__ctas--cho-haneul-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__cta--cho-haneul-mobile {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__cta--primary.work-detail__cta--cho-haneul-mobile {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__cta--primary.work-detail__cta--cho-haneul-mobile:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__cta--secondary.work-detail__cta--cho-haneul-mobile {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__cta--secondary.work-detail__cta--cho-haneul-mobile:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Text Section */
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__text-section--cho-haneul-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__text-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__eyebrow-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__subtitle {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.32px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__text-content {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__text-content p {
+  margin: 0;
+}
+
+/* Text Blocks Section */
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__text-blocks--cho-haneul-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__text-block {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 311px;
+  min-width: 311px;
+  padding-top: 24px;
+  width: 100%;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__text-block-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.4px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__text-block-content {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Cards Section */
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__cards--cho-haneul-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__card-image-wrapper {overflow: hidden;
+  position: relative;
+  border-radius: 16px;}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__card--cho-haneul-mobile-1 .work-detail__card-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__card--cho-haneul-mobile-2 .work-detail__card-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__card--cho-haneul-mobile-3 .work-detail__card-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__card-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__card-text p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Section (Style Frame) */
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature--cho-haneul-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature-image-wrapper {position: relative;border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature-image-wrapper {}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+/* Style Frame 1 - 첫 번째는 img201 (choHaneulWork2_01) - feature-header가 있음 */
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature--cho-haneul-mobile:first-of-type .work-detail__feature-image {left: 0;
+  top: 0;
+}
+
+/* Style Frame 2 - img206 (choHaneulWork2_06) - feature-header 없음 */
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature--cho-haneul-mobile:nth-of-type(2) {
+  gap: 0;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature--cho-haneul-mobile:nth-of-type(2) .work-detail__feature-image {left: 0;
+  top: 0;
+}
+
+/* Style Frame 3 - img207 (choHaneulWork2_07) - feature-header 없음 */
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature--cho-haneul-mobile:nth-of-type(3) {
+  gap: 0;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature--cho-haneul-mobile:nth-of-type(3) .work-detail__feature-image {left: 0;
+  top: 0;
+}
+
+/* Style Frame 4 - img208 (choHaneulWork2_08) - feature-header 없음 */
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature--cho-haneul-mobile:nth-of-type(4) {
+  gap: 0;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-mobile .work-detail__feature--cho-haneul-mobile:nth-of-type(4) .work-detail__feature-image {left: 0;
+  top: 0;
+}
+

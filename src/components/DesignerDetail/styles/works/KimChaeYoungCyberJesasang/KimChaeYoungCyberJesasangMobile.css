@@ -1,0 +1,442 @@
+/* 김채영 - 사이버 제사상 Mobile 버전 스타일 */
+/* Figma 디자인 기반 구현 (375px) */
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile {
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__hero--kim-chae-young-cyber-jesasang-mobile {
+  width: 100%;
+  max-width: 375px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__hero-image-wrapper--kim-chae-young-cyber-jesasang-mobile {max-width: 375px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  order: -1;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__hero-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__hero-content--kim-chae-young-cyber-jesasang-mobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 56px 24px;
+  order: 1;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__text-group--kim-chae-young-cyber-jesasang-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  text-align: center;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__title--kim-chae-young-cyber-jesasang-mobile {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__lead--kim-chae-young-cyber-jesasang-mobile {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__lead--kim-chae-young-cyber-jesasang-mobile p {
+  margin: 0;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__ctas--kim-chae-young-cyber-jesasang-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__cta--kim-chae-young-cyber-jesasang-mobile {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  line-height: 1.45;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  text-align: center;
+  width: 100%;
+  flex: 1 0 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__cta--primary.work-detail__cta--kim-chae-young-cyber-jesasang-mobile {
+  background: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.08px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__cta--primary.work-detail__cta--kim-chae-young-cyber-jesasang-mobile:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__cta--secondary.work-detail__cta--kim-chae-young-cyber-jesasang-mobile {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  letter-spacing: -0.08px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__cta--secondary.work-detail__cta--kim-chae-young-cyber-jesasang-mobile:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Text Section */
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__text-section--kim-chae-young-cyber-jesasang-mobile {
+  width: 100%;
+  max-width: 375px;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__text-section-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__text-section-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.32px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__text-section-content {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__text-section-content p {
+  margin: 0;
+}
+
+/* Feature Section */
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature--kim-chae-young-cyber-jesasang-mobile {
+  width: 100%;
+  max-width: 375px;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-image-wrapper {max-width: 327px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-description p {
+  margin: 0;
+}
+
+/* Feature Centered */
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-centered--kim-chae-young-cyber-jesasang-mobile {
+  width: 100%;
+  max-width: 375px;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-centered--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-image-wrapper {max-width: 327px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-centered--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-text {
+  width: 100%;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-centered--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-centered--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-description {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+/* Feature List */
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list--kim-chae-young-cyber-jesasang-mobile {
+  width: 100%;
+  max-width: 375px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list--kim-chae-young-cyber-jesasang-mobile:first-of-type {
+  height: 1194px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list--kim-chae-young-cyber-jesasang-mobile:last-of-type {
+  height: 950px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list-item {
+  width: 100%;
+  padding: 80px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list-item:last-child {
+  padding: 32px 24px 80px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list-item .work-detail__feature-image-wrapper {max-width: 327px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list-item .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list-item .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list-item .work-detail__feature-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-list-item .work-detail__feature-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Cards */
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-cards--kim-chae-young-cyber-jesasang-mobile {
+  width: 100%;
+  max-width: 375px;
+  padding: 80px 24px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card {
+  width: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card-article {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card-image-wrapper {position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card-description p {
+  margin: 0;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card:first-child .work-detail__feature-card-description,
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card:last-child .work-detail__feature-card-description {
+  font-size: 16px;
+  letter-spacing: -0.08px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card:nth-child(2) .work-detail__feature-card-description {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-mobile .work-detail__feature-card:last-child .work-detail__feature-card-title {
+  font-weight: 700;
+}
+

@@ -1,61 +1,40 @@
 import React from 'react';
 import '../DesignerShowcase.css';
+import WorkDetailHero from './WorkDetailHero';
 
 /**
  * 기본 작품 레이아웃 컴포넌트
  * 대부분의 작품이 사용하는 표준 레이아웃
  */
-const DefaultWorkLayout = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const DefaultWorkLayout = ({ work, designer, badgeSrc, badgeAlt, ctas, heroClassName = '' }) => {
   // work나 designer가 없으면 null 반환
   if (!work || !designer) {
     return null;
   }
 
-  // layout에 따라 클래스 추가
+  // layout에 따라 클래 추가
   const workDetailClass = work.layout 
     ? `work-detail work-detail--${work.layout}`
     : 'work-detail';
 
+  // heroClassName이 없으면 work.layout에서 추출 시도
+  const finalHeroClassName = heroClassName || (work.layout ? work.layout.replace('work-detail--', '') : '');
+
   return (
     <div className={workDetailClass}>
       {/* Hero Section - 모든 작품과 동일한 구조 */}
-      <section className="work-detail__section work-detail__hero">
-        <div className="work-detail__hero-content">
-          <div className="work-detail__hero-text">
-            <div className="work-detail__text-group">
-              <div className="work-detail__eyebrow">
-                {badgeSrc && <img src={badgeSrc} alt={badgeAlt || work.genre || designer?.role || 'Content'} />}
-                <span className="work-detail__eyebrow-text">{work.genre || designer?.role || 'Content'}</span>
-              </div>
-              <h2 className="work-detail__title">{work.title || '제목 없음'}</h2>
-              <p className="work-detail__lead">{work.summary || ''}</p>
-            </div>
-            <div className="work-detail__ctas">
-              {ctas && Array.isArray(ctas) && ctas.length > 0 ? (
-                ctas.map(({ label, onClick, variant = 'primary' }) => (
-                <button
-                  key={label}
-                  type="button"
-                  className={`work-detail__cta work-detail__cta--${variant === 'secondary' ? 'secondary' : 'primary'}`}
-                  onClick={onClick}
-                >
-                  {label}
-                </button>
-                ))
-              ) : null}
-            </div>
-          </div>
-          {work.thumbnail && (
-            <div className="work-detail__hero-media">
-              <img src={work.thumbnail} alt={`${work.title || '작품'} 대표 장면`} loading="lazy" />
-            </div>
-          )}
-        </div>
-      </section>
+      <WorkDetailHero
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+        heroClassName={finalHeroClassName}
+      />
       
       {work.gallery && Array.isArray(work.gallery) && work.gallery.length > 0 ? (
         <>
-          {/* 첫 번째 섹션: 이미지 + 텍스트 */}
+          {/* 첫 번째 섹션: 이미지 + 텍트 */}
           {work.gallery[0] && work.gallery[0].src && (
             <section className="work-detail__section work-detail__feature work-detail__feature--1">
               <div className="work-detail__image-block">
@@ -115,7 +94,7 @@ const DefaultWorkLayout = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           })}
         </>
       ) : (
-        /* 갤러리가 없는 경우: 텍스트만 표시 */
+        /* 갤러리가 없는 경우: 텍트만 표시 */
         work.description && (
           <section className="work-detail__section work-detail__feature">
             <div className="work-detail__feature-text">

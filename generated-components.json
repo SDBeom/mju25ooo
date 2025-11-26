@@ -1,0 +1,68 @@
+[
+  {
+    "componentName": "허지훈작품2",
+    "fileName": "2",
+    "workKey": "허지훈_작품2",
+    "workInfo": {
+      "designer": "허지훈",
+      "type": "모션디자인",
+      "work": "작품2",
+      "workId": "허지훈-작품2",
+      "devices": {
+        "Mobile": {
+          "nodeId": "365:711",
+          "url": "https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=365-711&m=dev",
+          "name": "허지훈_모션디자인_작품2_Mobile"
+        }
+      },
+      "nodeIds": [
+        "365:711"
+      ]
+    },
+    "workId": "허지훈-작품2"
+  },
+  {
+    "componentName": "김윤정LoveAtRustSight",
+    "fileName": "love-at-rust-sight",
+    "workKey": "김윤정_Love at Rust Sight",
+    "workInfo": {
+      "designer": "김윤정",
+      "type": "비디오콘텐츠",
+      "work": "Love at Rust Sight",
+      "workId": "김윤정-Love at Rust Sight",
+      "devices": {
+        "Desktop": {
+          "nodeId": "1175:14767",
+          "url": "https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=1175-14767&m=dev",
+          "name": "김윤정_비디오콘텐츠_Love at Rust Sight_Desktop"
+        }
+      },
+      "nodeIds": [
+        "1175:14767"
+      ]
+    },
+    "workId": "김윤정-Love at Rust Sight"
+  },
+  {
+    "componentName": "허지훈작품1",
+    "fileName": "1",
+    "workKey": "허지훈_작품1",
+    "workInfo": {
+      "designer": "허지훈",
+      "type": "모션디자인",
+      "work": "작품1",
+      "workId": "허지훈-작품1",
+      "devices": {
+        "Tablet": {
+          "nodeId": "365:1085",
+          "url": "https://www.figma.com/design/dfELgNmLU5F1rOd0OiSJzJ/%EC%A1%B8%EC%97%85%EC%A0%84%EC%8B%9C-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%95%99%EC%83%9D%EC%9A%A9-X?node-id=365-1085&m=dev",
+          "name": "허지훈_모션디자인_작품1_Tablet"
+        }
+      },
+      "nodeIds": [
+        "365:1085"
+      ]
+    },
+    "workId": "허지훈-작품1"
+  }
+]

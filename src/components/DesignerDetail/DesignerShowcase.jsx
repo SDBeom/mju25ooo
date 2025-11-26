@@ -7,6 +7,8 @@ import { GENRE_TYPES, DEFAULTS, INSTAGRAM, CTA_LABELS, GALLERY_SCROLL_DELAY, SCR
 import { videoBadge, gameBadge, multimediaBadge, motionBadge } from '../../data/designerDetailsData';
 import { guardCSSImport } from '../../shared/cssImportGuard';
 import './DesignerShowcase.css';
+import './styles/hero-responsive.css';
+import './styles/works-merged.css';
 
 // CSS import 보장 (개발 모드에서만 체크)
 guardCSSImport('./DesignerShowcase.css', 'designer-showcase', 'DesignerShowcase');

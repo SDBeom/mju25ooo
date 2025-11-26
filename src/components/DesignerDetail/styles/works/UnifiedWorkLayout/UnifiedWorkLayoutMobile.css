@@ -1,0 +1,373 @@
+/* 통일된 작품 상세 레이아웃 - Mobile 버전 */
+/* 서동범 HiFive Mobile 레이아웃 구조 기반 */
+
+.modal-content .work-detail--unified-mobile,
+.work-detail--unified-mobile {
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 모달창 내부 섹션들이 보이도록 보장 */
+.modal-content .work-detail--unified-mobile .work-detail__section,
+.modal-content .work-detail__section {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Hero Section */
+.work-detail--unified-mobile .work-detail__hero--unified-mobile {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.work-detail--unified-mobile .work-detail__hero-image-wrapper--unified-mobile {
+  height: 298px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  order: -1;
+}
+
+.work-detail--unified-mobile .work-detail__hero-image-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.work-detail--unified-mobile .work-detail__hero-image-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.work-detail--unified-mobile .work-detail__hero-image-wrapper--unified-mobile .work-detail__hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  order: -1;
+}
+
+.work-detail--unified-mobile .work-detail__hero-content--unified-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 56px 24px;
+  width: 100%;
+  order: 1;
+}
+
+.work-detail--unified-mobile .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--unified-mobile .work-detail__title--unified-mobile {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--unified-mobile .work-detail__lead--unified-mobile {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.work-detail--unified-mobile .work-detail__ctas--unified-mobile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.work-detail--unified-mobile .work-detail__cta--unified-mobile {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.07px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+}
+
+.work-detail--unified-mobile .work-detail__cta--primary.work-detail__cta--unified-mobile {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--unified-mobile .work-detail__cta--primary.work-detail__cta--unified-mobile:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--unified-mobile .work-detail__cta--secondary.work-detail__cta--unified-mobile {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--unified-mobile .work-detail__cta--secondary.work-detail__cta--unified-mobile:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Bento Section */
+.work-detail--unified-mobile .work-detail__bento--unified-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  max-width: 375px;
+}
+
+.work-detail--unified-mobile .work-detail__bento-card--unified-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.work-detail--unified-mobile .work-detail__bento-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.work-detail--unified-mobile .work-detail__bento-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.56px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--unified-mobile .work-detail__bento-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.work-detail--unified-mobile .work-detail__bento-description p {
+  margin: 0;
+}
+
+.work-detail--unified-mobile .work-detail__bento-image-wrapper {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-detail--unified-mobile .work-detail__bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Quote Section */
+.work-detail--unified-mobile .work-detail__quote--unified-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 375px;
+}
+
+.work-detail--unified-mobile .work-detail__quote-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+}
+
+.work-detail--unified-mobile .work-detail__quote-text {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.64px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+}
+
+.work-detail--unified-mobile .work-detail__quote-subtitle {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  text-align: center;
+}
+
+.work-detail--unified-mobile .work-detail__quote-content {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  text-align: center;
+}
+
+/* Feature Section */
+.work-detail--unified-mobile .work-detail__feature--unified-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 375px;
+}
+
+.work-detail--unified-mobile .work-detail__feature-image-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-detail--unified-mobile .work-detail__feature-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Cards Section */
+.work-detail--unified-mobile .work-detail__cards--unified-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  max-width: 375px;
+}
+
+.work-detail--unified-mobile .work-detail__card--unified-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.work-detail--unified-mobile .work-detail__card-image-wrapper {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-detail--unified-mobile .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.work-detail--unified-mobile .work-detail__card-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.work-detail--unified-mobile .work-detail__card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.56px;
+  color: #000000;
+  margin: 0;
+}
+
+.work-detail--unified-mobile .work-detail__card-title-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-detail--unified-mobile .work-detail__card-title-list li {
+  margin: 0;
+}
+
+.work-detail--unified-mobile .work-detail__card-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.work-detail--unified-mobile .work-detail__card-description p {
+  margin: 0;
+}
+

@@ -32,7 +32,7 @@ import kimJaeEunWork1_09 from '../assets/김재은/김재은_Video_작품1_09.we
 import kimJaeEunWork1_10 from '../assets/김재은/김재은_Video_작품1_10.webp';
 import kimJaeEunWork1_11 from '../assets/김재은/김재은_Video_작품1_11.webp';
 import kimJaeEunWork1_12 from '../assets/김재은/김재은_Video_작품1_12.webp';
-import kimJaeEunWork1_13 from '../assets/김재은/scene1-50002 1.webp';
+import kimJaeEunWork1_13 from '../assets/김재은/김재은_Video_작품1_13.webp';
 import kimJaeEunWork1_14 from '../assets/김재은/김재은_Video_작품1_14.webp';
 import kimJaeEunWork1_15 from '../assets/김재은/김재은_Video_작품1_15.webp';
 import kimJaeEunWork2 from '../assets/김재은/김재은_Video_작품2_01.webp';

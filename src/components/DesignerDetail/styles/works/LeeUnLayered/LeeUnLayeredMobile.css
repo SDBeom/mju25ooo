@@ -1,0 +1,476 @@
+/* 이운 - Layered (작품1) Mobile 버전 스타일 */
+/* Figma 디자인 기반 구현 (375px) */
+
+.work-detail--leeun-layered-mobile {
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--leeun-layered-mobile .work-detail__hero--leeun-layered-mobile {
+  padding: 0;
+  margin: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__hero-image-wrapper--leeun-layered-mobile {overflow: hidden;
+  position: relative;order: -1;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__hero-image-wrapper--leeun-layered-mobile .work-detail__hero-image {position: absolute;left: 0;
+  top: 0;display: block;
+  transform: rotate(359.767deg);
+  order: -1;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__hero-content--leeun-layered-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 56px 24px;
+  width: 100%;
+  order: 1;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__title--leeun-layered-mobile {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__lead--leeun-layered-mobile {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__lead--leeun-layered-mobile p {
+  margin: 0;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__ctas--leeun-layered-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__cta--leeun-layered-mobile {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__cta--primary.work-detail__cta--leeun-layered-mobile {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__cta--primary.work-detail__cta--leeun-layered-mobile:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--leeun-layered-mobile .work-detail__cta--secondary.work-detail__cta--leeun-layered-mobile {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--leeun-layered-mobile .work-detail__cta--secondary.work-detail__cta--leeun-layered-mobile:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Text Section */
+.work-detail--leeun-layered-mobile .work-detail__text-section--leeun-layered-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__text-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__text-section-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__text-section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.32px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__text-section-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__text-section-description p {
+  margin: 0;
+}
+
+/* Gallery Section - LOOK */
+.work-detail--leeun-layered-mobile .work-detail__gallery--leeun-layered-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.64px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--1 {
+  width: 327px;
+  height: 803px;
+  position: relative;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--2,
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--3 {
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-item {
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-item--empty {
+  background: transparent;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--1 .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--1 .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:first-child,
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:last-child {
+  height: 251px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--3 .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-column--3 .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__gallery-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+/* Feature Rows Section */
+.work-detail--leeun-layered-mobile .work-detail__feature-rows--leeun-layered-mobile,
+.work-detail--leeun-layered-mobile .work-detail__feature-rows--leeun-layered-mobile-2 {
+  padding: 0;
+  margin: 0 auto;
+  width: 375px;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-row--leeun-layered-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-row--leeun-layered-mobile:first-child {
+  padding: 80px 24px 32px 24px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-row--leeun-layered-mobile:last-child {
+  padding: 32px 24px 80px 24px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-image-wrapper {position: relative;
+  border-radius: 16px;overflow: hidden;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-content .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-content .work-detail__text-group .work-detail__feature-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-content .work-detail__text-group .work-detail__feature-description {
+  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__feature-content .work-detail__text-group .work-detail__feature-description p {
+  margin: 0;
+}
+
+/* Feature Cards Section */
+.work-detail--leeun-layered-mobile .work-detail__cards--leeun-layered-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__card--leeun-layered-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  min-width: 224px;
+  padding: 0;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__card-image-wrapper {overflow: hidden;
+  position: relative;
+  border-radius: 16px;flex-shrink: 0;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__card-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Bento Section */
+.work-detail--leeun-layered-mobile .work-detail__bento--leeun-layered-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__bento-card--leeun-layered-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__bento-image-wrapper {overflow: hidden;
+  position: relative;
+  border-radius: 16px;}
+
+.work-detail--leeun-layered-mobile .work-detail__bento-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__bento-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--leeun-layered-mobile .work-detail__bento-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+

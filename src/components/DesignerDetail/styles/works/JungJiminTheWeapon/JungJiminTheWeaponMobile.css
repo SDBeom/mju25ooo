@@ -1,0 +1,386 @@
+/* 정지민 - The Weapon (작품2) Mobile 버전 스타일 */
+/* Figma 디자인 기반 구현 (375px) */
+
+.work-detail--jungjimin-the-weapon-mobile {
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__hero--jungjimin-weapon-mobile {
+  padding: 0;
+  margin: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__hero-image-wrapper--jungjimin-weapon-mobile {overflow: hidden;
+  position: relative;order: -1;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__hero-image-wrapper--jungjimin-weapon-mobile .work-detail__hero-image {position: absolute;left: 0;
+  top: 0;display: block;
+  order: -1;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__hero-content--jungjimin-weapon-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px;
+  width: 100%;
+  order: 1;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__title--jungjimin-weapon-mobile {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__lead--jungjimin-weapon-mobile {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__ctas--jungjimin-weapon-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__cta--jungjimin-weapon-mobile {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__cta--primary.work-detail__cta--jungjimin-weapon-mobile {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__cta--primary.work-detail__cta--jungjimin-weapon-mobile:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__cta--secondary.work-detail__cta--jungjimin-weapon-mobile {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__cta--secondary.work-detail__cta--jungjimin-weapon-mobile:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Feature Section */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature--jungjimin-weapon-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image-wrapper--jungjimin-weapon-mobile {position: relative;border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image {height: auto;position: absolute;display: block;
+  border-radius: 16px;
+}
+
+/* Feature Section 1 - 장검 이미지 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature--jungjimin-weapon-mobile:first-of-type .work-detail__feature-image {left: 0;
+  top: 0;
+  transform: none;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-text--below {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-text--below p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Rows Section */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-rows--jungjimin-weapon-mobile {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-row--jungjimin-weapon-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 32px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-row--jungjimin-weapon-mobile:last-child {
+  padding: 32px 24px 80px;
+}
+
+/* Feature Rows 이미지 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-row--jungjimin-weapon-mobile:first-child .work-detail__feature-image {left: 0;
+  top: 0;
+  transform: none;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-row--jungjimin-weapon-mobile:last-child .work-detail__feature-image {left: 0;
+  top: 0;
+  transform: none;
+}
+
+/* Feature Section 3 - 단검 (이미지 위, 텍스트 아래) */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature--image-top {height: auto;padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  
+  max-
+  margin: 0 auto;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image-wrapper--small {}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image-wrapper--small .work-detail__feature-image {left: 0;
+  top: 0;
+  transform: none;
+  border-radius: 16px;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature--image-top .work-detail__feature-text--below {height: auto;gap: 16px;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature--image-top .work-detail__feature-text--below p {height: auto;font-size: 16px;
+  letter-spacing: -0.08px;
+}
+
+/* Feature Cards Section */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__cards--jungjimin-weapon-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  min-width: 224px;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card-image-wrapper {overflow: hidden;
+  position: relative;
+  border-radius: 16px;}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card-image {height: auto;position: absolute;display: block;
+  border-radius: 16px;
+}
+
+/* Card 1 - 해머 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile:first-child .work-detail__card-image {left: 0;
+  top: 0;
+  transform: none;
+}
+
+/* Card 2 - 장검 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile:nth-child(2) .work-detail__card-image {left: 0;
+  top: 0;
+  transform: none;
+}
+
+/* Card 3 - 장검 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile:last-child .work-detail__card-image {left: 0;
+  top: 0;
+  transform: none;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Bento Section */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento--jungjimin-weapon-mobile {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card-image-wrapper {overflow: hidden;
+  position: relative;
+  border-radius: 16px;}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card-image {height: auto;position: absolute;display: block;
+}
+
+/* Bento Card 1 - 문양 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:first-child .work-detail__bento-card-image {left: 0;
+  top: 0;
+  transform: none;
+}
+
+/* Bento Card 2 - 해머 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:nth-child(2) .work-detail__bento-card-image {left: 0;
+  top: 0;
+  transform: none;
+  border-radius: 16px;
+}
+
+/* Bento Card 3 - 해머 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:last-child .work-detail__bento-card-image-wrapper {position: relative;
+  overflow: hidden;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:last-child .work-detail__bento-card-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+

@@ -609,12 +609,28 @@ body .details.--is-showing {
 
 .work-detail {
   width: 1280px;
-  max-width: calc(100vw - clamp(40px, 6vw, 120px));
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0;
   padding-bottom: clamp(48px, 8vh, 120px);
+}
+
+/* 태블릿: 800px ~ 1279px */
+@media (max-width: 1279px) and (min-width: 800px) {
+  .work-detail {
+    width: 800px;
+    max-width: 800px;
+  }
+}
+
+/* 모바일: < 800px */
+@media (max-width: 799px) {
+  .work-detail {
+    width: 375px;
+    max-width: 375px;
+  }
 }
 
 .work-detail__section {

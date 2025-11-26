@@ -1,0 +1,258 @@
+/* 전기태 - War Orb (작품2) Desktop 버전 스타일 */
+/* Figma 디자인 기반 구현 (1280px) */
+
+.work-detail--jeongitae-warorb-desktop {
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--jeongitae-warorb-desktop .work-detail__hero--jeongitae-warorb-desktop {
+  padding: 0;
+  margin: 0;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  flex-direction: row;}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__hero-content--jeongitae-warorb-desktop {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  padding: 120px 64px;
+  height: 540px;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__title--jeongitae-warorb-desktop {
+  font-family: 'Inter', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.12px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__lead--jeongitae-warorb-desktop {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.12px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__lead--jeongitae-warorb-desktop p {
+  margin: 0;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__ctas--jeongitae-warorb-desktop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__cta--jeongitae-warorb-desktop {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__cta--primary.work-detail__cta--jeongitae-warorb-desktop {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__cta--primary.work-detail__cta--jeongitae-warorb-desktop:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__cta--secondary.work-detail__cta--jeongitae-warorb-desktop {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__cta--secondary.work-detail__cta--jeongitae-warorb-desktop:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__hero-image-wrapper--jeongitae-warorb-desktop {overflow: hidden;
+  position: relative;
+  
+  flex-shrink: 0;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__hero-image-wrapper--jeongitae-warorb-desktop .work-detail__hero-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+/* Feature Section */
+.work-detail--jeongitae-warorb-desktop .work-detail__feature--jeongitae-warorb-desktop {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__feature-image-wrapper--jeongitae-warorb-desktop {position: relative;border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__feature-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__feature-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__feature-text p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Bento Section */
+.work-detail--jeongitae-warorb-desktop .work-detail__cards--jeongitae-warorb-desktop.work-detail__cards--bento {
+  padding: 120px 64px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+  align-items: flex-start;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card--jeongitae-warorb-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card--bento-1 {
+  flex: 1 0 0;
+  max-width: 388px;
+  min-width: 336px;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card--bento-2 {
+  min-width: 516px;
+  width: 732px;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card--bento-3 {
+  flex: 1 0 0;
+  min-width: 1072px;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card-image-wrapper {overflow: hidden;
+  position: relative;
+  border-radius: 16px;}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card--bento-3 .work-detail__card-text {
+  padding-right: 320px;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--jeongitae-warorb-desktop .work-detail__card-text p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+

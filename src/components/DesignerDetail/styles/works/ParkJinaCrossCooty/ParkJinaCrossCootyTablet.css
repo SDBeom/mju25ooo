@@ -1,0 +1,483 @@
+/* 박진아 - Cross Cooty Tablet 버전 스타일 */
+/* Figma 디자인 기반 구현 (800px) */
+
+.work-detail--park-jina-cross-cooty-tablet {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--park-jina-cross-cooty-tablet .work-detail__hero--park-jina-cross-cooty-tablet {
+  width: 100%;
+  max-width: 800px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__hero-content--park-jina-cross-cooty-tablet {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 32px;
+  min-width: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__title--park-jina-cross-cooty-tablet {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__lead--park-jina-cross-cooty-tablet {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.12px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__lead--park-jina-cross-cooty-tablet p {
+  margin: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__ctas--park-jina-cross-cooty-tablet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__cta--park-jina-cross-cooty-tablet {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__cta--primary.work-detail__cta--park-jina-cross-cooty-tablet {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__cta--primary.work-detail__cta--park-jina-cross-cooty-tablet:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__cta--secondary.work-detail__cta--park-jina-cross-cooty-tablet {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__cta--secondary.work-detail__cta--park-jina-cross-cooty-tablet:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__hero-image-wrapper--park-jina-cross-cooty-tablet {position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__hero-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+/* Text Section: Cooty Universe */
+.work-detail--park-jina-cross-cooty-tablet .work-detail__text-section--park-jina-cross-cooty-tablet {
+  width: 100%;
+  max-width: 800px;
+  padding: 96px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__text-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__subtitle--park-jina-cross-cooty-tablet {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__text-content--park-jina-cross-cooty-tablet {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__text-content--park-jina-cross-cooty-tablet p {
+  margin: 0;
+}
+
+/* Feature Bento */
+.work-detail--park-jina-cross-cooty-tablet .work-detail__bento--park-jina-cross-cooty-tablet {
+  width: 100%;
+  max-width: 800px;
+  padding: 96px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__bento-card--park-jina-cross-cooty-tablet {
+  flex: 1 0 0;
+  min-width: 496px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__bento-card-full--park-jina-cross-cooty-tablet {
+  min-width: 100%;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__bento-image-wrapper {position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__bento-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__bento-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__bento-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__bento-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__bento-description p {
+  margin: 0;
+}
+
+/* Feature Cards */
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-cards--park-jina-cross-cooty-tablet {
+  width: 100%;
+  max-width: 800px;
+  padding: 96px 32px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  list-style: none;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card--park-jina-cross-cooty-tablet {
+  flex: 1 0 0;
+  max-width: 400px;
+  min-width: 224px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-image-wrapper {position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-description p {
+  margin: 0;
+}
+
+/* Feature Rows */
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-rows--park-jina-cross-cooty-tablet {
+  width: 100%;
+  max-width: 800px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row--park-jina-cross-cooty-tablet {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 32px 32px;
+  width: 100%;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row--park-jina-cross-cooty-tablet:nth-child(2) {
+  padding: 32px 32px 96px;
+  flex-direction: row-reverse;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row--park-jina-cross-cooty-tablet:nth-child(3) {
+  padding: 0 32px 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row-content {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.56px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row-description p {
+  margin: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row-image-wrapper {position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 16px;
+}
+
+/* Feature Cards Character */
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-cards-character--park-jina-cross-cooty-tablet {
+  width: 100%;
+  max-width: 800px;
+  padding: 96px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  list-style: none;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character--park-jina-cross-cooty-tablet {
+  width: 100%;
+  height: 367px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 32px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character-description p {
+  margin: 0;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character-image-wrapper {position: absolute;
+  
+  
+  border: 8px solid #ffffff;
+  border-radius: 32px;
+  overflow: hidden;
+  bottom: 0;
+  left: 248px;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character--park-jina-cross-cooty-tablet:nth-child(2) .work-detail__feature-card-character-image-wrapper {left: 248px;
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character--park-jina-cross-cooty-tablet:nth-child(3) .work-detail__feature-card-character-image-wrapper {left: 50%;
+  transform: translateX(-50%);
+}
+
+.work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+/* Marquee */
+.work-detail--park-jina-cross-cooty-tablet .work-detail__marquee--park-jina-cross-cooty-tablet {
+  width: 100%;
+  max-width: 800px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  flex-shrink: 0;
+  min-height: 0;
+}
+

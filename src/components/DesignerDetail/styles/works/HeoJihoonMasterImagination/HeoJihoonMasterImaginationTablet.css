@@ -1,0 +1,547 @@
+/* 허지훈 - Master your Imagination (작품1) Tablet 버전 스타일 */
+/* Figma 디자인 기반 구현 (800px) */
+
+.work-detail--heo-jihoon-master-imagination-tablet {
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero--master-imagination-tablet {
+  padding: 0;
+  margin: 0;
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+
+  flex-direction: row;}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero-content--tablet {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  padding: 64px 32px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__title--tablet {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__lead--tablet {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__ctas--tablet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__cta--tablet {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__cta--primary.work-detail__cta--tablet {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__cta--primary.work-detail__cta--tablet:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__cta--secondary.work-detail__cta--tablet {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__cta--secondary.work-detail__cta--tablet:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero-image-wrapper--tablet {overflow: hidden;
+  position: relative;
+  
+  flex-shrink: 0;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero-image-wrapper--tablet .work-detail__hero-image {display: block;
+}
+
+/* Pull Quote Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__quote--tablet {
+  padding: 96px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__quote-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__quote-text {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+/* Text Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__text-section--tablet {
+  padding: 96px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__text-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__eyebrow-text {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__subtitle {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__text-content {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--tablet {
+  padding: 96px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-image-wrapper {position: relative;}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-image {border-radius: 16px;
+  overflow: hidden;display: block;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--tablet:not(.work-detail__feature--final) .work-detail__feature-image-wrapper {}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.56px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-title--large {
+  font-size: 36px;
+  letter-spacing: -0.72px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-text p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Section 2 (생성형 AI 활용) - 텍스트 크기 18px */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--tablet:nth-of-type(3) .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+/* Feature Section 2 (생성형 AI 활용) */
+
+/* Feature Cards Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__cards--tablet {
+  padding: 96px 32px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  max-width: 400px;
+  min-height: 0;
+  min-width: 224px;
+  border-radius: 8px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-image-wrapper {position: relative;border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-image {display: block;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-text p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card:nth-child(2) .work-detail__card-text p,
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card:nth-child(3) .work-detail__card-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+/* Feature Cards Section 2 (부드러운 무한 스크롤 등) */
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__cards--final .work-detail__card:nth-child(2) .work-detail__card-text p,
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__cards--final .work-detail__card:nth-child(3) .work-detail__card-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+/* Feature Rows Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-rows--tablet {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 784px;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 32px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row:first-child {
+  padding-top: 96px;
+  padding-bottom: 32px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row:last-child {
+  padding-top: 32px;
+  padding-bottom: 96px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row-content {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row:nth-child(2) .work-detail__feature-row-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row-content p {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row-image-wrapper {position: relative;
+  
+  
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row-image {display: block;
+}
+
+/* Gallery Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery--tablet {
+  padding: 96px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-grid {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:first-child {
+  width: 224px;
+  flex-shrink: 0;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:nth-child(2),
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:nth-child(3) {
+  flex: 1 0 0;
+  min-height: 0;
+  min-width: 0;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-item {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child {
+  height: 411px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child {
+  height: 360px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child,
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:last-child {
+  height: 251px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child {
+  height: 300px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child {
+  height: 411px;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-item .work-detail__gallery-image {position: absolute;top: 0;
+  left: 0;
+}
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+

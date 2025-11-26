@@ -1,0 +1,558 @@
+/* 우수민 - Pierre Huyghe: Liminal 가이드앱 UXUI (작품2) Desktop 버전 스타일 */
+/* Figma 디자인 기반 구현 (1280px) */
+
+.work-detail--woosumin-pierre-huyghe-desktop {
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__hero--woosumin-pierre-huyghe-desktop {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__hero-content--woosumin-pierre-huyghe-desktop {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 64px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__title--woosumin-pierre-huyghe-desktop {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.12px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__title--woosumin-pierre-huyghe-desktop .block {
+  display: block;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__lead--woosumin-pierre-huyghe-desktop {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.12px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__lead--woosumin-pierre-huyghe-desktop p {
+  margin: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__ctas--woosumin-pierre-huyghe-desktop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__cta--woosumin-pierre-huyghe-desktop {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  white-space: nowrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__cta--primary.work-detail__cta--woosumin-pierre-huyghe-desktop {
+  background: #000000;
+  color: #ffffff;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__cta--primary.work-detail__cta--woosumin-pierre-huyghe-desktop:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__cta--secondary.work-detail__cta--woosumin-pierre-huyghe-desktop {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__cta--secondary.work-detail__cta--woosumin-pierre-huyghe-desktop:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__hero-image-wrapper--woosumin-pierre-huyghe-desktop {position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__hero-image-wrapper--woosumin-pierre-huyghe-desktop .work-detail__hero-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+/* Feature Section */
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature--woosumin-pierre-huyghe-desktop {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-image-wrapper {position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-content {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-content .work-detail__text-group {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-title .block {
+  display: block;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-description p {
+  margin: 0;
+}
+
+/* Pull Quote Section */
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote--woosumin-pierre-huyghe-desktop {
+  padding: 129px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  width: 1280px;
+  max-width: 1280px;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  width: 100%;
+  border-left: 2px solid #dadada;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  padding-left: 32px;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-text {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+  min-width: 100%;
+  width: min-content;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-text p {
+  margin: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-attribution {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.36px;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-attribution p {
+  margin: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-attribution--bold {
+  color: #000000;
+  font-weight: 500;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-attribution span:not(.work-detail__quote-attribution--bold) {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* Feature Cards Section 1 */
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__cards--woosumin-pierre-huyghe-desktop {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 1280px;
+  max-width: 1280px;
+  list-style: none;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--woosumin-pierre-huyghe-desktop {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  max-width: 388px;
+  min-width: 336px;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image-wrapper {position: relative;
+  border-radius: 16px;
+  overflow: hidden;flex-shrink: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image {position: absolute;left: 0;
+  top: 0;display: block;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--woosumin-pierre-huyghe-desktop:first-child .work-detail__card-image {left: 0;
+  top: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--woosumin-pierre-huyghe-desktop:nth-child(2) .work-detail__card-image {left: 0;
+  top: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--woosumin-pierre-huyghe-desktop:nth-child(3) .work-detail__card-image {left: 0;
+  top: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Feature Cards Section 2 */
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__cards--feature.work-detail__cards--woosumin-pierre-huyghe-desktop {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  width: 1280px;
+  max-width: 1280px;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--feature.work-detail__card--woosumin-pierre-huyghe-desktop {
+  flex: 1 0 0;
+  height: 384px;
+  min-height: 0;
+  min-width: 0;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--feature .work-detail__card-content {
+  background: rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--feature .work-detail__card-text {
+  padding: 32px;
+  width: 100%;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image-wrapper--phone {position: absolute;
+  border: 8px solid #ffffff;
+  border-radius: 32px;
+  
+  
+  left: 61px;
+  top: 198px;
+  overflow: hidden;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--feature:nth-child(1) .work-detail__card-image-wrapper--phone {left: 61px;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--feature:nth-child(2) .work-detail__card-image-wrapper--phone {left: 61.34px;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--feature:nth-child(3) .work-detail__card-image-wrapper--phone {left: 61.66px;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image-wrapper--phone .work-detail__card-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: inherit;
+}
+
+/* Testimonial Wall Section */
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial--woosumin-pierre-huyghe-desktop {
+  padding: 120px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  width: 1280px;
+  max-width: 1280px;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-title {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.96px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-description {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-column {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 32px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-author {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-avatar-image {position: absolute;left: 0;
+  top: 0;display: block;
+  border-radius: 8px;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-author-text {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+  min-height: 0;
+  min-width: 0;
+  font-size: 16px;
+  letter-spacing: -0.08px;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-author-name {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-author-role {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.08px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-text {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
