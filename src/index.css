@@ -43,6 +43,9 @@
   --z-mobile-menu: 150;
   --z-tooltip: 200;
   --z-modal: 1000;
+  --z-modal-overlay: 9999; /* 모달 오버레이용 높은 z-index */
+  --z-header-above-modal: 10001; /* 모달 위의 헤더 */
+  --z-header-button: 10002; /* 헤더 버튼 */
   --z-toast: 2000;
   
   --animation-fast: 150ms;

@@ -3,14 +3,14 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ChoHaneulTheReasonThatILive/ChoHaneulTheReasonThatILiveDesktop.css';
 
 // ��지 �포허지훈
-import choHaneulWork2_01 from '../../../../assets/조하늘/조하늘_영상콘텐츠_작품2_01.webp';
-import choHaneulWork2_02 from '../../../../assets/조하늘/조하늘_영상콘텐츠_작품2_02.webp';
-import choHaneulWork2_03 from '../../../../assets/조하늘/조하늘_영상콘텐츠_작품2_03.webp';
-import choHaneulWork2_04 from '../../../../assets/조하늘/조하늘_영상콘텐츠_작품2_04.webp';
-import choHaneulWork2_05 from '../../../../assets/조하늘/조하늘_영상콘텐츠_작품2_05.webp';
-import choHaneulWork2_06 from '../../../../assets/조하늘/조하늘_영상콘텐츠_작품2_06.webp';
-import choHaneulWork2_07 from '../../../../assets/조하늘/조하늘_영상콘텐츠_작품2_07.webp';
-import choHaneulWork2_08 from '../../../../assets/조하늘/조하늘_영상콘텐츠_작품2_08.webp';
+import choHaneulWork2_01 from '../../../../assets/조하늘/johaneul_videocontent_work2_01.webp';
+import choHaneulWork2_02 from '../../../../assets/조하늘/johaneul_videocontent_work2_02.webp';
+import choHaneulWork2_03 from '../../../../assets/조하늘/johaneul_videocontent_work2_03.webp';
+import choHaneulWork2_04 from '../../../../assets/조하늘/johaneul_videocontent_work2_04.webp';
+import choHaneulWork2_05 from '../../../../assets/조하늘/johaneul_videocontent_work2_05.webp';
+import choHaneulWork2_06 from '../../../../assets/조하늘/johaneul_videocontent_work2_06.webp';
+import choHaneulWork2_07 from '../../../../assets/조하늘/johaneul_videocontent_work2_07.webp';
+import choHaneulWork2_08 from '../../../../assets/조하늘/johaneul_videocontent_work2_08.webp';
 
 /**
  * 조하늘 - The Reason that I Live (�작품2) Desktop 버전

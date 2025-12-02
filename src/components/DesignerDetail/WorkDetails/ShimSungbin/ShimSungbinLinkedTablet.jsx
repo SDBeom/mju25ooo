@@ -3,15 +3,15 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ShimSungbinLinked/ShimSungbinLinkedTablet.css';
 
 // 이미지 임포트
-import shimSungbinWork1_01 from '../../../../assets/심성빈/심성빈_영상콘텐츠_작품1_01.webp';
-import shimSungbinWork1_02 from '../../../../assets/심성빈/심성빈_영상콘텐츠_작품1_02.webp';
-import shimSungbinWork1_03 from '../../../../assets/심성빈/심성빈_영상콘텐츠_작품1_03.webp';
-import shimSungbinWork1_04 from '../../../../assets/심성빈/심성빈_영상콘텐츠_작품1_04.webp';
-import shimSungbinWork1_05 from '../../../../assets/심성빈/심성빈_영상콘텐츠_작품1_05.webp';
-import shimSungbinWork1_06 from '../../../../assets/심성빈/심성빈_영상콘텐츠_작품1_06.webp';
-import shimSungbinWork1_07 from '../../../../assets/심성빈/심성빈_영상콘텐츠_작품1_07.webp';
-import shimSungbinWork1_08 from '../../../../assets/심성빈/심성빈_영상콘텐츠_작품1_08.webp';
-import shimSungbinWork1_09 from '../../../../assets/심성빈/심성빈_영상콘텐츠_작품1_09.webp';
+import shimSungbinWork1_01 from '../../../../assets/심성빈/simseongbin_videocontent_work1_01.webp';
+import shimSungbinWork1_02 from '../../../../assets/심성빈/simseongbin_videocontent_work1_02.webp';
+import shimSungbinWork1_03 from '../../../../assets/심성빈/simseongbin_videocontent_work1_03.webp';
+import shimSungbinWork1_04 from '../../../../assets/심성빈/simseongbin_videocontent_work1_04.webp';
+import shimSungbinWork1_05 from '../../../../assets/심성빈/simseongbin_videocontent_work1_05.webp';
+import shimSungbinWork1_06 from '../../../../assets/심성빈/simseongbin_videocontent_work1_06.webp';
+import shimSungbinWork1_07 from '../../../../assets/심성빈/simseongbin_videocontent_work1_07.webp';
+import shimSungbinWork1_08 from '../../../../assets/심성빈/simseongbin_videocontent_work1_08.webp';
+import shimSungbinWork1_09 from '../../../../assets/심성빈/simseongbin_videocontent_work1_09.webp';
 
 /**
  * 심성빈 - Linked (작품1) Tablet 버전

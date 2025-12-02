@@ -3,13 +3,13 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/SeoRinKaron/SeoRinKaronDesktop.css';
 
 // ��지 �포허지훈
-import seoRinWork2_01 from '../../../../assets/전서린/전서린_게임디자인_작품2_01.webp';
-import seoRinWork2_02 from '../../../../assets/전서린/전서린_게임디자인_작품2_02.webp';
-import seoRinWork2_03 from '../../../../assets/전서린/전서린_게임디자인_작품2_03.webp';
-import seoRinWork2_04 from '../../../../assets/전서린/전서린_게임디자인_작품2_04.webp';
-import seoRinWork2_05 from '../../../../assets/전서린/전서린_게임디자인_작품2_05.webp';
-import seoRinWork2_06 from '../../../../assets/전서린/전서린_게임디자인_작품2_06.webp';
-import seoRinWork2_07 from '../../../../assets/전서린/전서린_게임디자인_작품2_07.webp';
+import seoRinWork2_01 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_01.webp';
+import seoRinWork2_02 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_02.webp';
+import seoRinWork2_03 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_03.webp';
+import seoRinWork2_04 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_04.webp';
+import seoRinWork2_05 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_05.webp';
+import seoRinWork2_06 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_06.webp';
+import seoRinWork2_07 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_07.webp';
 
 /**
  * �서�- KARON (�작품2) Desktop 버전

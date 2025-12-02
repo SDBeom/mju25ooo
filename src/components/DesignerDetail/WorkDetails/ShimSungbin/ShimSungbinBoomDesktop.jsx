@@ -3,15 +3,15 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ShimSungbinBoom/ShimSungbinBoomDesktop.css';
 
 // 이미지 임포트
-import shimSungbinWork2_01 from '../../../../assets/심성빈/심성빈_영상_작품2_01.webp';
-import shimSungbinWork2_02 from '../../../../assets/심성빈/심성빈_영상_작품2_02.webp';
-import shimSungbinWork2_03 from '../../../../assets/심성빈/심성빈_영상_작품2_03.webp';
-import shimSungbinWork2_04 from '../../../../assets/심성빈/심성빈_영상_작품2_04.webp';
-import shimSungbinWork2_05 from '../../../../assets/심성빈/심성빈_영상_작품2_05.webp';
-import shimSungbinWork2_06 from '../../../../assets/심성빈/심성빈_영상_작품2_06.webp';
-import shimSungbinWork2_07 from '../../../../assets/심성빈/심성빈_영상_작품2_07.webp';
-import shimSungbinWork2_08 from '../../../../assets/심성빈/심성빈_영상_작품2_08.webp';
-import shimSungbinWork2_09 from '../../../../assets/심성빈/심성빈_영상_작품2_09.webp';
+import shimSungbinWork2_01 from '../../../../assets/심성빈/simseongbin_video_work2_01.webp';
+import shimSungbinWork2_02 from '../../../../assets/심성빈/simseongbin_video_work2_02.webp';
+import shimSungbinWork2_03 from '../../../../assets/심성빈/simseongbin_video_work2_03.webp';
+import shimSungbinWork2_04 from '../../../../assets/심성빈/simseongbin_video_work2_04.webp';
+import shimSungbinWork2_05 from '../../../../assets/심성빈/simseongbin_video_work2_05.webp';
+import shimSungbinWork2_06 from '../../../../assets/심성빈/simseongbin_video_work2_06.webp';
+import shimSungbinWork2_07 from '../../../../assets/심성빈/simseongbin_video_work2_07.webp';
+import shimSungbinWork2_08 from '../../../../assets/심성빈/simseongbin_video_work2_08.webp';
+import shimSungbinWork2_09 from '../../../../assets/심성빈/simseongbin_video_work2_09.webp';
 
 /**
  * 심성빈 - BOOM (작품2) Desktop 버전

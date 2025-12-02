@@ -3,27 +3,27 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/SeoRinRavenX/SeoRinRavenXTablet.css';
 
 // ��지 �포허지훈
-import seoRinWork1_01 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_01.webp';
-import seoRinWork1_02 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_02.webp';
-import seoRinWork1_03 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_03.webp';
-import seoRinWork1_04 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_04.webp';
-import seoRinWork1_05 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_05.webp';
-import seoRinWork1_06 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_06.webp';
-import seoRinWork1_07 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_07.webp';
-import seoRinWork1_08 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_08.webp';
-import seoRinWork1_09 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_09.webp';
-import seoRinWork1_10 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_10.webp';
-import seoRinWork1_11 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_11.webp';
-import seoRinWork1_12 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_12.webp';
-import seoRinWork1_13 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_13.webp';
-import seoRinWork1_14 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_14.webp';
-import seoRinWork1_15 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_15.webp';
-import seoRinWork1_16 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_16.webp';
-import seoRinWork1_17 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_17.webp';
-import seoRinWork1_18 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_18.webp';
-import seoRinWork1_19 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_19.webp';
-import seoRinWork1_20 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_20.webp';
-import seoRinWork1_21 from '../../../../assets/전서린/전서린_게임콘텐츠츠_작품1_21.webp';
+import seoRinWork1_01 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_01.webp';
+import seoRinWork1_02 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_02.webp';
+import seoRinWork1_03 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_03.webp';
+import seoRinWork1_04 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_04.webp';
+import seoRinWork1_05 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_05.webp';
+import seoRinWork1_06 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_06.webp';
+import seoRinWork1_07 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_07.webp';
+import seoRinWork1_08 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_08.webp';
+import seoRinWork1_09 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_09.webp';
+import seoRinWork1_10 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_10.webp';
+import seoRinWork1_11 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_11.webp';
+import seoRinWork1_12 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_12.webp';
+import seoRinWork1_13 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_13.webp';
+import seoRinWork1_14 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_14.webp';
+import seoRinWork1_15 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_15.webp';
+import seoRinWork1_16 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_16.webp';
+import seoRinWork1_17 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_17.webp';
+import seoRinWork1_18 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_18.webp';
+import seoRinWork1_19 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_19.webp';
+import seoRinWork1_20 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_20.webp';
+import seoRinWork1_21 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_21.webp';
 
 /**
  * �서�- RAVEN-X (�작품1) Tablet 버전

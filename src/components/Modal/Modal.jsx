@@ -72,7 +72,7 @@ const Modal = ({ isOpen, onClose, designerName, modalClass, children }) => {
       aria-modal="true"
       aria-labelledby="modal-title"
       onClick={handleOverlayClick}
-      style={{ zIndex: 10000 }} // 강제로 z-index 설정
+      style={{ zIndex: 'var(--z-modal-overlay, 9999)' }} // 강제로 z-index 설정
     >
       <div className="modal-wrapper" onClick={handleWrapperClick}>
         {/* Topbar: 디자이너 이름과 X버튼 */}

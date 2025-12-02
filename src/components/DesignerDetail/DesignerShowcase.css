@@ -38,7 +38,7 @@ body .main-window--content .designer-showcase {
 .designer-showcase__inner {
   width: 100%;
   margin: 0;
-  padding: 40px 64px;
+  padding: 40px 40px;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -48,14 +48,14 @@ body .main-window--content .designer-showcase {
 /* 태블릿: 800px ~ 1279px */
 @media (max-width: 1279px) and (min-width: 800px) {
   .designer-showcase__inner {
-    padding: 40px 32px;
+    padding: 40px 28px;
   }
 }
 
 /* 모바일: ~799px */
 @media (max-width: 799px) {
   .designer-showcase__inner {
-    padding: 40px 24px;
+    padding: 40px 16px;
   }
 }
 
@@ -139,14 +139,17 @@ body .main-window--content .designer-showcase {
   background: #ffffff;
   box-shadow: 0 18px 42px rgba(17, 17, 17, 0.08);
   border: 1.5px solid rgba(26, 26, 26, 0.06);
-  align-items: center;
+  align-items: stretch;
 }
 
 .work-card__thumb {
   position: relative;
   flex-shrink: 0;
-  width: clamp(200px, 25vw, 320px);
+  height: 100%;
   aspect-ratio: 16 / 9;
+  width: auto;
+  min-width: clamp(200px, 25vw, 320px);
+  max-width: clamp(280px, 35vw, 450px);
   border-radius: clamp(12px, 3vw, 18px);
   overflow: hidden;
   background: rgba(17, 17, 17, 0.08);
@@ -154,6 +157,7 @@ body .main-window--content .designer-showcase {
   padding: 0;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-self: stretch;
 }
 
 .work-card__thumb img {
@@ -236,10 +240,18 @@ body .main-window--content .designer-showcase {
   .work-card {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .work-card__thumb {
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    align-self: stretch;
   }
 }
 
@@ -252,7 +264,7 @@ body .main-window--content .designer-showcase {
   bottom: 0;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
-  z-index: 9999;
+  z-index: var(--z-modal-overlay, 9999);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,6 +297,17 @@ body .main-window--content .designer-showcase {
     width: 800px;
     max-width: 800px;
   }
+
+  .kim-modal__topbar {
+    padding: 1.5rem 32px;
+  }
+}
+
+/* 데스크탑: 1280px 이상 */
+@media (min-width: 1280px) {
+  .kim-modal__topbar {
+    padding: 1.5rem var(--header-horizontal-padding, 40px);
+  }
 }
 
 /* 모바일: < 800px */
@@ -292,6 +315,18 @@ body .main-window--content .designer-showcase {
   .kim-modal-wrapper {
     width: 375px;
     max-width: 375px;
+    max-height: 90vh;
+    border-radius: 0;
+  }
+  
+  .kim-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  
+  .kim-modal__topbar {
+    padding: 1rem var(--header-horizontal-padding, 16px);
+    border-radius: 0;
   }
 }
 
@@ -302,7 +337,7 @@ body .main-window--content .designer-showcase {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem var(--header-horizontal-padding, 16px);
   background: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: clamp(18px, 4vw, 24px) clamp(18px, 4vw, 24px) 0 0;
@@ -322,10 +357,37 @@ body .main-window--content .designer-showcase {
   color: #0f172a;
   opacity: 0.6;
   transition: opacity 0.2s ease;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kim-modal__close span {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.2s ease;
+}
+
+.kim-modal__close span:first-child {
+  transform: rotate(45deg);
+}
+
+.kim-modal__close span:last-child {
+  transform: rotate(-45deg);
 }
 
 .kim-modal__close:hover {
   opacity: 1;
+}
+
+.kim-modal__close:active {
+  transform: scale(0.95);
 }
 
 .kim-modal__media {
@@ -388,6 +450,38 @@ body .main-window--content .designer-showcase {
   border-radius: 50%;
   background: linear-gradient(135deg, #ff9966, #ffd280);
   box-shadow: 0 0 0 4px rgba(255, 153, 102, 0.2);
+}
+
+/* 모달 내부 작품 상세 컴포넌트 스타일 */
+.kim-modal-wrapper .work-detail {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.kim-modal-wrapper .work-detail::-webkit-scrollbar {
+  width: 4px;
+}
+
+.kim-modal-wrapper .work-detail::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.kim-modal-wrapper .work-detail::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+.kim-modal-wrapper .work-detail::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* 모바일 모달에서 작품 상세 컴포넌트 최적화 */
+@media (max-width: 799px) {
+  .kim-modal-wrapper .work-detail {
+    max-height: calc(90vh - 60px);
+  }
 }
 
 

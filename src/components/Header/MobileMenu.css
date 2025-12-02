@@ -26,7 +26,7 @@
 /* Mobile menu */
 .mobile-menu {
   position: fixed;
-  background: rgba(8, 9, 13, 0.98);
+  background: rgba(8, 9, 13, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: calc(var(--z-mobile-menu) + 1);
@@ -37,7 +37,7 @@
   overflow: hidden;
   margin: 0;
   transform-origin: top right;
-  left: auto;
+  left: auto; /* 항상 auto로 유지하여 오른쪽 기준으로만 동작 */
 }
 
 .mobile-menu-content {

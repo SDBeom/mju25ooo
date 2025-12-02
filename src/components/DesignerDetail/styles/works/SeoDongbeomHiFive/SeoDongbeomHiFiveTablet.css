@@ -45,37 +45,49 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__title--seo-dongbeom-hifive-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 52.8px;
   letter-spacing: -0.96px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__lead--seo-dongbeom-hifive-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
+  width: 100%;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__lead--seo-dongbeom-hifive-tablet p {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
   margin: 0;
+  text-align: left;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__ctas--seo-dongbeom-hifive-tablet {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 16px;
   align-items: center;
   justify-content: flex-start;
+  align-content: flex-start;
   cursor: pointer;
   width: 100%;
 }
@@ -83,15 +95,16 @@
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__cta--seo-dongbeom-hifive-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
   white-space: nowrap;
+  text-align: left;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__cta--primary.work-detail__cta--seo-dongbeom-hifive-tablet {
@@ -158,7 +171,7 @@
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  min-width: 496px;
+  min-width: 736px;
   overflow: hidden;
   border-radius: 8px;
   flex-shrink: 0;
@@ -173,21 +186,21 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__bento-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.4px;
+  line-height: 24px;
+  letter-spacing: -0.3px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__bento-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -195,6 +208,12 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__bento-description p {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26.1px;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
   margin: 0;
 }
 
@@ -238,7 +257,7 @@
   padding: 10px 14px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: #000000;
@@ -278,7 +297,7 @@
   padding-left: 32px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 32px;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
@@ -286,10 +305,10 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__quote-text {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 52px;
   letter-spacing: -0.8px;
   color: #000000;
   margin: 0;
@@ -297,35 +316,58 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__quote-subtitle {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
-  font-weight: 700;
-  line-height: 1.4;
+  font-weight: 400;
+  line-height: 28px;
   letter-spacing: -0.3px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.55);
   margin: 0;
-  text-align: center;
+  text-align: left;
   white-space: pre-wrap;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__quote-content {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
-  font-weight: 500;
-  line-height: 1.4;
+  font-weight: 400;
+  line-height: 28px;
   letter-spacing: -0.3px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
 
 /* Marquee Section */
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__marquee--seo-dongbeom-hifive-tablet {
-  padding: 0;
+  padding: 96px 32px;
   margin: 0;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--seo-dongbeom-hifive-tablet .work-detail__marquee-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--seo-dongbeom-hifive-tablet .work-detail__marquee-text {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.4px;
+  letter-spacing: -0.64px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+  white-space: pre-line;
 }
 
 /* Feature Section */
@@ -395,7 +437,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__feature-tagline p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #ffffff;
@@ -404,10 +446,13 @@
 }
 
 /* Cards Section */
+.work-detail--seo-dongbeom-hifive-tablet ul.work-detail__section.work-detail__cards--seo-dongbeom-hifive-tablet,
+.work-detail--seo-dongbeom-hifive-tablet .work-detail__section.work-detail__cards--seo-dongbeom-hifive-tablet,
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__cards--seo-dongbeom-hifive-tablet {
   padding: 96px 32px;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   gap: 32px;
   align-items: flex-start;
   justify-content: center;
@@ -415,17 +460,34 @@
   max-width: 800px;
   margin: 0 auto;
   list-style: none;
+  counter-reset: card-number;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 모달창 내부에서 Cards Section */
+.modal-content .work-detail--seo-dongbeom-hifive-tablet ul.work-detail__section.work-detail__cards--seo-dongbeom-hifive-tablet,
+.modal-content .work-detail--seo-dongbeom-hifive-tablet .work-detail__section.work-detail__cards--seo-dongbeom-hifive-tablet,
+.modal-content .work-detail--seo-dongbeom-hifive-tablet .work-detail__cards--seo-dongbeom-hifive-tablet {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 96px 32px;
+  box-sizing: border-box;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card--seo-dongbeom-hifive-tablet {
   display: flex;
-  flex: 1 0 0;
+  flex: 0 0 auto;
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
   justify-content: flex-start;
-  max-width: 400px;
+  width: 224px;
   min-width: 224px;
+  flex-shrink: 0;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-image-wrapper {
@@ -479,38 +541,47 @@
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 24px;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.3px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+  width: 100%;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-title-list {
   margin: 0;
   padding-left: 0;
-  list-style: decimal;
+  list-style: none;
+  counter-increment: card-number;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-title-list li {
   margin-left: 36px;
+  position: relative;
+  line-height: 24px;
+}
+
+.work-detail--seo-dongbeom-hifive-tablet .work-detail__card-title-list li::before {
+  content: counter(card-number) ".";
+  position: absolute;
+  left: -36px;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -518,6 +589,12 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-description p {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26.1px;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
   margin: 0;
 }
 

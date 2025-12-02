@@ -3,15 +3,15 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/KimJinaCellestial/KimJinaCellestialMobile.css';
 
 // 이미지 임포트
-import kimJinaWork2_01 from '../../../../assets/김지나/김지나_멀티미디어_작품2_01.webp';
-import kimJinaWork2_02 from '../../../../assets/김지나/김지나_멀티미디어_작품2_02.webp';
-import kimJinaWork2_03 from '../../../../assets/김지나/김지나_멀티미디어_작품2_03.webp';
-import kimJinaWork2_04 from '../../../../assets/김지나/김지나_멀티미디어_작품2_04.webp';
-import kimJinaWork2_05 from '../../../../assets/김지나/김지나_멀티미디어_작품2_05.webp';
-import kimJinaWork2_06 from '../../../../assets/김지나/김지나_멀티미디어_작품2_06.webp';
-import kimJinaWork2_07 from '../../../../assets/김지나/김지나_멀티미디어_작품2_07.webp';
-import kimJinaWork2_08 from '../../../../assets/김지나/김지나_멀티미디어_작품2_08.webp';
-import kimJinaWork2_09 from '../../../../assets/김지나/김지나_멀티미디어_작품2_09.webp';
+import kimJinaWork2_01 from '../../../../assets/김지나/kimjina_multimedia_work2_01.webp';
+import kimJinaWork2_02 from '../../../../assets/김지나/kimjina_multimedia_work2_02.webp';
+import kimJinaWork2_03 from '../../../../assets/김지나/kimjina_multimedia_work2_03.webp';
+import kimJinaWork2_04 from '../../../../assets/김지나/kimjina_multimedia_work2_04.webp';
+import kimJinaWork2_05 from '../../../../assets/김지나/kimjina_multimedia_work2_05.webp';
+import kimJinaWork2_06 from '../../../../assets/김지나/kimjina_multimedia_work2_06.webp';
+import kimJinaWork2_07 from '../../../../assets/김지나/kimjina_multimedia_work2_07.webp';
+import kimJinaWork2_08 from '../../../../assets/김지나/kimjina_multimedia_work2_08.webp';
+import kimJinaWork2_09 from '../../../../assets/김지나/kimjina_multimedia_work2_09.webp';
 
 /**
  * 김지나 - Cellestial Mobile 버전

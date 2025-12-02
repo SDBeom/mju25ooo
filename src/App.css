@@ -448,7 +448,7 @@ body:has(.main-page--grid) ::-webkit-scrollbar {
   position: fixed;
   top: 100px;
   right: 20px;
-  z-index: 2000;
+  z-index: var(--z-toast, 2000);
   background: rgba(42, 42, 42, 0.9);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);

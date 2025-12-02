@@ -73,6 +73,9 @@ const Header = ({ currentPage = 'mainPage' }) => {
       setIsModalOpen(modalOpen);
       if (modalOpen) {
         setIsHidden(true);
+      } else {
+        // 모달이 닫혔을 때 헤더 다시 표시
+        setIsHidden(false);
       }
     };
 

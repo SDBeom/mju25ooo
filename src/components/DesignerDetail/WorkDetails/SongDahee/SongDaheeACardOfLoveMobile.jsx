@@ -3,17 +3,17 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/SongDaheeACardOfLove/SongDaheeACardOfLoveMobile.css';
 
 // 이미지 임포트
-import songDaheeWork1_01 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_01.webp';
-import songDaheeWork1_02 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_02.webp';
-import songDaheeWork1_03 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_03.webp';
-import songDaheeWork1_04 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_04.webp';
-import songDaheeWork1_05 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_05.webp';
-import songDaheeWork1_06 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_06.webp';
-import songDaheeWork1_07 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_07.webp';
-import songDaheeWork1_08 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_08.webp';
-import songDaheeWork1_09 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_09.webp';
-import songDaheeWork1_10 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_10.webp';
-import songDaheeWork1_11 from '../../../../assets/송다희/송다희_영상콘텐츠_작품1_11.webp';
+import songDaheeWork1_01 from '../../../../assets/송다희/songdahee_videocontent_work1_01.webp';
+import songDaheeWork1_02 from '../../../../assets/송다희/songdahee_videocontent_work1_02.webp';
+import songDaheeWork1_03 from '../../../../assets/송다희/songdahee_videocontent_work1_03.webp';
+import songDaheeWork1_04 from '../../../../assets/송다희/songdahee_videocontent_work1_04.webp';
+import songDaheeWork1_05 from '../../../../assets/송다희/songdahee_videocontent_work1_05.webp';
+import songDaheeWork1_06 from '../../../../assets/송다희/songdahee_videocontent_work1_06.webp';
+import songDaheeWork1_07 from '../../../../assets/송다희/songdahee_videocontent_work1_07.webp';
+import songDaheeWork1_08 from '../../../../assets/송다희/songdahee_videocontent_work1_08.webp';
+import songDaheeWork1_09 from '../../../../assets/송다희/songdahee_videocontent_work1_09.webp';
+import songDaheeWork1_10 from '../../../../assets/송다희/songdahee_videocontent_work1_10.webp';
+import songDaheeWork1_11 from '../../../../assets/송다희/songdahee_videocontent_work1_11.webp';
 
 /**
  * 송다희 - A Card of Love (작품1) Mobile 버전
@@ -41,10 +41,7 @@ const SongDaheeACardOfLoveMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }
           <div className="work-detail__text-group work-detail__text-group--center">
             <h2 className="work-detail__title work-detail__title--song-dahee-a-card-of-love-mobile">A Card of Love</h2>
             <div className="work-detail__lead work-detail__lead--song-dahee-a-card-of-love-mobile">
-              <p className="mb-0">A Card of Love는 </p>
-              <p className="mb-0">사랑을 표현하는 데 서툰 이들을 위한 감정 탐구 프로젝트이자,</p>
-              <p className="mb-0">현대 사회 속 감정의 언어를 다시 배우기 위한 시도이다. </p>
-              <p>&nbsp;</p>
+              <p>A Card of Love는 사랑을 표현하는 데 서툰 이들을 위한 감정 탐구 프로젝트이자, 현대 사회 속 감정의 언어를 다시 배우기 위한 시도이다.</p>
             </div>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
@@ -79,9 +76,7 @@ const SongDaheeACardOfLoveMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Bouncy</h5>
             <div className="work-detail__card-description">
-              <p className="mb-0">지금 당신의 마음은</p>
-              <p className="mb-0">부드럽고 예민하게 반응하고 있습니다.</p>
-              <p>불안해하지 말고, 그 유연함을 받아들이세요.</p>
+              <p>지금 당신의 마음은 부드럽고 예민하게 반응하고 있습니다. 불안해하지 말고, 그 유연함을 받아들이세요.</p>
             </div>
           </div>
         </li>
@@ -127,10 +122,7 @@ const SongDaheeACardOfLoveMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }
       <section className="work-detail__section work-detail__gallery work-detail__gallery--song-dahee-a-card-of-love-mobile">
         <div className="work-detail__gallery-header">
           <h3 className="work-detail__gallery-title">A Card of Love</h3>
-          <p className="work-detail__gallery-description">
-            <span>쉽게 말하지 못한 사랑의 마음들이 머물다 가는</span>
-            <span>자리. 사랑의 언어를 다시 배우는 기록.</span>
-          </p>
+          <p className="work-detail__gallery-description">쉽게 말하지 못한 사랑의 마음들이 머물다 가는 자리. 사랑의 언어를 다시 배우는 기록.</p>
         </div>
         <div className="work-detail__gallery-grid">
           <div className="work-detail__gallery-column work-detail__gallery-column--1">

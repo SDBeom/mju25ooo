@@ -3,13 +3,13 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/AhnSeonminDotDotDot/AhnSeonminDotDotDotMobile.css';
 
 // 이미지 임포트
-import ahnSeonminWork1_01 from '../../../../assets/안선민/안선민_브랜딩_작품1_01.webp';
-import ahnSeonminWork1_02 from '../../../../assets/안선민/안선민_브랜딩_작품1_02.webp';
-import ahnSeonminWork1_03 from '../../../../assets/안선민/안선민_브랜딩_작품1_03.webp';
-import ahnSeonminWork1_04 from '../../../../assets/안선민/안선민_브랜딩_작품1_04.webp';
-import ahnSeonminWork1_05 from '../../../../assets/안선민/안선민_브랜딩_작품1_05.webp';
-import ahnSeonminWork1_06 from '../../../../assets/안선민/안선민_브랜딩_작품1_06.webp';
-import ahnSeonminWork1_07 from '../../../../assets/안선민/안선민_브랜딩_작품1_07.webp';
+import ahnSeonminWork1_01 from '../../../../assets/안선민/anseonmin_branding_work1_01.webp';
+import ahnSeonminWork1_02 from '../../../../assets/안선민/anseonmin_branding_work1_02.webp';
+import ahnSeonminWork1_03 from '../../../../assets/안선민/anseonmin_branding_work1_03.webp';
+import ahnSeonminWork1_04 from '../../../../assets/안선민/anseonmin_branding_work1_04.webp';
+import ahnSeonminWork1_05 from '../../../../assets/안선민/anseonmin_branding_work1_05.webp';
+import ahnSeonminWork1_06 from '../../../../assets/안선민/anseonmin_branding_work1_06.webp';
+import ahnSeonminWork1_07 from '../../../../assets/안선민/anseonmin_branding_work1_07.webp';
 
 /**
  * 안선민 - 점점점 (작품1) Mobile 버전

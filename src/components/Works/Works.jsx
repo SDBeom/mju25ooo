@@ -4,12 +4,11 @@ import designerDetailsData from '../../data/designerDetailsData.js';
 import Modal from '../Modal/Modal';
 import WorkDetailContent from '../DesignerDetail/WorkDetails/WorkDetailContent';
 import { videoBadge, gameBadge, multimediaBadge, motionBadge } from '../../data/designerDetailsData';
-import { splitText } from '../DraggableGrid/js/utils.js';
 import gameLogo from '../../assets/branding_logo/Game.svg';
 import motionLogo from '../../assets/branding_logo/Motion.svg';
 import multimediaLogo from '../../assets/branding_logo/Multimedia.svg';
 import videoLogo from '../../assets/branding_logo/Video.svg';
-import symbolImage from '../../assets/Symbol.webp';
+import { WORKS_LIST, normalizeTitle } from './worksConstants';
 import './Works.css';
 import '../DesignerDetail/DesignerShowcase.css';
 
@@ -54,34 +53,6 @@ const CATEGORIES = [
   },
 ];
 
-// designerDetailsData에서 모든 작품 추출
-const extractWorksFromDesignerData = () => {
-  const works = [];
-  Object.values(designerDetailsData).forEach((designer) => {
-    if (designer.works && Array.isArray(designer.works)) {
-      designer.works.forEach((work) => {
-        works.push({
-          id: work.id,
-          title: work.title,
-          designer: designer.displayName,
-          genre: work.genre,
-          description: work.summary || work.description || '',
-          thumbnail: work.thumbnail,
-        });
-      });
-    }
-  });
-  return works;
-};
-
-const WORKS_LIST = extractWorksFromDesignerData();
-
-export const normalizeTitle = (title = '') =>
-  title
-    .toLocaleLowerCase('ko')
-    .normalize('NFKD')
-    .replace(/[^\p{L}\p{N}]+/gu, '');
-
 // 정렬 그룹 결정: 특수기호(1), 숫자(2), 영문(3), 한글(4)
 const getSortGroup = (title) => {
   if (!title) return 4;
@@ -91,8 +62,6 @@ const getSortGroup = (title) => {
   if (/[\uAC00-\uD7A3]/.test(firstChar)) return 4; // 한글
   return 1; // 특수기호 및 기타
 };
-
-export { WORKS_LIST };
 
 // 한글 genre를 영어로 변환하는 함수
 const getGenreInEnglish = (genre) => {
@@ -109,13 +78,13 @@ const Works = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobile, setIsMobile] = useState(false);
-  const [activeWorkIndex, setActiveWorkIndex] = useState(null);
+  const [, setActiveWorkIndex] = useState(null);
   const categoryRefs = useRef([]);
   const categoryLabelRefs = useRef([]);
   const categorySplitTextsRef = useRef([]);
-  const categoryDescriptionRefs = useRef([]);
   const categoryLogoRefs = useRef([]);
   const galleryRef = useRef(null);
+  const galleryInnerRef = useRef(null);
 
   // 모바일 여부 체크
   useEffect(() => {
@@ -522,19 +491,26 @@ const Works = () => {
     setSelectedCategory(categoryId);
   }, []);
 
-  // 카테고리 텍스트 애니메이션 초기화
+  // 카테고리 텍스트 애니메이션 초기화 - 모든 .char 요소 제거하고 원본 텍스트로 복원
   useEffect(() => {
     const labels = categoryLabelRefs.current.filter(Boolean);
     
-    // 각 라벨에 splitText 적용 (label이 있는 경우만)
-    if (labels.length > 0) {
-      categorySplitTextsRef.current = labels.map((label) => {
-        if (!label) return null;
-        return splitText(label, 'chars');
-      });
-    } else {
-      categorySplitTextsRef.current = [];
-    }
+    // 모든 디바이스에서 splitText 사용하지 않음 (일반 텍스트로 표시)
+    categorySplitTextsRef.current = [];
+    
+    // 모든 텍스트를 일반 텍스트로 표시
+    labels.forEach((label, index) => {
+      if (!label) return;
+      
+      // 원본 텍스트 가져오기 (CATEGORIES에서)
+      const category = CATEGORIES[index];
+      if (!category || !category.label) return;
+      
+      // 항상 원본 텍스트로 직접 설정 (모든 HTML 구조 제거)
+      // .char 요소, span 요소 등 모든 자식 요소 제거
+      label.innerHTML = '';
+      label.textContent = category.label;
+    });
 
     // 모든 카테고리의 로고와 description 초기화
     CATEGORIES.forEach((category, index) => {
@@ -542,254 +518,26 @@ const Works = () => {
       
       const isActive = category.id === selectedCategory;
       
-      // label이 있는 카테고리만 텍스트 애니메이션 처리
-      const splitData = categorySplitTextsRef.current[index];
-      if (splitData && splitData.chars) {
-        // 'all' 카테고리는 애니메이션 적용 안 함 (항상 표시)
-        if (category.id === 'all') {
-          splitData.chars.forEach((char) => {
-            gsap.set(char, { y: 0 });
-          });
-        } else {
-          splitData.chars.forEach((char) => {
-            // 활성화된 카테고리는 텍스트 숨김, 비활성화된 카테고리도 텍스트 숨김 (로고 표시를 위해)
-            gsap.set(char, { 
-              y: isActive ? '100%' : '100%'
-            });
+      // 모든 디바이스: opacity로 텍스트 표시/숨김 처리
+      const labelEl = categoryLabelRefs.current[index];
+      if (labelEl && category.id !== 'all') {
+        // 활성화된 카테고리는 텍스트 숨김, 비활성화된 카테고리는 텍스트 보임
+        if (labelEl.classList.contains('works-category__label--with-logo')) {
+          gsap.set(labelEl, {
+            opacity: isActive ? 0 : 1
           });
         }
       }
       
-      // 로고 초기 상태 설정 (비활성화 상태일 때만 표시)
+      // 로고 초기 상태 설정 (활성화 상태일 때만 표시)
       const logoEl = categoryLogoRefs.current[index];
       if (logoEl && category.logo) {
         gsap.set(logoEl, {
-          opacity: isActive ? 0 : 1
-        });
-      }
-      
-      // description 초기 상태 설정
-      const descriptionEl = categoryDescriptionRefs.current[index];
-      if (descriptionEl) {
-        gsap.set(descriptionEl, {
           opacity: isActive ? 1 : 0
         });
       }
     });
-  }, [selectedCategory]);
-
-  // 카테고리 선택 시 텍스트 애니메이션
-  useEffect(() => {
-    const labels = categoryLabelRefs.current.filter(Boolean);
-    const splitTexts = categorySplitTextsRef.current;
-    if (labels.length === 0 || splitTexts.length === 0) return;
-
-    // 모든 진행 중인 애니메이션 kill
-    splitTexts.forEach((splitData) => {
-      if (!splitData || !splitData.chars) return;
-      splitData.chars.forEach((char) => {
-        gsap.killTweensOf(char);
-      });
-    });
-    categoryDescriptionRefs.current.forEach((descEl) => {
-      if (descEl) {
-        gsap.killTweensOf(descEl);
-      }
-    });
-    categoryLogoRefs.current.forEach((logoEl) => {
-      if (logoEl) {
-        gsap.killTweensOf(logoEl);
-      }
-    });
-
-    // 이전 선택된 카테고리 찾기 (현재 활성화된 요소 - description이 보이는 상태)
-    let previousActiveIndex = -1;
-    splitTexts.forEach((splitData, index) => {
-      if (!splitData || !splitData.chars) return;
-      const category = CATEGORIES[index];
-      if (!category || category.id === 'all') return;
-      
-      const descriptionEl = categoryDescriptionRefs.current[index];
-      // description이 보이는 상태 (활성화된 상태)인 카테고리 찾기
-      if (descriptionEl && gsap.getProperty(descriptionEl, 'opacity') > 0) {
-        previousActiveIndex = index;
-      }
-    });
-
-    // 1단계: 현재 활성화된 카테고리의 description 사라짐 → 로고 나타남 (즉시 반응)
-    if (previousActiveIndex !== -1 && previousActiveIndex !== CATEGORIES.findIndex(cat => cat.id === selectedCategory)) {
-      const prevDescriptionEl = categoryDescriptionRefs.current[previousActiveIndex];
-      const prevLogoEl = categoryLogoRefs.current[previousActiveIndex];
-      const prevCategory = CATEGORIES[previousActiveIndex];
-      
-      // description이 보이는 상태인 경우 먼저 사라지게 (즉시 시작)
-      if (prevDescriptionEl && gsap.getProperty(prevDescriptionEl, 'opacity') > 0) {
-        gsap.to(prevDescriptionEl, {
-          opacity: 0,
-          duration: 0.4,
-          ease: 'power2.inOut',
-        });
-      }
-      
-      // description 사라진 후 로고 나타나게
-      if (prevLogoEl && prevCategory && prevCategory.logo) {
-        gsap.to(prevLogoEl, {
-          opacity: 1,
-          duration: 0.4,
-          delay: 0.4, // description 사라짐 후
-          ease: 'power2.inOut',
-        });
-      }
-    }
-
-    // 2단계: 너비는 updateCategoryWidths에서 즉시 변경 (label 텍스트 사라짐 시작 후)
-    // 3단계: 너비 변경 후 새로 활성화된 카테고리의 label 텍스트 사라지고 description 나타나기, 비활성화된 카테고리들의 description 사라지고 label 텍스트 나타나기
-    // label 텍스트 사라짐이 시작되면 너비 변경도 시작 (delay 최소화)
-    const textAnimationDelay = 0.2; // label 텍스트 사라짐 시작 후 약간의 delay
-    
-    labels.forEach((label, index) => {
-      const splitData = splitTexts[index];
-      if (!splitData || !splitData.chars) return;
-
-      const category = CATEGORIES[index];
-      if (!category) return;
-      
-      // 'all' 카테고리는 애니메이션 적용 안 함 (항상 표시)
-      if (category.id === 'all') {
-        splitData.chars.forEach((char) => {
-          gsap.set(char, { y: 0 });
-        });
-        return;
-      }
-
-      const isActive = category.id === selectedCategory;
-
-      if (isActive) {
-        // 새로 활성화된 카테고리: 로고 사라짐 → description 나타남 (텍스트는 숨김 상태 유지)
-        const descriptionEl = categoryDescriptionRefs.current[index];
-        const logoEl = categoryLogoRefs.current[index];
-        const firstCharY = gsap.getProperty(splitData.chars[0], 'y');
-        
-        // 로고가 보이는 상태인 경우 사라지게
-        if (logoEl && category.logo && gsap.getProperty(logoEl, 'opacity') > 0) {
-          // 1. 로고 먼저 사라지게 (즉시 시작)
-          gsap.to(logoEl, {
-            opacity: 0,
-            duration: 0.4,
-            delay: textAnimationDelay,
-            ease: 'power2.inOut',
-            onComplete: () => {
-              gsap.set(logoEl, { opacity: 0 });
-            }
-          });
-          
-          // 2. 로고 사라진 후 description 나타나게
-          if (descriptionEl) {
-            gsap.to(descriptionEl, {
-              opacity: 1,
-              duration: 0.4,
-              delay: textAnimationDelay + 0.4, // 로고 사라짐 후
-              ease: 'power2.inOut',
-              onComplete: () => {
-                gsap.set(descriptionEl, { opacity: 1 });
-              }
-            });
-          }
-        } else {
-          // 로고가 이미 숨겨진 상태라면 description만 나타나게
-          if (descriptionEl) {
-            gsap.to(descriptionEl, {
-              opacity: 1,
-              duration: 0.4,
-              delay: textAnimationDelay,
-              ease: 'power2.inOut',
-              onComplete: () => {
-                gsap.set(descriptionEl, { opacity: 1 });
-              }
-            });
-          }
-        }
-        
-        // 텍스트는 숨김 상태 유지
-        splitData.chars.forEach((char) => {
-          gsap.set(char, { y: '100%' });
-        });
-      } else {
-        // 비활성화: description 사라짐 → 로고 표시 (텍스트는 숨김 상태 유지)
-        // 'all' 카테고리는 예외 처리 (항상 텍스트 표시)
-        if (category.id === 'all') {
-          // 'all' 카테고리는 텍스트 표시, 로고 숨김
-          splitData.chars.forEach((char) => {
-            gsap.set(char, { y: 0 });
-          });
-          const logoEl = categoryLogoRefs.current[index];
-          if (logoEl) {
-            gsap.set(logoEl, { opacity: 0 });
-          }
-          const descriptionEl = categoryDescriptionRefs.current[index];
-          if (descriptionEl) {
-            gsap.set(descriptionEl, { opacity: 0 });
-          }
-          return;
-        }
-        
-        const descriptionEl = categoryDescriptionRefs.current[index];
-        const logoEl = categoryLogoRefs.current[index];
-        
-        // description이 보이는 상태인 경우
-        if (descriptionEl && gsap.getProperty(descriptionEl, 'opacity') > 0) {
-          // 1. description 먼저 사라지게 (즉시 시작)
-          gsap.to(descriptionEl, {
-            opacity: 0,
-            duration: 0.4,
-            delay: textAnimationDelay,
-            ease: 'power2.inOut',
-            onComplete: () => {
-              // 애니메이션 완료 후 최종 상태 확실히 설정
-              gsap.set(descriptionEl, { opacity: 0 });
-            }
-          });
-          
-          // 2. description 사라진 후 로고 나타나게 (텍스트는 숨김 상태 유지)
-          if (logoEl && category.logo) {
-            gsap.to(logoEl, {
-              opacity: 1,
-              duration: 0.4,
-              delay: textAnimationDelay + 0.4, // description 사라짐 후
-              ease: 'power2.inOut',
-              onComplete: () => {
-                gsap.set(logoEl, { opacity: 1 });
-              }
-            });
-          }
-          
-          // 텍스트는 숨김 상태 유지
-          splitData.chars.forEach((char) => {
-            gsap.set(char, { y: '100%' });
-          });
-        } else {
-          // description이 없는 경우 (이전 활성화된 카테고리가 아닌 경우)
-          // 로고 표시 (텍스트는 숨김 상태 유지)
-          if (logoEl && category.logo) {
-            gsap.to(logoEl, {
-              opacity: 1,
-              duration: 0.4,
-              delay: textAnimationDelay,
-              ease: 'power2.inOut',
-              onComplete: () => {
-                gsap.set(logoEl, { opacity: 1 });
-              }
-            });
-          }
-          
-          // 텍스트는 숨김 상태 유지
-          splitData.chars.forEach((char) => {
-            gsap.set(char, { y: '100%' });
-          });
-        }
-      }
-    });
-  }, [selectedCategory]);
+  }, [selectedCategory, isMobile]);
 
   // 카테고리 너비 계산 및 설정 함수 (애니메이션 없음)
   const updateCategoryWidths = useCallback(() => {
@@ -804,15 +552,14 @@ const Works = () => {
     const selectedIndex = CATEGORIES.findIndex((cat) => cat.id === selectedCategory);
 
     // 전체 너비 계산 (컨테이너의 실제 너비 사용)
-    const containerWidth = container.offsetWidth || window.innerWidth;
-    const padding = 0; // 패딩 없음
+    const containerWidth = window.innerWidth; // 항상 뷰포트 너비 사용
     const totalButtons = CATEGORIES.length;
     const borderWidth = 1; // 각 버튼의 border-right 너비
-    const totalBorderWidth = totalButtons * borderWidth; // 모든 border 너비 합계
-    const availableWidth = containerWidth - (padding * 2) - totalBorderWidth;
+    const totalBorderWidth = (totalButtons - 1) * borderWidth; // 마지막 버튼은 border 없음
+    const availableWidth = containerWidth - totalBorderWidth; // border만 제외
     const baseWidth = availableWidth / totalButtons;
     
-    // 컨테이너 위치 조정 (부모 컨테이너의 왼쪽 가장자리에 맞춤)
+    // 컨테이너 위치 조정 (화면 전체 너비를 정확히 채우도록)
     if (container) {
       const parentContainer = container.parentElement;
       if (parentContainer) {
@@ -825,23 +572,57 @@ const Works = () => {
         gsap.set(container, {
           marginLeft: `${leftOffset}px`,
           marginRight: `${-rightOffset}px`,
-          width: `${window.innerWidth}px`
+          width: `${window.innerWidth}px`,
+          maxWidth: '100vw',
+          minWidth: '100vw',
+          left: '0',
+          right: '0'
+        });
+      } else {
+        // 부모 컨테이너가 없으면 직접 설정
+        gsap.set(container, {
+          marginLeft: 'calc(50% - 50vw)',
+          marginRight: 'calc(50% - 50vw)',
+          width: '100vw',
+          maxWidth: '100vw',
+          minWidth: '100vw',
+          left: '0',
+          right: '0'
         });
       }
     }
 
     if (selectedIndex === -1) {
       // 선택된 카테고리가 없으면 초기 너비로 설정 (애니메이션 없이)
+      let totalWidth = 0;
       buttons.forEach((button) => {
         if (!button) return;
-        gsap.set(button, { width: baseWidth });
+        gsap.set(button, { 
+          width: baseWidth,
+          boxSizing: 'border-box'
+        });
+        totalWidth += baseWidth;
       });
+      
+      // 전체 너비가 정확히 맞지 않으면 모든 버튼에 균등 분배
+      const widthDifference = containerWidth - (totalWidth + totalBorderWidth);
+      if (Math.abs(widthDifference) > 0.1) {
+        const adjustmentPerButton = widthDifference / totalButtons;
+        buttons.forEach((button) => {
+          if (!button) return;
+          const currentWidth = parseFloat(gsap.getProperty(button, 'width')) || baseWidth;
+          gsap.set(button, {
+            width: currentWidth + adjustmentPerButton,
+            boxSizing: 'border-box'
+          });
+        });
+      }
       return;
     }
     
     // 선택된 버튼의 확대 비율 (모바일에서는 더 작게)
     const isMobile = window.innerWidth <= 768;
-    const selectedScale = isMobile ? 1.5 : 2.5; // 모바일: 1.5배, 데스크탑: 2.5배
+    const selectedScale = isMobile ? 1.3 : 2.3; // 모바일: 1.3배, 데스크탑: 2.3배
     const selectedWidth = baseWidth * selectedScale;
     
     // 나머지 버튼들이 나눠가질 너비 계산
@@ -854,10 +635,60 @@ const Works = () => {
     buttons.forEach((button, index) => {
       if (!button) return;
       const isSelected = index === selectedIndex;
+      const buttonWidth = isSelected ? selectedWidth : unselectedWidth;
       gsap.set(button, { 
-        width: isSelected ? selectedWidth : unselectedWidth 
+        width: buttonWidth,
+        boxSizing: 'border-box'
       });
     });
+    
+    // 전체 너비가 정확히 맞지 않으면 모든 비활성화 버튼에 균등 분배
+    // 모든 비활성화 버튼은 같은 너비를 유지해야 함
+    // border는 버튼 사이에만 있고, 버튼 너비에 포함되지 않음 (box-sizing: border-box이므로)
+    const actualTotalWidth = selectedWidth + (unselectedWidth * (totalButtons - 1)) + totalBorderWidth;
+    const widthDifference = containerWidth - actualTotalWidth;
+    
+    if (Math.abs(widthDifference) > 0.1) {
+      // 차이를 모든 비활성화 버튼에 균등 분배
+      const adjustmentPerUnselected = widthDifference / (totalButtons - 1);
+      buttons.forEach((button, index) => {
+        if (!button) return;
+        const isSelected = index === selectedIndex;
+        if (!isSelected) {
+          gsap.set(button, {
+            width: unselectedWidth + adjustmentPerUnselected,
+            boxSizing: 'border-box'
+          });
+        }
+      });
+    }
+    
+    // 최종 확인: 모든 버튼의 총 너비가 정확히 containerWidth가 되도록
+    // box-sizing: border-box이므로 border가 width에 포함됨
+    let finalTotalWidth = 0;
+    buttons.forEach((button) => {
+      if (!button) return;
+      const buttonWidth = parseFloat(gsap.getProperty(button, 'width')) || 0;
+      finalTotalWidth += buttonWidth;
+    });
+    
+    // 여전히 차이가 있으면 모든 비활성화 버튼에 균등 분배 (모든 비활성화 버튼은 같은 너비 유지)
+    if (Math.abs(containerWidth - finalTotalWidth) > 0.1) {
+      const finalAdjustment = containerWidth - finalTotalWidth;
+      const unselectedCount = totalButtons - 1;
+      const adjustmentPerUnselected = finalAdjustment / unselectedCount;
+      
+      buttons.forEach((button, index) => {
+        if (!button) return;
+        if (index !== selectedIndex) {
+          const currentWidth = parseFloat(gsap.getProperty(button, 'width')) || 0;
+          gsap.set(button, {
+            width: currentWidth + adjustmentPerUnselected,
+            boxSizing: 'border-box'
+          });
+        }
+      });
+    }
   }, [selectedCategory]);
 
   // 카테고리 선택 변경 시 너비 즉시 변경 (빠른 반응)
@@ -923,7 +754,10 @@ const Works = () => {
                 gsap.set(container, {
                   marginLeft: `${leftOffset}px`,
                   marginRight: `${-rightOffset}px`,
-                  width: `${window.innerWidth}px`
+                  width: `${window.innerWidth}px`,
+                  maxWidth: '100vw',
+                  left: '0',
+                  right: '0'
                 });
               }
             }
@@ -944,6 +778,76 @@ const Works = () => {
     };
   }, [updateCategoryWidths]);
 
+  // Ghost 높이 계산 (디자이너 페이지와 동일한 로직)
+  useEffect(() => {
+    const container = galleryInnerRef.current;
+    if (!container) {
+      return undefined;
+    }
+
+    const updateGhostHeight = () => {
+      const items = Array.from(container.querySelectorAll('.works-gallery__item:not(.works-gallery__item--ghost)'));
+      if (items.length === 0) {
+        container.style.removeProperty('--works-card-height');
+        return;
+      }
+      
+      // 모든 아이템의 높이를 확인
+      const allHeights = items.map(item => {
+        const rect = item.getBoundingClientRect();
+        return rect.height;
+      });
+      
+      // 최대 높이 사용 (모든 아이템이 동일한 높이여야 하지만, 안전하게 최대 높이 사용)
+      const maxHeight = Math.max(...allHeights);
+      
+      // 높이가 0이면 아직 렌더링되지 않은 것이므로 무시
+      if (maxHeight <= 0) {
+        return;
+      }
+      
+      // ghost 높이를 실제 아이템 높이보다 줄임 (0.8배)
+      const ghostHeight = maxHeight * 0.8;
+      
+      container.style.setProperty('--works-card-height', `${ghostHeight}px`);
+      
+      // ghost 요소에 직접 높이 설정 (CSS 변수만으로는 부족할 수 있음)
+      const ghostElement = container.querySelector('.works-gallery__item--ghost');
+      if (ghostElement) {
+        ghostElement.style.height = `${ghostHeight}px`;
+      }
+    };
+
+    // requestAnimationFrame을 사용하여 렌더링 후 실행
+    const rafId = requestAnimationFrame(() => {
+      // 추가 지연으로 확실하게 렌더링 완료 후 실행
+      setTimeout(updateGhostHeight, 100);
+    });
+
+    let resizeObserver;
+    if (typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(() => {
+        // ResizeObserver 콜백에서도 requestAnimationFrame 사용
+        requestAnimationFrame(() => {
+          setTimeout(updateGhostHeight, 50);
+        });
+      });
+      
+      // 모든 아이템 관찰
+      const items = Array.from(container.querySelectorAll('.works-gallery__item:not(.works-gallery__item--ghost)'));
+      items.forEach(item => {
+        resizeObserver.observe(item);
+      });
+    }
+
+    window.addEventListener('resize', updateGhostHeight);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', updateGhostHeight);
+      resizeObserver?.disconnect();
+    };
+  }, [worksWithMedia]);
 
   return (
     <>
@@ -978,15 +882,15 @@ const Works = () => {
                 {category.label}
               </span>
             )}
-            {category.description && (
-              <div 
-                className="works-category__description"
+            {category.logo && (
+              <span 
+                className="works-category__label works-category__label--with-logo"
                 ref={(el) => {
-                  categoryDescriptionRefs.current[index] = el;
+                  categoryLabelRefs.current[index] = el;
                 }}
               >
-                <h3 className="works-category__description-title">{category.label}</h3>
-              </div>
+                {category.label}
+              </span>
             )}
           </button>
         ))}
@@ -1030,7 +934,7 @@ const Works = () => {
           </div>
         </div>
       )}
-      <div className="works-gallery__inner">
+      <div className="works-gallery__inner" ref={galleryInnerRef}>
         {worksWithMedia.map((work, index) => {
           const color = GALLERY_COLORS[index % GALLERY_COLORS.length];
           return (
@@ -1056,9 +960,6 @@ const Works = () => {
           );
         })}
         <div className="works-gallery__item works-gallery__item--ghost" aria-hidden="true" />
-      </div>
-      <div className="works-gallery__footer">
-        <img src={symbolImage} alt="MJU MCD Symbol" className="works-gallery__footer-symbol" />
       </div>
     </div>
       {selectedWork && selectedDesigner && (

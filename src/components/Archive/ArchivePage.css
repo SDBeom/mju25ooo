@@ -167,7 +167,7 @@
 .image-trailer {
   position: fixed; /* stays in place relative to the viewport */
   pointer-events: none; /* prevents blocking clicks on the page */
-  z-index: 9999; /* always stays on top of everything else */
+  z-index: var(--z-modal-overlay, 9999); /* always stays on top of everything else */
   top: 0;
   left: 0;
   width: 100%;

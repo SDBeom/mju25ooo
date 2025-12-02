@@ -204,6 +204,17 @@
 }
 
 /* 디자이너 모드 - 크리에이티브한 스타일 */
+/* 모달이 닫힌 후 헤더가 위에 오도록 보장 */
+body:not(.is-modal-open) .header {
+  z-index: var(--z-header-above-modal, 10001);
+}
+
+body:not(.is-modal-open) .mobile-menu-toggle {
+  z-index: var(--z-header-button, 10002);
+  position: relative;
+  pointer-events: auto;
+}
+
 /* Mobile menu toggle - Mobile에서만 표시 */
 .mobile-menu-toggle {
   display: flex;
@@ -211,6 +222,8 @@
   justify-content: center;
   align-items: center;
   width: 36px;
+  position: relative;
+  z-index: var(--z-header-button, 10002);
   height: 36px;
   background: transparent;
   border: none;

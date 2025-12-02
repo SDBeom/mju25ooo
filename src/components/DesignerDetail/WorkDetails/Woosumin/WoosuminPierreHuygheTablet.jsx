@@ -3,21 +3,21 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/WoosuminPierreHuyghe/WoosuminPierreHuygheTablet.css';
 
 // 이미지 임포트
-import woosuminWork2_01 from '../../../../assets/우수민/우수민_멀티미디어_작품2_01.webp';
-import woosuminWork2_02 from '../../../../assets/우수민/우수민_멀티미디어_작품2_02.webp';
-import woosuminWork2_03 from '../../../../assets/우수민/우수민_멀티미디어_작품2_03.webp';
-import woosuminWork2_04 from '../../../../assets/우수민/우수민_멀티미디어_작품2_04.webp';
-import woosuminWork2_05 from '../../../../assets/우수민/우수민_멀티미디어_작품2_05.webp';
-import woosuminWork2_06 from '../../../../assets/우수민/우수민_멀티미디어_작품2_06.webp';
-import woosuminWork2_07 from '../../../../assets/우수민/우수민_멀티미디어_작품2_07.webp';
-import woosuminWork2_08 from '../../../../assets/우수민/우수민_멀티미디어_작품2_08.webp';
-import woosuminWork2_09 from '../../../../assets/우수민/우수민_멀티미디어_작품2_09.webp';
-import woosuminWork2_10 from '../../../../assets/우수민/우수민_멀티미디어_작품2_10.webp';
-import woosuminWork2_11 from '../../../../assets/우수민/우수민_멀티미디어_작품2_11.webp';
-import woosuminWork2_12 from '../../../../assets/우수민/우수민_멀티미디어_작품2_12.webp';
-import woosuminWork2_13 from '../../../../assets/우수민/우수민_멀티미디어_작품2_13.webp';
-import woosuminWork2_14 from '../../../../assets/우수민/우수민_멀티미디어_작품2_14.webp';
-import woosuminWork2_15 from '../../../../assets/우수민/우수민_멀티미디어_작품2_15.webp';
+import woosuminWork2_01 from '../../../../assets/우수민/woosumin_multimedia_work2_01.webp';
+import woosuminWork2_02 from '../../../../assets/우수민/woosumin_multimedia_work2_02.webp';
+import woosuminWork2_03 from '../../../../assets/우수민/woosumin_multimedia_work2_03.webp';
+import woosuminWork2_04 from '../../../../assets/우수민/woosumin_multimedia_work2_04.webp';
+import woosuminWork2_05 from '../../../../assets/우수민/woosumin_multimedia_work2_05.webp';
+import woosuminWork2_06 from '../../../../assets/우수민/woosumin_multimedia_work2_06.webp';
+import woosuminWork2_07 from '../../../../assets/우수민/woosumin_multimedia_work2_07.webp';
+import woosuminWork2_08 from '../../../../assets/우수민/woosumin_multimedia_work2_08.webp';
+import woosuminWork2_09 from '../../../../assets/우수민/woosumin_multimedia_work2_09.webp';
+import woosuminWork2_10 from '../../../../assets/우수민/woosumin_multimedia_work2_10.webp';
+import woosuminWork2_11 from '../../../../assets/우수민/woosumin_multimedia_work2_11.webp';
+import woosuminWork2_12 from '../../../../assets/우수민/woosumin_multimedia_work2_12.webp';
+import woosuminWork2_13 from '../../../../assets/우수민/woosumin_multimedia_work2_13.webp';
+import woosuminWork2_14 from '../../../../assets/우수민/woosumin_multimedia_work2_14.webp';
+import woosuminWork2_15 from '../../../../assets/우수민/woosumin_multimedia_work2_15.webp';
 
 /**
  * 우수민 - Pierre Huyghe: Liminal 가이드앱 UXUI (작품2) Tablet 버전

@@ -3,22 +3,22 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/LeeUnLayered/LeeUnLayeredTablet.css';
 
 // 이미지 임포트
-import leeunWork1_01 from '../../../../assets/이운/이운_멀티미디어_작품1_01.webp';
-import leeunWork1_02 from '../../../../assets/이운/이운_멀티미디어_작품1_02.webp';
-import leeunWork1_03 from '../../../../assets/이운/이운_멀티미디어_작품1_03.webp';
-import leeunWork1_04 from '../../../../assets/이운/이운_멀티미디어_작품1_04.webp';
-import leeunWork1_05 from '../../../../assets/이운/이운_멀티미디어_작품1_05.webp';
-import leeunWork1_07 from '../../../../assets/이운/이운_멀티미디어_작품1_07.webp';
-import leeunWork1_08 from '../../../../assets/이운/이운_멀티미디어_작품1_08.webp';
-import leeunWork1_09 from '../../../../assets/이운/이운_멀티미디어_작품1_09.webp';
-import leeunWork1_10 from '../../../../assets/이운/이운_멀티미디어_작품1_10.webp';
-import leeunWork1_11 from '../../../../assets/이운/이운_멀티미디어_작품1_11.webp';
-import leeunWork1_12 from '../../../../assets/이운/이운_멀티미디어_작품1_12.webp';
-import leeunWork1_13 from '../../../../assets/이운/이운_멀티미디어_작품1_13.webp';
-import leeunWork1_14 from '../../../../assets/이운/이운_멀티미디어_작품1_14.webp';
-import leeunWork1_15 from '../../../../assets/이운/이운_멀티미디어_작품1_15.webp';
-import leeunWork1_16 from '../../../../assets/이운/이운_멀티미디어_작품1_16.webp';
-import leeunWork1_17 from '../../../../assets/이운/이운_멀티미디어_작품1_17.webp';
+import leeunWork1_01 from '../../../../assets/이운/leeun_multimedia_work1_01.webp';
+import leeunWork1_02 from '../../../../assets/이운/leeun_multimedia_work1_02.webp';
+import leeunWork1_03 from '../../../../assets/이운/leeun_multimedia_work1_03.webp';
+import leeunWork1_04 from '../../../../assets/이운/leeun_multimedia_work1_04.webp';
+import leeunWork1_05 from '../../../../assets/이운/leeun_multimedia_work1_05.webp';
+import leeunWork1_07 from '../../../../assets/이운/leeun_multimedia_work1_07.webp';
+import leeunWork1_08 from '../../../../assets/이운/leeun_multimedia_work1_08.webp';
+import leeunWork1_09 from '../../../../assets/이운/leeun_multimedia_work1_09.webp';
+import leeunWork1_10 from '../../../../assets/이운/leeun_multimedia_work1_10.webp';
+import leeunWork1_11 from '../../../../assets/이운/leeun_multimedia_work1_11.webp';
+import leeunWork1_12 from '../../../../assets/이운/leeun_multimedia_work1_12.webp';
+import leeunWork1_13 from '../../../../assets/이운/leeun_multimedia_work1_13.webp';
+import leeunWork1_14 from '../../../../assets/이운/leeun_multimedia_work1_14.webp';
+import leeunWork1_15 from '../../../../assets/이운/leeun_multimedia_work1_15.webp';
+import leeunWork1_16 from '../../../../assets/이운/leeun_multimedia_work1_16.webp';
+import leeunWork1_17 from '../../../../assets/이운/leeun_multimedia_work1_17.webp';
 
 /**
  * 이운 - Layered (작품1) Tablet 버전

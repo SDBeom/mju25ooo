@@ -3,20 +3,20 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/KimJaeeunGoFetch/KimJaeeunGoFetchTablet.css';
 
 // 이미지 임포트
-import kimJaeeunWork1_01 from '../../../../assets/김재은/김재은_Video_작품1_01.webp';
-import kimJaeeunWork1_02 from '../../../../assets/김재은/김재은_Video_작품1_02.webp';
-import kimJaeeunWork1_03 from '../../../../assets/김재은/김재은_Video_작품1_03.webp';
-import kimJaeeunWork1_04 from '../../../../assets/김재은/김재은_Video_작품1_04.webp';
-import kimJaeeunWork1_05 from '../../../../assets/김재은/김재은_Video_작품1_05.webp';
-import kimJaeeunWork1_07 from '../../../../assets/김재은/김재은_Video_작품1_07.webp';
-import kimJaeeunWork1_08 from '../../../../assets/김재은/김재은_Video_작품1_08.webp';
-import kimJaeeunWork1_09 from '../../../../assets/김재은/김재은_Video_작품1_09.webp';
-import kimJaeeunWork1_10 from '../../../../assets/김재은/김재은_Video_작품1_10.webp';
-import kimJaeeunWork1_11 from '../../../../assets/김재은/김재은_Video_작품1_11.webp';
-import kimJaeeunWork1_12 from '../../../../assets/김재은/김재은_Video_작품1_12.webp';
-import kimJaeeunWork1_13 from '../../../../assets/김재은/김재은_Video_작품1_13.webp';
-import kimJaeeunWork1_14 from '../../../../assets/김재은/김재은_Video_작품1_14.webp';
-import kimJaeeunWork1_15 from '../../../../assets/김재은/김재은_Video_작품1_15.webp';
+import kimJaeeunWork1_01 from '../../../../assets/김재은/kimjaeeun_video_work1_01.webp';
+import kimJaeeunWork1_02 from '../../../../assets/김재은/kimjaeeun_video_work1_02.webp';
+import kimJaeeunWork1_03 from '../../../../assets/김재은/kimjaeeun_video_work1_03.webp';
+import kimJaeeunWork1_04 from '../../../../assets/김재은/kimjaeeun_video_work1_04.webp';
+import kimJaeeunWork1_05 from '../../../../assets/김재은/kimjaeeun_video_work1_05.webp';
+import kimJaeeunWork1_07 from '../../../../assets/김재은/kimjaeeun_video_work1_07.webp';
+import kimJaeeunWork1_08 from '../../../../assets/김재은/kimjaeeun_video_work1_08.webp';
+import kimJaeeunWork1_09 from '../../../../assets/김재은/kimjaeeun_video_work1_09.webp';
+import kimJaeeunWork1_10 from '../../../../assets/김재은/kimjaeeun_video_work1_10.webp';
+import kimJaeeunWork1_11 from '../../../../assets/김재은/kimjaeeun_video_work1_11.webp';
+import kimJaeeunWork1_12 from '../../../../assets/김재은/kimjaeeun_video_work1_12.webp';
+import kimJaeeunWork1_13 from '../../../../assets/김재은/kimjaeeun_video_work1_13.webp';
+import kimJaeeunWork1_14 from '../../../../assets/김재은/kimjaeeun_video_work1_14.webp';
+import kimJaeeunWork1_15 from '../../../../assets/김재은/kimjaeeun_video_work1_15.webp';
 
 /**
  * 김재은 - Go Fetch! Tablet 버전

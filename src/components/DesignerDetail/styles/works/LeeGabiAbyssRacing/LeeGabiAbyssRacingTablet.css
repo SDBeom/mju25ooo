@@ -46,7 +46,7 @@
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__title--leegabi-abyss-racing-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.1;
@@ -54,14 +54,16 @@
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__title--leegabi-abyss-racing-tablet .block {
   display: block;
+  text-align: left;
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__lead--leegabi-abyss-racing-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.45;
@@ -69,11 +71,13 @@
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
+
+  text-align: left;}
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__lead--leegabi-abyss-racing-tablet p {
   margin: 0;
-}
+
+  text-align: left;}
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__ctas--leegabi-abyss-racing-tablet {
   display: flex;
@@ -88,7 +92,7 @@
 .work-detail--leegabi-abyss-racing-tablet .work-detail__cta--leegabi-abyss-racing-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -170,7 +174,7 @@
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__feature-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -181,7 +185,7 @@
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__feature-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -271,7 +275,7 @@
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__feature-content .work-detail__text-group .work-detail__feature-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -282,7 +286,7 @@
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__feature-content .work-detail__text-group .work-detail__feature-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -350,7 +354,7 @@
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__card-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -361,7 +365,7 @@
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__card-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -450,7 +454,7 @@
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__bento-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -461,7 +465,7 @@
 }
 
 .work-detail--leegabi-abyss-racing-tablet .work-detail__bento-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;

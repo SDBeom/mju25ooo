@@ -3,14 +3,14 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/KimYunjungHelloUniverse/KimYunjungHelloUniverseMobile.css';
 
 // 이미지 임포트
-import kimYunjungWork2_22 from '../../../../assets/김윤정/김윤정_Video_작품2_01.webp'; // 임시로 01 사용
-import kimYunjungWork2_23 from '../../../../assets/김윤정/김윤정_Video_작품2_02.webp'; // 임시로 02 사용
-import kimYunjungWork2_27 from '../../../../assets/김윤정/김윤정_Video_작품2_03.webp'; // 임시로 03 사용
-import kimYunjungWork2_28 from '../../../../assets/김윤정/김윤정_Video_작품2_04.webp'; // 임시로 04 사용
-import kimYunjungWork2_29 from '../../../../assets/김윤정/김윤정_Video_작품2_05.webp'; // 임시로 05 사용
-import kimYunjungWork2_30 from '../../../../assets/김윤정/김윤정_Video_작품2_06.webp'; // 임시로 06 사용
-import kimYunjungWork2_31 from '../../../../assets/김윤정/김윤정_Video_작품2_07.webp'; // 임시로 07 사용
-import kimYunjungWork2_24 from '../../../../assets/김윤정/김윤정_Video_작품2_08.webp'; // 임시로 08 사용
+import kimYunjungWork2_22 from '../../../../assets/김윤정/kimyunjung_video_work2_01.webp'; // 임시로 01 사용
+import kimYunjungWork2_23 from '../../../../assets/김윤정/kimyunjung_video_work2_02.webp'; // 임시로 02 사용
+import kimYunjungWork2_27 from '../../../../assets/김윤정/kimyunjung_video_work2_03.webp'; // 임시로 03 사용
+import kimYunjungWork2_28 from '../../../../assets/김윤정/kimyunjung_video_work2_04.webp'; // 임시로 04 사용
+import kimYunjungWork2_29 from '../../../../assets/김윤정/kimyunjung_video_work2_05.webp'; // 임시로 05 사용
+import kimYunjungWork2_30 from '../../../../assets/김윤정/kimyunjung_video_work2_06.webp'; // 임시로 06 사용
+import kimYunjungWork2_31 from '../../../../assets/김윤정/kimyunjung_video_work2_07.webp'; // 임시로 07 사용
+import kimYunjungWork2_24 from '../../../../assets/김윤정/kimyunjung_video_work2_08.webp'; // 임시로 08 사용
 
 /**
  * 김윤정 - 안녕 우주 Mobile 버전

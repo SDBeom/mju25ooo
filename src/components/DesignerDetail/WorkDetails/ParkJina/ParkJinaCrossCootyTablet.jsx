@@ -3,21 +3,21 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ParkJinaCrossCooty/ParkJinaCrossCootyTablet.css';
 
 // 이미지 임포트
-import parkJinaWork1_01 from '../../../../assets/박진아/박진아_멀티미디어_작품1_01.webp';
-import parkJinaWork1_02 from '../../../../assets/박진아/박진아_멀티미디어_작품1_02.webp';
-import parkJinaWork1_03 from '../../../../assets/박진아/박진아_멀티미디어_작품1_03.webp';
-import parkJinaWork1_04 from '../../../../assets/박진아/박진아_멀티미디어_작품1_04.webp';
-import parkJinaWork1_05 from '../../../../assets/박진아/박진아_멀티미디어_작품1_05.webp';
-import parkJinaWork1_06 from '../../../../assets/박진아/박진아_멀티미디어_작품1_06.webp';
-import parkJinaWork1_07 from '../../../../assets/박진아/박진아_멀티미디어_작품1_07.webp';
-import parkJinaWork1_08 from '../../../../assets/박진아/박진아_멀티미디어_작품1_08.webp';
-import parkJinaWork1_09 from '../../../../assets/박진아/박진아_멀티미디어_작품1_09.webp';
-import parkJinaWork1_10 from '../../../../assets/박진아/박진아_멀티미디어_작품1_10.webp';
-import parkJinaWork1_11 from '../../../../assets/박진아/박진아_멀티미디어_작품1_11.webp';
-import parkJinaWork1_12 from '../../../../assets/박진아/박진아_멀티미디어_작품1_12.webp';
-import parkJinaWork1_13 from '../../../../assets/박진아/박진아_멀티미디어_작품1_13.webp';
-import parkJinaWork1_14 from '../../../../assets/박진아/박진아_멀티미디어_작품1_14.webp';
-import parkJinaWork1_15 from '../../../../assets/박진아/박진아_멀티미디어_작품1_15.webp';
+import parkJinaWork1_01 from '../../../../assets/박진아/parkjina_multimedia_work1_01.webp';
+import parkJinaWork1_02 from '../../../../assets/박진아/parkjina_multimedia_work1_02.webp';
+import parkJinaWork1_03 from '../../../../assets/박진아/parkjina_multimedia_work1_03.webp';
+import parkJinaWork1_04 from '../../../../assets/박진아/parkjina_multimedia_work1_04.webp';
+import parkJinaWork1_05 from '../../../../assets/박진아/parkjina_multimedia_work1_05.webp';
+import parkJinaWork1_06 from '../../../../assets/박진아/parkjina_multimedia_work1_06.webp';
+import parkJinaWork1_07 from '../../../../assets/박진아/parkjina_multimedia_work1_07.webp';
+import parkJinaWork1_08 from '../../../../assets/박진아/parkjina_multimedia_work1_08.webp';
+import parkJinaWork1_09 from '../../../../assets/박진아/parkjina_multimedia_work1_09.webp';
+import parkJinaWork1_10 from '../../../../assets/박진아/parkjina_multimedia_work1_10.webp';
+import parkJinaWork1_11 from '../../../../assets/박진아/parkjina_multimedia_work1_11.webp';
+import parkJinaWork1_12 from '../../../../assets/박진아/parkjina_multimedia_work1_12.webp';
+import parkJinaWork1_13 from '../../../../assets/박진아/parkjina_multimedia_work1_13.webp';
+import parkJinaWork1_14 from '../../../../assets/박진아/parkjina_multimedia_work1_14.webp';
+import parkJinaWork1_15 from '../../../../assets/박진아/parkjina_multimedia_work1_15.webp';
 
 /**
  * 박진아 - Cross Cooty Tablet 버전

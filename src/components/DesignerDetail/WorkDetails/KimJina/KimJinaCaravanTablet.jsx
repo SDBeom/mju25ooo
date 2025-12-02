@@ -3,12 +3,12 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/KimJinaCaravan/KimJinaCaravanTablet.css';
 
 // 이미지 임포트
-import kimJinaWork1_01 from '../../../../assets/김지나/김지나_멀티미디어_작품1_01.webp';
-import kimJinaWork1_02 from '../../../../assets/김지나/김지나_멀티미디어_작품1_02.webp';
-import kimJinaWork1_03 from '../../../../assets/김지나/김지나_멀티미디어_작품1_03.webp';
-import kimJinaWork1_04 from '../../../../assets/김지나/김지나_멀티미디어_작품1_04.webp';
-import kimJinaWork1_05 from '../../../../assets/김지나/김지나_멀티미디어_작품1_05.webp';
-import kimJinaWork1_06 from '../../../../assets/김지나/김지나_멀티미디어_작품1_06.webp';
+import kimJinaWork1_01 from '../../../../assets/김지나/kimjina_multimedia_work1_01.webp';
+import kimJinaWork1_02 from '../../../../assets/김지나/kimjina_multimedia_work1_02.webp';
+import kimJinaWork1_03 from '../../../../assets/김지나/kimjina_multimedia_work1_03.webp';
+import kimJinaWork1_04 from '../../../../assets/김지나/kimjina_multimedia_work1_04.webp';
+import kimJinaWork1_05 from '../../../../assets/김지나/kimjina_multimedia_work1_05.webp';
+import kimJinaWork1_06 from '../../../../assets/김지나/kimjina_multimedia_work1_06.webp';
 
 /**
  * 김지나 - Caravan Tablet 버전

@@ -3,12 +3,12 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/KimYunjungLoveAtRustSight/KimYunjungLoveAtRustSightMobile.css';
 
 // 이미지 임포트
-import kimYunjungWork1_13 from '../../../../assets/김윤정/김윤정_Video_작품1_01.webp'; // 임시로 01 사용
-import frame37 from '../../../../assets/김윤정/김윤정_Video_작품1_02.webp'; // Frame37
-import kimYunjungWork1_15 from '../../../../assets/김윤정/김윤정_Video_작품1_03.webp'; // 임시로 03 사용
-import kimYunjungWork1_16 from '../../../../assets/김윤정/김윤정_Video_작품1_04.webp'; // 임시로 04 사용
-import kimYunjungWork1_17 from '../../../../assets/김윤정/김윤정_Video_작품1_05.webp'; // 임시로 05 사용
-import kimYunjungWork1_18 from '../../../../assets/김윤정/김윤정_Video_작품1_06.webp'; // 임시로 06 사용
+import kimYunjungWork1_13 from '../../../../assets/김윤정/kimyunjung_video_work1_01.webp'; // 임시로 01 사용
+import frame37 from '../../../../assets/김윤정/kimyunjung_video_work1_02.webp'; // Frame37
+import kimYunjungWork1_15 from '../../../../assets/김윤정/kimyunjung_video_work1_03.webp'; // 임시로 03 사용
+import kimYunjungWork1_16 from '../../../../assets/김윤정/kimyunjung_video_work1_04.webp'; // 임시로 04 사용
+import kimYunjungWork1_17 from '../../../../assets/김윤정/kimyunjung_video_work1_05.webp'; // 임시로 05 사용
+import kimYunjungWork1_18 from '../../../../assets/김윤정/kimyunjung_video_work1_06.webp'; // 임시로 06 사용
 
 /**
  * 김윤정 - Love at Rust Sight Mobile 버전

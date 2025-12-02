@@ -3,19 +3,19 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ParkHeechanPledge/ParkHeechanPledgeDesktop.css';
 
 // 이미지 임포트
-import parkHeechanWork1_01 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_01.webp';
-import parkHeechanWork1_02 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_02.webp';
-import parkHeechanWork1_03 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_03.webp';
-import parkHeechanWork1_04 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_04.webp';
-import parkHeechanWork1_05 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_05.webp';
-import parkHeechanWork1_06 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_06.webp';
-import parkHeechanWork1_07 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_07.webp';
-import parkHeechanWork1_08 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_08.webp';
-import parkHeechanWork1_10 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_10.webp';
-import parkHeechanWork1_11 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_11.webp';
-import parkHeechanWork1_12 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_12.webp';
-import parkHeechanWork1_13 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_13.webp';
-import parkHeechanWork1_14 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_14.webp';
+import parkHeechanWork1_01 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_01.webp';
+import parkHeechanWork1_02 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_02.webp';
+import parkHeechanWork1_03 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_03.webp';
+import parkHeechanWork1_04 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_04.webp';
+import parkHeechanWork1_05 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_05.webp';
+import parkHeechanWork1_06 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_06.webp';
+import parkHeechanWork1_07 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_07.webp';
+import parkHeechanWork1_08 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_08.webp';
+import parkHeechanWork1_10 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_10.webp';
+import parkHeechanWork1_11 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_11.webp';
+import parkHeechanWork1_12 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_12.webp';
+import parkHeechanWork1_13 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_13.webp';
+import parkHeechanWork1_14 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_14.webp';
 
 /**
  * 박희찬 - PLEDGE Desktop 버전
@@ -271,19 +271,19 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ParkHeechanPledge/ParkHeechanPledgeDesktop.css';
 
 // 이미지 임포트
-import parkHeechanWork1_01 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_01.webp';
-import parkHeechanWork1_02 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_02.webp';
-import parkHeechanWork1_03 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_03.webp';
-import parkHeechanWork1_04 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_04.webp';
-import parkHeechanWork1_05 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_05.webp';
-import parkHeechanWork1_06 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_06.webp';
-import parkHeechanWork1_07 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_07.webp';
-import parkHeechanWork1_08 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_08.webp';
-import parkHeechanWork1_10 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_10.webp';
-import parkHeechanWork1_11 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_11.webp';
-import parkHeechanWork1_12 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_12.webp';
-import parkHeechanWork1_13 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_13.webp';
-import parkHeechanWork1_14 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품1_14.webp';
+import parkHeechanWork1_01 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_01.webp';
+import parkHeechanWork1_02 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_02.webp';
+import parkHeechanWork1_03 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_03.webp';
+import parkHeechanWork1_04 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_04.webp';
+import parkHeechanWork1_05 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_05.webp';
+import parkHeechanWork1_06 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_06.webp';
+import parkHeechanWork1_07 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_07.webp';
+import parkHeechanWork1_08 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_08.webp';
+import parkHeechanWork1_10 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_10.webp';
+import parkHeechanWork1_11 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_11.webp';
+import parkHeechanWork1_12 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_12.webp';
+import parkHeechanWork1_13 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_13.webp';
+import parkHeechanWork1_14 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work1_14.webp';
 
 /**
  * 박희찬 - PLEDGE Desktop 버전

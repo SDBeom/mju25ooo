@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   min-height: calc(100vh - var(--header-height, 60px));
+  padding: 0;
   background: var(--color-background, #0f0f0f);
   box-sizing: border-box;
   width: 100vw;
@@ -27,7 +28,7 @@
   letter-spacing: -0.03em;
   color: #ff7700;
   margin: 0;
-  padding: 50px 40px 50px;
+  padding: clamp(82px, calc(5vw + 32px), 122px) 40px clamp(82px, calc(5vw + 32px), 122px);
   line-height: 1.1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.9);
 }
@@ -216,6 +217,8 @@
     gap: clamp(12px, 4vw, 20px);
     padding: clamp(20px, 8vw, 40px) 20px;
     margin-bottom: 0;
+    height: var(--designer-card-height, clamp(140px, 18vw, 240px));
+    min-height: var(--designer-card-height, clamp(140px, 18vw, 240px));
   }
 
   .designer-gallery__text {
@@ -235,12 +238,12 @@
 
 @media (min-width: 769px) and (max-width: 1279px) {
   .designer-gallery {
-    padding: clamp(32px, 7vw, 72px) 0;
+    padding: 0;
   }
 
   .designer-gallery__title {
     font-size: clamp(2.4rem, 6vw, 4.6rem);
-    padding: 50px 28px 50px;
+    padding: clamp(82px, calc(7vw + 32px), 122px) 28px clamp(82px, calc(7vw + 32px), 122px);
   }
 
   .designer-gallery__item {
@@ -274,6 +277,8 @@
     gap: clamp(14px, 3vw, 28px);
     padding: clamp(28px, 6vw, 60px) 28px;
     margin-bottom: 0;
+    height: var(--designer-card-height, clamp(140px, 18vw, 240px));
+    min-height: var(--designer-card-height, clamp(140px, 18vw, 240px));
   }
 
   .designer-gallery__footer {

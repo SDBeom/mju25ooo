@@ -3,19 +3,19 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ChoHaneulYouthDream/ChoHaneulYouthDreamTablet.css';
 
 // ��지 �포허지훈
-import choHaneulWork1_01 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_01.webp';
-import choHaneulWork1_02 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_02.webp';
-import choHaneulWork1_03 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_03.webp';
-import choHaneulWork1_04 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_04.webp';
-import choHaneulWork1_05 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_05.webp';
-import choHaneulWork1_06 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_06.webp';
-import choHaneulWork1_07 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_07.webp';
-import choHaneulWork1_08 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_08.webp';
-import choHaneulWork1_09 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_09.webp';
-import choHaneulWork1_10 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_10.webp';
-import choHaneulWork1_11 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_11.webp';
-import choHaneulWork1_12 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_12.webp';
-import choHaneulWork1_13 from '../../../../assets/조하늘/조하늘_모션디자인_작품1_13.webp';
+import choHaneulWork1_01 from '../../../../assets/조하늘/johaneul_motiondesign_work1_01.webp';
+import choHaneulWork1_02 from '../../../../assets/조하늘/johaneul_motiondesign_work1_02.webp';
+import choHaneulWork1_03 from '../../../../assets/조하늘/johaneul_motiondesign_work1_03.webp';
+import choHaneulWork1_04 from '../../../../assets/조하늘/johaneul_motiondesign_work1_04.webp';
+import choHaneulWork1_05 from '../../../../assets/조하늘/johaneul_motiondesign_work1_05.webp';
+import choHaneulWork1_06 from '../../../../assets/조하늘/johaneul_motiondesign_work1_06.webp';
+import choHaneulWork1_07 from '../../../../assets/조하늘/johaneul_motiondesign_work1_07.webp';
+import choHaneulWork1_08 from '../../../../assets/조하늘/johaneul_motiondesign_work1_08.webp';
+import choHaneulWork1_09 from '../../../../assets/조하늘/johaneul_motiondesign_work1_09.webp';
+import choHaneulWork1_10 from '../../../../assets/조하늘/johaneul_motiondesign_work1_10.webp';
+import choHaneulWork1_11 from '../../../../assets/조하늘/johaneul_motiondesign_work1_11.webp';
+import choHaneulWork1_12 from '../../../../assets/조하늘/johaneul_motiondesign_work1_12.webp';
+import choHaneulWork1_13 from '../../../../assets/조하늘/johaneul_motiondesign_work1_13.webp';
 
 /**
  * 조하늘 - ����(�작품1) Tablet 버전

@@ -46,7 +46,7 @@
 }
 
 .work-detail--jeongitae-warorb-tablet .work-detail__title--jeongitae-warorb-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.1;
@@ -54,10 +54,11 @@
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--jeongitae-warorb-tablet .work-detail__lead--jeongitae-warorb-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -65,11 +66,13 @@
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
+
+  text-align: left;}
 
 .work-detail--jeongitae-warorb-tablet .work-detail__lead--jeongitae-warorb-tablet p {
   margin: 0;
-}
+
+  text-align: left;}
 
 .work-detail--jeongitae-warorb-tablet .work-detail__ctas--jeongitae-warorb-tablet {
   display: flex;
@@ -84,7 +87,7 @@
 .work-detail--jeongitae-warorb-tablet .work-detail__cta--jeongitae-warorb-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -155,7 +158,7 @@
 }
 
 .work-detail--jeongitae-warorb-tablet .work-detail__feature-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.2;
@@ -166,7 +169,7 @@
 }
 
 .work-detail--jeongitae-warorb-tablet .work-detail__feature-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -231,7 +234,7 @@
 }
 
 .work-detail--jeongitae-warorb-tablet .work-detail__card-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -242,7 +245,7 @@
 }
 
 .work-detail--jeongitae-warorb-tablet .work-detail__card-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;

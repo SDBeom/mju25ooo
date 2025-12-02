@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './Designer.css';
-import symbolImage from '../../assets/Symbol.webp';
 
 // 디자이너 데이터 (가나다순으로 정렬)
 const DESIGNERS = [
@@ -620,9 +619,6 @@ const Designer = () => {
           );
         })}
         <div className="designer-gallery__item designer-gallery__item--ghost" aria-hidden="true" />
-      </div>
-      <div className="designer-gallery__footer">
-        <img src={symbolImage} alt="MJU MCD Symbol" className="designer-gallery__footer-symbol" />
       </div>
     </div>
   );

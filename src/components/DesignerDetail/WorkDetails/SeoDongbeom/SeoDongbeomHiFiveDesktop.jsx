@@ -3,12 +3,12 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/SeoDongbeomHiFive/SeoDongbeomHiFiveDesktop.css';
 
 // 이미지 임포트
-import seoDongbeomWork1_01 from '../../../../assets/서동범/서동범_멀티미디어_작품1_01.webp';
-import seoDongbeomWork1_02 from '../../../../assets/서동범/서동범_멀티미디어_작품1_02.webp';
-import seoDongbeomWork1_03 from '../../../../assets/서동범/서동범_멀티미디어_작품1_03.webp';
-import seoDongbeomWork1_04 from '../../../../assets/서동범/서동범_멀티미디어_작품1_04.webp';
-import seoDongbeomWork1_05 from '../../../../assets/서동범/서동범_멀티미디어_작품1_05.webp';
-import seoDongbeomWork1_06 from '../../../../assets/서동범/서동범_멀티미디어_작품1_06.webp';
+import seoDongbeomWork1_01 from '../../../../assets/서동범/seodongbeom_multimedia_work1_01.webp';
+import seoDongbeomWork1_02 from '../../../../assets/서동범/seodongbeom_multimedia_work1_02.webp';
+import seoDongbeomWork1_03 from '../../../../assets/서동범/seodongbeom_multimedia_work1_03.webp';
+import seoDongbeomWork1_04 from '../../../../assets/서동범/seodongbeom_multimedia_work1_04.webp';
+import seoDongbeomWork1_05 from '../../../../assets/서동범/seodongbeom_multimedia_work1_05.webp';
+import seoDongbeomWork1_06 from '../../../../assets/서동범/seodongbeom_multimedia_work1_06.webp';
 
 /**
  * 서동범 - HiFive Desktop 버전
@@ -90,9 +90,14 @@ const SeoDongbeomHiFiveDesktop = ({ work, designer, ctas }) => {
         </figure>
       </section>
 
-      {/* Marquee 1 - Empty section */}
+      {/* Marquee 1 */}
       <section className="work-detail__section work-detail__marquee work-detail__marquee--seo-dongbeom-hifive-desktop">
-        {/* Marquee content will be added here if needed */}
+        <div className="work-detail__marquee-content">
+          <p className="work-detail__marquee-text">
+            새로운 소셜 인터페이스로서<br />
+            지속적 관계(Connection)가 아닌 순간의 접촉(Contact)을 정의하다.
+          </p>
+        </div>
       </section>
 
       {/* Feature 1: App Screen */}

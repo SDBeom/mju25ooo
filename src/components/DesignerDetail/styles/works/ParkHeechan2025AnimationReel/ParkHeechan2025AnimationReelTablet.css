@@ -45,7 +45,7 @@
 }
 
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__title--park-heechan-2025-animation-reel-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.1;
@@ -53,15 +53,17 @@
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__title--park-heechan-2025-animation-reel-tablet h2 {
   margin: 0;
   display: block;
+  text-align: left;
 }
 
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__lead--park-heechan-2025-animation-reel-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -69,11 +71,13 @@
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
+
+  text-align: left;}
 
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__lead--park-heechan-2025-animation-reel-tablet p {
   margin: 0;
-}
+
+  text-align: left;}
 
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__ctas--park-heechan-2025-animation-reel-tablet {
   display: flex;
@@ -89,7 +93,7 @@
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__cta--park-heechan-2025-animation-reel-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -181,7 +185,7 @@
 }
 
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__feature-row-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.2;
@@ -200,7 +204,7 @@
 }
 
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__feature-row-description p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -299,7 +303,7 @@
 }
 
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__card-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -310,7 +314,7 @@
 }
 
 .work-detail--park-heechan-2025-animation-reel-tablet .work-detail__card-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;

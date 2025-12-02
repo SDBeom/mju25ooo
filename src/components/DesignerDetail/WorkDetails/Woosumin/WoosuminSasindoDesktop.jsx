@@ -3,20 +3,20 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/WoosuminSasindo/WoosuminSasindoDesktop.css';
 
 // 이미지 임포트
-import woosuminWork1_01 from '../../../../assets/우수민/우수민_멀티미디어_작품1_01.webp';
-import woosuminWork1_02 from '../../../../assets/우수민/우수민_멀티미디어_작품1_02.webp';
-import woosuminWork1_03 from '../../../../assets/우수민/우수민_멀티미디어_작품1_03.webp';
-import woosuminWork1_04 from '../../../../assets/우수민/우수민_멀티미디어_작품1_04.webp';
-import woosuminWork1_05 from '../../../../assets/우수민/우수민_멀티미디어_작품1_05.webp';
-import woosuminWork1_06 from '../../../../assets/우수민/우수민_멀티미디어_작품1_06.webp';
-import woosuminWork1_07 from '../../../../assets/우수민/우수민_멀티미디어_작품1_07.webp';
-import woosuminWork1_08 from '../../../../assets/우수민/우수민_멀티미디어_작품1_08.webp';
-import woosuminWork1_09 from '../../../../assets/우수민/우수민_멀티미디어_작품1_09.webp';
-import woosuminWork1_10 from '../../../../assets/우수민/우수민_멀티미디어_작품1_10.webp';
-import woosuminWork1_10 from '../../../../assets/우수민/우수민_멀티미디어_작품1_10.webp';
-import woosuminWork1_11 from '../../../../assets/우수민/우수민_멀티미디어_작품1_11.webp';
-import woosuminWork1_12 from '../../../../assets/우수민/우수민_멀티미디어_작품1_12.webp';
-import woosuminWork1_13 from '../../../../assets/우수민/우수민_멀티미디어_작품1_13.webp';
+import woosuminWork1_01 from '../../../../assets/우수민/woosumin_multimedia_work1_01.webp';
+import woosuminWork1_02 from '../../../../assets/우수민/woosumin_multimedia_work1_02.webp';
+import woosuminWork1_03 from '../../../../assets/우수민/woosumin_multimedia_work1_03.webp';
+import woosuminWork1_04 from '../../../../assets/우수민/woosumin_multimedia_work1_04.webp';
+import woosuminWork1_05 from '../../../../assets/우수민/woosumin_multimedia_work1_05.webp';
+import woosuminWork1_06 from '../../../../assets/우수민/woosumin_multimedia_work1_06.webp';
+import woosuminWork1_07 from '../../../../assets/우수민/woosumin_multimedia_work1_07.webp';
+import woosuminWork1_08 from '../../../../assets/우수민/woosumin_multimedia_work1_08.webp';
+import woosuminWork1_09 from '../../../../assets/우수민/woosumin_multimedia_work1_09.webp';
+import woosuminWork1_10 from '../../../../assets/우수민/woosumin_multimedia_work1_10.webp';
+import woosuminWork1_10 from '../../../../assets/우수민/woosumin_multimedia_work1_10.webp';
+import woosuminWork1_11 from '../../../../assets/우수민/woosumin_multimedia_work1_11.webp';
+import woosuminWork1_12 from '../../../../assets/우수민/woosumin_multimedia_work1_12.webp';
+import woosuminWork1_13 from '../../../../assets/우수민/woosumin_multimedia_work1_13.webp';
 
 /**
  * 우수민 - 사신도 (작품1) Desktop 버전

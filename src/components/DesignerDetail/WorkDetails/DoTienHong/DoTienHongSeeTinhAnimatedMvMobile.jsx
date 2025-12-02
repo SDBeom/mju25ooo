@@ -3,11 +3,11 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/DoTienHongSeeTinhAnimatedMv/DoTienHongSeeTinhAnimatedMvMobile.css';
 
 // 이미지 임포트
-import doTienHongWork2_01 from '../../../../assets/도티안홍/도티안홍_영상콘텐츠_작품2_01.webp';
-import doTienHongWork2_02 from '../../../../assets/도티안홍/도티안홍_영상콘텐츠_작품2_02.webp';
-import doTienHongWork2_03 from '../../../../assets/도티안홍/도티안홍_영상콘텐츠_작품2_03.webp';
-import doTienHongWork2_04 from '../../../../assets/도티안홍/도티안홍_영상콘텐츠_작품2_04.webp';
-import doTienHongWork2_05 from '../../../../assets/도티안홍/도티안홍_영상콘텐츠_작품2_05.webp';
+import doTienHongWork2_01 from '../../../../assets/도티안홍/dotianhong_videocontent_work2_01.webp';
+import doTienHongWork2_02 from '../../../../assets/도티안홍/dotianhong_videocontent_work2_02.webp';
+import doTienHongWork2_03 from '../../../../assets/도티안홍/dotianhong_videocontent_work2_03.webp';
+import doTienHongWork2_04 from '../../../../assets/도티안홍/dotianhong_videocontent_work2_04.webp';
+import doTienHongWork2_05 from '../../../../assets/도티안홍/dotianhong_videocontent_work2_05.webp';
 
 /**
  * 도티안홍 - "SEE TINH" ANIMATED MV Mobile 버전

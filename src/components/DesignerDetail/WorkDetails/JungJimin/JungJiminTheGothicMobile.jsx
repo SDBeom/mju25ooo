@@ -3,16 +3,16 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/JungJiminTheGothic/JungJiminTheGothicMobile.css';
 
 // 이미지 임포트
-import jungJiminWork1_02 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_02.webp';
-import jungJiminWork1_03 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_03.webp';
-import jungJiminWork1_04 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_04.webp';
-import jungJiminWork1_05 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_05.webp';
-import jungJiminWork1_06 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_06.webp';
-import jungJiminWork1_07 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_07.webp';
-import jungJiminWork1_08 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_08.webp';
-import jungJiminWork1_09 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_09.webp';
-import jungJiminWork1_10 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_10.webp';
-import jungJiminWork1_11 from '../../../../assets/정지민/정지민_게임콘텐츠_작품1_The_gothic_Desktop_11.webp';
+import jungJiminWork1_02 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_02.webp';
+import jungJiminWork1_03 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_03.webp';
+import jungJiminWork1_04 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_04.webp';
+import jungJiminWork1_05 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_05.webp';
+import jungJiminWork1_06 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_06.webp';
+import jungJiminWork1_07 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_07.webp';
+import jungJiminWork1_08 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_08.webp';
+import jungJiminWork1_09 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_09.webp';
+import jungJiminWork1_10 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_10.webp';
+import jungJiminWork1_11 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_11.webp';
 
 /**
  * 정지민 - The Gothic (작품1) Mobile 버전

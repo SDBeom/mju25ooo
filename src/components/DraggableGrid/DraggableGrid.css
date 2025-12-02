@@ -204,12 +204,18 @@ a:focus-visible {
     overflow: hidden;
     min-height: calc(100vh - var(--header-height, 60px));
     height: 100%;
+    z-index: 1; /* 헤더보다 낮게 유지 */
   }
   
   .container.--is-loaded.--is-mobile {
     overflow: hidden;
     min-height: calc(100vh - var(--header-height, 60px));
     height: 100%;
+    z-index: 1; /* 헤더보다 낮게 유지 */
+  }
+  
+  .grid.--is-mobile {
+    z-index: 1; /* 헤더보다 낮게 유지 */
   }
 }
 
@@ -807,7 +813,7 @@ body .details.--is-showing {
 .work-detail__gallery-note p {
   margin: 0;
   color: rgba(0, 0, 0, 0.55);
-  font-family: 'Inter', var(--font-primary), sans-serif;
+  font-family: 'Pretendard', var(--font-primary), sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;

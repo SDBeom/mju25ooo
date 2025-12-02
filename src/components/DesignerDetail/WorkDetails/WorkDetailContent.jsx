@@ -5,6 +5,8 @@ import SeoDongbeomHiFive from './SeoDongbeom/SeoDongbeomHiFive';
 import ParkHaeinChrome4Seasons from './ParkHaein/ParkHaeinChrome4Seasons';
 import KimYunjungHelloUniverse from './KimYunjung/KimYunjungHelloUniverse';
 import KimYunjungLoveAtRustSight from './KimYunjung/KimYunjungLoveAtRustSight';
+import SongDaheeACardOfLove from './SongDahee/SongDaheeACardOfLove';
+import SongDaheePeony from './SongDahee/SongDaheePeony';
 import '../DesignerShowcase.css';
 
 /**
@@ -63,6 +65,32 @@ const WorkDetailContent = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
   if (work.id === 'kimyunjung-love-at-rust-sight' || work.layout === 'love-at-rust-sight') {
     return (
       <KimYunjungLoveAtRustSight
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 송다희 작품 (A Card of Love) - 기존 레이아웃 유지
+  if (work.id === 'songdahee-card-of-love' || work.layout === 'songdahee-card-of-love') {
+    return (
+      <SongDaheeACardOfLove
+        work={work}
+        designer={designer}
+        badgeSrc={badgeSrc}
+        badgeAlt={badgeAlt}
+        ctas={ctas}
+      />
+    );
+  }
+
+  // 송다희 작품 (Peony) - 기존 레이아웃 유지
+  if (work.id === 'songdahee-peony' || work.layout === 'songdahee-peony') {
+    return (
+      <SongDaheePeony
         work={work}
         designer={designer}
         badgeSrc={badgeSrc}

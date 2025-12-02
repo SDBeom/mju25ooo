@@ -44,7 +44,7 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__title--kim-jaeeun-go-fetch-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.1;
@@ -53,10 +53,11 @@
   margin: 0;
   white-space: pre-wrap;
   width: 100%;
+  text-align: left;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__lead--kim-jaeeun-go-fetch-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -65,11 +66,13 @@
   margin: 0;
   white-space: pre-wrap;
   width: 100%;
-}
+
+  text-align: left;}
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__lead--kim-jaeeun-go-fetch-tablet p {
   margin: 0;
-}
+
+  text-align: left;}
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__ctas--kim-jaeeun-go-fetch-tablet {
   display: flex;
@@ -83,7 +86,7 @@
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__cta--kim-jaeeun-go-fetch-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-weight: 500;
   line-height: 1.45;
   cursor: pointer;
@@ -163,7 +166,7 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.2;
@@ -174,7 +177,7 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -236,7 +239,7 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-card-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -247,7 +250,7 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-card-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -283,7 +286,7 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
@@ -295,7 +298,7 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -412,7 +415,7 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.45;
@@ -424,7 +427,7 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.09px;

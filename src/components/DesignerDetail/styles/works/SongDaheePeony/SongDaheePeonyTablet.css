@@ -12,7 +12,22 @@
   align-items: center;
 }
 
+/* Modal 내부 스타일 */
+.modal-content .work-detail--song-dahee-peony-tablet {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Hero Section */
+.work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero--song-dahee-peony-tablet,
+.work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero.work-detail__hero--song-dahee-peony-tablet,
+.work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero,
 .work-detail--song-dahee-peony-tablet .work-detail__hero--song-dahee-peony-tablet {
   padding: 0;
   margin: 0;
@@ -21,60 +36,94 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+/* 태블릿에서 모바일 스타일 오버라이드 */
+@media (min-width: 800px) {
+  .work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero--song-dahee-peony-tablet,
+  .work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero.work-detail__hero--song-dahee-peony-tablet,
+  .work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero,
+  .work-detail--song-dahee-peony-tablet .work-detail__hero--song-dahee-peony-tablet {
+    flex-direction: row;
+  }
+  
+  .work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero--song-dahee-peony-tablet .work-detail__hero-content.work-detail__hero-content--song-dahee-peony-tablet,
+  .work-detail--song-dahee-peony-tablet .work-detail__hero--song-dahee-peony-tablet .work-detail__hero-content.work-detail__hero-content--song-dahee-peony-tablet {
+    order: 0;
+    width: 400px;
+  }
+  
+  .work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero--song-dahee-peony-tablet .work-detail__hero-image-wrapper.work-detail__hero-image-wrapper--song-dahee-peony-tablet,
+  .work-detail--song-dahee-peony-tablet .work-detail__hero--song-dahee-peony-tablet .work-detail__hero-image-wrapper.work-detail__hero-image-wrapper--song-dahee-peony-tablet {
+    order: 1;
+    width: 400px;
+  }
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__hero-content--song-dahee-peony-tablet {
   display: flex;
-  flex: 1 0 0;
+  width: 400px;
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
   justify-content: center;
-  padding: 64px 32px;
-  min-width: 0;
-  min-height: 0;
+  height: 540px;
+  padding: 0 32px;
+  box-sizing: border-box;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__text-group {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   align-items: flex-start;
   width: 100%;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__title--song-dahee-peony-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 52.8px;
   letter-spacing: -0.96px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__lead--song-dahee-peony-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__lead--song-dahee-peony-tablet p {
   margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: left;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__ctas--song-dahee-peony-tablet {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-content: flex-start;
   cursor: pointer;
   width: 100%;
 }
@@ -82,18 +131,16 @@
 .work-detail--song-dahee-peony-tablet .work-detail__cta--song-dahee-peony-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
   white-space: nowrap;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-align: left;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__cta--primary.work-detail__cta--song-dahee-peony-tablet {
@@ -117,17 +164,23 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--song-dahee-peony-tablet .work-detail__hero-image-wrapper--song-dahee-peony-tablet {position: relative;
+.work-detail--song-dahee-peony-tablet .work-detail__hero-image-wrapper--song-dahee-peony-tablet {
+  position: relative;
+  width: 400px;
+  height: 540px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.work-detail--song-dahee-peony-tablet .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
-}
-
-.work-detail--song-dahee-peony-tablet .work-detail__hero-image-wrapper--song-dahee-peony-tablet .work-detail__hero-image {left: -319px;
-  top: 1px;
+.work-detail--song-dahee-peony-tablet .work-detail__hero-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* Feature Rows Section */
@@ -150,63 +203,51 @@
   justify-content: center;
   padding: 96px 32px 32px;
   width: 100%;
+  min-height: 320px;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__feature-row--song-dahee-peony-tablet:last-child {
   padding: 32px 32px 96px;
 }
 
-.work-detail--song-dahee-peony-tablet .work-detail__feature-row-image-wrapper {position: relative;
+.work-detail--song-dahee-peony-tablet .work-detail__feature-row-image-wrapper {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
+  flex: 0 0 50%;
+  width: 50%;
+  min-height: 256px;
   flex-shrink: 0;
 }
 
-.work-detail--song-dahee-peony-tablet .work-detail__feature-row-image {position: absolute;left: 0;
-  top: 0;display: block;
-}
-
-.work-detail--song-dahee-peony-tablet .work-detail__feature-row--song-dahee-peony-tablet:first-child .work-detail__feature-row-image {height: auto;left: -82px;
+.work-detail--song-dahee-peony-tablet .work-detail__feature-row-image {
+  position: absolute;
+  left: 0;
   top: 0;
-}
-
-.work-detail--song-dahee-peony-tablet .work-detail__feature-row--song-dahee-peony-tablet:last-child .work-detail__feature-row-image {height: auto;left: -120px;
-  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__feature-row-content {
   display: flex;
-  flex: 1 0 0;
-  flex-direction: row;
-  align-items: center;
-  align-self: stretch;
-}
-
-.work-detail--song-dahee-peony-tablet .work-detail__feature-row-content > div {
-  display: flex;
-  flex: 1 0 0;
+  flex: 0 0 50%;
   flex-direction: column;
-  gap: 48px;
+  gap: 24px;
   align-items: flex-start;
   justify-content: center;
+  width: 50%;
   min-width: 0;
   min-height: 0;
-  width: 100%;
-}
-
-.work-detail--song-dahee-peony-tablet .work-detail__feature-row-content > div > div:first-child {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-  width: 100%;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__feature-row-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 28px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 33.6px;
   letter-spacing: -0.56px;
   color: #000000;
   margin: 0;
@@ -214,10 +255,10 @@
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__feature-row-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -226,11 +267,16 @@
 
 .work-detail--song-dahee-peony-tablet .work-detail__feature-row-description p {
   margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26.1px;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
 }
 
 /* Feature Cards Section */
 .work-detail--song-dahee-peony-tablet .work-detail__cards--song-dahee-peony-tablet {
-  padding: 96px 64px;
+  padding: 96px 32px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -260,31 +306,29 @@
   position: relative;
 }
 
-.work-detail--song-dahee-peony-tablet .work-detail__card-image-wrapper {position: relative;
+.work-detail--song-dahee-peony-tablet .work-detail__card-image-wrapper {
+  position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 240px;
   flex-shrink: 0;
 }
 
-.work-detail--song-dahee-peony-tablet .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
-}
-
-.work-detail--song-dahee-peony-tablet .work-detail__card--song-dahee-peony-tablet:first-child .work-detail__card-image {height: auto;left: -13px;
-  top: -56px;
-}
-
-.work-detail--song-dahee-peony-tablet .work-detail__card--song-dahee-peony-tablet:nth-child(2) .work-detail__card-image {height: auto;left: -16px;
-  top: -28px;
-}
-
-.work-detail--song-dahee-peony-tablet .work-detail__card--song-dahee-peony-tablet:nth-child(3) .work-detail__card-image {height: auto;left: -14px;
-  top: -24px;
+.work-detail--song-dahee-peony-tablet .work-detail__card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__card-body {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 0;
   align-items: flex-start;
   justify-content: center;
   padding: 24px;
@@ -293,10 +337,10 @@
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__card-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.3px;
   color: #000000;
   margin: 0;
@@ -308,22 +352,22 @@
 }
 
 .work-detail--song-dahee-peony-tablet .work-detail__card-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 25.2px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--song-dahee-peony-tablet .work-detail__card--song-dahee-peony-tablet:nth-child(3) .work-detail__card-description {
-  font-size: 16px;
-  letter-spacing: -0.08px;
-}
-
 .work-detail--song-dahee-peony-tablet .work-detail__card-description p {
   margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.2px;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
 }
 

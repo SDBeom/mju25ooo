@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { Flip } from 'gsap/Flip';
 import { WORK_THUMBNAILS } from '../../data/workThumbsData.js';
 import resolveThumbSrc from '../../utils/resolveThumbSrc.js';
-import { WORKS_LIST } from '../Works/Works.jsx';
+import { WORKS_LIST } from '../Works/worksConstants.js';
 import { preloadImages, splitText } from '../DraggableGrid/js/utils.js';
 import './MainPage.css';
 

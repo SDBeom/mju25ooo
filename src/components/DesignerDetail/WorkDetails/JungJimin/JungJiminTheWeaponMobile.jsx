@@ -3,17 +3,17 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/JungJiminTheWeapon/JungJiminTheWeaponMobile.css';
 
 // 이미지 임포트
-import jungJiminWork2_01 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_01.webp';
-import jungJiminWork2_02 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_02.webp';
-import jungJiminWork2_03 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_03.webp';
-import jungJiminWork2_04 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_04.webp';
-import jungJiminWork2_05 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_05.webp';
-import jungJiminWork2_06 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_06.webp';
-import jungJiminWork2_07 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_07.webp';
-import jungJiminWork2_08 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_08.webp';
-import jungJiminWork2_09 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_09.webp';
-import jungJiminWork2_10 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_10.webp';
-import jungJiminWork2_11 from '../../../../assets/정지민/정지민_게임콘텐츠_작품2_The_weapon_Desktop_11.webp';
+import jungJiminWork2_01 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_01.webp';
+import jungJiminWork2_02 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_02.webp';
+import jungJiminWork2_03 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_03.webp';
+import jungJiminWork2_04 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_04.webp';
+import jungJiminWork2_05 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_05.webp';
+import jungJiminWork2_06 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_06.webp';
+import jungJiminWork2_07 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_07.webp';
+import jungJiminWork2_08 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_08.webp';
+import jungJiminWork2_09 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_09.webp';
+import jungJiminWork2_10 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_10.webp';
+import jungJiminWork2_11 from '../../../../assets/정지민/jungjimin_gamecontent_work2_The_weapon_Desktop_11.webp';
 
 /**
  * ���- The Weapon (�작품2) Mobile 버전

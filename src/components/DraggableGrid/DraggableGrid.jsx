@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { preloadImages, splitText } from './js/utils.js';
 import { WORK_THUMBNAILS } from '../../data/workThumbsData.js';
 import resolveThumbSrc from '../../utils/resolveThumbSrc.js';
-import { WORKS_LIST } from '../Works/Works.jsx';
+import { WORKS_LIST } from '../Works/worksConstants.js';
 import './DraggableGrid.css';
 
 const PRODUCTS = WORK_THUMBNAILS.map((image) => ({

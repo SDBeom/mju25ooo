@@ -3,11 +3,11 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/JeongitaeWarOrb/JeongitaeWarOrbDesktop.css';
 
 // 이미지 임포트
-import jeongitaeWork2_01 from '../../../../assets/전기태/전기태_게임콘텐츠츠_작품2_01.webp';
-import jeongitaeWork2_02 from '../../../../assets/전기태/전기태_게임콘텐츠츠_작품2_02.webp';
-import jeongitaeWork2_03 from '../../../../assets/전기태/전기태_게임콘텐츠츠_작품2_03.webp';
-import jeongitaeWork2_04 from '../../../../assets/전기태/전기태_게임콘텐츠츠_작품2_04.webp';
-import jeongitaeWork2_05 from '../../../../assets/전기태/전기태_게임콘텐츠츠_작품2_05.webp';
+import jeongitaeWork2_01 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_01.webp';
+import jeongitaeWork2_02 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_02.webp';
+import jeongitaeWork2_03 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_03.webp';
+import jeongitaeWork2_04 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_04.webp';
+import jeongitaeWork2_05 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_05.webp';
 
 /**
  * 전기태 - War Orb (작품2) Desktop 버전

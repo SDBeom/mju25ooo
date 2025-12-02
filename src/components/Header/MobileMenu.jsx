@@ -11,39 +11,15 @@ const MobileMenu = ({ isOpen, onClose, items }) => {
     if (isOpen) {
       // 메뉴가 열려있을 때 body 스크롤 막기
       document.body.style.overflow = 'hidden';
-      // main-window 숨기기
-      const mainWindow = document.querySelector('.main-window');
-      const footer = document.querySelector('footer');
-      if (mainWindow) {
-        mainWindow.style.display = 'none';
-      }
-      if (footer) {
-        footer.style.display = 'none';
-      }
+      // main-window는 숨기지 않고 그대로 보이도록 유지
     } else {
       // 메뉴가 닫혔을 때 원래대로 복원
       document.body.style.overflow = '';
-      const mainWindow = document.querySelector('.main-window');
-      const footer = document.querySelector('footer');
-      if (mainWindow) {
-        mainWindow.style.display = '';
-      }
-      if (footer) {
-        footer.style.display = '';
-      }
     }
 
     return () => {
       // cleanup
       document.body.style.overflow = '';
-      const mainWindow = document.querySelector('.main-window');
-      const footer = document.querySelector('footer');
-      if (mainWindow) {
-        mainWindow.style.display = '';
-      }
-      if (footer) {
-        footer.style.display = '';
-      }
     };
   }, [isOpen]);
 
@@ -54,11 +30,13 @@ const MobileMenu = ({ isOpen, onClose, items }) => {
       width: '36px',
       height: '36px',
       top: '12px', // 헤더 내부 버튼 위치 (헤더 높이 60px, 버튼 높이 36px, 중앙 정렬: (60-36)/2 = 12px)
-      right: '20px', // 헤더 패딩 (오른쪽)
+      right: 'var(--header-horizontal-padding, 16px)', // 헤더 패딩 (오른쪽)
       left: 'auto', // 명시적으로 auto 설정
+      bottom: 'auto',
       borderRadius: '18px',
       opacity: 0,
       pointerEvents: 'none',
+      transformOrigin: 'top right',
       transition: { 
         duration: 0.75, 
         delay: 0.35, 
@@ -71,11 +49,12 @@ const MobileMenu = ({ isOpen, onClose, items }) => {
       height: 'calc(100vh - var(--header-height))',
       top: 'var(--header-height)',
       right: 0,
-      left: 0,
+      left: 'auto', // 항상 auto로 유지하여 오른쪽 기준으로만 동작
       bottom: 0,
       borderRadius: 0,
       opacity: 1,
       pointerEvents: 'auto',
+      transformOrigin: 'top right',
       transition: { 
         duration: 0.75, 
         type: "tween", 

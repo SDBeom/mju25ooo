@@ -58,9 +58,13 @@ export default defineConfig({
     port: 5173,
     strictPort: false, // 포트가 사용 중이면 자동으로 다른 포트 사용
     host: '0.0.0.0', // 모든 네트워크 인터페이스에서 접근 허용
+    hmr: {
+      // HMR 타임아웃 증가
+      timeout: 30000
+    },
+    // 개발 서버에서는 캐싱 비활성화 (변경사항 즉시 반영)
     headers: {
-      // 캐싱 헤더 설정
-      'Cache-Control': 'public, max-age=31536000'
+      'Cache-Control': 'no-cache, no-store, must-revalidate'
     },
     // 대용량 파일 처리 최적화
     fs: {
@@ -72,7 +76,7 @@ export default defineConfig({
     // 워처 최적화 (대용량 파일 스캔 방지)
     watch: {
       // node_modules 제외
-      ignored: ['**/node_modules/**', '**/.git/**'],
+      ignored: ['**/node_modules/**', '**/.git/**', '**/dist/**'],
       // 폴링 간격 증가 (성능 향상)
       usePolling: false
     }
@@ -91,7 +95,13 @@ export default defineConfig({
     // 사전 번들링할 의존성
     include: ['react', 'react-dom', 'framer-motion', 'gsap'],
     // 제외할 의존성
-    exclude: []
+    exclude: [],
+    // 강제 사전 번들링 (성능 향상)
+    force: false,
+    // esbuild 옵션
+    esbuildOptions: {
+      target: 'es2020'
+    }
   },
   
   // CSS 최적화

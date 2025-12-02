@@ -3,12 +3,12 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ParkHeechan2025AnimationReel/ParkHeechan2025AnimationReelTablet.css';
 
 // 이미지 임포트
-import parkHeechanWork2_01 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품2_01.webp';
-import parkHeechanWork2_02 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품2_02.webp';
-import parkHeechanWork2_03 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품2_03.webp';
-import parkHeechanWork2_04 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품2_04.webp';
-import parkHeechanWork2_05 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품2_05.webp';
-import parkHeechanWork2_06 from '../../../../assets/박희찬/박희찬_게임콘텐츠츠_작품2_06.webp';
+import parkHeechanWork2_01 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_01.webp';
+import parkHeechanWork2_02 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_02.webp';
+import parkHeechanWork2_03 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_03.webp';
+import parkHeechanWork2_04 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_04.webp';
+import parkHeechanWork2_05 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_05.webp';
+import parkHeechanWork2_06 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_06.webp';
 
 /**
  * 박희찬 - 2025 Animation reel Tablet 버전

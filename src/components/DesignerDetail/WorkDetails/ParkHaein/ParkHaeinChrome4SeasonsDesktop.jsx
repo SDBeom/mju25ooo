@@ -3,19 +3,19 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ParkHaeinChrome4Seasons/ParkHaeinChrome4SeasonsDesktop.css';
 
 // 이미지 임포트
-import parkHaeinWork1_01 from '../../../../assets/박해인/박해인_모션디자인_작품1_01.webp';
-import parkHaeinWork1_02 from '../../../../assets/박해인/박해인_모션디자인_작품1_02.webp';
-import parkHaeinWork1_03 from '../../../../assets/박해인/박해인_모션디자인_작품1_03.webp';
-import parkHaeinWork1_04 from '../../../../assets/박해인/박해인_모션디자인_작품1_04.webp';
-import parkHaeinWork1_05 from '../../../../assets/박해인/박해인_모션디자인_작품1_05.webp';
-import parkHaeinWork1_06 from '../../../../assets/박해인/박해인_모션디자인_작품1_06.webp';
-import parkHaeinWork1_07 from '../../../../assets/박해인/박해인_모션디자인_작품1_07.webp';
-import parkHaeinWork1_08 from '../../../../assets/박해인/박해인_모션디자인_작품1_08.webp';
-import parkHaeinWork1_09 from '../../../../assets/박해인/박해인_모션디자인_작품1_09.webp';
-import parkHaeinWork1_10 from '../../../../assets/박해인/박해인_모션디자인_작품1_10.webp';
-import parkHaeinWork1_11 from '../../../../assets/박해인/박해인_모션디자인_작품1_11.webp';
-import parkHaeinWork1_12 from '../../../../assets/박해인/박해인_모션디자인_작품1_12.webp';
-import parkHaeinWork1_13 from '../../../../assets/박해인/박해인_모션디자인_작품1_13.webp';
+import parkHaeinWork1_01 from '../../../../assets/박해인/parkhaein_motiondesign_work1_01.webp';
+import parkHaeinWork1_02 from '../../../../assets/박해인/parkhaein_motiondesign_work1_02.webp';
+import parkHaeinWork1_03 from '../../../../assets/박해인/parkhaein_motiondesign_work1_03.webp';
+import parkHaeinWork1_04 from '../../../../assets/박해인/parkhaein_motiondesign_work1_04.webp';
+import parkHaeinWork1_05 from '../../../../assets/박해인/parkhaein_motiondesign_work1_05.webp';
+import parkHaeinWork1_06 from '../../../../assets/박해인/parkhaein_motiondesign_work1_06.webp';
+import parkHaeinWork1_07 from '../../../../assets/박해인/parkhaein_motiondesign_work1_07.webp';
+import parkHaeinWork1_08 from '../../../../assets/박해인/parkhaein_motiondesign_work1_08.webp';
+import parkHaeinWork1_09 from '../../../../assets/박해인/parkhaein_motiondesign_work1_09.webp';
+import parkHaeinWork1_10 from '../../../../assets/박해인/parkhaein_motiondesign_work1_10.webp';
+import parkHaeinWork1_11 from '../../../../assets/박해인/parkhaein_motiondesign_work1_11.webp';
+import parkHaeinWork1_12 from '../../../../assets/박해인/parkhaein_motiondesign_work1_12.webp';
+import parkHaeinWork1_13 from '../../../../assets/박해인/parkhaein_motiondesign_work1_13.webp';
 
 /**
  * 박해인 - Chrome 4: Seasons Desktop 버전

@@ -3,21 +3,21 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/LeeJiminLeLabo/LeeJiminLeLaboTablet.css';
 
 // 이미지 임포트 - Desktop과 동일한 이미지 사용
-import leejiminWork2_01 from '../../../../assets/이지민/이지민_모션디자인_작품2_01.webp';
-import leejiminWork2_02 from '../../../../assets/이지민/이지민_모션디자인_작품2_02.webp';
-import leejiminWork2_03 from '../../../../assets/이지민/이지민_모션디자인_작품2_03.webp';
-import leejiminWork2_04 from '../../../../assets/이지민/이지민_모션디자인_작품2_04.webp';
-import leejiminWork2_05 from '../../../../assets/이지민/이지민_모션디자인_작품2_05.webp';
-import leejiminWork2_06 from '../../../../assets/이지민/이지민_모션디자인_작품2_06.webp';
-import leejiminWork2_07 from '../../../../assets/이지민/이지민_모션디자인_작품2_07.webp';
-import leejiminWork2_08 from '../../../../assets/이지민/이지민_모션디자인_작품2_08.webp';
-import leejiminWork2_09 from '../../../../assets/이지민/이지민_모션디자인_작품2_09.webp';
-import leejiminWork2_10 from '../../../../assets/이지민/이지민_모션디자인_작품2_10.webp';
-import leejiminWork2_11 from '../../../../assets/이지민/이지민_모션디자인_작품2_11.webp';
-import leejiminWork2_12 from '../../../../assets/이지민/이지민_모션디자인_작품2_12.webp';
-import leejiminWork2_13 from '../../../../assets/이지민/이지민_모션디자인_작품2_13.webp';
-import leejiminWork2_14 from '../../../../assets/이지민/이지민_모션디자인_작품2_14.webp';
-import leejiminWork2_15 from '../../../../assets/이지민/이지민_모션디자인_작품2_15.webp';
+import leejiminWork2_01 from '../../../../assets/이지민/leejimin_motiondesign_work2_01.webp';
+import leejiminWork2_02 from '../../../../assets/이지민/leejimin_motiondesign_work2_02.webp';
+import leejiminWork2_03 from '../../../../assets/이지민/leejimin_motiondesign_work2_03.webp';
+import leejiminWork2_04 from '../../../../assets/이지민/leejimin_motiondesign_work2_04.webp';
+import leejiminWork2_05 from '../../../../assets/이지민/leejimin_motiondesign_work2_05.webp';
+import leejiminWork2_06 from '../../../../assets/이지민/leejimin_motiondesign_work2_06.webp';
+import leejiminWork2_07 from '../../../../assets/이지민/leejimin_motiondesign_work2_07.webp';
+import leejiminWork2_08 from '../../../../assets/이지민/leejimin_motiondesign_work2_08.webp';
+import leejiminWork2_09 from '../../../../assets/이지민/leejimin_motiondesign_work2_09.webp';
+import leejiminWork2_10 from '../../../../assets/이지민/leejimin_motiondesign_work2_10.webp';
+import leejiminWork2_11 from '../../../../assets/이지민/leejimin_motiondesign_work2_11.webp';
+import leejiminWork2_12 from '../../../../assets/이지민/leejimin_motiondesign_work2_12.webp';
+import leejiminWork2_13 from '../../../../assets/이지민/leejimin_motiondesign_work2_13.webp';
+import leejiminWork2_14 from '../../../../assets/이지민/leejimin_motiondesign_work2_14.webp';
+import leejiminWork2_15 from '../../../../assets/이지민/leejimin_motiondesign_work2_15.webp';
 
 /**
  * 이지민 - LE LABO-CITY EXCLUSIVE (작품2) Tablet 버전

@@ -68,16 +68,29 @@ export const splitText = (element, type = 'chars') => {
   } else if (type === 'chars') {
     // Split into characters only
     const charsContainer = document.createElement('span');
-    charsContainer.style.display = 'inline-block';
-    charsContainer.style.overflow = 'hidden';
+    charsContainer.style.display = 'block';
+    charsContainer.style.overflow = 'visible';
+    charsContainer.style.wordBreak = 'keep-all';
+    charsContainer.style.overflowWrap = 'break-word';
+    charsContainer.style.whiteSpace = 'normal';
     
-    Array.from(text).forEach((char) => {
+    Array.from(text).forEach((char, index) => {
       const charSpan = document.createElement('span');
       charSpan.className = 'char';
-      charSpan.textContent = char === ' ' ? '\u00A0' : char;
-      charSpan.style.display = 'inline-block';
+      // 띄어쓰기는 일반 공백으로 유지 (줄바꿈 가능하도록)
+      if (char === ' ') {
+        charSpan.textContent = ' ';
+        charSpan.setAttribute('data-char', ' ');
+        charSpan.style.display = 'inline';
+        charSpan.style.width = '0.25em';
+        charSpan.style.minWidth = '0';
+      } else {
+        charSpan.textContent = char;
+        charSpan.style.display = 'inline-block';
+      }
       charSpan.style.transform = 'translate3d(0, 100%, 0)';
       charSpan.style.overflow = 'hidden';
+      charSpan.style.whiteSpace = 'normal';
       charsContainer.appendChild(charSpan);
       chars.push(charSpan);
     });

@@ -45,7 +45,7 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__title--cho-haneul-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.1;
@@ -53,10 +53,11 @@
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__lead--cho-haneul-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -64,7 +65,8 @@
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
+
+  text-align: left;}
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__ctas--cho-haneul-tablet {
   display: flex;
@@ -79,7 +81,7 @@
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__cta--cho-haneul-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -142,7 +144,7 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__eyebrow-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -152,7 +154,7 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__subtitle {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
@@ -163,7 +165,7 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__text-content {
-  font-family: 'Inter', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', 'Noto Sans', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -204,7 +206,7 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__text-block-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1;
@@ -214,7 +216,7 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__text-block-content {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -297,7 +299,7 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -308,7 +310,7 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card-text p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -339,7 +341,7 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.2;

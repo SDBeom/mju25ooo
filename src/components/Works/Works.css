@@ -5,6 +5,7 @@
 .works-categories {
   display: flex;
   flex-direction: row;
+  width: 100vw;
   margin: 0;
   padding: 0;
   background: #ffffff;
@@ -15,6 +16,12 @@
   position: relative;
   justify-content: flex-start;
   align-items: stretch;
+  max-width: 100vw;
+  min-width: 100vw;
+  left: 0;
+  right: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .works-category {
@@ -31,14 +38,14 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
-  overflow: hidden;
+  overflow: visible;
   flex-shrink: 0;
   flex-grow: 0;
   box-sizing: border-box;
 }
 
 .works-category:last-child {
-  border-right: 1px solid rgba(0, 0, 0, 0.9);
+  border-right: none;
 }
 
 .works-category:hover {
@@ -57,20 +64,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 1;
+  opacity: 0;
   pointer-events: none;
   z-index: 1;
+  transition: opacity 0.3s ease;
 }
 
 .works-category--active .works-category__logo {
+  opacity: 1;
+}
+
+.works-category:not(.works-category--active) .works-category__logo {
   opacity: 0;
 }
 
 .works-category__logo-image {
   width: auto;
-  height: clamp(60px, 8vw, 120px);
+  height: clamp(60px, 5vw, 90px);
   object-fit: contain;
-  opacity: 0.3;
+  opacity: 1;
 }
 
 .works-category__logo-text {
@@ -89,46 +101,91 @@
   color: #070707;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   pointer-events: none;
-  overflow: hidden;
-  display: inline-block;
+  overflow: visible;
+  display: block;
   z-index: 2;
+  text-align: center;
+  text-align-last: center;
+  line-height: 1.2;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-indent: 0;
+  direction: ltr;
+}
+
+/* letter-spacing으로 인한 중앙 정렬 오차 보정 - 마지막 문자 뒤 공간 제거 */
+.works-category__label::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  margin-right: -0.05em; /* letter-spacing만큼 오른쪽 마진 제거 */
+}
+
+.works-category__label--with-logo {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.works-category--active .works-category__label--with-logo {
+  opacity: 0;
+}
+
+.works-category:not(.works-category--active) .works-category__label--with-logo {
+  opacity: 1;
+}
+
+.works-category__label > span {
+  display: block;
+  text-align: center;
+  width: 100%;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* splitText로 생성된 charsContainer에 띄어쓰기 기준 줄바꿈 적용 */
+.works-category__label > span > .char {
+  white-space: normal;
+}
+
+/* 띄어쓰기 문자를 일반 공백처럼 처리하여 줄바꿈 가능하게 */
+.works-category__label > span > .char[data-char=" "] {
+  display: inline;
+  width: auto;
+  min-width: 0;
+  white-space: normal;
 }
 
 .works-category__label .char {
-  display: inline-block;
-  transform: translate3d(0, 100%, 0);
-  overflow: hidden;
-  will-change: transform;
-}
-
-.works-category--active .works-category__label {
-  font-weight: 700;
-  color: #070707;
-}
-
-.works-category__description {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 600px;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 3;
+  display: inline;
+  transform: none;
+  overflow: visible;
+  will-change: auto;
   text-align: center;
+  vertical-align: baseline;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
-.works-category__description-title {
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  font-weight: 700;
-  color: #070707;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin: 0 0 clamp(16px, 3vw, 24px) 0;
-  line-height: 1.2;
+/* 모바일에서는 .char를 일반 텍스트로 표시 */
+@media (max-width: 768px) {
+  .works-category__label .char {
+    display: inline;
+    transform: none;
+    overflow: visible;
+    will-change: auto;
+  }
 }
 
 
@@ -136,10 +193,13 @@
   .works-categories {
     padding: 0;
     width: 100vw;
-    margin-left: calc((100vw - 100%) / -2);
-    margin-right: calc((100vw - 100%) / -2);
+    margin: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     left: 0;
     right: 0;
+    max-width: 100vw;
+    min-width: 100vw;
   }
 
   .works-category {
@@ -148,7 +208,30 @@
   }
 
   .works-category__label {
+    position: relative;
     font-size: clamp(0.75rem, 2vw, 0.95rem);
+    overflow: visible;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 2px;
+    box-sizing: border-box;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 auto;
+    text-indent: 0;
+    direction: ltr;
+  }
+  
+  .works-category__label .char {
+    display: inline;
+    transform: none;
+    overflow: visible;
+    will-change: auto;
   }
 
   .works-category__logo {
@@ -234,6 +317,7 @@
   width: 100vw;
   margin: 0 calc((100vw - 100%) / -2);
   overflow: visible;
+  padding: 0;
 }
 
 .works-gallery__overlay {
@@ -318,6 +402,7 @@
 .works-gallery__inner {
   position: relative;
   width: 100vw;
+  padding: 0;
   background: #ffffff;
   box-sizing: border-box;
   overflow: visible;
@@ -373,10 +458,10 @@
 
 .works-gallery__item--ghost {
   display: block;
-  height: clamp(160px, 22vw, 260px);
+  height: var(--works-card-height);
   padding: 0;
   margin-bottom: 0;
-  background: #ffffff;
+  background: #fff;
   border-top: 1px solid rgba(0, 0, 0, 0.9);
   pointer-events: none;
   overflow: hidden;
@@ -396,6 +481,7 @@
   position: relative;
   min-height: clamp(280px, 36vw, 440px);
   overflow: visible;
+  z-index: 1;
 }
 
 .works-gallery__footer-symbol {
@@ -511,7 +597,7 @@
   }
 
   .works-gallery__item--ghost {
-    height: clamp(130px, 34vw, 200px);
+    height: var(--works-card-height);
   }
 
   .works-gallery__footer {
@@ -545,8 +631,14 @@
 }
 
 @media (min-width: 769px) and (max-width: 1279px) {
+  .works-category__label {
+    word-break: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
   .works-gallery {
-    padding: clamp(40px, 8vw, 80px) 0;
+    padding: 0;
   }
 
   .works-gallery__item {
@@ -563,7 +655,7 @@
   }
 
   .works-gallery__item--ghost {
-    height: clamp(150px, 24vw, 220px);
+    height: var(--works-card-height);
   }
 
   .works-gallery__footer {
@@ -583,6 +675,12 @@
 }
 
 @media (min-width: 1280px) {
+  .works-category__label {
+    word-break: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
   .works-gallery__item {
     padding: clamp(48px, 5vw, 84px) 40px;
     margin-bottom: clamp(-6vw, -88px, -72px);
@@ -597,7 +695,7 @@
   }
 
   .works-gallery__item--ghost {
-    height: clamp(180px, 18vw, 240px);
+    height: var(--works-card-height);
   }
 
   .works-gallery__footer {

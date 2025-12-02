@@ -45,7 +45,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__title--park-jina-cross-cooty-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.1;
@@ -53,10 +53,11 @@
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__lead--park-jina-cross-cooty-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.45;
@@ -64,11 +65,13 @@
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
+
+  text-align: left;}
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__lead--park-jina-cross-cooty-tablet p {
   margin: 0;
-}
+
+  text-align: left;}
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__ctas--park-jina-cross-cooty-tablet {
   display: flex;
@@ -82,7 +85,7 @@
 .work-detail--park-jina-cross-cooty-tablet .work-detail__cta--park-jina-cross-cooty-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -144,7 +147,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__subtitle--park-jina-cross-cooty-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
@@ -155,7 +158,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__text-content--park-jina-cross-cooty-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -217,7 +220,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__bento-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -228,7 +231,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__bento-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -286,7 +289,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -297,7 +300,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-description {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -352,7 +355,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.2;
@@ -363,7 +366,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__feature-row-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -424,7 +427,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -435,7 +438,7 @@
 }
 
 .work-detail--park-jina-cross-cooty-tablet .work-detail__feature-card-character-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;

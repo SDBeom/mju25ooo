@@ -3,12 +3,12 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/LeeUn9e9e9e/LeeUn9e9e9eDesktop.css';
 
 // 이미지 임포트
-import leeunWork2_01 from '../../../../assets/이운/이운_멀티미디어_작품2_01.webp';
-import leeunWork2_02 from '../../../../assets/이운/이운_멀티미디어_작품2_02.webp';
-import leeunWork2_03 from '../../../../assets/이운/이운_멀티미디어_작품2_03.webp';
-import leeunWork2_04 from '../../../../assets/이운/이운_멀티미디어_작품2_04.webp';
-import leeunWork2_05 from '../../../../assets/이운/이운_멀티미디어_작품2_05.webp';
-import leeunWork2_06 from '../../../../assets/이운/이운_멀티미디어_작품2_06.webp';
+import leeunWork2_01 from '../../../../assets/이운/leeun_multimedia_work2_01.webp';
+import leeunWork2_02 from '../../../../assets/이운/leeun_multimedia_work2_02.webp';
+import leeunWork2_03 from '../../../../assets/이운/leeun_multimedia_work2_03.webp';
+import leeunWork2_04 from '../../../../assets/이운/leeun_multimedia_work2_04.webp';
+import leeunWork2_05 from '../../../../assets/이운/leeun_multimedia_work2_05.webp';
+import leeunWork2_06 from '../../../../assets/이운/leeun_multimedia_work2_06.webp';
 
 /**
  * 이운 - 9e9e9e (작품2) Desktop 버전

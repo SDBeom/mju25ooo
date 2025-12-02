@@ -3,18 +3,18 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ParkJinaRemain/ParkJinaRemainDesktop.css';
 
 // 이미지 임포트
-import parkJinaWork2_01 from '../../../../assets/박진아/박진아_멀티미디어_작품2_01.webp';
-import parkJinaWork2_02 from '../../../../assets/박진아/박진아_멀티미디어_작품2_02.webp';
-import parkJinaWork2_03 from '../../../../assets/박진아/박진아_멀티미디어_작품2_03.webp';
-import parkJinaWork2_04 from '../../../../assets/박진아/박진아_멀티미디어_작품2_04.webp';
-import parkJinaWork2_05 from '../../../../assets/박진아/박진아_멀티미디어_작품2_05.webp';
-import parkJinaWork2_06 from '../../../../assets/박진아/박진아_멀티미디어_작품2_06.webp';
-import parkJinaWork2_07 from '../../../../assets/박진아/박진아_멀티미디어_작품2_07.webp';
-import parkJinaWork2_08 from '../../../../assets/박진아/박진아_멀티미디어_작품2_08.webp';
-import parkJinaWork2_09 from '../../../../assets/박진아/박진아_멀티미디어_작품2_09.webp';
-import parkJinaWork2_10 from '../../../../assets/박진아/박진아_멀티미디어_작품2_10.webp';
-import parkJinaWork2_11 from '../../../../assets/박진아/박진아_멀티미디어_작품2_11.webp';
-import parkJinaWork2_12 from '../../../../assets/박진아/박진아_멀티미디어_작품2_12.webp';
+import parkJinaWork2_01 from '../../../../assets/박진아/parkjina_multimedia_work2_01.webp';
+import parkJinaWork2_02 from '../../../../assets/박진아/parkjina_multimedia_work2_02.webp';
+import parkJinaWork2_03 from '../../../../assets/박진아/parkjina_multimedia_work2_03.webp';
+import parkJinaWork2_04 from '../../../../assets/박진아/parkjina_multimedia_work2_04.webp';
+import parkJinaWork2_05 from '../../../../assets/박진아/parkjina_multimedia_work2_05.webp';
+import parkJinaWork2_06 from '../../../../assets/박진아/parkjina_multimedia_work2_06.webp';
+import parkJinaWork2_07 from '../../../../assets/박진아/parkjina_multimedia_work2_07.webp';
+import parkJinaWork2_08 from '../../../../assets/박진아/parkjina_multimedia_work2_08.webp';
+import parkJinaWork2_09 from '../../../../assets/박진아/parkjina_multimedia_work2_09.webp';
+import parkJinaWork2_10 from '../../../../assets/박진아/parkjina_multimedia_work2_10.webp';
+import parkJinaWork2_11 from '../../../../assets/박진아/parkjina_multimedia_work2_11.webp';
+import parkJinaWork2_12 from '../../../../assets/박진아/parkjina_multimedia_work2_12.webp';
 
 /**
  * 박진아 - REMAIN Desktop 버전
@@ -337,18 +337,18 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ParkJinaRemain/ParkJinaRemainDesktop.css';
 
 // 이미지 임포트
-import parkJinaWork2_01 from '../../../../assets/박진아/박진아_멀티미디어_작품2_01.webp';
-import parkJinaWork2_02 from '../../../../assets/박진아/박진아_멀티미디어_작품2_02.webp';
-import parkJinaWork2_03 from '../../../../assets/박진아/박진아_멀티미디어_작품2_03.webp';
-import parkJinaWork2_04 from '../../../../assets/박진아/박진아_멀티미디어_작품2_04.webp';
-import parkJinaWork2_05 from '../../../../assets/박진아/박진아_멀티미디어_작품2_05.webp';
-import parkJinaWork2_06 from '../../../../assets/박진아/박진아_멀티미디어_작품2_06.webp';
-import parkJinaWork2_07 from '../../../../assets/박진아/박진아_멀티미디어_작품2_07.webp';
-import parkJinaWork2_08 from '../../../../assets/박진아/박진아_멀티미디어_작품2_08.webp';
-import parkJinaWork2_09 from '../../../../assets/박진아/박진아_멀티미디어_작품2_09.webp';
-import parkJinaWork2_10 from '../../../../assets/박진아/박진아_멀티미디어_작품2_10.webp';
-import parkJinaWork2_11 from '../../../../assets/박진아/박진아_멀티미디어_작품2_11.webp';
-import parkJinaWork2_12 from '../../../../assets/박진아/박진아_멀티미디어_작품2_12.webp';
+import parkJinaWork2_01 from '../../../../assets/박진아/parkjina_multimedia_work2_01.webp';
+import parkJinaWork2_02 from '../../../../assets/박진아/parkjina_multimedia_work2_02.webp';
+import parkJinaWork2_03 from '../../../../assets/박진아/parkjina_multimedia_work2_03.webp';
+import parkJinaWork2_04 from '../../../../assets/박진아/parkjina_multimedia_work2_04.webp';
+import parkJinaWork2_05 from '../../../../assets/박진아/parkjina_multimedia_work2_05.webp';
+import parkJinaWork2_06 from '../../../../assets/박진아/parkjina_multimedia_work2_06.webp';
+import parkJinaWork2_07 from '../../../../assets/박진아/parkjina_multimedia_work2_07.webp';
+import parkJinaWork2_08 from '../../../../assets/박진아/parkjina_multimedia_work2_08.webp';
+import parkJinaWork2_09 from '../../../../assets/박진아/parkjina_multimedia_work2_09.webp';
+import parkJinaWork2_10 from '../../../../assets/박진아/parkjina_multimedia_work2_10.webp';
+import parkJinaWork2_11 from '../../../../assets/박진아/parkjina_multimedia_work2_11.webp';
+import parkJinaWork2_12 from '../../../../assets/박진아/parkjina_multimedia_work2_12.webp';
 
 /**
  * 박진아 - REMAIN Desktop 버전

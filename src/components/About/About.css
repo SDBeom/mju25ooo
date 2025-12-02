@@ -22,7 +22,7 @@
   height: 100%;                    /* 부모 높이에 맞춤 */
   width: 100%;                    /* 화면 전체 너비 꽉 채움 */
   max-width: 100%;                /* 최대 너비 제한 없음 */
-  background: var(--color-background);
+  background: #FF7700;
   box-sizing: border-box;
   padding: 0;
   margin: 0;

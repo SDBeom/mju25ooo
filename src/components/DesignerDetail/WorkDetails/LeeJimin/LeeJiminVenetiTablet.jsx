@@ -3,22 +3,22 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/LeeJiminVeneti/LeeJiminVenetiTablet.css';
 
 // 이미지 임포트
-import leejiminWork1_01 from '../../../../assets/이지민/이지민_멀티미디어_작품1_01.webp';
-import leejiminWork1_02 from '../../../../assets/이지민/이지민_멀티미디어_작품1_02.webp';
-import leejiminWork1_03 from '../../../../assets/이지민/이지민_멀티미디어_작품1_03.webp';
-import leejiminWork1_04 from '../../../../assets/이지민/이지민_멀티미디어_작품1_04.webp';
-import leejiminWork1_05 from '../../../../assets/이지민/이지민_멀티미디어_작품1_05.webp';
-import leejiminWork1_06 from '../../../../assets/이지민/이지민_멀티미디어_작품1_06.webp';
-import leejiminWork1_07 from '../../../../assets/이지민/이지민_멀티미디어_작품1_07.webp';
-import leejiminWork1_08 from '../../../../assets/이지민/이지민_멀티미디어_작품1_08.webp';
-import leejiminWork1_09 from '../../../../assets/이지민/이지민_멀티미디어_작품1_09.webp';
-import leejiminWork1_10 from '../../../../assets/이지민/이지민_멀티미디어_작품1_10.webp';
-import leejiminWork1_11 from '../../../../assets/이지민/이지민_멀티미디어_작품1_11.webp';
-import leejiminWork1_12 from '../../../../assets/이지민/이지민_멀티미디어_작품1_12.webp';
-import leejiminWork1_13 from '../../../../assets/이지민/이지민_멀티미디어_작품1_13.webp';
-import leejiminWork1_14 from '../../../../assets/이지민/이지민_멀티미디어_작품1_14.webp';
-import leejiminWork1_15 from '../../../../assets/이지민/이지민_멀티미디어_작품1_15.webp';
-import leejiminWork1_16 from '../../../../assets/이지민/이지민_멀티미디어_작품1_16.webp';
+import leejiminWork1_01 from '../../../../assets/이지민/leejimin_multimedia_work1_01.webp';
+import leejiminWork1_02 from '../../../../assets/이지민/leejimin_multimedia_work1_02.webp';
+import leejiminWork1_03 from '../../../../assets/이지민/leejimin_multimedia_work1_03.webp';
+import leejiminWork1_04 from '../../../../assets/이지민/leejimin_multimedia_work1_04.webp';
+import leejiminWork1_05 from '../../../../assets/이지민/leejimin_multimedia_work1_05.webp';
+import leejiminWork1_06 from '../../../../assets/이지민/leejimin_multimedia_work1_06.webp';
+import leejiminWork1_07 from '../../../../assets/이지민/leejimin_multimedia_work1_07.webp';
+import leejiminWork1_08 from '../../../../assets/이지민/leejimin_multimedia_work1_08.webp';
+import leejiminWork1_09 from '../../../../assets/이지민/leejimin_multimedia_work1_09.webp';
+import leejiminWork1_10 from '../../../../assets/이지민/leejimin_multimedia_work1_10.webp';
+import leejiminWork1_11 from '../../../../assets/이지민/leejimin_multimedia_work1_11.webp';
+import leejiminWork1_12 from '../../../../assets/이지민/leejimin_multimedia_work1_12.webp';
+import leejiminWork1_13 from '../../../../assets/이지민/leejimin_multimedia_work1_13.webp';
+import leejiminWork1_14 from '../../../../assets/이지민/leejimin_multimedia_work1_14.webp';
+import leejiminWork1_15 from '../../../../assets/이지민/leejimin_multimedia_work1_15.webp';
+import leejiminWork1_16 from '../../../../assets/이지민/leejimin_multimedia_work1_16.webp';
 
 /**
  * 이지민 - Veneti (작품1) Tablet 버전

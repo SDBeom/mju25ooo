@@ -45,7 +45,7 @@
 }
 
 .work-detail--do-tien-hong-see-tinh-isometic-tablet .work-detail__title--do-tien-hong-see-tinh-isometic-tablet {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.1;
@@ -53,10 +53,11 @@
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--do-tien-hong-see-tinh-isometic-tablet .work-detail__lead--do-tien-hong-see-tinh-isometic-tablet {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -64,11 +65,13 @@
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
+
+  text-align: left;}
 
 .work-detail--do-tien-hong-see-tinh-isometic-tablet .work-detail__lead--do-tien-hong-see-tinh-isometic-tablet p {
   margin: 0;
-}
+
+  text-align: left;}
 
 .work-detail--do-tien-hong-see-tinh-isometic-tablet .work-detail__ctas--do-tien-hong-see-tinh-isometic-tablet {
   display: flex;
@@ -82,7 +85,7 @@
 .work-detail--do-tien-hong-see-tinh-isometic-tablet .work-detail__cta--do-tien-hong-see-tinh-isometic-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -166,7 +169,7 @@
 }
 
 .work-detail--do-tien-hong-see-tinh-isometic-tablet .work-detail__feature-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;

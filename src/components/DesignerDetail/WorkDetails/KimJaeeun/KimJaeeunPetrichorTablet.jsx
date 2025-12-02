@@ -3,13 +3,13 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/KimJaeeunPetrichor/KimJaeeunPetrichorTablet.css';
 
 // 이미지 임포트
-import kimJaeeunWork2_01 from '../../../../assets/김재은/김재은_Video_작품2_01.webp';
-import kimJaeeunWork2_02 from '../../../../assets/김재은/김재은_Video_작품2_02.webp';
-import kimJaeeunWork2_03 from '../../../../assets/김재은/김재은_Video_작품2_03.webp';
-import kimJaeeunWork2_04 from '../../../../assets/김재은/김재은_Video_작품2_04.webp';
-import kimJaeeunWork2_05 from '../../../../assets/김재은/김재은_Video_작품2_05.webp';
-import kimJaeeunWork2_06 from '../../../../assets/김재은/김재은_Video_작품2_06.webp';
-import kimJaeeunWork2_07 from '../../../../assets/김재은/김재은_Video_작품2_07.webp';
+import kimJaeeunWork2_01 from '../../../../assets/김재은/kimjaeeun_video_work2_01.webp';
+import kimJaeeunWork2_02 from '../../../../assets/김재은/kimjaeeun_video_work2_02.webp';
+import kimJaeeunWork2_03 from '../../../../assets/김재은/kimjaeeun_video_work2_03.webp';
+import kimJaeeunWork2_04 from '../../../../assets/김재은/kimjaeeun_video_work2_04.webp';
+import kimJaeeunWork2_05 from '../../../../assets/김재은/kimjaeeun_video_work2_05.webp';
+import kimJaeeunWork2_06 from '../../../../assets/김재은/kimjaeeun_video_work2_06.webp';
+import kimJaeeunWork2_07 from '../../../../assets/김재은/kimjaeeun_video_work2_07.webp';
 
 /**
  * 김재은 - PETRICHOR Tablet 버전

@@ -1,40 +1,25 @@
 import React, { useEffect, useRef } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { useScroll, useTransform, motion } from 'framer-motion';
-import Lenis from 'lenis';
-import { useBreakpointContext } from '../../contexts/BreakpointContext';
 import dorokImage1 from '../../assets/도록/image 2141.webp';
 import dorokImage2 from '../../assets/도록/image 2143.webp';
 import posterFinal from '../../assets/poster_final.webp';
-import goodsList from '../../assets/GOODS.png';
+import goodsList from '../../assets/GOODS.webp';
 import symbolBlack from '../../assets/branding_logo/02_Symbol_Black.svg';
 import logotype from '../../assets/branding_logo/03_Logotype.svg';
 import motif01 from '../../assets/branding_logo/기획팀 도화지/motif01.svg';
 import motif02 from '../../assets/branding_logo/기획팀 도화지/motif02.svg';
 import motif03 from '../../assets/branding_logo/기획팀 도화지/motif03.svg';
-import gameImage from '../../assets/branding_logo/Game.png';
-import motionImage from '../../assets/branding_logo/Motion.png';
-import multimediaImage from '../../assets/branding_logo/Multimedia.png';
-import videoImage from '../../assets/branding_logo/Video.png';
+import gameImage from '../../assets/branding_logo/Game.webp';
+import motionImage from '../../assets/branding_logo/Motion.webp';
+import multimediaImage from '../../assets/branding_logo/Multimedia.webp';
+import videoImage from '../../assets/branding_logo/Video.webp';
 import './AboutContent.css';
 
 // 번들 해석 이슈를 피하기 위해 Public 절대 경로만 사용
 const brandingVideo = '/branding_video.mp4';
 
-// 비디오 로드 확인을 위한 헬퍼 함수
-const checkVideoExists = (src) => {
-  const video = document.createElement('video');
-  video.src = src;
-  video.addEventListener('loadedmetadata', () => {
-    console.log('비디오 메타데이터 로드 성공:', src);
-  });
-  video.addEventListener('error', (e) => {
-    console.error('비디오 파일을 찾을 수 없습니다:', src, e);
-  });
-};
-
 const AboutContent = () => {
-  const { isMobile } = useBreakpointContext();
   const introContainer = useRef(null);
   const sectionContainer = useRef(null);
   const introVideoRef = useRef(null);
@@ -53,38 +38,8 @@ const AboutContent = () => {
   const sectionY = useTransform(sectionScroll.scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   useEffect(() => {
-    // 모바일에서는 Lenis를 사용하지 않고 기본 스크롤 사용
-    if (isMobile) {
-      return;
-    }
-
-    // Lenis 사용 시 body overflow 제어
-    const originalBodyOverflow = document.body.style.overflow;
-    const originalHtmlOverflow = document.documentElement.style.overflow;
-    
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    // Safari 비디오 자동재생 보장
-    const videos = document.querySelectorAll('video');
+    // 모든 디바이스에서 동일한 비디오 자동재생 처리
+    const videos = document.querySelectorAll('.about-intro video, .about-section video');
     videos.forEach((video) => {
       // 비디오 로드 에러 핸들링
       video.addEventListener('error', (e) => {
@@ -99,21 +54,19 @@ const AboutContent = () => {
       // 비디오 로드 성공 확인
       video.addEventListener('loadeddata', () => {
         console.log('비디오 로드 성공:', video.currentSrc || video.src);
+        video.play().catch((err) => {
+          console.warn('비디오 재생 실패:', err);
+        });
       });
       
-      // 비디오 재생 시도
-      video.play().catch((error) => {
-        console.warn('비디오 자동재생 실패:', error);
-      });
+      // 비디오가 이미 로드된 경우
+      if (video.readyState >= 2) {
+        video.play().catch((err) => {
+          console.warn('비디오 재생 실패:', err);
+        });
+      }
     });
-
-    return () => {
-      lenis.destroy();
-      // 원래 overflow 값 복원
-      document.body.style.overflow = originalBodyOverflow;
-      document.documentElement.style.overflow = originalHtmlOverflow;
-    };
-  }, [isMobile]);
+  }, []);
 
   return (
     <main className="about-main">

@@ -1,21 +1,21 @@
 import React from 'react';
 import { handleImageError } from '../../../../shared/imageUtils';
-import heoJiHoonEternal from '../../../../assets/허지훈/허지훈_모션디자인_작품2_01.webp';
-import heoJiHoonWork2_02 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_02.webp';
-import heoJiHoonWork2_03 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_03.webp';
-import heoJiHoonWork2_04 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_04.webp';
-import heoJiHoonWork2_05 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_05.webp';
-import heoJiHoonWork2_06 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_06.webp';
-import heoJiHoonWork2_07 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_07.webp';
-import heoJiHoonWork2_08 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_08.webp';
-import heoJiHoonWork2_09 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_09.webp';
-import heoJiHoonWork2_10 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_10.webp';
-import heoJiHoonWork2_11 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_11.webp';
-import heoJiHoonWork2_12 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_12.webp';
-import heoJiHoonWork2_13 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_13.webp';
-import heoJiHoonWork2_14 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_14.webp';
-import heoJiHoonWork2_15 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_15.webp';
-import heoJiHoonWork2_16 from '../../../../assets/허지훈/허지훈_모션디자인_작품2_16.webp';
+import heoJiHoonEternal from '../../../../assets/허지훈/heojihoon_motiondesign_work2_01.webp';
+import heoJiHoonWork2_02 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_02.webp';
+import heoJiHoonWork2_03 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_03.webp';
+import heoJiHoonWork2_04 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_04.webp';
+import heoJiHoonWork2_05 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_05.webp';
+import heoJiHoonWork2_06 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_06.webp';
+import heoJiHoonWork2_07 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_07.webp';
+import heoJiHoonWork2_08 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_08.webp';
+import heoJiHoonWork2_09 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_09.webp';
+import heoJiHoonWork2_10 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_10.webp';
+import heoJiHoonWork2_11 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_11.webp';
+import heoJiHoonWork2_12 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_12.webp';
+import heoJiHoonWork2_13 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_13.webp';
+import heoJiHoonWork2_14 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_14.webp';
+import heoJiHoonWork2_15 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_15.webp';
+import heoJiHoonWork2_16 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_16.webp';
 import '../../styles/works/HeoJihoonEternalVision/HeoJihoonEternalVisionTablet.css';
 
 /**

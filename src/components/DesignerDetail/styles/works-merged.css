@@ -12384,3 +12384,22 @@
   margin: 0;
 }
 
+/* 전역: 모든 태블릿 모드 모달창 title 텍스트 왼쪽 정렬 */
+.modal-content .work-detail[class*="-tablet"] .work-detail__title[class*="-tablet"],
+.modal-content [class*="work-detail--"][class*="-tablet"] .work-detail__title[class*="-tablet"],
+.modal-content .work-detail[class*="-tablet"] .work-detail__title,
+.modal-content [class*="work-detail--"][class*="-tablet"] .work-detail__title {
+  text-align: left;
+}
+
+/* 전역: 모든 태블릿 모드 모달창 lead 텍스트 왼쪽 정렬 */
+.modal-content .work-detail[class*="-tablet"] .work-detail__lead[class*="-tablet"],
+.modal-content [class*="work-detail--"][class*="-tablet"] .work-detail__lead[class*="-tablet"] {
+  text-align: left;
+}
+
+.modal-content .work-detail[class*="-tablet"] .work-detail__lead[class*="-tablet"] p,
+.modal-content [class*="work-detail--"][class*="-tablet"] .work-detail__lead[class*="-tablet"] p {
+  text-align: left;
+}
+

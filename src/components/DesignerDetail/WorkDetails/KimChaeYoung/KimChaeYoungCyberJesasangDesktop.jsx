@@ -3,16 +3,16 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/KimChaeYoungCyberJesasang/KimChaeYoungCyberJesasangDesktop.css';
 
 // 이미지 임포트
-import kimChaeYoungWork2_01 from '../../../../assets/김채영/김채영_멀티미디어_작품2_01.webp';
-import kimChaeYoungWork2_02 from '../../../../assets/김채영/김채영_멀티미디어_작품2_02.webp';
-import kimChaeYoungWork2_03 from '../../../../assets/김채영/김채영_멀티미디어_작품2_03.webp';
-import kimChaeYoungWork2_04 from '../../../../assets/김채영/김채영_멀티미디어_작품2_04.webp';
-import kimChaeYoungWork2_05 from '../../../../assets/김채영/김채영_멀티미디어_작품2_05.webp';
-import kimChaeYoungWork2_06 from '../../../../assets/김채영/김채영_멀티미디어_작품2_06.webp';
-import kimChaeYoungWork2_07 from '../../../../assets/김채영/김채영_멀티미디어_작품2_07.webp';
-import kimChaeYoungWork2_08 from '../../../../assets/김채영/김채영_멀티미디어_작품2_08.webp';
-import kimChaeYoungWork2_09 from '../../../../assets/김채영/김채영_멀티미디어_작품2_09.webp';
-import kimChaeYoungWork2_10 from '../../../../assets/김채영/김채영_멀티미디어_작품2_10.webp';
+import kimChaeYoungWork2_01 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_01.webp';
+import kimChaeYoungWork2_02 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_02.webp';
+import kimChaeYoungWork2_03 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_03.webp';
+import kimChaeYoungWork2_04 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_04.webp';
+import kimChaeYoungWork2_05 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_05.webp';
+import kimChaeYoungWork2_06 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_06.webp';
+import kimChaeYoungWork2_07 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_07.webp';
+import kimChaeYoungWork2_08 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_08.webp';
+import kimChaeYoungWork2_09 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_09.webp';
+import kimChaeYoungWork2_10 from '../../../../assets/김채영/kimchaeyoung_multimedia_work2_10.webp';
 
 /**
  * 김채영 - 사이버 제사상 Desktop 버전
