@@ -24,7 +24,7 @@
   padding: 0;
 }
 
-::root {
+:root {
   font-size: 12px;
 }
 
@@ -179,14 +179,14 @@ a:focus-visible {
 }
 
 /* 태블릿: 800px ~ 1279px */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .container {
     padding: 0 28px;
   }
 }
 
 /* 모바일: ~799px (375px 기준) */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .container {
     padding: 0 16px;
   }
@@ -199,7 +199,7 @@ a:focus-visible {
 }
 
 /* 모바일: ~799px (375px 기준) - 드래그 가능하도록 */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .container.--is-mobile {
     overflow: hidden;
     min-height: calc(100vh - var(--header-height, 60px));
@@ -253,7 +253,7 @@ a:focus-visible {
 }
 
 /* 모바일: ~799px - 패딩 및 width */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .grid.--is-mobile {
     width: max-content;
     padding: calc(var(--header-height, 60px) + 16px) 16px 16px;
@@ -261,14 +261,14 @@ a:focus-visible {
 }
 
 /* 태블릿: 800px ~ 1279px - 패딩 */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .grid.--is-tablet {
     padding: calc(var(--header-height, 68px) + 28px) 28px 28px;
   }
 }
 
 /* 데스크탑: 1280px 이상 - 패딩 */
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
   .grid.--is-desktop {
     padding: calc(var(--header-height, 100px) + 40px) 40px 40px;
   }
@@ -279,7 +279,7 @@ a:focus-visible {
 }
 
 /* 모바일: ~799px (375px 기준) - 드래그 가능하도록 */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .--is-loaded.--is-mobile {
     overflow: hidden;
   }
@@ -309,21 +309,21 @@ a:focus-visible {
 }
 
 /* 데스크탑: 1280px 이상 - 5컬럼 */
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
   .grid.--is-desktop .product {
     width: calc((100vw - 80px) / 5);
   }
 }
 
 /* 태블릿: 800px ~ 1279px - 5컬럼 */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .grid.--is-tablet .product {
     width: calc((100vw - 56px) / 5);
   }
 }
 
 /* 모바일: ~799px - 4열, border-width */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .grid.--is-mobile .product {
     width: calc((100vw - 32px) / 4);
     border-width: 1.5px;
@@ -392,7 +392,7 @@ body .details.--is-showing {
 }
 
 /* 태블릿: 800px ~ 1279px - 60vw */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .details {
     width: 60vw;
     transform: translate3d(60vw, 0, 0);
@@ -401,11 +401,11 @@ body .details.--is-showing {
 }
 
 /* 모바일: ~799px (375px 기준) - 100vw, 풀스크린 */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .details {
     width: 100vw;
     transform: translate3d(100vw, 0, 0);
-    padding: 20px 16px 80px 16px;
+    padding: 20px 16px 80px;
     gap: 20px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -446,14 +446,14 @@ body .details.--is-showing {
 }
 
 /* 태블릿: 800px ~ 1279px */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .details__title p {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
 }
 
 /* 모바일: ~799px (375px 기준) */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .details__title p {
     font-size: clamp(1.5rem, 6vw, 2rem);
     line-height: 1.2;
@@ -505,7 +505,7 @@ body .details.--is-showing {
 }
 
 /* 태블릿: 800px ~ 1279px */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .details__body {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -514,7 +514,7 @@ body .details.--is-showing {
 }
 
 /* 모바일: ~799px (375px 기준) */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .details__body {
     flex-direction: column;
     align-items: center;
@@ -555,7 +555,7 @@ body .details.--is-showing {
 }
 
 /* 모바일: ~799px (375px 기준) */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .details__texts {
     max-width: 100%;
     font-size: 16px;
@@ -586,7 +586,7 @@ body .details.--is-showing {
 }
 
 /* 태블릿: 800px ~ 1279px */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .details__thumb {
     width: 30vw;
     max-width: 200px;
@@ -594,7 +594,7 @@ body .details.--is-showing {
 }
 
 /* 모바일: ~799px (375px 기준) */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .details__thumb {
     width: 60vw;
     max-width: 200px;
@@ -624,7 +624,7 @@ body .details.--is-showing {
 }
 
 /* 태블릿: 800px ~ 1279px */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .work-detail {
     width: 800px;
     max-width: 800px;
@@ -632,7 +632,7 @@ body .details.--is-showing {
 }
 
 /* 모바일: < 800px */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .work-detail {
     width: 375px;
     max-width: 375px;
@@ -832,7 +832,7 @@ body .details.--is-showing {
   margin-top: 0;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .work-detail__section {
     padding: clamp(48px, 12vw, 64px) clamp(20px, 8vw, 32px);
   }
@@ -934,7 +934,7 @@ p {
 }
 
 /* 태블릿: 800px ~ 1279px */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .cross {
     width: 4vw;
     height: 4vw;
@@ -957,7 +957,7 @@ p {
 }
 
 /* 모바일: ~799px (375px 기준) */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .cross {
     width: 32px;
     height: 32px;
@@ -980,7 +980,7 @@ p {
 }
 
 /* 모바일: ~799px (375px 기준) - details.--is-showing와 X 버튼을 하나로 묶음 */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .details.--is-showing .cross {
     pointer-events: auto;
     z-index: calc(var(--z-modal) + 10);
@@ -1005,20 +1005,20 @@ p {
 }
 
 .details.--is-showing {
-  padding: 140px 4vw 100px 4vw;
+  padding: 140px 4vw 100px;
 }
 
 /* 태블릿: 800px ~ 1279px */
-@media (max-width: 1279px) and (min-width: 800px) {
+@media (width <= 1279px) and (width >= 800px) {
   .details.--is-showing {
-    padding: calc(var(--header-height, 68px) + 28px) 5vw 100px 5vw;
+    padding: calc(var(--header-height, 68px) + 28px) 5vw 100px;
   }
 }
 
 /* 모바일: ~799px (375px 기준) */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .details.--is-showing {
-    padding: 40px 16px 80px 16px;
+    padding: 40px 16px 80px;
   }
 }
 
@@ -1039,7 +1039,7 @@ p {
 }
 
 /* 모바일: ~799px (375px 기준) - 툴팁 최적화 */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .product-tooltip {
     padding: 10px 14px;
     font-size: 12px;

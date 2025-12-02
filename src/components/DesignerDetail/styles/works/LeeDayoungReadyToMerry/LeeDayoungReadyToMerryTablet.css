@@ -265,7 +265,7 @@
   gap: 12px;
   align-items: flex-start;
   min-width: 324px;
-  padding: 24px 0 0 0;
+  padding: 24px 0 0;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   position: relative;
   flex-shrink: 0;
@@ -321,11 +321,11 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-tablet .work-detail__feature-row--leedayoung-ready-to-merry-tablet:first-child {
-  padding: 96px 32px 32px 32px;
+  padding: 96px 32px 32px;
 }
 
 .work-detail--leedayoung-ready-to-merry-tablet .work-detail__feature-row--leedayoung-ready-to-merry-tablet:last-child {
-  padding: 32px 32px 96px 32px;
+  padding: 32px 32px 96px;
 }
 
 .work-detail--leedayoung-ready-to-merry-tablet .work-detail__feature-row--reverse {

@@ -28,7 +28,7 @@
   letter-spacing: -0.03em;
   color: #ff7700;
   margin: 0;
-  padding: clamp(82px, calc(5vw + 32px), 122px) 40px clamp(82px, calc(5vw + 32px), 122px);
+  padding: clamp(82px, calc(5vw + 32px), 122px) 40px;
   line-height: 1.1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.9);
 }
@@ -180,14 +180,14 @@
   font-weight: 700;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .designer-gallery {
     padding: 0;
   }
 
   .designer-gallery__title {
     font-size: clamp(1.8rem, 10vw, 3rem);
-    padding: 50px 16px 50px;
+    padding: 50px 16px;
   }
 
   .designer-gallery__item {
@@ -236,14 +236,14 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 1279px) {
+@media (width >= 769px) and (width <= 1279px) {
   .designer-gallery {
     padding: 0;
   }
 
   .designer-gallery__title {
     font-size: clamp(2.4rem, 6vw, 4.6rem);
-    padding: clamp(82px, calc(7vw + 32px), 122px) 28px clamp(82px, calc(7vw + 32px), 122px);
+    padding: clamp(82px, calc(7vw + 32px), 122px) 28px;
   }
 
   .designer-gallery__item {

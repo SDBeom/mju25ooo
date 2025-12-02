@@ -41,7 +41,7 @@
 }
 
 /* 태블릿에서 모바일 스타일 오버라이드 */
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero--song-dahee-peony-tablet,
   .work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero.work-detail__hero--song-dahee-peony-tablet,
   .work-detail--song-dahee-peony-tablet .work-detail__section.work-detail__hero,

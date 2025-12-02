@@ -253,7 +253,7 @@
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  padding: 24px 24px 32px 24px;
+  padding: 24px 24px 32px;
   width: 100%;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);

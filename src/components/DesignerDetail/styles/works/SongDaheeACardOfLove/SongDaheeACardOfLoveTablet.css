@@ -29,7 +29,7 @@
 }
 
 /* 태블릿에서 모바일 스타일 오버라이드 - 더 구체적인 선택자 사용 */
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .work-detail--song-dahee-a-card-of-love-tablet .work-detail__section.work-detail__hero--song-dahee-a-card-of-love-tablet,
   .work-detail--song-dahee-a-card-of-love-tablet .work-detail__section.work-detail__hero.work-detail__hero--song-dahee-a-card-of-love-tablet,
   .work-detail--song-dahee-a-card-of-love-tablet .work-detail__section.work-detail__hero,

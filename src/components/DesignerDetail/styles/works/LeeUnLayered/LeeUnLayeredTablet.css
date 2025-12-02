@@ -311,11 +311,11 @@
 }
 
 .work-detail--leeun-layered-tablet .work-detail__feature-row--leeun-layered-tablet:first-child {
-  padding: 96px 32px 32px 32px;
+  padding: 96px 32px 32px;
 }
 
 .work-detail--leeun-layered-tablet .work-detail__feature-row--leeun-layered-tablet:last-child {
-  padding: 32px 32px 96px 32px;
+  padding: 32px 32px 96px;
 }
 
 .work-detail--leeun-layered-tablet .work-detail__feature-image-wrapper {position: relative;

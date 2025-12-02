@@ -17,7 +17,22 @@
     "selector-not-notation": null,
     "no-descending-specificity": null,
     "declaration-block-no-redundant-longhand-properties": null,
-    "declaration-block-no-duplicate-properties": null
+    "declaration-block-no-duplicate-properties": null,
+    "no-duplicate-selectors": null,
+    "keyframes-name-pattern": null,
+    "property-no-deprecated": null,
+    "selector-no-vendor-prefix": null,
+    "property-no-vendor-prefix": null,
+    "value-keyword-case": null,
+    "shorthand-property-no-redundant-values": null,
+    "media-feature-range-notation": null,
+    "declaration-block-single-line-max-declarations": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["content-align"]
+      }
+    ]
   },
   "ignoreFiles": [
     "**/node_modules/**",

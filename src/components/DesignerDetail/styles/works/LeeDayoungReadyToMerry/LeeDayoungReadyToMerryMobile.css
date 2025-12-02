@@ -264,7 +264,7 @@
   align-items: flex-start;
   max-width: 311px;
   min-width: 311px;
-  padding: 24px 0 0 0;
+  padding: 24px 0 0;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   position: relative;
   flex-shrink: 0;
@@ -323,11 +323,11 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__feature-row--leedayoung-ready-to-merry-mobile:first-child {
-  padding: 80px 24px 32px 24px;
+  padding: 80px 24px 32px;
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__feature-row--leedayoung-ready-to-merry-mobile:last-child {
-  padding: 32px 24px 80px 24px;
+  padding: 32px 24px 80px;
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__feature-image-wrapper {position: relative;
@@ -556,9 +556,8 @@
   flex-shrink: 0;
 }
 
-.work-detail--leedayoung-ready-to-merry-mobile .work-detail__bento-column .work-detail__bento-card--leedayoung-ready-to-merry-mobile:first-child .work-detail__bento-image-wrapper {flex: 1 0 0;
-  min-
-  min-
+.work-detail--leedayoung-ready-to-merry-mobile .work-detail__bento-column .work-detail__bento-card--leedayoung-ready-to-merry-mobile:first-child .work-detail__bento-image-wrapper {
+  flex: 1 0 0;
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__bento-column .work-detail__bento-card--leedayoung-ready-to-merry-mobile:nth-child(2) .work-detail__bento-image-wrapper {}

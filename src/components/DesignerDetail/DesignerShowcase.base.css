@@ -193,7 +193,7 @@ body .main-window--content .designer-showcase {
 }
 
 /* 모바일 모드: work-card 세로 배치 */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .work-card {
     flex-direction: column;
     align-items: stretch;

@@ -33,7 +33,7 @@
 /* ============================================
    Tablet (800px ~ 1279px)
    ============================================ */
-@media (min-width: 800px) and (max-width: 1279px) {
+@media (width >= 800px) and (width <= 1279px) {
   .coming-soon {
     justify-content: flex-start;
     overflow: visible;
@@ -45,7 +45,7 @@
 /* ============================================
    Desktop (1280px 이상)
    ============================================ */
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
   .coming-soon {
     justify-content: flex-start;
     overflow: visible;

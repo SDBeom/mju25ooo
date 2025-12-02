@@ -3,7 +3,7 @@
 
 .work-detail--park-heechan-pledge-tablet {
   width: 100%;
-  max-width: 800px;
+width: 800px;
   margin: 0 auto;
   padding: 0;
   background: #ffffff;
@@ -17,7 +17,7 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 800px;
+width: 800px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  content-align: center;
+  text-align: center;
   width: 100%;
 }
 
@@ -300,7 +300,7 @@
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  max-width: 256px;
+width: 256px;
   min-height: 0;
   min-width: 224px;
   padding: 0;
@@ -312,12 +312,11 @@
 
 .work-detail--park-heechan-pledge-tablet .work-detail__bento-card--wide {
   min-width: 352px;
-  max-width: none;
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__bento-card--full {
   min-width: 496px;
-  max-width: 100%;
+width: 100%;
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__bento-image-wrapper {position: relative;
@@ -392,7 +391,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 800px;
+width: 800px;
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-header {
@@ -495,32 +494,26 @@
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--1 .work-detail__gallery-item:first-child .work-detail__gallery-image {left: -108.53%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: -51.79%;
   top: -0.1%;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:nth-child(2) .work-detail__gallery-image {left: -47.84%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:last-child .work-detail__gallery-image {left: -33.13%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--3 .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: -70.09%;
   top: -0.1%;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--3 .work-detail__gallery-item:last-child .work-detail__gallery-image {left: -38.05%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-item--empty {
@@ -532,7 +525,7 @@
 
 .work-detail--park-heechan-pledge-tablet {
   width: 100%;
-  max-width: 800px;
+width: 800px;
   margin: 0 auto;
   padding: 0;
   background: #ffffff;
@@ -546,7 +539,7 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 800px;
+width: 800px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -609,7 +602,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  content-align: center;
+  text-align: center;
   width: 100%;
 }
 
@@ -829,7 +822,7 @@
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  max-width: 256px;
+width: 256px;
   min-height: 0;
   min-width: 224px;
   padding: 0;
@@ -841,12 +834,11 @@
 
 .work-detail--park-heechan-pledge-tablet .work-detail__bento-card--wide {
   min-width: 352px;
-  max-width: none;
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__bento-card--full {
   min-width: 496px;
-  max-width: 100%;
+width: 100%;
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__bento-image-wrapper {position: relative;
@@ -921,7 +913,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 800px;
+width: 800px;
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-header {
@@ -1024,32 +1016,26 @@
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--1 .work-detail__gallery-item:first-child .work-detail__gallery-image {left: -108.53%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: -51.79%;
   top: -0.1%;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:nth-child(2) .work-detail__gallery-image {left: -47.84%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:last-child .work-detail__gallery-image {left: -33.13%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--3 .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: -70.09%;
   top: -0.1%;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-column--3 .work-detail__gallery-item:last-child .work-detail__gallery-image {left: -38.05%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-tablet .work-detail__gallery-item--empty {

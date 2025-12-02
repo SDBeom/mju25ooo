@@ -37,8 +37,10 @@
 .work-detail--park-jina-remain-mobile .work-detail__hero-image-wrapper--park-jina-remain-mobile .work-detail__hero-image {position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);max-width: none;
-  max-height: none;order: -1;
+  transform: translate(-50%, -50%);
+  max-width: none;
+  max-height: none;
+  order: -1;
 }
 
 .work-detail--park-jina-remain-mobile .work-detail__hero-content--park-jina-remain-mobile {
@@ -157,8 +159,10 @@
 .work-detail--park-jina-remain-mobile .work-detail__feature-image-wrapper .work-detail__feature-image {position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);max-width: none;
-  max-height: none;}
+  transform: translate(-50%, -50%);
+  max-width: none;
+  max-height: none;
+}
 
 .work-detail--park-jina-remain-mobile .work-detail__feature-text {
   display: flex;

@@ -201,11 +201,11 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 80px 24px 32px 24px;
+  padding: 80px 24px 32px;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-mobile .work-detail__feature-row--ahn-seonmin-dot-dot-dot-mobile:last-child {
-  padding: 32px 24px 80px 24px;
+  padding: 32px 24px 80px;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-mobile .work-detail__feature-row-image-wrapper {position: relative;

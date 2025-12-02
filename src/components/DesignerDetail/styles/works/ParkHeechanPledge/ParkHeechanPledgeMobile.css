@@ -3,7 +3,7 @@
 
 .work-detail--park-heechan-pledge-mobile {
   width: 100%;
-  max-width: 375px;
+width: 375px;
   margin: 0 auto;
   padding: 0;
   background: #ffffff;
@@ -17,7 +17,7 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 375px;
+width: 375px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -168,7 +168,7 @@
   gap: 16px;
   align-items: flex-start;
   width: 100%;
-  max-width: 1440px;
+width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-title {
@@ -387,7 +387,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 375px;
+width: 375px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-header {
@@ -484,32 +484,26 @@
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--1 .work-detail__gallery-item:first-child .work-detail__gallery-image {left: -58.55%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:first-child .work-detail__gallery-image {left: -18.11%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:nth-child(2) .work-detail__gallery-image {left: -17.18%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:last-child .work-detail__gallery-image {left: -7.65%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--3 .work-detail__gallery-item:first-child .work-detail__gallery-image {left: -31.7%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--3 .work-detail__gallery-item:last-child .work-detail__gallery-image {left: -23.65%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-item--empty {
@@ -520,7 +514,7 @@
 
 .work-detail--park-heechan-pledge-mobile {
   width: 100%;
-  max-width: 375px;
+width: 375px;
   margin: 0 auto;
   padding: 0;
   background: #ffffff;
@@ -534,7 +528,7 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 375px;
+width: 375px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -685,7 +679,7 @@
   gap: 16px;
   align-items: flex-start;
   width: 100%;
-  max-width: 1440px;
+width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-title {
@@ -904,7 +898,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 375px;
+width: 375px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-header {
@@ -1001,32 +995,26 @@
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--1 .work-detail__gallery-item:first-child .work-detail__gallery-image {left: -58.55%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:first-child .work-detail__gallery-image {left: -18.11%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:nth-child(2) .work-detail__gallery-image {left: -17.18%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:last-child .work-detail__gallery-image {left: -7.65%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--3 .work-detail__gallery-item:first-child .work-detail__gallery-image {left: -31.7%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-column--3 .work-detail__gallery-item:last-child .work-detail__gallery-image {left: -23.65%;
   top: 0;
-  max-
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-item--empty {

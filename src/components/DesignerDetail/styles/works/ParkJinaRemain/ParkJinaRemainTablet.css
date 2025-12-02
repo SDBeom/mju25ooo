@@ -36,8 +36,10 @@
 .work-detail--park-jina-remain-tablet .work-detail__hero-image-wrapper--park-jina-remain-tablet .work-detail__hero-image {position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);max-width: none;
-  max-height: none;}
+  transform: translate(-50%, -50%);
+  max-width: none;
+  max-height: none;
+}
 
 .work-detail--park-jina-remain-tablet .work-detail__hero-content--park-jina-remain-tablet {
   display: flex;
@@ -156,8 +158,10 @@
 .work-detail--park-jina-remain-tablet .work-detail__feature-image-wrapper .work-detail__feature-image {position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);max-width: none;
-  max-height: none;}
+  transform: translate(-50%, -50%);
+  max-width: none;
+  max-height: none;
+}
 
 .work-detail--park-jina-remain-tablet .work-detail__feature-text {
   display: flex;
@@ -423,16 +427,6 @@
   min-height: 0;
 }
 
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0;
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* Hero Section */
 .work-detail--park-jina-remain-tablet .work-detail__hero--park-jina-remain-tablet {
   padding: 0;
@@ -457,8 +451,10 @@
 .work-detail--park-jina-remain-tablet .work-detail__hero-image-wrapper--park-jina-remain-tablet .work-detail__hero-image {position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);max-width: none;
-  max-height: none;}
+  transform: translate(-50%, -50%);
+  max-width: none;
+  max-height: none;
+}
 
 .work-detail--park-jina-remain-tablet .work-detail__hero-content--park-jina-remain-tablet {
   display: flex;
@@ -577,8 +573,10 @@
 .work-detail--park-jina-remain-tablet .work-detail__feature-image-wrapper .work-detail__feature-image {position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);max-width: none;
-  max-height: none;}
+  transform: translate(-50%, -50%);
+  max-width: none;
+  max-height: none;
+}
 
 .work-detail--park-jina-remain-tablet .work-detail__feature-text {
   display: flex;

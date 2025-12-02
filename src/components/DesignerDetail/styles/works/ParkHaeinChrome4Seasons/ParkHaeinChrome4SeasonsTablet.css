@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  content-align: center;
+  text-align: center;
   width: 100%;
 }
 
@@ -136,8 +136,6 @@
   transform: translate(-50%, -50%);
   
   
-  max-
-  max-
 }
 
 /* Feature 3 */
@@ -253,8 +251,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__feature-card--park-haein-chrome-4-seasons-tablet:nth-child(2) .work-detail__feature-card-image {aspect-ratio: 2904 / 4096;
@@ -265,8 +261,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__feature-card--park-haein-chrome-4-seasons-tablet:nth-child(3) .work-detail__feature-card-image {aspect-ratio: 1001 / 1412;
@@ -277,8 +271,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__feature-card-text {
@@ -357,8 +349,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__bento-card--park-haein-chrome-4-seasons-tablet:nth-child(2) .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -369,8 +359,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__bento-card--park-haein-chrome-4-seasons-tablet:nth-child(3) .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -380,8 +368,6 @@
   top: -86px;
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__bento-text {
@@ -518,8 +504,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:first-child .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -530,8 +514,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:last-child .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -542,8 +524,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__gallery-column--3 .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -554,8 +534,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 /* Feature Card 1: Instagram */
@@ -602,8 +580,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__instagram-card-body {
@@ -776,7 +752,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  content-align: center;
+  text-align: center;
   width: 100%;
 }
 
@@ -832,8 +808,6 @@
   transform: translate(-50%, -50%);
   
   
-  max-
-  max-
 }
 
 /* Feature 3 */
@@ -949,8 +923,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__feature-card--park-haein-chrome-4-seasons-tablet:nth-child(2) .work-detail__feature-card-image {aspect-ratio: 2904 / 4096;
@@ -961,8 +933,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__feature-card--park-haein-chrome-4-seasons-tablet:nth-child(3) .work-detail__feature-card-image {aspect-ratio: 1001 / 1412;
@@ -973,8 +943,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__feature-card-text {
@@ -1053,8 +1021,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__bento-card--park-haein-chrome-4-seasons-tablet:nth-child(2) .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -1065,8 +1031,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__bento-card--park-haein-chrome-4-seasons-tablet:nth-child(3) .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -1076,8 +1040,6 @@
   top: -86px;
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__bento-text {
@@ -1214,8 +1176,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:first-child .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -1226,8 +1186,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__gallery-column--2 .work-detail__gallery-item:last-child .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -1238,8 +1196,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__gallery-column--3 .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -1250,8 +1206,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 /* Feature Card 1: Instagram */
@@ -1298,8 +1252,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-tablet .work-detail__instagram-card-body {

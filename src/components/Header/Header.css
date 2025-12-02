@@ -13,7 +13,7 @@
   z-index: calc(var(--z-modal) + 20);
   background: rgba(8, 9, 13, 0.35);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-bottom: none;
   transition: all 0.3s ease;
   --header-height: 60px;
@@ -165,7 +165,7 @@
   height: var(--header-height);
   background: rgba(8, 9, 13, 0.35);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 /* DraggableGrid 모드에서 로고와 네비게이션은 클릭 가능 */
@@ -200,7 +200,7 @@
   position: fixed;
   background: rgba(8, 9, 13, 0.35);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 /* 디자이너 모드 - 크리에이티브한 스타일 */

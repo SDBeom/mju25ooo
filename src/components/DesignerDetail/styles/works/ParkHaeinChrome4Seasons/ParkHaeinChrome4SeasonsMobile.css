@@ -41,8 +41,6 @@
   transform: translate(-50%, -50%);
   
   
-  max-
-  max-
   order: -1;
 }
 
@@ -173,8 +171,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-text {
@@ -229,7 +225,7 @@
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  min-width: 224px;
+width: 224px;
   width: 100%;
   padding: 0;
   border-radius: 8px;
@@ -247,8 +243,7 @@
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card--park-haein-chrome-4-seasons-mobile:nth-child(2) .work-detail__feature-card-image-wrapper {flex: 1 0 0;
-  min-height: 0;
-  min-
+height: 0;
   height: auto;
 }
 
@@ -265,8 +260,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card--park-haein-chrome-4-seasons-mobile:nth-child(2) .work-detail__feature-card-image {aspect-ratio: 2904 / 4096;
@@ -277,8 +270,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card--park-haein-chrome-4-seasons-mobile:nth-child(3) .work-detail__feature-card-image {aspect-ratio: 1001 / 1412;
@@ -289,8 +280,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card-text {
@@ -350,8 +339,7 @@
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:first-child .work-detail__bento-image-wrapper {}
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:nth-child(3) .work-detail__bento-image-wrapper {flex: 1 0 0;
-  min-height: 0;
-  min-
+height: 0;
   height: auto;
 }
 
@@ -367,8 +355,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:nth-child(2) .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -379,8 +365,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:nth-child(3) .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -391,8 +375,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-text {
@@ -526,8 +508,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:first-child .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -538,8 +518,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:last-child .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -550,8 +528,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-column--3 .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -562,8 +538,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 /* Feature Card 1: Instagram */
@@ -606,8 +580,6 @@
   top: -70px;
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__instagram-card-body {
@@ -740,8 +712,6 @@
   transform: translate(-50%, -50%);
   
   
-  max-
-  max-
   order: -1;
 }
 
@@ -872,8 +842,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-text {
@@ -928,7 +896,7 @@
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  min-width: 224px;
+width: 224px;
   width: 100%;
   padding: 0;
   border-radius: 8px;
@@ -946,8 +914,7 @@
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card--park-haein-chrome-4-seasons-mobile:nth-child(2) .work-detail__feature-card-image-wrapper {flex: 1 0 0;
-  min-height: 0;
-  min-
+height: 0;
   height: auto;
 }
 
@@ -964,8 +931,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card--park-haein-chrome-4-seasons-mobile:nth-child(2) .work-detail__feature-card-image {aspect-ratio: 2904 / 4096;
@@ -976,8 +941,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card--park-haein-chrome-4-seasons-mobile:nth-child(3) .work-detail__feature-card-image {aspect-ratio: 1001 / 1412;
@@ -988,8 +951,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card-text {
@@ -1049,8 +1010,7 @@
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:first-child .work-detail__bento-image-wrapper {}
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:nth-child(3) .work-detail__bento-image-wrapper {flex: 1 0 0;
-  min-height: 0;
-  min-
+height: 0;
   height: auto;
 }
 
@@ -1066,8 +1026,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:nth-child(2) .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -1078,8 +1036,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:nth-child(3) .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -1090,8 +1046,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-text {
@@ -1225,8 +1179,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:first-child .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -1237,8 +1189,6 @@
   transform: translateX(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-column--2 .work-detail__gallery-item:last-child .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -1249,8 +1199,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-column--3 .work-detail__gallery-image {aspect-ratio: 1920 / 1080;
@@ -1261,8 +1209,6 @@
   transform: translateY(-50%);
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 /* Feature Card 1: Instagram */
@@ -1305,8 +1251,6 @@
   top: -70px;
   
   height: auto;
-  max-
-  max-height: none;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__instagram-card-body {

@@ -187,11 +187,11 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 120px 64px 40px 64px;
+  padding: 120px 64px 40px;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-row--ahn-seonmin-dot-dot-dot-desktop:last-child {
-  padding: 40px 64px 120px 64px;
+  padding: 40px 64px 120px;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-row-content {
@@ -286,7 +286,7 @@
   transform: translate(-50%, -50%);
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--ahn-seonmin-dot-dot-dot-desktop:nth-child(2) .work-detail__bento-card-image-wrapper {min-
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--ahn-seonmin-dot-dot-dot-desktop:nth-child(2) .work-detail__bento-card-image-wrapper {
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--wide .work-detail__bento-card-image {height: auto;left: 50%;

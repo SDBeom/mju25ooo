@@ -69,7 +69,7 @@
 }
 
 /* Desktop & Tablet: 800px 이상 */
-@media (min-width: 800px) {
+@media (width >= 800px) {
   .modal-content .work-detail .work-detail__section.work-detail__hero,
   .modal-content .work-detail__section.work-detail__hero,
   .work-detail .work-detail__section.work-detail__hero,
@@ -86,7 +86,7 @@
 }
 
 /* Mobile: 위아래 배치 (이미지 위, 텍스트 아래) */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .modal-content .work-detail .work-detail__section.work-detail__hero,
   .modal-content .work-detail__section.work-detail__hero,
   .work-detail .work-detail__section.work-detail__hero,

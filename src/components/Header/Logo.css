@@ -26,13 +26,13 @@
   filter: brightness(0) invert(1);
 }
 
-@media (max-width: 800px) {
+@media (width <= 800px) {
   .logo-container img {
     height: 45px;
   }
 }
 
-@media (max-width: 375px) {
+@media (width <= 375px) {
   .logo-container img {
     height: 40px;
   }

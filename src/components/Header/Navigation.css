@@ -217,7 +217,7 @@
 }
 
 /* Responsive design */
-@media (max-width: 800px) {
+@media (width <= 800px) {
   /* 모바일에서는 인라인 네비게이션 숨김 */
   .header--mobile .header-content .header-section--center .nav-menu:not(.nav-mobile),
   .header.header--mobile .header-content .header-section--center .nav-menu:not(.nav-mobile) {
@@ -225,7 +225,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (width <= 375px) {
   .nav-mobile .nav-link {
     font-size: 42px;
     padding: 10px 0;

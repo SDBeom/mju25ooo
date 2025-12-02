@@ -191,7 +191,7 @@
 
 /* Feature Bento Section (Cards) */
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__cards--jeongitae-dolor-saga-desktop.work-detail__cards--bento {
-  padding: 17px 64px 120px 64px;
+  padding: 17px 64px 120px;
   display: flex;
   flex-wrap: wrap;
   gap: 48px 32px;
@@ -274,7 +274,7 @@
 
 /* Feature Cards Section */
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-cards--jeongitae-dolor-saga-desktop {
-  padding: 16px 64px 120px 64px;
+  padding: 16px 64px 120px;
   display: flex;
   gap: 64px;
   align-items: center;

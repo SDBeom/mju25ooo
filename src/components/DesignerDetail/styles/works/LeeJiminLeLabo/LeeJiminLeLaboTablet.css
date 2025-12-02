@@ -268,11 +268,11 @@
 }
 
 .work-detail--leejimin-lelabo-tablet .work-detail__feature-row:first-child {
-  padding: 96px 32px 32px 32px;
+  padding: 96px 32px 32px;
 }
 
 .work-detail--leejimin-lelabo-tablet .work-detail__feature-row:last-child {
-  padding: 32px 32px 96px 32px;
+  padding: 32px 32px 96px;
 }
 
 .work-detail--leejimin-lelabo-tablet .work-detail__feature-row-content {

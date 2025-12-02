@@ -3,7 +3,7 @@
 
 .work-detail--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   margin: 0 auto;
   padding: 0;
   background: #ffffff;
@@ -17,7 +17,7 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -36,8 +36,9 @@
 .work-detail--park-jina-remain-desktop .work-detail__hero-image-wrapper--park-jina-remain-desktop .work-detail__hero-image {position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);max-width: none;
-  max-height: none;}
+  transform: translate(-50%, -50%);
+  max-width: none;
+}
 
 .work-detail--park-jina-remain-desktop .work-detail__hero-content--park-jina-remain-desktop {
   display: flex;
@@ -92,7 +93,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  content-align: center;
+  text-align: center;
 }
 
 .work-detail--park-jina-remain-desktop .work-detail__cta--park-jina-remain-desktop {
@@ -134,7 +135,7 @@
 /* Feature 3 */
 .work-detail--park-jina-remain-desktop .work-detail__feature--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 120px 64px;
   display: flex;
   flex-direction: column;
@@ -159,8 +160,6 @@
   transform: translate(-50%, -50%);
   
   
-  max-
-  max-
 }
 
 .work-detail--park-jina-remain-desktop .work-detail__feature-text {
@@ -200,7 +199,7 @@
 /* Feature Cards 1: I., Flow., Remain. */
 .work-detail--park-jina-remain-desktop .work-detail__feature-cards--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 120px 64px;
   display: flex;
   flex-direction: row;
@@ -216,7 +215,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  max-width: 388px;
+width: 388px;
   min-height: 0;
   min-width: 336px;
   padding: 0;
@@ -273,7 +272,7 @@
 /* Feature Rows: Success and Failure., Love and Loss. */
 .work-detail--park-jina-remain-desktop .work-detail__feature-rows--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -356,7 +355,7 @@
 /* Feature Bento */
 .work-detail--park-jina-remain-desktop .work-detail__bento--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 120px 64px;
   display: flex;
   flex-wrap: wrap;
@@ -432,7 +431,7 @@
 /* Marquee */
 .work-detail--park-jina-remain-desktop .work-detail__marquee--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 0;
   margin: 0;
   position: relative;
@@ -444,7 +443,7 @@
 
 .work-detail--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   margin: 0 auto;
   padding: 0;
   background: #ffffff;
@@ -458,7 +457,7 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -477,8 +476,9 @@
 .work-detail--park-jina-remain-desktop .work-detail__hero-image-wrapper--park-jina-remain-desktop .work-detail__hero-image {position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);max-width: none;
-  max-height: none;}
+  transform: translate(-50%, -50%);
+  max-width: none;
+}
 
 .work-detail--park-jina-remain-desktop .work-detail__hero-content--park-jina-remain-desktop {
   display: flex;
@@ -533,7 +533,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  content-align: center;
+  text-align: center;
 }
 
 .work-detail--park-jina-remain-desktop .work-detail__cta--park-jina-remain-desktop {
@@ -575,7 +575,7 @@
 /* Feature 3 */
 .work-detail--park-jina-remain-desktop .work-detail__feature--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 120px 64px;
   display: flex;
   flex-direction: column;
@@ -600,8 +600,6 @@
   transform: translate(-50%, -50%);
   
   
-  max-
-  max-
 }
 
 .work-detail--park-jina-remain-desktop .work-detail__feature-text {
@@ -641,7 +639,7 @@
 /* Feature Cards 1: I., Flow., Remain. */
 .work-detail--park-jina-remain-desktop .work-detail__feature-cards--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 120px 64px;
   display: flex;
   flex-direction: row;
@@ -657,7 +655,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  max-width: 388px;
+width: 388px;
   min-height: 0;
   min-width: 336px;
   padding: 0;
@@ -714,7 +712,7 @@
 /* Feature Rows: Success and Failure., Love and Loss. */
 .work-detail--park-jina-remain-desktop .work-detail__feature-rows--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -797,7 +795,7 @@
 /* Feature Bento */
 .work-detail--park-jina-remain-desktop .work-detail__bento--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 120px 64px;
   display: flex;
   flex-wrap: wrap;
@@ -873,7 +871,7 @@
 /* Marquee */
 .work-detail--park-jina-remain-desktop .work-detail__marquee--park-jina-remain-desktop {
   width: 100%;
-  max-width: 1280px;
+width: 1280px;
   padding: 0;
   margin: 0;
   position: relative;

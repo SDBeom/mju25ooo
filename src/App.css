@@ -113,7 +113,7 @@ body.is-modal-open {
   align-items: center;
   justify-content: center;
   background: #ff7700;
-  padding: 40px 40px 40px;
+  padding: 40px;
   box-sizing: border-box;
 }
 
@@ -225,7 +225,7 @@ body.is-modal-open {
 }
 
 /* 모바일: ~799px (375px 기준) - 드래그 가능하도록 */
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .main-window__container--grid {
     overflow: hidden;
     flex: 1;
@@ -234,7 +234,7 @@ body.is-modal-open {
 }
 
 .main-window__container--content {
-  padding: 0 0 0;
+  padding: 0;
   width: 100vw;
   max-width: none;
   margin: 0;
@@ -256,7 +256,7 @@ body.is-modal-open {
   width: 100%;
 }
 
-@media (max-width: 800px) {
+@media (width <= 800px) {
   .main-window--grid {
     flex: 1;
     min-height: 0;
@@ -281,7 +281,7 @@ body.is-modal-open {
   }
 }
 
-@media (max-width: 1279px) and (min-width: 801px) {
+@media (width <= 1279px) and (width >= 801px) {
   .main-hero {
     padding: 0 28px 36px;
   }
@@ -331,7 +331,7 @@ body:has(.main-page--grid) ::-webkit-scrollbar {
   color: #FFFFFF;
 }
 
-::-moz-selection {
+::selection {
   background: rgba(255, 107, 53, 0.3);
   color: #FFFFFF;
 }
@@ -529,7 +529,7 @@ body:has(.main-page--grid) ::-webkit-scrollbar {
 }
 
 /* 모바일에서 위치 표시기 조정 */
-@media (max-width: 800px) {
+@media (width <= 800px) {
   .position-indicator {
     top: 90px;
     right: 10px;
@@ -543,7 +543,7 @@ body:has(.main-page--grid) ::-webkit-scrollbar {
   }
 }
 
-@media (max-width: 375px) {
+@media (width <= 375px) {
   .position-indicator {
     top: 80px;
     right: 8px;
@@ -563,7 +563,7 @@ body:has(.main-page--grid) ::-webkit-scrollbar {
 }
 
 /* 모바일에서 Footer가 콘텐츠를 가리지 않도록 하단 패딩 추가 */
-@media (max-width: 800px) {
+@media (width <= 800px) {
   body {
     padding-bottom: 0; /* 모바일 패딩 제거 */
   }

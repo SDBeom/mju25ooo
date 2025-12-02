@@ -104,7 +104,7 @@
   white-space: normal;
   word-break: normal;
   overflow-wrap: break-word;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   pointer-events: none;
   overflow: visible;
   display: block;
@@ -149,7 +149,7 @@
   white-space: normal;
   word-break: normal;
   overflow-wrap: break-word;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* splitText로 생성된 charsContainer에 띄어쓰기 기준 줄바꿈 적용 */
@@ -175,11 +175,11 @@
   white-space: normal;
   word-break: normal;
   overflow-wrap: break-word;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* 모바일에서는 .char를 일반 텍스트로 표시 */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .works-category__label .char {
     display: inline;
     transform: none;
@@ -189,7 +189,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .works-categories {
     padding: 0;
     width: 100vw;
@@ -214,7 +214,7 @@
     white-space: normal;
     word-break: normal;
     overflow-wrap: break-word;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     display: block;
     width: 100%;
     max-width: 100%;
@@ -291,7 +291,7 @@
   box-shadow: none;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .works-search__container {
     padding: 16px;
   }
@@ -476,7 +476,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(60px, 8vw, 120px) 0 clamp(160px, 22vw, 260px) 0;
+  padding: clamp(60px, 8vw, 120px) 0 clamp(160px, 22vw, 260px);
   background: #ffffff;
   position: relative;
   min-height: clamp(280px, 36vw, 440px);
@@ -550,7 +550,7 @@
   max-width: min(880px, 85%);
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .works-gallery__item {
     margin-bottom: clamp(-18vw, -120px, -90px);
     padding: clamp(28px, 12vw, 40px) 16px;
@@ -601,7 +601,7 @@
   }
 
   .works-gallery__footer {
-    padding: clamp(48px, 10vw, 64px) 0 clamp(130px, 34vw, 200px) 0;
+    padding: clamp(48px, 10vw, 64px) 0 clamp(130px, 34vw, 200px);
     min-height: clamp(230px, 44vw, 330px);
     overflow: visible;
     position: relative;
@@ -630,11 +630,11 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 1279px) {
+@media (width >= 769px) and (width <= 1279px) {
   .works-category__label {
     word-break: normal;
     overflow-wrap: break-word;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .works-gallery {
@@ -659,7 +659,7 @@
   }
 
   .works-gallery__footer {
-    padding: clamp(56px, 9vw, 80px) 0 clamp(150px, 24vw, 220px) 0;
+    padding: clamp(56px, 9vw, 80px) 0 clamp(150px, 24vw, 220px);
     min-height: clamp(262px, 33vw, 380px);
     overflow: visible;
   }
@@ -674,11 +674,11 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
   .works-category__label {
     word-break: normal;
     overflow-wrap: break-word;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .works-gallery__item {
@@ -699,7 +699,7 @@
   }
 
   .works-gallery__footer {
-    padding: clamp(60px, 7vw, 120px) 0 clamp(180px, 18vw, 240px) 0;
+    padding: clamp(60px, 7vw, 120px) 0 clamp(180px, 18vw, 240px);
     min-height: clamp(300px, 25vw, 420px);
     overflow: visible;
   }
@@ -727,13 +727,13 @@
   padding: clamp(20px, 4vw, 40px) 0;
 }
 
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .works-work-modal-overlay {
     padding: clamp(12px, 3vw, 20px) 0;
   }
 }
 
-@media (max-width: 375px) {
+@media (width <= 375px) {
   .works-work-modal-overlay {
     padding: 0;
   }
@@ -760,13 +760,13 @@
   align-self: center;
 }
 
-@media (max-width: 799px) {
+@media (width <= 799px) {
   .works-work-modal {
     max-width: calc(100vw - 24px);
   }
 }
 
-@media (max-width: 375px) {
+@media (width <= 375px) {
   .works-work-modal {
     width: 375px;
     max-width: 375px;
