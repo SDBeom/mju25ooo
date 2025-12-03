@@ -400,7 +400,7 @@ body .details.--is-showing {
   }
 }
 
-/* 모바?? ~799px (375px 기�?) - 100vw, ?�?�크�?*/
+/* 모바?? ~799px (375px 기�?) - 100vw, ?�?�크�? */
 @media (width <= 799px) {
   .details {
     width: 100vw;
@@ -1038,7 +1038,7 @@ p {
   transition: opacity 0.2s ease;
 }
 
-/* 모바?? ~799px (375px 기�?) - ?�팁 최적??*/
+/* 모바?? ~799px (375px 기�?) - ?�팁 최적?? */
 @media (width <= 799px) {
   .product-tooltip {
     padding: 10px 14px;

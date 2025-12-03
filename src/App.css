@@ -15,7 +15,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   font-size: 16px; /* 기본 ?�트 ?�이�?명시???�정 */
   background-color: #ff7700;
   color: #000000;
@@ -23,8 +23,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  word-break: normal; /* ?�어?�기 기�??�로 줄바�?*/
-  overflow-wrap: break-word; /* 컨테?�너보다 �??�어??강제�?줄바�?*/
+  word-break: normal; /* ?�어?�기 기�??�로 줄바�? */
+  overflow-wrap: break-word; /* 컨테?�너보다 �??�어??강제�?줄바�? */
 }
 
 html.is-modal-open,
@@ -79,7 +79,7 @@ body.is-modal-open {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: transparent; /* 배경???�거 - ?�더 ?�에 보이지 ?�도�?*/
+  background-color: transparent; /* 배경???�거 - ?�더 ?�에 보이지 ?�도�? */
   min-height: calc(100vh - var(--header-height, 60px));
   height: auto;
 }
@@ -106,7 +106,7 @@ body.is-modal-open {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow: hidden; /* 그리?��? 밖으�??��?지 ?�도�?*/
+  overflow: hidden; /* 그리?��? 밖으�??��?지 ?�도�? */
 }
 
 .main-hero {
@@ -120,7 +120,7 @@ body.is-modal-open {
 }
 
 .main-page--grid .main-window {
-  /* background-color ?�거 - .main-window--grid??배경?�이 ?�용?�도�?*/
+  /* background-color ?�거 - .main-window--grid??배경?�이 ?�용?�도�? */
 }
 
 .main-hero__video {
@@ -189,7 +189,7 @@ body.is-modal-open {
   background: transparent;
 }
 
-/* ?�자?�너 ?�세 ?�이지 ?�용 ?��???*/
+/* ?�자?�너 ?�세 ?�이지 ?�용 ?��??? */
 .main-window__container--full .designer-showcase {
   background: #f8f6f4;
   min-height: 100vh;
@@ -201,7 +201,7 @@ body.is-modal-open {
   background: #f8f6f4;
 }
 
-/* About ?�이지 ?�용 ?��???*/
+/* About ?�이지 ?�용 ?��??? */
 .main-window__container--full .about-main {
   position: relative;
   width: 100%;
@@ -445,7 +445,7 @@ body:has(.main-page--grid) ::-webkit-scrollbar {
   overscroll-behavior: contain;
 }
 
-/* ?�치 ?�시�??��???*/
+/* ?�치 ?�시�??��??? */
 .position-indicator {
   position: fixed;
   top: 100px;

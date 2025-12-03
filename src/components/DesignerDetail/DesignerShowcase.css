@@ -1,7 +1,7 @@
 /* ============================================
    DesignerShowcase 메인 CSS 진입??   ============================================ */
 
-/* ?�품�??��??��? JavaScript?�서 ?�적?�로 로드?�니??*/
+/* ?�품�??��??��? JavaScript?�서 ?�적?�로 로드?�니?? */
 
 /* ============================================
    기본 ?��???   ============================================ */
@@ -253,7 +253,7 @@ body .main-window--content .designer-showcase {
   }
 }
 
-/* 모달 ?��???*/
+/* 모달 ?��??? */
 .kim-modal-overlay {
   position: fixed;
   top: 0;
@@ -450,7 +450,7 @@ body .main-window--content .designer-showcase {
   box-shadow: 0 0 0 4px rgba(255, 153, 102, 0.2);
 }
 
-/* 모달 ?��? ?�품 ?�세 컴포?�트 ?��???*/
+/* 모달 ?��? ?�품 ?�세 컴포?�트 ?��??? */
 .kim-modal-wrapper .work-detail {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -475,7 +475,7 @@ body .main-window--content .designer-showcase {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* 모바??모달?�서 ?�품 ?�세 컴포?�트 최적??*/
+/* 모바??모달?�서 ?�품 ?�세 컴포?�트 최적?? */
 @media (width <= 799px) {
   .kim-modal-wrapper .work-detail {
     max-height: calc(90vh - 60px);

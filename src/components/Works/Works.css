@@ -155,7 +155,7 @@
   white-space: normal;
 }
 
-/* ?�어?�기 문자�??�반 공백처럼 처리?�여 줄바�?가?�하�?*/
+/* ?�어?�기 문자�??�반 공백처럼 처리?�여 줄바�?가?�하�? */
 .works-category__label > span > .char[data-char=" "] {
   display: inline;
   width: auto;
@@ -672,6 +672,8 @@
   .works-gallery__item[style*="background-image"]::after {
     opacity: 1;
   }
+
+  .works-gallery__item {
     padding: clamp(36px, 7vw, 72px) 40px;
     margin-bottom: clamp(-12vw, -96px, -76px);
   }

@@ -62,7 +62,7 @@
   pointer-events: none;
 }
 
-/* Mobile: ?�크�?가?�하?�록 overflow 변�?*/
+/* Mobile: ?�크�?가?�하?�록 overflow 변�? */
 @media (width <= 799px) {
   .about-intro {
     overflow: hidden;
@@ -177,7 +177,7 @@
   background-color: #FF7700;
 }
 
-/* Mobile: ?�크�?가?�하?�록 overflow 변�?*/
+/* Mobile: ?�크�?가?�하?�록 overflow 변�? */
 @media (width <= 799px) {
   .about-section {
     overflow: hidden;
