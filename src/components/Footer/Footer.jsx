@@ -14,12 +14,7 @@ const Footer = () => {
                 {'2025 명지대학교 디자인학부\n영상애니메이션디자인전공 제 24회 졸업전시'}
               </p>
               <p className="headline-ko title">
-                <span className="title-segment title-primary">「점점점 : 점(에서)</span>
-                <span className="title-segment title-tablet-up"> 점(으로)</span>
-                <br className="title-break title-break-mobile" />
-                <span className="title-segment title-mobile">점(으로) </span>
-                <br className="title-break title-break-tablet" />
-                <span className="title-segment title-closing">점(점)」</span>
+                「점점점 : 점(에서) 점(으로) 점(점)」
               </p>
             </div>
           </div>

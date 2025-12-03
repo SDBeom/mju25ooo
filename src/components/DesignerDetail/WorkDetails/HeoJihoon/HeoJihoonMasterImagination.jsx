@@ -12,7 +12,7 @@ import HeoJihoonMasterImaginationDesktop from './HeoJihoonMasterImaginationDeskt
  * Desktop: >= 1280px
  */
 const HeoJihoonMasterImagination = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+  const { isMobile, isTablet } = useBreakpoint();
   
   if (!work || !designer) {
     return null;

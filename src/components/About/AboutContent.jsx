@@ -196,14 +196,14 @@ const AboutContent = () => {
             </p>
           </div>
           </div>
+        </div>
 
-          <div className="about-branding-logo-main about-branding-logo-main--inline">
+        <div className="about-branding-logo-unified">
           <div className="about-branding-logo-symbol">
             <img src={symbolBlack} alt="Symbol" className="about-branding-logo-symbol-image" />
             <div className="about-branding-logo-symbol-description">
-              <h3 className="about-branding-logo-symbol-title">작은 시작 → 더 큰 의미/세계</h3>
               <p className="about-branding-logo-symbol-text">
-                크기가 다른 세 점이 맞닿아 연결되고, 작은 시작이 큰 세계로 확장되는 과정을 단순한 형태로 상징합니다.
+                작은 시작 → 더 큰 의미/세계 크기가 다른 세 점이 맞닿아 연결되고, 작은 시작이 큰 세계로 확장되는 과정을 단순한 형태로 상징합니다.
               </p>
             </div>
           </div>
@@ -214,32 +214,24 @@ const AboutContent = () => {
               시작 → 연결 → 확장 이를 점의 밀도와 배열 변화로 표현합니다.
             </p>
           </div>
-        </div>
-        </div>
-      </div>
 
-      {/* Branding Logo Section */}
-      <div className="about-branding-logo">
-        <div className="about-branding-logo-motifs">
-          <div className="about-branding-logo-motifs-list">
-            <div className="about-branding-logo-motif-item">
-              <img src={motif01} alt="Motif 01 - 브러쉬" className="about-branding-logo-motif-image" />
-              <p className="about-branding-logo-motif-description">
-                작은 점들이 모여 흐르고 움직이는 모습을 시각화한 요소입니다.
-              </p>
-            </div>
-            <div className="about-branding-logo-motif-item">
-              <img src={motif02} alt="Motif 02 - 패턴" className="about-branding-logo-motif-image" />
-              <p className="about-branding-logo-motif-description">
-                점들이 서로 이어지고 반복되면서 만들어내는 질서를 표현합니다.
-              </p>
-            </div>
-            <div className="about-branding-logo-motif-item">
-              <img src={motif03} alt="Motif 03 - 프레임" className="about-branding-logo-motif-image" />
-              <p className="about-branding-logo-motif-description">
-                점들이 모여 특정한 형태를 이루고, 그 안에 이야기를 담는 기능을 합니다.
-              </p>
-            </div>
+          <div className="about-branding-logo-motif-item">
+            <img src={motif01} alt="Motif 01 - 브러쉬" className="about-branding-logo-motif-image" />
+            <p className="about-branding-logo-motif-description">
+              작은 점들이 모여 흐르고 움직이는 모습을 시각화한 요소입니다.
+            </p>
+          </div>
+          <div className="about-branding-logo-motif-item">
+            <img src={motif02} alt="Motif 02 - 패턴" className="about-branding-logo-motif-image" />
+            <p className="about-branding-logo-motif-description">
+              점들이 서로 이어지고 반복되면서 만들어내는 질서를 표현합니다.
+            </p>
+          </div>
+          <div className="about-branding-logo-motif-item">
+            <img src={motif03} alt="Motif 03 - 프레임" className="about-branding-logo-motif-image" />
+            <p className="about-branding-logo-motif-description">
+              점들이 모여 특정한 형태를 이루고, 그 안에 이야기를 담는 기능을 합니다.
+            </p>
           </div>
         </div>
       </div>

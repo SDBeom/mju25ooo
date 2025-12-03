@@ -86,10 +86,10 @@ const Works = () => {
   const galleryRef = useRef(null);
   const galleryInnerRef = useRef(null);
 
-  // 모바일 여부 체크
+  // 모바일/태블릿 여부 체크 (1280px 미만)
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 799);
+      setIsMobile(window.innerWidth < 1280);
     };
     
     checkMobile();
@@ -380,7 +380,7 @@ const Works = () => {
     const container = galleryRef.current;
     if (!container) return undefined;
 
-    // 모바일 모드(799px 이하)에서만 적용
+    // 모바일/태블릿 모드(1280px 미만)에서만 적용
     if (!isMobile) return undefined;
 
     const items = Array.from(container.querySelectorAll('.works-gallery__item:not(.works-gallery__item--ghost)'));

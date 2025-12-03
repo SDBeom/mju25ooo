@@ -1,5 +1,5 @@
-/* 이다영 - Ready to Merry (작품1) Mobile 버전 스타일 */
-/* Figma 디자인 기반 구현 (375px) */
+/* ?�다??- Ready to Merry (?�품1) Mobile 버전 ?��???*/
+/* Figma ?�자??기반 구현 (375px) */
 
 .work-detail--leedayoung-ready-to-merry-mobile {
   width: 375px;
@@ -55,7 +55,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__title--leedayoung-ready-to-merry-mobile {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.1;
@@ -66,7 +66,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__lead--leedayoung-ready-to-merry-mobile {
-  font-family: 'Pretendard', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', 'Noto Sans', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -94,7 +94,7 @@
   width: 100%;
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -149,7 +149,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__text-section-label {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -160,7 +160,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__text-section-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
@@ -171,7 +171,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__text-section-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -218,7 +218,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__feature-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
@@ -229,7 +229,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -272,7 +272,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__text-block-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1;
@@ -282,7 +282,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__text-block-description {
-  font-family: 'Pretendard', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', 'Noto Sans', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -362,7 +362,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__feature-content .work-detail__text-group .work-detail__feature-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
@@ -373,7 +373,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__feature-content .work-detail__text-group .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -433,7 +433,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__card-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -444,7 +444,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__card-description {
-  font-family: 'Pretendard', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', 'Noto Sans', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -527,7 +527,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__bento-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -538,7 +538,7 @@
 }
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__bento-description {
-  font-family: 'Pretendard', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', 'Noto Sans', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;

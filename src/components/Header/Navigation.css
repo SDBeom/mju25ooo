@@ -10,7 +10,7 @@
   z-index: 1;
 }
 
-/* Header 내부의 nav-menu는 항상 표시 (모바일 제외) */
+/* Header ?��???nav-menu????�� ?�시 (모바???�외) */
 .header.header--tablet .header-content .header-section--center .nav-menu,
 .header.header--desktop .header-content .header-section--center .nav-menu,
 .header.header-default-mode.header--tablet .header-content .header-section--center .nav-menu,
@@ -27,7 +27,7 @@
   pointer-events: auto;
 }
 
-/* header--hidden일 때도 네비게이션 표시 */
+/* header--hidden???�도 ?�비게이???�시 */
 .header.header--hidden.header--tablet .header-content .header-section--center .nav-menu,
 .header.header--hidden.header--desktop .header-content .header-section--center .nav-menu,
 .header.header--hidden.header-default-mode.header--tablet .header-content .header-section--center .nav-menu,
@@ -56,7 +56,7 @@
   color: #FFFFFF;
 }
 
-/* 네비게이션 링크 스타일 - 전역 a 스타일보다 우선순위 높음 */
+/* ?�비게이??링크 ?��???- ?�역 a ?��??�보???�선?�위 ?�음 */
 .header.header--tablet .header-content .header-section--center .nav-menu a,
 .header.header--tablet .header-content .header-section--center .nav-menu .nav-link,
 .header.header--desktop .header-content .header-section--center .nav-menu a,
@@ -83,7 +83,7 @@
   color: #FFFFFF;
   text-decoration: none;
   font-weight: 500;
-  font-size: 24px;
+  font-size: var(--font-size-2xl); /* 24px - 버전�??�동 조정 */
   text-transform: uppercase;
   letter-spacing: 0.5px;
   position: relative;
@@ -171,7 +171,7 @@
 
 .nav-mobile .nav-link,
 .nav-mobile a {
-  font-size: 42px;
+  font-size: var(--font-size-4xl); /* 36px (모바??, 40px (?�블�?, 44px (?�스?�톱) - 버전�??�동 조정 */
   font-weight: 600;
   padding: 16px 0;
   width: 100%;
@@ -213,12 +213,12 @@
 .nav-error {
   color: #F44336;
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--font-size-sm); /* 14px - 버전�??�동 조정 */
 }
 
 /* Responsive design */
 @media (width <= 800px) {
-  /* 모바일에서는 인라인 네비게이션 숨김 */
+  /* 모바?�에?�는 ?�라???�비게이???��? */
   .header--mobile .header-content .header-section--center .nav-menu:not(.nav-mobile),
   .header.header--mobile .header-content .header-section--center .nav-menu:not(.nav-mobile) {
     display: none;
@@ -227,7 +227,7 @@
 
 @media (width <= 375px) {
   .nav-mobile .nav-link {
-    font-size: 42px;
+    font-size: var(--font-size-4xl); /* 36px (모바??, 40px (?�블�?, 44px (?�스?�톱) - 버전�??�동 조정 */
     padding: 10px 0;
   }
 }

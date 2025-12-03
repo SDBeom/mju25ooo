@@ -1,24 +1,28 @@
 /* ============================================
-   공통 히어로 섹션 반응형 스타일
-   모든 작품의 히어로 섹션에 적용
-   모달창 내부에서도 작동하도록 구체적인 선택자 사용
+   공통 ?�어�??�션 반응???��???   모든 ?�품???�어�??�션???�용
+   모달�??��??�서???�동?�도�?구체?�인 ?�택???�용
    ============================================ */
 
-/* Desktop & Tablet: 좌우 배치 (텍스트 왼쪽, 이미지 오른쪽) */
+/* Desktop & Tablet: 좌우 배치 (?�스???�쪽, ?��?지 ?�른�? */
 .modal-content .work-detail .work-detail__section.work-detail__hero,
 .modal-content .work-detail__section.work-detail__hero,
+.modal-content .work-detail .work-detail__hero,
+.modal-content .work-detail__hero,
 .work-detail .work-detail__section.work-detail__hero,
-.work-detail__section.work-detail__hero {
+.work-detail__section.work-detail__hero,
+.work-detail .work-detail__hero,
+.work-detail__hero {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   padding: 0;
   margin: 0;
+  gap: 0;
 }
 
-/* work-detail__hero-content: 내부 요소들을 상하 배치 (텍스트 그룹과 CTA 버튼) */
+/* work-detail__hero-content: ?��? ?�소?�을 ?�하 배치 (?�스??그룹�?CTA 버튼) */
 .modal-content .work-detail .work-detail__hero-content,
 .modal-content .work-detail__hero-content,
 .work-detail .work-detail__hero-content,
@@ -27,14 +31,16 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 100%;
+  flex: 1 0 0;
   gap: 32px;
-  flex: none;
   min-height: 0;
   min-width: 0;
+  width: auto;
+  box-sizing: border-box;
+  order: 1;
 }
 
-/* work-detail__hero-text: 내부 요소들을 세로 배치 */
+/* work-detail__hero-text: ?��? ?�소?�을 ?�로 배치 */
 .modal-content .work-detail .work-detail__hero-text,
 .modal-content .work-detail__hero-text,
 .work-detail .work-detail__hero-text,
@@ -49,7 +55,7 @@
   min-width: 0;
 }
 
-/* work-detail__hero-media: 이미지 컨테이너 */
+/* work-detail__hero-media: ?��?지 컨테?�너 */
 .modal-content .work-detail .work-detail__hero-media,
 .modal-content .work-detail__hero-media,
 .work-detail .work-detail__hero-media,
@@ -61,20 +67,32 @@
 
 .modal-content .work-detail .work-detail__hero-image-wrapper,
 .modal-content .work-detail__hero-image-wrapper,
+.modal-content .work-detail .work-detail__hero-media,
+.modal-content .work-detail__hero-media,
 .work-detail .work-detail__hero-image-wrapper,
-.work-detail__hero-image-wrapper {
+.work-detail__hero-image-wrapper,
+.work-detail .work-detail__hero-media,
+.work-detail__hero-media {
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
+  order: 2;
+  box-sizing: border-box;
 }
 
-/* Desktop & Tablet: 800px 이상 */
+/* Desktop & Tablet: 800px ?�상 */
 @media (width >= 800px) {
   .modal-content .work-detail .work-detail__section.work-detail__hero,
   .modal-content .work-detail__section.work-detail__hero,
+  .modal-content .work-detail .work-detail__hero,
+  .modal-content .work-detail__hero,
   .work-detail .work-detail__section.work-detail__hero,
-  .work-detail__section.work-detail__hero {
+  .work-detail__section.work-detail__hero,
+  .work-detail .work-detail__hero,
+  .work-detail__hero {
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .modal-content .work-detail .work-detail__hero-content,
@@ -82,15 +100,31 @@
   .work-detail .work-detail__hero-content,
   .work-detail__hero-content {
     flex-direction: column;
+    order: 1;
+  }
+
+  .modal-content .work-detail .work-detail__hero-image-wrapper,
+  .modal-content .work-detail__hero-image-wrapper,
+  .modal-content .work-detail .work-detail__hero-media,
+  .modal-content .work-detail__hero-media,
+  .work-detail .work-detail__hero-image-wrapper,
+  .work-detail__hero-image-wrapper,
+  .work-detail .work-detail__hero-media,
+  .work-detail__hero-media {
+    order: 2;
   }
 }
 
-/* Mobile: 위아래 배치 (이미지 위, 텍스트 아래) */
+/* Mobile: ?�아??배치 (?��?지 ?? ?�스???�래) */
 @media (width <= 799px) {
   .modal-content .work-detail .work-detail__section.work-detail__hero,
   .modal-content .work-detail__section.work-detail__hero,
+  .modal-content .work-detail .work-detail__hero,
+  .modal-content .work-detail__hero,
   .work-detail .work-detail__section.work-detail__hero,
-  .work-detail__section.work-detail__hero {
+  .work-detail__section.work-detail__hero,
+  .work-detail .work-detail__hero,
+  .work-detail__hero {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -101,6 +135,7 @@
   .work-detail__hero-content {
     flex-direction: column;
     width: 100%;
+    order: 2; /* ?�스?��? ?��?지 ?�래�??�동 */
   }
 
   .modal-content .work-detail .work-detail__hero-media,
@@ -108,7 +143,7 @@
   .work-detail .work-detail__hero-media,
   .work-detail__hero-media {
     width: 100%;
-    order: -1; /* 이미지를 텍스트 위로 이동 */
+    order: 1; /* ?��?지�??�스???�로 ?�동 */
   }
 
   .modal-content .work-detail .work-detail__hero-text,
@@ -116,7 +151,7 @@
   .work-detail .work-detail__hero-text,
   .work-detail__hero-text {
     width: 100%;
-    order: 1; /* 텍스트를 이미지 아래로 이동 */
+    order: 1; /* ?�스?��? ?��?지 ?�래�??�동 */
   }
 
   .modal-content .work-detail .work-detail__hero-image-wrapper,
@@ -124,7 +159,7 @@
   .work-detail .work-detail__hero-image-wrapper,
   .work-detail__hero-image-wrapper {
     width: 100%;
-    order: -1; /* 이미지를 텍스트 위로 이동 */
+    order: 1; /* ?��?지�??�스???�로 ?�동 */
   }
 }
 

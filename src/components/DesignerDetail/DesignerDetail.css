@@ -1,5 +1,5 @@
 /* ============================================
-   DesignerDetail - 새로운 디자이너 상세페이지
+   DesignerDetail - ?�로???�자?�너 ?�세?�이지
    ============================================ */
 
 .designer-detail {
@@ -12,7 +12,7 @@
 }
 
 /* ============================================
-   로딩 및 에러 상태
+   로딩 �??�러 ?�태
    ============================================ */
 .designer-detail-loading,
 .designer-detail-error {
@@ -86,8 +86,7 @@
 }
 
 /* ============================================
-   메인 컨텐츠
-   ============================================ */
+   메인 컨텐�?   ============================================ */
 .designer-detail-main {
   padding: 6rem 2rem 2rem;
   max-width: 1200px;
@@ -108,7 +107,7 @@
 }
 
 /* ============================================
-   프로필 아바타
+   ?�로???�바?�
    ============================================ */
 .designer-avatar {
   margin-bottom: 2rem;
@@ -139,7 +138,7 @@
 }
 
 /* ============================================
-   디자이너 정보
+   ?�자?�너 ?�보
    ============================================ */
 .designer-info {
   margin-bottom: 2rem;
@@ -153,6 +152,9 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .designer-role {
@@ -160,6 +162,9 @@
   color: #4FC3F7;
   margin-bottom: 1rem;
   font-weight: 500;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .designer-description {
@@ -168,11 +173,13 @@
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 /* ============================================
-   액션 버튼들
-   ============================================ */
+   ?�션 버튼??   ============================================ */
 .designer-actions {
   display: flex;
   gap: 1rem;
@@ -217,7 +224,7 @@
 }
 
 /* ============================================
-   스킬 섹션
+   ?�킬 ?�션
    ============================================ */
 .designer-skills {
   margin-bottom: 4rem;
@@ -228,6 +235,9 @@
   margin-bottom: 1.5rem;
   color: #FFFFFF;
   text-align: center;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .skills-grid {
@@ -247,6 +257,9 @@
   text-align: center;
   font-weight: 500;
   transition: all 0.3s ease;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .skill-tag:hover {
@@ -255,7 +268,7 @@
 }
 
 /* ============================================
-   프로젝트 섹션
+   ?�로?�트 ?�션
    ============================================ */
 .designer-projects {
   margin-bottom: 4rem;
@@ -272,6 +285,9 @@
   color: #FFFFFF;
   margin-bottom: 2rem;
   text-align: center;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .video-container {
@@ -313,6 +329,9 @@
   margin-bottom: 2rem;
   color: #FFFFFF;
   text-align: center;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .projects-list {
@@ -350,23 +369,28 @@
   justify-content: center;
   font-weight: bold;
   color: #FFFFFF;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm); /* 14px - 버전�??�동 조정 */
 }
 
 .project-content h4 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #FFFFFF;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .project-content p {
   color: #CCCCCC;
   line-height: 1.5;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 /* ============================================
-   반응형 디자인
-   ============================================ */
+   반응???�자??   ============================================ */
 @media (width <= 800px) {
   .designer-detail-header {
     padding: 1rem;
@@ -563,7 +587,7 @@
   }
 
   .project-modal__body p {
-    font-size: 0.95rem;
+    font-size: var(--font-size-sm); /* 14px - 버전�??�동 조정 */
   }
 
   .project-modal__cta {

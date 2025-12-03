@@ -78,7 +78,7 @@
   background: rgba(0, 0, 0, 0.85);
   color: var(--color-text-primary);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: var(--font-size-sm); /* 14px - 버전�??�동 조정 */
   white-space: nowrap;
   pointer-events: none;
   z-index: var(--z-tooltip);
@@ -101,10 +101,10 @@
 
 .main-tooltip-title {
   font-weight: 600;
-  font-size: 13px;
+  font-size: var(--font-size-sm); /* 14px - 버전�??�동 조정 */
 }
 
-/* Responsive - Desktop (1280px 이상) */
+/* Responsive - Desktop (1280px ?�상) */
 @media (width >= 1280px) {
   .main-grid {
     padding: 100px 40px;
@@ -139,16 +139,16 @@
   }
 
   .main-circle-tooltip {
-    font-size: 12px;
+    font-size: var(--font-size-xs); /* 12px - 버전�??�동 조정 */
     padding: 6px 10px;
   }
 
   .main-tooltip-title {
-    font-size: 11px;
+    font-size: var(--font-size-xs); /* 12px - 버전�??�동 조정 */
   }
 }
 
-/* 상세창 스타일 */
+/* ?�세�??��???*/
 .details {
   position: fixed;
   top: 0;
@@ -170,7 +170,7 @@
   visibility: hidden;
 }
 
-/* 태블릿: 800px ~ 1279px - 60vw */
+/* ?�블�? 800px ~ 1279px - 60vw */
 @media (width <= 1279px) and (width >= 800px) {
   .details {
     width: 60vw;
@@ -179,7 +179,7 @@
   }
 }
 
-/* 모바일: ~799px (375px 기준) - 100vw, 풀스크린 */
+/* 모바?? ~799px (375px 기�?) - 100vw, ?�?�크�?*/
 @media (width <= 799px) {
   .details {
     width: 100vw;
@@ -205,22 +205,22 @@
   transition: opacity 0.3s ease;
   margin: 0;
   color: inherit;
-  word-break: keep-all;
-  white-space: normal;
+  word-break: normal;
   overflow-wrap: break-word;
+  white-space: normal;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .details__title p {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details__title p {
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-size: clamp(var(--font-size-2xl), 6vw, var(--font-size-3xl));
     line-height: 1.2;
   }
 }
@@ -229,9 +229,9 @@
   opacity: 1;
   pointer-events: auto;
   margin: 0;
-  word-break: keep-all;
-  white-space: normal;
+  word-break: normal;
   overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .details__texts [data-text] {
@@ -239,21 +239,22 @@
   pointer-events: none;
   transition: opacity 0.3s ease;
   margin: 0;
-  word-break: keep-all;
+  word-break: normal;
+  overflow-wrap: break-word;
   white-space: normal;
   overflow-wrap: break-word;
   grid-area: 1 / -1;
   color: inherit;
-  font-size: 18px;
+  font-size: var(--font-size-lg); /* 18px - 버전�??�동 조정 */
 }
 
 .details__texts [data-text].is-active {
   opacity: 1;
   pointer-events: auto;
   margin: 0;
-  word-break: keep-all;
-  white-space: normal;
+  word-break: normal;
   overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .details__body {
@@ -264,14 +265,14 @@
   gap: 2vw;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .details__body {
     gap: 3vw;
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details__body {
     flex-direction: column;
@@ -297,17 +298,17 @@
   max-width: 15rem;
   justify-items: flex-start;
   align-content: flex-start;
-  font-size: 18px;
-  word-break: keep-all;
-  white-space: normal;
+  font-size: var(--font-size-lg); /* 18px - 버전�??�동 조정 */
+  word-break: normal;
   overflow-wrap: break-word;
+  white-space: normal;
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details__texts {
     max-width: 100%;
-    font-size: 16px;
+    font-size: var(--font-size-base); /* 16px - 버전�??�동 조정 */
     line-height: 1.6;
   }
 }
@@ -334,7 +335,7 @@
   border-radius: inherit;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .details__thumb {
     width: 30vw;
@@ -342,7 +343,7 @@
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details__thumb {
     width: 60vw;
@@ -358,7 +359,7 @@
   border-radius: 999px;
   background: transparent;
   color: inherit;
-  font-size: 1rem;
+  font-size: var(--font-size-base); /* 16px - 버전�??�동 조정 */
   font-weight: 600;
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease;
@@ -393,7 +394,7 @@
   height: 3vw;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .cross {
     width: 4vw;
@@ -414,7 +415,7 @@
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .cross {
     width: 32px;
@@ -441,14 +442,14 @@
   visibility: visible;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .details.--is-showing {
     padding: 120px 5vw 100px;
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details.--is-showing {
     padding: 60px 20px 80px;
@@ -461,7 +462,7 @@
   padding-bottom: 100px;
 }
 
-/* 태블릿: 800px ~ 1279px - 패딩 override */
+/* ?�블�? 800px ~ 1279px - ?�딩 override */
 @media (width <= 1279px) and (width >= 800px) {
   .details.--is-showing {
     padding-top: 120px;
@@ -469,7 +470,7 @@
   }
 }
 
-/* 모바일: ~799px (375px 기준) - 패딩 override */
+/* 모바?? ~799px (375px 기�?) - ?�딩 override */
 @media (width <= 799px) {
   .details.--is-showing {
     padding-top: 120px;
@@ -477,7 +478,7 @@
   }
 }
 
-/* 텍스트 애니메이션용 스타일 */
+/* ?�스???�니메이?�용 ?��???*/
 .line,
 .char {
   transform: translate3d(0, 100%, 0);

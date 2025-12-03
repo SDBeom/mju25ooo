@@ -1,5 +1,5 @@
-/* 정지민 - The Gothic (작품1) Desktop 버전 스타일 */
-/* Figma 디자인 기반 구현 (1280px) */
+/* ?��?�?- The Gothic (?�품1) Desktop 버전 ?��???*/
+/* Figma ?�자??기반 구현 (1280px) */
 
 .work-detail--jungjimin-the-gothic-desktop {
   width: 1280px;
@@ -46,7 +46,7 @@
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__title--jungjimin-gothic-desktop {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.1;
@@ -57,7 +57,7 @@
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__lead--jungjimin-gothic-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.45;
@@ -79,7 +79,7 @@
 .work-detail--jungjimin-the-gothic-desktop .work-detail__cta--jungjimin-gothic-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -151,7 +151,7 @@
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__feature-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -162,7 +162,7 @@
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__feature-text p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -217,12 +217,12 @@
   flex-direction: row-reverse;
 }
 
-/* Feature Rows 이미지 */
+/* Feature Rows ?��?지 */
 .work-detail--jungjimin-the-gothic-desktop .work-detail__feature-row--jungjimin-gothic-desktop .work-detail__feature-image-wrapper--jungjimin-gothic-desktop .work-detail__feature-image {left: 0;
   top: 0;
 }
 
-/* Feature Section 3 - 렌더샷 (이미지 위, 텍스트 아래) */
+/* Feature Section 3 - ?�더??(?��?지 ?? ?�스???�래) */
 .work-detail--jungjimin-the-gothic-desktop .work-detail__feature--image-top {height: auto;padding: 120px 64px;
   display: flex;
   flex-direction: column;
@@ -299,7 +299,7 @@
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__card-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -390,7 +390,7 @@
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;

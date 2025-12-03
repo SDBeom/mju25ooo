@@ -1,5 +1,5 @@
-/* 서동범 - HiFive Tablet 버전 스타일 */
-/* Figma 디자인 기반 구현 (800px) */
+/* ?�동�?- HiFive Tablet 버전 ?��???*/
+/* Figma ?�자??기반 구현 (800px) */
 
 .work-detail--seo-dongbeom-hifive-tablet {
   width: 100%;
@@ -22,6 +22,17 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 0;
+}
+
+/* 모달�??��??�서??Hero Section 가�?배치 보장 - ??구체?�인 ?�택???�용 */
+.modal-content .work-detail.work-detail--seo-dongbeom-hifive-tablet .work-detail__section.work-detail__hero.work-detail__hero--seo-dongbeom-hifive-tablet,
+.modal-content .work-detail.work-detail--seo-dongbeom-hifive-tablet .work-detail__hero.work-detail__hero--seo-dongbeom-hifive-tablet {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__hero-content--seo-dongbeom-hifive-tablet {
@@ -34,6 +45,18 @@
   min-height: 0;
   min-width: 0;
   padding: 64px 32px;
+  box-sizing: border-box;
+  width: auto;
+  order: 1; /* 콘텐츠�? ?�쪽??배치 */
+}
+
+/* 모달�??��??�서??Hero Content 가�?배치 보장 - ??구체?�인 ?�택???�용 */
+.modal-content .work-detail.work-detail--seo-dongbeom-hifive-tablet .work-detail__hero-content.work-detail__hero-content--seo-dongbeom-hifive-tablet {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  width: auto;
+  box-sizing: border-box;
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__text-group {
@@ -45,7 +68,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__title--seo-dongbeom-hifive-tablet {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 52.8px;
@@ -57,7 +80,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__lead--seo-dongbeom-hifive-tablet {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 29px;
@@ -70,7 +93,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__lead--seo-dongbeom-hifive-tablet p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 29px;
@@ -95,7 +118,7 @@
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__cta--seo-dongbeom-hifive-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26.1px;
@@ -134,10 +157,18 @@
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  box-sizing: border-box;
+  order: 2; /* ?��?지�??�른쪽에 배치 */
 }
 
-.work-detail--seo-dongbeom-hifive-tablet .work-detail__hero-image-wrapper--seo-dongbeom-hifive-tablet {
+/* 모달�??��??�서??Hero Image Wrapper 가�?배치 보장 - ??구체?�인 ?�택???�용 */
+.modal-content .work-detail.work-detail--seo-dongbeom-hifive-tablet .work-detail__hero-image-wrapper.work-detail__hero-image-wrapper--seo-dongbeom-hifive-tablet {
+  flex-shrink: 0;
   position: relative;
+  width: 400px;
+  height: 540px;
+  box-sizing: border-box;
+  order: 2; /* ?��?지�??�른쪽에 배치 */
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__hero-image-wrapper--seo-dongbeom-hifive-tablet .work-detail__hero-image {
@@ -186,7 +217,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__bento-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
@@ -197,7 +228,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__bento-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26.1px;
@@ -208,7 +239,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__bento-description p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26.1px;
@@ -257,7 +288,7 @@
   padding: 10px 14px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: #000000;
@@ -305,7 +336,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__quote-text {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 52px;
@@ -316,7 +347,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__quote-subtitle {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
@@ -328,7 +359,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__quote-content {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
@@ -359,7 +390,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__marquee-text {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 38.4px;
@@ -437,7 +468,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__feature-tagline p {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #ffffff;
@@ -465,7 +496,7 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* 모달창 내부에서 Cards Section */
+/* 모달�??��??�서 Cards Section */
 .modal-content .work-detail--seo-dongbeom-hifive-tablet ul.work-detail__section.work-detail__cards--seo-dongbeom-hifive-tablet,
 .modal-content .work-detail--seo-dongbeom-hifive-tablet .work-detail__section.work-detail__cards--seo-dongbeom-hifive-tablet,
 .modal-content .work-detail--seo-dongbeom-hifive-tablet .work-detail__cards--seo-dongbeom-hifive-tablet {
@@ -548,7 +579,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.3px;
@@ -578,7 +609,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26.1px;
@@ -589,7 +620,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-tablet .work-detail__card-description p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26.1px;

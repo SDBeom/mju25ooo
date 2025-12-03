@@ -312,13 +312,13 @@ const Designer = () => {
     window.dispatchEvent(new PopStateEvent('popstate'));
   }, []);
 
-  // 모바일 모드에서 스크롤 기반 호버 효과 적용
+  // 모바일/태블릿 모드에서 스크롤 기반 호버 효과 적용
   useEffect(() => {
     const container = galleryRef.current;
     if (!container) return undefined;
 
-    // 모바일 모드(799px 이하)에서만 적용
-    const isMobile = window.innerWidth <= 799;
+    // 모바일/태블릿 모드(1280px 미만)에서만 적용
+    const isMobile = window.innerWidth < 1280;
     if (!isMobile) return undefined;
 
     const items = Array.from(container.querySelectorAll('.designer-gallery__item:not(.designer-gallery__item--ghost)'));

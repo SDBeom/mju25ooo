@@ -22,7 +22,7 @@ import heoJiHoonWork1_19 from '../../../../assets/허지훈/허지훈_모션디�
 import '../../styles/works/HeoJihoonMasterImagination/HeoJihoonMasterImaginationDesktop.css';
 
 /**
- * ��- Master your Imagination (�작품1) Desktop 버전
+ * 허지훈 - Master your Imagination (작품1) Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
 const HeoJihoonMasterImaginationDesktop = ({ work, designer, ctas }) => {
@@ -37,7 +37,7 @@ const HeoJihoonMasterImaginationDesktop = ({ work, designer, ctas }) => {
         <div className="work-detail__hero-content work-detail__hero-content--desktop">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--desktop">{work.title || 'Master your Imagination'}</h2>
-            <p className="work-detail__lead work-detail__lead--desktop">{work.summary || 'MX Master 3S를 통해 시각적 실감을 끌어내는 메시지를 담은 시네마틱 브랜딩.'}</p>
+            <p className="work-detail__lead work-detail__lead--desktop">{work.summary || 'MX Master 3S를 통해 당신의 상상을 현실로 이끌어내라는 메시지를 담은 시네마틱 브랜딩 영상.'}</p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--desktop">
@@ -68,35 +68,18 @@ const HeoJihoonMasterImaginationDesktop = ({ work, designer, ctas }) => {
       {/* Pull Quote Section */}
       <section className="work-detail__section work-detail__quote work-detail__quote--desktop">
         <figure className="work-detail__quote-figure">
-          <h3 className="work-detail__quote-text">"�상� 머릿속�에�떠오르는���<br />창조의�에�작�다."</h3>
+          <p className="work-detail__quote-text">"상상은 머릿속에서 피어나지만,<br />창조는 손 끝에서 시작된다."</p>
         </figure>
       </section>
 
       {/* Text Section 1 */}
       <section className="work-detail__section work-detail__text-section work-detail__text-section--desktop">
         <div className="work-detail__text-headline">
-          <p className="work-detail__eyebrow-text">�상�실감��끌어어 창작�구</p>
-          <h3 className="work-detail__subtitle">마우스�� 창작�도구로서 바라보다</h3>
+          <p className="work-detail__eyebrow-text">상상을 현실로 이끄는 창작의 도구</p>
+          <h3 className="work-detail__subtitle">마우스를 창작의 도구로서 바라보다</h3>
         </div>
         <div className="work-detail__text-content">
-          <p>�상� Logitech MX Master 3S�주제� '�상�실감��끌어어 창작�구'�는 메시지를 담은��각�으���낸 브랜�상�다. 마우스�� �순�무기기��떠오르는, �디자인�너 창의�인 �업�는 �들�게 �의 �장�로 �용�며 �상�실감�구현�내 창작�구가 �다�각�서 출발�다.</p>
-        </div>
-      </section>
-
-      {/* Feature Section 1 */}
-      <section className="work-detail__section work-detail__feature work-detail__feature--desktop">
-        <div className="work-detail__feature-image-wrapper">
-          <img 
-            src={heoJiHoonWork1_19} 
-            alt="�작품의 본질에 집중"
-              className="work-detail__feature-image"
-            onError={(e) => handleImageError(e, heoJiHoonWork1_19, work.id, 'feature-1')}
-            loading="lazy"
-          />
-        </div>
-        <div className="work-detail__feature-text">
-          <h4 className="work-detail__feature-title">�작품의 본질에 집중</h4>
-          <p>�는 마우스�의 �양기능�개�기보다, 그것�리�게 �떤 ���이지민�는지 고��고�다. 창의�인 �업�는 �� 같� �람�에�마우스�는 무엇�까 �의 �장�로 �상�실감��끌어�내창조의�작�이</p>
+          <p>이 영상은 Logitech MX Master 3S를 주제로, '상상을 현실로 이끄는 창작의 도구'라는 메시지를 시각적으로 풀어낸 브랜딩 영상이다. 마우스가 단순한 사무용 기기를 넘어, 디자이너 등 창의적인 작업을 하는 이들에게 손의 연장으로 작용하며 상상을 현실로 구현해내는 창작의 도구가 된다는 생각에서 출발했다.</p>
         </div>
       </section>
 
@@ -106,46 +89,63 @@ const HeoJihoonMasterImaginationDesktop = ({ work, designer, ctas }) => {
           <div className="work-detail__card-image-wrapper">
             <img 
               src={heoJiHoonWork1_02} 
-alt="바위 �루"
+              alt="바위 실루엣"
               className="work-detail__card-image"
               onError={(e) => handleImageError(e, heoJiHoonWork1_02, work.id, 'card-1')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">바위 �루</h5>
-            <p>마우스�의 �태��상�키바위. ��곽�라 �상�계가 ���듯 �펼쳐진다.</p>
+            <h5 className="work-detail__card-title">바위 실루엣</h5>
+            <p>마우스의 형태를 연상시키는 바위. 그 윤곽을 따라 상상의 세계가 폭발하듯 펼쳐진다.</p>
           </div>
         </div>
         <div className="work-detail__card">
           <div className="work-detail__card-image-wrapper">
             <img 
               src={heoJiHoonWork1_03} 
-              alt="�쳐지�상�계"
+              alt="펼쳐지는 상상의 세계"
               className="work-detail__card-image"
               onError={(e) => handleImageError(e, heoJiHoonWork1_03, work.id, 'card-2')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">�쳐지�상�계</h5>
-            <p>�떠오르는지�많� �상�계. ���는 �상�과 �께 벅찬 감정밀�온</p>
+            <h5 className="work-detail__card-title">펼쳐지는 상상의 세계</h5>
+            <p>이어지는 수많은 상상의 세계. 폭발하는 상상력과 함께 벅찬 감정이 밀려온다.</p>
           </div>
         </div>
         <div className="work-detail__card">
           <div className="work-detail__card-image-wrapper">
             <img 
               src={heoJiHoonWork1_04} 
-alt="창작�구, 마우스"
+              alt="창작의 도구, 마우스"
               className="work-detail__card-image"
               onError={(e) => handleImageError(e, heoJiHoonWork1_04, work.id, 'card-3')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">창작�구, 마우스</h5>
-            <p>무한�상�계가 �실감이 마우스스타일을�로 모인 모든 �상�실감��끌어어 창작�구가 바로 마우스�임�한</p>
+            <h5 className="work-detail__card-title">창작의 도구, 마우스</h5>
+            <p>무한한 상상의 세계가 현실의 마우스로 모인다. 모든 상상을 현실로 이끄는 창작의 도구가 바로 마우스임을 전한다.</p>
           </div>
+        </div>
+      </section>
+
+      {/* Feature Section 1 */}
+      <section className="work-detail__section work-detail__feature work-detail__feature--desktop">
+        <div className="work-detail__feature-image-wrapper">
+          <img 
+            src={heoJiHoonWork1_19} 
+            alt="제품의 본질에 집중"
+            className="work-detail__feature-image"
+            onError={(e) => handleImageError(e, heoJiHoonWork1_19, work.id, 'feature-1')}
+            loading="lazy"
+          />
+        </div>
+        <div className="work-detail__feature-text">
+          <h4 className="work-detail__feature-title">제품의 본질에 집중</h4>
+          <p>나는 마우스의 다양한 기능을 소개하기보다, 그것이 우리에게 어떤 의미를 지니는지 고민하고자 했다. 창의적인 작업을 하는 나와 같은 사람들에게 마우스는 무엇일까? 손의 연장으로서, 상상을 현실로 이끌어내는 창조의 시작점이다.</p>
         </div>
       </section>
 
@@ -154,15 +154,15 @@ alt="창작�구, 마우스"
         <div className="work-detail__feature-image-wrapper">
           <img 
             src={heoJiHoonWork1_05} 
-            alt="�성AI �용"
-              className="work-detail__feature-image"
+            alt="생성형 AI 활용"
+            className="work-detail__feature-image"
             onError={(e) => handleImageError(e, heoJiHoonWork1_05, work.id, 'feature-2')}
             loading="lazy"
           />
         </div>
         <div className="work-detail__feature-text">
-          <h4 className="work-detail__feature-title work-detail__feature-title--large">�성AI �용</h4>
-          <p>�번 �업�서�성AI��험�으��용�여 �상 �작�율�을 �� 반복�인 �스타일을�� �해 �면��출 �을 빠르�구상�었�며, �히 바다� 같� �연�실감�으��현�었 �롬�트���지 �성, ��지��상 �성기본�인 �업 과정�다.</p>
+          <h4 className="work-detail__feature-title work-detail__feature-title--large">생성형 AI 활용</h4>
+          <p>이번 작업에서는 생성형 AI를 실험적으로 활용하여 영상 제작의 효율성을 높였다. 반복적인 테스트를 통해 장면과 연출 등을 빠르게 구상할 수 있었으며, 특히 바다와 같은 자연을 사실적으로 표현할 수 있었다. 프롬프트로 이미지 생성, 이미지로 영상 생성이 기본적인 작업 과정이다.</p>
         </div>
       </section>
 
@@ -170,13 +170,13 @@ alt="창작�구, 마우스"
       <section className="work-detail__section work-detail__feature-rows work-detail__feature-rows--desktop">
         <div className="work-detail__feature-row">
           <div className="work-detail__feature-row-content">
-            <h4 className="work-detail__feature-row-title">RUNWAY�<br />Cinema 4D의 만남</h4>
-            <p>�도����면도구현�기 �해 먼� C4D�서 카메�직임�구도�간단�게 �고 �더���며, �� Runway�불러�다.</p>
+            <h4 className="work-detail__feature-row-title">RUNWAY와<br />Cinema 4D의 만남</h4>
+            <p>의도한대로 장면을 구현하기 위해 먼저 C4D에서 카메라 움직임과 구도를 간단하게 잡고 렌더하였으며, 이를 Runway로 불러왔다.</p>
           </div>
           <div className="work-detail__feature-row-image-wrapper">
             <img 
               src={heoJiHoonWork1_06} 
-              alt="RUNWAY� Cinema 4D의 만남"
+              alt="RUNWAY와 Cinema 4D의 만남"
               className="work-detail__feature-row-image"
               onError={(e) => handleImageError(e, heoJiHoonWork1_06, work.id, 'row-1')}
               loading="lazy"
@@ -195,7 +195,7 @@ alt="창작�구, 마우스"
           </div>
           <div className="work-detail__feature-row-content">
             <h4 className="work-detail__feature-row-title">Stylize + 4K Upscale</h4>
-            <p>Runway�불러C4DD 뷰포�상Stylize 기능�용�하 질감�로 변�하��며, 변�된 �상� 4K��스타일을케�링을 진행�다.</p>
+            <p>Runway로 불러온 C4D의 뷰포트 영상을 Stylize 기능을 이용해 원하는 질감으로 변환하였으며, 변환된 영상은 4K로 업스케일링을 진행했다.</p>
           </div>
         </div>
       </section>
@@ -203,8 +203,8 @@ alt="창작�구, 마우스"
       {/* Gallery Section */}
       <section className="work-detail__section work-detail__gallery work-detail__gallery--desktop">
         <div className="work-detail__gallery-header">
-          <h3 className="work-detail__gallery-title">�양�롬�트</h3>
-          <p className="work-detail__gallery-description">�일 과정 반복�며 �양�롬�트��력�여 �많� �면�을 �성�었 AI�번�하 결과물을 �기가 �려�데, 지�적�구� �행착오��해 AI��나 창작 �구�받아�이����는 경험�었</p>
+          <h3 className="work-detail__gallery-title">다양한 프롬프트</h3>
+          <p className="work-detail__gallery-description">동일한 과정을 반복하며 다양한 프롬프트를 입력하여 수많은 장면들을 생성할 수 있었다. AI는 단번에 원하는 결과물을 얻기가 어려운데, 지속적인 연구와 시행착오를 통해 AI를 또 하나의 창작 도구로 받아들이게 된 의미있는 경험이었다.</p>
         </div>
         <div className="work-detail__gallery-grid">
           <div className="work-detail__gallery-column">
@@ -212,7 +212,7 @@ alt="창작�구, 마우스"
               <img 
                 src={heoJiHoonWork1_08} 
                 alt="Gallery 1"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork1_08, work.id, 'gallery-1')}
                 loading="lazy"
               />
@@ -221,7 +221,7 @@ alt="창작�구, 마우스"
               <img 
                 src={heoJiHoonWork1_09} 
                 alt="Gallery 2"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork1_09, work.id, 'gallery-2')}
                 loading="lazy"
               />
@@ -232,7 +232,7 @@ alt="창작�구, 마우스"
               <img 
                 src={heoJiHoonWork1_10} 
                 alt="Gallery 3"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork1_10, work.id, 'gallery-3')}
                 loading="lazy"
               />
@@ -241,7 +241,7 @@ alt="창작�구, 마우스"
               <img 
                 src={heoJiHoonWork1_11} 
                 alt="Gallery 4"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork1_11, work.id, 'gallery-4')}
                 loading="lazy"
               />
@@ -250,7 +250,7 @@ alt="창작�구, 마우스"
               <img 
                 src={heoJiHoonWork1_12} 
                 alt="Gallery 5"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork1_12, work.id, 'gallery-5')}
                 loading="lazy"
               />
@@ -261,7 +261,7 @@ alt="창작�구, 마우스"
               <img 
                 src={heoJiHoonWork1_13} 
                 alt="Gallery 6"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork1_13, work.id, 'gallery-6')}
                 loading="lazy"
               />
@@ -270,7 +270,7 @@ alt="창작�구, 마우스"
               <img 
                 src={heoJiHoonWork1_14} 
                 alt="Gallery 7"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork1_14, work.id, 'gallery-7')}
                 loading="lazy"
               />
@@ -285,45 +285,45 @@ alt="창작�구, 마우스"
           <div className="work-detail__card-image-wrapper">
             <img 
               src={heoJiHoonWork1_15} 
-alt="부�러 무한 �크�"
+              alt="부드러운 무한 스크롤"
               className="work-detail__card-image"
               onError={(e) => handleImageError(e, heoJiHoonWork1_15, work.id, 'card-4')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">부�러 무한 �크�</h5>
-            <p>부�럽��전�는 �크�을 강조</p>
+            <h5 className="work-detail__card-title">부드러운 무한 스크롤</h5>
+            <p>부드럽게 회전하는 스크롤 휠 강조</p>
           </div>
         </div>
         <div className="work-detail__card">
           <div className="work-detail__card-image-wrapper">
             <img 
               src={heoJiHoonWork1_16} 
-alt="�체공학 비���디자인"
+              alt="인체공학적 비대칭 디자인"
               className="work-detail__card-image"
               onError={(e) => handleImageError(e, heoJiHoonWork1_16, work.id, 'card-5')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">�체공학 비���디자인</h5>
-            <p>�체공학�디자인을 강조</p>
+            <h5 className="work-detail__card-title">인체공학적 비대칭 디자인</h5>
+            <p>인체공학적 디자인 강조</p>
           </div>
         </div>
         <div className="work-detail__card">
           <div className="work-detail__card-image-wrapper">
             <img 
               src={heoJiHoonWork1_17} 
-alt="가��크�"
+              alt="가로 스크롤 휠"
               className="work-detail__card-image"
               onError={(e) => handleImageError(e, heoJiHoonWork1_17, work.id, 'card-6')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">가��크�</h5>
-            <p>부�럽��전�는 가�을 강조</p>
+            <h5 className="work-detail__card-title">가로 스크롤 휠</h5>
+            <p>부드럽게 회전하는 가로 휠 강조</p>
           </div>
         </div>
       </section>
@@ -334,14 +334,14 @@ alt="가��크�"
           <img 
             src={heoJiHoonWork1_18} 
             alt="Master your Imagination"
-              className="work-detail__feature-image"
+            className="work-detail__feature-image"
             onError={(e) => handleImageError(e, heoJiHoonWork1_18, work.id, 'feature-final')}
             loading="lazy"
           />
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title work-detail__feature-title--large">Master your Imagination</h4>
-          <p>�목 &lt;Master your Imagination&gt;�는 이 마우스스타일을�� �해 �상�을 주도�고, 그것�실감��현�라 메시지를 담은��았</p>
+          <p>제목 &lt;Master your Imagination&gt;에는 이 마우스를 통해 상상력을 주도하고, 그것을 현실로 실현하라는 메시지를 담았다.</p>
         </div>
       </section>
     </div>
@@ -349,4 +349,3 @@ alt="가��크�"
 };
 
 export default HeoJihoonMasterImaginationDesktop;
-

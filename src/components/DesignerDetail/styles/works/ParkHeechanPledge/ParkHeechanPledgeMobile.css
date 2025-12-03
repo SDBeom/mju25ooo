@@ -1,5 +1,5 @@
-/* 박희찬 - PLEDGE Mobile 버전 스타일 */
-/* Figma 디자인 기반 구현 (375px) */
+/* 박희�?- PLEDGE Mobile 버전 ?��???*/
+/* Figma ?�자??기반 구현 (375px) */
 
 .work-detail--park-heechan-pledge-mobile {
   width: 100%;
@@ -61,7 +61,7 @@ width: 375px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__title--park-heechan-pledge-mobile {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.1;
@@ -73,7 +73,7 @@ width: 375px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__lead--park-heechan-pledge-mobile {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -101,7 +101,7 @@ width: 375px;
 .work-detail--park-heechan-pledge-mobile .work-detail__cta--park-heechan-pledge-mobile {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -172,7 +172,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
@@ -194,7 +194,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -271,7 +271,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-row-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
@@ -282,7 +282,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-row-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -353,7 +353,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__bento-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -364,7 +364,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__bento-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -378,7 +378,7 @@ width: 1440px;
   margin: 0;
 }
 
-/* Feature Gallery 1: 스틸컷 */
+/* Feature Gallery 1: ?�틸�?*/
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery--park-heechan-pledge-mobile {
   padding: 80px 24px;
   display: flex;
@@ -400,7 +400,7 @@ width: 375px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
@@ -572,7 +572,7 @@ width: 375px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__title--park-heechan-pledge-mobile {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.1;
@@ -584,7 +584,7 @@ width: 375px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__lead--park-heechan-pledge-mobile {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -612,7 +612,7 @@ width: 375px;
 .work-detail--park-heechan-pledge-mobile .work-detail__cta--park-heechan-pledge-mobile {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -683,7 +683,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
@@ -705,7 +705,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -782,7 +782,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-row-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
@@ -793,7 +793,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__feature-row-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -864,7 +864,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__bento-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -875,7 +875,7 @@ width: 1440px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__bento-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
@@ -889,7 +889,7 @@ width: 1440px;
   margin: 0;
 }
 
-/* Feature Gallery 1: 스틸컷 */
+/* Feature Gallery 1: ?�틸�?*/
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery--park-heechan-pledge-mobile {
   padding: 80px 24px;
   display: flex;
@@ -911,7 +911,7 @@ width: 375px;
 }
 
 .work-detail--park-heechan-pledge-mobile .work-detail__gallery-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.2;

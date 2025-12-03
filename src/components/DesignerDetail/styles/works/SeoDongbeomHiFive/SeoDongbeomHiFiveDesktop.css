@@ -1,5 +1,5 @@
-/* 서동범 - HiFive Desktop 버전 스타일 */
-/* Figma 디자인 기반 구현 (1280px) */
+/* ?�동�?- HiFive Desktop 버전 ?��???*/
+/* Figma ?�자??기반 구현 (1280px) */
 
 .work-detail--seo-dongbeom-hifive-desktop {
   width: 100%;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-/* 모달창 내부에서 사용될 때 */
+/* 모달�??��??�서 ?�용????*/
 .modal-content .work-detail--seo-dongbeom-hifive-desktop {
   width: 100%;
   max-width: 100%;
@@ -31,7 +31,7 @@
   justify-content: center;
 }
 
-/* 모달창 내부에서 Hero Section */
+/* 모달�??��??�서 Hero Section */
 .modal-content .work-detail--seo-dongbeom-hifive-desktop .work-detail__hero--seo-dongbeom-hifive-desktop {
   max-width: 100%;
 }
@@ -57,7 +57,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__title--seo-dongbeom-hifive-desktop {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 61.6px;
@@ -68,7 +68,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__lead--seo-dongbeom-hifive-desktop {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 34.8px;
@@ -79,7 +79,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__lead--seo-dongbeom-hifive-desktop p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 34.8px;
@@ -100,7 +100,7 @@
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__cta--seo-dongbeom-hifive-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26.1px;
@@ -180,7 +180,7 @@
   list-style: none;
 }
 
-/* 모달창 내부에서 Bento Section */
+/* 모달�??��??�서 Bento Section */
 .modal-content .work-detail--seo-dongbeom-hifive-desktop .work-detail__bento--seo-dongbeom-hifive-desktop {
   width: 100%;
   max-width: 100%;
@@ -216,7 +216,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__bento-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 28.8px;
@@ -227,7 +227,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__bento-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26.1px;
@@ -238,7 +238,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__bento-description p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 26.1px;
@@ -284,7 +284,7 @@
   margin: 0 auto;
 }
 
-/* 모달창 내부에서 Quote Section */
+/* 모달�??��??�서 Quote Section */
 .modal-content .work-detail--seo-dongbeom-hifive-desktop .work-detail__quote--seo-dongbeom-hifive-desktop {
   width: 100%;
   max-width: 100%;
@@ -307,7 +307,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__quote-text {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 62.4px;
@@ -320,7 +320,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__quote-subtitle {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 33.6px;
@@ -331,7 +331,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__quote-content {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 33.6px;
@@ -355,7 +355,7 @@
   justify-content: center;
 }
 
-/* 모달창 내부에서 Marquee Section */
+/* 모달�??��??�서 Marquee Section */
 .modal-content .work-detail--seo-dongbeom-hifive-desktop .work-detail__marquee--seo-dongbeom-hifive-desktop {
   width: 100%;
   max-width: 100%;
@@ -369,7 +369,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__marquee-text {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 43.2px;
@@ -392,7 +392,7 @@
   justify-content: center;
 }
 
-/* 모달창 내부에서 Feature Section */
+/* 모달�??��??�서 Feature Section */
 .modal-content .work-detail--seo-dongbeom-hifive-desktop .work-detail__feature--seo-dongbeom-hifive-desktop {
   max-width: 100%;
 }
@@ -437,7 +437,7 @@
   counter-reset: card-number;
 }
 
-/* 모달창 내부에서 Cards Section */
+/* 모달�??��??�서 Cards Section */
 .modal-content .work-detail--seo-dongbeom-hifive-desktop ul.work-detail__section.work-detail__cards--seo-dongbeom-hifive-desktop,
 .modal-content .work-detail--seo-dongbeom-hifive-desktop .work-detail__section.work-detail__cards--seo-dongbeom-hifive-desktop,
 .modal-content .work-detail--seo-dongbeom-hifive-desktop .work-detail__cards--seo-dongbeom-hifive-desktop {
@@ -537,7 +537,7 @@
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__card-title {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.48px;
@@ -565,19 +565,19 @@
   left: -36px;
 }
 
-/* 카드 1: line-height 28.8px (피그마 기준) */
+/* 카드 1: line-height 28.8px (?�그�?기�?) */
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__card--seo-dongbeom-hifive-desktop:first-child .work-detail__card-title-list li {
   line-height: 28.8px;
 }
 
-/* 카드 2, 3: line-height 34.8px (피그마 기준) */
+/* 카드 2, 3: line-height 34.8px (?�그�?기�?) */
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__card--seo-dongbeom-hifive-desktop:nth-child(2) .work-detail__card-title-list li,
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__card--seo-dongbeom-hifive-desktop:nth-child(3) .work-detail__card-title-list li {
   line-height: 34.8px;
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__card-description {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.09px;
@@ -586,19 +586,19 @@
   white-space: pre-wrap;
 }
 
-/* 카드 1: line-height 26.1px (피그마 기준) */
+/* 카드 1: line-height 26.1px (?�그�?기�?) */
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__card--seo-dongbeom-hifive-desktop:first-child .work-detail__card-description {
   line-height: 26.1px;
 }
 
-/* 카드 2, 3: line-height 25.2px (피그마 기준) */
+/* 카드 2, 3: line-height 25.2px (?�그�?기�?) */
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__card--seo-dongbeom-hifive-desktop:nth-child(2) .work-detail__card-description,
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__card--seo-dongbeom-hifive-desktop:nth-child(3) .work-detail__card-description {
   line-height: 25.2px;
 }
 
 .work-detail--seo-dongbeom-hifive-desktop .work-detail__card-description p {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.09px;

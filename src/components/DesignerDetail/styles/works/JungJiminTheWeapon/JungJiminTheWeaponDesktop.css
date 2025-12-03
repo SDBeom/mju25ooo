@@ -1,5 +1,5 @@
-/* 정지민 - The Weapon (작품2) Desktop 버전 스타일 */
-/* Figma 디자인 기반 구현 (1280px) */
+/* ?��?�?- The Weapon (?�품2) Desktop 버전 ?��???*/
+/* Figma ?�자??기반 구현 (1280px) */
 
 .work-detail--jungjimin-the-weapon-desktop {
   width: 1280px;
@@ -46,7 +46,7 @@
 }
 
 .work-detail--jungjimin-the-weapon-desktop .work-detail__title--jungjimin-weapon-desktop {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.1;
@@ -57,7 +57,7 @@
 }
 
 .work-detail--jungjimin-the-weapon-desktop .work-detail__lead--jungjimin-weapon-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.45;
@@ -79,7 +79,7 @@
 .work-detail--jungjimin-the-weapon-desktop .work-detail__cta--jungjimin-weapon-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -151,7 +151,7 @@
 }
 
 .work-detail--jungjimin-the-weapon-desktop .work-detail__feature-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -162,7 +162,7 @@
 }
 
 .work-detail--jungjimin-the-weapon-desktop .work-detail__feature-text p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -214,7 +214,7 @@
   flex-direction: row-reverse;
 }
 
-/* Feature Section 3 - 단검 (이미지 위, 텍스트 아래) */
+/* Feature Section 3 - ?��? (?��?지 ?? ?�스???�래) */
 .work-detail--jungjimin-the-weapon-desktop .work-detail__feature--image-top {height: auto;padding: 120px 64px;
   display: flex;
   flex-direction: column;
@@ -279,19 +279,19 @@
   border-radius: 16px;
 }
 
-/* Card 1 - 해머 */
+/* Card 1 - ?�머 */
 .work-detail--jungjimin-the-weapon-desktop .work-detail__card--jungjimin-weapon-desktop:nth-child(1) .work-detail__card-image {left: 0;
   top: 0;
   transform: none;
 }
 
-/* Card 2 - 장검 */
+/* Card 2 - ?��? */
 .work-detail--jungjimin-the-weapon-desktop .work-detail__card--jungjimin-weapon-desktop:nth-child(2) .work-detail__card-image {left: 0;
   top: 0;
   transform: none;
 }
 
-/* Card 3 - 장검 */
+/* Card 3 - ?��? */
 .work-detail--jungjimin-the-weapon-desktop .work-detail__card--jungjimin-weapon-desktop:nth-child(3) .work-detail__card-image {left: 0;
   top: 0;
   transform: none;
@@ -306,7 +306,7 @@
 }
 
 .work-detail--jungjimin-the-weapon-desktop .work-detail__card-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -365,14 +365,14 @@
   transform: none;
 }
 
-/* Bento Card 2 - 해머 */
+/* Bento Card 2 - ?�머 */
 .work-detail--jungjimin-the-weapon-desktop .work-detail__bento-card--jungjimin-weapon-2 .work-detail__bento-card-image {left: 0;
   top: 0;
   transform: none;
   border-radius: 16px;
 }
 
-/* Bento Card 3 - 해머 */
+/* Bento Card 3 - ?�머 */
 .work-detail--jungjimin-the-weapon-desktop .work-detail__bento-card--jungjimin-weapon-3 .work-detail__bento-card-image-wrapper {position: relative;
   overflow: hidden;
 }
@@ -395,7 +395,7 @@
 }
 
 .work-detail--jungjimin-the-weapon-desktop .work-detail__bento-card-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;

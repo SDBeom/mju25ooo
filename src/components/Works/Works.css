@@ -86,7 +86,7 @@
 }
 
 .works-category__logo-text {
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-size: clamp(var(--font-size-lg), 2vw, var(--font-size-2xl));
   font-weight: 700;
   color: rgba(0, 0, 0, 0.3);
   letter-spacing: 0.1em;
@@ -96,14 +96,13 @@
 
 .works-category__label {
   position: relative;
-  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  font-size: clamp(var(--font-size-sm), 1.4vw, var(--font-size-base));
   font-weight: 600;
   color: #070707;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: normal;
   word-break: normal;
-  overflow-wrap: break-word;
   overflow-wrap: break-word;
   pointer-events: none;
   overflow: visible;
@@ -121,12 +120,12 @@
   direction: ltr;
 }
 
-/* letter-spacing으로 인한 중앙 정렬 오차 보정 - 마지막 문자 뒤 공간 제거 */
+/* letter-spacing?�로 ?�한 중앙 ?�렬 ?�차 보정 - 마�?�?문자 ??공간 ?�거 */
 .works-category__label::after {
   content: '';
   display: inline-block;
   width: 0;
-  margin-right: -0.05em; /* letter-spacing만큼 오른쪽 마진 제거 */
+  margin-right: -0.05em; /* letter-spacing만큼 ?�른�?마진 ?�거 */
 }
 
 .works-category__label--with-logo {
@@ -149,15 +148,14 @@
   white-space: normal;
   word-break: normal;
   overflow-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
-/* splitText로 생성된 charsContainer에 띄어쓰기 기준 줄바꿈 적용 */
+/* splitText�??�성??charsContainer???�어?�기 기�? 줄바�??�용 */
 .works-category__label > span > .char {
   white-space: normal;
 }
 
-/* 띄어쓰기 문자를 일반 공백처럼 처리하여 줄바꿈 가능하게 */
+/* ?�어?�기 문자�??�반 공백처럼 처리?�여 줄바�?가?�하�?*/
 .works-category__label > span > .char[data-char=" "] {
   display: inline;
   width: auto;
@@ -175,10 +173,9 @@
   white-space: normal;
   word-break: normal;
   overflow-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
-/* 모바일에서는 .char를 일반 텍스트로 표시 */
+/* 모바?�에?�는 .char�??�반 ?�스?�로 ?�시 */
 @media (width <= 768px) {
   .works-category__label .char {
     display: inline;
@@ -209,10 +206,11 @@
 
   .works-category__label {
     position: relative;
-    font-size: clamp(0.75rem, 2vw, 0.95rem);
+    font-size: clamp(var(--font-size-xs), 2vw, var(--font-size-sm));
     overflow: visible;
     white-space: normal;
     word-break: normal;
+  overflow-wrap: break-word;
     overflow-wrap: break-word;
     overflow-wrap: break-word;
     display: block;
@@ -270,7 +268,7 @@
 .works-search__input {
   width: 100%;
   padding: 14px 0;
-  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  font-size: clamp(var(--font-size-base), 1.3vw, var(--font-size-base));
   font-weight: 400;
   color: #070707;
   background: transparent;
@@ -298,7 +296,7 @@
   
   .works-search__input {
     padding: 12px 0;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
 }
 
@@ -392,7 +390,7 @@
   border-radius: 999px;
   background: #ffffff;
   color: #0f0f0f;
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm); /* 14px - 버전�??�동 조정 */
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -488,7 +486,7 @@
   width: clamp(120px, 18vw, 200px);
   height: auto;
   opacity: 0.95;
-  /* #67C5FF 색상 적용 */
+  /* #67C5FF ?�상 ?�용 */
   filter: brightness(0) saturate(100%) invert(53%) sepia(100%) saturate(2000%) hue-rotate(180deg) brightness(1.2) contrast(1.1);
 }
 
@@ -505,13 +503,16 @@
 .works-gallery__title {
   display: block;
   margin: 0;
-  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  font-size: clamp(var(--font-size-4xl), 6vw, var(--font-size-5xl));
   font-weight: 700;
   letter-spacing: -0.03em;
   position: relative;
   z-index: 2;
   color: #070707;
   line-height: 1.05;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .works-gallery__meta {
@@ -525,29 +526,38 @@
 }
 
 .works-gallery__designer {
-  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-size: clamp(var(--font-size-base), 2.4vw, var(--font-size-lg));
   font-weight: 700;
   color: rgba(7, 7, 7, 0.95);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .works-gallery__genre {
-  font-size: clamp(0.85rem, 2vw, 1.15rem);
+  font-size: clamp(var(--font-size-sm), 2vw, var(--font-size-base));
   font-weight: 600;
   color: rgba(7, 7, 7, 0.6);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .works-gallery__description {
   margin: 0;
-  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  font-size: clamp(var(--font-size-sm), 2.2vw, var(--font-size-lg));
   line-height: 1.75;
   color: rgba(7, 7, 7, 0.82);
   position: relative;
   z-index: 2;
   max-width: min(880px, 85%);
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 @media (width <= 768px) {
@@ -558,7 +568,7 @@
     position: relative;
   }
 
-  /* 모바일에서 썸네일 배경 위에 텍스트 가독성을 위한 오버레이 */
+  /* 모바?�에???�네??배경 ?�에 ?�스??가?�성???�한 ?�버?�이 */
   .works-gallery__item::after {
     content: '';
     position: absolute;
@@ -570,7 +580,7 @@
     transition: opacity 0.3s ease;
   }
 
-  /* 활성 아이템에서만 오버레이 표시 (썸네일 배경이 있을 때) */
+  /* ?�성 ?�이?�에?�만 ?�버?�이 ?�시 (?�네??배경???�을 ?? */
   .works-gallery__item[style*="background-image"]::after {
     opacity: 1;
   }
@@ -625,7 +635,7 @@
   }
 
   .works-gallery__preview-label {
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs); /* 12px - 버전�??�동 조정 */
     padding: 0.45rem 1rem;
   }
 }
@@ -633,6 +643,7 @@
 @media (width >= 769px) and (width <= 1279px) {
   .works-category__label {
     word-break: normal;
+  overflow-wrap: break-word;
     overflow-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -642,6 +653,25 @@
   }
 
   .works-gallery__item {
+    position: relative;
+  }
+
+  /* 태블릿에도 썸네일 배경 위에 오버레이 */
+  .works-gallery__item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.7) 100%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* 활성 아이템에만 오버레이 표시 (썸네일 배경이 있을 때) */
+  .works-gallery__item[style*="background-image"]::after {
+    opacity: 1;
+  }
     padding: clamp(36px, 7vw, 72px) 40px;
     margin-bottom: clamp(-12vw, -96px, -76px);
   }
@@ -677,6 +707,7 @@
 @media (width >= 1280px) {
   .works-category__label {
     word-break: normal;
+  overflow-wrap: break-word;
     overflow-wrap: break-word;
     overflow-wrap: break-word;
   }

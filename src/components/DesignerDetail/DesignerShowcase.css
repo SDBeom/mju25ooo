@@ -1,13 +1,11 @@
 /* ============================================
-   DesignerShowcase 메인 CSS 진입점
-   ============================================ */
+   DesignerShowcase 메인 CSS 진입??   ============================================ */
 
-/* 작품별 스타일은 JavaScript에서 동적으로 로드됩니다 */
+/* ?�품�??��??��? JavaScript?�서 ?�적?�로 로드?�니??*/
 
 /* ============================================
-   기본 스타일
-   ============================================ */
-/* 디자이너 상세페이지 메인 컨테이너 - 높은 우선순위 보장 */
+   기본 ?��???   ============================================ */
+/* ?�자?�너 ?�세?�이지 메인 컨테?�너 - ?��? ?�선?�위 보장 */
 .designer-showcase,
 body .designer-showcase,
 body .main-window__container--full .designer-showcase,
@@ -27,7 +25,7 @@ html body .main-window__container--full .designer-showcase {
   padding: 0;
 }
 
-/* 전역 스타일 덮어쓰기 */
+/* ?�역 ?��?????��?�기 */
 .main-window__container--full .designer-showcase,
 .main-window--content .designer-showcase,
 body .main-window__container--full .designer-showcase,
@@ -45,14 +43,14 @@ body .main-window--content .designer-showcase {
   box-sizing: border-box;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .designer-showcase__inner {
     padding: 40px 28px;
   }
 }
 
-/* 모바일: ~799px */
+/* 모바?? ~799px */
 @media (width <= 799px) {
   .designer-showcase__inner {
     padding: 40px 16px;
@@ -95,14 +93,14 @@ body .main-window--content .designer-showcase {
   margin-bottom: clamp(28px, 6vw, 48px);
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .designer-showcase__header {
     flex-direction: row;
   }
 }
 
-/* 모바일: ~799px */
+/* 모바?? ~799px */
 @media (width <= 799px) {
   .designer-showcase__header {
     flex-direction: column;
@@ -186,7 +184,7 @@ body .main-window--content .designer-showcase {
 }
 
 .work-card__title {
-  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  font-size: clamp(1.68rem, 3.64vw, 2.1rem);
   font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0;
@@ -194,7 +192,7 @@ body .main-window--content .designer-showcase {
 }
 
 .work-card__summary {
-  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-size: clamp(1.33rem, 2.8vw, 1.47rem);
   line-height: 1.75;
   color: rgba(26, 26, 26, 0.68);
   word-break: keep-all;
@@ -212,7 +210,7 @@ body .main-window--content .designer-showcase {
   background: #0f172a;
   color: #ffffff;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.33rem;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
@@ -235,7 +233,7 @@ body .main-window--content .designer-showcase {
   font-size: 1.1rem;
 }
 
-/* 모바일 모드: work-card 세로 배치 */
+/* 모바??모드: work-card ?�로 배치 */
 @media (width <= 799px) {
   .work-card {
     flex-direction: column;
@@ -255,7 +253,7 @@ body .main-window--content .designer-showcase {
   }
 }
 
-/* 모달 스타일 */
+/* 모달 ?��???*/
 .kim-modal-overlay {
   position: fixed;
   top: 0;
@@ -291,7 +289,7 @@ body .main-window--content .designer-showcase {
   }
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .kim-modal-wrapper {
     width: 800px;
@@ -303,14 +301,14 @@ body .main-window--content .designer-showcase {
   }
 }
 
-/* 데스크탑: 1280px 이상 */
+/* ?�스?�탑: 1280px ?�상 */
 @media (width >= 1280px) {
   .kim-modal__topbar {
     padding: 1.5rem var(--header-horizontal-padding, 40px);
   }
 }
 
-/* 모바일: < 800px */
+/* 모바?? < 800px */
 @media (width <= 799px) {
   .kim-modal-wrapper {
     width: 375px;
@@ -452,7 +450,7 @@ body .main-window--content .designer-showcase {
   box-shadow: 0 0 0 4px rgba(255, 153, 102, 0.2);
 }
 
-/* 모달 내부 작품 상세 컴포넌트 스타일 */
+/* 모달 ?��? ?�품 ?�세 컴포?�트 ?��???*/
 .kim-modal-wrapper .work-detail {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -477,7 +475,7 @@ body .main-window--content .designer-showcase {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* 모바일 모달에서 작품 상세 컴포넌트 최적화 */
+/* 모바??모달?�서 ?�품 ?�세 컴포?�트 최적??*/
 @media (width <= 799px) {
   .kim-modal-wrapper .work-detail {
     max-height: calc(90vh - 60px);

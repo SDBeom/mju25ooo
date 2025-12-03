@@ -1,4 +1,4 @@
-/* About page 기본 레이아웃 스타일 (ArchivePage에서도 사용) */
+/* About page 기본 ?�이?�웃 ?��???(ArchivePage?�서???�용) */
 .about-page {
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@
   max-width: 720px;
   text-align: center;
   margin: 0 auto;
-  /* 박스 스타일 제거: background, border, border-radius, backdrop-filter, box-shadow, padding */
+  /* 박스 ?��????�거: background, border, border-radius, backdrop-filter, box-shadow, padding */
 }
 
 .archive-page__label {
@@ -52,7 +52,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.24);
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm); /* 14px - 버전�??�동 조정 */
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -60,7 +60,7 @@
 }
 
 .archive-page__title {
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-4xl));
   line-height: 1.25;
   font-weight: 800;
   letter-spacing: -0.015em;
@@ -68,7 +68,7 @@
 }
 
 .archive-page__description {
-  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-size: clamp(var(--font-size-base), 2.4vw, var(--font-size-lg));
   line-height: 1.8;
   color: var(--color-text-secondary);
   margin: 0;
@@ -77,18 +77,20 @@
 
 .archive-page__title,
 .archive-page__description {
-  word-break: keep-all;
+  word-break: normal;
+  overflow-wrap: break-word;
   white-space: normal;
 }
 
 .archive-page__instruction {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(var(--font-size-sm), 2vw, var(--font-size-base));
   line-height: 1.6;
   color: #ff7700;
   margin: var(--spacing-md) 0 0 0;
   text-align: center;
   opacity: 0.9;
-  word-break: keep-all;
+  word-break: normal;
+  overflow-wrap: break-word;
   white-space: normal;
 }
 
@@ -132,11 +134,11 @@
 
   .archive-page__content {
     gap: var(--spacing-lg);
-    /* 박스 스타일 제거: padding, border-radius */
+    /* 박스 ?��????�거: padding, border-radius */
   }
 
   .archive-page__label {
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs); /* 12px - 버전�??�동 조정 */
     padding: 4px 14px;
   }
 
@@ -158,7 +160,7 @@
 
   .archive-page__content {
     max-width: 840px;
-    /* 박스 스타일 제거: padding */
+    /* 박스 ?��????�거: padding */
   }
 }
 
@@ -177,18 +179,18 @@
 /* Styling for the images used in the trail */
 .image-item {
   width: 300px; /* image width */
-  height: 300px; /* image height - 원형을 위해 width와 동일하게 */
+  height: 300px; /* image height - ?�형???�해 width?� ?�일?�게 */
   object-fit: cover; /* ensures the image fills the box without distortion */
   position: absolute; /* lets us place them at mouse position */
   opacity: 0; /* start invisible until animated in */
   pointer-events: none; /* makes sure these images don't block interaction */
-  border-radius: 50%; /* 원형으로 만들기 */
+  border-radius: 50%; /* ?�형?�로 만들�?*/
   transform-origin: center; /* scaling/rotations will happen from the center */
   
-  /* 🚀 성능 최적화 코드 추가 */
-  will-change: transform, opacity; /* 브라우저에게 변할 속성을 미리 알림 */
-  backface-visibility: hidden; /* 3D 렌더링 강제 활성화 */
-  transform: translateZ(0); /* GPU 가속 강제 */
+  /* ?? ?�능 최적??코드 추�? */
+  will-change: transform, opacity; /* 브라?��??�게 변???�성??미리 ?�림 */
+  backface-visibility: hidden; /* 3D ?�더�?강제 ?�성??*/
+  transform: translateZ(0); /* GPU 가??강제 */
 }
 
 /* The original gallery is hidden from view,
@@ -230,24 +232,26 @@
 
 /* Archive page title with scroll effect */
 .archive-page__title.text-scroll-effect {
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-4xl));
   line-height: 1.25;
   font-weight: 800;
   letter-spacing: -0.015em;
   color: #ff7700;
-  word-break: keep-all;
+  word-break: normal;
+  overflow-wrap: break-word;
   white-space: normal;
   justify-content: center;
 }
 
 /* Archive page description with scroll effect */
 .archive-page__description.text-scroll-effect {
-  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-size: clamp(var(--font-size-base), 2.4vw, var(--font-size-lg));
   line-height: 1.8;
   color: var(--color-text-secondary);
   margin: 0;
   text-align: center;
-  word-break: keep-all;
+  word-break: normal;
+  overflow-wrap: break-word;
   white-space: normal;
   justify-content: center;
 }

@@ -19,7 +19,7 @@ import heoJiHoonWork2_16 from '../../../../assets/허지훈/heojihoon_motiondesi
 import '../../styles/works/HeoJihoonEternalVision/HeoJihoonEternalVisionDesktop.css';
 
 /**
- * ��- Eternal Vision (�작품2) Desktop 버전
+ * 허지훈 - Eternal Vision (작품2) Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
 const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
@@ -34,7 +34,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
         <div className="work-detail__hero-content work-detail__hero-content--desktop">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--desktop">{work.title || 'Eternal Vision'}</h2>
-            <p className="work-detail__lead work-detail__lead--desktop">{work.summary || '���동차의 �징모델 \'�니 쿠페\'�산��� 계승\'N74\'�생감각�으��� �시네마틱 브랜�상.'}</p>
+            <p className="work-detail__lead work-detail__lead--desktop">{work.summary || '현대자동차의 상징적인 모델 \'포니 쿠페\'의 산물을 계승한 \'N Vision 74\'의 생생한 감각으로 풀어낸 시네마틱 브랜딩 영상.'}</p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--desktop">
@@ -65,18 +65,18 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
       {/* Pull Quote Section */}
       <section className="work-detail__section work-detail__quote work-detail__quote--desktop">
         <figure className="work-detail__quote-figure">
-          <p className="work-detail__quote-text">�원 비전</p>
+          <p className="work-detail__quote-text">영원한 비전</p>
         </figure>
       </section>
 
       {/* Text Section 1 */}
       <section className="work-detail__section work-detail__text-section work-detail__text-section--desktop">
         <div className="work-detail__text-headline">
-          <p className="work-detail__eyebrow-text">�니 쿠페�산</p>
+          <p className="work-detail__eyebrow-text">포니 쿠페의 산물</p>
           <h3 className="work-detail__subtitle">N Vision 74</h3>
         </div>
         <div className="work-detail__text-content">
-          <p>�니가 지직선�디자인�떠오르는� 미래공간교차�며, 과거�징�로�태��살�나�간�았 �두미�공간벗떠오르는밝� �계�질주�는 �면� �리��가 미래 비전�로 �장�는 가�성�징�다.</p>
+          <p>포니가 지닌 직선적 디자인에서 떠오르는 미래와 공간이 교차하며, 과거의 상징을 현대적 형태로 살려내었다. 어두운 공간에서 떠오르는 밝은 빛, 질주하는 장면에서 드러나는 미래 비전으로 향하는 가능성을 상징한다.</p>
         </div>
       </section>
 
@@ -86,14 +86,14 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
           <img 
             src={heoJiHoonWork2_02} 
             alt="Cinematic Branding Film"
-              className="work-detail__feature-image"
+            className="work-detail__feature-image"
             onError={(e) => handleImageError(e, heoJiHoonWork2_02, work.id, 'feature-1')}
             loading="lazy"
           />
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">Cinematic Branding Film</h4>
-          <p>N Vision 74�펙직접�으��러�기보다, �니 쿠페�디자인�과 �신계승브랜철학집중�다. �상분위기� �출� �화 &lt;블레�드 �너 2049&gt;�서 �감받았</p>
+          <p>N Vision 74의 펙트를 직접적으로 보여주기보다, 포니 쿠페의 디자인과 현대의 계승, 브랜드 철학에 집중했다. 영상의 분위기와 연출은 영화 &lt;블레이드 러너 2049&gt;에서 영감을 받았다.</p>
         </div>
       </section>
 
@@ -140,7 +140,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
           <img 
             src={heoJiHoonWork2_06} 
             alt="Feature 2"
-              className="work-detail__feature-image"
+            className="work-detail__feature-image"
             onError={(e) => handleImageError(e, heoJiHoonWork2_06, work.id, 'feature-2')}
             loading="lazy"
           />
@@ -151,13 +151,13 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
       <section className="work-detail__section work-detail__feature-rows work-detail__feature-rows--desktop">
         <div className="work-detail__feature-row">
           <div className="work-detail__feature-row-content">
-            <h4 className="work-detail__feature-row-title">�른 �늘��원</h4>
-            <p>극적�상 반전�해 �상분위기� �환�며, 감정�름�욱 극��하고디자인 �다. �히 차�블루 �의 �원배경�로 N74가 �유��� 질주�는 �면� �전까�긴장감과 �비되��방감과 ���을 �시�달�다.</p>
+            <h4 className="work-detail__feature-row-title">푸른 하늘의 원</h4>
+            <p>극적인 영상의 반전을 통해 영상 분위기를 전환하며, 감정의 흐름을 더욱 극대화하고 디자인을 강조한다. 특히 차가운 블루 톤의 어두운 배경에서 N74가 유유히 질주하는 장면까지 긴장감과 대비되는 방향감과 속도를 시각적으로 전달한다.</p>
           </div>
           <div className="work-detail__feature-row-image-wrapper">
             <img 
               src={heoJiHoonWork2_07} 
-              alt="�른 �늘��원"
+              alt="푸른 하늘의 원"
               className="work-detail__feature-row-image"
               onError={(e) => handleImageError(e, heoJiHoonWork2_07, work.id, 'row-1')}
               loading="lazy"
@@ -176,7 +176,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
           </div>
           <div className="work-detail__feature-row-content">
             <h4 className="work-detail__feature-row-title">Cinema 4D Pyro</h4>
-            <p>Pyro��용�여 바퀴에�날리는 �디자인��현�으� �늘�서 �리�� �보�으�추��다.</p>
+            <p>Pyro를 이용하여 바퀴에서 날리는 연기를 디자인적으로 구현하여 하늘에서 떨어지는 빛을 보여주었다.</p>
           </div>
         </div>
       </section>
@@ -189,7 +189,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
               <img 
                 src={heoJiHoonWork2_09} 
                 alt="Gallery 1"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork2_09, work.id, 'gallery-1')}
                 loading="lazy"
               />
@@ -198,7 +198,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
               <img 
                 src={heoJiHoonWork2_10} 
                 alt="Gallery 2"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork2_10, work.id, 'gallery-2')}
                 loading="lazy"
               />
@@ -209,7 +209,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
               <img 
                 src={heoJiHoonWork2_11} 
                 alt="Gallery 3"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork2_11, work.id, 'gallery-3')}
                 loading="lazy"
               />
@@ -218,7 +218,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
               <img 
                 src={heoJiHoonWork2_12} 
                 alt="Gallery 4"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork2_12, work.id, 'gallery-4')}
                 loading="lazy"
               />
@@ -227,7 +227,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
               <img 
                 src={heoJiHoonWork2_13} 
                 alt="Gallery 5"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork2_13, work.id, 'gallery-5')}
                 loading="lazy"
               />
@@ -238,7 +238,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
               <img 
                 src={heoJiHoonWork2_14} 
                 alt="Gallery 6"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork2_14, work.id, 'gallery-6')}
                 loading="lazy"
               />
@@ -247,7 +247,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
               <img 
                 src={heoJiHoonWork2_15} 
                 alt="Gallery 7"
-              className="work-detail__gallery-image"
+                className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, heoJiHoonWork2_15, work.id, 'gallery-7')}
                 loading="lazy"
               />
@@ -262,14 +262,14 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
           <img 
             src={heoJiHoonWork2_16} 
             alt="Eternal Vision"
-              className="work-detail__feature-image"
+            className="work-detail__feature-image"
             onError={(e) => handleImageError(e, heoJiHoonWork2_16, work.id, 'feature-final')}
             loading="lazy"
           />
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title work-detail__feature-title--large">Eternal Vision</h4>
-          <p>�목 &lt;Eternal Vision&gt;�는 �의 비전�원빛나�바라�망�았</p>
+          <p>제목 &lt;Eternal Vision&gt;에는 영원한 비전, 원하는 빛을 향한 바라봄을 담았다.</p>
         </div>
       </section>
     </div>
@@ -277,4 +277,3 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
 };
 
 export default HeoJihoonEternalVisionDesktop;
-

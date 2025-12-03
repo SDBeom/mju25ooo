@@ -5,7 +5,7 @@
 
 .work-detail__gallery-note p {
   margin: 0;
-  font-family: var(--font-primary);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   font-size: clamp(1.05rem, 1.4vw, 20px);
   font-weight: 500;
   line-height: 1.45;
@@ -37,7 +37,7 @@ body {
   margin: 0;
   color: var(--color-text);
   background-color: var(--color-bg);
-  font-family: var(--font-primary);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 100vw;
@@ -142,7 +142,7 @@ a:focus-visible {
   transform: translate3d(0, 100%, 0);
 }
 
-/* 메인 페이지 전체 스크롤바 숨김 */
+/* 메인 ?�이지 ?�체 ?�크롤바 ?��? */
 .main-page--grid * {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
@@ -178,14 +178,14 @@ a:focus-visible {
   z-index: 1;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .container {
     padding: 0 28px;
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .container {
     padding: 0 16px;
@@ -198,24 +198,24 @@ a:focus-visible {
   height: 100%;
 }
 
-/* 모바일: ~799px (375px 기준) - 드래그 가능하도록 */
+/* 모바?? ~799px (375px 기�?) - ?�래�?가?�하?�록 */
 @media (width <= 799px) {
   .container.--is-mobile {
     overflow: hidden;
     min-height: calc(100vh - var(--header-height, 60px));
     height: 100%;
-    z-index: 1; /* 헤더보다 낮게 유지 */
+    z-index: 1; /* ?�더보다 ??�� ?��? */
   }
   
   .container.--is-loaded.--is-mobile {
     overflow: hidden;
     min-height: calc(100vh - var(--header-height, 60px));
     height: 100%;
-    z-index: 1; /* 헤더보다 낮게 유지 */
+    z-index: 1; /* ?�더보다 ??�� ?��? */
   }
   
   .grid.--is-mobile {
-    z-index: 1; /* 헤더보다 낮게 유지 */
+    z-index: 1; /* ?�더보다 ??�� ?��? */
   }
 }
 
@@ -252,7 +252,7 @@ a:focus-visible {
   box-sizing: border-box;
 }
 
-/* 모바일: ~799px - 패딩 및 width */
+/* 모바?? ~799px - ?�딩 �?width */
 @media (width <= 799px) {
   .grid.--is-mobile {
     width: max-content;
@@ -260,14 +260,14 @@ a:focus-visible {
   }
 }
 
-/* 태블릿: 800px ~ 1279px - 패딩 */
+/* ?�블�? 800px ~ 1279px - ?�딩 */
 @media (width <= 1279px) and (width >= 800px) {
   .grid.--is-tablet {
     padding: calc(var(--header-height, 68px) + 28px) 28px 28px;
   }
 }
 
-/* 데스크탑: 1280px 이상 - 패딩 */
+/* ?�스?�탑: 1280px ?�상 - ?�딩 */
 @media (width >= 1280px) {
   .grid.--is-desktop {
     padding: calc(var(--header-height, 100px) + 40px) 40px 40px;
@@ -278,7 +278,7 @@ a:focus-visible {
   overflow: hidden;
 }
 
-/* 모바일: ~799px (375px 기준) - 드래그 가능하도록 */
+/* 모바?? ~799px (375px 기�?) - ?�래�?가?�하?�록 */
 @media (width <= 799px) {
   .--is-loaded.--is-mobile {
     overflow: hidden;
@@ -308,21 +308,21 @@ a:focus-visible {
   cursor: pointer;
 }
 
-/* 데스크탑: 1280px 이상 - 5컬럼 */
+/* ?�스?�탑: 1280px ?�상 - 5컬럼 */
 @media (width >= 1280px) {
   .grid.--is-desktop .product {
     width: calc((100vw - 80px) / 5);
   }
 }
 
-/* 태블릿: 800px ~ 1279px - 5컬럼 */
+/* ?�블�? 800px ~ 1279px - 5컬럼 */
 @media (width <= 1279px) and (width >= 800px) {
   .grid.--is-tablet .product {
     width: calc((100vw - 56px) / 5);
   }
 }
 
-/* 모바일: ~799px - 4열, border-width */
+/* 모바?? ~799px - 4?? border-width */
 @media (width <= 799px) {
   .grid.--is-mobile .product {
     width: calc((100vw - 32px) / 4);
@@ -350,7 +350,7 @@ a:focus-visible {
   border-radius: inherit;
 }
 
-/* 호버 효과 */
+/* ?�버 ?�과 */
 .product:hover img {
   transform: scale(1.05);
 }
@@ -383,7 +383,7 @@ a:focus-visible {
   visibility: visible;
 }
 
-/* details.--is-showing 상태가 다른 스타일보다 우선하도록 더 구체적인 선택자 추가 */
+/* details.--is-showing ?�태가 ?�른 ?��??�보???�선?�도�???구체?�인 ?�택??추�? */
 body .details.--is-showing {
   display: flex;
   opacity: 1;
@@ -391,7 +391,7 @@ body .details.--is-showing {
   visibility: visible;
 }
 
-/* 태블릿: 800px ~ 1279px - 60vw */
+/* ?�블�? 800px ~ 1279px - 60vw */
 @media (width <= 1279px) and (width >= 800px) {
   .details {
     width: 60vw;
@@ -400,7 +400,7 @@ body .details.--is-showing {
   }
 }
 
-/* 모바일: ~799px (375px 기준) - 100vw, 풀스크린 */
+/* 모바?? ~799px (375px 기�?) - 100vw, ?�?�크�?*/
 @media (width <= 799px) {
   .details {
     width: 100vw;
@@ -445,14 +445,14 @@ body .details.--is-showing {
   overflow-wrap: break-word;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .details__title p {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details__title p {
     font-size: clamp(1.5rem, 6vw, 2rem);
@@ -504,7 +504,7 @@ body .details.--is-showing {
   gap: 2vw;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .details__body {
     flex-direction: row;
@@ -513,7 +513,7 @@ body .details.--is-showing {
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details__body {
     flex-direction: column;
@@ -554,7 +554,7 @@ body .details.--is-showing {
   height: fit-content;
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details__texts {
     max-width: 100%;
@@ -585,7 +585,7 @@ body .details.--is-showing {
   border-radius: inherit;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .details__thumb {
     width: 30vw;
@@ -593,7 +593,7 @@ body .details.--is-showing {
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details__thumb {
     width: 60vw;
@@ -623,7 +623,7 @@ body .details.--is-showing {
   padding-bottom: clamp(48px, 8vh, 120px);
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .work-detail {
     width: 800px;
@@ -631,7 +631,7 @@ body .details.--is-showing {
   }
 }
 
-/* 모바일: < 800px */
+/* 모바?? < 800px */
 @media (width <= 799px) {
   .work-detail {
     width: 375px;
@@ -701,7 +701,7 @@ body .details.--is-showing {
 }
 
 .work-detail__title {
-  font-family: var(--font-primary);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   font-size: clamp(2.6rem, 4vw, 56px);
   line-height: 1.1;
   font-weight: 700;
@@ -710,7 +710,7 @@ body .details.--is-showing {
 }
 
 .work-detail__lead {
-  font-family: var(--font-primary);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   font-size: clamp(1.2rem, 1.6vw, 24px);
   font-weight: 500;
   line-height: 1.45;
@@ -730,7 +730,7 @@ body .details.--is-showing {
 .work-detail__cta {
   padding: 12px 22px;
   border-radius: 12px;
-  font-family: var(--font-primary);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -813,7 +813,7 @@ body .details.--is-showing {
 .work-detail__gallery-note p {
   margin: 0;
   color: rgba(0, 0, 0, 0.55);
-  font-family: 'Pretendard', var(--font-primary), sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -893,7 +893,7 @@ body .details.--is-showing {
   z-index: 10;
 }
 
-/* CTA 버튼이 항상 클릭 가능하도록 보장 - 더 구체적인 선택자 사용 */
+/* CTA 버튼????�� ?�릭 가?�하?�록 보장 - ??구체?�인 ?�택???�용 */
 .details__cta-button[style*="pointer-events: auto"],
 .details.--is-showing .details__cta-button,
 .details__content .details__cta-button,
@@ -933,7 +933,7 @@ p {
   height: 3vw;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .cross {
     width: 4vw;
@@ -956,7 +956,7 @@ p {
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .cross {
     width: 32px;
@@ -979,7 +979,7 @@ p {
   }
 }
 
-/* 모바일: ~799px (375px 기준) - details.--is-showing와 X 버튼을 하나로 묶음 */
+/* 모바?? ~799px (375px 기�?) - details.--is-showing?� X 버튼???�나�?묶음 */
 @media (width <= 799px) {
   .details.--is-showing .cross {
     pointer-events: auto;
@@ -1008,14 +1008,14 @@ p {
   padding: 140px 4vw 100px;
 }
 
-/* 태블릿: 800px ~ 1279px */
+/* ?�블�? 800px ~ 1279px */
 @media (width <= 1279px) and (width >= 800px) {
   .details.--is-showing {
     padding: calc(var(--header-height, 68px) + 28px) 5vw 100px;
   }
 }
 
-/* 모바일: ~799px (375px 기준) */
+/* 모바?? ~799px (375px 기�?) */
 @media (width <= 799px) {
   .details.--is-showing {
     padding: 40px 16px 80px;
@@ -1038,7 +1038,7 @@ p {
   transition: opacity 0.2s ease;
 }
 
-/* 모바일: ~799px (375px 기준) - 툴팁 최적화 */
+/* 모바?? ~799px (375px 기�?) - ?�팁 최적??*/
 @media (width <= 799px) {
   .product-tooltip {
     padding: 10px 14px;

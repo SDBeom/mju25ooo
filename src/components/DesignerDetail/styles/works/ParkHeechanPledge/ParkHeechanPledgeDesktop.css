@@ -1,5 +1,5 @@
-/* 박희찬 - PLEDGE Desktop 버전 스타일 */
-/* Figma 디자인 기반 구현 (1280px) */
+/* 박희�?- PLEDGE Desktop 버전 ?��???*/
+/* Figma ?�자??기반 구현 (1280px) */
 
 .work-detail--park-heechan-pledge-desktop {
   width: 100%;
@@ -45,7 +45,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__title--park-heechan-pledge-desktop {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.1;
@@ -56,7 +56,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__lead--park-heechan-pledge-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.45;
@@ -83,7 +83,7 @@ width: 1280px;
 .work-detail--park-heechan-pledge-desktop .work-detail__cta--park-heechan-pledge-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -164,7 +164,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__feature-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -175,7 +175,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -233,7 +233,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__feature-row-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -252,7 +252,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__feature-row-description p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -357,7 +357,7 @@ width: 100%;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__bento-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -368,7 +368,7 @@ width: 100%;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__bento-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -382,7 +382,7 @@ width: 100%;
   margin: 0;
 }
 
-/* Feature Gallery 1: 스틸컷 */
+/* Feature Gallery 1: ?�틸�?*/
 .work-detail--park-heechan-pledge-desktop .work-detail__gallery--park-heechan-pledge-desktop {
   padding: 120px 64px;
   display: flex;
@@ -404,7 +404,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__gallery-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -567,7 +567,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__title--park-heechan-pledge-desktop {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.1;
@@ -578,7 +578,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__lead--park-heechan-pledge-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.45;
@@ -605,7 +605,7 @@ width: 1280px;
 .work-detail--park-heechan-pledge-desktop .work-detail__cta--park-heechan-pledge-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -686,7 +686,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__feature-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -697,7 +697,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.45;
@@ -755,7 +755,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__feature-row-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -774,7 +774,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__feature-row-description p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -879,7 +879,7 @@ width: 100%;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__bento-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
@@ -890,7 +890,7 @@ width: 100%;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__bento-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
@@ -904,7 +904,7 @@ width: 100%;
   margin: 0;
 }
 
-/* Feature Gallery 1: 스틸컷 */
+/* Feature Gallery 1: ?�틸�?*/
 .work-detail--park-heechan-pledge-desktop .work-detail__gallery--park-heechan-pledge-desktop {
   padding: 120px 64px;
   display: flex;
@@ -926,7 +926,7 @@ width: 1280px;
 }
 
 .work-detail--park-heechan-pledge-desktop .work-detail__gallery-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
