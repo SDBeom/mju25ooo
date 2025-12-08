@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import Modal from '../Modal/Modal';
 import { getWorkComponent } from './WorkDetails/workComponentMap';
-import { removeModalOpenState } from '../../shared/utils';
 import { MODAL } from '../../shared/constants';
 import { GENRE_TYPES, DEFAULTS, INSTAGRAM, CTA_LABELS, GALLERY_SCROLL_DELAY, SCROLL_BEHAVIOR } from '../../shared/designerConstants';
 import { videoBadge, gameBadge, multimediaBadge, motionBadge } from '../../data/designerDetailsData';
@@ -69,11 +68,7 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
     }
   }, [initialWorkId, designer]);
 
-  // 컴포넌트 마운트 시 스크롤을 맨 위로 이동하고 모달 관련 스타일 초기화
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    removeModalOpenState();
-  }, []);
+  // 모달 관련 스타일 초기화는 Modal 컴포넌트에서 처리하므로 여기서는 제거
 
   /**
    * 작품 모달 열기

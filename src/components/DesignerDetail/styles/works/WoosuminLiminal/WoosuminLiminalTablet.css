@@ -39,7 +39,6 @@
   min-width: 0;
 }
 .work-detail--woosumin-liminal-tablet .work-detail__hero-media {
-  flex-shrink: 0;
   position: relative;
   overflow: hidden;
   order: 2;

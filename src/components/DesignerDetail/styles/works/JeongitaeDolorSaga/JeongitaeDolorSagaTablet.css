@@ -115,10 +115,12 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--jeongitae-dolor-saga-tablet .work-detail__hero-image-wrapper--jeongitae-dolor-saga-tablet {overflow: hidden;
+.work-detail--jeongitae-dolor-saga-tablet .work-detail__hero-image-wrapper--jeongitae-dolor-saga-tablet {
+  overflow: hidden;
   position: relative;
-  
   flex-shrink: 0;
+  width: 400px;
+  height: 540px;
 }
 
 .work-detail--jeongitae-dolor-saga-tablet .work-detail__hero-image-wrapper--jeongitae-dolor-saga-tablet .work-detail__hero-image {
@@ -141,11 +143,15 @@
   margin: 0 auto;
 }
 
-.work-detail--jeongitae-dolor-saga-tablet .work-detail__feature-image-wrapper--jeongitae-dolor-saga-tablet {position: relative;border-radius: 16px;
+.work-detail--jeongitae-dolor-saga-tablet .work-detail__feature-image-wrapper--jeongitae-dolor-saga-tablet {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  height: 414px;
 }
 
-.work-detail--jeongitae-dolor-saga-tablet .work-detail__feature-image {
+.work-detail--jeongitae-dolor-saga-tablet .work-detail__feature-image-wrapper--jeongitae-dolor-saga-tablet .work-detail__feature-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -221,11 +227,15 @@
   min-width: 496px;
 }
 
-.work-detail--jeongitae-dolor-saga-tablet .work-detail__card-image-wrapper {overflow: hidden;
+.work-detail--jeongitae-dolor-saga-tablet .work-detail__card-image-wrapper {
+  overflow: hidden;
   position: relative;
-  border-radius: 16px;}
+  border-radius: 16px;
+  width: 100%;
+  height: 208px;
+}
 
-.work-detail--jeongitae-dolor-saga-tablet .work-detail__card-image {
+.work-detail--jeongitae-dolor-saga-tablet .work-detail__card-image-wrapper .work-detail__card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -314,14 +324,16 @@
   white-space: pre-wrap;
 }
 
-.work-detail--jeongitae-dolor-saga-tablet .work-detail__feature-cards-image-wrapper {overflow: hidden;
+.work-detail--jeongitae-dolor-saga-tablet .work-detail__feature-cards-image-wrapper {
+  overflow: hidden;
   position: relative;
   border-radius: 16px;
-  
   flex-shrink: 0;
+  width: 352px;
+  height: 264px;
 }
 
-.work-detail--jeongitae-dolor-saga-tablet .work-detail__feature-cards-image {
+.work-detail--jeongitae-dolor-saga-tablet .work-detail__feature-cards-image-wrapper .work-detail__feature-cards-image {
   width: 100%;
   height: 100%;
   object-fit: cover;

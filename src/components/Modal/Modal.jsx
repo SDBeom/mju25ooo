@@ -26,8 +26,7 @@ const Modal = ({ isOpen, onClose, designerName, modalClass, children }) => {
   // 모달 열릴 때 스크롤 잠금 및 헤더/푸터 숨김 처리
   useEffect(() => {
     if (!isOpen) {
-      // 모달이 닫힐 때
-      removeModalOpenState();
+      // 모달이 닫혀있을 때는 아무것도 하지 않음 (클린업 함수에서 처리)
       return;
     }
 
@@ -39,9 +38,11 @@ const Modal = ({ isOpen, onClose, designerName, modalClass, children }) => {
     // 키보드 이벤트 리스너 추가
     window.addEventListener('keydown', handleKeyDown);
 
-    // 클린업 함수
+    // 클린업 함수 - 모달이 닫힐 때 스크롤 위치 복원
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      // 모달이 닫힐 때 스크롤 위치 복원 (isOpen이 false로 변경될 때)
+      removeModalOpenState();
     };
   }, [isOpen, handleKeyDown, designerName, modalClass, children]);
 
