@@ -11,8 +11,8 @@ import SongDaheeACardOfLoveMobile from './SongDaheeACardOfLoveMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const SongDaheeACardOfLove = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const SongDaheeACardOfLove = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const SongDaheeACardOfLove = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <SongDaheeACardOfLoveMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const SongDaheeACardOfLove = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <SongDaheeACardOfLoveTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const SongDaheeACardOfLove = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <SongDaheeACardOfLoveDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

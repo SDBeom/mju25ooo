@@ -17,20 +17,21 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Hero Section */
+.work-detail--heo-jihoon-master-imagination-desktop .work-detail__section.work-detail__hero--master-imagination-desktop,
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__hero--master-imagination-desktop {
   padding: 0;
   margin: 0;
-  width: 1280px;
+  width: 100%;
   max-width: 1280px;
-  height: 540px;
-  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  flex-direction: row;
 }
 
 /* 모달 내부에서 Hero Section */
@@ -38,22 +39,50 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
+  height: auto;
+  min-height: 540px;
+}
+
+/* 모달 내부에서 Hero Content 반응형 조정 */
+.modal-content .work-detail--heo-jihoon-master-imagination-desktop .work-detail__hero-content--desktop {
+  padding-left: clamp(32px, 5vw, 64px);
+  padding-right: clamp(16px, 2.5vw, 32px);
+  width: 50%;
+  min-width: 320px;
+  height: 528px;
+  flex: 0 0 auto;
+}
+
+/* 모달 내부에서 Text Group 반응형 조정 */
+.modal-content .work-detail--heo-jihoon-master-imagination-desktop .work-detail__text-group {
+  width: 100%;
+  max-width: 512px;
+}
+
+/* 모달 내부에서 CTA 버튼 그룹 반응형 조정 */
+.modal-content .work-detail--heo-jihoon-master-imagination-desktop .work-detail__ctas--desktop {
+  width: 100%;
+  max-width: 512px;
+}
+
+/* 모달 내부에서 Hero Image 반응형 조정 */
+.modal-content .work-detail--heo-jihoon-master-imagination-desktop .work-detail__hero-image-wrapper--desktop {
+  width: 50%;
+  min-width: 320px;
+  height: auto;
+  min-height: 540px;
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__hero-content--desktop {
   display: flex;
-  flex: 1 0 0;
+  width: 640px;
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
   justify-content: center;
-  min-height: 0;
-  min-width: 0;
-  width: 640px;
   height: 528px;
-  padding: 0;
-  padding-left: 64px;
-  padding-right: 0;
+  padding: 0 64px;
+  box-sizing: border-box;
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__text-group {
@@ -93,7 +122,8 @@
   align-items: center;
   justify-content: flex-start;
   cursor: pointer;
-  width: 512px;
+  width: auto;
+  max-width: 512px;
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__cta--desktop {
@@ -137,6 +167,7 @@
   width: 640px;
   height: 540px;
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__hero-image-wrapper--desktop .work-detail__hero-image {
@@ -166,6 +197,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
+  padding: clamp(60px, 9.375vw, 120px) clamp(32px, 5vw, 64px);
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__quote-figure {
@@ -205,6 +237,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
+  padding: clamp(60px, 9.375vw, 120px) clamp(32px, 5vw, 64px);
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__text-headline {
@@ -248,6 +281,16 @@
   white-space: pre-wrap;
 }
 
+.work-detail--heo-jihoon-master-imagination-desktop .work-detail__text-content p {
+  font-family: 'Pretendard Variable', Pretendard, 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26.1px;
+  letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0;
+}
+
 /* Feature Section */
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__feature--desktop {
   padding: 120px 64px;
@@ -265,7 +308,7 @@
   max-width: 1152px;
 }
 
-.work-detail--heo-jihoon-master-imagination-desktop .work-detail__feature--desktop .work-detail__feature-image {
+.work-detail--heo-jihoon-master-imagination-desktop .work-detail__feature--desktop .work-detail__feature-image-wrapper .work-detail__feature-image {
   width: 100%;
   height: 648px;
   object-fit: cover;
@@ -276,6 +319,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
+  padding: clamp(60px, 9.375vw, 120px) clamp(32px, 5vw, 64px);
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__feature-image-wrapper {
@@ -289,7 +333,7 @@
   overflow: hidden;
   display: block;
   width: 100%;
-  height: auto;
+  height: 648px;
   object-fit: cover;
 }
 
@@ -319,10 +363,10 @@
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__feature-text p {
   font-family: 'Pretendard Variable', Pretendard, 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 23.2px;
-  letter-spacing: -0.08px;
+  line-height: 29px;
+  letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
@@ -331,7 +375,9 @@
 /* Feature Section 2 (생성형 AI 활용) - 이미지 위에 텍스트 */
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__feature--desktop:nth-of-type(3) .work-detail__feature-text p {
   font-size: 18px;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
+  color: rgba(0, 0, 0, 0.55);
 }
 
 /* Feature Cards Section */
@@ -351,6 +397,8 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
+  padding: clamp(60px, 9.375vw, 120px) clamp(32px, 5vw, 64px);
+  flex-wrap: wrap;
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__card {
@@ -441,6 +489,18 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
+}
+
+.modal-content .work-detail--heo-jihoon-master-imagination-desktop .work-detail__feature-row {
+  padding: clamp(30px, 4.6875vw, 60px) clamp(32px, 5vw, 64px);
+  flex-wrap: wrap;
+}
+
+.modal-content .work-detail--heo-jihoon-master-imagination-desktop .work-detail__feature-row-image-wrapper {
+  width: 100%;
+  max-width: 544px;
+  height: auto;
+  min-height: 432px;
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__feature-row {
@@ -536,6 +596,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
+  padding: clamp(60px, 9.375vw, 120px) clamp(32px, 5vw, 64px);
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__gallery-header {
@@ -604,9 +665,7 @@
 }
 
 .work-detail--heo-jihoon-master-imagination-desktop .work-detail__gallery-item .work-detail__gallery-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;

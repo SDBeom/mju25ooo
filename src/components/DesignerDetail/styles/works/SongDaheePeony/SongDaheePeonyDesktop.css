@@ -146,9 +146,13 @@
 }
 
 .work-detail--song-dahee-peony-desktop .work-detail__hero-image {
-  position: absolute;
-  left: 0;
-  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
   display: block;
   width: 100%;
   height: 100%;
@@ -200,9 +204,13 @@
 }
 
 .work-detail--song-dahee-peony-desktop .work-detail__feature-row-image {
-  position: absolute;
-  left: 0;
-  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
   display: block;
   width: 100%;
   height: 100%;
@@ -305,9 +313,13 @@
 }
 
 .work-detail--song-dahee-peony-desktop .work-detail__card-image {
-  position: absolute;
-  left: 0;
-  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
   display: block;
   width: 100%;
   height: 100%;

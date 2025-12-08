@@ -17,7 +17,7 @@ import shimSungbinWork2_09 from '../../../../assets/심성빈/simseongbin_video_
  * 심성빈 - BOOM (작품2) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const ShimSungbinBoomMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ShimSungbinBoomMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

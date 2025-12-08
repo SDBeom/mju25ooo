@@ -20,7 +20,7 @@ import leedayoungWork1_12 from '../../../../assets/이다영/leedayoung_multimed
  * 이다영 - Ready to Merry (작품1) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const LeeDayoungReadyToMerryMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeDayoungReadyToMerryMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

@@ -23,7 +23,7 @@ import woosuminWork2_15 from '../../../../assets/우수민/woosumin_multimedia_w
  * 우수민 - Pierre Huyghe: Liminal 가이드앱 UXUI (작품2) Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
-const WoosuminPierreHuygheDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const WoosuminPierreHuygheDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -35,13 +35,13 @@ const WoosuminPierreHuygheDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas 
         <div className="work-detail__hero-content work-detail__hero-content--woosumin-pierre-huyghe-desktop">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--woosumin-pierre-huyghe-desktop">
-              <span className="block mb-0">Pierre Huyghe: Liminal</span>
-              <span className="block">가이드앱 UXUI</span>
+              {`Pierre Huyghe: Liminal
+가이드앱 UXUI`}
             </h2>
-            <div className="work-detail__lead work-detail__lead--woosumin-pierre-huyghe-desktop">
-              <p className="mb-0">전시 정보·동선 안내·인터랙티브 체험을 제공하고</p>
-              <p>사용자 중심 설계로 몰입도를 높이며 전통적 안내를 넘어 새로운 전시 경험을 제안한다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--woosumin-pierre-huyghe-desktop">
+              {`전시 정보·동선 안내·인터랙티브 체험을 제공하고 
+사용자 중심 설계로 몰입도를 높이며 전통적 안내를 넘어 새로운 전시 경험을 제안한다.`}
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--woosumin-pierre-huyghe-desktop">
@@ -83,14 +83,14 @@ const WoosuminPierreHuygheDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas 
         <div className="work-detail__feature-content">
           <div className="work-detail__text-group">
             <h4 className="work-detail__feature-title">
-              <span className="block mb-0">그냥 '보는 것'만으로</span>
-              <span className="block">전시를 이해할 수 있을까</span>
+              {`그냥 '보는 것'만으로
+전시를 이해할 수 있을까?`}
             </h4>
-            <div className="work-detail__feature-description">
-              <p className="mb-0">기분 좋은 데이트로, 혹은 잠시 생긴 여유 속에 찾은 전시장.</p>
-              <p className="mb-0">하지만 막상 마주한 전시 공간과 작품들은 낯설고 어렵기만 하다.</p>
-              <p>실험적이고 복잡한 전시의 세계, 과연 제대로 보고, 느끼고 있는 것일까!</p>
-            </div>
+            <p className="work-detail__feature-description">
+              {`기분 좋은 데이트로, 혹은 잠시 생긴 여유 속에 찾은 전시장.
+하지만 막상 마주한 전시 공간과 작품들은 낯설고 어렵기만 하다.
+실험적이고 복잡한 전시의 세계, 과연 제대로 보고, 느끼고 있는 것일까!`}
+            </p>
           </div>
         </div>
       </section>
@@ -99,12 +99,12 @@ const WoosuminPierreHuygheDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas 
       <section className="work-detail__section work-detail__quote work-detail__quote--woosumin-pierre-huyghe-desktop">
         <figure className="work-detail__quote-content">
           <div className="work-detail__quote-text">
-            <p className="mb-0">전시를 이해하고, 참여하다!</p>
-            <p className="mb-0">작품 정보부터 전시 안내,</p>
+            <p>전시를 이해하고, 참여하다!</p>
+            <p>작품 정보부터 전시 안내,</p>
             <p>그리고 당신만을 위한 특별한 체험까지. "리미널 가이드"</p>
           </div>
           <div className="work-detail__quote-attribution">
-            <p className="mb-0">
+            <p>
               <span className="work-detail__quote-attribution--bold">인간과 비인간이 공존하며 반응하고 진화하는 설치 전시 &lt;피에르 위그: 리미널&gt;,</span>
               <span> 이 앱은 실험적이고 복잡한 전시</span>
             </p>
@@ -142,7 +142,7 @@ const WoosuminPierreHuygheDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">간편한 티켓 등록</h5>
-            <p className="work-detail__card-description">오프라인에서 구매한 티켓도 QR 캔 한 번으로 간편하게 등록</p>
+            <p className="work-detail__card-description">오프라인에서 구매한 티켓도 QR 스캔 한 번으로 간편하게 등록</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--woosumin-pierre-huyghe-desktop">
@@ -185,7 +185,7 @@ const WoosuminPierreHuygheDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas 
           <div className="work-detail__card-content">
             <div className="work-detail__card-text">
               <h5 className="work-detail__card-title">나만의 Liminal 생명체</h5>
-              <p className="work-detail__card-description">간단한 케치로 개성 있는 형태를 만들고, 색상과 질감, 악세서리까지 자유롭게 커텀 가능</p>
+              <p className="work-detail__card-description">간단한 스케치로 개성 있는 형태를 만들고, 색상과 질감, 악세서리까지 자유롭게 커스텀 가능</p>
             </div>
             <div className="work-detail__card-image-wrapper work-detail__card-image-wrapper--phone">
               <img
@@ -202,7 +202,7 @@ const WoosuminPierreHuygheDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas 
           <div className="work-detail__card-content">
             <div className="work-detail__card-text">
               <h5 className="work-detail__card-title">나의 전시 감상 감정 변화</h5>
-              <p className="work-detail__card-description">어떤 작품에서 어던 감정을 느꼈는지, 오늘의 전시에서 가장 강하게 느껴진 감정은 무엇이었는지 한눈에 확인</p>
+              <p className="work-detail__card-description">어떤 작품에서 어떤 감정을 느꼈는지, 오늘의 전시에서 가장 강하게 느껴진 감정은 무엇이었는지 한눈에 확인</p>
             </div>
             <div className="work-detail__card-image-wrapper work-detail__card-image-wrapper--phone">
               <img
@@ -255,11 +255,11 @@ const WoosuminPierreHuygheDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas 
                   />
                 </div>
                 <div className="work-detail__testimonial-author-text">
-                  <p className="work-detail__testimonial-author-name">위그 타임랩</p>
+                  <p className="work-detail__testimonial-author-name">위그 타임랩스</p>
                   <p className="work-detail__testimonial-author-role">피에르 위그의 전시 역사</p>
                 </div>
               </div>
-              <p className="work-detail__testimonial-text">그동안의 피에르 위그의 작품 여정을 담은 타임랩스 통해 그의 예술 세계를 더욱 깊이 있게 이해 가능</p>
+              <p className="work-detail__testimonial-text">그동안의 피에르 위그의 작품 여정을 담은 타임랩스를 통해 그의 예술 세계를 더욱 깊이 있게 이해 가능</p>
             </article>
           </li>
           <li className="work-detail__testimonial-column">
@@ -349,14 +349,21 @@ const WoosuminPierreHuygheDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas 
                   />
                 </div>
                 <div className="work-detail__testimonial-author-text">
-                  <p className="work-detail__testimonial-author-name">뉴 기사</p>
-                  <p className="work-detail__testimonial-author-role">전시 관련 뉴 기사</p>
+                  <p className="work-detail__testimonial-author-name">뉴스 기사</p>
+                  <p className="work-detail__testimonial-author-role">전시 관련 뉴스 기사</p>
                 </div>
               </div>
               <p className="work-detail__testimonial-text">단순 관람을 넘어, 피에르 위그를 향한 세계의 관심을 한눈에 파악</p>
             </article>
           </li>
         </ul>
+      </section>
+
+      {/* Marquee Section */}
+      <section className="work-detail__section work-detail__marquee work-detail__marquee--woosumin-pierre-huyghe-desktop">
+        <div className="work-detail__marquee-text">
+          당신의 감각은 리미널에 접속합니다.
+        </div>
       </section>
     </div>
   );

@@ -24,7 +24,7 @@ import leejiminWork1_16 from '../../../../assets/이지민/leejimin_multimedia_w
  * 이지민 - Veneti (작품1) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const LeeJiminVenetiMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeJiminVenetiMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/SeoRinKaron/SeoRinKaronDesktop.css';
 
-// ��지 �포허지훈
+// 이미지 임포트
 import seoRinWork2_01 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_01.webp';
 import seoRinWork2_02 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_02.webp';
 import seoRinWork2_03 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_03.webp';
@@ -12,10 +12,10 @@ import seoRinWork2_06 from '../../../../assets/전서린/jeonseorin_gamedesign_w
 import seoRinWork2_07 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_07.webp';
 
 /**
- * �서�- KARON (�작품2) Desktop 버전
- * Figma �디자인 기반 구현 (1280px)
+ * 전서린 - KARON (작품2) Desktop 버전
+ * Figma 디자인 기반 구현 (1280px)
  */
-const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const SeoRinKaronDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -30,8 +30,7 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
               KARON
             </h2>
             <p className="work-detail__lead work-detail__lead--seorin-karon-desktop">
-              {`KARON�기술�권력허지훈충돌�는 미래 �시허지훈`}
-              �둠 �에허지훈�무�허지훈�행�는 �수 �원 캐릭�이허지훈
+              KARON은 기술과 권력이 충돌하는 미래 도시의 어둠 속에서 임무를 수행하는 특수 요원 캐릭터이다.
             </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
@@ -67,11 +66,11 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <h3 className="work-detail__subtitle">MODELING DEMO REEL</h3>
         </div>
         <div className="work-detail__text-content">
-          <p>허지훈�작품�Autodesk MAYA�Adobe Substance 3D Painter�허지훈�용허지훈�작허지훈카툰 캐릭허지훈모델�허지훈�모릴이허지훈</p>
-          <p>&nbsp;</p>
-          <p>{`허지훈�작품허지훈KARON허지훈강인허지훈�격�허지훈�면허지훈균형허지훈�각�으�허지훈�현�는 것을 목표�허지훈�다. 카툰 ��허지훈�의 �동감과 �실�인 비��조화��� 결합�여, `}</p>
-          <p>{`�실�인 구조 �에 카툰 �유허지훈감각허지훈�여허지훈캐릭�로 �성��허지훈 �순허지훈만화허지훈�현허지훈머무르� �고, �제 �체 구조�기반�로 허지훈비�허지훈�균형허지훈`}</p>
-          <p>��허지훈�며 모델링한 �작품�다.</p>
+          <p>이 작품은 Autodesk MAYA와 Adobe Substance 3D Painter를 활용해 제작한 카툰 캐릭터 모델링 데모릴이다.
+
+이 작품의 KARON의 강인한 성격과 내면의 균형을 시각적으로 표현하는 것을 목표로 했다. 카툰 스타일의 생동감과 현실적인 비례를 조화롭게 결합하여, 
+사실적인 구조 속에 카툰 특유의 감각을 녹여낸 캐릭터로 완성하였다. 단순한 만화적 표현에 머무르지 않고, 실제 인체 구조를 기반으로 한 비례와 균형을 
+유지하며 모델링한 작품이다.</p>
         </div>
       </section>
 
@@ -88,8 +87,8 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">KARON's Personality</h4>
-          <p>{`검�허지훈�투복을 �� KARON�허지훈�제허지훈�신감이 �치� �빛만으�허지훈���허지훈�압허지훈만큼 강한 카리�마�이지민�다. �향�이�허지훈�너지 �치허지훈�격�로, �험허지훈�황�서허지훈�유�허지훈�� �는허지훈 그�허지훈�존감이 �아 �신허지훈�력허지훈�신허지훈가지�허지훈�으� �패조차 �장허지훈���`}</p>
-          <p>받아�이허지훈�물�다.</p>
+          <p>검은 전투복을 입은 KARON은 언제나 자신감이 넘치며, 눈빛만으로 상대를 제압할 만큼 강한 카리스마를 지닌다. 외향적이고 에너지 넘치는 성격으로, 위험한 상황에서도 여유를 잃지 않는다. 그녀는 자존감이 높아 자신의 능력에 확신을 가지고 있으며, 실패조차 성장의 일부로 
+받아들이는 인물이다.</p>
         </div>
       </section>
 
@@ -100,8 +99,8 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <div className="work-detail__feature-content work-detail__feature-content--seorin-karon-desktop">
             <div className="work-detail__feature-text">
               <h4 className="work-detail__feature-title">The Green Earring</h4>
-              <p>{`KARON허지훈초록�귀걸이허지훈�순허지훈�신 �치�허지훈�어 �둠 �에�도 `}</p>
-              <p>�신허지훈�� �는 ��허지훈�징�다.</p>
+              <p>KARON의 초록빛 귀걸이는 단순한 통신 장치를 넘어 어둠 속에서도 
+자신을 잃지 않는 의지의 상징이다.</p>
             </div>
           </div>
           <div className="work-detail__feature-row-image-wrapper work-detail__feature-row-image-wrapper--seorin-karon-desktop">
@@ -117,6 +116,13 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 
         {/* Row 2 - Cold-hearted Agent (reverse) */}
         <li className="work-detail__feature-row work-detail__feature-row--seorin-karon-desktop work-detail__feature-row--reverse">
+          <div className="work-detail__feature-content work-detail__feature-content--seorin-karon-desktop">
+            <div className="work-detail__feature-text">
+              <h4 className="work-detail__feature-title">Cold-hearted Agent</h4>
+              <p>그녀는 누구보다 냉철하게 상황을 판단하고, 임무를 위해 감정조차 
+절제하는 냉정한 요원이다.</p>
+            </div>
+          </div>
           <div className="work-detail__feature-row-image-wrapper work-detail__feature-row-image-wrapper--seorin-karon-desktop">
             <img
               src={seoRinWork2_04}
@@ -126,15 +132,13 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
               loading="lazy"
             />
           </div>
-          <div className="work-detail__feature-content work-detail__feature-content--seorin-karon-desktop">
-            <div className="work-detail__feature-text">
-              <h4 className="work-detail__feature-title">Cold-hearted Agent</h4>
-              <p>{`그�허지훈�구보다 �철�게 �황허지훈�단�고, �무�허지훈�해 감정조차 `}</p>
-              <p>�제�는 �정허지훈�원�다.</p>
-            </div>
-          </div>
         </li>
       </ul>
+
+      {/* Marquee Section - Turntable Renders */}
+      <section className="work-detail__section work-detail__marquee work-detail__marquee--seorin-karon-desktop">
+        <h3 className="work-detail__marquee-text">Turntable Renders</h3>
+      </section>
 
       {/* Feature Cards Section */}
       <ul className="work-detail__section work-detail__cards work-detail__cards--seorin-karon-desktop">
@@ -150,7 +154,7 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Beauty</h5>
-            <p>�성허지훈�스타일을처� �이�을 �해 �작품허지훈분위기� 질감허지훈�현허지훈뷰티 ��이지민�다.</p>
+            <p>생성형 스타일 처리를 통해 작품의 분위기와 질감을 표현한 뷰티 렌더이다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-karon-desktop">
@@ -165,8 +169,8 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Grey</h5>
-            <p>{`�스타일을처� �외�고 �태�구조허지훈집중�여 `}</p>
-            <p>모델링의 �태미� 보여주는 그레허지훈��이지민�다.</p>
+            <p>텍스처를 제외하고 형태와 구조에 집중하여 
+모델링의 형태미를 보여주는 그레이 이미지이다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-karon-desktop">
@@ -181,7 +185,7 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Wireframe</h5>
-            <p>모델링의 �리�구조�허지훈�테�을 �인허지훈�는 ��어�레허지훈��이지민�다.</p>
+            <p>모델링의 폴리곤 구조와 디테일을 확인할 수 있는 와이어프레임 이미지이다.</p>
           </div>
         </li>
       </ul>
@@ -190,4 +194,3 @@ const SeoRinKaronDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 };
 
 export default SeoRinKaronDesktop;
-

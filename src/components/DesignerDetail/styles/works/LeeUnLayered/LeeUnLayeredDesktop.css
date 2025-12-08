@@ -18,12 +18,13 @@
   margin: 0;
   width: 1280px;
   max-width: 1280px;
+  height: 540px;
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-
-  flex-direction: row;}
+  flex-direction: row;
+}
 
 .work-detail--leeun-layered-desktop .work-detail__hero-content--leeun-layered-desktop {
   display: flex;
@@ -34,7 +35,8 @@
   justify-content: center;
   min-height: 0;
   min-width: 0;
-  padding: 120px 64px;
+  padding: 0 64px;
+  height: 540px;
 }
 
 .work-detail--leeun-layered-desktop .work-detail__text-group {
@@ -46,10 +48,10 @@
 }
 
 .work-detail--leeun-layered-desktop .work-detail__title--leeun-layered-desktop {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 61.6px;
   letter-spacing: -1.12px;
   color: #000000;
   margin: 0;
@@ -57,18 +59,14 @@
 }
 
 .work-detail--leeun-layered-desktop .work-detail__lead--leeun-layered-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 34.8px;
   letter-spacing: -0.12px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
-
-.work-detail--leeun-layered-desktop .work-detail__lead--leeun-layered-desktop p {
-  margin: 0;
 }
 
 .work-detail--leeun-layered-desktop .work-detail__ctas--leeun-layered-desktop {
@@ -83,10 +81,10 @@
 .work-detail--leeun-layered-desktop .work-detail__cta--leeun-layered-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -115,15 +113,26 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--leeun-layered-desktop .work-detail__hero-image-wrapper--leeun-layered-desktop {overflow: hidden;
+.work-detail--leeun-layered-desktop .work-detail__hero-image-wrapper--leeun-layered-desktop {
+  overflow: hidden;
   position: relative;
-  
+  width: 640px;
+  height: 540px;
   flex-shrink: 0;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__hero-image-wrapper--leeun-layered-desktop .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
-  transform: rotate(359.767deg);
+.work-detail--leeun-layered-desktop .work-detail__hero-image-wrapper--leeun-layered-desktop .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Text Section */
@@ -146,11 +155,11 @@
   width: 100%;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__text-section-label {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+.work-detail--leeun-layered-desktop .work-detail__eyebrow-text {
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -158,29 +167,30 @@
 }
 
 .work-detail--leeun-layered-desktop .work-detail__text-section-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 57.6px;
   letter-spacing: -0.96px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__text-section-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+.work-detail--leeun-layered-desktop .work-detail__text-content {
+  width: 100%;
+  max-width: 1152px;
+}
+
+.work-detail--leeun-layered-desktop .work-detail__text-content p {
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
-
-.work-detail--leeun-layered-desktop .work-detail__text-section-description p {
-  margin: 0;
 }
 
 /* Gallery Section - LOOK */
@@ -206,10 +216,10 @@
 }
 
 .work-detail--leeun-layered-desktop .work-detail__gallery-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 57.6px;
   letter-spacing: -0.96px;
   color: #000000;
   margin: 0;
@@ -279,8 +289,18 @@
   height: 411px;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__gallery-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leeun-layered-desktop .work-detail__gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 16px;
 }
 
@@ -318,64 +338,67 @@
   flex-direction: row-reverse;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__feature-image-wrapper {position: relative;
+.work-detail--leeun-layered-desktop .work-detail__feature-image-wrapper {
+  position: relative;
   border-radius: 16px;
-  
+  width: 544px;
+  height: 432px;
   flex-shrink: 0;
   overflow: hidden;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leeun-layered-desktop .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 16px;
 }
 
 .work-detail--leeun-layered-desktop .work-detail__feature-content {
   display: flex;
   flex: 1 0 0;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   align-self: stretch;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__feature-content .work-detail__text-group {
+.work-detail--leeun-layered-desktop .work-detail__feature-text {
   display: flex;
-  flex: 1 0 0;
   flex-direction: column;
-  gap: 48px;
+  gap: 24px;
   align-items: flex-start;
-  justify-content: center;
-  height: 100%;
-  min-height: 0;
-  min-width: 0;
-  position: relative;
-  flex-shrink: 0;
+  width: 544px;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__feature-content .work-detail__text-group .work-detail__feature-title {
-  font-family: 'Pretendard', sans-serif;
+.work-detail--leeun-layered-desktop .work-detail__feature-title {
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 43.2px;
   letter-spacing: -0.72px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__feature-content .work-detail__text-group .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', 'Noto Sans', sans-serif;
+.work-detail--leeun-layered-desktop .work-detail__feature-text p {
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
-
-.work-detail--leeun-layered-desktop .work-detail__feature-content .work-detail__text-group .work-detail__feature-description p {
-  margin: 0;
 }
 
 /* Feature Cards Section */
@@ -406,14 +429,11 @@
   flex-shrink: 0;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__card-image-wrapper {overflow: hidden;
+.work-detail--leeun-layered-desktop .work-detail__card-image-wrapper {
+  overflow: hidden;
   position: relative;
-  border-radius: 16px;flex-shrink: 0;
-}
-
-.work-detail--leeun-layered-desktop .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
   border-radius: 16px;
+  flex-shrink: 0;
 }
 
 .work-detail--leeun-layered-desktop .work-detail__card-text {
@@ -424,11 +444,22 @@
   width: 100%;
 }
 
+.work-detail--leeun-layered-desktop .work-detail__card-image-wrapper {
+  width: 100%;
+  height: 483px;
+}
+
+.work-detail--leeun-layered-desktop .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .work-detail--leeun-layered-desktop .work-detail__card-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 28.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;
@@ -439,8 +470,8 @@
 .work-detail--leeun-layered-desktop .work-detail__bento--leeun-layered-desktop {
   padding: 120px 64px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 48px 32px;
+  flex-direction: row;
+  gap: 32px;
   align-items: flex-start;
   justify-content: flex-start;
   width: 1280px;
@@ -460,21 +491,33 @@
 }
 
 .work-detail--leeun-layered-desktop .work-detail__bento-card--leeun-layered-desktop:first-child {
-  flex: 1 0 0;
-  max-width: 388px;
-  min-width: 336px;
+  width: 388px;
 }
 
 .work-detail--leeun-layered-desktop .work-detail__bento-card--leeun-layered-desktop.work-detail__bento-card--wide {
-  min-width: 516px;
+  width: 732px;
 }
 
-.work-detail--leeun-layered-desktop .work-detail__bento-image-wrapper {overflow: hidden;
+.work-detail--leeun-layered-desktop .work-detail__bento-image-wrapper {
+  overflow: hidden;
   position: relative;
-  border-radius: 16px;}
+  border-radius: 16px;
+  width: 100%;
+  height: 348px;
+}
 
-.work-detail--leeun-layered-desktop .work-detail__bento-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leeun-layered-desktop .work-detail__bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 16px;
 }
 
@@ -487,10 +530,10 @@
 }
 
 .work-detail--leeun-layered-desktop .work-detail__bento-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 28.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;

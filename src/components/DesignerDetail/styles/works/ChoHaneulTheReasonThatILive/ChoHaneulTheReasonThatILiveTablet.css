@@ -2,7 +2,7 @@
 /* Figma 디자인 기반 구현 (800px) */
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet {
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 0;
@@ -12,17 +12,23 @@
   align-items: center;
 }
 
+/* 전역 p 태그 스타일 오버라이드 */
+.work-detail--cho-haneul-the-reason-that-i-live-tablet p {
+  font-size: inherit;
+  margin-bottom: 0;
+}
+
 /* Hero Section */
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__hero--cho-haneul-tablet {
   padding: 0;
-  margin: 0;
-  width: 800px;
-  max-width: 800px;
   margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
   display: flex;
   align-items: flex-start;
-
-  flex-direction: row;}
+  flex-direction: row;
+  height: 540px;
+}
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__hero-content--cho-haneul-tablet {
   display: flex;
@@ -39,16 +45,16 @@
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__text-group {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   align-items: flex-start;
   width: 100%;
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__title--cho-haneul-tablet {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 52.8px;
   letter-spacing: -0.96px;
   color: #000000;
   margin: 0;
@@ -57,34 +63,35 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__lead--cho-haneul-tablet {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-
-  text-align: left;}
+  text-align: left;
+}
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__ctas--cho-haneul-tablet {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 16px;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-start;
+  width: auto;
   cursor: pointer;
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__cta--cho-haneul-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -113,14 +120,20 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__hero-image-wrapper--cho-haneul-tablet {overflow: hidden;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__hero-image-wrapper--cho-haneul-tablet {
+  overflow: hidden;
   position: relative;
-  
   flex-shrink: 0;
+  width: 400px;
+  height: 540px;
 }
 
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__hero-image-wrapper--cho-haneul-tablet .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__hero-image-wrapper--cho-haneul-tablet .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
 }
 
 /* Text Section */
@@ -130,7 +143,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -144,20 +157,20 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__eyebrow-text {
-  font-family: 'Pretendard', sans-serif;
-  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
-  letter-spacing: -0.09px;
+  line-height: 29px;
+  letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__subtitle {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 48px;
   letter-spacing: -0.8px;
   color: #000000;
   margin: 0;
@@ -165,10 +178,10 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__text-content {
-  font-family: 'Pretendard', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -184,11 +197,10 @@
   padding: 96px 32px;
   display: flex;
   flex-wrap: wrap;
-  gap: 48px 32px;
+  gap: 32px;
   align-items: flex-start;
-  max-width: 1440px;
   overflow: hidden;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   list-style: none;
@@ -199,27 +211,27 @@
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   align-items: flex-start;
   min-width: 324px;
   padding-top: 24px;
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__text-block-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 24px;
   letter-spacing: -0.4px;
   color: #1a1a1a;
   margin: 0;
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__text-block-content {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 24px;
   letter-spacing: -0.08px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -233,7 +245,7 @@
   flex-wrap: wrap;
   gap: 32px;
   align-items: flex-start;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   list-style: none;
@@ -242,7 +254,7 @@
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card--cho-haneul-tablet-1 {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   align-items: flex-start;
   max-width: 256px;
   min-width: 224px;
@@ -254,7 +266,7 @@
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   align-items: flex-start;
   min-width: 352px;
   overflow: hidden;
@@ -265,29 +277,42 @@
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   align-items: flex-start;
   min-width: 496px;
   overflow: hidden;
   border-radius: 8px;
 }
 
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card-image-wrapper {overflow: hidden;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card--cho-haneul-tablet-1 .work-detail__card-image-wrapper {
+  overflow: hidden;
   position: relative;
-  border-radius: 16px;}
-
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card--cho-haneul-tablet-1 .work-detail__card-image-wrapper {}
-
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card--cho-haneul-tablet-1 .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+  border-radius: 16px;
+  width: 100%;
+  aspect-ratio: 256 / 208;
 }
 
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card--cho-haneul-tablet-2 .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card--cho-haneul-tablet-2 .work-detail__card-image-wrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  width: 100%;
+  aspect-ratio: 448 / 208;
 }
 
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card--cho-haneul-tablet-3 .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card--cho-haneul-tablet-3 .work-detail__card-image-wrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  width: 100%;
+  aspect-ratio: 736 / 208;
+}
+
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card-text {
@@ -299,21 +324,21 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.3px;
+  line-height: 24px;
+  letter-spacing: -0.4px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__card-text p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -325,11 +350,26 @@
   padding: 96px 32px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 48px;
   align-items: flex-start;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
+}
+
+/* 두 번째 feature 섹션: 이미지만 */
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(2) {
+  gap: 0;
+}
+
+/* 세 번째 feature 섹션: 이미지만 */
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(3) {
+  gap: 0;
+}
+
+/* 네 번째 feature 섹션: 이미지만 */
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(4) {
+  gap: 0;
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature-header {
@@ -341,55 +381,49 @@
 }
 
 .work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 28px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 33.6px;
   letter-spacing: -0.56px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature-image-wrapper {position: relative;border-radius: 16px;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature-image-wrapper {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 736 / 414;
 }
 
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature-image-wrapper {}
-
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* Style Frame 1 - 첫 번째는 img205 (choHaneulWork2_05) - feature-header가 있음 */
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:first-of-type .work-detail__feature-image {left: 0;
-  top: 0;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:first-of-type .work-detail__feature-image {
+  /* 기본 스타일 상속 */
 }
 
 /* Style Frame 2 - img206 (choHaneulWork2_06) - feature-header 없음 */
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(2) {
-  gap: 0;
-}
-
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(2) .work-detail__feature-image {left: 0;
-  top: 0;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(2) .work-detail__feature-image {
+  /* 기본 스타일 상속 */
 }
 
 /* Style Frame 3 - img207 (choHaneulWork2_07) - feature-header 없음 */
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(3) {
-  gap: 0;
-}
-
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(3) .work-detail__feature-image {left: 0;
-  top: 0;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(3) .work-detail__feature-image {
+  /* 기본 스타일 상속 */
 }
 
 /* Style Frame 4 - img208 (choHaneulWork2_08) - feature-header 없음 */
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(4) {
-  gap: 0;
-}
-
-.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(4) .work-detail__feature-image {left: 0;
-  top: 0;
+.work-detail--cho-haneul-the-reason-that-i-live-tablet .work-detail__feature--cho-haneul-tablet:nth-of-type(4) .work-detail__feature-image {
+  /* 기본 스타일 상속 */
 }
 

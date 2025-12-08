@@ -33,9 +33,6 @@ const DesignerDetail = () => {
    */
   const loadDesigner = useCallback(() => {
     try {
-      // 페이지 진입 시 스크롤을 맨 위로 이동
-      window.scrollTo(0, 0);
-      
       // URL에서 디자이너 이름 추출
       const designerName = extractDesignerNameFromUrl(window.location.pathname);
       

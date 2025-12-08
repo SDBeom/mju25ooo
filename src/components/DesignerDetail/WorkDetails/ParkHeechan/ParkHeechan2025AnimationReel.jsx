@@ -11,7 +11,7 @@ import ParkHeechan2025AnimationReelMobile from './ParkHeechan2025AnimationReelMo
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const ParkHeechan2025AnimationReel = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ParkHeechan2025AnimationReel = ({ work, designer, ctas }) => {
   const { isMobile, isTablet, isDesktop } = useBreakpoint();
   
   if (!work || !designer) {
@@ -24,8 +24,7 @@ const ParkHeechan2025AnimationReel = ({ work, designer, badgeSrc, badgeAlt, ctas
       <ParkHeechan2025AnimationReelDesktop
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,23 +36,26 @@ const ParkHeechan2025AnimationReel = ({ work, designer, badgeSrc, badgeAlt, ctas
       <ParkHeechan2025AnimationReelTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
   
   // Mobile 버전 렌더링
-  return (
-    <ParkHeechan2025AnimationReelMobile
-      work={work}
-      designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
-      ctas={ctas}
-    />
-  );
+  if (isMobile) {
+    return (
+      <ParkHeechan2025AnimationReelMobile
+        work={work}
+        designer={designer}
+
+        ctas={ctas}
+      />
+    );
+  }
+  
+  // 기본값 (fallback)
+  return null;
 };
 
 export default ParkHeechan2025AnimationReel;

@@ -17,7 +17,7 @@ import kimJinaWork2_09 from '../../../../assets/김지나/kimjina_multimedia_wor
  * 김지나 - Cellestial Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const KimJinaCellestialTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimJinaCellestialTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -29,11 +29,9 @@ const KimJinaCellestialTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
         <div className="work-detail__hero-content work-detail__hero-content--kim-jina-cellestial-tablet">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--kim-jina-cellestial-tablet">Cellestial</h2>
-            <div className="work-detail__lead work-detail__lead--kim-jina-cellestial-tablet">
-              <p>세포(Cell)를 모티브로 한 캐릭터가</p>
-              <p>오염된 행성을 정화하고 과거 이곳에</p>
-              <p>무슨 일이 있었는지 파헤친다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--kim-jina-cellestial-tablet">
+              세포(Cell)를 모티브로 한 캐릭터가 오염된 행성을 정화하고 과거 이곳에 무슨 일이 있었는지 파헤친다.
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--kim-jina-cellestial-tablet">
@@ -65,9 +63,9 @@ const KimJinaCellestialTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
       <section className="work-detail__section work-detail__feature-row work-detail__feature-row--kim-jina-cellestial-tablet">
         <div className="work-detail__feature-row-content">
           <h4 className="work-detail__feature-title">로고</h4>
-          <div className="work-detail__feature-description">
-            <p>세포(Cell)와 우주(Celestial)의 합성어.</p>
-          </div>
+          <p className="work-detail__feature-description">
+            세포(Cell)와 우주(Celestial)의 합성어.
+          </p>
         </div>
         <div className="work-detail__feature-row-image">
           <img
@@ -93,10 +91,10 @@ const KimJinaCellestialTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">오염과 정화의 몽환적 재해석</h4>
-          <div className="work-detail__feature-description">
-            <p>투명한 막 안의 내용물이 상호작용을 해 에너지를 만든다. 플레이어 캐릭터는 필드를 돌아다니며</p>
-            <p>자원을 얻고, 에너지를 만든 뒤 오염물을 정화하며 활동 범위를 넓힌다.</p>
-          </div>
+          <p className="work-detail__feature-description">
+            {`투명한 막 안의 내용물이 상호작용을 해 에너지를 만든다.
+플레이어 캐릭터는 필드를 돌아다니며 자원을 얻고, 에너지를 만든 뒤 오염물을 정화하며 활동 범위를 넓힌다.`}
+          </p>
         </div>
       </section>
 
@@ -153,9 +151,7 @@ const KimJinaCellestialTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
             <div className="work-detail__feature-card-bg">
               <div className="work-detail__feature-card-text">
                 <h5 className="work-detail__feature-card-title">디테일 컷_1</h5>
-                <div className="work-detail__feature-card-description">
-                  <p>오브젝트</p>
-                </div>
+                <p className="work-detail__feature-card-description">오브젝트</p>
               </div>
               <div className="work-detail__feature-card-image-wrapper">
                 <img
@@ -170,9 +166,7 @@ const KimJinaCellestialTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
             <div className="work-detail__feature-card-bg">
               <div className="work-detail__feature-card-text">
                 <h5 className="work-detail__feature-card-title">디테일 컷_2</h5>
-                <div className="work-detail__feature-card-description">
-                  <p>캐릭터 3단계</p>
-                </div>
+                <p className="work-detail__feature-card-description">캐릭터 3단계</p>
               </div>
               <div className="work-detail__feature-card-image-wrapper">
                 <img
@@ -187,10 +181,8 @@ const KimJinaCellestialTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
           </div>
           <div className="work-detail__feature-card-bg work-detail__feature-card-bg--full">
             <div className="work-detail__feature-card-text">
-              <h5 className="work-detail__feature-card-title">몬터</h5>
-              <div className="work-detail__feature-card-description">
-                <p>반투명한 몸체에 핵</p>
-              </div>
+              <h5 className="work-detail__feature-card-title">몬스터</h5>
+              <p className="work-detail__feature-card-description">반투명한 몸체에 핵</p>
             </div>
             <div className="work-detail__feature-card-image-wrapper">
               <img

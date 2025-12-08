@@ -2,9 +2,9 @@
 /* Figma 디자인 기반 구현 (1280px) */
 
 .work-detail--kim-jaeeun-go-fetch-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   background: #ffffff;
   display: flex;
@@ -14,14 +14,16 @@
 
 /* Hero Section */
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__hero--kim-jaeeun-go-fetch-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
+  height: 540px;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+  gap: 0;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__hero-content--kim-jaeeun-go-fetch-desktop {
@@ -30,8 +32,9 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
-  padding: 120px 64px;
+  justify-content: flex-start;
+  padding: 120px 64px 62px;
+  height: 540px;
   min-width: 0;
 }
 
@@ -44,31 +47,25 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__title--kim-jaeeun-go-fetch-desktop {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 61.6px;
   letter-spacing: -1.12px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__lead--kim-jaeeun-go-fetch-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 34.8px;
   letter-spacing: -0.12px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__lead--kim-jaeeun-go-fetch-desktop p {
-  margin: 0;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__ctas--kim-jaeeun-go-fetch-desktop {
@@ -76,28 +73,28 @@
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__cta--kim-jaeeun-go-fetch-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
+  letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
-  text-align: center;
   white-space: nowrap;
+  text-align: center;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__cta--primary.work-detail__cta--kim-jaeeun-go-fetch-desktop {
   background: #000000;
   color: #ffffff;
-  font-size: 18px;
-  letter-spacing: -0.09px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__cta--primary.work-detail__cta--kim-jaeeun-go-fetch-desktop:hover {
@@ -109,8 +106,6 @@
   background: transparent;
   color: #000000;
   border: 2px solid rgba(0, 0, 0, 0.15);
-  font-size: 18px;
-  letter-spacing: -0.09px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__cta--secondary.work-detail__cta--kim-jaeeun-go-fetch-desktop:hover {
@@ -118,39 +113,50 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__hero-image-wrapper--kim-jaeeun-go-fetch-desktop {position: relative;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__hero-image-wrapper--kim-jaeeun-go-fetch-desktop {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 640px;
+  height: 540px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__hero-image {height: auto;position: absolute;
-  
-  
-  left: -665px;
-  top: -425px;display: block;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Feature Section - To The End, For You */
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature--kim-jaeeun-go-fetch-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
+  height: 1024px;
   padding: 120px 64px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 48px;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-image-wrapper {position: relative;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-image-wrapper {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 1152px;
+  height: 648px;
+  border-radius: 16px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-image-wrapper .work-detail__feature-image {position: absolute;
-  
-  
-  left: 0;
-  top: 0;display: block;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-image-wrapper .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -160,13 +166,14 @@
   gap: 16px;
   align-items: flex-start;
   width: 100%;
+  max-width: 1152px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 43.2px;
   letter-spacing: -0.72px;
   color: #000000;
   margin: 0;
@@ -174,24 +181,21 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-description p {
-  margin: 0;
-}
-
 /* Feature Cards - Characters */
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-cards--kim-jaeeun-go-fetch-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
+  height: 844px;
   padding: 120px 64px;
   margin: 0;
   list-style: none;
@@ -199,39 +203,36 @@
   flex-direction: row;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card {
-  flex: 1 0 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  min-width: 336px;
-  max-width: 388px;
   border-radius: 8px;
+  flex-shrink: 0;
+  width: 362.67px;
+  height: 604px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card-image-wrapper {position: relative;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card-image-wrapper {
+  position: relative;
   overflow: hidden;
   border-radius: 16px;
   flex-shrink: 0;
+  width: 100%;
+  height: 483px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card-image {height: auto;position: absolute;display: block;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card:first-child .work-detail__feature-card-image {height: auto;left: 0;
-  top: 0;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card:nth-child(2) .work-detail__feature-card-image {height: auto;left: 0.33px;
-  top: 0;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card:last-child .work-detail__feature-card-image {height: auto;left: -0.33px;
-  top: 0;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card-text {
@@ -240,13 +241,14 @@
   gap: 8px;
   align-items: flex-start;
   width: 100%;
+  height: 89px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 28.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;
@@ -254,30 +256,28 @@
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-card-description p {
-  margin: 0;
-}
-
 /* Feature Gallery - Inciting Incident */
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery--kim-jaeeun-go-fetch-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
+  height: 1281px;
   padding: 120px 64px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 64px;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-header {
@@ -285,36 +285,32 @@
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
+  max-width: 1152px;
+  height: 111px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 57.6px;
   letter-spacing: -0.96px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-description p {
-  margin: 0;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-grid {
@@ -322,62 +318,85 @@
   flex-direction: row;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
+  max-width: 1152px;
+  height: 866px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  align-items: center;
-  flex: 1 0 0;
-  min-width: 0;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:first-child {
-  width: 362.667px;
-  height: 803px;
-  flex: 0 0 auto;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-image-wrapper {position: relative;
-  overflow: hidden;
-  border-radius: 16px;
+  align-items: flex-start;
   flex-shrink: 0;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:first-child .work-detail__feature-gallery-image-wrapper:first-child {}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:first-child .work-detail__feature-gallery-image-wrapper:last-child {}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:first-child,
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:last-child {}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:nth-child(2) {}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:last-child .work-detail__feature-gallery-image-wrapper:first-child {}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:last-child .work-detail__feature-gallery-image-wrapper:last-child {}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(1) {
+  width: 362.67px;
+  height: 803px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:first-child .work-detail__feature-gallery-image-wrapper:first-child .work-detail__feature-gallery-image {}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:first-child .work-detail__feature-gallery-image-wrapper:last-child .work-detail__feature-gallery-image {}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image {height: auto;left: 0.33px;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(2) {
+  width: 362.67px;
+  height: 866px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:last-child .work-detail__feature-gallery-image {height: auto;left: -0.33px;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(3) {
+  width: 362.67px;
+  height: 743px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(1) .work-detail__feature-gallery-image-wrapper:nth-child(1) {
+  height: 411px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(1) .work-detail__feature-gallery-image-wrapper:nth-child(2) {
+  height: 360px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:nth-child(1) {
+  height: 251px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:nth-child(3) {
+  height: 251px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(3) .work-detail__feature-gallery-image-wrapper:nth-child(1) {
+  height: 300px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-column:nth-child(3) .work-detail__feature-gallery-image-wrapper:nth-child(2) {
+  height: 411px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
 }
 
 /* Feature Story Cards - Farewell, Journey, Crisis */
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-cards--kim-jaeeun-go-fetch-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
+  height: 621px;
   padding: 120px 64px;
   margin: 0;
   list-style: none;
@@ -385,79 +404,69 @@
   flex-direction: row;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card {
-  width: 362.667px;
+  width: 362.67px;
+  height: 381px;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card-image-wrapper {position: relative;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card-image-wrapper {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 100%;
+  height: 240px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card-image {height: auto;position: absolute;
-  
-  
-  left: 0;
-  top: 0;display: block;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card:nth-child(2) .work-detail__feature-story-card-image {height: auto;left: 0.33px;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card:last-child .work-detail__feature-story-card-image {height: auto;left: -0.33px;
+.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card-body {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 24px;
-  width: 100%;
-}
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card-text {
-  display: flex;
-  flex-direction: column;
   gap: 8px;
   align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px;
   width: 100%;
+  height: 141px;
+  flex-shrink: 0;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 34.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
 }
 
 .work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 25.2px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
 }
-
-.work-detail--kim-jaeeun-go-fetch-desktop .work-detail__feature-story-card-description p {
-  margin: 0;
-}
-

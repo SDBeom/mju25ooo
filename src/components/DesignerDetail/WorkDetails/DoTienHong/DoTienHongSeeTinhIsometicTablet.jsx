@@ -14,7 +14,7 @@ import doTienHongWork1_06 from '../../../../assets/도티안홍/dotianhong_video
  * 도티안홍 - "SEE TINH" ISOMETIC Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const DoTienHongSeeTinhIsometicTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const DoTienHongSeeTinhIsometicTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -26,9 +26,9 @@ const DoTienHongSeeTinhIsometicTablet = ({ work, designer, badgeSrc, badgeAlt, c
         <div className="work-detail__hero-content work-detail__hero-content--do-tien-hong-see-tinh-isometic-tablet">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--do-tien-hong-see-tinh-isometic-tablet">"SEE TINH" ISOMETIC</h2>
-            <div className="work-detail__lead work-detail__lead--do-tien-hong-see-tinh-isometic-tablet">
-              <p>3D 캐릭터 디자인 시장은 성장 가능성이 높다. 음악 분야의 아티트들을 홍보하기 위한 제작품일 뿐만 아니라 현재 젊은 이들을 위한 엔터테인먼트 상작품이기도 하다. 졸업 후에 2D 3D 디자이너로 진로를 정하고 싶어 3D 캐릭터 디자인과 아이소메트릭 애니를 주제로 졸업 프로젝트를 만든다. 2022년에 베트남과 한국에서 매우 인기 있었던 노래 "See Tinh" 에서 영감을 받아 3D 아이소메트릭 애니를 만들기로 했다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--do-tien-hong-see-tinh-isometic-tablet">
+              성장하는 3D 캐릭터 시장을 겨냥해 음악과 엔터테인먼트 요소를 결합했습니다. 2D·3D 디자이너로서의 비전을 담아, 히트곡 'See Tinh'을 모티브로 경쾌한 3D 아이소메트릭 애니메이션을 제작했습니다.
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--do-tien-hong-see-tinh-isometic-tablet">
@@ -56,9 +56,9 @@ const DoTienHongSeeTinhIsometicTablet = ({ work, designer, badgeSrc, badgeAlt, c
         </div>
       </section>
 
-      {/* Marquee (empty) */}
+      {/* Marquee */}
       <section className="work-detail__section work-detail__marquee work-detail__marquee--do-tien-hong-see-tinh-isometic-tablet">
-        {/* Empty marquee section */}
+        <h3 className="work-detail__marquee-text">INTERIOR AND CHARACTER DESIGN</h3>
       </section>
 
       {/* Feature Section 1 */}
@@ -73,11 +73,11 @@ const DoTienHongSeeTinhIsometicTablet = ({ work, designer, badgeSrc, badgeAlt, c
           />
         </div>
         <div className="work-detail__feature-text">
-          <div className="work-detail__feature-description">
-            <p>See Tinh 노래의 배경에 맞게 노란색과 녹색 톤의 아이소메틱 방을 만들기 위해 각 물체를 모델링한다.</p>
-            <p>노래의 뮤직비디오 속 실제 캐릭터의 패턴에 따라 캐릭터를 디자인한다.</p>
-            <p>그런 다음 아이소메틱 애니메이션을 만들기 위해 움직임을 만든다.</p>
-          </div>
+          <p className="work-detail__feature-description">
+            {`See Tinh 노래의 배경에 맞게 노란색과 녹색 톤의 아이소메틱 방을 만들기 위해 각 물체를 모델링한다.
+노래의 뮤직비디오 속 실제 캐릭터의 패턴에 따라 캐릭터를 디자인한다.
+그런 다음 아이소메틱 애니메이션을 만들기 위해 움직임을 만든다.`}
+          </p>
         </div>
       </section>
 
@@ -93,9 +93,7 @@ const DoTienHongSeeTinhIsometicTablet = ({ work, designer, badgeSrc, badgeAlt, c
           />
         </div>
         <div className="work-detail__feature-text">
-          <div className="work-detail__feature-description">
-            <p>모델링 후 다양한 각도로 카메라를 제작한다.</p>
-          </div>
+          <p className="work-detail__feature-description">모델링 후 다양한 각도로 카메라를 제작한다.</p>
         </div>
       </section>
 

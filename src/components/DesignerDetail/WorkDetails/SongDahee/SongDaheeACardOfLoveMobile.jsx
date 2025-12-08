@@ -19,7 +19,7 @@ import songDaheeWork1_11 from '../../../../assets/송다희/songdahee_videoconte
  * 송다희 - A Card of Love (작품1) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const SongDaheeACardOfLoveMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const SongDaheeACardOfLoveMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

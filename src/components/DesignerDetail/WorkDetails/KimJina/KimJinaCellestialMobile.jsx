@@ -17,7 +17,7 @@ import kimJinaWork2_09 from '../../../../assets/김지나/kimjina_multimedia_wor
  * 김지나 - Cellestial Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const KimJinaCellestialMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimJinaCellestialMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

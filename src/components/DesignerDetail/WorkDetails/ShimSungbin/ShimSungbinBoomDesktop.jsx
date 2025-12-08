@@ -17,7 +17,7 @@ import shimSungbinWork2_09 from '../../../../assets/심성빈/simseongbin_video_
  * 심성빈 - BOOM (작품2) Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
-const ShimSungbinBoomDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ShimSungbinBoomDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -29,11 +29,11 @@ const ShimSungbinBoomDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
         <div className="work-detail__hero-content work-detail__hero-content--shim-sungbin-boom-desktop">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--shim-sungbin-boom-desktop">BOOM</h2>
-            <div className="work-detail__lead work-detail__lead--shim-sungbin-boom-desktop">
-              <p className="mb-0">BOOM은 현대인들이 트레와 반복적인 </p>
-              <p className="mb-0">일상에서 탈출하고자 하는 욕망을, 폭발이라는 </p>
-              <p>현상을 매개로 표현한 아트워크이다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--shim-sungbin-boom-desktop">
+              {`BOOM은 현대인들이 스트레스와 반복적인 
+일상에서 탈출하고자 하는 욕망을, 폭발이라는 
+현상을 매개로 표현한 아트워크이다.`}
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--shim-sungbin-boom-desktop">
@@ -75,7 +75,7 @@ const ShimSungbinBoomDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Mannequin</h5>
-            <p className="work-detail__card-description">과로와 트레에 억압받는 현대인이다. 시간이 흐름에 따라 인내심에 한계가 온다.</p>
+            <p className="work-detail__card-description">과로와 스트레스에 억압받는 현대인이다. 시간이 흐름에 따라 인내심에 한계가 온다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--shim-sungbin-boom-desktop">
@@ -105,11 +105,11 @@ const ShimSungbinBoomDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Laptop</h5>
-            <div className="work-detail__card-description">
-              <p className="mb-0">영상의 모든 폭발이 결국 하나의 망상이였음을</p>
-              <p className="mb-0">보여주는 장치. 현실은 달라지는 것이 없음을 </p>
-              <p>은유하였다.</p>
-            </div>
+            <p className="work-detail__card-description">
+              {`영상의 모든 폭발이 결국 하나의 망상이였음을
+보여주는 장치. 현실은 달라지는 것이 없음을 
+은유하였다.`}
+            </p>
           </div>
         </li>
       </ul>
@@ -128,7 +128,7 @@ const ShimSungbinBoomDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
           </div>
           <div className="work-detail__bento-card-text">
             <h5 className="work-detail__bento-card-title">Calm before the storm</h5>
-            <p className="work-detail__bento-card-description">폭발 전, 주인공의 트레가 극에 달하며 긴장감이 점점 고조된다.</p>
+            <p className="work-detail__bento-card-description">폭발 전, 주인공의 스트레스가 극에 달하며 긴장감이 점점 고조된다.</p>
           </div>
         </li>
         <li className="work-detail__bento-card work-detail__bento-card--shim-sungbin-boom-desktop">
@@ -169,10 +169,10 @@ const ShimSungbinBoomDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
           <article className="work-detail__card-article">
             <div className="work-detail__card-text">
               <h5 className="work-detail__card-title">Fluid Simulation</h5>
-              <div className="work-detail__card-description">
-                <p className="mb-0">블렌더의 Fluid Simulation 기능을 사용하여 폭발 장면의 불꽃, </p>
-                <p>화염, 연기 등을 구현하였다.</p>
-              </div>
+              <p className="work-detail__card-description">
+                {`블렌더의 Fluid Simulation 기능을 사용하여 폭발 장면의 불꽃, 
+화염, 연기 등을 구현하였다.`}
+              </p>
             </div>
             <div className="work-detail__card-image-wrapper work-detail__card-image-wrapper--feature-3">
               <img
@@ -189,10 +189,10 @@ const ShimSungbinBoomDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
           <article className="work-detail__card-article">
             <div className="work-detail__card-text">
               <h5 className="work-detail__card-title">Particle Simulation</h5>
-              <div className="work-detail__card-description">
-                <p className="mb-0">블렌더의 Particle Simulation 기능을 사용하여 폭발 잔해들과 </p>
-                <p>깨진 벽 등을 표현하였다.</p>
-              </div>
+              <p className="work-detail__card-description">
+                {`블렌더의 Particle Simulation 기능을 사용하여 폭발 잔해들과 
+깨진 벽 등을 표현하였다.`}
+              </p>
             </div>
             <div className="work-detail__card-image-wrapper work-detail__card-image-wrapper--feature-3">
               <img

@@ -5,56 +5,49 @@ import SeoRinRavenXTablet from './SeoRinRavenXTablet';
 import SeoRinRavenXMobile from './SeoRinRavenXMobile';
 
 /**
- * �서�- RAVEN-X (�작품1)
- * 반응허지훈�작품 �세 컴포�트
+ * 전서린 - RAVEN-X (작품1)
+ * 반응형 작품 상세 컴포넌트
  * Mobile: < 800px
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const SeoRinRavenX = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const SeoRinRavenX = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
   }
 
-  // Mobile 버전 �더�
+  // Mobile 버전 렌더링
   if (isMobile) {
     return (
       <SeoRinRavenXMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
         ctas={ctas}
       />
     );
   }
 
-  // Tablet 버전 �더�
+  // Tablet 버전 렌더링
   if (isTablet) {
     return (
       <SeoRinRavenXTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
         ctas={ctas}
       />
     );
   }
 
-  // Desktop 버전 �더�
+  // Desktop 버전 렌더링
   return (
     <SeoRinRavenXDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
       ctas={ctas}
     />
   );
 };
 
 export default SeoRinRavenX;
-

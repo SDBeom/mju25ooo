@@ -247,11 +247,15 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-jaeeun-petrichor-mobile .work-detail__feature-bento-image {height: auto;position: absolute;
+.work-detail--kim-jaeeun-petrichor-mobile .work-detail__feature-bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;height: auto;
   
   
-  left: 0;
-  top: 0;display: block;
+  
+  display: block;
 }
 
 .work-detail--kim-jaeeun-petrichor-mobile .work-detail__feature-bento-text {
@@ -304,11 +308,15 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-jaeeun-petrichor-mobile .work-detail__feature--kim-jaeeun-petrichor-mobile .work-detail__feature-image-wrapper .work-detail__feature-image {position: absolute;
+.work-detail--kim-jaeeun-petrichor-mobile .work-detail__feature--kim-jaeeun-petrichor-mobile .work-detail__feature-image-wrapper .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   
   
-  left: 0;
-  top: 0;display: block;
+  
+  display: block;
   border-radius: 16px;
 }
 

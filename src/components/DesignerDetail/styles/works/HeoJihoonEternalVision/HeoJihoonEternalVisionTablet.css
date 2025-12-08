@@ -3,10 +3,19 @@
 
 .work-detail--heo-jihoon-eternal-vision-tablet {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 0;
   background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 전역 p 태그 스타일 오버라이드 */
+.work-detail--heo-jihoon-eternal-vision-tablet p {
+  font-size: inherit;
+  margin-bottom: 0;
 }
 
 /* Hero Section */
@@ -18,8 +27,9 @@
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
-
-  flex-direction: row;}
+  flex-direction: row;
+  height: 540px;
+}
 
 .work-detail--heo-jihoon-eternal-vision-tablet .work-detail__hero-content--tablet {
   display: flex;
@@ -62,15 +72,17 @@
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--heo-jihoon-eternal-vision-tablet .work-detail__ctas--tablet {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 16px;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-start;
+  width: auto;
   cursor: pointer;
 }
 
@@ -109,16 +121,27 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__hero-image-wrapper--tablet {overflow: hidden;
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__hero-image-wrapper--tablet {
+  overflow: hidden;
   position: relative;
-  
+  width: 400px;
+  height: 540px;
   flex-shrink: 0;
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__hero-image-wrapper--tablet .work-detail__hero-image {position: absolute;
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__hero-image-wrapper--tablet .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   
-  left: -446px;
-  top: 0;display: block;
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
 }
 
 /* Pull Quote Section */
@@ -220,17 +243,25 @@
   margin: 0 auto;
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-image-wrapper {position: relative;}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-image {height: auto;position: absolute;
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-image-wrapper {
+  position: relative;
+  width: 100%;
   border-radius: 16px;
-  overflow: hidden;display: block;
+  overflow: hidden;
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature--tablet:not(.work-detail__feature--final) .work-detail__feature-image-wrapper {}
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature--tablet:not(.work-detail__feature--final) .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature--tablet:not(.work-detail__feature--final) .work-detail__feature-image {height: auto;left: -89px;
-  top: -2px;
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
 }
 
 .work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-text {
@@ -292,23 +323,20 @@
   border-radius: 8px;
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__card-image-wrapper {position: relative;border-radius: 16px;
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__card-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 224 / 299;
+  border-radius: 16px;
   overflow: hidden;
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__card-image {height: auto;position: absolute;display: block;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__card:nth-child(1) .work-detail__card-image {height: auto;left: -66px;
-  top: 0;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__card:nth-child(2) .work-detail__card-image {height: auto;left: -250px;
-  top: -3px;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__card:nth-child(3) .work-detail__card-image {height: auto;left: -205px;
-  top: 0;
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* Feature Rows Section */
@@ -382,23 +410,21 @@
   white-space: pre-wrap;
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-row-image-wrapper {position: relative;
-  
-  
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-row-image-wrapper {
+  position: relative;
+  width: 352px;
+  aspect-ratio: 352 / 264;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-row-image {height: auto;position: absolute;display: block;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-row:first-child .work-detail__feature-row-image {height: auto;left: -150px;
-  top: -5px;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-row:last-child .work-detail__feature-row-image {height: auto;left: -167px;
-  top: -11px;
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature-row-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* Gallery Section */
@@ -473,41 +499,18 @@
   height: 411px;
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__gallery-image {height: auto;position: absolute;display: block;
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: -381px;
-  top: 0;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child .work-detail__gallery-image {height: auto;left: -320px;
-  top: 0;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: -194px;
-  top: -6px;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) .work-detail__gallery-image {height: auto;left: -317px;
-  top: 0;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:last-child .work-detail__gallery-image {height: auto;left: -240px;
-  top: -3px;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child .work-detail__gallery-image {height: auto;left: -75px;
-  top: -6px;
-}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child .work-detail__gallery-image {height: auto;left: -307px;
-  top: 0;
-}
 
 /* Final Feature Section */
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {}
-
-.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature--final .work-detail__feature-image {height: auto;left: -139px;
-  top: -5px;
+.work-detail--heo-jihoon-eternal-vision-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
 }
 

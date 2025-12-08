@@ -11,8 +11,8 @@ import AhnSeonminDotDotDotMobile from './AhnSeonminDotDotDotMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const AhnSeonminDotDotDot = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const AhnSeonminDotDotDot = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,6 @@ const AhnSeonminDotDotDot = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <AhnSeonminDotDotDotMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
         ctas={ctas}
       />
     );
@@ -37,8 +35,6 @@ const AhnSeonminDotDotDot = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <AhnSeonminDotDotDotTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
         ctas={ctas}
       />
     );
@@ -49,8 +45,6 @@ const AhnSeonminDotDotDot = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <AhnSeonminDotDotDotDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
       ctas={ctas}
     />
   );

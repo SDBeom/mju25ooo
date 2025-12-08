@@ -15,7 +15,7 @@ import kimJaeeunWork2_07 from '../../../../assets/김재은/kimjaeeun_video_work
  * 김재은 - PETRICHOR Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const KimJaeeunPetrichorTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimJaeeunPetrichorTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -29,9 +29,8 @@ const KimJaeeunPetrichorTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
             <h2 className="work-detail__title work-detail__title--kim-jaeeun-petrichor-tablet">PETRICHOR</h2>
             <div className="work-detail__lead work-detail__lead--kim-jaeeun-petrichor-tablet">
               <p>
-                황폐한 사막과 메마른 바람 속에서 다시 피어나는
-                <br aria-hidden="true" />
-                희망의 순간을 담은 시시네마틱 숏 필름.
+                {`황폐한 사막과 메마른 바람 속에서 다시 피어나는
+희망의 순간을 담은 시네마틱 숏 필름.`}
               </p>
             </div>
           </div>
@@ -61,15 +60,15 @@ const KimJaeeunPetrichorTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
         </div>
       </section>
 
-      {/* Feature List - The Discovery of Hope & The Beginning of the Journey */}
-      <ul className="work-detail__section work-detail__feature-list work-detail__feature-list--kim-jaeeun-petrichor-tablet">
-        <li className="work-detail__feature-list-item">
+      {/* Feature Rows - The Discovery of Hope & The Beginning of the Journey */}
+      <section className="work-detail__section work-detail__feature-rows work-detail__feature-rows--kim-jaeeun-petrichor-tablet">
+        {/* Row 1 - The Discovery of Hope */}
+        <div className="work-detail__feature-row work-detail__feature-row--kim-jaeeun-petrichor-tablet">
           <div className="work-detail__feature-row-content">
             <h4 className="work-detail__feature-title">The Discovery of Hope</h4>
-            <div className="work-detail__feature-description">
-              <p>여행자는 죽어가는 세계 속에서 희망을</p>
-              <p>발견하게 된다.</p>
-            </div>
+            <p className="work-detail__feature-description">
+              여행자는 죽어가는 세계 속에서 희망을 발견하게 된다.
+            </p>
           </div>
           <div className="work-detail__feature-row-image">
             <img
@@ -80,8 +79,9 @@ const KimJaeeunPetrichorTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
               loading="lazy"
             />
           </div>
-        </li>
-        <li className="work-detail__feature-list-item">
+        </div>
+        {/* Row 2 - The Beginning of the Journey (Reverse) */}
+        <div className="work-detail__feature-row work-detail__feature-row--kim-jaeeun-petrichor-tablet work-detail__feature-row--reverse">
           <div className="work-detail__feature-row-image">
             <img
               src={kimJaeeunWork2_03}
@@ -93,13 +93,12 @@ const KimJaeeunPetrichorTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
           </div>
           <div className="work-detail__feature-row-content">
             <h4 className="work-detail__feature-title">The Beginning of the Journey</h4>
-            <div className="work-detail__feature-description">
-              <p>희망만을 작품은 채 여행자는 기나긴 여행을</p>
-              <p>떠나게 된다.</p>
-            </div>
+            <p className="work-detail__feature-description">
+              희망만을 품은 채 여행자는 기나긴 여행을 떠나게 된다.
+            </p>
           </div>
-        </li>
-      </ul>
+        </div>
+      </section>
 
       {/* Feature Bento Cards */}
       <ul className="work-detail__section work-detail__feature-bento work-detail__feature-bento--kim-jaeeun-petrichor-tablet">

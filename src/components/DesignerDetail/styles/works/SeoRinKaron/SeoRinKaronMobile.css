@@ -28,8 +28,12 @@
   position: relative;order: -1;
 }
 
-.work-detail--seorin-karon-mobile .work-detail__hero-image-wrapper--seorin-karon-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--seorin-karon-mobile .work-detail__hero-image-wrapper--seorin-karon-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   order: -1;
 }
 
@@ -195,8 +199,12 @@
   overflow: hidden;
 }
 
-.work-detail--seorin-karon-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--seorin-karon-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--seorin-karon-mobile .work-detail__feature-text {
@@ -269,8 +277,12 @@
   overflow: hidden;
 }
 
-.work-detail--seorin-karon-mobile .work-detail__feature-row-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--seorin-karon-mobile .work-detail__feature-row-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* Feature Cards Section */
@@ -301,8 +313,12 @@
   position: relative;
   border-radius: 16px;}
 
-.work-detail--seorin-karon-mobile .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--seorin-karon-mobile .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--seorin-karon-mobile .work-detail__card-text {

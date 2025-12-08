@@ -29,8 +29,12 @@
   order: -1;
 }
 
-.work-detail--leedayoung-plottingroom-mobile .work-detail__hero-image-wrapper--leedayoung-plottingroom-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leedayoung-plottingroom-mobile .work-detail__hero-image-wrapper--leedayoung-plottingroom-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   order: -1;
 }
 
@@ -226,8 +230,12 @@
   border-radius: 16px;flex-shrink: 0;
 }
 
-.work-detail--leedayoung-plottingroom-mobile .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leedayoung-plottingroom-mobile .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -304,8 +312,12 @@
   overflow: hidden;
 }
 
-.work-detail--leedayoung-plottingroom-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leedayoung-plottingroom-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -375,8 +387,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--leedayoung-plottingroom-mobile .work-detail__feature--leedayoung-plottingroom-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leedayoung-plottingroom-mobile .work-detail__feature--leedayoung-plottingroom-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 

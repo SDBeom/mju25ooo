@@ -11,8 +11,8 @@ import JeongitaeDolorSagaMobile from './JeongitaeDolorSagaMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const JeongitaeDolorSaga = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const JeongitaeDolorSaga = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const JeongitaeDolorSaga = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <JeongitaeDolorSagaMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const JeongitaeDolorSaga = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <JeongitaeDolorSagaTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const JeongitaeDolorSaga = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <JeongitaeDolorSagaDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

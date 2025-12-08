@@ -15,7 +15,7 @@ import ahnSeonminWork1_07 from '../../../../assets/안선민/anseonmin_branding_
  * 안선민 - 점점점 (작품1) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const AhnSeonminDotDotDotTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const AhnSeonminDotDotDotTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -27,9 +27,10 @@ const AhnSeonminDotDotDotTablet = ({ work, designer, badgeSrc, badgeAlt, ctas })
         <div className="work-detail__hero-content work-detail__hero-content--ahn-seonmin-dot-dot-dot-tablet">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--ahn-seonmin-dot-dot-dot-tablet">점점점</h2>
-            <div className="work-detail__lead work-detail__lead--ahn-seonmin-dot-dot-dot-tablet">
-              <p>서로 다른 24개의 점이 만나 연결되고, 확장됩니다. 각자의 개성이 모여 하나의 흐름을 만들고, 그 안에서 새로운 세계가 공유됩니다. 지금, 점과 점 사이에서 펼쳐지는 변화의 순간을 영상으로 만나보세요!</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--ahn-seonmin-dot-dot-dot-tablet">
+              {`서로 다른 24개의 점이 만나 연결되고, 확장됩니다. 각자의 개성이 모여 하나의 흐름을 만들고, 그 안에서 새로운 세계가 공유됩니다.
+지금, 점과 점 사이에서 펼쳐지는 변화의 순간을 영상으로 만나보세요!`}
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--ahn-seonmin-dot-dot-dot-tablet">
@@ -89,7 +90,10 @@ const AhnSeonminDotDotDotTablet = ({ work, designer, badgeSrc, badgeAlt, ctas })
             />
           </div>
         </li>
-        <li className="work-detail__feature-row work-detail__feature-row--ahn-seonmin-dot-dot-dot-tablet">
+        <li className="work-detail__feature-row work-detail__feature-row--ahn-seonmin-dot-dot-dot-tablet work-detail__feature-row--reverse">
+          <div className="work-detail__feature-row-content">
+            <p className="work-detail__feature-row-text">하나의 결을 만들어 갑니다.</p>
+          </div>
           <div className="work-detail__feature-row-image-wrapper">
             <img
               src={ahnSeonminWork1_04}
@@ -98,9 +102,6 @@ const AhnSeonminDotDotDotTablet = ({ work, designer, badgeSrc, badgeAlt, ctas })
               onError={(e) => handleImageError(e, ahnSeonminWork1_04, work.id, 'feature-row-2')}
               loading="lazy"
             />
-          </div>
-          <div className="work-detail__feature-row-content">
-            <p className="work-detail__feature-row-text">하나의 결을 만들어 갑니다.</p>
           </div>
         </li>
       </ul>
@@ -148,9 +149,7 @@ const AhnSeonminDotDotDotTablet = ({ work, designer, badgeSrc, badgeAlt, ctas })
           <div className="work-detail__bento-card-text work-detail__bento-card-text--wide">
             <h5 className="work-detail__bento-card-title">서로 다른 리듬들이 이어지며 하나의 궤적을 완성합니다.</h5>
             <p className="work-detail__bento-card-description">
-              서로 다른 점들이 만나 연결되고, 확장되는 순간.
-              <br />
-              '점점점'은 우리가 함께 만들어가는 성장의 흐름을 담습니다.
+              {`서로 다른 점들이 만나 연결되고, 확장되는 순간. '점점점'은 우리가 함께 만들어가는 성장의 흐름을 담습니다.`}
             </p>
           </div>
         </li>

@@ -15,7 +15,7 @@ import kimJaeeunWork2_07 from '../../../../assets/김재은/kimjaeeun_video_work
  * 김재은 - PETRICHOR Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const KimJaeeunPetrichorMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimJaeeunPetrichorMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

@@ -2,9 +2,9 @@
 /* Figma 디자인 기반 구현 (1280px) */
 
 .work-detail--kim-jaeeun-petrichor-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   background: #ffffff;
   display: flex;
@@ -14,14 +14,16 @@
 
 /* Hero Section */
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__hero--kim-jaeeun-petrichor-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
+  height: 540px;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+  gap: 0;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__hero-content--kim-jaeeun-petrichor-desktop {
@@ -30,8 +32,9 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
-  padding: 120px 64px;
+  justify-content: flex-start;
+  padding: 120px 64px 62px;
+  height: 540px;
   min-width: 0;
 }
 
@@ -44,31 +47,25 @@
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__title--kim-jaeeun-petrichor-desktop {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 61.6px;
   letter-spacing: -1.12px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__lead--kim-jaeeun-petrichor-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 34.8px;
   letter-spacing: -0.12px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
-}
-
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__lead--kim-jaeeun-petrichor-desktop p {
-  margin: 0;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__ctas--kim-jaeeun-petrichor-desktop {
@@ -76,28 +73,28 @@
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__cta--kim-jaeeun-petrichor-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
+  letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
-  text-align: center;
   white-space: nowrap;
+  text-align: center;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__cta--primary.work-detail__cta--kim-jaeeun-petrichor-desktop {
   background: #000000;
   color: #ffffff;
-  font-size: 18px;
-  letter-spacing: -0.09px;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__cta--primary.work-detail__cta--kim-jaeeun-petrichor-desktop:hover {
@@ -109,8 +106,6 @@
   background: transparent;
   color: #000000;
   border: 2px solid rgba(0, 0, 0, 0.15);
-  font-size: 18px;
-  letter-spacing: -0.09px;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__cta--secondary.work-detail__cta--kim-jaeeun-petrichor-desktop:hover {
@@ -118,59 +113,65 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__hero-image-wrapper--kim-jaeeun-petrichor-desktop {position: relative;
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__hero-image-wrapper--kim-jaeeun-petrichor-desktop {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 640px;
+  height: 540px;
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__hero-image {height: auto;position: absolute;
-  
-  
-  left: 0;
-  top: -4px;display: block;
-}
-
-/* Feature List - The Discovery of Hope & The Beginning of the Journey */
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-list--kim-jaeeun-petrichor-desktop {
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__hero-image {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Feature 2 - The Discovery of Hope & The Beginning of the Journey */
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-rows--kim-jaeeun-petrichor-desktop {
+  width: 1280px;
   max-width: 1280px;
   padding: 0;
   margin: 0;
-  list-style: none;
   display: flex;
   flex-direction: column;
+  gap: 0;
   align-items: center;
   justify-content: center;
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-list-item {
-  width: 100%;
-  padding: 120px 64px 40px;
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-row--kim-jaeeun-petrichor-desktop {
+  width: 1280px;
+  max-width: 1280px;
+  height: 592px;
+  padding: 120px 64px;
   display: flex;
   flex-direction: row;
   gap: 64px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-list-item:last-child {
-  padding: 40px 64px 120px;
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-row--kim-jaeeun-petrichor-desktop.work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-row-content {
   flex: 1 0 0;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 24px;
   align-items: flex-start;
   min-width: 0;
+  width: 544px;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 43.2px;
   letter-spacing: -0.72px;
   color: #000000;
   margin: 0;
@@ -178,98 +179,104 @@
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-description p {
-  margin: 0;
-}
-
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-row-image {height: auto;position: relative;
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-row-image {
+  position: relative;
   overflow: hidden;
   border-radius: 16px;
   flex-shrink: 0;
+  width: 544px;
+  height: 432px;
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-row-image .work-detail__feature-image {height: auto;position: absolute;
-  
-  
-  left: -283px;
-  top: -105px;display: block;
-}
-
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-list-item:last-child .work-detail__feature-row-image .work-detail__feature-image {height: auto;left: -396px;
-  top: -79px;
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
 }
 
 /* Feature Bento Cards */
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento--kim-jaeeun-petrichor-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
+  height: 1158px;
   padding: 120px 64px;
   margin: 0;
   list-style: none;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 48px 32px;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-card {
-  flex: 1 0 0;
   display: flex;
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  min-width: 336px;
-  max-width: 388px;
   overflow: hidden;
   border-radius: 8px;
-}
-
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-card--tall {
-  min-width: 516px;
-  height: 435px;
-}
-
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-card--wide {
-  min-width: 1072px;
-}
-
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-image-wrapper {position: relative;
-  overflow: hidden;
-  border-radius: 16px;
   flex-shrink: 0;
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-image {height: auto;position: absolute;
-  
-  
-  left: -289px;
-  top: -70px;display: block;
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-card:nth-child(1) {
+  width: 388px;
+  height: 435px;
+}
+
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-card:nth-child(2) {
+  width: 732px;
+  height: 435px;
+}
+
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-card:nth-child(3) {
+  width: 1152px;
+  height: 435px;
+}
+
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  flex-shrink: 0;
+  width: 100%;
+  height: 348px;
+}
+
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-bg {
   position: absolute;
-  width: 811px;
-  height: 417px;
-  left: -79px;
-  top: -69px;
-  background-size: 960px 540px;
-  background-position: top left;
-  background-repeat: repeat;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 16px;
 }
-
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-card--wide .work-detail__feature-bento-image {height: auto;left: 0;
-  top: 0;}
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-text {
   display: flex;
@@ -277,13 +284,14 @@
   gap: 8px;
   align-items: flex-start;
   width: 100%;
+  height: 63px;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 28.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;
@@ -291,45 +299,44 @@
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-description p {
-  margin: 0;
-}
-
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-bento-card--wide .work-detail__feature-bento-text {
-  padding-right: 320px;
-}
-
 /* Feature Section - And Then, the Discovery */
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature--kim-jaeeun-petrichor-desktop {
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
   padding: 120px 64px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 48px;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-image-wrapper {position: relative;
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-image-wrapper {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 1152px;
+  height: 648px;
+  border-radius: 16px;
 }
 
-.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-image-wrapper .work-detail__feature-image {position: absolute;
-  
-  
-  left: -211px;
-  top: -116px;display: block;
+.work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-image-wrapper .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -339,15 +346,27 @@
   gap: 16px;
   align-items: flex-start;
   width: 100%;
+  max-width: 1152px;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-text .work-detail__feature-title {
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
+  font-weight: 700;
+  line-height: 43.2px;
   letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
 }
 
 .work-detail--kim-jaeeun-petrichor-desktop .work-detail__feature-text .work-detail__feature-description {
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
+  font-weight: 500;
+  line-height: 29px;
   letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
 }
-

@@ -1,6 +1,6 @@
 import React from 'react';
 import { handleImageError } from '../../../../shared/imageUtils';
-import heoJiHoonEternal from '../../../../assets/허지훈/heojihoon_motiondesign_work2_01.webp';
+import heoJiHoonWork2_01 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_01.webp';
 import heoJiHoonWork2_02 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_02.webp';
 import heoJiHoonWork2_03 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_03.webp';
 import heoJiHoonWork2_04 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_04.webp';
@@ -33,10 +33,10 @@ const HeoJihoonEternalVisionMobile = ({ work, designer, ctas }) => {
       <section className="work-detail__section work-detail__hero work-detail__hero--eternal-vision-mobile">
         <div className="work-detail__hero-image-wrapper">
           <img 
-            src={heoJiHoonEternal} 
+            src={heoJiHoonWork2_01} 
             alt={work.title || 'Eternal Vision'} 
             className="work-detail__hero-image"
-            onError={(e) => handleImageError(e, heoJiHoonEternal, work.id, 'hero')}
+            onError={(e) => handleImageError(e, heoJiHoonWork2_01, work.id, 'hero')}
             loading="eager"
           />
         </div>

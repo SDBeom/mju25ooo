@@ -13,7 +13,7 @@ import doTienHongWork2_05 from '../../../../assets/도티안홍/dotianhong_video
  * 도티안홍 - "SEE TINH" ANIMATED MV Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
-const DoTienHongSeeTinhAnimatedMvDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const DoTienHongSeeTinhAnimatedMvDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -25,9 +25,9 @@ const DoTienHongSeeTinhAnimatedMvDesktop = ({ work, designer, badgeSrc, badgeAlt
         <div className="work-detail__hero-content work-detail__hero-content--do-tien-hong-see-tinh-animated-mv-desktop">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--do-tien-hong-see-tinh-animated-mv-desktop">"SEE TINH" ANIMATED MV</h2>
-            <div className="work-detail__lead work-detail__lead--do-tien-hong-see-tinh-animated-mv-desktop">
-              <p>졸업 후에 2D 3D 디자이너로 진로를 정하고 싶어 2D 애니 뮤직비디오를 주제로 졸업 프로젝트를 만든다. 2022년에 베트남뿐만 아니라 한국에서도 매우 인기 있었던 노래 "See Tinh" 에서 영감을 받아 노래를 오마주 하기로 했다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--do-tien-hong-see-tinh-animated-mv-desktop">
+              졸업 후에 2D 3D 디자이너로 진로를 정하고 싶어 2D 애니 뮤직비디오를 주제로 졸업 프로젝트를 만든다. 2022년에 베트남뿐만 아니라 한국에서도 매우 인기 있었던 노래 "See Tinh" 에서 영감을 받아 노래를 오마주 하기로 했다.
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--do-tien-hong-see-tinh-animated-mv-desktop">
@@ -55,9 +55,9 @@ const DoTienHongSeeTinhAnimatedMvDesktop = ({ work, designer, badgeSrc, badgeAlt
         </div>
       </section>
 
-      {/* Marquee (empty) */}
+      {/* Marquee */}
       <section className="work-detail__section work-detail__marquee work-detail__marquee--do-tien-hong-see-tinh-animated-mv-desktop">
-        {/* Empty marquee section */}
+        <h3 className="work-detail__marquee-text">FRAME DESIGN</h3>
       </section>
 
       {/* Feature Section 1 */}
@@ -72,10 +72,10 @@ const DoTienHongSeeTinhAnimatedMvDesktop = ({ work, designer, badgeSrc, badgeAlt
           />
         </div>
         <div className="work-detail__feature-text">
-          <div className="work-detail__feature-description">
-            <p>베트남 강 서부를 배경으로 이미지를 디자인한다. 베트남 전통을 대표하는 주요 물체는 연꽃, 황새, 산강이다.</p>
-            <p>주요 색상은 파란색 분홍색, 녹색은 See Tinh 뮤직비디오의 주요 색상과 유사한다.</p>
-          </div>
+          <p className="work-detail__feature-description">
+            {`베트남 강 서부를 배경으로 이미지를 디자인한다. 베트남 전통을 대표하는 주요 물체는 연꽃, 황새, 산강이다.
+주요 색상은 파란색 분홍색, 녹색은 See Tinh 뮤직비디오의 주요 색상과 유사한다.`}
+          </p>
         </div>
       </section>
 
@@ -91,9 +91,7 @@ const DoTienHongSeeTinhAnimatedMvDesktop = ({ work, designer, badgeSrc, badgeAlt
           />
         </div>
         <div className="work-detail__feature-text">
-          <div className="work-detail__feature-description">
-            <p>캐릭터 디자인은 영화 인어공주에서 일반적인 아이디어를 얻었다.</p>
-          </div>
+          <p className="work-detail__feature-description">캐릭터 디자인은 영화 인어공주에서 일반적인 아이디어를 얻었다.</p>
         </div>
       </section>
 

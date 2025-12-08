@@ -19,7 +19,7 @@ import songDaheeWork1_11 from '../../../../assets/송다희/songdahee_videoconte
  * 송다희 - A Card of Love (작품1) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const SongDaheeACardOfLoveTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const SongDaheeACardOfLoveTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -32,7 +32,13 @@ const SongDaheeACardOfLoveTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--song-dahee-a-card-of-love-tablet">A Card of Love</h2>
             <div className="work-detail__lead work-detail__lead--song-dahee-a-card-of-love-tablet">
-              <p>A Card of Love는 사랑을 표현하는 데 서툰 이들을 위한 감정 탐구 프로젝트이자, 현대 사회 속 감정의 언어를 다시 배우기 위한 시도이다.</p>
+              <p>
+                A Card of Love는
+                사랑을 표현하는 데 서툰 이들을 위한 감정 탐구 프로젝트이자,
+                현대 사회 속 감정의
+                언어를
+                다시 배우기 위한 시도이다.
+              </p>
             </div>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
@@ -93,7 +99,12 @@ const SongDaheeACardOfLoveTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Explode</h5>
             <div className="work-detail__card-description">
-              <p>오랫동안 눌렀던 감정이 폭발하려 합니다. 화가 될 수도 있고, 열정이 될 수도 있습니다.</p>
+              <p>
+                오랫동안 눌렀던
+                감정이 폭발하려 합니다.
+                화가 될 수도 있고,
+                열정이 될 수도 있습니다.
+              </p>
             </div>
           </div>
         </li>
@@ -110,7 +121,11 @@ const SongDaheeACardOfLoveTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Sweet</h5>
             <div className="work-detail__card-description">
-              <p>사랑은 때때로 말없이 다정하게 다가옵니다. 사과처럼 부드럽고, 달콤하게.</p>
+              <p>
+                사랑은 때때로 말없이
+                다정하게 다가옵니다.
+                사과처럼 부드럽고, 달콤하게.
+              </p>
             </div>
           </div>
         </li>

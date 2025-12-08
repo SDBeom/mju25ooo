@@ -20,7 +20,7 @@ import parkJinaWork2_12 from '../../../../assets/박진아/parkjina_multimedia_w
  * 박진아 - REMAIN Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const ParkJinaRemainMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ParkJinaRemainMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

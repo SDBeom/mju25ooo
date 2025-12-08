@@ -11,7 +11,7 @@ import HeoJihoonMasterImaginationDesktop from './HeoJihoonMasterImaginationDeskt
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const HeoJihoonMasterImagination = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const HeoJihoonMasterImagination = ({ work, designer, ctas }) => {
   const { isMobile, isTablet } = useBreakpoint();
   
   if (!work || !designer) {
@@ -24,8 +24,7 @@ const HeoJihoonMasterImagination = ({ work, designer, badgeSrc, badgeAlt, ctas }
       <HeoJihoonMasterImaginationMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const HeoJihoonMasterImagination = ({ work, designer, badgeSrc, badgeAlt, ctas }
       <HeoJihoonMasterImaginationTablet 
         work={work} 
         designer={designer} 
-        badgeSrc={badgeSrc} 
-        badgeAlt={badgeAlt} 
+
         ctas={ctas} 
       />
     );
@@ -49,8 +47,7 @@ const HeoJihoonMasterImagination = ({ work, designer, badgeSrc, badgeAlt, ctas }
     <HeoJihoonMasterImaginationDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

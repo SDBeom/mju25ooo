@@ -20,7 +20,7 @@ import kimChaeYoungWork1_12 from '../../../../assets/김채영/kimchaeyoung_mult
  * 김채영 - 운명을 믿으세요 Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const KimChaeYoungDoYouBelieveInDestinyMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimChaeYoungDoYouBelieveInDestinyMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

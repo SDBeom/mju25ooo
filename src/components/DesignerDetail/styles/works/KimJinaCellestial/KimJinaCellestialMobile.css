@@ -31,8 +31,12 @@
   order: -1;
 }
 
-.work-detail--kim-jina-cellestial-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-jina-cellestial-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--kim-jina-cellestial-mobile .work-detail__hero-content--kim-jina-cellestial-mobile {
@@ -201,8 +205,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-jina-cellestial-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-jina-cellestial-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -273,8 +281,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-jina-cellestial-mobile .work-detail__feature-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-jina-cellestial-mobile .work-detail__feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -403,7 +415,11 @@
 .work-detail--kim-jina-cellestial-mobile .work-detail__feature-card-bg--full .work-detail__feature-card-image-wrapper {aspect-ratio: 327 / 259;
 }
 
-.work-detail--kim-jina-cellestial-mobile .work-detail__feature-card-bg .work-detail__feature-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-jina-cellestial-mobile .work-detail__feature-card-bg .work-detail__feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 

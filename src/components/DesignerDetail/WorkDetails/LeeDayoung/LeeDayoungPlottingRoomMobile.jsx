@@ -17,7 +17,7 @@ import leedayoungWork2_09 from '../../../../assets/이다영/leedayoung_motionde
  * 이다영 - 플롯팅룸 (작품2) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const LeeDayoungPlottingRoomMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeDayoungPlottingRoomMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

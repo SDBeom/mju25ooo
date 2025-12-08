@@ -11,8 +11,8 @@ import SongDaheePeonyMobile from './SongDaheePeonyMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const SongDaheePeony = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const SongDaheePeony = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const SongDaheePeony = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <SongDaheePeonyMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const SongDaheePeony = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <SongDaheePeonyTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const SongDaheePeony = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <SongDaheePeonyDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

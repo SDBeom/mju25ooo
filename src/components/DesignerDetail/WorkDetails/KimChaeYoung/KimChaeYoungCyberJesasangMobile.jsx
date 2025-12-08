@@ -18,7 +18,7 @@ import kimChaeYoungWork2_10 from '../../../../assets/김채영/kimchaeyoung_mult
  * 김채영 - 사이버 제사상 Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const KimChaeYoungCyberJesasangMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimChaeYoungCyberJesasangMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

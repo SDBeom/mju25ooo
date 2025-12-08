@@ -5,52 +5,49 @@ import KimYunjungHelloUniverseTablet from './KimYunjungHelloUniverseTablet';
 import KimYunjungHelloUniverseMobile from './KimYunjungHelloUniverseMobile';
 
 /**
- * 김�정 - Hello Universe
- * 반응허지훈�작품 �세 컴포�트
+ * 김윤정 - Hello Universe
+ * 반응형 작품 상세 컴포넌트
  * Mobile: < 800px
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const KimYunjungHelloUniverse = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const KimYunjungHelloUniverse = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
   
   if (!work || !designer) {
     return null;
   }
   
-  // Mobile 버전 �더�
+  // Mobile 버전 렌더링
   if (isMobile) {
     return (
       <KimYunjungHelloUniverseMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
   
-  // Tablet 버전 �더�
+  // Tablet 버전 렌더링
   if (isTablet) {
     return (
       <KimYunjungHelloUniverseTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
   
-  // Desktop 버전 �더�
+  // Desktop 버전 렌더링
   return (
     <KimYunjungHelloUniverseDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

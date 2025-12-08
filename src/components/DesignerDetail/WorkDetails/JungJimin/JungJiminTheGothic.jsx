@@ -11,8 +11,8 @@ import JungJiminTheGothicMobile from './JungJiminTheGothicMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const JungJiminTheGothic = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const JungJiminTheGothic = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const JungJiminTheGothic = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <JungJiminTheGothicMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const JungJiminTheGothic = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <JungJiminTheGothicTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const JungJiminTheGothic = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <JungJiminTheGothicDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

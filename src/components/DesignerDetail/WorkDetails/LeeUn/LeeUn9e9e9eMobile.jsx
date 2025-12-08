@@ -14,7 +14,7 @@ import leeunWork2_06 from '../../../../assets/이운/leeun_multimedia_work2_06.w
  * 이운 - 9e9e9e (작품2) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const LeeUn9e9e9eMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeUn9e9e9eMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

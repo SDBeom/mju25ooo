@@ -3,7 +3,6 @@ import { useBreakpoint } from '../../../../hooks/useBreakpoint';
 import DoTienHongSeeTinhIsometicDesktop from './DoTienHongSeeTinhIsometicDesktop';
 import DoTienHongSeeTinhIsometicTablet from './DoTienHongSeeTinhIsometicTablet';
 import DoTienHongSeeTinhIsometicMobile from './DoTienHongSeeTinhIsometicMobile';
-import DefaultWorkLayout from '../DefaultWorkLayout';
 
 /**
  * 도티안홍 - "SEE TINH" ISOMETIC
@@ -12,7 +11,7 @@ import DefaultWorkLayout from '../DefaultWorkLayout';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const DoTienHongSeeTinhIsometic = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const DoTienHongSeeTinhIsometic = ({ work, designer, ctas }) => {
   const { isMobile, isTablet, isDesktop } = useBreakpoint();
 
   if (!work || !designer) {
@@ -25,8 +24,7 @@ const DoTienHongSeeTinhIsometic = ({ work, designer, badgeSrc, badgeAlt, ctas })
       <DoTienHongSeeTinhIsometicDesktop
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -38,8 +36,7 @@ const DoTienHongSeeTinhIsometic = ({ work, designer, badgeSrc, badgeAlt, ctas })
       <DoTienHongSeeTinhIsometicTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -51,23 +48,14 @@ const DoTienHongSeeTinhIsometic = ({ work, designer, badgeSrc, badgeAlt, ctas })
       <DoTienHongSeeTinhIsometicMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
 
   // Fallback for any other case (should ideally be covered by above)
-  return (
-    <DefaultWorkLayout
-      work={work}
-      designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
-      ctas={ctas}
-    />
-  );
+  return null;
 };
 
 export default DoTienHongSeeTinhIsometic;

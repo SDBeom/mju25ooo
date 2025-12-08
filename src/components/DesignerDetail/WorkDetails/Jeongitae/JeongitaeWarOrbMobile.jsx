@@ -3,17 +3,17 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/JeongitaeWarOrb/JeongitaeWarOrbMobile.css';
 
 // 이미지 임포트
-import jeongitaeWork2_01 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_01.webp';
-import jeongitaeWork2_02 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_02.webp';
-import jeongitaeWork2_03 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_03.webp';
-import jeongitaeWork2_04 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_04.webp';
-import jeongitaeWork2_05 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_05.webp';
+import jeongitaeWork2_01 from '../../../../assets/전기태/jeongitae_gamecontent_work2_01.webp';
+import jeongitaeWork2_02 from '../../../../assets/전기태/jeongitae_gamecontent_work2_02.webp';
+import jeongitaeWork2_03 from '../../../../assets/전기태/jeongitae_gamecontent_work2_03.webp';
+import jeongitaeWork2_04 from '../../../../assets/전기태/jeongitae_gamecontent_work2_04.webp';
+import jeongitaeWork2_05 from '../../../../assets/전기태/jeongitae_gamecontent_work2_05.webp';
 
 /**
  * 전기태 - War Orb (작품2) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const JeongitaeWarOrbMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const JeongitaeWarOrbMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

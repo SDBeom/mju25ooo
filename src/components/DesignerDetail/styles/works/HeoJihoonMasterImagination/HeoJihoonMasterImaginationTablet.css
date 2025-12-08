@@ -2,7 +2,7 @@
 /* Figma 디자인 기반 구현 (800px) */
 
 .work-detail--heo-jihoon-master-imagination-tablet {
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 0;
@@ -12,17 +12,24 @@
   align-items: center;
 }
 
+/* 전역 p 태그 스타일 오버라이드 */
+.work-detail--heo-jihoon-master-imagination-tablet p {
+  font-size: inherit;
+  margin-bottom: 0;
+}
+
 /* Hero Section */
 .work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero--master-imagination-tablet {
   padding: 0;
   margin: 0;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
-
-  flex-direction: row;}
+  flex-direction: row;
+  height: 540px;
+}
 
 .work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero-content--tablet {
   display: flex;
@@ -65,15 +72,17 @@
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .work-detail--heo-jihoon-master-imagination-tablet .work-detail__ctas--tablet {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 16px;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-start;
+  width: auto;
   cursor: pointer;
 }
 
@@ -112,13 +121,27 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero-image-wrapper--tablet {overflow: hidden;
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero-image-wrapper--tablet {
+  overflow: hidden;
   position: relative;
-  
+  width: 400px;
+  height: 540px;
   flex-shrink: 0;
 }
 
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero-image-wrapper--tablet .work-detail__hero-image {display: block;
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__hero-image-wrapper--tablet .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
 }
 
 /* Pull Quote Section */
@@ -130,7 +153,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -162,7 +185,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -215,18 +238,31 @@
   flex-direction: column;
   gap: 40px;
   align-items: flex-start;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-image-wrapper {position: relative;}
-
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-image {border-radius: 16px;
-  overflow: hidden;display: block;
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--tablet:not(.work-detail__feature--final) .work-detail__feature-image-wrapper {}
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--tablet:not(.work-detail__feature--final) .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
+}
 
 .work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-text {
   display: flex;
@@ -278,7 +314,7 @@
   gap: 32px;
   align-items: flex-start;
   justify-content: center;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -295,11 +331,20 @@
   border-radius: 8px;
 }
 
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-image-wrapper {position: relative;border-radius: 16px;
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 224 / 299;
+  border-radius: 16px;
   overflow: hidden;
 }
 
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-image {display: block;
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--heo-jihoon-master-imagination-tablet .work-detail__card-text {
@@ -354,7 +399,7 @@
   height: 784px;
   align-items: center;
   justify-content: center;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -417,15 +462,21 @@
   white-space: pre-wrap;
 }
 
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row-image-wrapper {position: relative;
-  
-  
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row-image-wrapper {
+  position: relative;
+  width: 352px;
+  aspect-ratio: 352 / 264;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row-image {display: block;
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature-row-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* Gallery Section */
@@ -531,18 +582,821 @@
   height: 411px;
 }
 
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
-}
-
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-item .work-detail__gallery-image {position: absolute;top: 0;
-  left: 0;
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* Final Feature Section */
-.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {}
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
 
 .work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
   font-size: 18px;
   letter-spacing: -0.09px;
 }
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+  left: 0;
+}
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__gallery-image {display: block;
+}
+
+
+/* Final Feature Section */
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-image-wrapper {
+  width: 100%;
+  aspect-ratio: 736 / 414;
+}
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+.work-detail--heo-jihoon-master-imagination-tablet .work-detail__feature--final .work-detail__feature-text p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+
+
+
+
+
+
+
+
 

@@ -11,8 +11,8 @@ import JungJiminTheWeaponMobile from './JungJiminTheWeaponMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const JungJiminTheWeapon = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const JungJiminTheWeapon = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const JungJiminTheWeapon = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <JungJiminTheWeaponMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const JungJiminTheWeapon = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <JungJiminTheWeaponTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const JungJiminTheWeapon = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <JungJiminTheWeaponDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

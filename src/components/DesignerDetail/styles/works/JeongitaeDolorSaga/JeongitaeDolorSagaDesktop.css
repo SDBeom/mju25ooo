@@ -35,7 +35,8 @@
   justify-content: center;
   min-height: 0;
   min-width: 0;
-  padding: 120px 64px;
+  padding: 0 64px;
+  height: 540px;
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__text-group {
@@ -47,10 +48,10 @@
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__title--jeongitae-dolor-saga-desktop {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 61.6px;
   letter-spacing: -1.12px;
   color: #000000;
   margin: 0;
@@ -58,18 +59,14 @@
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__lead--jeongitae-dolor-saga-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 34.8px;
   letter-spacing: -0.12px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
-
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__lead--jeongitae-dolor-saga-desktop p {
-  margin: 0;
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__ctas--jeongitae-dolor-saga-desktop {
@@ -116,14 +113,26 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__hero-image-wrapper--jeongitae-dolor-saga-desktop {overflow: hidden;
+.work-detail--jeongitae-dolor-saga-desktop .work-detail__hero-image-wrapper--jeongitae-dolor-saga-desktop {
+  overflow: hidden;
   position: relative;
-  
+  width: 640px;
+  height: 540px;
   flex-shrink: 0;
 }
 
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__hero-image-wrapper--jeongitae-dolor-saga-desktop .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--jeongitae-dolor-saga-desktop .work-detail__hero-image-wrapper--jeongitae-dolor-saga-desktop .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Feature Section */
@@ -138,13 +147,27 @@
   margin: 0 auto;
 }
 
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-image-wrapper--jeongitae-dolor-saga-desktop {position: relative;border-radius: 16px;
+.work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-image-wrapper--jeongitae-dolor-saga-desktop {
+  position: relative;
+  width: 100%;
+  height: 648px;
+  border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 16px;
 }
 
@@ -157,32 +180,21 @@
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 43.2px;
   letter-spacing: -0.72px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.45;
-  letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.55);
-  margin: 0;
-  white-space: pre-wrap;
-}
-
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-text p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -214,27 +226,40 @@
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__card--bento-1 {
-  flex: 1 0 0;
-  max-width: 388px;
-  min-width: 336px;
+  width: 388px;
+  min-width: 388px;
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__card--bento-2 {
-  width: 516px;
-  min-width: 516px;
+  width: 732px;
+  min-width: 732px;
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__card--bento-3 {
-  flex: 1 0 0;
-  min-width: 1072px;
+  width: 1152px;
+  min-width: 1152px;
 }
 
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__card-image-wrapper {overflow: hidden;
+.work-detail--jeongitae-dolor-saga-desktop .work-detail__card-image-wrapper {
+  overflow: hidden;
   position: relative;
-  border-radius: 16px;}
+  width: 100%;
+  height: 348px;
+  border-radius: 16px;
+}
 
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--jeongitae-dolor-saga-desktop .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 16px;
 }
 
@@ -251,10 +276,10 @@
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__card-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 28.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;
@@ -262,10 +287,10 @@
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__card-text p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -286,26 +311,25 @@
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-cards-content {
   display: flex;
   flex: 1 0 0;
-  flex-direction: row;
-  align-items: center;
-  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 544px;
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-cards-text {
   display: flex;
-  flex: 1 0 0;
   flex-direction: column;
-  gap: 48px;
+  gap: 16px;
   align-items: flex-start;
-  justify-content: center;
   width: 100%;
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-cards-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 43.2px;
   letter-spacing: -0.72px;
   color: #000000;
   margin: 0;
@@ -313,25 +337,37 @@
 }
 
 .work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-cards-text p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-cards-image-wrapper {overflow: hidden;
+.work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-cards-image-wrapper {
+  overflow: hidden;
   position: relative;
+  width: 544px;
+  height: 432px;
   border-radius: 16px;
-  
   flex-shrink: 0;
 }
 
-.work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-cards-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--jeongitae-dolor-saga-desktop .work-detail__feature-cards-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 16px;
 }
 

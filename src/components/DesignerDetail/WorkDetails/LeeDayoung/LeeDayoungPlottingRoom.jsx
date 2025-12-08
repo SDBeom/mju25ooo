@@ -11,8 +11,8 @@ import LeeDayoungPlottingRoomMobile from './LeeDayoungPlottingRoomMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const LeeDayoungPlottingRoom = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const LeeDayoungPlottingRoom = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const LeeDayoungPlottingRoom = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
       <LeeDayoungPlottingRoomMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const LeeDayoungPlottingRoom = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
       <LeeDayoungPlottingRoomTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const LeeDayoungPlottingRoom = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
     <LeeDayoungPlottingRoomDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

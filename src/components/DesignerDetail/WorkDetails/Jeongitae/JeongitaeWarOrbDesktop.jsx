@@ -3,17 +3,17 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/JeongitaeWarOrb/JeongitaeWarOrbDesktop.css';
 
 // 이미지 임포트
-import jeongitaeWork2_01 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_01.webp';
-import jeongitaeWork2_02 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_02.webp';
-import jeongitaeWork2_03 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_03.webp';
-import jeongitaeWork2_04 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_04.webp';
-import jeongitaeWork2_05 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_05.webp';
+import jeongitaeWork2_01 from '../../../../assets/전기태/jeongitae_gamecontent_work2_01.webp';
+import jeongitaeWork2_02 from '../../../../assets/전기태/jeongitae_gamecontent_work2_02.webp';
+import jeongitaeWork2_03 from '../../../../assets/전기태/jeongitae_gamecontent_work2_03.webp';
+import jeongitaeWork2_04 from '../../../../assets/전기태/jeongitae_gamecontent_work2_04.webp';
+import jeongitaeWork2_05 from '../../../../assets/전기태/jeongitae_gamecontent_work2_05.webp';
 
 /**
  * 전기태 - War Orb (작품2) Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
-const JeongitaeWarOrbDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const JeongitaeWarOrbDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -27,13 +27,13 @@ const JeongitaeWarOrbDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
             <h2 className="work-detail__title work-detail__title--jeongitae-warorb-desktop">
               War Orb
             </h2>
-            <div className="work-detail__lead work-detail__lead--jeongitae-warorb-desktop">
-              <p className="mb-0">"세계의 신비로움과 그 창대함이 담긴 오브.</p>
-              <p className="mb-0">이 오브는 누가 바라보느냐에 따라 선의 정의가</p>
-              <p className="mb-0">될 수도, 악의 신념이 될 수도 있는 존재이다."</p>
-              <p className="mb-0">작품 워오브는 그 중 선의 오브를 쫓는 4가지의</p>
-              <p>클래스 소개하는 영상물이다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--jeongitae-warorb-desktop">
+              "세계의 신비로움과 그 창대함이 담긴 오브.
+이 오브는 누가 바라보느냐에 따라 선의 정의가
+될 수도, 악의 신념이 될 수도 있는 존재이다."
+작품 워오브는 그 중 선의 오브를 쫓는 4가지의
+클래스를 소개하는 영상물이다.
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--jeongitae-warorb-desktop">
@@ -74,8 +74,8 @@ const JeongitaeWarOrbDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">모두의 염원이자 신비의 존재, 오브.</h4>
-          <p className="mb-0">오브는 어느 날. 혹은 이 세계의 시작의 순간부터 존재했을지도 모르는 신비로운 존재이다.</p>
-          <p>이 오브는 그것을 취한 자들에게 원하는 힘을 하사한다.</p>
+          <p>오브는 어느 날. 혹은 이 세계의 시작의 순간부터 존재했을지도 모르는 신비로운 존재이다.
+이 오브는 그것을 취한 자들에게 원하는 힘을 하사한다.</p>
         </div>
       </section>
 
@@ -92,9 +92,9 @@ const JeongitaeWarOrbDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">제 4클래스타일을</h5>
-            <p className="mb-0">각자의 신념으로 선의 입장을 자처하며 오브를</p>
-            <p>쫓는 자들이 있다.</p>
+            <h5 className="work-detail__card-title">제 4클래스</h5>
+            <p>각자의 신념으로 선의 입장을 자처하며 오브를
+쫓는 자들이 있다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--jeongitae-warorb-desktop work-detail__card--bento-2">

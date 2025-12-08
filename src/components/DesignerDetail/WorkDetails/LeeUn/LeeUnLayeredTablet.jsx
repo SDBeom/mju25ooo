@@ -8,6 +8,7 @@ import leeunWork1_02 from '../../../../assets/이운/leeun_multimedia_work1_02.w
 import leeunWork1_03 from '../../../../assets/이운/leeun_multimedia_work1_03.webp';
 import leeunWork1_04 from '../../../../assets/이운/leeun_multimedia_work1_04.webp';
 import leeunWork1_05 from '../../../../assets/이운/leeun_multimedia_work1_05.webp';
+import leeunWork1_06 from '../../../../assets/이운/leeun_multimedia_work1_06.webp';
 import leeunWork1_07 from '../../../../assets/이운/leeun_multimedia_work1_07.webp';
 import leeunWork1_08 from '../../../../assets/이운/leeun_multimedia_work1_08.webp';
 import leeunWork1_09 from '../../../../assets/이운/leeun_multimedia_work1_09.webp';
@@ -24,7 +25,7 @@ import leeunWork1_17 from '../../../../assets/이운/leeun_multimedia_work1_17.w
  * 이운 - Layered (작품1) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const LeeUnLayeredTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeUnLayeredTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -38,11 +39,9 @@ const LeeUnLayeredTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
             <h2 className="work-detail__title work-detail__title--leeun-layered-tablet">
               Layered
             </h2>
-            <div className="work-detail__lead work-detail__lead--leeun-layered-tablet">
-              <p className="mb-0">개인의 정체성을 형성하는 다층적인</p>
-              <p className="mb-0">'겹쳐짐'에 집중한 컨셔 패션 브랜드</p>
-              <p>브랜딩</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--leeun-layered-tablet">
+              개인의 정체성을 형성하는 다층적인 '겹쳐짐'에 집중한 컨셔스 패션 브랜드 브랜딩
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--leeun-layered-tablet">
@@ -73,18 +72,14 @@ const LeeUnLayeredTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       {/* Text Section */}
       <section className="work-detail__section work-detail__text-section work-detail__text-section--leeun-layered-tablet">
         <div className="work-detail__text-section-header">
-          <p className="work-detail__text-section-label">컨셔 패션 브랜드</p>
+          <p className="work-detail__text-section-label">컨셔스 패션 브랜드</p>
           <h3 className="work-detail__text-section-title">Layered</h3>
         </div>
-        <div className="work-detail__text-section-description">
-          <p className="mb-0">겹쳐짐은 개인의 정체성을 형성하는 다층적인 요소들을 상징합니다. 인간의 정체성은 단일하지</p>
-          <p className="mb-0">않으며, 경험, 환경, 관계 등 수많은 요소들이 겹치면서 완성됩니다. 'Layered'는 시간이 지나 입지</p>
-          <p className="mb-0">못하게 되었지만 기억이 담긴 소중한 옷을 업사이클링하여 새로운 타일로 재탄생시키는</p>
-          <p className="mb-0">브랜드입니다. 과거와 현재가 조화를 이루는 디자인을 통해, 우리는 단순한 리폼을 넘어 기억과 개성, 지속 가능성을 연결하는 패션을 제안합니다.</p>
-          <p className="mb-0">&nbsp;</p>
-          <p className="mb-0">또한, 'Layered'는 패트 패션을 지양하는 컨셔</p>
-          <p className="mb-0">브랜드로서, 소유보다 활용 중심의 지속 가능한  지향합니다. 버려지는 옷이 아닌, 소중한</p>
-          <p>기억이 담긴 옷을 새롭게 디자인함으로써 패션의 순환과 환경 보호를 실천합니다.</p>
+        <div className="work-detail__text-content">
+          <p>{`겹쳐짐은 개인의 정체성을 형성하는 다층적인 요소들을 상징합니다. 인간의 정체성은 단일하지 않으며, 경험, 환경, 관계 등 수많은 요소들이 겹치면서
+완성됩니다. 'Layered'는 시간이 지나 입지 못하게 되었지만 기억이 담긴 소중한 옷을 업사이클링하여 새로운 스타일로 재탄생시키는 브랜드입니다. 과거와 현재가 조화를 이루는 디자인을 통해, 우리는 단순한 리폼을 넘어 기억과 개성, 지속 가능성을 연결하는 패션을 제안합니다.
+
+또한, 'Layered'는 패스트 패션을 지양하는 컨셔스 브랜드로서, 소유보다 활용 중심의 지속 가능한 스타일을 지향합니다. 버려지는 옷이 아닌, 소중한 기억이 담긴 옷을 새롭게 디자인함으로써 패션의 순환과 환경 보호를 실천합니다.`}</p>
         </div>
       </section>
 
@@ -133,8 +128,14 @@ const LeeUnLayeredTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                 loading="lazy"
               />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 빈 아이템 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork1_06}
+                alt="LOOK Image 5"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork1_06, work.id, 'gallery-5')}
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="work-detail__gallery-column work-detail__gallery-column--3">
@@ -173,16 +174,15 @@ const LeeUnLayeredTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
             />
           </div>
           <div className="work-detail__feature-content">
-            <div className="work-detail__text-group">
+            <div className="work-detail__feature-text">
               <h4 className="work-detail__feature-title">Self-Expression</h4>
-              <div className="work-detail__feature-description">
-                <p className="mb-0">옷은 단순히 몸을 가리는 도구가 아니라, 나를</p>
-                <p className="mb-0">드러내는 가장 직접적인 언어입니다.</p>
-                <p className="mb-0">Layered는 과거와 현재의 옷을 새롭게 잇는</p>
-                <p className="mb-0">과정 속에서 나만의 이야기를 담습니다. 더이상 입을 수 없지만 소중한 기억이 깃든 옷을 리폼해 개인의 취향과 경험이 고란히 반영된</p>
-                <p className="mb-0"> 완성합니다. 이 과정에서 옷은 단순한 패션 아이템을 넘어, 자기 표현의 매개체가</p>
-                <p>됩니다.</p>
-              </div>
+              <p>{`옷은 단순히 몸을 가리는 도구가 아니라, 나를 드러내는 가장 직접적인
+언어입니다. Layered는 과거와 현재의 옷을 새롭게 잇는 과정 속에서
+나만의 이야기를 담습니다.
+더이상 입을 수 없지만 소중한 기억이 깃든
+옷을 리폼해 개인의 취향과 경험이 고스란히 반영된 스타일을
+완성합니다. 이 과정에서 옷은 단순한 패션 아이템을 넘어, 자기 표현의
+매개체가 됩니다.`}</p>
             </div>
           </div>
         </li>
@@ -197,17 +197,13 @@ const LeeUnLayeredTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
             />
           </div>
           <div className="work-detail__feature-content">
-            <div className="work-detail__text-group">
+            <div className="work-detail__feature-text">
               <h4 className="work-detail__feature-title">Rich</h4>
-              <div className="work-detail__feature-description">
-                <p className="mb-0">오래 함께한 옷에는 이미 그 시간을 함께한</p>
-                <p className="mb-0">기존의 기억이 며 있고, 그 옷을 새롭게 다듬고 변주하는 과정에서 또 다른 새로운 기억이</p>
-                <p className="mb-0">차곡차곡 더해집니다. 이렇게 과거와 현재가</p>
-                <p className="mb-0">겹쳐지며 형성된 흔적은 옷을 단순한 의복이</p>
-                <p className="mb-0">아닌 정체성과 기억이 중첩된 서사적 매체로</p>
-                <p className="mb-0">바꾸어 줍니다. Layered는 이 겹쳐진 기억과</p>
-                <p>정체성을 통해 풍부하고 입체적인 아름다움을 완성합니다.</p>
-              </div>
+              <p>{`오래 함께한 옷에는 이미 그 시간을 함께한 기존의 기억이 스며 있고,
+그 옷을 새롭게 다듬고 변주하는 과정에서 또 다른 새로운 기억이 차곡차곡
+더해집니다. 이렇게 과거와 현재가 겹쳐지며 형성된 흔적은 옷을 단순한
+의복이 아닌 정체성과 기억이 중첩된 서사적 매체로 바꾸어 줍니다. Layered는 이 겹쳐진 기억과 정체성을 통해 풍부하고 입체적인
+아름다움을 완성합니다.`}</p>
             </div>
           </div>
         </li>
@@ -226,17 +222,13 @@ const LeeUnLayeredTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
             />
           </div>
           <div className="work-detail__feature-content">
-            <div className="work-detail__text-group">
+            <div className="work-detail__feature-text">
               <h4 className="work-detail__feature-title">Flexibility</h4>
-              <div className="work-detail__feature-description">
-                <p className="mb-0">Layered의 옷은 하나의 형태에 머무르지</p>
-                <p className="mb-0">않습니다. 같은 옷이라도 타일링의 변주,</p>
-                <p className="mb-0">시간이 더해지며 달라지는 해석에 따라 새로운 모습을 드러냅니다. 이는 끊임없이 흐르고</p>
-                <p className="mb-0">변하는 자연, 구름의 층위와 닮아 있으며, 입는 사람의 개성과 순간의 감정에 따라 다양하게</p>
-                <p className="mb-0">적응하는 옷으로 완성됩니다. Layered가</p>
-                <p className="mb-0">추구하는 유연성은 곧 오래도록 입을 수 있는</p>
-                <p>지속성이자, 자신만의  자유롭게 표현할 수 있는 가능성입니다.</p>
-              </div>
+              <p>{`Layered의 옷은 하나의 형태에 머무르지 않습니다.
+같은 옷이라도 타일링의 변주, 시간이 더해지며 달라지는 해석에 따라 새로운 모습을
+드러냅니다. 이는 끊임없이 흐르고 변하는 자연, 구름의 층위와 닮아
+있으며, 입는 사람의 개성과 순간의 감정에 따라 다양하게 적응하는 옷으로 완성됩니다. Layered가 추구하는 유연성은 곧 오래도록 입을 수 있는
+지속성이자, 자신만의 스타일을 자유롭게 표현할 수 있는 가능성입니다.`}</p>
             </div>
           </div>
         </li>
@@ -251,18 +243,20 @@ const LeeUnLayeredTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
             />
           </div>
           <div className="work-detail__feature-content">
-            <div className="work-detail__text-group">
+            <div className="work-detail__feature-text">
               <h4 className="work-detail__feature-title">Sustainability</h4>
-              <div className="work-detail__feature-description">
-                <p className="mb-0">빠르게 소비되고 잊혀지는 패트 패션과 달리, Layered는 옷이 가진 시간을 존중합니다.</p>
-                <p className="mb-0">오래 입을 수 있도록 튼튼하게,  또 다른</p>
-                <p className="mb-0">방식으로 다시 활용할 수 있도록 유연하게</p>
-                <p className="mb-0">디자인합니다. 기존의 옷을 해체하고</p>
-                <p className="mb-0">재구성하거나,  남겨진 원단을 새로운 옷으로</p>
-                <p className="mb-0">이어붙이며, 옷이 가진 생명을 이어갑니다. Layered는 패트 패션을 지양하고 옷을</p>
-                <p className="mb-0">오래 활용하는 방식을 추구합니다. 기존의 옷을 새롭게 해석해, 오래도록 이어지는 패션을</p>
-                <p>지향합니다.</p>
-              </div>
+              <p>{`빠르게 소비되고 잊혀지는 패스트 패션과 달리,
+Layered는 옷이 가진 시간을 존중합니다.
+오래 입을 수 있도록 튼튼하게, 
+또 다른 방식으로 다시 활용할 수 있도록 유연하게 디자인합니다.
+기존의 옷을 해체하고
+재구성하거나, 
+남겨진 원단을 새로운 옷으로 이어붙이며, 옷이 가진
+생명을 이어갑니다.
+Layered는 패스트 패션을 지양하고 옷을 오래
+활용하는 방식을 추구합니다.
+기존의 옷을 새롭게 해석해, 오래도록
+이어지는 패션을 지향합니다.`}</p>
             </div>
           </div>
         </li>

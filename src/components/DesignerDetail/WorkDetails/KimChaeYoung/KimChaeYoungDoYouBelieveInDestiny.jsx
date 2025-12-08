@@ -3,7 +3,6 @@ import { useBreakpoint } from '../../../../hooks/useBreakpoint';
 import KimChaeYoungDoYouBelieveInDestinyDesktop from './KimChaeYoungDoYouBelieveInDestinyDesktop';
 import KimChaeYoungDoYouBelieveInDestinyTablet from './KimChaeYoungDoYouBelieveInDestinyTablet';
 import KimChaeYoungDoYouBelieveInDestinyMobile from './KimChaeYoungDoYouBelieveInDestinyMobile';
-import DefaultWorkLayout from '../DefaultWorkLayout';
 
 /**
  * 김채영 - 운명을 믿으세요
@@ -12,7 +11,7 @@ import DefaultWorkLayout from '../DefaultWorkLayout';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const KimChaeYoungDoYouBelieveInDestiny = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimChaeYoungDoYouBelieveInDestiny = ({ work, designer, ctas }) => {
   const { isMobile, isTablet, isDesktop } = useBreakpoint();
 
   if (!work || !designer) {
@@ -25,8 +24,7 @@ const KimChaeYoungDoYouBelieveInDestiny = ({ work, designer, badgeSrc, badgeAlt,
       <KimChaeYoungDoYouBelieveInDestinyDesktop
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -38,8 +36,7 @@ const KimChaeYoungDoYouBelieveInDestiny = ({ work, designer, badgeSrc, badgeAlt,
       <KimChaeYoungDoYouBelieveInDestinyTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -51,23 +48,14 @@ const KimChaeYoungDoYouBelieveInDestiny = ({ work, designer, badgeSrc, badgeAlt,
       <KimChaeYoungDoYouBelieveInDestinyMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
 
   // Fallback for any other case (should ideally be covered by above)
-  return (
-    <DefaultWorkLayout
-      work={work}
-      designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
-      ctas={ctas}
-    />
-  );
+  return null;
 };
 
 export default KimChaeYoungDoYouBelieveInDestiny;

@@ -17,7 +17,7 @@ import shimSungbinWork1_09 from '../../../../assets/심성빈/simseongbin_videoc
  * 심성빈 - Linked (작품1) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const ShimSungbinLinkedMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ShimSungbinLinkedMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

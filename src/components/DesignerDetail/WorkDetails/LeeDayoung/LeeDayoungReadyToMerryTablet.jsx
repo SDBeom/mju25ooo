@@ -20,7 +20,7 @@ import leedayoungWork1_12 from '../../../../assets/이다영/leedayoung_multimed
  * 이다영 - Ready to Merry (작품1) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeDayoungReadyToMerryTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -34,13 +34,13 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
             <h2 className="work-detail__title work-detail__title--leedayoung-ready-to-merry-tablet">
               Ready to Merry
             </h2>
-            <div className="work-detail__lead work-detail__lead--leedayoung-ready-to-merry-tablet">
-              <p className="mb-0">&lt;Ready to Merry&gt;는 크리마스</p>
-              <p className="mb-0">주제로 한 케이팝 음악을 아카이빙한</p>
-              <p className="mb-0">앨범이다. 크리마스 앞둔 일주일동안 하루에 한 곡씩, 총 일곱 곡으로 이어지는 곡들은 다가올 날에 대한 설렘을 점차</p>
-              <p className="mb-0">고조시킨다.</p>
-              <p>&nbsp;</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--leedayoung-ready-to-merry-tablet">
+              {`<Ready to Merry>는 크리스마스를 주제로 한 
+케이팝 음악을 아카이빙한 앨범이다. 크리스마스를 앞둔 일주일 동안 하루에 한 곡씩, 총 일곱 곡으로 
+이어지는 곡들은 다가올 날에 대한 설렘을 점차 
+고조시킨다.
+`}
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--leedayoung-ready-to-merry-tablet">
@@ -74,12 +74,12 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
           <p className="work-detail__text-section-label">Christmas Carol Archiving Album</p>
           <h3 className="work-detail__text-section-title">COUNTDOWN TO WISHFUL CHRISTMAS</h3>
         </div>
-        <div className="work-detail__text-section-description">
-          <p className="mb-0">그래픽 디자인 능력 향상을 목표로, 서로 다른 특징을 지닌 곡들의 분위기를 다양하게 재해석하였다. 이를 위해 실사 이미지는 배제하고, 타이틀 레터링부터 굿즈까지 전 과정을 그래픽으로만</p>
-          <p className="mb-0">구성하였다.</p>
-          <p className="mb-0">&nbsp;</p>
-          <p className="mb-0">디자인된 굿즈는 3D로 구현하여, 현재 트렌드에 맞게 앨범의 실사 패키징 영상을 제작하였으며 이를 통해 앨범의 구성 요소를 더욱 직관적으로 전달하고자 하였다. 패키지는 '소원을 담는 산타의</p>
-          <p>우편함'이라는 콘셉트로, 내부는 서랍형 구조로 구성되어 각 곡의 굿즈를 개별적으로 담을 수 있도록 디자인된 형태이다.</p>
+        <div className="work-detail__text-content">
+          <p>{`그래픽 디자인 능력 향상을 목표로, 서로 다른 특징을 지닌 곡들의 분위기를 다양하게 재해석하였다. 이를 위해 실사 이미지는 배제하고, 타이틀 레터링부터 
+굿즈까지 전 과정을 그래픽으로만 구성하였다. 
+
+디자인된 굿즈는 3D로 구현하여, 현재 트렌드에 맞게 앨범의 실사 패키징 영상을 제작하였으며 이를 통해 앨범의 구성 요소를 더욱 직관적으로 전달하고자 
+하였다. 패키지는 '소원을 담는 산타의 우편함'이라는 콘셉트로, 내부는 서랍형 구조로 구성되어 각 곡의 굿즈를 개별적으로 담을 수 있도록 디자인된 형태이다.`}</p>
         </div>
       </section>
 
@@ -95,8 +95,8 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
           />
         </div>
         <div className="work-detail__feature-text">
-          <h4 className="work-detail__feature-title">Are you ready to Merry</h4>
-          <p className="work-detail__feature-description">크리마스 앞둔 일주일, 하루에 한 곡씩, 케이팝 캐롤과 함께하는 7일간의 여정을 담았다.</p>
+          <h4 className="work-detail__feature-title">Are you ready to Merry?</h4>
+          <p>크리스마스를 앞둔 일주일, 하루에 한 곡씩, 케이팝 캐롤과 함께하는 7일간의 여정을 담았다.</p>
         </div>
       </section>
 
@@ -104,42 +104,27 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
       <ul className="work-detail__section work-detail__text-rows work-detail__text-rows--leedayoung-ready-to-merry-tablet">
         <li className="work-detail__text-block">
           <h5 className="work-detail__text-block-title">재해석한 곡들의 분위기를 담은 굿즈</h5>
-          <div className="work-detail__text-block-description">
-            <p className="mb-0">수록된 7곡을 재해석하여 서로 다른 분위기를 담아</p>
-            <p>굿즈를 디자인하였다. 구성작품은 엽서, 가사지, 티커, 키링으로 구성하였다.</p>
-          </div>
+          <p>수록된 7곡을 재해석하여 서로 다른 분위기를 담아 굿즈를 디자인하였다. 구성품은 엽서, 가사지, 스티커, 키링으로 구성하였다.</p>
         </li>
         <li className="work-detail__text-block">
-          <h5 className="work-detail__text-block-title">다양한 형태의 포터</h5>
-          <div className="work-detail__text-block-description">
-            <p className="mb-0">3종으로 구성된 포터는 각각 다른방식으로 앨범의 콘셉트를 담아냈다. 뜯어내는 전단지형, 캘린더형,</p>
-            <p className="mb-0">그리고 앨범의 구성요소를 보여주는 사양 포터로</p>
-            <p>이루어져있다.</p>
-          </div>
+          <h5 className="work-detail__text-block-title">다양한 형태의 포스터</h5>
+          <p>3종으로 구성된 포스터는 각각 다른방식으로 앨범의 콘셉트를 담아냈다. 뜯어내는 전단지형, 캘린더형, 그리고 앨범의 구성요소를 보여주는 사양 포스터로 이루어져있다.</p>
         </li>
         <li className="work-detail__text-block">
           <h5 className="work-detail__text-block-title">앨범 3D 패키징 영상</h5>
-          <div className="work-detail__text-block-description">
-            <p className="mb-0">트렌드에 맞춘 앨범 실사 패키징 영상에 수록곡의 일부를 담아 하이라이트 메들리 형식으로 연출하였다.</p>
-            <p>이를 통해 패키지의 구성 요소를 보다 직관적으로 확인할 수 있다.</p>
-          </div>
+          <p>트렌드에 맞춘 앨범 실사 패키징 영상에 수록곡의 일부를 담아 하이라이트 메들리 형식으로 연출하였다. 이를 통해 패키지의 구성 요소를 보다 직관적으로 확인할 수 있다.</p>
         </li>
       </ul>
 
       {/* Feature Rows Section 1 - Postcard & Lyrics Paper */}
       <ul className="work-detail__section work-detail__feature-rows work-detail__feature-rows--leedayoung-ready-to-merry-tablet">
         <li className="work-detail__feature-row work-detail__feature-row--leedayoung-ready-to-merry-tablet">
-          <div className="work-detail__feature-content">
-            <div className="work-detail__text-group">
-              <h4 className="work-detail__feature-title">Postcard</h4>
-              <div className="work-detail__feature-description">
-                <p className="mb-0">W 100 X H 150 (mm) / 7ea</p>
-                <p className="mb-0"> </p>
-                <p className="mb-0">재해석한 곡의 분위기를 토대로 제작된</p>
-                <p className="mb-0">레터링을 포함하여 디자인되었다. 앞면은</p>
-                <p>그래픽 디자인 위주로, 뒷면은 편지를 쓸 수 있는 공간을 위주로 구성하였다.</p>
-              </div>
-            </div>
+          <div className="work-detail__feature-text">
+            <h4 className="work-detail__feature-title">Postcard</h4>
+            <p>{`W 100 X H 150 (mm) / 7ea
+
+재해석한 곡의 분위기를 토대로 제작된 레터링을 포함하여 디자인되었다. 앞면은 그래픽 디자인 위주로, 뒷면은 편지를 쓸 수 있는 공간을 위주로 
+구성하였다.`}</p>
           </div>
           <div className="work-detail__feature-image-wrapper">
             <img
@@ -161,18 +146,13 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
               loading="lazy"
             />
           </div>
-          <div className="work-detail__feature-content">
-            <div className="work-detail__text-group">
-              <h4 className="work-detail__feature-title">Lyrics Paper</h4>
-              <div className="work-detail__feature-description">
-                <p className="mb-0">W 200 X H 150 (mm) / 7ea</p>
-                <p className="mb-0"> </p>
-                <p className="mb-0">엽서의 주요 그래픽을 모티프로 한 2단 접지형 가사지이다. 표지는 엽서와의 통일성을</p>
-                <p className="mb-0">유지하면서도 차별화된 포인트를 더했으며,</p>
-                <p className="mb-0">내지는 전형적인 가사지의 형태를 벗어나</p>
-                <p>개성적인 디자인을 시도하였다.</p>
-              </div>
-            </div>
+          <div className="work-detail__feature-text">
+            <h4 className="work-detail__feature-title">Lyrics Paper</h4>
+            <p>{`W 200 X H 150 (mm) / 7ea
+
+엽서의 주요 그래픽을 모티프로 한 2단 접지형 가사지이다. 표지는 
+엽서와의 통일성을 유지하면서도 차별화된 포인트를 더했으며, 내지는 
+전형적인 가사지의 형태를 벗어나 개성적인 디자인을 시도하였다.`}</p>
           </div>
         </li>
       </ul>
@@ -180,17 +160,12 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
       {/* Feature Rows Section 2 - Sticker Pack & Acrylic Keyring */}
       <ul className="work-detail__section work-detail__feature-rows work-detail__feature-rows--leedayoung-ready-to-merry-tablet">
         <li className="work-detail__feature-row work-detail__feature-row--leedayoung-ready-to-merry-tablet">
-          <div className="work-detail__feature-content">
-            <div className="work-detail__text-group">
-              <h4 className="work-detail__feature-title">Sticker Pack</h4>
-              <div className="work-detail__feature-description">
-                <p className="mb-0">W 100 X H 150 (mm) / 6ea X 7set</p>
-                <p className="mb-0"> </p>
-                <p className="mb-0">수록곡의 제목과 가사, 포인트 그래픽을</p>
-                <p className="mb-0">녹여냈다. 레터링 디자인과 타이포그래피,</p>
-                <p>그래픽적 요소를 다양하게 담고자 하였다.</p>
-              </div>
-            </div>
+          <div className="work-detail__feature-text">
+            <h4 className="work-detail__feature-title">Sticker Pack</h4>
+            <p>{`W 100 X H 150 (mm) / 6ea X 7set
+
+수록곡의 제목과 가사, 포인트 그래픽을 녹여냈다. 레터링 디자인과
+타이포그래피, 그래픽적 요소를 다양하게 담고자 하였다.`}</p>
           </div>
           <div className="work-detail__feature-image-wrapper">
             <img
@@ -212,17 +187,12 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
               loading="lazy"
             />
           </div>
-          <div className="work-detail__feature-content">
-            <div className="work-detail__text-group">
-              <h4 className="work-detail__feature-title">Acrylic Keyring</h4>
-              <div className="work-detail__feature-description">
-                <p className="mb-0">W 40 X H 40 (mm) / 7ea</p>
-                <p className="mb-0"> </p>
-                <p className="mb-0">곡의 분위기와 어울리는 오브제를 선정해</p>
-                <p className="mb-0">레터링과 함께 구성했다. 크리마 트리에</p>
-                <p>장식 오너먼트로 활용할 수 있다.</p>
-              </div>
-            </div>
+          <div className="work-detail__feature-text">
+            <h4 className="work-detail__feature-title">Acrylic Keyring</h4>
+            <p>{`W 40 X H 40 (mm) / 7ea
+
+곡의 분위기와 어울리는 오브제를 선정해 레터링과 함께 구성했다. 
+크리스마스 트리에 장식 오너먼트로 활용할 수 있다.`}</p>
           </div>
         </li>
       </ul>
@@ -240,13 +210,8 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">전단지형 포터</h5>
-            <div className="work-detail__card-description">
-              <p className="mb-0">크리마까지 7일간의</p>
-              <p className="mb-0">카운트다운을  효과적으로</p>
-              <p className="mb-0">담아내기 위해 상단에는 시계형태를, 하단에는 곡별로</p>
-              <p>선택해 뜯어낼 수 있는 구조로 디자인하였다.</p>
-            </div>
+            <h5 className="work-detail__card-title">전단지형 포스터</h5>
+            <p>크리스마스까지 7일간의 카운트다운을 효과적으로 담아내기 위해 상단에는 시계형태를, 하단에는 곡별로 선택해 뜯어낼 수 있는 구조로 디자인하였다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--leedayoung-ready-to-merry-tablet">
@@ -260,11 +225,8 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">캘린더형 포터</h5>
-            <div className="work-detail__card-description">
-              <p className="mb-0">수록곡과 함께하는 7일동안의 여정을 표현하고자 캘린더</p>
-              <p>형식를 차용해 디자인하였다. 날짜와 디데이, 그리고 각 곡의 포인트 그래픽을 함께 담았다.</p>
-            </div>
+            <h5 className="work-detail__card-title">캘린더형 포스터</h5>
+            <p>수록곡과 함께하는 7일동안의 여정을 표현하고자 캘린더 형식를 차용해 디자인하였다. 날짜와 디데이, 그리고 각 곡의 포인트 그래픽을 함께 담았다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--leedayoung-ready-to-merry-tablet">
@@ -278,12 +240,8 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">앨범 사양 포터</h5>
-            <div className="work-detail__card-description">
-              <p className="mb-0">앨범 패키지에 포함된 구성</p>
-              <p className="mb-0">요소를 한눈에 보기 쉽게</p>
-              <p>정리해 디자인하였다.</p>
-            </div>
+            <h5 className="work-detail__card-title">앨범 사양 포스터</h5>
+            <p>앨범 패키지에 포함된 구성 요소를 한눈에 보기 쉽게 정리해 디자인하였다.</p>
           </div>
         </li>
       </ul>
@@ -295,10 +253,7 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
             <div className="work-detail__bento-card work-detail__bento-card--leedayoung-ready-to-merry-tablet">
               <div className="work-detail__bento-text">
                 <h5 className="work-detail__bento-title">앨범 굿즈 형태를 직관적으로</h5>
-                <div className="work-detail__bento-description">
-                  <p className="mb-0">패키지가 열리며 굿즈가 나오고</p>
-                  <p>펼쳐지는 모션을 적용했다.</p>
-                </div>
+                <p>패키지가 열리며 굿즈가 나오고 펼쳐지는 모션을 적용했다.</p>
               </div>
               <div className="work-detail__bento-image-wrapper">
                 <img
@@ -313,7 +268,7 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
             <div className="work-detail__bento-card work-detail__bento-card--leedayoung-ready-to-merry-tablet">
               <div className="work-detail__bento-text">
                 <h5 className="work-detail__bento-title">곡의 분위기를 직접 느낄 수 있도록</h5>
-                <p className="work-detail__bento-description">수록곡의 정보와 하이라이트 부분을 함께 보고 들을 수 있도록 제작하였다.</p>
+                <p>곡의 정보와 하이라이트 부분을 함께 보고 들을 수 있도록 제작하였다.</p>
               </div>
               <div className="work-detail__bento-image-wrapper">
                 <img
@@ -329,10 +284,7 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, badgeSrc, badgeAlt, ctas
           <div className="work-detail__bento-card work-detail__bento-card--large work-detail__bento-card--leedayoung-ready-to-merry-tablet">
             <div className="work-detail__bento-text">
               <h5 className="work-detail__bento-title">앨범의 콘셉트를 보다 명확하게</h5>
-              <div className="work-detail__bento-description">
-                <p className="mb-0">산타의 우편함이라는 콘셉트를 명확히 전달하기 위해 패키지 디자인, 배경,</p>
-                <p>그리고 이펙트에 중점을 뒀다.</p>
-              </div>
+              <p>산타의 우편함이라는 콘셉트를 명확히 전달하기 위해 패키지 디자인, 배경, 그리고 이펙트에 중점을 뒀다.</p>
             </div>
             <div className="work-detail__bento-image-wrapper">
               <img

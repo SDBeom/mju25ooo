@@ -14,7 +14,7 @@ import kimYunjungWork1_12 from '../../../../assets/김윤정/kimyunjung_video_wo
  * 김윤정 - Love at Rust Sight Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const KimYunjungLoveAtRustSightTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimYunjungLoveAtRustSightTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -26,9 +26,10 @@ const KimYunjungLoveAtRustSightTablet = ({ work, designer, badgeSrc, badgeAlt, c
         <div className="work-detail__hero-content work-detail__hero-content--kim-yunjung-love-at-rust-sight-tablet">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--kim-yunjung-love-at-rust-sight-tablet">Love at Rust Sight</h2>
-            <div className="work-detail__lead work-detail__lead--kim-yunjung-love-at-rust-sight-tablet">
-              <p>함께했던 가족과 헤어지고 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 '천사'를 찾아다닌다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--kim-yunjung-love-at-rust-sight-tablet">
+              {`함께했던 가족과 헤어지고 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 '천사'를
+찾아다닌다.`}
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--kim-yunjung-love-at-rust-sight-tablet">
@@ -67,18 +68,12 @@ const KimYunjungLoveAtRustSightTablet = ({ work, designer, badgeSrc, badgeAlt, c
             loading="lazy"
           />
         </div>
-        <div className="work-detail__feature-text work-detail__feature-text--kim-yunjung-love-at-rust-sight-tablet">
-          <p>
-            &lt;Love at Rust Sight&gt;는 로봇과 천사가 등장하는 이야기로, 가족에게 버림받은
-          </p>
-          <p>청소로봇이 우연히 천사를 만난 후 자신을 가족으로 맞이해주길 바라며 죽으려한다는</p>
-          <p>내용의 2D 애니메이션이다.</p>
-          <p>&nbsp;</p>
-          <p>함께했던 가족과 헤어지고 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄</p>
-          <p>'천사'를 찾아다닌다.</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-        </div>
+        <p className="work-detail__feature-text work-detail__feature-text--kim-yunjung-love-at-rust-sight-tablet">
+          {`<Love at Rust Sight>는 로봇과 천사가 등장하는 이야기로, 가족에게 버림받은
+청소로봇이 우연히 천사를 만난 후 자신을 가족으로 맞이해주길 바라며 죽으려한다는 내용의 2D 애니메이션이다.
+
+함께했던 가족과 헤어지고 거리를 청소하는 미니봇. 미니봇은 자신을 가족으로 받아줄 '천사'를 찾아다닌다.`}
+        </p>
       </section>
 
       {/* Feature Section - Second Image with Description */}
@@ -92,10 +87,9 @@ const KimYunjungLoveAtRustSightTablet = ({ work, designer, badgeSrc, badgeAlt, c
             loading="lazy"
           />
         </div>
-        <div className="work-detail__feature-text work-detail__feature-text--kim-yunjung-love-at-rust-sight-tablet">
-          <p>영상이 시작되는 초반부는 한색, 후반부로 진행될 수록 난색으로 분위기를 전환시켜 희망적이고</p>
-          <p>따뜻한 전개를 표현하고자 했다.</p>
-        </div>
+        <p className="work-detail__feature-text work-detail__feature-text--kim-yunjung-love-at-rust-sight-tablet">
+          영상이 시작되는 초반부는 한색, 후반부로 진행될 수록 난색으로 분위기를 전환시켜 희망적이고 따뜻한 전개를 표현하고자 했다.
+        </p>
       </section>
 
       {/* Feature Section - Image Only */}

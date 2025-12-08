@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import Modal from '../Modal/Modal';
-import WorkDetailContent from './WorkDetails/WorkDetailContent';
+import { getWorkComponent } from './WorkDetails/workComponentMap';
 import { removeModalOpenState } from '../../shared/utils';
 import { MODAL } from '../../shared/constants';
 import { GENRE_TYPES, DEFAULTS, INSTAGRAM, CTA_LABELS, GALLERY_SCROLL_DELAY, SCROLL_BEHAVIOR } from '../../shared/designerConstants';
 import { videoBadge, gameBadge, multimediaBadge, motionBadge } from '../../data/designerDetailsData';
 import { guardCSSImport } from '../../shared/cssImportGuard';
 import './DesignerShowcase.css';
-import './styles/hero-responsive.css';
-import './styles/works-merged.css';
 
 // CSS import 보장 (개발 모드에서만 체크)
 guardCSSImport('./DesignerShowcase.css', 'designer-showcase', 'DesignerShowcase');
@@ -34,53 +32,30 @@ const getBadgeForGenre = (genre) => {
 const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) => {
   const [selectedWork, setSelectedWork] = useState(null);
 
-  // CSS 로드 확인 및 강제 적용 (개발 모드)
+  // designer-showcase 요소에 스타일 강제 적용 (필요한 경우만)
   useEffect(() => {
     if (typeof document === 'undefined') return;
     
-    const checkAndForceCSS = () => {
-      const stylesheets = Array.from(document.styleSheets);
-      const hasDesignerShowcaseCSS = stylesheets.some(sheet => {
-        try {
-          return sheet.href && sheet.href.includes('DesignerShowcase.css');
-        } catch {
-          return false;
-        }
-      });
-      
-      if (!hasDesignerShowcaseCSS) {
-        console.error('[DesignerShowcase] CSS 파일이 로드되지 않았습니다!');
-        
-        // CSS 파일 강제 로드 시도
-        const existingLink = document.querySelector('link[href*="DesignerShowcase.css"]');
-        if (!existingLink) {
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.type = 'text/css';
-          link.href = '/src/components/DesignerDetail/DesignerShowcase.css';
-          link.onerror = () => {
-            console.error('[DesignerShowcase] CSS 파일을 로드할 수 없습니다.');
-          };
-          document.head.appendChild(link);
-        }
-      }
-      
-      // designer-showcase 요소에 스타일 강제 적용
+    const applyFallbackStyles = () => {
       const showcaseElement = document.querySelector('.designer-showcase');
       if (showcaseElement) {
-        showcaseElement.style.minHeight = '100vh';
-        showcaseElement.style.background = '#f8f6f4';
-        showcaseElement.style.color = '#1a1a1a';
-        showcaseElement.style.position = 'relative';
-        showcaseElement.style.zIndex = '1';
-        showcaseElement.style.width = '100%';
-        showcaseElement.style.boxSizing = 'border-box';
-        showcaseElement.style.margin = '0';
-        showcaseElement.style.padding = '0';
+        // CSS가 로드되지 않은 경우에만 인라인 스타일 적용
+        const computedStyle = window.getComputedStyle(showcaseElement);
+        if (computedStyle.minHeight === '0px' || computedStyle.minHeight === 'auto') {
+          showcaseElement.style.minHeight = '100vh';
+          showcaseElement.style.background = '#f8f6f4';
+          showcaseElement.style.color = '#1a1a1a';
+          showcaseElement.style.position = 'relative';
+          showcaseElement.style.zIndex = '1';
+          showcaseElement.style.width = '100%';
+          showcaseElement.style.boxSizing = 'border-box';
+          showcaseElement.style.margin = '0';
+          showcaseElement.style.padding = '0';
+        }
       }
     };
     
-    const timeoutId = setTimeout(checkAndForceCSS, 100);
+    const timeoutId = setTimeout(applyFallbackStyles, 200);
     return () => clearTimeout(timeoutId);
   }, []);
 
@@ -256,7 +231,11 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
   // renderOnlyWork가 true면 작품 내용만 렌더링 (모달 모드)
   if (renderOnlyWork && selectedWork) {
     const props = getWorkContentProps(selectedWork);
-    return <WorkDetailContent {...props} />;
+    const WorkComponent = getWorkComponent(selectedWork);
+    if (!WorkComponent) {
+      return <div>작품 컴포넌트를 찾을 수 없습니다.</div>;
+    }
+    return <WorkComponent {...props} />;
   }
 
   return (
@@ -333,7 +312,14 @@ const DesignerShowcase = ({ designer, onBack, initialWorkId, renderOnlyWork }) =
         designerName={designer?.displayName || DEFAULTS.DESIGNER_NAME}
         modalClass={selectedWork ? getModalClassForWork(selectedWork) : MODAL.CLASS_NAMES.MODAL_CONTENT}
       >
-        {selectedWork && <WorkDetailContent {...getWorkContentProps(selectedWork)} />}
+        {selectedWork && (() => {
+          const props = getWorkContentProps(selectedWork);
+          const WorkComponent = getWorkComponent(selectedWork);
+          if (!WorkComponent) {
+            return <div>작품 컴포넌트를 찾을 수 없습니다.</div>;
+          }
+          return <WorkComponent {...props} />;
+        })()}
       </Modal>
     </div>
   );

@@ -21,7 +21,7 @@ import parkHaeinWork1_13 from '../../../../assets/박해인/parkhaein_motiondesi
  * 박해인 - Chrome 4: Seasons Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const ParkHaeinChrome4SeasonsMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ParkHaeinChrome4SeasonsMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

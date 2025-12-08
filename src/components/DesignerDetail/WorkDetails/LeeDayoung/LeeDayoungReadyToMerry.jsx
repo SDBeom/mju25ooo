@@ -11,8 +11,8 @@ import LeeDayoungReadyToMerryMobile from './LeeDayoungReadyToMerryMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const LeeDayoungReadyToMerry = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const LeeDayoungReadyToMerry = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const LeeDayoungReadyToMerry = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
       <LeeDayoungReadyToMerryMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const LeeDayoungReadyToMerry = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
       <LeeDayoungReadyToMerryTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const LeeDayoungReadyToMerry = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
     <LeeDayoungReadyToMerryDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

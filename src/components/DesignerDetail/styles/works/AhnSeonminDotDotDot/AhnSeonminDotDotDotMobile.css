@@ -271,8 +271,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-mobile .work-detail__bento-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--ahn-seonmin-dot-dot-dot-mobile .work-detail__bento-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-mobile .work-detail__bento-card--ahn-seonmin-dot-dot-dot-mobile:first-child .work-detail__bento-card-image {height: auto;left: 50%;

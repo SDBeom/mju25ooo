@@ -3,18 +3,18 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/ParkHeechan2025AnimationReel/ParkHeechan2025AnimationReelDesktop.css';
 
 // 이미지 임포트
-import parkHeechanWork2_01 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_01.webp';
-import parkHeechanWork2_02 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_02.webp';
-import parkHeechanWork2_03 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_03.webp';
-import parkHeechanWork2_04 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_04.webp';
-import parkHeechanWork2_05 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_05.webp';
-import parkHeechanWork2_06 from '../../../../assets/박희찬/parkheechan_gamecontent_츠_work2_06.webp';
+import parkHeechanWork2_01 from '../../../../assets/박희찬/parkheechan_gamecontent_work2_01.webp';
+import parkHeechanWork2_02 from '../../../../assets/박희찬/parkheechan_gamecontent_work2_02.webp';
+import parkHeechanWork2_03 from '../../../../assets/박희찬/parkheechan_gamecontent_work2_03.webp';
+import parkHeechanWork2_04 from '../../../../assets/박희찬/parkheechan_gamecontent_work2_04.webp';
+import parkHeechanWork2_05 from '../../../../assets/박희찬/parkheechan_gamecontent_work2_05.webp';
+import parkHeechanWork2_06 from '../../../../assets/박희찬/parkheechan_gamecontent_work2_06.webp';
 
 /**
  * 박희찬 - 2025 Animation reel Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
-const ParkHeechan2025AnimationReelDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ParkHeechan2025AnimationReelDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -26,12 +26,12 @@ const ParkHeechan2025AnimationReelDesktop = ({ work, designer, badgeSrc, badgeAl
         <div className="work-detail__hero-content work-detail__hero-content--park-heechan-2025-animation-reel-desktop">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--park-heechan-2025-animation-reel-desktop">
-              2025 <br />
-              Animation reel
+              {`2025 
+Animation reel`}
             </h2>
-            <div className="work-detail__lead work-detail__lead--park-heechan-2025-animation-reel-desktop">
-              <p>게임 애니메이션 포트폴리오 프로젝트</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--park-heechan-2025-animation-reel-desktop">
+              게임 애니메이션 포트폴리오 프로젝트
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--park-heechan-2025-animation-reel-desktop">
@@ -65,9 +65,7 @@ const ParkHeechan2025AnimationReelDesktop = ({ work, designer, badgeSrc, badgeAl
           <div className="work-detail__feature-row-content">
             <div className="work-detail__feature-row-text">
               <h4 className="work-detail__feature-row-title">3D 애니메이션</h4>
-              <div className="work-detail__feature-row-description">
-                <p>3D 캐릭터들의 동작을 직접 만들어 살아 숨쉬게 만드는 과정</p>
-              </div>
+              <p className="work-detail__feature-row-description">3D 캐릭터들의 동작을 직접 만들어 살아 숨쉬게 만드는 과정</p>
             </div>
           </div>
           <div className="work-detail__feature-row-image-wrapper">
@@ -80,7 +78,17 @@ const ParkHeechan2025AnimationReelDesktop = ({ work, designer, badgeSrc, badgeAl
             />
           </div>
         </li>
-        <li className="work-detail__feature-row work-detail__feature-row--park-heechan-2025-animation-reel-desktop">
+        <li className="work-detail__feature-row work-detail__feature-row--park-heechan-2025-animation-reel-desktop work-detail__feature-row--reverse">
+          <div className="work-detail__feature-row-content">
+            <div className="work-detail__feature-row-text">
+              <h4 className="work-detail__feature-row-title">목표</h4>
+              <p className="work-detail__feature-row-description">
+                {`캐릭터의 특징을 파악하고 어울리는 동작을 구상, 애니메이팅 하는
+능력을 향상하고 최종적으로 취업에 필요한 포트폴리오를 제작하는 것을
+목표로 설정하였다.`}
+              </p>
+            </div>
+          </div>
           <div className="work-detail__feature-row-image-wrapper">
             <img
               src={parkHeechanWork2_03}
@@ -89,16 +97,6 @@ const ParkHeechan2025AnimationReelDesktop = ({ work, designer, badgeSrc, badgeAl
               onError={(e) => handleImageError(e, parkHeechanWork2_03, work.id, 'feature-row-2')}
               loading="lazy"
             />
-          </div>
-          <div className="work-detail__feature-row-content">
-            <div className="work-detail__feature-row-text">
-              <h4 className="work-detail__feature-row-title">목표</h4>
-              <div className="work-detail__feature-row-description">
-                <p>캐릭터의 특징을 파악하고 어울리는 동작을 구상, 애니메이팅 하는</p>
-                <p>능력을 향상하고 최종적으로 취업에 필요한 포트폴리오를 제작하는 것을</p>
-                <p>목표로 설정하였다.</p>
-              </div>
-            </div>
           </div>
         </li>
       </ul>
@@ -116,10 +114,8 @@ const ParkHeechan2025AnimationReelDesktop = ({ work, designer, badgeSrc, badgeAl
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">자연러움</h5>
-            <div className="work-detail__card-description">
-              <p>보기에 어색함이 없는 자연러운 모션</p>
-            </div>
+            <h5 className="work-detail__card-title">자연스러움</h5>
+            <p className="work-detail__card-description">보기에 어색함이 없는 자연스러운 모션</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--park-heechan-2025-animation-reel-desktop">
@@ -134,9 +130,7 @@ const ParkHeechan2025AnimationReelDesktop = ({ work, designer, badgeSrc, badgeAl
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">무게감</h5>
-            <div className="work-detail__card-description">
-              <p>각 캐릭터마다 가지고 있는 고유의 무게감을 표현</p>
-            </div>
+            <p className="work-detail__card-description">각 캐릭터마다 가지고 있는 고유의 무게감을 표현</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--park-heechan-2025-animation-reel-desktop">
@@ -151,9 +145,7 @@ const ParkHeechan2025AnimationReelDesktop = ({ work, designer, badgeSrc, badgeAl
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">속도감</h5>
-            <div className="work-detail__card-description">
-              <p>무게감을 유지한 채 속도감을 살릴 수 있는 방법</p>
-            </div>
+            <p className="work-detail__card-description">무게감을 유지한 채 속도감을 살릴 수 있는 방법</p>
           </div>
         </li>
       </ul>

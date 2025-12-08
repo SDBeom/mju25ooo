@@ -23,7 +23,7 @@ import parkJinaWork1_15 from '../../../../assets/박진아/parkjina_multimedia_w
  * 박진아 - Cross Cooty Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ParkJinaCrossCootyTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -35,9 +35,7 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
         <div className="work-detail__hero-content work-detail__hero-content--park-jina-cross-cooty-tablet">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--park-jina-cross-cooty-tablet">Cross Cooty</h2>
-            <div className="work-detail__lead work-detail__lead--park-jina-cross-cooty-tablet">
-              <p>"Share a moment, share a Cooty!"</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--park-jina-cross-cooty-tablet">"Share a moment, share a Cooty!"</p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--park-jina-cross-cooty-tablet">
@@ -70,20 +68,14 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
         <div className="work-detail__text-headline">
           <h3 className="work-detail__subtitle work-detail__subtitle--park-jina-cross-cooty-tablet">Cooty Universe</h3>
         </div>
-        <div className="work-detail__text-content work-detail__text-content--park-jina-cross-cooty-tablet">
-          <p>Cross Cooty는 각기 다른 개성과 생명력을 지닌 섬과 존재들이 함께 이루는</p>
-          <p>감각적인 생태계 브랜드 세계관이다.</p>
-          <p>&nbsp;</p>
-          <p>구름 위에 떠 있는 수많은 섬에는 'Cooty'라 불리는 생명체들이 살아가며,</p>
-          <p>각 섬은 고유한 색감과 질감,</p>
-          <p>그리고 독특한 생물종으로 구성된 하나의 작은 세계를 이룬다.</p>
-          <p>&nbsp;</p>
-          <p>'Cooty'는 사물이나 식물 등에서 영감을 받아 태어난 개성 있는 존재로,</p>
-          <p>자신이 속한 섬의 에너지와 성격을 이어받아 독자적인 형태로 성장한다.</p>
-          <p>&nbsp;</p>
-          <p>Cooty Universe는 이러한 생명체와 공간들이 유기적으로 연결되며,</p>
-          <p>현실과 상의 경계를 확장해 나가는 브랜드 세계이다.</p>
-        </div>
+        <p className="work-detail__text-content work-detail__text-content--park-jina-cross-cooty-tablet">
+          {`Cross Cooty는 각기 다른 개성과 생명력을 지닌 섬과 존재들이 함께 이루는 
+감각적인 생태계 브랜드 세계관이다.
+ 구름 위에 떠 있는 수많은 섬에는 'Cooty'라 불리는 생명체들이 살아가며, 각 섬은 고유한 색감과 질감,
+그리고 독특한 생물종으로 구성된 하나의 작은 세계를 이룬다. 
+ 'Cooty'는 사물이나 식물 등에서 영감을 받아 태어난 개성 있는 존재로, 자신이 속한 섬의 에너지와 성격을 이어받아 독자적인 형태로 성장한다. 
+ Cooty Universe는 이러한 생명체와 공간들이 유기적으로 연결되며, 현실과 상상의 경계를 확장해 나가는 브랜드 세계이다.`}
+        </p>
       </section>
 
       {/* Feature Bento: Logo Design */}
@@ -100,14 +92,13 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
           </div>
           <div className="work-detail__bento-text">
             <h5 className="work-detail__bento-title">Logo Desgin</h5>
-            <div className="work-detail__bento-description">
-              <p>'Cross Cooty' 로고는 걸어가는 캐릭터와 글자 디자인이 하나로 이어지는 구조로, 쿠티들의 유쾌한 움직임과 생명력을 시각화했다.</p>
-              <p>&nbsp;</p>
-              <p>'Cooty'의 'oo'는 캐릭터의 눈처럼 표현되어, 로고 속에서도 생명체의 개성이 드러나며</p>
-              <p>단어 자체가 살아 움직이는 듯한 인상을 의도했다.</p>
-              <p>&nbsp;</p>
-              <p>부드러운 곡선과 따뜻한 컬러 조합은 브랜드의 친근하고 감각적인 세계관을 완성한다.</p>
-            </div>
+            <p className="work-detail__bento-description">
+              {`'Cross Cooty' 로고는 걸어가는 캐릭터와 글자 디자인이 하나로 이어지는 구조로, 쿠티들의 유쾌한 움직임과 생명력을 시각화했다.
+
+'Cooty'의 'oo'는 캐릭터의 눈처럼 표현되어, 로고 속에서도 생명체의 개성이 드러나며 
+단어 자체가 살아 움직이는 듯한 인상을 의도했다.
+ 부드러운 곡선과 따뜻한 컬러 조합은 브랜드의 친근하고 감각적인 세계관을 완성한다.`}
+            </p>
           </div>
         </li>
       </ul>
@@ -126,9 +117,7 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
           </div>
           <div className="work-detail__feature-card-text">
             <h5 className="work-detail__feature-card-title">COTONA</h5>
-            <div className="work-detail__feature-card-description">
-              <p>Soft & Dreamy</p>
-            </div>
+            <p className="work-detail__feature-card-description">Soft & Dreamy</p>
           </div>
         </li>
         <li className="work-detail__feature-card work-detail__feature-card--park-jina-cross-cooty-tablet">
@@ -143,9 +132,7 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
           </div>
           <div className="work-detail__feature-card-text">
             <h5 className="work-detail__feature-card-title">MOSSROOT</h5>
-            <div className="work-detail__feature-card-description">
-              <p>Calm & Alive</p>
-            </div>
+            <p className="work-detail__feature-card-description">Calm & Alive</p>
           </div>
         </li>
         <li className="work-detail__feature-card work-detail__feature-card--park-jina-cross-cooty-tablet">
@@ -160,9 +147,7 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
           </div>
           <div className="work-detail__feature-card-text">
             <h5 className="work-detail__feature-card-title">iCORA</h5>
-            <div className="work-detail__feature-card-description">
-              <p>Clear & Pure</p>
-            </div>
+            <p className="work-detail__feature-card-description">Clear & Pure</p>
           </div>
         </li>
       </ul>
@@ -172,10 +157,9 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
         <li className="work-detail__feature-row work-detail__feature-row--park-jina-cross-cooty-tablet">
           <div className="work-detail__feature-row-content">
             <h4 className="work-detail__feature-row-title">Cotton</h4>
-            <div className="work-detail__feature-row-description">
-              <p>구름 사이를 떠도는 파텔빛 섬.</p>
-              <p>빛과 색이 어우러져 꿈처럼 머무는 곳.</p>
-            </div>
+            <p className="work-detail__feature-row-description">
+              {`구름 사이를 떠도는 파스텔빛 섬. 빛과 색이 어우러져 꿈처럼 머무는 곳.`}
+            </p>
           </div>
           <div className="work-detail__feature-row-image-wrapper">
             <img
@@ -199,19 +183,18 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
           </div>
           <div className="work-detail__feature-row-content">
             <h4 className="work-detail__feature-row-title">Moss</h4>
-            <div className="work-detail__feature-row-description">
-              <p>부드러운 초록빛으로 덮인 떠있는 섬.</p>
-              <p>이끼와 작은 생명들이 조용히 자라나는 곳.</p>
-            </div>
+            <p className="work-detail__feature-row-description">
+              {`부드러운 초록빛으로 덮인 떠있는 섬. 이끼와 작은 생명들이 조용히 자라나는 곳.`}
+            </p>
           </div>
         </li>
         <li className="work-detail__feature-row work-detail__feature-row--park-jina-cross-cooty-tablet">
           <div className="work-detail__feature-row-content">
             <h4 className="work-detail__feature-row-title">Ice</h4>
-            <div className="work-detail__feature-row-description">
-              <p>얼음과 수정으로 이루어진 차가운 섬.</p>
-              <p>차가운 공기 속에서 생명이 반짝이는 곳.</p>
-            </div>
+            <p className="work-detail__feature-row-description">
+              {`얼음과 수정으로 이루어진 차가운 섬.
+차가운 공기 속에서 생명이 반짝이는 곳.`}
+            </p>
           </div>
           <div className="work-detail__feature-row-image-wrapper">
             <img
@@ -230,10 +213,10 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
         <li className="work-detail__feature-card-character work-detail__feature-card-character--park-jina-cross-cooty-tablet">
           <div className="work-detail__feature-card-character-content">
             <h5 className="work-detail__feature-card-character-title">LUFU</h5>
-            <div className="work-detail__feature-card-character-description">
-              <p>솜사탕같은 몸으로 하늘을 날 수 있다.</p>
-              <p>주변환경과 비슷하게 몸과 날개의 색상을 바꿀 수 있다.</p>
-            </div>
+            <p className="work-detail__feature-card-character-description">
+              {`솜사탕같은 몸으로 하늘을 날 수 있다.
+주변환경과 비슷하게 몸과 날개의 색상을 바꿀 수 있다.`}
+            </p>
           </div>
           <div className="work-detail__feature-card-character-image-wrapper">
             <img
@@ -248,9 +231,7 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
         <li className="work-detail__feature-card-character work-detail__feature-card-character--park-jina-cross-cooty-tablet">
           <div className="work-detail__feature-card-character-content">
             <h5 className="work-detail__feature-card-character-title">MOSSO</h5>
-            <div className="work-detail__feature-card-character-description">
-              <p>기분이 좋은 Mosso는 머리 위에 달린 꽃을 활짝 피운다.</p>
-            </div>
+            <p className="work-detail__feature-card-character-description">기분이 좋은 Mosso는 머리 위에 달린 꽃을 활짝 피운다.</p>
           </div>
           <div className="work-detail__feature-card-character-image-wrapper">
             <img
@@ -265,10 +246,9 @@ const ParkJinaCrossCootyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
         <li className="work-detail__feature-card-character work-detail__feature-card-character--park-jina-cross-cooty-tablet">
           <div className="work-detail__feature-card-character-content">
             <h5 className="work-detail__feature-card-character-title">WiVi</h5>
-            <div className="work-detail__feature-card-character-description">
-              <p>하얀 털을 가진 쿠티.</p>
-              <p>호기심과 장난기가 많다.</p>
-            </div>
+            <p className="work-detail__feature-card-character-description">
+              {`하얀 털을 가진 쿠티. 호기심과 장난기가 많다.`}
+            </p>
           </div>
           <div className="work-detail__feature-card-character-image-wrapper">
             <img

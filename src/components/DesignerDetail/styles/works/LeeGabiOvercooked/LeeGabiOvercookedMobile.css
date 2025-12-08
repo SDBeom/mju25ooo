@@ -166,8 +166,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--leegabi-overcooked-mobile .work-detail__bento-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leegabi-overcooked-mobile .work-detail__bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -336,8 +340,12 @@
   background: transparent;
 }
 
-.work-detail--leegabi-overcooked-mobile .work-detail__gallery-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leegabi-overcooked-mobile .work-detail__gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 

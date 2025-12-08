@@ -1,11 +1,11 @@
 import React from 'react';
-import WorkDetailHero from '../WorkDetailHero';
+import { handleImageError } from '../../../../shared/imageUtils';
 import '../../DesignerShowcase.css';
 import '../../styles/works/WoosuminLiminal/WoosuminLiminalDesktop.css';
 
 const DEFAULT_FOOTER_TEXT = '새로운 감각의 리미널 가이드에 지속적으로';
 
-const WoosuminLiminalDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const WoosuminLiminalDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -72,17 +72,42 @@ const WoosuminLiminalDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
 
   return (
     <div className="work-detail work-detail--woosumin-liminal-desktop">
-      {/* Hero */}
-      <WorkDetailHero
-        work={work}
-        designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
-        ctas={ctas}
-        heroClassName="woosumin-liminal-desktop"
-        renderCtas={renderCtas}
-        showEyebrow={true}
-      />
+      {/* Hero Section */}
+      <section className="work-detail__section work-detail__hero work-detail__hero--woosumin-liminal-desktop">
+        <div className="work-detail__hero-content work-detail__hero-content--woosumin-liminal-desktop">
+          <div className="work-detail__hero-text">
+            <div className="work-detail__text-group">
+              <div className="work-detail__eyebrow">
+                <span className="work-detail__eyebrow-text">
+                  {work.genre || designer?.role || 'Content'}
+                </span>
+              </div>
+              <h2 className="work-detail__title">{work.title || '제목 없음'}</h2>
+              {work.summary && (
+                typeof work.summary === 'string' ? (
+                  <p className="work-detail__lead">{work.summary}</p>
+                ) : (
+                  <div className="work-detail__lead">{work.summary}</div>
+                )
+              )}
+            </div>
+            <div className="work-detail__ctas">
+              {renderCtas()}
+            </div>
+          </div>
+          {work.thumbnail && (
+            <div className="work-detail__hero-image-wrapper work-detail__hero-image-wrapper--woosumin-liminal-desktop">
+              <img 
+                src={work.thumbnail} 
+                alt={`${work.title || '작품'} 대표 장면`} 
+                className="work-detail__hero-image"
+                onError={(e) => handleImageError(e, work.thumbnail, work.id, 'hero')}
+                loading="eager"
+              />
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* Feature Row */}
       {featureImage && featureNote && (

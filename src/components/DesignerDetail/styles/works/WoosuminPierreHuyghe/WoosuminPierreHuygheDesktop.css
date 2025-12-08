@@ -16,8 +16,10 @@
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__hero--woosumin-pierre-huyghe-desktop {
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
+  height: 637px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -31,7 +33,8 @@
   gap: 32px;
   align-items: flex-start;
   justify-content: center;
-  padding: 120px 64px;
+  padding: 0 64px;
+  height: 637px;
   min-width: 0;
   min-height: 0;
 }
@@ -45,33 +48,25 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__title--woosumin-pierre-huyghe-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 61.6px;
   letter-spacing: -1.12px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__title--woosumin-pierre-huyghe-desktop .block {
-  display: block;
-}
-
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__lead--woosumin-pierre-huyghe-desktop {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 34.8px;
   letter-spacing: -0.12px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
-
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__lead--woosumin-pierre-huyghe-desktop p {
-  margin: 0;
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__ctas--woosumin-pierre-huyghe-desktop {
@@ -86,10 +81,10 @@
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__cta--woosumin-pierre-huyghe-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -118,13 +113,26 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__hero-image-wrapper--woosumin-pierre-huyghe-desktop {position: relative;
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__hero-image-wrapper--woosumin-pierre-huyghe-desktop {
+  position: relative;
   overflow: hidden;
+  width: 640px;
+  height: 540px;
   flex-shrink: 0;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__hero-image-wrapper--woosumin-pierre-huyghe-desktop .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__hero-image-wrapper--woosumin-pierre-huyghe-desktop .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Feature Section */
@@ -138,14 +146,28 @@
   max-width: 1280px;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-image-wrapper {position: relative;
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-image-wrapper {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
+  width: 544px;
+  height: 432px;
   flex-shrink: 0;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-content {
@@ -168,33 +190,25 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 43.2px;
   letter-spacing: -0.72px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-title .block {
-  display: block;
-}
-
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
-
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__feature-description p {
-  margin: 0;
 }
 
 /* Pull Quote Section */
@@ -228,34 +242,38 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-text {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.96px;
-  color: #000000;
-  margin: 0;
-  white-space: pre-wrap;
-  min-width: 100%;
-  width: min-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-text p {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 62.4px;
+  letter-spacing: -0.96px;
+  color: #000000;
   margin: 0;
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-attribution {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: -0.36px;
-  color: rgba(0, 0, 0, 0.45);
-  margin: 0;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__quote-attribution p {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33.6px;
+  letter-spacing: -0.36px;
+  color: rgba(0, 0, 0, 0.45);
   margin: 0;
 }
 
@@ -296,25 +314,28 @@
   flex-shrink: 0;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image-wrapper {position: relative;
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image-wrapper {
+  position: relative;
   border-radius: 16px;
-  overflow: hidden;flex-shrink: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 483px;
+  flex-shrink: 0;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
-}
-
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--woosumin-pierre-huyghe-desktop:first-child .work-detail__card-image {left: 0;
-  top: 0;
-}
-
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--woosumin-pierre-huyghe-desktop:nth-child(2) .work-detail__card-image {left: 0;
-  top: 0;
-}
-
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--woosumin-pierre-huyghe-desktop:nth-child(3) .work-detail__card-image {left: 0;
-  top: 0;
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-text {
@@ -326,10 +347,10 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 28.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;
@@ -337,10 +358,10 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -386,27 +407,29 @@
   width: 100%;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image-wrapper--phone {position: absolute;
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image-wrapper--phone {
+  position: absolute;
   border: 8px solid #ffffff;
   border-radius: 32px;
-  
-  
+  width: 240px;
+  height: 234px;
   left: 61px;
-  top: 198px;
+  bottom: 32px;
   overflow: hidden;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--feature:nth-child(1) .work-detail__card-image-wrapper--phone {left: 61px;
-}
-
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--feature:nth-child(2) .work-detail__card-image-wrapper--phone {left: 61.34px;
-}
-
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card--feature:nth-child(3) .work-detail__card-image-wrapper--phone {left: 61.66px;
-}
-
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image-wrapper--phone .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__card-image-wrapper--phone .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: inherit;
 }
 
@@ -431,10 +454,10 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-title {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 57.6px;
   letter-spacing: -0.96px;
   color: #000000;
   margin: 0;
@@ -442,10 +465,10 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-description {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -506,8 +529,18 @@
   flex-shrink: 0;
 }
 
-.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-avatar-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 8px;
 }
 
@@ -524,10 +557,10 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-author-name {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 24px;
   letter-spacing: -0.08px;
   color: #000000;
   margin: 0;
@@ -535,10 +568,10 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-author-role {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 22.4px;
   letter-spacing: -0.08px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -546,13 +579,38 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-desktop .work-detail__testimonial-text {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
+}
+
+/* Marquee Section */
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__marquee--woosumin-pierre-huyghe-desktop {
+  padding: 0;
+  margin: 0;
+  width: 1280px;
+  max-width: 1280px;
+  height: 139px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.work-detail--woosumin-pierre-huyghe-desktop .work-detail__marquee-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 43.2px;
+  letter-spacing: -0.72px;
+  color: #000000;
+  text-align: center;
+  white-space: nowrap;
 }
 

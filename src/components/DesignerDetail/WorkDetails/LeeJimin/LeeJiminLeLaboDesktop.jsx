@@ -23,7 +23,7 @@ import leejiminWork2_15 from '../../../../assets/이지민/leejimin_motiondesign
  * 이지민 - LE LABO-CITY EXCLUSIVE (작품2) Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
-const LeeJiminLeLaboDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeJiminLeLaboDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -37,10 +37,10 @@ const LeeJiminLeLaboDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
             <h2 className="work-detail__title work-detail__title--leejimin-lelabo-desktop">
               LE LABO-CITY EXCLUSIVE
             </h2>
-            <div className="work-detail__lead work-detail__lead--leejimin-lelabo-desktop">
-              <p className="mb-0">문어마녀 우르슬라를 현대적인 시선으로 재해석해 제작한 캐릭터로, 3D 모델링을 통해 턴테이블</p>
-              <p>영상과 2D 일러트를 수록한 아트북을 제작했다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--leejimin-lelabo-desktop">
+              문어마녀 우르슬라를 현대적인 시선으로 재해석해 제작한 캐릭터로, 3D 모델링을 통해 턴테이블
+영상과 2D 일러스트를 수록한 아트북을 제작했다.
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--leejimin-lelabo-desktop">
@@ -74,9 +74,10 @@ const LeeJiminLeLaboDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           <p className="work-detail__text-section-label">Promotional videos</p>
           <h3 className="work-detail__text-section-title">Imagine a city</h3>
         </div>
-        <p className="work-detail__text-section-description">
-          이 프로젝트는 단순히 제작품을 소개하는 영상을 넘어서, "향이 인간의 감정에 어떻게 닿는가"라는 질문에서 출발한 프로젝트이다. 향은 눈에 보이지 않지만, 공기 속에 기억을 남긴다. 그래서 이번 작업에서는 향이 지닌 기억의 잔상과 도시가 작품은 감정의 결을 시각적으로 구현하는 데 집중하였다. 각 도시를 대표하는 메인 컬러를 중심으로, 그곳의 기온, 빛의 방향, 공기의 밀도, 사람들의 움직임 등 향으로는 포착할 수 없는 요소들을 영상으로 표현하고자 했다.
-        </p>
+        <div className="work-detail__text-content">
+          <p>이 프로젝트는 단순히 제품을 소개하는 영상을 넘어서, "향이 인간의 감정에 어떻게 닿는가"라는 질문에서 출발한 프로젝트이다.
+향은 눈에 보이지 않지만, 공기 속에 기억을 남긴다. 그래서 이번 작업에서는 향이 지닌 기억의 잔상과 도시가 품은 감정의 결을 시각적으로 구현하는 데 집중하였다. 각 도시를 대표하는 메인 컬러를 중심으로, 그곳의 기온, 빛의 방향, 공기의 밀도, 사람들의 움직임 등 향으로는 포착할 수 없는 요소들을 영상으로 표현하고자 했다.</p>
+        </div>
       </section>
 
       {/* Feature Cards Section - Fresh */}
@@ -93,8 +94,8 @@ const LeeJiminLeLaboDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
         <div className="work-detail__feature-cards-content">
           <div className="work-detail__feature-cards-text">
             <h4 className="work-detail__feature-cards-title">Fresh</h4>
-            <p className="mb-0">CITRON28은 서울의 아침에서 느껴지는 시원함을 표현하고자</p>
-            <p>전체적으로 화사하면서도 따한 느낌의 색감을 사용했다.</p>
+            <p>CITRON28은 서울의 아침에서 느껴지는 시원함을 표현하고자
+전체적으로 화사하면서도 따스한 느낌의 색감을 사용했다.</p>
           </div>
         </div>
       </section>
@@ -131,8 +132,8 @@ const LeeJiminLeLaboDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           <div className="work-detail__feature-row-content">
             <div className="work-detail__feature-row-text">
               <h4 className="work-detail__feature-row-title">Sunset</h4>
-              <p className="mb-0">MUSC25는 아침과 저녁이 주는 서로 다른 느낌의 긴 여운을 시각적으로 표현하고자 영상의 초반부에는 따한 색감을, 후반부에는 짙고 어두운</p>
-              <p>색감을 사용했다.</p>
+              <p>MUSC25는 아침과 저녁이 주는 서로 다른 느낌의 긴 여운을 시각적으로 표현하고자 영상의 초반부에는 따스한 색감을, 후반부에는 짙고 어두운
+색감을 사용했다.</p>
             </div>
           </div>
         </li>
@@ -151,7 +152,7 @@ const LeeJiminLeLaboDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">City Exclusives</h4>
-          <p>마지막 컷을 통해 LE LABO 향수임을 명확히 드러내고, City Exclusive Collection과 주요 향료 정보를 함께 제시했다. 이를 통해 시청자가 향수의 향과 그에 어울리는 도시의 이미지를 자연럽게 떠올릴 수 있도록 연출했다.</p>
+          <p>마지막 컷을 통해 LE LABO 향수임을 명확히 드러내고, City Exclusive Collection과 주요 향료 정보를 함께 제시했다. 이를 통해 시청자가 향수의 향과 그에 어울리는 도시의 이미지를 자연스럽게 떠올릴 수 있도록 연출했다.</p>
         </div>
       </section>
 
@@ -169,7 +170,7 @@ const LeeJiminLeLaboDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">CITRON 28</h5>
-            <p>서울에서 영감 받아 제작된 시티 익클루시브의 비교적 최신 컬렉션.</p>
+            <p>서울에서 영감 받아 제작된 시티 익스클루시브의 비교적 최신 컬렉션.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--leejimin-lelabo-desktop">
@@ -184,7 +185,7 @@ const LeeJiminLeLaboDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">GAIAC 10</h5>
-            <p>도쿄에서 영감 받아 제작된 시티 익클루시브의 오래된 컬렉션 중 하나.</p>
+            <p>도쿄에서 영감 받아 제작된 시티 익스클루시브의 오래된 컬렉션 중 하나.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--leejimin-lelabo-desktop">
@@ -199,7 +200,7 @@ const LeeJiminLeLaboDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">MUSC 25</h5>
-            <p>로엔젤레에서 영감 받아 제작된 시티 익클루시브의 래된 컬렉션 중 하나.</p>
+            <p>로스엔젤레스에서 영감 받아 제작된 시티 익스클루시브의 오래된 컬렉션 중 하나.</p>
           </div>
         </li>
       </ul>

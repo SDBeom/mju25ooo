@@ -30,8 +30,12 @@
   order: -1;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__hero-image-wrapper--park-haein-chrome-4-seasons-mobile .work-detail__hero-image {aspect-ratio: 2504 / 3532;
@@ -158,8 +162,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -247,8 +255,12 @@ height: 0;
   height: auto;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -343,8 +355,12 @@ height: 0;
   height: auto;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:first-child .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -495,8 +511,12 @@ height: 0;
   height: 300px;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -569,8 +589,12 @@ height: 0;
   flex-shrink: 0;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__instagram-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__instagram-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__instagram-card-image-wrapper .work-detail__instagram-card-image {aspect-ratio: 1920 / 1080;
@@ -701,8 +725,12 @@ height: 0;
   order: -1;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__hero-image-wrapper--park-haein-chrome-4-seasons-mobile .work-detail__hero-image {aspect-ratio: 2504 / 3532;
@@ -829,8 +857,12 @@ height: 0;
   flex-shrink: 0;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -918,8 +950,12 @@ height: 0;
   height: auto;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -1014,8 +1050,12 @@ height: 0;
   height: auto;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__bento-card--park-haein-chrome-4-seasons-mobile:first-child .work-detail__bento-image {aspect-ratio: 1920 / 1080;
@@ -1166,8 +1206,12 @@ height: 0;
   height: 300px;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -1240,8 +1284,12 @@ height: 0;
   flex-shrink: 0;
 }
 
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__instagram-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__instagram-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--park-haein-chrome-4-seasons-mobile .work-detail__instagram-card-image-wrapper .work-detail__instagram-card-image {aspect-ratio: 1920 / 1080;

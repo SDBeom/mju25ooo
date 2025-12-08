@@ -3,7 +3,6 @@ import { useBreakpoint } from '../../../../hooks/useBreakpoint';
 import ParkJinaRemainDesktop from './ParkJinaRemainDesktop';
 import ParkJinaRemainTablet from './ParkJinaRemainTablet';
 import ParkJinaRemainMobile from './ParkJinaRemainMobile';
-import DefaultWorkLayout from '../DefaultWorkLayout';
 
 /**
  * 박진아 - REMAIN
@@ -12,7 +11,7 @@ import DefaultWorkLayout from '../DefaultWorkLayout';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const ParkJinaRemain = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ParkJinaRemain = ({ work, designer, ctas }) => {
   const { isMobile, isTablet, isDesktop } = useBreakpoint();
 
   if (!work || !designer) {
@@ -25,8 +24,7 @@ const ParkJinaRemain = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <ParkJinaRemainDesktop
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -38,8 +36,7 @@ const ParkJinaRemain = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <ParkJinaRemainTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -50,8 +47,7 @@ const ParkJinaRemain = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <ParkJinaRemainMobile
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

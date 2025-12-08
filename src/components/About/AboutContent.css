@@ -158,7 +158,6 @@
   width: 100%;
   height: 50vh;
   object-fit: cover;
-  object-fit: cover;
   flex: 1 1 100%;
   display: block;
 }
@@ -395,7 +394,13 @@
   gap: 1.5rem;
   margin-top: 3rem;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
+}
+
+.about-branding-logo-unified .about-branding-logo-symbol-image,
+.about-branding-logo-unified .about-branding-logo-logotype-image,
+.about-branding-logo-unified .about-branding-logo-motif-image {
+  align-self: flex-start;
 }
 
 .about-branding-logo-unified .about-branding-logo-symbol,
@@ -410,22 +415,31 @@
   justify-content: flex-start;
 }
 
+.about-branding-logo-unified .about-branding-logo-symbol > img,
+.about-branding-logo-unified .about-branding-logo-logotype > img,
+.about-branding-logo-unified .about-branding-logo-motif-item > img {
+  align-self: center;
+  margin-top: 0;
+}
+
 .about-branding-logo-unified .about-branding-logo-symbol-image {
   width: 100%;
   max-width: 150px;
-  height: auto;
+  height: 150px;
+  object-fit: contain;
 }
 
 .about-branding-logo-unified .about-branding-logo-logotype-image {
   width: 100%;
   max-width: 180px;
-  height: auto;
+  height: 150px;
+  object-fit: contain;
 }
 
 .about-branding-logo-unified .about-branding-logo-motif-image {
   width: 100%;
   max-width: 120px;
-  height: 120px;
+  height: 150px;
   object-fit: contain;
 }
 
@@ -434,7 +448,7 @@
 .about-branding-logo-unified .about-branding-logo-motif-description {
   font-size: clamp(var(--font-size-base), 1.5vw, var(--font-size-lg));
   line-height: 1.8;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   word-break: keep-all;
   overflow-wrap: break-word;
   white-space: normal;
@@ -475,8 +489,10 @@
   .about-branding-logo-unified {
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 4rem;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 
   .about-branding-logo-unified .about-branding-logo-symbol,
@@ -489,15 +505,20 @@
 
   .about-branding-logo-unified .about-branding-logo-symbol-image {
     max-width: 180px;
+    height: 180px;
+    object-fit: contain;
   }
 
   .about-branding-logo-unified .about-branding-logo-logotype-image {
     max-width: 220px;
+    height: 180px;
+    object-fit: contain;
   }
 
   .about-branding-logo-unified .about-branding-logo-motif-image {
     max-width: 150px;
-    height: 150px;
+    height: 180px;
+    object-fit: contain;
   }
 
   .about-branding-logo-unified .about-branding-logo-symbol-text,
@@ -521,6 +542,8 @@
     flex-wrap: nowrap;
     gap: 3rem;
     margin-top: 4rem;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 
   .about-branding-logo-unified .about-branding-logo-symbol,
@@ -533,15 +556,20 @@
 
   .about-branding-logo-unified .about-branding-logo-symbol-image {
     max-width: 200px;
+    height: 200px;
+    object-fit: contain;
   }
 
   .about-branding-logo-unified .about-branding-logo-logotype-image {
     max-width: 250px;
+    height: 200px;
+    object-fit: contain;
   }
 
   .about-branding-logo-unified .about-branding-logo-motif-image {
     max-width: 180px;
-    height: 180px;
+    height: 200px;
+    object-fit: contain;
   }
 
   .about-branding-logo-unified .about-branding-logo-symbol-text,
@@ -607,7 +635,7 @@
     width: 100%;
     height: auto;
     display: block;
-    object-fit: contain;
+    object-fit: cover;
     visibility: visible;
     opacity: 1;
   }
@@ -644,7 +672,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
 }
@@ -698,7 +726,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
 }
@@ -837,6 +865,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: flex-start;
 }
 
 .about-category-description-image-wrapper {
@@ -1155,6 +1184,7 @@
     width: 50%;
     height: 100%;
     flex: 1 1 50%;
+    object-fit: cover;
   }
 
   .about-section-content {
@@ -1243,7 +1273,7 @@
   .about-category-description-item {
     flex-direction: row;
     gap: 1.5rem;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .about-category-description-image-wrapper {
@@ -1348,6 +1378,7 @@
     width: 50%;
     height: 100%;
     flex: 1 1 50%;
+    object-fit: cover;
   }
 
   .about-section-content {

@@ -11,8 +11,8 @@ import ShimSungbinBoomMobile from './ShimSungbinBoomMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const ShimSungbinBoom = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const ShimSungbinBoom = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const ShimSungbinBoom = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <ShimSungbinBoomMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const ShimSungbinBoom = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <ShimSungbinBoomTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const ShimSungbinBoom = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <ShimSungbinBoomDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

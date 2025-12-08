@@ -3,6 +3,7 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/JungJiminTheGothic/JungJiminTheGothicTablet.css';
 
 // 이미지 임포트
+import jungJiminWork1_01 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_01.webp';
 import jungJiminWork1_02 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_02.webp';
 import jungJiminWork1_03 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_03.webp';
 import jungJiminWork1_04 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_04.webp';
@@ -16,7 +17,7 @@ import jungJiminWork1_11 from '../../../../assets/정지민/jungjimin_gameconten
 
 /**
  * 정지민 - The Gothic (작품1) Tablet 버전
- * Figma 디자인 기반 구현 (800px ~ 1279px)
+ * Figma 디자인 기반 구현 (800px)
  */
 const JungJiminTheGothicTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
@@ -30,11 +31,11 @@ const JungJiminTheGothicTablet = ({ work, designer, ctas }) => {
         <div className="work-detail__hero-content work-detail__hero-content--jungjimin-gothic-tablet">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--jungjimin-gothic-tablet">
-              {work.title || 'The Gothic'}
+              The gothic
             </h2>
-            <p className="work-detail__lead work-detail__lead--jungjimin-gothic-tablet">
-              {work.summary || '갑옷, 캐릭터 모델링'}
-            </p>
+            <div className="work-detail__lead work-detail__lead--jungjimin-gothic-tablet">
+              <p>갑옷, 캐릭터 모델링</p>
+            </div>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--jungjimin-gothic-tablet">
@@ -51,79 +52,88 @@ const JungJiminTheGothicTablet = ({ work, designer, ctas }) => {
             </div>
           )}
         </div>
+        <div className="work-detail__hero-image-wrapper work-detail__hero-image-wrapper--jungjimin-gothic-tablet">
+          <img
+            src={jungJiminWork1_01}
+            alt={work.title || 'The gothic'}
+            className="work-detail__hero-image"
+            onError={(e) => handleImageError(e, jungJiminWork1_01, work.id, 'hero')}
+            loading="eager"
+          />
+        </div>
       </section>
 
-      {/* Feature Section */}
-      <section className="work-detail__section work-detail__feature work-detail__feature--jungjimin-gothic-tablet">
-        <div className="work-detail__feature-content work-detail__feature-content--jungjimin-gothic-tablet">
-          <div className="work-detail__feature-text">
-            <h4 className="work-detail__feature-title">갑옷 디테일</h4>
-            <p>고딕풍 문양과 디테일을 강조한 갑옷</p>
+      {/* Feature cards 1 - 씬1 */}
+      <section className="work-detail__section work-detail__feature-card work-detail__feature-card--jungjimin-gothic-tablet">
+        <div className="work-detail__feature-card-content work-detail__feature-card-content--jungjimin-gothic-tablet">
+          <div className="work-detail__text-group">
+            <h4 className="work-detail__feature-card-title">씬1</h4>
+            <p className="work-detail__feature-card-description">어두운 분위기 강조</p>
           </div>
         </div>
-        <div className="work-detail__feature-image-wrapper work-detail__feature-image-wrapper--jungjimin-gothic-tablet">
+        <div className="work-detail__feature-card-image-wrapper work-detail__feature-card-image-wrapper--jungjimin-gothic-tablet">
           <img
             src={jungJiminWork1_02}
-            alt="갑옷 디테일"
-            className="work-detail__feature-image"
-            onError={(e) => handleImageError(e, jungJiminWork1_02, work.id, 'feature-1')}
+            alt="씬1"
+            className="work-detail__feature-card-image"
+            onError={(e) => handleImageError(e, jungJiminWork1_02, work.id, 'scene1')}
             loading="lazy"
           />
         </div>
       </section>
 
-      {/* Feature Rows Section */}
-      <ul className="work-detail__section work-detail__feature-rows work-detail__feature-rows--jungjimin-gothic-tablet">
-        <li className="work-detail__feature-row work-detail__feature-row--jungjimin-gothic-tablet">
-          <div className="work-detail__feature-content work-detail__feature-content--jungjimin-gothic-tablet">
-            <div className="work-detail__feature-text">
-              <h4 className="work-detail__feature-title">갑옷 디테일</h4>
-              <p>갑옷의 세부 디테일과 문양 강조</p>
-            </div>
+      {/* Feature cards 1 - 씬2 */}
+      <section className="work-detail__section work-detail__feature-card work-detail__feature-card--jungjimin-gothic-tablet">
+        <div className="work-detail__feature-card-content work-detail__feature-card-content--jungjimin-gothic-tablet">
+          <div className="work-detail__text-group">
+            <h4 className="work-detail__feature-card-title">씬2</h4>
+            <p className="work-detail__feature-card-description">라이트 강조</p>
           </div>
-          <div className="work-detail__feature-image-wrapper work-detail__feature-image-wrapper--jungjimin-gothic-tablet">
-            <img
-              src={jungJiminWork1_03}
-              alt="갑옷 디테일"
-              className="work-detail__feature-image"
-              onError={(e) => handleImageError(e, jungJiminWork1_03, work.id, 'feature-row-1')}
-              loading="lazy"
-            />
-          </div>
-        </li>
+        </div>
+        <div className="work-detail__feature-card-image-wrapper work-detail__feature-card-image-wrapper--jungjimin-gothic-tablet">
+          <img
+            src={jungJiminWork1_03}
+            alt="씬2"
+            className="work-detail__feature-card-image"
+            onError={(e) => handleImageError(e, jungJiminWork1_03, work.id, 'scene2')}
+            loading="lazy"
+          />
+        </div>
+      </section>
 
-        <li className="work-detail__feature-row work-detail__feature-row--jungjimin-gothic-tablet work-detail__feature-row--reverse">
-          <div className="work-detail__feature-image-wrapper work-detail__feature-image-wrapper--jungjimin-gothic-tablet">
-            <img
-              src={jungJiminWork1_04}
-              alt="갑옷 디테일"
-              className="work-detail__feature-image"
-              onError={(e) => handleImageError(e, jungJiminWork1_04, work.id, 'feature-row-2')}
-              loading="lazy"
-            />
+      {/* Feature cards 1 - 씬3 (reverse) */}
+      <section className="work-detail__section work-detail__feature-card work-detail__feature-card--jungjimin-gothic-tablet work-detail__feature-card--reverse">
+        <div className="work-detail__feature-card-image-wrapper work-detail__feature-card-image-wrapper--jungjimin-gothic-tablet">
+          <img
+            src={jungJiminWork1_04}
+            alt="씬3"
+            className="work-detail__feature-card-image"
+            onError={(e) => handleImageError(e, jungJiminWork1_04, work.id, 'scene3')}
+            loading="lazy"
+          />
+        </div>
+        <div className="work-detail__feature-card-content work-detail__feature-card-content--jungjimin-gothic-tablet">
+          <div className="work-detail__text-group">
+            <h4 className="work-detail__feature-card-title">씬3</h4>
+            <p className="work-detail__feature-card-description">구도 강조</p>
           </div>
-          <div className="work-detail__feature-content work-detail__feature-content--jungjimin-gothic-tablet">
-            <div className="work-detail__feature-text">
-              <h4 className="work-detail__feature-title">갑옷 디테일</h4>
-              <p>고딕풍 문양과 디테일을 강조한 갑옷</p>
-            </div>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </section>
 
+      {/* Feature 3 - 렌더샷 */}
       <section className="work-detail__section work-detail__feature work-detail__feature--jungjimin-gothic-tablet work-detail__feature--image-top">
         <div className="work-detail__feature-image-wrapper work-detail__feature-image-wrapper--jungjimin-gothic-tablet work-detail__feature-image-wrapper--large">
           <img
             src={jungJiminWork1_05}
-            alt="더 고딕"
+            alt="렌더샷"
             className="work-detail__feature-image"
-            onError={(e) => handleImageError(e, jungJiminWork1_05, work.id, 'feature-3')}
+            onError={(e) => handleImageError(e, jungJiminWork1_05, work.id, 'rendershot')}
             loading="lazy"
           />
         </div>
         <div className="work-detail__feature-text work-detail__feature-text--below">
-          <h4 className="work-detail__feature-title">더 고딕</h4>
-          <p>고딕풍 갑옷과 판타지적인 분위기</p>
+          <h4 className="work-detail__feature-title">렌더샷</h4>
+          <p>전체적 분위기</p>
         </div>
       </section>
 

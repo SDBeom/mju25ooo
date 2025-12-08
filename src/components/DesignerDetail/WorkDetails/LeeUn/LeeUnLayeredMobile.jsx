@@ -24,7 +24,7 @@ import leeunWork1_17 from '../../../../assets/이운/leeun_multimedia_work1_17.w
  * 이운 - Layered (작품1) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const LeeUnLayeredMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeUnLayeredMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

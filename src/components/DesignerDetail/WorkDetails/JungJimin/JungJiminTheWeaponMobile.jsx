@@ -19,7 +19,7 @@ import jungJiminWork2_11 from '../../../../assets/정지민/jungjimin_gameconten
  * 정지민 - The Weapon (작품2) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const JungJiminTheWeaponMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const JungJiminTheWeaponMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

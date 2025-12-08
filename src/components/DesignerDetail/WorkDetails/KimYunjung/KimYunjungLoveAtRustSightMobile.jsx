@@ -14,7 +14,7 @@ import kimYunjungWork1_18 from '../../../../assets/김윤정/kimyunjung_video_wo
  * 김윤정 - Love at Rust Sight Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const KimYunjungLoveAtRustSightMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimYunjungLoveAtRustSightMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

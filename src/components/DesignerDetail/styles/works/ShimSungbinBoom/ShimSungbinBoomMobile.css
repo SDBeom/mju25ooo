@@ -28,8 +28,12 @@
   order: -1;
 }
 
-.work-detail--shim-sungbin-boom-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--shim-sungbin-boom-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__hero-content--shim-sungbin-boom-mobile {
@@ -161,8 +165,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--shim-sungbin-boom-mobile .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--shim-sungbin-boom-mobile .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__card--shim-sungbin-boom-mobile:first-child .work-detail__card-image {height: auto;left: 50%;
@@ -254,8 +262,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--shim-sungbin-boom-mobile .work-detail__bento-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--shim-sungbin-boom-mobile .work-detail__bento-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__bento-card--shim-sungbin-boom-mobile:first-child .work-detail__bento-card-image {height: auto;left: 50%;
@@ -388,8 +400,12 @@
   top: 177px;
 }
 
-.work-detail--shim-sungbin-boom-mobile .work-detail__card-image--feature-3 {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--shim-sungbin-boom-mobile .work-detail__card-image--feature-3 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__card--feature-3:first-child .work-detail__card-image--feature-3 {height: auto;left: 50%;

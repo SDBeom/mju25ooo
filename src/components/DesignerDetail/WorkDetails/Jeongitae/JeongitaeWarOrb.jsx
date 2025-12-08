@@ -11,8 +11,8 @@ import JeongitaeWarOrbMobile from './JeongitaeWarOrbMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const JeongitaeWarOrb = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const JeongitaeWarOrb = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const JeongitaeWarOrb = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <JeongitaeWarOrbMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const JeongitaeWarOrb = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <JeongitaeWarOrbTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const JeongitaeWarOrb = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <JeongitaeWarOrbDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

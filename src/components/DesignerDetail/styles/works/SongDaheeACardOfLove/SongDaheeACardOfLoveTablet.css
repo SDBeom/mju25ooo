@@ -26,6 +26,7 @@
   align-items: flex-start;
   justify-content: center;
   gap: 0;
+  height: 540px;
 }
 
 /* 태블릿에서 모바일 스타일 오버라이드 - 더 구체적인 선택자 사용 */
@@ -58,7 +59,7 @@
   align-items: flex-start;
   justify-content: center;
   height: 540px;
-  padding: 0 32px;
+  padding: 120px 32px;
   box-sizing: border-box;
   flex: 0 0 auto;
   flex-shrink: 0;
@@ -173,8 +174,7 @@
   left: 0;
   top: 0;
   object-fit: cover;
-  object-position: center center;
-  display: block;
+  object-position: center -199px;
 }
 
 /* Feature Cards 1 Section */
@@ -218,8 +218,7 @@
   left: 0;
   top: 0;
   object-fit: cover;
-  object-position: center center;
-  display: block;
+  object-position: center -50px;
 }
 
 .work-detail--song-dahee-a-card-of-love-tablet .work-detail__card-text {
@@ -394,7 +393,6 @@
   top: 0;
   object-fit: cover;
   object-position: center center;
-  display: block;
 }
 
 

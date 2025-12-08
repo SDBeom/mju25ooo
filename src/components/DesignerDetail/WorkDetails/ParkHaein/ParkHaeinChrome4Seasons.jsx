@@ -5,52 +5,49 @@ import ParkHaeinChrome4SeasonsTablet from './ParkHaeinChrome4SeasonsTablet';
 import ParkHaeinChrome4SeasonsMobile from './ParkHaeinChrome4SeasonsMobile';
 
 /**
- * 박해허지훈- Chrome 4: Seasons
- * 반응허지훈�작품 �세 컴포�트
+ * 박해인 - Chrome 4: Seasons
+ * 반응형 작품 상세 컴포넌트
  * Mobile: < 800px
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const ParkHaeinChrome4Seasons = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const ParkHaeinChrome4Seasons = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
   }
 
-  // Mobile 버전 �더�
+  // Mobile 버전 렌더링
   if (isMobile) {
     return (
       <ParkHaeinChrome4SeasonsMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
 
-  // Tablet 버전 �더�
+  // Tablet 버전 렌더링
   if (isTablet) {
     return (
       <ParkHaeinChrome4SeasonsTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
 
-  // Desktop 버전 �더�(기본�
+  // Desktop 버전 렌더링 (기본값)
   return (
     <ParkHaeinChrome4SeasonsDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

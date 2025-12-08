@@ -23,7 +23,7 @@ import parkJinaWork1_15 from '../../../../assets/박진아/parkjina_multimedia_w
  * 박진아 - Cross Cooty Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const ParkJinaCrossCootyMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ParkJinaCrossCootyMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

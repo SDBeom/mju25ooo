@@ -13,7 +13,7 @@ import doTienHongWork2_05 from '../../../../assets/도티안홍/dotianhong_video
  * 도티안홍 - "SEE TINH" ANIMATED MV Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const DoTienHongSeeTinhAnimatedMvMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const DoTienHongSeeTinhAnimatedMvMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

@@ -15,7 +15,7 @@ import ahnSeonminWork1_07 from '../../../../assets/안선민/anseonmin_branding_
  * 안선민 - 점점점 (작품1) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const AhnSeonminDotDotDotMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const AhnSeonminDotDotDotMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

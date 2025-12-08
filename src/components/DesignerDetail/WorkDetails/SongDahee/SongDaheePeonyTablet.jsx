@@ -14,7 +14,7 @@ import songDaheeWork2_06 from '../../../../assets/송다희/songdahee_videoconte
  * 송다희 - Peony (작품2) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const SongDaheePeonyTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const SongDaheePeonyTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

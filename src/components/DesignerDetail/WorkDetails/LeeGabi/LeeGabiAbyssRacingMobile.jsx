@@ -3,23 +3,23 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/LeeGabiAbyssRacing/LeeGabiAbyssRacingMobile.css';
 
 // 이미지 임포트
-import leegabiWork2_01 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_01.webp';
-import leegabiWork2_02 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_02.webp';
-import leegabiWork2_03 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_03.webp';
-import leegabiWork2_04 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_04.webp';
-import leegabiWork2_05 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_05.webp';
-import leegabiWork2_06 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_06.webp';
-import leegabiWork2_07 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_07.webp';
-import leegabiWork2_08 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_08.webp';
-import leegabiWork2_09 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_09.webp';
-import leegabiWork2_10 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_10.webp';
-import leegabiWork2_11 from '../../../../assets/이가비/leegabi_gamecontent_츠_work2_11.webp';
+import leegabiWork2_01 from '../../../../assets/이가비/leegabi_gamecontent_work2_01.webp';
+import leegabiWork2_02 from '../../../../assets/이가비/leegabi_gamecontent_work2_02.webp';
+import leegabiWork2_03 from '../../../../assets/이가비/leegabi_gamecontent_work2_03.webp';
+import leegabiWork2_04 from '../../../../assets/이가비/leegabi_gamecontent_work2_04.webp';
+import leegabiWork2_05 from '../../../../assets/이가비/leegabi_gamecontent_work2_05.webp';
+import leegabiWork2_06 from '../../../../assets/이가비/leegabi_gamecontent_work2_06.webp';
+import leegabiWork2_07 from '../../../../assets/이가비/leegabi_gamecontent_work2_07.webp';
+import leegabiWork2_08 from '../../../../assets/이가비/leegabi_gamecontent_work2_08.webp';
+import leegabiWork2_09 from '../../../../assets/이가비/leegabi_gamecontent_work2_09.webp';
+import leegabiWork2_10 from '../../../../assets/이가비/leegabi_gamecontent_work2_10.webp';
+import leegabiWork2_11 from '../../../../assets/이가비/leegabi_gamecontent_work2_11.webp';
 
 /**
  * 이가비 - Abyss Racing: 세이렌의 보물 (작품2) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const LeeGabiAbyssRacingMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeGabiAbyssRacingMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

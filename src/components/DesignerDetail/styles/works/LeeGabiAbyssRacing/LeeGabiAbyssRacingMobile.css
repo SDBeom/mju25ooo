@@ -29,11 +29,15 @@
   order: -1;
 }
 
-.work-detail--leegabi-abyss-racing-mobile .work-detail__hero-image-wrapper--leegabi-abyss-racing-mobile .work-detail__hero-image {position: absolute;
+.work-detail--leegabi-abyss-racing-mobile .work-detail__hero-image-wrapper--leegabi-abyss-racing-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   
   
-  left: 0;
-  top: 0;display: block;
+  
+  display: block;
   order: -1;
 }
 
@@ -153,8 +157,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--leegabi-abyss-racing-mobile .work-detail__feature-image-wrapper--leegabi-abyss-racing-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leegabi-abyss-racing-mobile .work-detail__feature-image-wrapper--leegabi-abyss-racing-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -245,8 +253,12 @@
   overflow: hidden;
 }
 
-.work-detail--leegabi-abyss-racing-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leegabi-abyss-racing-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -334,8 +346,12 @@
   border-radius: 16px;flex-shrink: 0;
 }
 
-.work-detail--leegabi-abyss-racing-mobile .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leegabi-abyss-racing-mobile .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -411,8 +427,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--leegabi-abyss-racing-mobile .work-detail__bento-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leegabi-abyss-racing-mobile .work-detail__bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 

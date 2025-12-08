@@ -231,6 +231,32 @@ const GALLERY_COLORS = ['#67C5FF', '#FF7700'];
 const Designer = () => {
   const galleryRef = useRef(null);
 
+  // 스크롤 위치 저장
+  useEffect(() => {
+    const SCROLL_POSITION_KEY = 'designer-list-scroll-position';
+    
+    // 스크롤 위치를 주기적으로 저장 (throttle 적용)
+    let scrollTimeout = null;
+    const handleScroll = () => {
+      if (scrollTimeout) return;
+      
+      scrollTimeout = setTimeout(() => {
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+        sessionStorage.setItem(SCROLL_POSITION_KEY, scrollPosition.toString());
+        scrollTimeout = null;
+      }, 100); // 100ms마다 저장
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const container = galleryRef.current;
     if (!container) {

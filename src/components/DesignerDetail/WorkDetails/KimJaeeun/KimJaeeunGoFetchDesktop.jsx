@@ -23,7 +23,7 @@ import kimJaeeunWork1_15 from '../../../../assets/김재은/kimjaeeun_video_work
  * 김재은 - Go Fetch! Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
-const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimJaeeunGoFetchDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -35,10 +35,9 @@ const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
         <div className="work-detail__hero-content work-detail__hero-content--kim-jaeeun-go-fetch-desktop">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--kim-jaeeun-go-fetch-desktop">Go Fetch!</h2>
-            <div className="work-detail__lead work-detail__lead--kim-jaeeun-go-fetch-desktop">
-              <p>신비롭고 위험천만한 우주에서 용감한 강아지</p>
-              <p>'누리'의 여정을 담은 2D·3D 단편 애니메이션.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--kim-jaeeun-go-fetch-desktop">
+              신비롭고 위험천만한 우주에서 용감한 강아지{'\n'}'누리'의 여정을 담은 2D·3D 단편 애니메이션.
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--kim-jaeeun-go-fetch-desktop">
@@ -79,9 +78,9 @@ const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">To The End, For You</h4>
-          <div className="work-detail__feature-description">
-            <p>주인과의 공놀이가 그리운 강아지 '누리'는 끝없이 우주를 떠도며, 그리운 주인을 찾기 위한 여정을 계속한다.</p>
-          </div>
+          <p className="work-detail__feature-description">
+            주인과의 공놀이가 그리운 강아지 '누리'는 끝없이 우주를 떠도며, 그리운 주인을 찾기 위한 여정을 계속한다.
+          </p>
         </div>
       </section>
 
@@ -99,13 +98,9 @@ const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
           </div>
           <div className="work-detail__feature-card-text">
             <h5 className="work-detail__feature-card-title">NURI</h5>
-            <div className="work-detail__feature-card-description">
-              <p>
-                작품의 주인공.
-                <br aria-hidden="true" />
-                공을 쫓다가 주인과 이별한다.
-              </p>
-            </div>
+            <p className="work-detail__feature-card-description">
+              작품의 주인공. 공을 쫓다가 주인과 이별한다.
+            </p>
           </div>
         </li>
         <li className="work-detail__feature-card">
@@ -120,13 +115,9 @@ const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
           </div>
           <div className="work-detail__feature-card-text">
             <h5 className="work-detail__feature-card-title">GAON</h5>
-            <div className="work-detail__feature-card-description">
-              <p>
-                누리의 주인, 가온.
-                <br aria-hidden="true" />
-                고장 난 우주선을 수리하다가 누리와 이별한다.
-              </p>
-            </div>
+            <p className="work-detail__feature-card-description">
+              누리의 주인, 가온. 고장 난 우주선을 수리하다가 누리와 이별한다.
+            </p>
           </div>
         </li>
         <li className="work-detail__feature-card">
@@ -141,13 +132,9 @@ const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
           </div>
           <div className="work-detail__feature-card-text">
             <h5 className="work-detail__feature-card-title">Spaceship RN-42</h5>
-            <div className="work-detail__feature-card-description">
-              <p>
-                고장 난 우주선.
-                <br aria-hidden="true" />
-                누리와 가온을 이별시키게 한 주범이다.
-              </p>
-            </div>
+            <p className="work-detail__feature-card-description">
+              고장 난 우주선. 누리와 가온을 이별시키게 한 주범이다.
+            </p>
           </div>
         </li>
       </ul>
@@ -156,9 +143,9 @@ const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
       <section className="work-detail__section work-detail__feature-gallery work-detail__feature-gallery--kim-jaeeun-go-fetch-desktop">
         <div className="work-detail__feature-gallery-header">
           <h3 className="work-detail__feature-gallery-title">Inciting Incident</h3>
-          <div className="work-detail__feature-gallery-description">
-            <p>누리와 가온이 이별하게 된 계기.</p>
-          </div>
+          <p className="work-detail__feature-gallery-description">
+            누리와 가온이 이별하게 된 계기.
+          </p>
         </div>
         <div className="work-detail__feature-gallery-grid">
           <div className="work-detail__feature-gallery-column">
@@ -247,13 +234,9 @@ const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
           </div>
           <div className="work-detail__feature-story-card-body">
             <h5 className="work-detail__feature-story-card-title">Farewell</h5>
-            <div className="work-detail__feature-story-card-description">
-              <p>
-                막막하고 두려운 이별, 공포 속에서 홀로
-                <br aria-hidden="true" />
-                남겨진 누리.
-              </p>
-            </div>
+            <p className="work-detail__feature-story-card-description">
+              막막하고 두려운 이별, 공포 속에서 홀로 남겨진 누리.
+            </p>
           </div>
         </li>
         <li className="work-detail__feature-story-card">
@@ -268,9 +251,9 @@ const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
           </div>
           <div className="work-detail__feature-story-card-body">
             <h5 className="work-detail__feature-story-card-title">Journey</h5>
-            <div className="work-detail__feature-story-card-description">
-              <p>알 수 없는 신비롭고 광활한 우주 속, 용감한 강아지 '누리'의 용기 있는 여정</p>
-            </div>
+            <p className="work-detail__feature-story-card-description">
+              알 수 없는 신비롭고 광활한 우주 속, 용감한 강아지 '누리'의 용기 있는 여정
+            </p>
           </div>
         </li>
         <li className="work-detail__feature-story-card">
@@ -285,13 +268,9 @@ const KimJaeeunGoFetchDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) =
           </div>
           <div className="work-detail__feature-story-card-body">
             <h5 className="work-detail__feature-story-card-title">Crisis</h5>
-            <div className="work-detail__feature-story-card-description">
-              <p>
-                여정 속에서 맞닥뜨린 위기,
-                <br aria-hidden="true" />
-                누리는 이 난관을 극복할 수 있을까
-              </p>
-            </div>
+            <p className="work-detail__feature-story-card-description">
+              여정 속에서 맞닥뜨린 위기, 누리는 이 난관을 극복할 수 있을까?
+            </p>
           </div>
         </li>
       </ul>

@@ -1,5 +1,5 @@
-/* ?��?�?- The Gothic (?�품1) Desktop 버전 ?��??? */
-/* Figma ?�자??기반 구현 (1280px) */
+/* 정지민 - The Gothic (작품1) Desktop 버전 스타일 */
+/* Figma 디자인 기반 구현 (1280px) */
 
 .work-detail--jungjimin-the-gothic-desktop {
   width: 1280px;
@@ -15,26 +15,28 @@
 /* Hero Section */
 .work-detail--jungjimin-the-gothic-desktop .work-detail__hero--jungjimin-gothic-desktop {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   width: 1280px;
   max-width: 1280px;
-  margin: 0 auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-
-  flex-direction: row;}
+  flex-direction: row;
+  height: 540px;
+}
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__hero-content--jungjimin-gothic-desktop {
   display: flex;
-  flex: 1 0 0;
+  flex: 0 0 640px;
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 0;
   min-width: 0;
-  padding: 120px 64px;
+  padding: 120px 64px 0 64px;
+  width: 640px;
+  height: 443px;
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__text-group {
@@ -46,10 +48,10 @@
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__title--jungjimin-gothic-desktop {
-  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 61.6px;
   letter-spacing: -1.12px;
   color: #000000;
   margin: 0;
@@ -57,10 +59,10 @@
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__lead--jungjimin-gothic-desktop {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 34.8px;
   letter-spacing: -0.12px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -69,30 +71,40 @@
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__ctas--jungjimin-gothic-desktop {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   cursor: pointer;
+  width: auto;
+  min-width: 313px;
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__cta--jungjimin-gothic-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
   white-space: nowrap;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: auto;
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__cta--primary.work-detail__cta--jungjimin-gothic-desktop {
   background: #000000;
   color: #ffffff;
+  width: 190px;
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__cta--primary.work-detail__cta--jungjimin-gothic-desktop:hover {
@@ -103,7 +115,8 @@
 .work-detail--jungjimin-the-gothic-desktop .work-detail__cta--secondary.work-detail__cta--jungjimin-gothic-desktop {
   background: transparent;
   color: #000000;
-  border: 2px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  width: 107px;
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__cta--secondary.work-detail__cta--jungjimin-gothic-desktop:hover {
@@ -111,210 +124,267 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__hero-image-wrapper--jungjimin-gothic-desktop {overflow: hidden;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__hero-image-wrapper--jungjimin-gothic-desktop {
+  overflow: hidden;
   position: relative;
-  
   flex-shrink: 0;
+  width: 640px;
+  height: 540px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__hero-image-wrapper--jungjimin-gothic-desktop .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__hero-image-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-/* Feature Section */
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature--jungjimin-gothic-desktop {
+.work-detail--jungjimin-the-gothic-desktop .work-detail__hero-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 640px;
+  height: 540px;
+  object-fit: cover;
+}
+
+/* Feature cards 1 - 씬1, 씬2, 씬3 */
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-card--jungjimin-gothic-desktop {
   padding: 120px 64px;
   display: flex;
-  gap: 64px;
-  align-items: center;
+  flex-direction: row;
+  gap: 48px;
+  align-items: flex-start;
   width: 1280px;
   max-width: 1280px;
   margin: 0 auto;
+  min-height: 672px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-content--jungjimin-gothic-desktop {
-  display: flex;
-  flex: 1 0 0;
-  flex-direction: row;
-  align-items: center;
-  align-self: stretch;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-card--jungjimin-gothic-desktop.work-detail__feature-card--reverse {
+  flex-direction: row-reverse;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-text {
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-card-content--jungjimin-gothic-desktop {
   display: flex;
-  flex: 1 0 0;
+  flex: 0 0 544px;
   flex-direction: column;
-  gap: 48px;
+  gap: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 544px;
+  height: 432px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-card-content--jungjimin-gothic-desktop .work-detail__text-group {
+  gap: 0;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
+  height: 93px;
+  margin-top: 169.5px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-title {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-card-title {
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 43.2px;
   letter-spacing: -0.72px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-text p {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-card-description {
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-image-wrapper--jungjimin-gothic-desktop {position: relative;
-  
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-card-image-wrapper--jungjimin-gothic-desktop {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+  width: 544px;
+  height: 432px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-image {height: auto;position: absolute;display: block;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  display: block;
+  width: 544px;
+  height: 432px;
+  object-fit: cover;
   border-radius: 16px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-image-wrapper--jungjimin-gothic-desktop .work-detail__feature-image {left: 0;
-  top: 0;
-}
-
-/* Feature Rows Section */
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-rows--jungjimin-gothic-desktop {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 1280px;
-  max-width: 1280px;
-  margin: 0 auto;
-  list-style: none;
-}
-
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-row--jungjimin-gothic-desktop {
-  display: flex;
-  gap: 64px;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 64px 40px;
-  width: 100%;
-}
-
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-row--jungjimin-gothic-desktop:last-child {
-  padding: 40px 64px 120px;
-}
-
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-row--reverse {
-  flex-direction: row-reverse;
-}
-
-/* Feature Rows ?��?지 */
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-row--jungjimin-gothic-desktop .work-detail__feature-image-wrapper--jungjimin-gothic-desktop .work-detail__feature-image {left: 0;
-  top: 0;
-}
-
-/* Feature Section 3 - ?�더??(?��?지 ?? ?�스???�래) */
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature--image-top {height: auto;padding: 120px 64px;
+/* Feature 3 - 렌더샷 */
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature--jungjimin-gothic-desktop {
+  padding: 120px 64px;
   display: flex;
   flex-direction: column;
   gap: 48px;
   align-items: flex-start;
+  width: 1280px;
+  max-width: 1280px;
   margin: 0 auto;
+  min-height: 1024px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-image-wrapper--large {}
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-image-wrapper--jungjimin-gothic-desktop {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 1152px;
+  height: 648px;
+}
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-image-wrapper--large .work-detail__feature-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  display: block;
+  width: 1152px;
+  height: 648px;
+  object-fit: cover;
   border-radius: 16px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-text--below {
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-header--jungjimin-gothic-desktop {
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: flex-start;
-  width: 100%;
+  width: 1152px;
+  height: 88px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-text--below .work-detail__feature-title {
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-title {
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
+  font-weight: 700;
+  line-height: 43.2px;
+  letter-spacing: -0.72px;
+  color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-text--below p {
+.work-detail--jungjimin-the-gothic-desktop .work-detail__feature-description {
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
+  font-weight: 500;
+  line-height: 29px;
   letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-wrap;
 }
 
-/* Feature Cards Section */
+/* Feature cards 1 - 3개 카드 가로 배치 */
 .work-detail--jungjimin-the-gothic-desktop .work-detail__cards--jungjimin-gothic-desktop {
   padding: 120px 64px;
   display: flex;
+  flex-direction: row;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   width: 1280px;
   max-width: 1280px;
   margin: 0 auto;
   list-style: none;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__card--jungjimin-gothic-desktop {
+.work-detail--jungjimin-the-gothic-desktop .work-detail__card--jungjimin-gothic-1,
+.work-detail--jungjimin-the-gothic-desktop .work-detail__card--jungjimin-gothic-2,
+.work-detail--jungjimin-the-gothic-desktop .work-detail__card--jungjimin-gothic-3 {
   display: flex;
-  flex: 1 0 0;
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  max-width: 388px;
-  min-width: 336px;
   overflow: hidden;
   border-radius: 8px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__card-image-wrapper {overflow: hidden;
-  position: relative;
-  border-radius: 16px;}
+.work-detail--jungjimin-the-gothic-desktop .work-detail__card--jungjimin-gothic-1 {
+  width: 362.67px;
+}
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__card--jungjimin-gothic-2 {
+  width: 362.67px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__card--jungjimin-gothic-3 {
+  width: 362.67px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__card-image-wrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  width: 100%;
+  height: 483px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  display: block;
+  width: 100%;
+  height: 483px;
+  object-fit: cover;
   border-radius: 16px;
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__card-text {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
   align-items: flex-start;
   width: 100%;
+  height: 29px;
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__card-title {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 28.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
-/* Feature Bento Section */
+/* Feature bento 1 - 3개 카드 */
 .work-detail--jungjimin-the-gothic-desktop .work-detail__bento--jungjimin-gothic-desktop {
   padding: 120px 64px;
   display: flex;
   flex-wrap: wrap;
-  gap: 48px 32px;
+  gap: 32px 32px;
   align-items: flex-start;
   width: 1280px;
   max-width: 1280px;
@@ -322,81 +392,115 @@
   list-style: none;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card {
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-1 {
   display: flex;
-  flex: 1 0 0;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   align-items: flex-start;
   overflow: hidden;
   border-radius: 8px;
+  width: 388px;
+  height: 401px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-desktop-1 {
-  max-width: 388px;
-  min-width: 336px;
-}
-
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-desktop-2 {
-  min-width: 516px;
-}
-
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-desktop-3 {
-  min-width: 1072px;
-}
-
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card-image-wrapper {overflow: hidden;
-  position: relative;
-  border-radius: 16px;}
-
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card-image {height: auto;position: absolute;display: block;
-}
-
-/* Bento Card 1 - 갑옷 */
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-desktop-1 .work-detail__bento-card-image {left: 0;
-  top: 0;
-  transform: none;
-  border-radius: 16px;
-}
-
-/* Bento Card 2 - 문양 */
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-desktop-2 .work-detail__bento-card-image {left: 0;
-  top: 0;
-  transform: none;
-  border-radius: 16px;
-}
-
-/* Bento Card 3 - 벨트 */
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-desktop-3 .work-detail__bento-card-image-wrapper {position: relative;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
   overflow: hidden;
+  border-radius: 8px;
+  width: 732px;
+  height: 401px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-desktop-3 .work-detail__bento-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 1152px;
+  height: 401px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card-image-wrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  width: 100%;
+  height: 348px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-1 .work-detail__bento-card-image-wrapper {
+  width: 388px;
+  height: 348px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-1 .work-detail__bento-card-image {
+  position: absolute;
+  left: -20px;
+  top: 0;
+  display: block;
+  width: 428px;
+  height: 348px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-2 .work-detail__bento-card-image-wrapper {
+  width: 732px;
+  height: 348px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-2 .work-detail__bento-card-image {
+  position: absolute;
+  left: 0;
+  top: -4px;
+  display: block;
+  width: 732px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-3 .work-detail__bento-card-image-wrapper {
+  width: 1152px;
+  height: 348px;
+}
+
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-3 .work-detail__bento-card-image {
+  position: absolute;
+  left: 0;
+  top: -31px;
+  display: block;
+  width: 1152px;
+  height: 485px;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card-text {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
   align-items: flex-start;
   width: 100%;
-  padding-right: 320px;
+  height: 29px;
 }
 
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-desktop-1 .work-detail__bento-card-text,
-.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-desktop-2 .work-detail__bento-card-text {
-  padding-right: 0;
+.work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card--jungjimin-gothic-3 .work-detail__bento-card-text {
+  width: 832px;
 }
 
 .work-detail--jungjimin-the-gothic-desktop .work-detail__bento-card-title {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 28.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
-

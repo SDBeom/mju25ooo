@@ -14,7 +14,7 @@ import doTienHongWork1_06 from '../../../../assets/도티안홍/dotianhong_video
  * 도티안홍 - "SEE TINH" ISOMETIC Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const DoTienHongSeeTinhIsometicMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const DoTienHongSeeTinhIsometicMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

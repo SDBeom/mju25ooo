@@ -3,17 +3,17 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/JeongitaeWarOrb/JeongitaeWarOrbTablet.css';
 
 // 이미지 임포트
-import jeongitaeWork2_01 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_01.webp';
-import jeongitaeWork2_02 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_02.webp';
-import jeongitaeWork2_03 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_03.webp';
-import jeongitaeWork2_04 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_04.webp';
-import jeongitaeWork2_05 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work2_05.webp';
+import jeongitaeWork2_01 from '../../../../assets/전기태/jeongitae_gamecontent_work2_01.webp';
+import jeongitaeWork2_02 from '../../../../assets/전기태/jeongitae_gamecontent_work2_02.webp';
+import jeongitaeWork2_03 from '../../../../assets/전기태/jeongitae_gamecontent_work2_03.webp';
+import jeongitaeWork2_04 from '../../../../assets/전기태/jeongitae_gamecontent_work2_04.webp';
+import jeongitaeWork2_05 from '../../../../assets/전기태/jeongitae_gamecontent_work2_05.webp';
 
 /**
  * 전기태 - War Orb (작품2) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const JeongitaeWarOrbTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const JeongitaeWarOrbTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -28,10 +28,12 @@ const JeongitaeWarOrbTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
               War Orb
             </h2>
             <div className="work-detail__lead work-detail__lead--jeongitae-warorb-tablet">
-              <p className="mb-0">"세계의 신비로움과 그 창대함이 담긴</p>
-              <p className="mb-0">오브. 이 오브는 누가 바라보느냐에 따라 선의 정의가 될 수도, 악의 신념이 될 수도 있는 존재이다." 작품 워오브는 그 중</p>
-              <p className="mb-0">선의 오브를 쫓는 4가지의 클래스</p>
-              <p>소개하는 영상물이다.</p>
+              <p>
+                {`"세계의 신비로움과 그 창대함이 담긴
+오브. 이 오브는 누가 바라보느냐에 따라 선의 정의가 될 수도, 악의 신념이 될 수도 있는 존재이다." 작품 워오브는 그 중
+선의 오브를 쫓는 4가지의 클래스
+소개하는 영상물이다.`}
+              </p>
             </div>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
@@ -73,8 +75,10 @@ const JeongitaeWarOrbTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">모두의 염원이자 신비의 존재, 오브.</h4>
-          <p className="mb-0">오브는 어느 날. 혹은 이 세계의 시작의 순간부터 존재했을지도 모르는 신비로운 존재이다.</p>
-          <p>이 오브는 그것을 취한 자들에게 원하는 힘을 하사한다.</p>
+          <p>
+            {`오브는 어느 날. 혹은 이 세계의 시작의 순간부터 존재했을지도 모르는 신비로운 존재이다.
+이 오브는 그것을 취한 자들에게 원하는 힘을 하사한다.`}
+          </p>
         </div>
       </section>
 
@@ -92,8 +96,12 @@ const JeongitaeWarOrbTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">제 4클래스타일을</h5>
-            <p className="mb-0">각자의 신념으로 선의 입장을</p>
-            <p>자처하며 오브를 쫓는 자들이 있다.</p>
+            <div className="work-detail__card-description">
+              <p>
+                {`각자의 신념으로 선의 입장을
+자처하며 오브를 쫓는 자들이 있다.`}
+              </p>
+            </div>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--jeongitae-warorb-tablet work-detail__card--bento-2">
@@ -108,9 +116,13 @@ const JeongitaeWarOrbTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">"영광이 있으리."</h5>
-            <p className="mb-0">그들은 각자의 갑옷과 무기, 혹은 마나 창고에 오브를 심어</p>
-            <p className="mb-0">힘을 발휘하는 존재들. 그들은 더욱 많은 오브를 취해</p>
-            <p>자신들의 선을 세상에 뿌리 심으려 한다.</p>
+            <div className="work-detail__card-description">
+              <p>
+                {`그들은 각자의 갑옷과 무기, 혹은 마나 창고에 오브를 심어
+힘을 발휘하는 존재들. 그들은 더욱 많은 오브를 취해
+자신들의 선을 세상에 뿌리 심으려 한다.`}
+              </p>
+            </div>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--jeongitae-warorb-tablet work-detail__card--bento-3">
@@ -125,7 +137,11 @@ const JeongitaeWarOrbTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">라이브 2D 애니메이션</h5>
-            <p>Spine 2D 프로그램을 사용해 2.5D 라이브 2D 애니메이션 효과를 넣어 더욱 생동감 있는 움직임을 연출했다.</p>
+            <div className="work-detail__card-description">
+              <p>
+                {`Spine 2D 프로그램을 사용해 2.5D 라이브 2D 애니메이션 효과를 넣어 더욱 생동감 있는 움직임을 연출했다.`}
+              </p>
+            </div>
           </div>
         </li>
       </ul>

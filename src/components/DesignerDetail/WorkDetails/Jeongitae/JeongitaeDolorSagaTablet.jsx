@@ -3,18 +3,18 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/JeongitaeDolorSaga/JeongitaeDolorSagaTablet.css';
 
 // 이미지 임포트
-import jeongitaeWork1_01 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work1_01.webp';
-import jeongitaeWork1_02 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work1_02.webp';
-import jeongitaeWork1_03 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work1_03.webp';
-import jeongitaeWork1_04 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work1_04.webp';
-import jeongitaeWork1_05 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work1_05.webp';
-import jeongitaeWork1_06 from '../../../../assets/전기태/jeongitae_gamecontent_츠_work1_06.webp';
+import jeongitaeWork1_01 from '../../../../assets/전기태/jeongitae_gamecontent_work1_01.webp';
+import jeongitaeWork1_02 from '../../../../assets/전기태/jeongitae_gamecontent_work1_02.webp';
+import jeongitaeWork1_03 from '../../../../assets/전기태/jeongitae_gamecontent_work1_03.webp';
+import jeongitaeWork1_04 from '../../../../assets/전기태/jeongitae_gamecontent_work1_04.webp';
+import jeongitaeWork1_05 from '../../../../assets/전기태/jeongitae_gamecontent_work1_05.webp';
+import jeongitaeWork1_06 from '../../../../assets/전기태/jeongitae_gamecontent_work1_06.webp';
 
 /**
  * 전기태 - Dolor Saga (작품1) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const JeongitaeDolorSagaTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const JeongitaeDolorSagaTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -29,9 +29,11 @@ const JeongitaeDolorSagaTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
               Dolor Saga
             </h2>
             <div className="work-detail__lead work-detail__lead--jeongitae-dolor-saga-tablet">
-              <p className="mb-0">돌로르사가.</p>
-              <p className="mb-0">세상의 최고위 종족. 용에 대항하는</p>
-              <p>인류 대항군의 스타일을토리를 담은 아트북.</p>
+              <p>
+                {`돌로르사가.
+세상의 최고위 종족. 용에 대항하는
+인류 대항군의 스토리를 담은 아트북.`}
+              </p>
             </div>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
@@ -73,9 +75,13 @@ const JeongitaeDolorSagaTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">"용은 그 존재 자체로 영엄하고도 파괴적이다.</h4>
-          <p className="mb-0">돌로르사가 속 등장하는 용은 자신들의 발 아래 땅을 지배하기 위해</p>
-          <p className="mb-0">파괴를 일삼는 종족으로 묘사된다.</p>
-          <p>그들의 힘은 일반적인 존재인 인간, 엘프, 드워프보다 훨씬 월등하다.</p>
+          <div className="work-detail__feature-description">
+            <p>
+              {`돌로르사가 속 등장하는 용은 자신들의 발 아래 땅을 지배하기 위해
+파괴를 일삼는 종족으로 묘사된다.
+그들의 힘은 일반적인 존재인 인간, 엘프, 드워프보다 훨씬 월등하다.`}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -93,8 +99,12 @@ const JeongitaeDolorSagaTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">인류 대항군 종족 제 3종족</h5>
-            <p className="mb-0">인류 대항군으로 용에게 대적하는 종족은 인간, 엘프, 드워프로</p>
-            <p>총 3 종족이다.</p>
+            <div className="work-detail__card-description">
+              <p>
+                {`인류 대항군으로 용에게 대적하는 종족은 인간, 엘프, 드워프로
+총 3 종족이다.`}
+              </p>
+            </div>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--jeongitae-dolor-saga-tablet work-detail__card--bento-2">
@@ -109,8 +119,12 @@ const JeongitaeDolorSagaTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">전투</h5>
-            <p className="mb-0">이들은 자신의 목숨을 바쳐 자신들의 고향과 가족,</p>
-            <p>사랑하는 이들이 살아가는 이 세상을 지키기위해 싸운다.</p>
+            <div className="work-detail__card-description">
+              <p>
+                {`이들은 자신의 목숨을 바쳐 자신들의 고향과 가족,
+사랑하는 이들이 살아가는 이 세상을 지키기위해 싸운다.`}
+              </p>
+            </div>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--jeongitae-dolor-saga-tablet work-detail__card--bento-3">
@@ -125,9 +139,13 @@ const JeongitaeDolorSagaTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">압도적인 절망</h5>
-            <p className="mb-0">인류 대항군이 약 1,000명 정도 전투에 참여한다고 가정했을 때다.</p>
-            <p className="mb-0">대략 대항군 900명의 희생으로 1마리의 용을 사냥하는 것이 평균적인 결과값이다.</p>
-            <p>인류는 처절하게 싸우지만 그들의 목숨을 비웃듯 용들의 브레스타일을는 멈추지 않는다.</p>
+            <div className="work-detail__card-description">
+              <p>
+                {`인류 대항군이 약 1,000명 정도 전투에 참여한다고 가정했을 때다.
+대략 대항군 900명의 희생으로 1마리의 용을 사냥하는 것이 평균적인 결과값이다.
+인류는 처절하게 싸우지만 그들의 목숨을 비웃듯 용들의 브레스는 멈추지 않는다.`}
+              </p>
+            </div>
           </div>
         </li>
       </ul>
@@ -137,11 +155,15 @@ const JeongitaeDolorSagaTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) 
         <div className="work-detail__feature-cards-content">
           <div className="work-detail__feature-cards-text">
             <h4 className="work-detail__feature-cards-title">약자의 발버둥</h4>
-            <p className="mb-0">인류는 수많은 전멸에도 굴복하지 않고</p>
-            <p className="mb-0">계속해서 나아간다.</p>
-            <p className="mb-0">시간이 쌓이면서 인류 대항군 내에서도</p>
-            <p className="mb-0">단신으로 용을 죽이는 존재들이 등장한다.</p>
-            <p>이로써 이들의 처절한 대항은 계속된다.</p>
+            <div className="work-detail__feature-cards-description">
+              <p>
+                {`인류는 수많은 전멸에도 굴복하지 않고
+계속해서 나아간다.
+시간이 쌓이면서 인류 대항군 내에서도
+단신으로 용을 죽이는 존재들이 등장한다.
+이로써 이들의 처절한 대항은 계속된다.`}
+              </p>
+            </div>
           </div>
         </div>
         <div className="work-detail__feature-cards-image-wrapper">

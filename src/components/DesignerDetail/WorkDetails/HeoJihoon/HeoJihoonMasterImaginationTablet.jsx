@@ -7,6 +7,7 @@ import heoJiHoonWork1_04 from '../../../../assets/허지훈/heojihoon_motiondesi
 import heoJiHoonWork1_05 from '../../../../assets/허지훈/heojihoon_motiondesign_work1_05.webp';
 import heoJiHoonWork1_06 from '../../../../assets/허지훈/heojihoon_motiondesign_work1_06.webp';
 import heoJiHoonWork1_07 from '../../../../assets/허지훈/heojihoon_motiondesign_work1_07.webp';
+import heoJiHoonWork1_08 from '../../../../assets/허지훈/heojihoon_motiondesign_work1_08.webp';
 import heoJiHoonWork1_09 from '../../../../assets/허지훈/heojihoon_motiondesign_work1_09.webp';
 import heoJiHoonWork1_10 from '../../../../assets/허지훈/heojihoon_motiondesign_work1_10.webp';
 import heoJiHoonWork1_11 from '../../../../assets/허지훈/heojihoon_motiondesign_work1_11.webp';
@@ -86,10 +87,10 @@ const HeoJihoonMasterImaginationTablet = ({ work, designer, ctas }) => {
       <section className="work-detail__section work-detail__feature work-detail__feature--tablet">
         <div className="work-detail__feature-image-wrapper">
           <img 
-            src={heoJiHoonWork1_19} 
+            src={heoJiHoonWork1_02} 
             alt="제품의 본질에 집중"
             className="work-detail__feature-image"
-            onError={(e) => handleImageError(e, heoJiHoonWork1_19, work.id, 'feature-1')}
+            onError={(e) => handleImageError(e, heoJiHoonWork1_02, work.id, 'feature-1')}
             loading="lazy"
           />
         </div>
@@ -104,10 +105,10 @@ const HeoJihoonMasterImaginationTablet = ({ work, designer, ctas }) => {
         <div className="work-detail__card">
           <div className="work-detail__card-image-wrapper">
             <img 
-              src={heoJiHoonWork1_02} 
+              src={heoJiHoonWork1_03} 
               alt="바위 실루엣"
               className="work-detail__card-image"
-              onError={(e) => handleImageError(e, heoJiHoonWork1_02, work.id, 'card-1')}
+              onError={(e) => handleImageError(e, heoJiHoonWork1_03, work.id, 'card-1')}
               loading="lazy"
             />
           </div>
@@ -119,10 +120,10 @@ const HeoJihoonMasterImaginationTablet = ({ work, designer, ctas }) => {
         <div className="work-detail__card">
           <div className="work-detail__card-image-wrapper">
             <img 
-              src={heoJiHoonWork1_03} 
+              src={heoJiHoonWork1_04} 
               alt="펼쳐지는 상상의 세계"
               className="work-detail__card-image"
-              onError={(e) => handleImageError(e, heoJiHoonWork1_03, work.id, 'card-2')}
+              onError={(e) => handleImageError(e, heoJiHoonWork1_04, work.id, 'card-2')}
               loading="lazy"
             />
           </div>
@@ -134,10 +135,10 @@ const HeoJihoonMasterImaginationTablet = ({ work, designer, ctas }) => {
         <div className="work-detail__card">
           <div className="work-detail__card-image-wrapper">
             <img 
-              src={heoJiHoonWork1_04} 
+              src={heoJiHoonWork1_05} 
               alt="창작의 도구, 마우스"
               className="work-detail__card-image"
-              onError={(e) => handleImageError(e, heoJiHoonWork1_04, work.id, 'card-3')}
+              onError={(e) => handleImageError(e, heoJiHoonWork1_05, work.id, 'card-3')}
               loading="lazy"
             />
           </div>
@@ -152,10 +153,10 @@ const HeoJihoonMasterImaginationTablet = ({ work, designer, ctas }) => {
       <section className="work-detail__section work-detail__feature work-detail__feature--tablet">
         <div className="work-detail__feature-image-wrapper">
           <img 
-            src={heoJiHoonWork1_05} 
+            src={heoJiHoonWork1_06} 
             alt="생성형 AI 활용"
             className="work-detail__feature-image"
-            onError={(e) => handleImageError(e, heoJiHoonWork1_05, work.id, 'feature-2')}
+            onError={(e) => handleImageError(e, heoJiHoonWork1_06, work.id, 'feature-2')}
             loading="lazy"
           />
         </div>
@@ -174,10 +175,10 @@ const HeoJihoonMasterImaginationTablet = ({ work, designer, ctas }) => {
           </div>
           <div className="work-detail__feature-row-image-wrapper">
             <img 
-              src={heoJiHoonWork1_06} 
+              src={heoJiHoonWork1_07} 
               alt="RUNWAY와 Cinema 4D의 만남"
               className="work-detail__feature-row-image"
-              onError={(e) => handleImageError(e, heoJiHoonWork1_06, work.id, 'row-1')}
+              onError={(e) => handleImageError(e, heoJiHoonWork1_07, work.id, 'row-1')}
               loading="lazy"
             />
           </div>
@@ -185,10 +186,10 @@ const HeoJihoonMasterImaginationTablet = ({ work, designer, ctas }) => {
         <div className="work-detail__feature-row">
           <div className="work-detail__feature-row-image-wrapper">
             <img 
-              src={heoJiHoonWork1_07} 
+              src={heoJiHoonWork1_08} 
               alt="Stylize + 4K Upscale"
               className="work-detail__feature-row-image"
-              onError={(e) => handleImageError(e, heoJiHoonWork1_07, work.id, 'row-2')}
+              onError={(e) => handleImageError(e, heoJiHoonWork1_08, work.id, 'row-2')}
               loading="lazy"
             />
           </div>

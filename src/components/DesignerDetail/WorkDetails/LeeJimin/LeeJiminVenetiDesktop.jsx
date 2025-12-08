@@ -24,7 +24,7 @@ import leejiminWork1_16 from '../../../../assets/이지민/leejimin_multimedia_w
  * 이지민 - Veneti (작품1) Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
-const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeJiminVenetiDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -38,10 +38,10 @@ const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
             <h2 className="work-detail__title work-detail__title--leejimin-veneti-desktop">
               Veneti
             </h2>
-            <div className="work-detail__lead work-detail__lead--leejimin-veneti-desktop">
-              <p className="mb-0">문어마녀 우르슬라를 현대적인 시선으로 재해석해 제작한 캐릭터로, 3D 모델링을 통해 턴테이블</p>
-              <p>영상과 2D 일러트를 수록한 아트북을 제작했다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--leejimin-veneti-desktop">
+              문어마녀 우르슬라를 현대적인 시선으로 재해석해 제작한 캐릭터로, 3D 모델링을 통해 턴테이블
+영상과 2D 일러스트를 수록한 아트북을 제작했다.
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--leejimin-veneti-desktop">
@@ -75,10 +75,11 @@ const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           <p className="work-detail__text-section-label">The story of an octopus witch</p>
           <h3 className="work-detail__text-section-title">Dream of freedom</h3>
         </div>
-        <div className="work-detail__text-section-description">
-          <p className="mb-0">이 프로젝트는 3D 컬프팅 실력과 인체 이해도를 향상시키고, 블렌더를 활용해 캐릭터 제작을 완성하는 것을 목표로 기획했다. 월트 디즈니 튜디오의 애니메이션 영화 '인어공주'에 등장하는 마녀 우르슬라를 현대적인 시선으로 재해석하여 새로운 캐릭터로 탄생시켰으며, '자유를 찾아 떠나는 여정'이라는 토리를 바탕으로 캐릭터가 꿈꾸는 자유를 상징하기 위해 케이트보드를 타는 설정을 부여했다.</p>
-          <p className="mb-0"> </p>
-          <p>또한 캐릭터의 활기찬 모습을 표현하기 위해 리깅 후 역동적인 포즈를 연출하였고, 세계관의 완성도를 높이기 위해 러프한 2D 아트워크부터 세부 디자인까지과정을 정리해 아트북으로 제작했다.</p>
+        <div className="work-detail__text-content">
+          <p>이 프로젝트는 3D 스컬프팅 실력과 인체 이해도를 향상시키고, 블렌더를 활용해 캐릭터 제작을 완성하는 것을 목표로 기획했다. 월트 디즈니 스튜디오의 애니메이션 영화 '인어공주'에 등장하는 마녀 우르슬라를 현대적인 시선으로 재해석하여 새로운 캐릭터로 탄생시켰으며, '자유를 찾아 떠나는 여정'이라는 스토리를 바탕으로 캐릭터가 꿈꾸는 자유를 상징하기 위해 스케이트보드를 타는 설정을
+부여했다.
+
+또한 캐릭터의 활기찬 모습을 표현하기 위해 리깅 후 역동적인 포즈를 연출하였고, 세계관의 완성도를 높이기 위해 러프한 2D 아트워크부터 세부 디자인까지과정을 정리해 아트북으로 제작했다.</p>
         </div>
       </section>
 
@@ -113,8 +114,8 @@ const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Poster</h5>
-            <p className="mb-0">2D 일러트와 3D 모델링의 역동적인 자세로</p>
-            <p>동일한 디자인의 포터를 제작하였다.</p>
+            <p>2D 일러스트와 3D 모델링의 역동적인 자세로
+동일한 디자인의 포스터를 제작하였다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--leejimin-veneti-desktop">
@@ -129,9 +130,9 @@ const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Postcard</h5>
-            <p className="mb-0">눈에 띄는 마젠타로 시선을 끌고 SNS와 연동</p>
-            <p className="mb-0">되는 큐알 코드와 함께 2D 일러트로 엽서를</p>
-            <p>디자인 하였다.</p>
+            <p>눈에 띄는 마젠타로 시선을 끌고 SNS와 연동
+되는 큐알 코드와 함께 2D 일러스트로 엽서를
+디자인 하였다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--leejimin-veneti-desktop">
@@ -146,8 +147,8 @@ const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Illustration</h5>
-            <p className="mb-0">2D 일러트를 통해 포터와 엽서 디자인을</p>
-            <p>진행하고 아트북에 수록하였다.</p>
+            <p>2D 일러스트를 통해 포스터와 엽서 디자인을
+진행하고 아트북에 수록하였다.</p>
           </div>
         </li>
       </ul>
@@ -174,8 +175,8 @@ const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
             <div className="work-detail__feature-bento-card work-detail__feature-bento-card--2">
               <div className="work-detail__feature-bento-card-text">
                 <h5 className="work-detail__feature-bento-card-title">Skate Board</h5>
-                <p className="mb-0">케이트보드 텍쳐로 캐릭터의 개성이 느껴지는 그라피티를</p>
-                <p>디자인 하였고, 이를 실물로 제작에 전시하였다.</p>
+                <p>스케이트보드 텍스쳐로 캐릭터의 개성이 느껴지는 그라피티를
+ 디자인 하였고, 이를 실물로 제작에 전시하였다.</p>
               </div>
               <div className="work-detail__feature-bento-card-image-wrapper">
                 <img
@@ -201,8 +202,8 @@ const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
               </div>
               <div className="work-detail__feature-bento-card-text">
                 <h5 className="work-detail__feature-bento-card-title">Character</h5>
-                <p className="mb-0">메인 캐릭터와 서브 케릭터를 모델링 하여 함께 회전하는 영상을</p>
-                <p>제작했다.</p>
+                <p>메인 캐릭터와 서브 케릭터를 모델링 하여 함께 회전하는 영상을
+제작했다.</p>
               </div>
             </div>
           </div>
@@ -213,7 +214,7 @@ const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
       <section className="work-detail__section work-detail__gallery work-detail__gallery--leejimin-veneti-desktop">
         <div className="work-detail__gallery-header">
           <h3 className="work-detail__gallery-title">Artbook</h3>
-          <p className="work-detail__gallery-description">캐릭터의 제작 과정부터 세계관 가이드, 2D 일러트와 3D 모델링까지 모두 수록한 아트북을 제작하였다.</p>
+          <p className="work-detail__gallery-description">캐릭터의 제작 과정부터 세계관 가이드, 2D 일러스트와 3D 모델링까지 모두 수록한 아트북을 제작하였다.</p>
         </div>
         <div className="work-detail__gallery-grid">
           <div className="work-detail__gallery-column work-detail__gallery-column--1">
@@ -290,10 +291,10 @@ const LeeJiminVenetiDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
 
       {/* Quote Section */}
       <section className="work-detail__section work-detail__quote work-detail__quote--leejimin-veneti-desktop">
-        <div className="work-detail__quote-text">
-          <h3 className="mb-0">"이 캐릭터가 단순한 조형물이 아닌, 살아 숨 쉬는 존재로</h3>
-          <h3>확장되는 그날을 꿈꾸며 이 여정을 이어갈 것입니다."</h3>
-        </div>
+        <p className="work-detail__quote-text">
+          "이 캐릭터가 단순한 조형물이 아닌, 살아 숨 쉬는 존재로
+확장되는 그날을 꿈꾸며 이 여정을 이어갈 것입니다."
+        </p>
         <div className="work-detail__quote-author">
           <div className="work-detail__quote-author-avatar">
             <img

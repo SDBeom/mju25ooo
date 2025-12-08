@@ -14,9 +14,7 @@
 }
 
 /* 모달창 내부 섹션들이 보이도록 보장 */
-.modal-content .work-detail--kim-yunjung-love-at-rust-sight-mobile .work-detail__section,
-.modal-content .work-detail__section {
-  display: block;
+.modal-content .work-detail--kim-yunjung-love-at-rust-sight-mobile .work-detail__section {
   visibility: visible;
   opacity: 1;
 }
@@ -45,9 +43,13 @@
 }
 
 .work-detail--kim-yunjung-love-at-rust-sight-mobile .work-detail__hero-image {
-  position: absolute;
-  left: 0;
-  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
   width: 100%;
   height: 100%;
   object-fit: cover;

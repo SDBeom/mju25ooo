@@ -11,8 +11,8 @@ import WoosuminSasindoMobile from './WoosuminSasindoMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const WoosuminSasindo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const WoosuminSasindo = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const WoosuminSasindo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <WoosuminSasindoMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const WoosuminSasindo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <WoosuminSasindoTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const WoosuminSasindo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <WoosuminSasindoDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

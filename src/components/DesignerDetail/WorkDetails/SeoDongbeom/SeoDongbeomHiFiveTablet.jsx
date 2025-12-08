@@ -145,7 +145,7 @@ const SeoDongbeomHiFiveTablet = ({ work, designer, ctas }) => {
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">
               <ol className="work-detail__card-title-list">
-                <li>A little glimpse</li>
+                <li>휘발성 세션 기능</li>
               </ol>
             </h5>
             <div className="work-detail__card-description">

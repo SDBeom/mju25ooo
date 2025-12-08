@@ -10,7 +10,6 @@ import woosuminWork1_04 from '../../../../assets/우수민/woosumin_multimedia_w
 import woosuminWork1_05 from '../../../../assets/우수민/woosumin_multimedia_work1_05.webp';
 import woosuminWork1_06 from '../../../../assets/우수민/woosumin_multimedia_work1_06.webp';
 import woosuminWork1_07 from '../../../../assets/우수민/woosumin_multimedia_work1_07.webp';
-import woosuminWork1_08 from '../../../../assets/우수민/woosumin_multimedia_work1_08.webp';
 import woosuminWork1_09 from '../../../../assets/우수민/woosumin_multimedia_work1_09.webp';
 import woosuminWork1_10 from '../../../../assets/우수민/woosumin_multimedia_work1_10.webp';
 import woosuminWork1_11 from '../../../../assets/우수민/woosumin_multimedia_work1_11.webp';
@@ -21,7 +20,7 @@ import woosuminWork1_13 from '../../../../assets/우수민/woosumin_multimedia_w
  * 우수민 - 사신도 (작품1) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const WoosuminSasindoMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const WoosuminSasindoMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -170,10 +169,10 @@ const WoosuminSasindoMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
             </div>
             <div className="work-detail__gallery-item">
               <img
-                src={woosuminWork1_08}
+                src={woosuminWork1_09}
                 alt="Gallery image 2"
                 className="work-detail__gallery-image"
-                onError={(e) => handleImageError(e, woosuminWork1_08, work.id, 'gallery-2')}
+                onError={(e) => handleImageError(e, woosuminWork1_09, work.id, 'gallery-2')}
                 loading="lazy"
               />
             </div>
@@ -210,10 +209,10 @@ const WoosuminSasindoMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           <div className="work-detail__gallery-column">
             <div className="work-detail__gallery-item">
               <img
-                src={woosuminWork1_08}
+                src={woosuminWork1_10}
                 alt="Gallery image 6"
                 className="work-detail__gallery-image"
-                onError={(e) => handleImageError(e, woosuminWork1_08, work.id, 'gallery-6')}
+                onError={(e) => handleImageError(e, woosuminWork1_10, work.id, 'gallery-6')}
                 loading="lazy"
               />
             </div>

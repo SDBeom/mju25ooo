@@ -11,8 +11,8 @@ import LeeUn9e9e9eMobile from './LeeUn9e9e9eMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const LeeUn9e9e9e = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const LeeUn9e9e9e = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const LeeUn9e9e9e = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <LeeUn9e9e9eMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const LeeUn9e9e9e = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <LeeUn9e9e9eTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const LeeUn9e9e9e = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <LeeUn9e9e9eDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

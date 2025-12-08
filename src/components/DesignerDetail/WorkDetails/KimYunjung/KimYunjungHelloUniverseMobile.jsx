@@ -16,7 +16,7 @@ import kimYunjungWork2_24 from '../../../../assets/김윤정/kimyunjung_video_wo
  * 김윤정 - 안녕 우주 Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const KimYunjungHelloUniverseMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimYunjungHelloUniverseMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

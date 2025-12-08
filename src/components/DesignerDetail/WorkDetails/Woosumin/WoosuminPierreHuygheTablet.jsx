@@ -23,7 +23,7 @@ import woosuminWork2_15 from '../../../../assets/우수민/woosumin_multimedia_w
  * 우수민 - Pierre Huyghe: Liminal 가이드앱 UXUI (작품2) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const WoosuminPierreHuygheTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const WoosuminPierreHuygheTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -35,13 +35,13 @@ const WoosuminPierreHuygheTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
         <div className="work-detail__hero-content work-detail__hero-content--woosumin-pierre-huyghe-tablet">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--woosumin-pierre-huyghe-tablet">
-              <span className="block mb-0">Pierre Huyghe: Liminal</span>
-              <span className="block">가이드앱 UXUI</span>
+              {`Pierre Huyghe: Liminal
+가이드앱 UXUI`}
             </h2>
-            <div className="work-detail__lead work-detail__lead--woosumin-pierre-huyghe-tablet">
-              <p className="mb-0">리미널 전시를 위한 전시 가이드 UXUI로, 전시 정보·동선 안내·인터랙티브 체험을 제공한다. 사용자 중심 설계로 몰입도를 높이며 전통적 안내를 넘어 새로운 전시 경험을 제안한다.</p>
-              <p>&nbsp;</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--woosumin-pierre-huyghe-tablet">
+              {`전시 정보·동선 안내·인터랙티브 체험을 제공하고 
+사용자 중심 설계로 몰입도를 높이며 전통적 안내를 넘어 새로운 전시 경험을 제안한다.`}
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--woosumin-pierre-huyghe-tablet">
@@ -83,16 +83,14 @@ const WoosuminPierreHuygheTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
         <div className="work-detail__feature-content">
           <div className="work-detail__text-group">
             <h4 className="work-detail__feature-title">
-              <span className="block mb-0">그냥 '보는 것'만으로</span>
-              <span className="block">전시를 이해할 수 있을까</span>
+              {`그냥 '보는 것'만으로
+전시를 이해할 수 있을까?`}
             </h4>
-            <div className="work-detail__feature-description">
-              <p className="mb-0">기분 좋은 데이트로,</p>
-              <p className="mb-0">혹은 잠시 생긴 여유 속에 찾은 전시장.</p>
-              <p className="mb-0">하지만 막상 마주한 전시 공간과 작품들은 낯설고 어렵기만 하다.</p>
-              <p className="mb-0">실험적이고 복잡한 전시의 세계,</p>
-              <p>과연 제대로 보고, 느끼고 있는 것일까!</p>
-            </div>
+            <p className="work-detail__feature-description">
+              {`기분 좋은 데이트로, 혹은 잠시 생긴 여유 속에 찾은 전시장.
+하지만 막상 마주한 전시 공간과 작품들은 낯설고 어렵기만 하다.
+실험적이고 복잡한 전시의 세계, 과연 제대로 보고, 느끼고 있는 것일까!`}
+            </p>
           </div>
         </div>
       </section>
@@ -106,10 +104,13 @@ const WoosuminPierreHuygheTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
             <p className="mb-0">그리고 당신만을 위한 특별한 체험까지.</p>
             <p>"리미널 가이드"</p>
           </div>
-          <p className="work-detail__quote-attribution">
-            <span className="work-detail__quote-attribution--bold">인간과 비인간이 공존하며 반응하고 진화하는 설치 전시 &lt;피에르 위그: 리미널&gt;,</span>
-            <span> 이 앱은 실험적이고 복잡한 전시 특성에 맞춰 작품별 해설과 공간 안내는 물론, 남녀노소 누구나 참여할 수 있는 인터랙티브 체험을 제공한다.</span>
-          </p>
+          <div className="work-detail__quote-attribution">
+            <p>
+              <span className="work-detail__quote-attribution--bold">인간과 비인간이 공존하며 반응하고 진화하는 설치 전시 &lt;피에르 위그: 리미널&gt;,</span>
+              <span> 이 앱은 실험적이고 복잡한 전시</span>
+            </p>
+            <p>특성에 맞춰 작품별 해설과 공간 안내는 물론, 남녀노소 누구나 참여할 수 있는 인터랙티브 체험을 제공한다.</p>
+          </div>
         </figure>
       </section>
 
@@ -126,10 +127,7 @@ const WoosuminPierreHuygheTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">
-              <span className="block mb-0">리미널 가이드와 함께</span>
-              <span className="block">전시 시작!</span>
-            </h5>
+            <h5 className="work-detail__card-title">리미널 가이드와 함께 전시 시작!</h5>
             <p className="work-detail__card-description">리움 로그인으로 빠르게 티켓 확인</p>
           </div>
         </li>
@@ -145,7 +143,7 @@ const WoosuminPierreHuygheTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">간편한 티켓 등록</h5>
-            <p className="work-detail__card-description">오프라인에서 구매한 티켓도 QR 캔 한 번으로 간편하게 등록</p>
+            <p className="work-detail__card-description">오프라인에서 구매한 티켓도 QR 스캔 한 번으로 간편하게 등록</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--woosumin-pierre-huyghe-tablet">
@@ -188,7 +186,7 @@ const WoosuminPierreHuygheTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
           <div className="work-detail__card-content">
             <div className="work-detail__card-text">
               <h5 className="work-detail__card-title">나만의 Liminal 생명체</h5>
-              <p className="work-detail__card-description">간단한 케치로 개성 있는 형태를 만들고, 색상과 질감, 악세서리까지 자유롭게 커텀 가능</p>
+              <p className="work-detail__card-description">간단한 스케치로 개성 있는 형태를 만들고, 색상과 질감, 악세서리까지 자유롭게 커스텀 가능</p>
             </div>
             <div className="work-detail__card-image-wrapper work-detail__card-image-wrapper--phone">
               <img
@@ -258,11 +256,11 @@ const WoosuminPierreHuygheTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
                   />
                 </div>
                 <div className="work-detail__testimonial-author-text">
-                  <p className="work-detail__testimonial-author-name">위그 타임랩</p>
+                  <p className="work-detail__testimonial-author-name">위그 타임랩스</p>
                   <p className="work-detail__testimonial-author-role">피에르 위그의 전시 역사</p>
                 </div>
               </div>
-              <p className="work-detail__testimonial-text">그동안의 피에르 위그의 작품 여정을 담은 타임랩스 통해 그의 예술 세계를 더욱 깊이 있게 이해 가능</p>
+              <p className="work-detail__testimonial-text">그동안의 피에르 위그의 작품 여정을 담은 타임랩스를 통해 그의 예술 세계를 더욱 깊이 있게 이해 가능</p>
             </article>
           </li>
           <li className="work-detail__testimonial-column">
@@ -352,8 +350,8 @@ const WoosuminPierreHuygheTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }
                   />
                 </div>
                 <div className="work-detail__testimonial-author-text">
-                  <p className="work-detail__testimonial-author-name">뉴 기사</p>
-                  <p className="work-detail__testimonial-author-role">전시 관련 뉴 기사</p>
+                  <p className="work-detail__testimonial-author-name">뉴스 기사</p>
+                  <p className="work-detail__testimonial-author-role">전시 관련 뉴스 기사</p>
                 </div>
               </div>
               <p className="work-detail__testimonial-text">단순 관람을 넘어, 피에르 위그를 향한 세계의 관심을 한눈에 파악</p>

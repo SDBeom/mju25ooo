@@ -22,7 +22,7 @@ import leejiminWork2_15 from '../../../../assets/이지민/leejimin_motiondesign
  * 이지민 - LE LABO-CITY EXCLUSIVE (작품2) Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const LeeJiminLeLaboMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeJiminLeLaboMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

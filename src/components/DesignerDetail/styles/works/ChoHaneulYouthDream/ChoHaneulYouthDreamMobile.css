@@ -15,10 +15,9 @@
 /* Hero Section */
 .work-detail--cho-haneul-youth-dream-mobile .work-detail__hero--cho-haneul-youth-dream-mobile {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   width: 375px;
   max-width: 375px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -28,8 +27,12 @@
   position: relative;order: -1;
 }
 
-.work-detail--cho-haneul-youth-dream-mobile .work-detail__hero-image-wrapper--cho-haneul-youth-dream-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--cho-haneul-youth-dream-mobile .work-detail__hero-image-wrapper--cho-haneul-youth-dream-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   order: -1;
 }
 
@@ -252,8 +255,12 @@
   position: relative;
   border-radius: 16px;}
 
-.work-detail--cho-haneul-youth-dream-mobile .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--cho-haneul-youth-dream-mobile .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* Card 1 - Music (회전된 이미지) */

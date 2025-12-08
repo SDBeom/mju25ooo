@@ -10,7 +10,6 @@ import woosuminWork1_04 from '../../../../assets/우수민/woosumin_multimedia_w
 import woosuminWork1_05 from '../../../../assets/우수민/woosumin_multimedia_work1_05.webp';
 import woosuminWork1_06 from '../../../../assets/우수민/woosumin_multimedia_work1_06.webp';
 import woosuminWork1_07 from '../../../../assets/우수민/woosumin_multimedia_work1_07.webp';
-import woosuminWork1_08 from '../../../../assets/우수민/woosumin_multimedia_work1_08.webp';
 import woosuminWork1_09 from '../../../../assets/우수민/woosumin_multimedia_work1_09.webp';
 import woosuminWork1_10 from '../../../../assets/우수민/woosumin_multimedia_work1_10.webp';
 import woosuminWork1_11 from '../../../../assets/우수민/woosumin_multimedia_work1_11.webp';
@@ -21,7 +20,7 @@ import woosuminWork1_13 from '../../../../assets/우수민/woosumin_multimedia_w
  * 우수민 - 사신도 (작품1) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const WoosuminSasindoTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -33,9 +32,9 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
         <div className="work-detail__hero-content work-detail__hero-content--woosumin-sasindo-tablet">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--woosumin-sasindo-tablet">사신도</h2>
-            <div className="work-detail__lead work-detail__lead--woosumin-sasindo-tablet">
-              <p>고분벽화 속 사신도를 현대적으로 재해석해 동서남북을 수호하는 신수의 상징성을 인물과 결합한 작품이다. 전통적 요소를 현대 조형 언어로 조화롭게 풀어냈다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--woosumin-sasindo-tablet">
+              {`고분벽화 속 사신도를 현대적으로 재해석해 동서남북을 수호하는 신수의 상징성을 인물과 결합한 작품이다. 전통적 요소를 현대 조형 언어로 조화롭게 풀어냈다.`}
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--woosumin-sasindo-tablet">
@@ -77,10 +76,8 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
         <div className="work-detail__feature-content">
           <div className="work-detail__text-group">
             <h4 className="work-detail__feature-title">사신도 역사 리플렛</h4>
-            <div className="work-detail__feature-description">
-              <p className="mb-0">표지에 청룡의 이미지를 담아 사신도 역사를 담은 리플렛을 제작,</p>
-              <p>뒷면 QR을 통해 사신도 정보 확인 가능</p>
-            </div>
+            <p className="work-detail__feature-description">{`표지에 청룡의 이미지를 담아 사신도 역사를 담은 리플렛을 제작,
+뒷면 QR을 통해 사신도 정보 확인 가능`}</p>
           </div>
         </div>
       </section>
@@ -115,7 +112,7 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">백호 애니메이션 포터</h5>
+            <h5 className="work-detail__card-title">백호 애니메이션 포스터</h5>
             <p className="work-detail__card-description">서쪽, 백호 특유의 우아하고 신비로운 모습을 담아내고자 부드러운 외형의 캐릭터 디자인</p>
           </div>
         </li>
@@ -130,7 +127,7 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">주작 애니메이션 포터</h5>
+            <h5 className="work-detail__card-title">주작 애니메이션 포스터</h5>
             <p className="work-detail__card-description">남쪽, 불을 다룰 수 있는 사신으로 활력있고 장난러운 남자 아이 외형의 캐릭터 디자인</p>
           </div>
         </li>
@@ -145,7 +142,7 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">현무 애니메이션 포터</h5>
+            <h5 className="work-detail__card-title">현무 애니메이션 포스터</h5>
             <p className="work-detail__card-description">북쪽, 조용하고 느긋한 현무의 성격을 표현하고자 권위 있고 차분한 외형의 캐릭터 디자인</p>
           </div>
         </li>
@@ -154,8 +151,8 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
       {/* Feature Gallery Section */}
       <section className="work-detail__section work-detail__gallery work-detail__gallery--woosumin-sasindo-tablet">
         <div className="work-detail__gallery-header">
-          <h3 className="work-detail__gallery-title">일러트 포터</h3>
-          <p className="work-detail__gallery-description">디자인한 청룡, 백호, 주작, 현무 캐릭터의 특징을 담아 반실사 일러트 포터 제작</p>
+          <h3 className="work-detail__gallery-title">일러스트 포스터</h3>
+          <p className="work-detail__gallery-description">디자인한 청룡, 백호, 주작, 현무 캐릭터의 특징을 담아 반실사 일러스트 포스터 제작</p>
         </div>
         <div className="work-detail__gallery-grid">
           <div className="work-detail__gallery-column">
@@ -165,15 +162,6 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
                 alt="Gallery image 1"
                 className="work-detail__gallery-image"
                 onError={(e) => handleImageError(e, woosuminWork1_07, work.id, 'gallery-1')}
-                loading="lazy"
-              />
-            </div>
-            <div className="work-detail__gallery-item">
-              <img
-                src={woosuminWork1_08}
-                alt="Gallery image 2"
-                className="work-detail__gallery-image"
-                onError={(e) => handleImageError(e, woosuminWork1_08, work.id, 'gallery-2')}
                 loading="lazy"
               />
             </div>
@@ -190,10 +178,10 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
             </div>
             <div className="work-detail__gallery-item">
               <img
-                src={woosuminWork1_07}
+                src={woosuminWork1_10}
                 alt="Gallery image 4"
                 className="work-detail__gallery-image"
-                onError={(e) => handleImageError(e, woosuminWork1_07, work.id, 'gallery-4')}
+                onError={(e) => handleImageError(e, woosuminWork1_10, work.id, 'gallery-4')}
                 loading="lazy"
               />
             </div>
@@ -210,19 +198,19 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           <div className="work-detail__gallery-column">
             <div className="work-detail__gallery-item">
               <img
-                src={woosuminWork1_08}
+                src={woosuminWork1_12}
                 alt="Gallery image 6"
                 className="work-detail__gallery-image"
-                onError={(e) => handleImageError(e, woosuminWork1_08, work.id, 'gallery-6')}
+                onError={(e) => handleImageError(e, woosuminWork1_12, work.id, 'gallery-6')}
                 loading="lazy"
               />
             </div>
             <div className="work-detail__gallery-item">
               <img
-                src={woosuminWork1_09}
+                src={woosuminWork1_13}
                 alt="Gallery image 7"
                 className="work-detail__gallery-image"
-                onError={(e) => handleImageError(e, woosuminWork1_09, work.id, 'gallery-7')}
+                onError={(e) => handleImageError(e, woosuminWork1_13, work.id, 'gallery-7')}
                 loading="lazy"
               />
             </div>
@@ -236,9 +224,7 @@ const WoosuminSasindoTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => 
           <p className="work-detail__text-label">신화 이야기</p>
           <h3 className="work-detail__text-title">사신도에 관하여...</h3>
         </div>
-        <p className="work-detail__text-content">
-          사신도는 단순한 신화적 상물이 아닌, 자연의 원리와 인간의 삶, 죽음 이후의 세계를 통합적으로 표현한 시각 체계이다. 동서남북의 네 신수는 곧 인간의 생애와 우주의 순환을 상징하며, 고분벽화 속 사신도는 고대인이 죽음을 '끝'이 아닌 또 다른 세계로의 이동으로 인식했음을 알 수 있다.
-        </p>
+        <p className="work-detail__text-content">{`사신도는 단순한 신화적 상상물이 아닌, 자연의 원리와 인간의 삶, 죽음 이후의 세계를 통합적으로 표현한 시각 체계이다. 동서남북의 네 신수는 곧 인간의 생애와 우주의 순환을 상징하며, 고분벽화 속 사신도는 고대인이 죽음을 '끝'이 아닌 또 다른 세계로의 이동으로 인식했음을 알 수 있다.`}</p>
       </section>
     </div>
   );

@@ -2883,6 +2883,7 @@ const designerDetailsData = {
         meta: 'Format — Automotive Motion Design',
         layout: 'heo-jihoon-eternal-vision',
         gallery: [
+          { src: heoJiHoonEternal, alt: 'Eternal Vision' },
           { src: heoJiHoonWork2_02, alt: 'Cinematic Branding Film' },
           { src: heoJiHoonWork2_03, alt: 'Card 1' },
           { src: heoJiHoonWork2_04, alt: 'Card 2' },

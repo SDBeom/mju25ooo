@@ -1,6 +1,6 @@
 import React from 'react';
 import { handleImageError } from '../../../../shared/imageUtils';
-import heoJiHoonEternal from '../../../../assets/허지훈/heojihoon_motiondesign_work2_01.webp';
+import heoJiHoonWork2_01 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_01.webp';
 import heoJiHoonWork2_02 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_02.webp';
 import heoJiHoonWork2_03 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_03.webp';
 import heoJiHoonWork2_04 from '../../../../assets/허지훈/heojihoon_motiondesign_work2_04.webp';
@@ -34,7 +34,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
         <div className="work-detail__hero-content work-detail__hero-content--desktop">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--desktop">{work.title || 'Eternal Vision'}</h2>
-            <p className="work-detail__lead work-detail__lead--desktop">{work.summary || '현대자동차의 상징적인 모델 \'포니 쿠페\'의 산물을 계승한 \'N Vision 74\'의 생생한 감각으로 풀어낸 시네마틱 브랜딩 영상.'}</p>
+            <p className="work-detail__lead work-detail__lead--desktop">{work.summary || '현대자동차의 상징적 모델 \'포니 쿠페\'의 유산과 이를 계승한 \'N74\'의 탄생을 감각적으로 담은 시네마틱 브랜딩 영상.'}</p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--desktop">
@@ -53,10 +53,10 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
         </div>
         <div className="work-detail__hero-image-wrapper work-detail__hero-image-wrapper--desktop">
           <img 
-            src={heoJiHoonEternal} 
+            src={heoJiHoonWork2_01} 
             alt={work.title || 'Eternal Vision'} 
             className="work-detail__hero-image"
-            onError={(e) => handleImageError(e, heoJiHoonEternal, work.id, 'hero')}
+            onError={(e) => handleImageError(e, heoJiHoonWork2_01, work.id, 'hero')}
             loading="eager"
           />
         </div>
@@ -72,11 +72,11 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
       {/* Text Section 1 */}
       <section className="work-detail__section work-detail__text-section work-detail__text-section--desktop">
         <div className="work-detail__text-headline">
-          <p className="work-detail__eyebrow-text">포니 쿠페의 산물</p>
+          <p className="work-detail__eyebrow-text">포니 쿠페의 유산</p>
           <h3 className="work-detail__subtitle">N Vision 74</h3>
         </div>
         <div className="work-detail__text-content">
-          <p>포니가 지닌 직선적 디자인에서 떠오르는 미래와 공간이 교차하며, 과거의 상징을 현대적 형태로 살려내었다. 어두운 공간에서 떠오르는 밝은 빛, 질주하는 장면에서 드러나는 미래 비전으로 향하는 가능성을 상징한다.</p>
+          <p>포니가 지닌 직선적 디자인 언어와 미래적 공간이 교차하며, 과거의 상징이 새로운 형태로 되살아나는 순간을 담았다. 어두운 미지의 공간을 벗어나 밝은 세계로 질주하는 장면은 헤리티지가 미래의 비전으로 확장되는 가능성을 상징한다.</p>
         </div>
       </section>
 
@@ -93,7 +93,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">Cinematic Branding Film</h4>
-          <p>N Vision 74의 펙트를 직접적으로 보여주기보다, 포니 쿠페의 디자인과 현대의 계승, 브랜드 철학에 집중했다. 영상의 분위기와 연출은 영화 &lt;블레이드 러너 2049&gt;에서 영감을 받았다.</p>
+          <p>N Vision 74의 스펙을 직접적으로 드러내기보다, 포니 쿠페의 디자인과 정신을 계승한 브랜드 철학에 집중했다. 영상의 분위기와 연출은 영화 &lt;블레이드 러너 2049&gt;에서 영감을 받았다.</p>
         </div>
       </section>
 
@@ -151,8 +151,8 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
       <section className="work-detail__section work-detail__feature-rows work-detail__feature-rows--desktop">
         <div className="work-detail__feature-row">
           <div className="work-detail__feature-row-content">
-            <h4 className="work-detail__feature-row-title">푸른 하늘의 원</h4>
-            <p>극적인 영상의 반전을 통해 영상 분위기를 전환하며, 감정의 흐름을 더욱 극대화하고 디자인을 강조한다. 특히 차가운 블루 톤의 어두운 배경에서 N74가 유유히 질주하는 장면까지 긴장감과 대비되는 방향감과 속도를 시각적으로 전달한다.</p>
+            <h4 className="work-detail__feature-row-title">푸른 하늘과 설원</h4>
+            <p>극적인 색상 반전을 통해 영상의 분위기를 전환하며, 감정의 흐름을 더욱 극대화하고자 했다. 특히 차가운 블루 톤의 설원을 배경으로 N74가 자유롭게 질주하는 장면은 이전까지의 긴장감과 대비되며 해방감과 역동성을 동시에 전달한다.</p>
           </div>
           <div className="work-detail__feature-row-image-wrapper">
             <img 
@@ -176,7 +176,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
           </div>
           <div className="work-detail__feature-row-content">
             <h4 className="work-detail__feature-row-title">Cinema 4D Pyro</h4>
-            <p>Pyro를 이용하여 바퀴에서 날리는 연기를 디자인적으로 구현하여 하늘에서 떨어지는 빛을 보여주었다.</p>
+            <p>Pyro를 이용하여 바퀴에서 흩날리는 눈 입자를 표현했으며, 하늘에서 내리는 눈은 후보정으로 추가했다.</p>
           </div>
         </div>
       </section>
@@ -269,7 +269,7 @@ const HeoJihoonEternalVisionDesktop = ({ work, designer, ctas }) => {
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title work-detail__feature-title--large">Eternal Vision</h4>
-          <p>제목 &lt;Eternal Vision&gt;에는 영원한 비전, 원하는 빛을 향한 바라봄을 담았다.</p>
+          <p>제목 &lt;Eternal Vision&gt;에는 나의 비전이 영원히 빛나길 바라는 소망을 담았다.</p>
         </div>
       </section>
     </div>

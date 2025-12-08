@@ -107,6 +107,15 @@ export default defineConfig({
   
   // CSS 최적화
   css: {
-    devSourcemap: false // 개발에서 소스맵 비활성화
+    devSourcemap: false, // 개발에서 소스맵 비활성화
+    postcss: {
+      charset: true // CSS에서 UTF-8 charset 선언 허용
+    }
+  },
+  
+  // 빌드 시 UTF-8 인코딩 보장
+  esbuild: {
+    charset: 'utf8',
+    legalComments: 'none'
   }
 })

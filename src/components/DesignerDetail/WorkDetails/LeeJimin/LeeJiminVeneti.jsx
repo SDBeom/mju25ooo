@@ -11,8 +11,8 @@ import LeeJiminVenetiMobile from './LeeJiminVenetiMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const LeeJiminVeneti = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <LeeJiminVenetiMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const LeeJiminVeneti = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <LeeJiminVenetiTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );

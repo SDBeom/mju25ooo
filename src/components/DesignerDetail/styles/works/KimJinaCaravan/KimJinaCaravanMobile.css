@@ -31,8 +31,12 @@
   order: -1;
 }
 
-.work-detail--kim-jina-caravan-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-jina-caravan-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--kim-jina-caravan-mobile .work-detail__hero-content--kim-jina-caravan-mobile {
@@ -225,8 +229,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-jina-caravan-mobile .work-detail__feature-list-item .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-jina-caravan-mobile .work-detail__feature-list-item .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--kim-jina-caravan-mobile .work-detail__feature-list-item .work-detail__feature-image-wrapper--centered .work-detail__feature-image {aspect-ratio: 544 / 432;
@@ -283,11 +291,15 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-jina-caravan-mobile .work-detail__feature-image-wrapper .work-detail__feature-image {position: absolute;
+.work-detail--kim-jina-caravan-mobile .work-detail__feature-image-wrapper .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   
   
-  left: 0;
-  top: 0;display: block;
+  
+  display: block;
   border-radius: 16px;
 }
 

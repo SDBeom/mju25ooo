@@ -149,11 +149,15 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-image-wrapper .work-detail__feature-image {position: absolute;
+.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-image-wrapper .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   
   
-  left: 0;
-  top: 0;display: block;
+  
+  display: block;
   border-radius: 16px;
 }
 
@@ -220,11 +224,15 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-card-image {height: auto;position: absolute;
+.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;height: auto;
   
   
-  left: 0;
-  top: 0;display: block;
+  
+  display: block;
 }
 
 .work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-card-text {
@@ -351,8 +359,12 @@
 
 .work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-gallery-column:last-child .work-detail__feature-gallery-image-wrapper:last-child {}
 
-.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-gallery-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* Feature Story Cards - Farewell, Journey, Crisis */
@@ -383,11 +395,15 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-story-card-image {height: auto;position: absolute;
+.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-story-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;height: auto;
   
   
-  left: 0;
-  top: 0;display: block;
+  
+  display: block;
 }
 
 .work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature-story-card-body {

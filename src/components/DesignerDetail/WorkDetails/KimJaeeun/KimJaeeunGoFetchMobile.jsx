@@ -23,7 +23,7 @@ import kimJaeeunWork1_23 from '../../../../assets/김재은/kimjaeeun_video_work
  * 김재은 - Go Fetch! Mobile 버전
  * Figma 디자인 기반 구현 (375px)
  */
-const KimJaeeunGoFetchMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }

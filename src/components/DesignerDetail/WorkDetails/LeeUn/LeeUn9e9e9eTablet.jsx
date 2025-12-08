@@ -9,12 +9,19 @@ import leeunWork2_03 from '../../../../assets/이운/leeun_multimedia_work2_03.w
 import leeunWork2_04 from '../../../../assets/이운/leeun_multimedia_work2_04.webp';
 import leeunWork2_05 from '../../../../assets/이운/leeun_multimedia_work2_05.webp';
 import leeunWork2_06 from '../../../../assets/이운/leeun_multimedia_work2_06.webp';
+import leeunWork2_07 from '../../../../assets/이운/leeun_multimedia_work2_07.webp';
+import leeunWork2_08 from '../../../../assets/이운/leeun_multimedia_work2_08.webp';
+import leeunWork2_09 from '../../../../assets/이운/leeun_multimedia_work2_09.webp';
+import leeunWork2_10 from '../../../../assets/이운/leeun_multimedia_work2_10.webp';
+import leeunWork2_11 from '../../../../assets/이운/leeun_multimedia_work2_11.webp';
+import leeunWork2_12 from '../../../../assets/이운/leeun_multimedia_work2_12.webp';
+import leeunWork2_13 from '../../../../assets/이운/leeun_multimedia_work2_13.webp';
 
 /**
  * 이운 - 9e9e9e (작품2) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const LeeUn9e9e9eTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeUn9e9e9eTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -28,9 +35,9 @@ const LeeUn9e9e9eTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
             <h2 className="work-detail__title work-detail__title--leeun-9e9e9e-tablet">
               9e9e9e
             </h2>
-            <div className="work-detail__lead work-detail__lead--leeun-9e9e9e-tablet">
-              <p>리본과 마법소녀의 모티프로, 일상에 다정한 귀여움을 묶어주는 디자인 문구 & 액세서리 브랜드 브랜딩</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--leeun-9e9e9e-tablet">
+              리본과 마법소녀의 모티프로, 일상에 다정한 귀여움을 묶어주는 디자인 문구 & 액세서리 브랜드 브랜딩
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--leeun-9e9e9e-tablet">
@@ -71,15 +78,12 @@ const LeeUn9e9e9eTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">9e9e9e</h4>
-          <div className="work-detail__feature-description">
-            <p className="mb-0">'9e9e9e'는 디자인 문구 & 액세서리 브랜드로, 어떤 모습이든, 어떤 상황이든, 어디에 있든 누구나 귀여워질 수 있다는 긍정적인 메세지를 전합니다.</p>
-            <p className="mb-0">반복되는 알파벳과 숫자로 이루어진 브랜드 이름은 리본의 형태를 닮아, 일상 속에서 자연럽게</p>
-            <p className="mb-0">묶이는 귀여움의 상징이 됩니다.</p>
-            <p className="mb-0">&nbsp;</p>
-            <p className="mb-0">'9e9e9e'는 리본과 마법소녀의 이미지를 모티프로 작은 소작품이 평범한 하루에 다정한 마법으로</p>
-            <p className="mb-0">며들길 바랍니다.</p>
-            <p>&nbsp;</p>
-          </div>
+          <p className="work-detail__feature-description">
+            {`'9e9e9e'는 디자인 문구 & 액세서리 브랜드로, 어떤 모습이든, 어떤 상황이든, 어디에 있든 누구나 귀여워질 수 있다는 긍정적인 메세지를 전합니다.
+반복되는 알파벳과 숫자로 이루어진 브랜드 이름은 리본의 형태를 닮아, 일상 속에서 자연스럽게 묶이는 귀여움의 상징이 됩니다.
+
+'9e9e9e'는 리본과 마법소녀의 이미지를 모티프로 작은 소품이 평범한 하루에 다정한 마법으로 스며들길 바랍니다.`}
+          </p>
         </div>
       </section>
 
@@ -107,11 +111,10 @@ const LeeUn9e9e9eTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                     <p className="work-detail__core-value-author-subtitle">귀여운</p>
                   </div>
                 </div>
-                <div className="work-detail__core-value-text">
-                  <p className="mb-16">누구나 즐길 수 있는</p>
-                  <p className="mb-16">가장 보편적인 감정으로</p>
-                  <p>접근성이 좋도록 함</p>
-                </div>
+                <p className="work-detail__core-value-text">
+                  누구나 즐길 수 있는 가장 보편적인
+감정으로 접근성이 좋도록 함
+                </p>
               </div>
             </div>
           </li>
@@ -133,10 +136,10 @@ const LeeUn9e9e9eTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                     <p className="work-detail__core-value-author-subtitle">제한 받지 않는, 자유로운</p>
                   </div>
                 </div>
-                <div className="work-detail__core-value-text">
-                  <p className="mb-16">어떤 상황에서도 자신을</p>
-                  <p>표현할 수 있는 자유</p>
-                </div>
+                <p className="work-detail__core-value-text">
+                  어떤 상황에서도 자신을 표현할 수
+있는 자유
+                </p>
               </div>
             </div>
             <div className="work-detail__core-value-card">
@@ -156,12 +159,11 @@ const LeeUn9e9e9eTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                     <p className="work-detail__core-value-author-subtitle">유쾌함</p>
                   </div>
                 </div>
-                <div className="work-detail__core-value-text">
-                  <p className="mb-16">일상속의 예상치 못한</p>
-                  <p className="mb-16">무겁고 심각한 순간들을</p>
-                  <p className="mb-16">가볍고 유쾌하게</p>
-                  <p>넘어가는 태도</p>
-                </div>
+                <p className="work-detail__core-value-text">
+                  일상속의 예상치 못한 무겁고 심각한
+순간들을 가볍고 유쾌하게 넘어가는 
+태도
+                </p>
               </div>
             </div>
           </li>
@@ -183,11 +185,10 @@ const LeeUn9e9e9eTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
                     <p className="work-detail__core-value-author-subtitle">긍정적인</p>
                   </div>
                 </div>
-                <div className="work-detail__core-value-text">
-                  <p className="mb-16">브랜드 자체의 긍정적인</p>
-                  <p className="mb-16">사고와 그것을</p>
-                  <p>전파하려는 태도</p>
-                </div>
+                <p className="work-detail__core-value-text">
+                  브랜드 자체의 긍정적인 사고와 그것을
+전파하려는 태도
+                </p>
               </div>
             </div>
           </li>
@@ -201,30 +202,72 @@ const LeeUn9e9e9eTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
         </div>
         <div className="work-detail__gallery-grid">
           <div className="work-detail__gallery-column work-detail__gallery-column--1">
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 첫 번째 이미지는 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_07}
+                alt="9e9e9e Items 1"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_07, work.id, 'gallery-1')}
+                loading="lazy"
+              />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 두 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_08}
+                alt="9e9e9e Items 2"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_08, work.id, 'gallery-2')}
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="work-detail__gallery-column work-detail__gallery-column--2">
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 세 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_09}
+                alt="9e9e9e Items 3"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_09, work.id, 'gallery-3')}
+                loading="lazy"
+              />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 네 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_10}
+                alt="9e9e9e Items 4"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_10, work.id, 'gallery-4')}
+                loading="lazy"
+              />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 다섯 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_11}
+                alt="9e9e9e Items 5"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_11, work.id, 'gallery-5')}
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="work-detail__gallery-column work-detail__gallery-column--3">
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 여섯 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_12}
+                alt="9e9e9e Items 6"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_12, work.id, 'gallery-6')}
+                loading="lazy"
+              />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 일곱 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_13}
+                alt="9e9e9e Items 7"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_13, work.id, 'gallery-7')}
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

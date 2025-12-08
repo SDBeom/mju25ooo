@@ -23,7 +23,7 @@ import leejiminWork2_15 from '../../../../assets/이지민/leejimin_motiondesign
  * 이지민 - LE LABO-CITY EXCLUSIVE (작품2) Tablet 버전
  * Figma 디자인 기반 구현 (800px)
  */
-const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const LeeJiminLeLaboTablet = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -37,9 +37,9 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
             <h2 className="work-detail__title work-detail__title--leejimin-lelabo-tablet">
               LE LABO-CITY EXCLUSIVE
             </h2>
-            <div className="work-detail__lead work-detail__lead--leejimin-lelabo-tablet">
-              <p>니치 향수 브랜드 'LE LABO'의 City Exclusive 향수 중 CITRON, GAIAC, MUSC 세 가지 향수를 주제로 한 프로모션 영상이다.</p>
-            </div>
+            <p className="work-detail__lead work-detail__lead--leejimin-lelabo-tablet">
+              니치 향수 브랜드 'LE LABO'의 City Exclusive 향수 중 CITRON, GAIAC, MUSC 세 가지 향수를 주제로 한 프로모션 영상이다.
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--leejimin-lelabo-tablet">
@@ -73,9 +73,10 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <p className="work-detail__text-section-label">Promotional videos</p>
           <h3 className="work-detail__text-section-title">Imagine a city</h3>
         </div>
-        <p className="work-detail__text-section-description">
-          이 프로젝트는 단순히 제작품을 소개하는 영상을 넘어서, "향이 인간의 감정에 어떻게 닿는가"라는 질문에서 출발한 프로젝트이다. 향은 눈에 보이지 않지만, 공기 속에 기억을 남긴다. 그래서 이번 작업에서는 향이 지닌 기억의 잔상과 도시가 작품은 감정의 결을 시각적으로 구현하는 데 집중하였다. 각 도시를 대표하는 메인 컬러를 중심으로, 그곳의 기온, 빛의 방향, 공기의 밀도, 사람들의 움직임 등 향으로는 포착할 수 없는 요소들을 영상으로 표현하고자 했다.
-        </p>
+        <div className="work-detail__text-content">
+          <p>이 프로젝트는 단순히 제품을 소개하는 영상을 넘어서, "향이 인간의 감정에 어떻게 닿는가"라는 질문에서 출발한 프로젝트이다.
+향은 눈에 보이지 않지만, 공기 속에 기억을 남긴다. 그래서 이번 작업에서는 향이 지닌 기억의 잔상과 도시가 품은 감정의 결을 시각적으로 구현하는 데 집중하였다. 각 도시를 대표하는 메인 컬러를 중심으로, 그곳의 기온, 빛의 방향, 공기의 밀도, 사람들의 움직임 등 향으로는 포착할 수 없는 요소들을 영상으로 표현하고자 했다.</p>
+        </div>
       </section>
 
       {/* Feature Cards Section - Fresh */}
@@ -92,8 +93,8 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
         <div className="work-detail__feature-cards-content">
           <div className="work-detail__feature-cards-text">
             <h4 className="work-detail__feature-cards-title">Fresh</h4>
-            <p className="mb-0">CITRON28은 서울의 아침에서 느껴지는 시원함을 표현하고자 전체적으로 화사하면서도</p>
-            <p>따한 느낌의 색감을 사용했다.</p>
+            <p>CITRON28은 서울의 아침에서 느껴지는 시원함을 표현하고자
+전체적으로 화사하면서도 따스한 느낌의 색감을 사용했다.</p>
           </div>
         </div>
       </section>
@@ -104,8 +105,7 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <div className="work-detail__feature-row-content">
             <div className="work-detail__feature-row-text">
               <h4 className="work-detail__feature-row-title">Woody</h4>
-              <p className="mb-0">GAIAC10은 도시에서도 느껴지는 풀내음을</p>
-              <p>표현하고자 싱그러우면서도 습한 느낌의 색감을 사용하였다.</p>
+              <p>GAIAC10은 도시에서도 느껴지는 풀내음을 표현하고자 싱그러우면서도 습한 느낌의 색감을 사용했다.</p>
             </div>
           </div>
           <div className="work-detail__feature-row-image-wrapper">
@@ -131,9 +131,8 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <div className="work-detail__feature-row-content">
             <div className="work-detail__feature-row-text">
               <h4 className="work-detail__feature-row-title">Sunset</h4>
-              <p className="mb-0">MUSC25는 아침과 저녁이 주는 서로 다른 느낌의 긴 여운을 시각적으로 표현하고자 영상의</p>
-              <p className="mb-0">초반부에는 따한 색감을, 후반부에는 짙고</p>
-              <p>어두운 색감을 사용했다.</p>
+              <p>MUSC25는 아침과 저녁이 주는 서로 다른 느낌의 긴 여운을 시각적으로 표현하고자 영상의 초반부에는 따스한 색감을, 후반부에는 짙고 어두운
+색감을 사용했다.</p>
             </div>
           </div>
         </li>
@@ -152,9 +151,7 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">City Exclusives</h4>
-          <p className="mb-0">마지막 컷을 통해 LE LABO 향수임을 명확히 드러내고, City Exclusive Collection과 주요 향료</p>
-          <p className="mb-0">정보를 함께 제시했다. 이를 통해 시청자가 향수의 향과 그에 어울리는 도시의 이미지를 자연럽게</p>
-          <p>떠올릴 수 있도록 연출했다.</p>
+          <p>마지막 컷을 통해 LE LABO 향수임을 명확히 드러내고, City Exclusive Collection과 주요 향료 정보를 함께 제시했다. 이를 통해 시청자가 향수의 향과 그에 어울리는 도시의 이미지를 자연스럽게 떠올릴 수 있도록 연출했다.</p>
         </div>
       </section>
 
@@ -172,8 +169,7 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">CITRON 28</h5>
-            <p className="mb-0">서울에서 영감 받아 제작된 시티 익클루시브의 비교적</p>
-            <p>최신 컬렉션.</p>
+            <p>서울에서 영감 받아 제작된 시티 익스클루시브의 비교적 최신 컬렉션.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--leejimin-lelabo-tablet">
@@ -188,8 +184,7 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">GAIAC 10</h5>
-            <p className="mb-0">도쿄에서 영감 받아 제작된</p>
-            <p>시티 익클루시브의 오래된 컬렉션 중 하나.</p>
+            <p>도쿄에서 영감 받아 제작된 시티 익스클루시브의 오래된 컬렉션 중 하나.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--leejimin-lelabo-tablet">
@@ -204,7 +199,7 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">MUSC 25</h5>
-            <p>로엔젤레에서 영감 받아 제작된 시티 익클루시브의 오래된 컬렉션 중 하나.</p>
+            <p>로스엔젤레스에서 영감 받아 제작된 시티 익스클루시브의 오래된 컬렉션 중 하나.</p>
           </div>
         </li>
       </ul>
@@ -217,8 +212,14 @@ const LeeJiminLeLaboTablet = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
         </div>
         <div className="work-detail__gallery-grid">
           <div className="work-detail__gallery-column work-detail__gallery-column--1">
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 첫 번째 이미지는 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leejiminWork2_09}
+                alt="Photo shoot 1"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leejiminWork2_09, work.id, 'gallery-1')}
+                loading="lazy"
+              />
             </div>
             <div className="work-detail__gallery-item">
               <img

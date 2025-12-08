@@ -16,12 +16,14 @@
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__hero--kim-jaeeun-go-fetch-tablet {
   width: 100%;
   max-width: 800px;
+  height: 540px;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+  gap: 0;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__hero-content--kim-jaeeun-go-fetch-tablet {
@@ -47,12 +49,11 @@
   font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 52.8px;
   letter-spacing: -0.96px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
   text-align: left;
 }
 
@@ -60,47 +61,43 @@
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 29px;
   letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
-
-  text-align: left;}
+  text-align: left;
+}
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__lead--kim-jaeeun-go-fetch-tablet p {
   margin: 0;
-
-  text-align: left;}
+  text-align: left;
+}
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__ctas--kim-jaeeun-go-fetch-tablet {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
+  flex-direction: row;
+  flex-wrap: nowrap;
+  }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__cta--kim-jaeeun-go-fetch-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
+  letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
-  text-align: center;
   white-space: nowrap;
+  text-align: left;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__cta--primary.work-detail__cta--kim-jaeeun-go-fetch-tablet {
   background: #000000;
   color: #ffffff;
-  font-size: 18px;
-  letter-spacing: -0.09px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__cta--primary.work-detail__cta--kim-jaeeun-go-fetch-tablet:hover {
@@ -112,8 +109,6 @@
   background: transparent;
   color: #000000;
   border: 2px solid rgba(0, 0, 0, 0.15);
-  font-size: 18px;
-  letter-spacing: -0.09px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__cta--secondary.work-detail__cta--kim-jaeeun-go-fetch-tablet:hover {
@@ -121,16 +116,22 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__hero-image-wrapper--kim-jaeeun-go-fetch-tablet {position: relative;
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__hero-image-wrapper--kim-jaeeun-go-fetch-tablet {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 400px;
+  height: 540px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__hero-image {height: auto;position: absolute;
-  
-  
-  left: -494px;
-  top: -209px;display: block;
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__hero-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* Feature Section - To The End, For You */
@@ -140,20 +141,28 @@
   padding: 96px 32px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
   align-items: flex-start;
+  margin: 0 auto;
 }
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-image-wrapper {position: relative;
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-image-wrapper {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 100%;
+  height: 400px;
+  border-radius: 16px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-image-wrapper .work-detail__feature-image {position: absolute;
-  
-  
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-image {
+  position: absolute;
   left: 0;
-  top: 0;display: block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   border-radius: 16px;
 }
 
@@ -169,7 +178,7 @@
   font-family: 'Pretendard', sans-serif;
   font-size: 28px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 33.6px;
   letter-spacing: -0.56px;
   color: #000000;
   margin: 0;
@@ -180,7 +189,7 @@
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -196,7 +205,7 @@
   width: 100%;
   max-width: 800px;
   padding: 96px 32px;
-  margin: 0;
+  margin: 0 auto;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -215,19 +224,27 @@
   min-width: 224px;
   max-width: 400px;
   border-radius: 8px;
-}
-
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-card-image-wrapper {position: relative;
-  overflow: hidden;
-  border-radius: 16px;
   flex-shrink: 0;
 }
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-card-image {height: auto;position: absolute;
-  
-  
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  flex-shrink: 0;
+  width: 100%;
+  height: 299px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-card-image {
+  position: absolute;
   left: 0;
-  top: 0;display: block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 16px;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-card-text {
@@ -242,7 +259,7 @@
   font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 24px;
   letter-spacing: -0.3px;
   color: #000000;
   margin: 0;
@@ -253,7 +270,7 @@
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -271,9 +288,10 @@
   padding: 96px 32px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  align-items: center;
-  justify-content: center;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0 auto;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-header {
@@ -281,7 +299,7 @@
   flex-direction: column;
   gap: 16px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -289,24 +307,22 @@
   font-family: 'Pretendard', sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 48px;
   letter-spacing: -0.8px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-description {
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-description p {
@@ -318,7 +334,7 @@
   flex-direction: row;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -326,47 +342,82 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  align-items: center;
-  flex: 1 0 0;
-  min-width: 0;
-}
-
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:first-child {
-  width: 224px;
-  height: 803px;
-  flex: 0 0 auto;
-}
-
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-image-wrapper {position: relative;
-  overflow: hidden;
-  border-radius: 16px;
+  align-items: flex-start;
   flex-shrink: 0;
 }
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-image-wrapper--empty {background: transparent;
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(1) {
+  width: 224px;
+  flex: 0 0 224px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:first-child .work-detail__feature-gallery-image-wrapper:last-child {}
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(2) {
+  width: 224px;
+  flex: 0 0 224px;
+}
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:first-child,
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:last-child {}
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(3) {
+  width: 224px;
+  flex: 0 0 224px;
+}
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:nth-child(2) {}
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  flex-shrink: 0;
+  width: 100%;
+}
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:last-child .work-detail__feature-gallery-image-wrapper:first-child {}
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-image-wrapper--empty {
+  background: transparent;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:last-child .work-detail__feature-gallery-image-wrapper:last-child {}
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(1) .work-detail__feature-gallery-image-wrapper:last-child {
+  height: 360px;
+}
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:first-child {
+  height: 251px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:nth-child(2) {
+  height: 300px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(2) .work-detail__feature-gallery-image-wrapper:last-child {
+  height: 251px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(3) .work-detail__feature-gallery-image-wrapper:first-child {
+  height: 300px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-column:nth-child(3) .work-detail__feature-gallery-image-wrapper:last-child {
+  height: 411px;
+}
+
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-gallery-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 16px;
 }
 
 /* Feature Story Cards - Farewell, Journey, Crisis */
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-cards--kim-jaeeun-go-fetch-tablet {
   width: 100%;
   max-width: 800px;
-  padding: 96px 64px;
-  margin: 0;
+  padding: 96px 32px;
+  margin: 0 auto;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -382,76 +433,63 @@
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-image-wrapper {position: relative;
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-image-wrapper {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 100%;
+  height: 240px;
 }
 
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-image {height: auto;position: absolute;
-  
-  
+.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-image {
+  position: absolute;
   left: 0;
-  top: 0;display: block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-body {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 24px;
-  width: 100%;
-}
-
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-text {
-  display: flex;
-  flex-direction: column;
   gap: 8px;
   align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px;
   width: 100%;
+  flex-shrink: 0;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-title {
   font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 24px;
   letter-spacing: -0.3px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-description {
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 25.2px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-  width: 100%;
 }
 
 .work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card-description p {
   margin: 0;
 }
-
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card:first-child .work-detail__feature-story-card-description,
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card:nth-child(2) .work-detail__feature-story-card-description {
-  font-size: 18px;
-}
-
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card:last-child .work-detail__feature-story-card-description {
-  font-size: 16px;
-  letter-spacing: -0.08px;
-}
-
-.work-detail--kim-jaeeun-go-fetch-tablet .work-detail__feature-story-card:last-child .work-detail__feature-story-card-title {
-  font-weight: 700;
-}
-

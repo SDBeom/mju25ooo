@@ -2,7 +2,7 @@
 /* Figma 디자인 기반 구현 (800px) */
 
 .work-detail--cho-haneul-youth-dream-tablet {
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 0;
@@ -12,18 +12,24 @@
   align-items: center;
 }
 
+/* 전역 p 태그 스타일 오버라이드 */
+.work-detail--cho-haneul-youth-dream-tablet p {
+  font-size: inherit;
+  margin-bottom: 0;
+}
+
 /* Hero Section */
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__hero--cho-haneul-youth-dream-tablet {
   padding: 0;
-  margin: 0;
-  width: 800px;
-  max-width: 800px;
   margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-
-  flex-direction: row;}
+  flex-direction: row;
+  height: 540px;
+}
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__hero-content--cho-haneul-youth-dream-tablet {
   display: flex;
@@ -40,52 +46,52 @@
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__text-group {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   align-items: flex-start;
   width: 100%;
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__title--cho-haneul-youth-dream-tablet {
-  font-family: 'Pretendard', 'Noto Sans JP', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 52.8px;
   letter-spacing: -0.96px;
   color: #000000;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__lead--cho-haneul-youth-dream-tablet {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
   text-align: left;
 }
 
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__lead--cho-haneul-youth-dream-tablet {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.45;
-  letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.55);
-  margin: 0;
-  white-space: pre-wrap;
-
-  text-align: left;}
-
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__ctas--cho-haneul-youth-dream-tablet {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 16px;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
+  width: auto;
   cursor: pointer;
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__cta--cho-haneul-youth-dream-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -114,14 +120,18 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__hero-image-wrapper--cho-haneul-youth-dream-tablet {overflow: hidden;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__hero-image-wrapper--cho-haneul-youth-dream-tablet {
+  overflow: hidden;
   position: relative;
-  
   flex-shrink: 0;
+  width: 400px;
+  height: 540px;
 }
 
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__hero-image-wrapper--cho-haneul-youth-dream-tablet .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__hero-image-wrapper--cho-haneul-youth-dream-tablet .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Text Section */
@@ -131,7 +141,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -145,20 +155,20 @@
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__eyebrow-text {
-  font-family: 'Pretendard', sans-serif;
-  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
-  letter-spacing: -0.09px;
+  line-height: 29px;
+  letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__subtitle {
-  font-family: 'Pretendard', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 48px;
   letter-spacing: -0.8px;
   color: #000000;
   margin: 0;
@@ -166,12 +176,12 @@
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__text-content {
-  font-family: 'Pretendard', 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
@@ -185,9 +195,8 @@
   padding: 96px 32px;
   display: flex;
   flex-wrap: wrap;
-  gap: 48px 32px;
+  gap: 32px;
   align-items: flex-start;
-  max-width: 1440px;
   overflow: hidden;
   width: 800px;
   max-width: 800px;
@@ -200,27 +209,27 @@
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   align-items: flex-start;
   min-width: 324px;
   padding-top: 24px;
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__text-block-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 24px;
   letter-spacing: -0.4px;
   color: #1a1a1a;
   margin: 0;
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__text-block-content {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 24px;
   letter-spacing: -0.08px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -234,7 +243,7 @@
   gap: 32px;
   align-items: flex-start;
   justify-content: center;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   list-style: none;
@@ -244,43 +253,54 @@
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   align-items: flex-start;
-  max-width: 400px;
+  max-width: 388px;
   min-width: 224px;
   overflow: hidden;
   border-radius: 8px;
 }
 
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__card-image-wrapper {overflow: hidden;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__card-image-wrapper {
+  overflow: hidden;
   position: relative;
-  border-radius: 16px;}
-
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+  border-radius: 16px;
+  width: 100%;
+  aspect-ratio: 224 / 299;
 }
 
-/* Card 1 - Music (회전된 이미지) */
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__card--cho-haneul-youth-dream-tablet-1 .work-detail__card-image-wrapper {display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__card--cho-haneul-youth-dream-tablet-1 .work-detail__card-image {left: 0;
-  top: 0;
-  transform: rotate(90deg);
-  transform-origin: center center;
+/* Card 1 - Music */
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__card--cho-haneul-youth-dream-tablet-1 .work-detail__card-image-wrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  width: 100%;
+  aspect-ratio: 224 / 299;
+}
+
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__card--cho-haneul-youth-dream-tablet-1 .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
 }
 
 /* Card 2 - Generative AI */
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__card--cho-haneul-youth-dream-tablet-2 .work-detail__card-image {left: 0;
-  top: 0;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__card--cho-haneul-youth-dream-tablet-2 .work-detail__card-image {
+  /* 기본 스타일 상속 */
 }
 
 /* Card 3 - Visual performance */
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__card--cho-haneul-youth-dream-tablet-3 .work-detail__card-image {left: 0;
-  top: 0;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__card--cho-haneul-youth-dream-tablet-3 .work-detail__card-image {
+  /* 기본 스타일 상속 */
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__card-text {
@@ -292,21 +312,21 @@
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__card-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.3px;
+  line-height: 24px;
+  letter-spacing: -0.4px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__card-text p {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -318,9 +338,9 @@
   padding: 96px 32px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 48px;
   align-items: flex-start;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -334,31 +354,40 @@
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__feature-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 28px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 33.6px;
   letter-spacing: -0.56px;
   color: #000000;
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__feature-image-wrapper {position: relative;border-radius: 16px;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__feature-image-wrapper {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 736 / 414;
 }
 
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__feature-image {position: absolute;display: block;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-/* Style Frame */
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__feature--cho-haneul-youth-dream-tablet:nth-of-type(5) .work-detail__feature-image {left: 0;
-  top: 0;
+/* Resolume Arena */
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__feature--cho-haneul-youth-dream-tablet:nth-of-type(5) .work-detail__feature-image {
+  /* 기본 스타일 상속 */
 }
 
 /* MIDI Controller */
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__feature--cho-haneul-youth-dream-tablet:nth-of-type(6) .work-detail__feature-image {left: 0;
-  top: 0;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__feature--cho-haneul-youth-dream-tablet:nth-of-type(6) .work-detail__feature-image {
+  /* 기본 스타일 상속 */
 }
 
 /* Gallery Section */
@@ -369,7 +398,7 @@
   gap: 48px;
   align-items: center;
   justify-content: center;
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -377,17 +406,17 @@
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-header {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
 }
 
 .work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-title {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 48px;
   letter-spacing: -0.8px;
   color: #000000;
   margin: 0;
@@ -453,36 +482,34 @@
   height: 411px;
 }
 
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-image {position: absolute;display: block;}
-
-/* Column 1 images */
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-column:first-child .work-detail__gallery-item:first-child .work-detail__gallery-image {left: 0;
-  top: 0;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-column:first-child .work-detail__gallery-item:last-child .work-detail__gallery-image {left: 0;
-  top: 0;
+/* Marquee Section */
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__marquee--cho-haneul-youth-dream-tablet {
+  padding: 48px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Column 2 images */
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:first-child .work-detail__gallery-image {left: 0;
-  top: 0;
-}
-
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:nth-child(2) .work-detail__gallery-image {left: 0;
-  top: 0;
-}
-
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-column:nth-child(2) .work-detail__gallery-item:last-child .work-detail__gallery-image {left: 0;
-  top: 0;
-}
-
-/* Column 3 images */
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:first-child .work-detail__gallery-image {left: 0;
-  top: 0;
-}
-
-.work-detail--cho-haneul-youth-dream-tablet .work-detail__gallery-column:nth-child(3) .work-detail__gallery-item:last-child .work-detail__gallery-image {left: 0;
-  top: 0;
+.work-detail--cho-haneul-youth-dream-tablet .work-detail__marquee-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.4px;
+  letter-spacing: -0.64px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+  white-space: pre-wrap;
 }
 

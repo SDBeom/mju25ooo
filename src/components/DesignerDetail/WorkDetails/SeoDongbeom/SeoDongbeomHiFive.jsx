@@ -5,52 +5,49 @@ import SeoDongbeomHiFiveTablet from './SeoDongbeomHiFiveTablet';
 import SeoDongbeomHiFiveMobile from './SeoDongbeomHiFiveMobile';
 
 /**
- * �동�- HiFive
- * 반응허지훈�작품 �세 컴포�트
+ * 서동범 - HiFive
+ * 반응형 작품 상세 컴포넌트
  * Mobile: < 800px
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const SeoDongbeomHiFive = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const SeoDongbeomHiFive = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
   
   if (!work || !designer) {
     return null;
   }
   
-  // Mobile 버전 �더�
+  // Mobile 버전 렌더링
   if (isMobile) {
     return (
       <SeoDongbeomHiFiveMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
   
-  // Tablet 버전 �더�
+  // Tablet 버전 렌더링
   if (isTablet) {
     return (
       <SeoDongbeomHiFiveTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
   
-  // Desktop 버전 �더�
+  // Desktop 버전 렌더링
   return (
     <SeoDongbeomHiFiveDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

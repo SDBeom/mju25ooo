@@ -11,7 +11,7 @@ import HeoJihoonEternalVisionDesktop from './HeoJihoonEternalVisionDesktop';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const HeoJihoonEternalVision = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const HeoJihoonEternalVision = ({ work, designer, ctas }) => {
   const { isMobile, isTablet, isDesktop } = useBreakpoint();
   
   if (!work || !designer) {
@@ -24,8 +24,7 @@ const HeoJihoonEternalVision = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
       <HeoJihoonEternalVisionMobile 
         work={work} 
         designer={designer} 
-        badgeSrc={badgeSrc} 
-        badgeAlt={badgeAlt} 
+
         ctas={ctas} 
       />
     );
@@ -37,8 +36,7 @@ const HeoJihoonEternalVision = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
       <HeoJihoonEternalVisionTablet 
         work={work} 
         designer={designer} 
-        badgeSrc={badgeSrc} 
-        badgeAlt={badgeAlt} 
+
         ctas={ctas} 
       />
     );
@@ -50,8 +48,7 @@ const HeoJihoonEternalVision = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
       <HeoJihoonEternalVisionDesktop 
         work={work} 
         designer={designer} 
-        badgeSrc={badgeSrc} 
-        badgeAlt={badgeAlt} 
+
         ctas={ctas} 
       />
     );
@@ -62,8 +59,7 @@ const HeoJihoonEternalVision = ({ work, designer, badgeSrc, badgeAlt, ctas }) =>
     <HeoJihoonEternalVisionDesktop 
       work={work} 
       designer={designer} 
-      badgeSrc={badgeSrc} 
-      badgeAlt={badgeAlt} 
+
       ctas={ctas} 
     />
   );

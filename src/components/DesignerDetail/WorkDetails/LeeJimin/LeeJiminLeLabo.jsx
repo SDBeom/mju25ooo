@@ -11,8 +11,8 @@ import LeeJiminLeLaboMobile from './LeeJiminLeLaboMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const LeeJiminLeLabo = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <LeeJiminLeLaboMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <LeeJiminLeLaboTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const LeeJiminLeLabo = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <LeeJiminLeLaboDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

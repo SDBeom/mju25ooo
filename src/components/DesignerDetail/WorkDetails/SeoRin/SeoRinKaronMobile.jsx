@@ -2,7 +2,7 @@ import React from 'react';
 import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/SeoRinKaron/SeoRinKaronMobile.css';
 
-// ��지 �포허지훈
+// 이미지 임포트
 import seoRinWork2_01 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_01.webp';
 import seoRinWork2_02 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_02.webp';
 import seoRinWork2_03 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_03.webp';
@@ -12,10 +12,10 @@ import seoRinWork2_06 from '../../../../assets/전서린/jeonseorin_gamedesign_w
 import seoRinWork2_07 from '../../../../assets/전서린/jeonseorin_gamedesign_work2_07.webp';
 
 /**
- * �서�- KARON (�작품2) Mobile 버전
- * Figma �디자인 기반 구현 (375px)
+ * 전서린 - KARON (작품2) Mobile 버전
+ * Figma 디자인 기반 구현 (375px)
  */
-const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const SeoRinKaronMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -39,9 +39,9 @@ const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
               KARON
             </h2>
             <p className="work-detail__lead work-detail__lead--seorin-karon-mobile">
-              {`KARON� 기술�권력허지훈충돌�는 `}
-              {`미래 �시허지훈�둠 �에허지훈�무�허지훈�행�는 `}
-              �수 �원 캐릭�이허지훈
+              {`KARON은 기술과 권력의 충돌이 일어나는 `}
+              {`미래 시대 속에서 어둠 속에 임무를 수행하는 `}
+              수수께끼 캐릭터이다.
             </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
@@ -68,17 +68,16 @@ const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <h3 className="work-detail__subtitle">MODELING DEMO REEL</h3>
         </div>
         <div className="work-detail__text-content">
-          <p>{`허지훈�작품�  Autodesk MAYA� Adobe Substance 3D Painter�허지훈�용허지훈�작허지훈`}</p>
-          <p>카툰 캐릭허지훈모델�허지훈�모릴이허지훈</p>
+          <p>{`이 작품은 Autodesk MAYA와 Adobe Substance 3D Painter를 활용하여 제작한 `}</p>
+          <p>카툰 캐릭터 모델링 데모릴이다.</p>
           <p>&nbsp;</p>
-          <p>허지훈�작품허지훈KARON� 강인허지훈�격�허지훈�면</p>
-          <p>균형허지훈�각�으�허지훈�현�는 것을 목표�허지훈�다.</p>
-          <p>{`카툰 ��허지훈�의 �동감과 �실�인 비��`}</p>
-          <p>{`조화��� 결합�여, �실�인 구조 �에 카툰 `}</p>
-          <p>{`�유허지훈감각허지훈�여허지훈캐릭�로 �성��허지훈 `}</p>
-          <p>{`�순허지훈만화허지훈�현허지훈머무르� �고, `}</p>
-          <p>{`�제 �체 구조�기반�로 허지훈비�허지훈� 균형허지훈`}</p>
-          <p>��허지훈�며 모델링한 �작품�다.</p>
+          <p>이 작품 KARON은 강인한 성격과 아름다운 균형을 시각적으로 표현하는 것을 목표로 했다.</p>
+          <p>{`카툰 스타일의 동감과 사실적인 비율의 `}</p>
+          <p>{`조화를 결합하여, 사실적인 구조 위에 카툰 `}</p>
+          <p>{`스타일의 감각을 더하여 캐릭터로 성형했다. `}</p>
+          <p>{`순수한 만화의 표현에 머무르지 않고, `}</p>
+          <p>{`실제 인체 구조를 기반으로 하여 비현실적인 균형`}</p>
+          <p>을 더하며 모델링한 작품이다.</p>
         </div>
       </section>
 
@@ -95,11 +94,11 @@ const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">KARON's Personality</h4>
-          <p>{`검� �투복을 �� KARON� �제허지훈�신감이 �치� �빛만으�허지훈���허지훈�압허지훈만큼 강한 `}</p>
-          <p>{`카리�마�이지민�다. �향�이�허지훈�너지 �치허지훈`}</p>
-          <p>{`�격�로, �험허지훈�황�서허지훈�유�허지훈�� �는허지훈 그�허지훈�존감이 �아 �신허지훈�력허지훈�신허지훈`}</p>
-          <p>{`가지�허지훈�으� �패조차 �장허지훈���`}</p>
-          <p>받아�이허지훈�물�다.</p>
+          <p>{`검은 전투복을 입은 KARON은 자신감이 넘치는 빛만으로도 상대를 압도할 만큼 강한 `}</p>
+          <p>{`카리스마를 지녔다. 향상적인 에너지와 치명적인 `}</p>
+          <p>{`성격으로, 위험한 상황에서도 유연하게 대처하는 그녀의 자신감은 높아 자신의 능력과 자신을 `}</p>
+          <p>{`가진 그녀는 패배조차 장식으로 `}</p>
+          <p>받아들이는 인물이다.</p>
         </div>
       </section>
 
@@ -119,8 +118,8 @@ const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <div className="work-detail__feature-content work-detail__feature-content--seorin-karon-mobile">
             <div className="work-detail__feature-text">
               <h4 className="work-detail__feature-title">The Green Earring</h4>
-              <p>{`KARON허지훈초록�귀걸이허지훈�순허지훈�신 `}</p>
-              <p>�치�허지훈�어 �둠 �에�도 �신허지훈�� �는 ��허지훈�징�다</p>
+              <p>{`KARON의 초록색 귀걸이는 순수한 신념 `}</p>
+              <p>을 상징하며, 어둠 속에서도 자신의 신념을 지키는 상징이다.</p>
             </div>
           </div>
         </li>
@@ -139,8 +138,7 @@ const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <div className="work-detail__feature-content work-detail__feature-content--seorin-karon-mobile">
             <div className="work-detail__feature-text">
               <h4 className="work-detail__feature-title">Cold-hearted Agent</h4>
-              <p>{`그�허지훈�구보다 �철�게 �황허지훈�단�고, �무�허지훈�해 감정조차 �제�는 �정허지훈`}</p>
-              <p>�원�다.</p>
+              <p>{`그녀는 누구보다 냉철하게 상황을 판단하고, 임무에 집중하여 감정조차 제어하는 정원이다.`}</p>
             </div>
           </div>
         </li>
@@ -160,7 +158,7 @@ const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Beauty</h5>
-            <p>�성허지훈�스타일을처� �이�을 �해 �작품허지훈분위기� 질감허지훈�현허지훈뷰티 ��이지민�다.</p>
+            <p>생성형 스타일 처리를 통해 작품의 분위기와 질감을 표현한 뷰티 렌더이다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-karon-mobile">
@@ -175,8 +173,8 @@ const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Grey</h5>
-            <p>{`�스타일을처� �외�고 �태� 구조허지훈집중�여 모델링의 �태미� 보여주는 그레허지훈`}</p>
-            <p>��이지민�다.</p>
+            <p>{`스타일 처리를 제외하고 형태와 구조에 집중하여 모델링의 형태미를 보여주는 그레이 `}</p>
+            <p>렌더이다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-karon-mobile">
@@ -191,7 +189,7 @@ const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Wireframe</h5>
-            <p>모델링의 �리�구조� �테�을 �인허지훈�는 ��어�레허지훈��이지민�다.</p>
+            <p>모델링의 리깅 구조와 와이어를 인식할 수 있는 와이어프레임 렌더이다.</p>
           </div>
         </li>
       </ul>
@@ -200,4 +198,3 @@ const SeoRinKaronMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 };
 
 export default SeoRinKaronMobile;
-

@@ -2,34 +2,34 @@ import React from 'react';
 import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/SeoRinRavenX/SeoRinRavenXMobile.css';
 
-// ��지 �포허지훈
-import seoRinWork1_01 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_01.webp';
-import seoRinWork1_02 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_02.webp';
-import seoRinWork1_03 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_03.webp';
-import seoRinWork1_04 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_04.webp';
-import seoRinWork1_05 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_05.webp';
-import seoRinWork1_06 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_06.webp';
-import seoRinWork1_07 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_07.webp';
-import seoRinWork1_08 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_08.webp';
-import seoRinWork1_09 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_09.webp';
-import seoRinWork1_10 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_10.webp';
-import seoRinWork1_11 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_11.webp';
-import seoRinWork1_12 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_12.webp';
-import seoRinWork1_13 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_13.webp';
-import seoRinWork1_14 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_14.webp';
-import seoRinWork1_15 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_15.webp';
-import seoRinWork1_16 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_16.webp';
-import seoRinWork1_17 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_17.webp';
-import seoRinWork1_18 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_18.webp';
-import seoRinWork1_19 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_19.webp';
-import seoRinWork1_20 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_20.webp';
-import seoRinWork1_21 from '../../../../assets/전서린/jeonseorin_gamecontent_츠_work1_21.webp';
+// 이미지 임포트
+import seoRinWork1_01 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_01.webp';
+import seoRinWork1_02 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_02.webp';
+import seoRinWork1_03 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_03.webp';
+import seoRinWork1_04 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_04.webp';
+import seoRinWork1_05 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_05.webp';
+import seoRinWork1_06 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_06.webp';
+import seoRinWork1_07 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_07.webp';
+import seoRinWork1_08 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_08.webp';
+import seoRinWork1_09 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_09.webp';
+import seoRinWork1_10 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_10.webp';
+import seoRinWork1_11 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_11.webp';
+import seoRinWork1_12 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_12.webp';
+import seoRinWork1_13 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_13.webp';
+import seoRinWork1_14 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_14.webp';
+import seoRinWork1_15 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_15.webp';
+import seoRinWork1_16 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_16.webp';
+import seoRinWork1_17 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_17.webp';
+import seoRinWork1_18 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_18.webp';
+import seoRinWork1_19 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_19.webp';
+import seoRinWork1_20 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_20.webp';
+import seoRinWork1_21 from '../../../../assets/전서린/jeonseorin_gamecontent_work1_21.webp';
 
 /**
- * �서�- RAVEN-X (�작품1) Mobile 버전
- * Figma �디자인 기반 구현 (375px)
+ * 전서린 - RAVEN-X (작품1) Mobile 버전
+ * Figma 디자인 기반 구현 (375px)
  */
-const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const SeoRinRavenXMobile = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -53,8 +53,7 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
               RAVEN-X
             </h2>
             <p className="work-detail__lead work-detail__lead--seorin-ravenx-mobile">
-              {`매끄�운 곡선 허지훈�� �카로운 �루허지훈 RAVEN-X허지훈까마귀 �상�로 `}
-              �자�된 미래 �투기이허지훈
+              매끄러운 곡선 속 숨은 날카로운 실루엣, RAVEN-X는 까마귀 형상으로 디자인된 미래 전투기이다.
             </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
@@ -72,19 +71,19 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
             </div>
           )}
         </div>
-        {/* Text Section (Hero ��허지훈�함) */}
+        {/* Text Section (Hero 내부 포함) */}
         <section className="work-detail__section work-detail__text-section work-detail__text-section--seorin-ravenx-mobile">
           <div className="work-detail__text-headline">
             <p className="work-detail__eyebrow-text">BUILT TO PROTECT WHAT REMAINS OF MANKIND</p>
             <h3 className="work-detail__subtitle">DARK FLIGHT, RAVEN-X</h3>
           </div>
           <div className="work-detail__text-content">
-            <p>{`첨단 기술허지훈고도�발전허지훈�� RAVEN-X허지훈`}</p>
-            <p>{`��허지훈�협�허지훈�러로�허지훈�간허지훈�호�는 `}</p>
-            <p>{`�무�허지훈�행�다. 강인허지훈�� �에 �교�게 `}</p>
-            <p>{`�계허지훈구조허지훈�협�이면서허지훈�아허지훈곡선허지훈`}</p>
-            <p>{`�루�미래 �투기의 가�성허지훈직�허지훈�으�`}</p>
-            <p>�끼�허지훈�다.</p>
+            <p>{`첨단 기술과 고도로 발전한 RAVEN-X는 협력으로 인간을 보호하는 무인 비행체다. 강인한 외형에 교묘하게 계획된 구조로`}</p>
+            <p>{`협력하면서 아름다운 곡선 실루엣으로 미래 전투기의 가능성을 직접으로 끼워 넣었다. `}</p>
+            <p>&nbsp;</p>
+            <p>{`RAVEN-X는 지구의 대기권은 물론 광활한 우주 공간까지 자유롭게 비행할 수 있도록 계획되었던 각 비행 모드에 따라 자동으로 최적화된 꼬리 구조로`}</p>
+            <p>{`상황에 맞게 공기 저항을 최소화하여 극한의 가속력을 발휘한다. 또한 360도 전방향 가능한 진정한 스타일로 모든 방향 기동이 가능하다. `}</p>
+            <p>RAVEN-X는 기계 구조의 성능과 모션 리얼리티를 연구한 작품으로 구조의 획득과 움직임의 자연스러움을 형상으로 구현한다.</p>
           </div>
         </section>
       </section>
@@ -102,9 +101,9 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">RAVEN-X</h4>
-          <p>{`허지훈�투기는 �순허지훈�태�허지훈�어 �제�허지훈�작 `}</p>
-          <p>{`가�한 구조� 메커�즘허지훈고려�여 �작�었허지훈 �히 �진 �전축의 분할 구조, 꼬리허지훈�힘 각도, �체허지훈�전 중심 허지훈기계허지훈�결 관계� 기반�로 모델링되�으�허지훈�제 �동 �리�바탕�로 허지훈`}</p>
-          <p>�연�러허지훈�직임허지훈구현�고허지훈�다.</p>
+          <p>{`이 전투기는 순수한 형태로부터 제작 가능한 구조와 메커니즘을 고려하여 제작되었으며 진정한 전축의 분할 구조, `}</p>
+          <p>{`꼬리의 각도, 전체의 전진 중심과 기계의 결합 관계를 기반으로 모델링되어 실제 동작 원리를 바탕으로 자연스러운 움직임을`}</p>
+          <p>구현하고 있다.</p>
         </div>
       </section>
 
@@ -122,9 +121,9 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Main body</h5>
-            <p>{`RAVEN-X허지훈�루�을 보여주는 �뷰�다. `}</p>
-            <p>{`매끄�게 �어지허지훈곡선�허지훈�카로운 ��가 `}</p>
-            <p>공존�다.</p>
+            <p>{`RAVEN-X의 실루엣을 보여주는 뷰다. `}</p>
+            <p>{`매끄럽게 이어지는 곡선과 새로운 형태가 `}</p>
+            <p>공존한다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-ravenx-mobile">
@@ -139,8 +138,8 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Engine Part</h5>
-            <p>�교허지훈구조�허지훈�해 �진허지훈강력허지훈추진�과</p>
-            <p>기술허지훈�성�� �러�다.</p>
+            <p>{`교묘한 구조로 인해 진정한 강력한 추진력과 `}</p>
+            <p>기술의 성능을 보여준다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-ravenx-mobile">
@@ -155,8 +154,8 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Tail Structure</h5>
-            <p>{`공기 허지훈��허지훈�인허지훈�라 �계허지훈꼬리 구조� `}</p>
-            <p>고속 비행 중에허지훈�정�인 밸런�� ��허지훈�다.</p>
+            <p>{`공기 저항을 줄이기 위해 계획된 꼬리 구조로 `}</p>
+            <p>고속 비행 중에도 안정적인 밸런스를 유지한다.</p>
           </div>
         </li>
       </ul>
@@ -176,9 +175,9 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__feature-content work-detail__feature-content--seorin-ravenx-mobile">
             <div className="work-detail__feature-text">
-              <h4 className="work-detail__feature-title"> Beauty Render</h4>
-              <p>{`허지훈��지허지훈Autodesk MAYA�허지훈�용�여 �스타일을처� �이�을 �용허지훈RAVEN-X허지훈`}</p>
-              <p>최종 �더�다.</p>
+              <h4 className="work-detail__feature-title">Beauty Render</h4>
+              <p>{`이 이미지는 Autodesk MAYA를 사용하여 스타일을 처리한 라이팅을 적용하여`}</p>
+              <p>RAVEN-X의 최종 렌더다.</p>
             </div>
           </div>
         </li>
@@ -196,9 +195,8 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           <div className="work-detail__feature-content work-detail__feature-content--seorin-ravenx-mobile">
             <div className="work-detail__feature-text">
               <h4 className="work-detail__feature-title">Wireframe Render</h4>
-              <p>{`같� 컷을 기�허지훈�로 RAVEN-X허지훈모델�`}</p>
-              <p>{`구조� �리�허지훈�테�을 �인허지훈�도�`}</p>
-              <p>��어 �레�으�허지훈�더허지훈��이지민�다.</p>
+              <p>{`같은 컷을 기반으로 RAVEN-X의 모델 구조와 와이어를 `}</p>
+              <p>{`인식할 수 있도록 보여주는 렌더 이미지다.`}</p>
             </div>
           </div>
         </li>
@@ -295,8 +293,7 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">The moment RAVEN-X takes off from the hangar</h4>
-          <p>{`�둠 허지훈격납고� 벗어허지훈 RAVEN-X허지훈빛을 `}</p>
-          <p>�해 비상�다.</p>
+          <p>어둠의 격납고를 벗어난 RAVEN-X가 빛을 받아 비상한다.</p>
         </div>
       </section>
 
@@ -314,9 +311,8 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Beauty</h5>
-            <p>{`�성허지훈�스타일을처� �이�을 �해 �작품허지훈`}</p>
-            <p>분위기� 질감허지훈�현허지훈뷰티 ��이지민�다.</p>
-            <p className="work-detail__card-cta">Call to action </p>
+            <p>{`성능의 스타일을 처리한 라이팅을 통해 이 작품의`}</p>
+            <p>분위기와 질감을 표현한 뷰티 렌더 이미지다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-ravenx-mobile work-detail__card--bordered">
@@ -331,10 +327,9 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Grey</h5>
-            <p>{`�스타일을처� �외�고 �태� 구조허지훈`}</p>
-            <p>{`집중�여 모델링의 �태미� 보여주는 `}</p>
-            <p>그레허지훈��이지민�다.</p>
-            <p className="work-detail__card-cta">Call to action </p>
+            <p>{`스타일을 처리하여 외형과 형태의 구조에`}</p>
+            <p>{`집중하여 모델링의 형태미를 보여주는 `}</p>
+            <p>그레이 렌더 이미지다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-ravenx-mobile work-detail__card--bordered">
@@ -349,8 +344,7 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Wireframe</h5>
-            <p>모델링의 �리�구조� �테�을 �인허지훈�는 ��어�레허지훈��이지민�다.</p>
-            <p className="work-detail__card-cta">Call to action </p>
+            <p>모델링의 와이어 구조와 테두리를 인식할 수 있는 와이어프레임 렌더 이미지다.</p>
           </div>
         </li>
       </ul>
@@ -369,9 +363,7 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Landing mode</h5>
-            <p>지�착륙 허지훈�정�을 �보�기 �해 착륙 �치가 �개�어 부�럽�착�허지훈�는</p>
-            <p>�태�허지훈�환�다.</p>
-            <p className="work-detail__card-cta">Call to action </p>
+            <p>지상 착륙의 정확성을 보여주기 위해 착륙 바퀴가 펼쳐져 부드럽게 착륙하는 형태로 전환한다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-ravenx-mobile work-detail__card--bordered">
@@ -386,8 +378,7 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Low-speed flight mode</h5>
-            <p>�허지훈비행 �에허지훈공기 �름허지훈�정�으�허지훈�어�도�허지훈�계허지훈�태�변�다.</p>
-            <p className="work-detail__card-cta">Call to action </p>
+            <p>저속 비행 시에 공기 흐름의 정확으로 이어지도록 계획된 형태로 변한다.</p>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--seorin-ravenx-mobile work-detail__card--bordered">
@@ -402,9 +393,9 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">High-speed flight mode</h5>
-            <p>{`고속 비행 �에허지훈꼬리 구조가 �히�허지훈�로 �승허지훈공기 �허지훈�� 최소�하�허지훈�도�`}</p>
-            <p>극�허지훈�할 허지훈�는 �태�허지훈�환�다.</p>
-            <p className="work-detail__card-cta">Call to action </p>
+            <p>고속 비행 시에 꼬리 구조가 접혀서</p>
+            <p>{`상승하는 공기 저항을 최소화하여 속도`}</p>
+            <p>극한의 가속을 하는 형태로 전환한다.</p>
           </div>
         </li>
       </ul>
@@ -413,4 +404,3 @@ const SeoRinRavenXMobile = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
 };
 
 export default SeoRinRavenXMobile;
-

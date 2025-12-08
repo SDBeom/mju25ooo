@@ -29,8 +29,12 @@
   order: -1;
 }
 
-.work-detail--leedayoung-ready-to-merry-mobile .work-detail__hero-image-wrapper--leedayoung-ready-to-merry-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leedayoung-ready-to-merry-mobile .work-detail__hero-image-wrapper--leedayoung-ready-to-merry-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   order: -1;
 }
 
@@ -337,8 +341,12 @@
   overflow: hidden;
 }
 
-.work-detail--leedayoung-ready-to-merry-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leedayoung-ready-to-merry-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -419,8 +427,12 @@
   border-radius: 16px;flex-shrink: 0;
 }
 
-.work-detail--leedayoung-ready-to-merry-mobile .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leedayoung-ready-to-merry-mobile .work-detail__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -564,7 +576,11 @@
 
 .work-detail--leedayoung-ready-to-merry-mobile .work-detail__bento-card--large .work-detail__bento-image-wrapper {}
 
-.work-detail--leedayoung-ready-to-merry-mobile .work-detail__bento-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--leedayoung-ready-to-merry-mobile .work-detail__bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 

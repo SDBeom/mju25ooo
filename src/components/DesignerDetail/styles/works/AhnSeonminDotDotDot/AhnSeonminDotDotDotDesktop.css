@@ -1,5 +1,5 @@
-/* ?�선�?- ?�점??(?�품1) Desktop 버전 ?��??? */
-/* Figma ?�자??기반 구현 (1280px) */
+/* 안선민 - 점점점 (작품1) Desktop 버전 스타일 */
+/* Figma 디자인 기반 구현 (1280px) */
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop {
   width: 1280px;
@@ -16,8 +16,9 @@
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__hero--ahn-seonmin-dot-dot-dot-desktop {
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: 1280px;
   max-width: 1280px;
+  height: 548px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -31,7 +32,8 @@
   gap: 32px;
   align-items: flex-start;
   justify-content: center;
-  padding: 120px 64px;
+  padding: 0 64px;
+  height: 548px;
   min-width: 0;
   min-height: 0;
 }
@@ -45,10 +47,10 @@
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__title--ahn-seonmin-dot-dot-dot-desktop {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 61.6px;
   letter-spacing: -1.12px;
   color: #000000;
   margin: 0;
@@ -56,18 +58,14 @@
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__lead--ahn-seonmin-dot-dot-dot-desktop {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 34.8px;
   letter-spacing: -0.12px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-}
-
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__lead--ahn-seonmin-dot-dot-dot-desktop p {
-  margin: 0;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__ctas--ahn-seonmin-dot-dot-dot-desktop {
@@ -82,10 +80,10 @@
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__cta--ahn-seonmin-dot-dot-dot-desktop {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -115,12 +113,25 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__hero-image-wrapper--ahn-seonmin-dot-dot-dot-desktop {position: relative;
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__hero-image-wrapper--ahn-seonmin-dot-dot-dot-desktop {
+  position: relative;
   flex-shrink: 0;
+  width: 640px;
+  height: 540px;
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Feature 1 Section */
@@ -134,33 +145,42 @@
   max-width: 1280px;
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-image-wrapper--full {position: relative;
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-image-wrapper--full {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+  width: 1152px;
+  height: 648px;
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-image {height: auto;position: absolute;
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   
   
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);display: block;
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-text {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
   align-items: flex-start;
   width: 100%;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-description {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -190,6 +210,10 @@
   padding: 120px 64px 40px;
 }
 
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-row--ahn-seonmin-dot-dot-dot-desktop.work-detail__feature-row--reverse {
+  flex-direction: row-reverse;
+}
+
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-row--ahn-seonmin-dot-dot-dot-desktop:last-child {
   padding: 40px 64px 120px;
 }
@@ -214,28 +238,37 @@
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-row-text {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-row-image-wrapper {position: relative;
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-row-image-wrapper {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+  width: 544px;
+  height: 432px;
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-row-image {height: auto;position: absolute;
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__feature-row-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   
   
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);display: block;
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Feature Bento Section */
@@ -243,7 +276,7 @@
   padding: 120px 64px;
   display: flex;
   flex-wrap: wrap;
-  gap: 48px 32px;
+  gap: 32px;
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
@@ -253,12 +286,9 @@
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--ahn-seonmin-dot-dot-dot-desktop {
   display: flex;
-  flex: 1 0 0;
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  max-width: 388px;
-  min-width: 336px;
   min-height: 0;
   overflow: hidden;
   padding: 0;
@@ -266,32 +296,42 @@
   flex-shrink: 0;
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--wide {
-  min-width: 1072px;
-  max-width: none;
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--ahn-seonmin-dot-dot-dot-desktop:first-child {
+  width: 388px;
+  height: 398px;
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card-image-wrapper {position: relative;
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--ahn-seonmin-dot-dot-dot-desktop:nth-child(2) {
+  width: 732px;
+  height: 398px;
+}
+
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--wide {
+  width: 1152px;
+  height: 461px;
+}
+
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card-image-wrapper {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+  width: 100%;
+  height: 348px;
 }
 
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card-image {position: absolute;left: 0;
-  top: 0;display: block;
-}
-
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--ahn-seonmin-dot-dot-dot-desktop:first-child .work-detail__bento-card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--ahn-seonmin-dot-dot-dot-desktop:nth-child(2) .work-detail__bento-card-image-wrapper {
-}
-
-.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card--wide .work-detail__bento-card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card-text {
@@ -303,14 +343,14 @@
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card-text--wide {
-  padding-right: 320px;
+  padding-right: 0;
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card-title {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 28.8px;
   letter-spacing: -0.48px;
   color: #000000;
   margin: 0;
@@ -318,13 +358,12 @@
 }
 
 .work-detail--ahn-seonmin-dot-dot-dot-desktop .work-detail__bento-card-description {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
 }
-

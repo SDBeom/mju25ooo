@@ -2,8 +2,9 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import gsap from 'gsap';
 import designerDetailsData from '../../data/designerDetailsData.js';
 import Modal from '../Modal/Modal';
-import WorkDetailContent from '../DesignerDetail/WorkDetails/WorkDetailContent';
+import { getWorkComponent } from '../DesignerDetail/WorkDetails/workComponentMap';
 import { videoBadge, gameBadge, multimediaBadge, motionBadge } from '../../data/designerDetailsData';
+import { MODAL } from '../../shared/constants';
 import gameLogo from '../../assets/branding_logo/Game.svg';
 import motionLogo from '../../assets/branding_logo/Motion.svg';
 import multimediaLogo from '../../assets/branding_logo/Multimedia.svg';
@@ -349,6 +350,38 @@ const Works = () => {
         root.classList.remove('is-modal-open');
       }
     }, 100);
+  }, []);
+
+  /**
+   * 작품에 맞는 모달 클래스 이름 반환
+   * @param {Object} work - 작품 데이터
+   * @returns {string} 모달 클래스 이름
+   */
+  const getModalClassForWork = useCallback((work) => {
+    if (!work) return MODAL.CLASS_NAMES.MODAL_CONTENT;
+    
+    const baseClass = MODAL.CLASS_NAMES.MODAL_CONTENT;
+    
+    // work.layout이 있으면 우선 사용
+    if (work.layout) {
+      return `${baseClass} modal-content--${work.layout}`;
+    }
+    
+    // work.id를 기반으로 클래스 이름 생성
+    if (work.id) {
+      // work.id에서 작품별 식별자 추출
+      // 예: "kimjina-caravan" -> "caravan", "leejimin-veneti-character" -> "veneti-character"
+      const workIdentifier = work.id
+        .split('-')
+        .slice(1) // 첫 번째 부분(디자이너 이름) 제거
+        .join('-'); // 나머지 부분을 하이픈으로 연결
+      
+      if (workIdentifier) {
+        return `${baseClass} modal-content--${workIdentifier}`;
+      }
+    }
+    
+    return baseClass;
   }, []);
 
   // WorkDetailContent에 필요한 props 생성
@@ -967,8 +1000,17 @@ const Works = () => {
           isOpen={!!selectedWork}
           onClose={closeWorkModal}
           designerName={selectedDesigner?.displayName}
+          modalClass={selectedWork ? getModalClassForWork(selectedWork) : MODAL.CLASS_NAMES.MODAL_CONTENT}
         >
-          <WorkDetailContent {...getWorkContentProps(selectedWork, selectedDesigner)} />
+          {selectedWork && (() => {
+            const props = getWorkContentProps(selectedWork, selectedDesigner);
+            const WorkComponent = getWorkComponent(selectedWork);
+            if (!WorkComponent) {
+              console.warn('WorkComponent not found for work:', selectedWork);
+              return <div>작품 컴포넌트를 찾을 수 없습니다.</div>;
+            }
+            return <WorkComponent {...props} />;
+          })()}
         </Modal>
       )}
     </>

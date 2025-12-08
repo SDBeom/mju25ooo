@@ -11,8 +11,8 @@ import WoosuminPierreHuygheMobile from './WoosuminPierreHuygheMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const WoosuminPierreHuyghe = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const WoosuminPierreHuyghe = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const WoosuminPierreHuyghe = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <WoosuminPierreHuygheMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const WoosuminPierreHuyghe = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <WoosuminPierreHuygheTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const WoosuminPierreHuyghe = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <WoosuminPierreHuygheDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

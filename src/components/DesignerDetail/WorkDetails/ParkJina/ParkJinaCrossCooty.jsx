@@ -3,7 +3,6 @@ import { useBreakpoint } from '../../../../hooks/useBreakpoint';
 import ParkJinaCrossCootyDesktop from './ParkJinaCrossCootyDesktop';
 import ParkJinaCrossCootyTablet from './ParkJinaCrossCootyTablet';
 import ParkJinaCrossCootyMobile from './ParkJinaCrossCootyMobile';
-import DefaultWorkLayout from '../DefaultWorkLayout';
 
 /**
  * 박진아 - Cross Cooty
@@ -12,7 +11,7 @@ import DefaultWorkLayout from '../DefaultWorkLayout';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const ParkJinaCrossCooty = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ParkJinaCrossCooty = ({ work, designer, ctas }) => {
   const { isMobile, isTablet, isDesktop } = useBreakpoint();
 
   if (!work || !designer) {
@@ -25,8 +24,7 @@ const ParkJinaCrossCooty = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <ParkJinaCrossCootyDesktop
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -38,8 +36,7 @@ const ParkJinaCrossCooty = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <ParkJinaCrossCootyTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -51,8 +48,7 @@ const ParkJinaCrossCooty = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <ParkJinaCrossCootyMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -63,8 +59,7 @@ const ParkJinaCrossCooty = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <ParkJinaCrossCootyMobile
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );

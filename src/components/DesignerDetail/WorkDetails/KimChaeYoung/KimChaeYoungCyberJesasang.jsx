@@ -3,7 +3,6 @@ import { useBreakpoint } from '../../../../hooks/useBreakpoint';
 import KimChaeYoungCyberJesasangDesktop from './KimChaeYoungCyberJesasangDesktop';
 import KimChaeYoungCyberJesasangTablet from './KimChaeYoungCyberJesasangTablet';
 import KimChaeYoungCyberJesasangMobile from './KimChaeYoungCyberJesasangMobile';
-import DefaultWorkLayout from '../DefaultWorkLayout';
 
 /**
  * 김채영 - 사이버 제사상
@@ -12,7 +11,7 @@ import DefaultWorkLayout from '../DefaultWorkLayout';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const KimChaeYoungCyberJesasang = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const KimChaeYoungCyberJesasang = ({ work, designer, ctas }) => {
   const { isMobile, isTablet, isDesktop } = useBreakpoint();
 
   if (!work || !designer) {
@@ -25,8 +24,7 @@ const KimChaeYoungCyberJesasang = ({ work, designer, badgeSrc, badgeAlt, ctas })
       <KimChaeYoungCyberJesasangDesktop
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -38,8 +36,7 @@ const KimChaeYoungCyberJesasang = ({ work, designer, badgeSrc, badgeAlt, ctas })
       <KimChaeYoungCyberJesasangTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -51,23 +48,14 @@ const KimChaeYoungCyberJesasang = ({ work, designer, badgeSrc, badgeAlt, ctas })
       <KimChaeYoungCyberJesasangMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
   }
 
   // Fallback for any other case (should ideally be covered by above)
-  return (
-    <DefaultWorkLayout
-      work={work}
-      designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
-      ctas={ctas}
-    />
-  );
+  return null;
 };
 
 export default KimChaeYoungCyberJesasang;

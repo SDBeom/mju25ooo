@@ -31,8 +31,12 @@
   order: -1;
 }
 
-.work-detail--kim-chae-young-do-you-believe-in-destiny-mobile .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-chae-young-do-you-believe-in-destiny-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .work-detail--kim-chae-young-do-you-believe-in-destiny-mobile .work-detail__hero-content--kim-chae-young-do-you-believe-in-destiny-mobile {
@@ -153,8 +157,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-chae-young-do-you-believe-in-destiny-mobile .work-detail__feature-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-chae-young-do-you-believe-in-destiny-mobile .work-detail__feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
@@ -226,8 +234,12 @@
   flex-shrink: 0;
 }
 
-.work-detail--kim-chae-young-do-you-believe-in-destiny-mobile .work-detail__feature-card-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--kim-chae-young-do-you-believe-in-destiny-mobile .work-detail__feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 

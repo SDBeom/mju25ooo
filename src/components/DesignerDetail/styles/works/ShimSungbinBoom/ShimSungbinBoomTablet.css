@@ -1,8 +1,8 @@
-/* ?�성�?- BOOM (?�품2) Tablet 버전 ?��??? */
-/* Figma ?�자??기반 구현 (800px) */
+/* 심성빈 - BOOM (작품2) Tablet 버전 스타일 */
+/* Figma 디자인 기반 구현 (800px) */
 
 .work-detail--shim-sungbin-boom-tablet {
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 0;
@@ -44,10 +44,10 @@
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__title--shim-sungbin-boom-tablet {
-  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 52.8px;
   letter-spacing: -0.96px;
   color: #000000;
   margin: 0;
@@ -56,44 +56,41 @@
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__lead--shim-sungbin-boom-tablet {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
-  font-size: 24px;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.45;
-  letter-spacing: -0.12px;
+  line-height: 29px;
+  letter-spacing: -0.1px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
-
-  text-align: left;}
+  text-align: left;
+}
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__lead--shim-sungbin-boom-tablet p {
   margin: 0;
-
-  text-align: left;}
+  text-align: left;
+}
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__ctas--shim-sungbin-boom-tablet {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  width: 100%;
-}
+  flex-direction: row;
+  flex-wrap: nowrap;
+  }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__cta--shim-sungbin-boom-tablet {
   padding: 12px 16px;
   border-radius: 12px;
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
   white-space: nowrap;
+  text-align: left;
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__cta--primary.work-detail__cta--shim-sungbin-boom-tablet {
@@ -117,12 +114,22 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__hero-image-wrapper--shim-sungbin-boom-tablet {position: relative;
+.work-detail--shim-sungbin-boom-tablet .work-detail__hero-image-wrapper--shim-sungbin-boom-tablet {
+  position: relative;
+  width: 400px;
+  height: 540px;
+  overflow: hidden;
   flex-shrink: 0;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__hero-image {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--shim-sungbin-boom-tablet .work-detail__hero-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* Feature Cards 1 Section */
@@ -152,29 +159,23 @@
   flex-shrink: 0;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__card-image-wrapper {position: relative;
+.work-detail--shim-sungbin-boom-tablet .work-detail__card-image-wrapper {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  height: 299px;
   flex-shrink: 0;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__card-image {position: absolute;left: 0;
-  top: 0;display: block;
-}
-
-.work-detail--shim-sungbin-boom-tablet .work-detail__card--shim-sungbin-boom-tablet:first-child .work-detail__card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--shim-sungbin-boom-tablet .work-detail__card--shim-sungbin-boom-tablet:nth-child(2) .work-detail__card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--shim-sungbin-boom-tablet .work-detail__card--shim-sungbin-boom-tablet:nth-child(3) .work-detail__card-image {height: auto;left: -41px;
-  top: 50%;
-  transform: translateY(-50%);
+.work-detail--shim-sungbin-boom-tablet .work-detail__card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__card-text {
@@ -186,10 +187,10 @@
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__card-title {
-  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 24px;
   letter-spacing: -0.3px;
   color: #000000;
   margin: 0;
@@ -197,10 +198,10 @@
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__card-description {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -240,36 +241,27 @@
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__bento-card--wide {
-  min-width: 496px;
+  min-width: 448px;
   max-width: none;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__bento-card-image-wrapper {position: relative;
+.work-detail--shim-sungbin-boom-tablet .work-detail__bento-card-image-wrapper {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  height: 208px;
   flex-shrink: 0;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__bento-card-image {position: absolute;left: 0;
-  top: 0;display: block;
-}
-
-.work-detail--shim-sungbin-boom-tablet .work-detail__bento-card--shim-sungbin-boom-tablet:first-child .work-detail__bento-card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--shim-sungbin-boom-tablet .work-detail__bento-card--shim-sungbin-boom-tablet:nth-child(2) .work-detail__bento-card-image-wrapper {
-}
-
-.work-detail--shim-sungbin-boom-tablet .work-detail__bento-card--shim-sungbin-boom-tablet:nth-child(2) .work-detail__bento-card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--shim-sungbin-boom-tablet .work-detail__bento-card--wide .work-detail__bento-card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.work-detail--shim-sungbin-boom-tablet .work-detail__bento-card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__bento-card-text {
@@ -285,10 +277,10 @@
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__bento-card-title {
-  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 24px;
   letter-spacing: -0.3px;
   color: #000000;
   margin: 0;
@@ -296,10 +288,10 @@
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__bento-card-description {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -349,10 +341,10 @@
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__card--feature-3 .work-detail__card-title {
-  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 24px;
   letter-spacing: -0.3px;
   color: #000000;
   margin: 0;
@@ -360,10 +352,10 @@
 }
 
 .work-detail--shim-sungbin-boom-tablet .work-detail__card--feature-3 .work-detail__card-description {
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 26.1px;
   letter-spacing: -0.09px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
@@ -374,30 +366,35 @@
   margin: 0;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__card-image-wrapper--feature-3 {position: absolute;
+.work-detail--shim-sungbin-boom-tablet .work-detail__card-image-wrapper--feature-3 {
+  position: absolute;
   border: 8px solid #ffffff;
-  
-  
   left: 248px;
   top: 181px;
   border-radius: 32px;
   overflow: hidden;
+  width: 240px;
+  height: 135px;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__card--feature-3:nth-child(2) .work-detail__card-image-wrapper--feature-3 {top: 184px;
+.work-detail--shim-sungbin-boom-tablet .work-detail__card--feature-3:nth-child(2) .work-detail__card-image-wrapper--feature-3 {
+  top: 184px;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__card-image--feature-3 {position: absolute;left: 0;
-  top: 0;display: block;
+.work-detail--shim-sungbin-boom-tablet .work-detail__card-image--feature-3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__card--feature-3:first-child .work-detail__card-image--feature-3 {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.work-detail--shim-sungbin-boom-tablet .work-detail__card--feature-3:first-child .work-detail__card-image--feature-3 {
+  object-position: left center;
 }
 
-.work-detail--shim-sungbin-boom-tablet .work-detail__card--feature-3:nth-child(2) .work-detail__card-image--feature-3 {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.work-detail--shim-sungbin-boom-tablet .work-detail__card--feature-3:nth-child(2) .work-detail__card-image--feature-3 {
+  object-position: left -153px;
 }
-

@@ -6,12 +6,44 @@
 }
 .work-detail--woosumin-liminal-tablet .work-detail__section.work-detail__hero {
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  gap: 0;
 }
 .work-detail--woosumin-liminal-tablet .work-detail__hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1 0 0;
   gap: 32px;
+  min-height: 0;
+  min-width: 0;
+  width: auto;
+  box-sizing: border-box;
+  order: 1;
   padding: 96px 32px;
 }
+.work-detail--woosumin-liminal-tablet .work-detail__hero-text {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+}
 .work-detail--woosumin-liminal-tablet .work-detail__hero-media {
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  order: 2;
+  box-sizing: border-box;
   flex: 0 0 400px;
   width: 400px;
 }

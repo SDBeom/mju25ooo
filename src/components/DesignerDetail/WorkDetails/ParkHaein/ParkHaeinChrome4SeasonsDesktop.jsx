@@ -21,7 +21,7 @@ import parkHaeinWork1_13 from '../../../../assets/박해인/parkhaein_motiondesi
  * 박해인 - Chrome 4: Seasons Desktop 버전
  * Figma 디자인 기반 구현 (1280px)
  */
-const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
+const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, ctas }) => {
   if (!work || !designer) {
     return null;
   }
@@ -33,17 +33,11 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ct
         <div className="work-detail__hero-content work-detail__hero-content--park-haein-chrome-4-seasons-desktop">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--park-haein-chrome-4-seasons-desktop">
-              {work.title || 'Chrome 4: Seasons'}
+              Chrome 4: Seasons
             </h2>
-            <div className="work-detail__lead work-detail__lead--park-haein-chrome-4-seasons-desktop">
-              {work.summary && (
-                typeof work.summary === 'string' ? (
-                  <p>{work.summary}</p>
-                ) : (
-                  <div>{work.summary}</div>
-                )
-              )}
-            </div>
+            <p className="work-detail__lead work-detail__lead--park-haein-chrome-4-seasons-desktop">
+              Chrome 4: Seasons는 크롬하츠(Chrome Hearts)의 강렬한 아이덴티티를 디지털 휴먼을 매개로 재해석한 비주얼 브랜드 필름이다.
+            </p>
           </div>
           {ctas && Array.isArray(ctas) && ctas.length > 0 && (
             <div className="work-detail__ctas work-detail__ctas--park-haein-chrome-4-seasons-desktop">
@@ -61,17 +55,13 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ct
           )}
         </div>
         <div className="work-detail__hero-image-wrapper work-detail__hero-image-wrapper--park-haein-chrome-4-seasons-desktop">
-          <div className="work-detail__hero-image-container">
-            <div className="work-detail__hero-image-inner">
-              <img
-                src={parkHaeinWork1_01}
-                alt={work.title || 'Chrome 4: Seasons'}
-                className="work-detail__hero-image"
-                onError={(e) => handleImageError(e, parkHaeinWork1_01, work.id, 'hero')}
-                loading="eager"
-              />
-            </div>
-          </div>
+          <img
+            src={parkHaeinWork1_01}
+            alt={work.title || 'Chrome 4: Seasons'}
+            className="work-detail__hero-image"
+            onError={(e) => handleImageError(e, parkHaeinWork1_01, work.id, 'hero')}
+            loading="eager"
+          />
         </div>
       </section>
 
@@ -88,11 +78,11 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ct
         </div>
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">Spring to winter, every moment shines differently.</h4>
-          <div className="work-detail__feature-description">
-            <p>봄의 싱그러움, 여름의 열기, 가을의 깊이, 겨울의 고요함이 크롬의 강렬한 아이덴티티와 어우러진다. 관람자는 복잡하게 해석하지 않아도 계절의 흐름과 변화 속에서 화면을 따라가며 새로운 디테일과 재미를 발견할 수 있다. 디지털과 현실, 인간성과 브랜드가 만나는 지점에서 시각적 경험이 확장되며, 보는 이의 감각과 상을 자유롭게 자극한다.</p>
-            <p>&nbsp;</p>
-            <p>The freshness of spring, the heat of summer, the depth of autumn, and the stillness of winter intertwine with the bold identity of Chrome. Viewers can follow the flow and transformation of the seasons without complex interpretation, discovering new details and pleasures within each scene. At the intersection of digital and reality, humanity and brand, the visual experience expands—freely stimulating the viewer's senses and imagination.</p>
-          </div>
+          <p className="work-detail__feature-description">
+            {`봄의 싱그러움, 여름의 열기, 가을의 깊이, 겨울의 고요함이 크롬의 강렬한 아이덴티티와 어우러진다. 관람자는 복잡하게 해석하지 않아도 계절의 흐름과 변화 속에서 화면을 따라가며 새로운 디테일과 재미를 발견할 수 있다. 디지털과 현실, 인간성과 브랜드가 만나는 지점에서 시각적 경험이 확장되며, 보는 이의 감각과 상상을 자유롭게 자극한다.
+
+The freshness of spring, the heat of summer, the depth of autumn, and the stillness of winter intertwine with the bold identity of Chrome. Viewers can follow the flow and transformation of the seasons without complex interpretation, discovering new details and pleasures within each scene. At the intersection of digital and reality, humanity and brand, the visual experience expands—freely stimulating the viewer's senses and imagination.`}
+          </p>
         </div>
       </section>
 
@@ -156,9 +146,7 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ct
           </div>
           <div className="work-detail__bento-text">
             <h5 className="work-detail__bento-title">AUTUMN</h5>
-            <div className="work-detail__bento-description">
-              <p>#Maturity #Transformation #Brown #Green</p>
-            </div>
+            <p className="work-detail__bento-description">#Maturity #Transformation #Brown #Green</p>
           </div>
         </li>
         <li className="work-detail__bento-card work-detail__bento-card--park-haein-chrome-4-seasons-desktop work-detail__bento-card--wide">
@@ -173,9 +161,7 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ct
           </div>
           <div className="work-detail__bento-text">
             <h5 className="work-detail__bento-title">SPRING</h5>
-            <div className="work-detail__bento-description">
-              <p>#Life  #Growth #Pink #Green #Brightness</p>
-            </div>
+            <p className="work-detail__bento-description">#Life  #Growth #Pink #Green #Brightness</p>
           </div>
         </li>
         <li className="work-detail__bento-card work-detail__bento-card--park-haein-chrome-4-seasons-desktop work-detail__bento-card--full">
@@ -190,9 +176,7 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ct
           </div>
           <div className="work-detail__bento-text">
             <h5 className="work-detail__bento-title">WINTER</h5>
-            <div className="work-detail__bento-description">
-              <p>#Stillness #Serenity #White #Blue</p>
-            </div>
+            <p className="work-detail__bento-description">#Stillness #Serenity #White #Blue</p>
           </div>
         </li>
       </ul>
@@ -201,9 +185,7 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ct
       <section className="work-detail__section work-detail__gallery work-detail__gallery--park-haein-chrome-4-seasons-desktop">
         <div className="work-detail__gallery-header">
           <h3 className="work-detail__gallery-title">Another scene</h3>
-          <div className="work-detail__gallery-subtitle">
-            <p>Detail Shots</p>
-          </div>
+          <p className="work-detail__gallery-subtitle">Detail Shots</p>
         </div>
         <div className="work-detail__gallery-grid">
           <div className="work-detail__gallery-column work-detail__gallery-column--1">
@@ -253,7 +235,12 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ct
 
       {/* Feature Card 1: Instagram */}
       <section className="work-detail__section work-detail__instagram-card work-detail__instagram-card--park-haein-chrome-4-seasons-desktop">
-        <article className="work-detail__instagram-card-inner">
+        <a
+          href={designer?.instagram || 'https://www.instagram.com/haein_524/'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="work-detail__instagram-card-inner"
+        >
           <div className="work-detail__instagram-card-image-wrapper">
             <img
               src={parkHaeinWork1_13}
@@ -266,15 +253,13 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, badgeSrc, badgeAlt, ct
           <div className="work-detail__instagram-card-body">
             <div className="work-detail__instagram-card-text">
               <h5 className="work-detail__instagram-card-title">@haein_524</h5>
-              <div className="work-detail__instagram-card-subtitle">
-                <p>Work by Haein Park</p>
-              </div>
+              <p className="work-detail__instagram-card-subtitle">Work by Haein Park</p>
             </div>
             <div className="work-detail__instagram-card-description">
               <p>You can find more of my works on Instagram →</p>
             </div>
           </div>
-        </article>
+        </a>
       </section>
 
       {/* Text 1 */}

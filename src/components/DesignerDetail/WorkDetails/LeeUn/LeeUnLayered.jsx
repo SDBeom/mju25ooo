@@ -11,8 +11,8 @@ import LeeUnLayeredMobile from './LeeUnLayeredMobile';
  * Tablet: 800px ~ 1279px
  * Desktop: >= 1280px
  */
-const LeeUnLayered = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+const LeeUnLayered = ({ work, designer, ctas }) => {
+  const { isMobile, isTablet } = useBreakpoint();
 
   if (!work || !designer) {
     return null;
@@ -24,8 +24,7 @@ const LeeUnLayered = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <LeeUnLayeredMobile
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -37,8 +36,7 @@ const LeeUnLayered = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
       <LeeUnLayeredTablet
         work={work}
         designer={designer}
-        badgeSrc={badgeSrc}
-        badgeAlt={badgeAlt}
+
         ctas={ctas}
       />
     );
@@ -49,8 +47,7 @@ const LeeUnLayered = ({ work, designer, badgeSrc, badgeAlt, ctas }) => {
     <LeeUnLayeredDesktop
       work={work}
       designer={designer}
-      badgeSrc={badgeSrc}
-      badgeAlt={badgeAlt}
+
       ctas={ctas}
     />
   );
