@@ -285,6 +285,22 @@ body .main-window--content .designer-showcase {
     aspect-ratio: 16 / 9;
     align-self: stretch;
   }
+
+  .work-card__body {
+    gap: 8px;
+    justify-content: flex-start;
+    min-height: auto;
+  }
+
+  .work-card__summary {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
+
+  .work-card__cta {
+    font-size: var(--font-size-sm);
+    padding: 0.6rem 1.2rem;
+  }
 }
 
 /* 모달 ?��??? */

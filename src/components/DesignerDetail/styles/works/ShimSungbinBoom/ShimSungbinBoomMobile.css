@@ -23,9 +23,15 @@
   align-items: flex-start;
 }
 
-.work-detail--shim-sungbin-boom-mobile .work-detail__hero-image-wrapper--shim-sungbin-boom-mobile {position: relative;
+.work-detail--shim-sungbin-boom-mobile .work-detail__hero-image-wrapper--shim-sungbin-boom-mobile {
+  position: relative;
   flex-shrink: 0;
   order: -1;
+  width: 100%;
+  height: 298px;
+  min-width: 375px;
+  min-height: 298px;
+  overflow: hidden;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__hero-image {
@@ -34,6 +40,8 @@
   object-fit: cover;
   object-position: center;
   display: block;
+  min-width: 375px;
+  min-height: 298px;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__hero-content--shim-sungbin-boom-mobile {
@@ -41,7 +49,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 56px 24px;
   width: 100%;
   order: 1;
@@ -51,8 +59,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
+  max-width: 327px;
+  text-align: center;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__text-group--center {
@@ -84,6 +94,9 @@
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__lead--shim-sungbin-boom-mobile p {
   margin: 0;
+  font-size: 24px;
+  line-height: 1.45;
+  letter-spacing: -0.12px;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__ctas--shim-sungbin-boom-mobile {
@@ -91,9 +104,10 @@
   flex-direction: column;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   cursor: pointer;
   width: 100%;
+  max-width: 327px;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__cta--shim-sungbin-boom-mobile {
@@ -109,6 +123,10 @@
   border: none;
   white-space: nowrap;
   width: 100%;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -159,33 +177,28 @@
   width: 100%;
 }
 
-.work-detail--shim-sungbin-boom-mobile .work-detail__card-image-wrapper {position: relative;
+.work-detail--shim-sungbin-boom-mobile .work-detail__card-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 327px;
+  height: 436px;
+  min-width: 327px;
+  min-height: 436px;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__card-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
-}
-
-.work-detail--shim-sungbin-boom-mobile .work-detail__card--shim-sungbin-boom-mobile:first-child .work-detail__card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--shim-sungbin-boom-mobile .work-detail__card--shim-sungbin-boom-mobile:nth-child(2) .work-detail__card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--shim-sungbin-boom-mobile .work-detail__card--shim-sungbin-boom-mobile:nth-child(3) .work-detail__card-image {height: auto;left: -61px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__card-text {
@@ -230,6 +243,19 @@
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__card-description p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+}
+
+.work-detail--shim-sungbin-boom-mobile .work-detail__card--shim-sungbin-boom-mobile:nth-child(2) .work-detail__card-description p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
+}
+
+.work-detail--shim-sungbin-boom-mobile .work-detail__card--shim-sungbin-boom-mobile:nth-child(3) .work-detail__card-description p {
+  font-size: 18px;
+  letter-spacing: -0.09px;
 }
 
 /* Feature Bento Section */
@@ -256,33 +282,28 @@
   width: 100%;
 }
 
-.work-detail--shim-sungbin-boom-mobile .work-detail__bento-card-image-wrapper {position: relative;
+.work-detail--shim-sungbin-boom-mobile .work-detail__bento-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 327px;
+  height: 208px;
+  min-width: 327px;
+  min-height: 208px;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__bento-card-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
-}
-
-.work-detail--shim-sungbin-boom-mobile .work-detail__bento-card--shim-sungbin-boom-mobile:first-child .work-detail__bento-card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--shim-sungbin-boom-mobile .work-detail__bento-card--shim-sungbin-boom-mobile:nth-child(2) .work-detail__bento-card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--shim-sungbin-boom-mobile .work-detail__bento-card--wide .work-detail__bento-card-image {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__bento-card-text {
@@ -321,6 +342,9 @@
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__bento-card-description p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 /* Feature Cards 3 Section */
@@ -357,7 +381,8 @@
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__card--feature-3 .work-detail__card-text {
   padding: 24px;
-  width: 100%;
+  width: 327px;
+  box-sizing: border-box;
 }
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__card--feature-3 .work-detail__card-title {
@@ -384,19 +409,29 @@
 
 .work-detail--shim-sungbin-boom-mobile .work-detail__card--feature-3 .work-detail__card-description p {
   margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
 }
 
-.work-detail--shim-sungbin-boom-mobile .work-detail__card-image-wrapper--feature-3 {position: absolute;
+.work-detail--shim-sungbin-boom-mobile .work-detail__card-image-wrapper--feature-3 {
+  position: absolute !important;
+  width: 218px !important;
+  height: 212px !important;
+  max-width: 218px !important;
+  min-width: 218px !important;
+  min-height: 212px !important;
   border: 8px solid #ffffff;
-  
-  
-  left: 54px;
-  top: 184px;
   border-radius: 32px;
   overflow: hidden;
+  left: 54px;
+  top: 184px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
-.work-detail--shim-sungbin-boom-mobile .work-detail__card--feature-3:nth-child(2) .work-detail__card-image-wrapper--feature-3 {left: 55px;
+.work-detail--shim-sungbin-boom-mobile .work-detail__card--feature-3:nth-child(2) .work-detail__card-image-wrapper--feature-3 {
+  left: 55px;
   top: 177px;
 }
 
@@ -406,15 +441,5 @@
   object-fit: cover;
   object-position: center;
   display: block;
-}
-
-.work-detail--shim-sungbin-boom-mobile .work-detail__card--feature-3:first-child .work-detail__card-image--feature-3 {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-detail--shim-sungbin-boom-mobile .work-detail__card--feature-3:nth-child(2) .work-detail__card-image--feature-3 {height: auto;left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 

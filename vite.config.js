@@ -57,7 +57,7 @@ export default defineConfig({
   server: {
     port: 5173,
     strictPort: false, // 포트가 사용 중이면 자동으로 다른 포트 사용
-    host: '0.0.0.0', // 모든 네트워크 인터페이스에서 접근 허용
+    host: true, // 모든 네트워크 인터페이스에서 접근 허용 (localhost, 127.0.0.1, 네트워크 IP 모두)
     open: true, // 자동으로 브라우저 열기
     hmr: {
       // HMR 타임아웃 증가
@@ -87,7 +87,7 @@ export default defineConfig({
   preview: {
     port: 5173,
     strictPort: false, // 포트가 사용 중이면 자동으로 다른 포트 사용
-    host: '0.0.0.0', // 모든 네트워크 인터페이스에서 접근 허용
+    host: true, // localhost와 네트워크 IP 모두 접근 허용
     open: false // 자동으로 브라우저 열지 않음
   },
   

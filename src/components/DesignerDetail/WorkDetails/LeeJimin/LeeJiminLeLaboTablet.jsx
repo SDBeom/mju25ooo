@@ -105,7 +105,7 @@ const LeeJiminLeLaboTablet = ({ work, designer, ctas }) => {
           <div className="work-detail__feature-row-content">
             <div className="work-detail__feature-row-text">
               <h4 className="work-detail__feature-row-title">Woody</h4>
-              <p>GAIAC10은 도시에서도 느껴지는 풀내음을 표현하고자 싱그러우면서도 습한 느낌의 색감을 사용했다.</p>
+              <p>GAIAC10은 도시에서도 느껴지는 풀내음을 표현하고자 싱그러우면서도 습한 느낌의 색감을 사용하였다.</p>
             </div>
           </div>
           <div className="work-detail__feature-row-image-wrapper">

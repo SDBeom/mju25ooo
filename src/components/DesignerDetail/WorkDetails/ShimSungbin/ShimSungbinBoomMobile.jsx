@@ -39,9 +39,9 @@ const ShimSungbinBoomMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__text-group work-detail__text-group--center">
             <h2 className="work-detail__title work-detail__title--shim-sungbin-boom-mobile">BOOM</h2>
             <div className="work-detail__lead work-detail__lead--shim-sungbin-boom-mobile">
-              <p className="mb-0">BOOM은 현대인들이 </p>
-              <p className="mb-0">트레와 반복적인 일상에서 </p>
-              <p className="mb-0">탈출하고자 하는 욕망을 </p>
+              <p>BOOM은 현대인들이</p>
+              <p>스트레스와 반복적인 일상에서</p>
+              <p>탈출하고자 하는 욕망을</p>
               <p>폭발이라는 현상을 매개로 표현한 아트워크이다.</p>
             </div>
           </div>
@@ -76,7 +76,9 @@ const ShimSungbinBoomMobile = ({ work, designer, ctas }) => {
           </div>
           <div className="work-detail__card-text">
             <h5 className="work-detail__card-title">Mannequin</h5>
-            <p className="work-detail__card-description">과로와 트레에 억압받는 현대인이다. 시간이 흐름에 따라 인내심에 한계가 온다.</p>
+            <div className="work-detail__card-description">
+              <p>과로와 스트레스에 억압받는 현대인이다. 시간이 흐름에 따라 인내심에 한계가 온다.</p>
+            </div>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--shim-sungbin-boom-mobile">
@@ -133,7 +135,7 @@ const ShimSungbinBoomMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__bento-card-text">
             <h5 className="work-detail__bento-card-title">Calm before the storm</h5>
             <div className="work-detail__bento-card-description">
-              <p className="mb-0">폭발 전, 주인공의 트레가 극에 달하며 </p>
+              <p>폭발 전, 주인공의 스트레스가 극에 달하며</p>
               <p>긴장감이 점점 고조된다.</p>
             </div>
           </div>
@@ -151,7 +153,7 @@ const ShimSungbinBoomMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__bento-card-text">
             <h5 className="work-detail__bento-card-title">Climax of the explosion</h5>
             <div className="work-detail__bento-card-description">
-              <p className="mb-0">폭발이 연속적으로 일어나며 사무실, 계단실, </p>
+              <p>폭발이 연속적으로 일어나며 사무실, 계단실,</p>
               <p>회의실 등 건물의 모든곳을 덮친다.</p>
             </div>
           </div>
@@ -169,7 +171,7 @@ const ShimSungbinBoomMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__bento-card-text work-detail__bento-card-text--wide">
             <h5 className="work-detail__bento-card-title">Plot twist</h5>
             <div className="work-detail__bento-card-description">
-              <p className="mb-0">방금까지 본 모든 폭발이 전부 망상이였음을</p>
+              <p>방금까지 본 모든 폭발이 전부 망상이였음을</p>
               <p>노트북을 통해 알 수 있다. 현실은 여전히 바뀌지 않았음을 시사한다.</p>
             </div>
           </div>
@@ -183,7 +185,7 @@ const ShimSungbinBoomMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__card-text">
               <h5 className="work-detail__card-title">Fluid Simulation</h5>
               <div className="work-detail__card-description">
-                <p className="mb-0">블렌더의 Fluid Simulation 기능을 사용하여 폭발 장면의 불꽃, 화염, </p>
+                <p>블렌더의 Fluid Simulation 기능을 사용하여 폭발 장면의 불꽃, 화염,</p>
                 <p>연기 등을 구현하였다.</p>
               </div>
             </div>
@@ -203,8 +205,8 @@ const ShimSungbinBoomMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__card-text">
               <h5 className="work-detail__card-title">Particle Simulation</h5>
               <div className="work-detail__card-description">
-                <p className="mb-0">블렌더의 Particle Simulation </p>
-                <p className="mb-0">기능을 사용하여 폭발 잔해들과 </p>
+                <p>블렌더의 Particle Simulation</p>
+                <p>기능을 사용하여 폭발 잔해들과</p>
                 <p>깨진 벽 등을 표현하였다.</p>
               </div>
             </div>

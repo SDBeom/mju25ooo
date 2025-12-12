@@ -168,9 +168,7 @@ const LeeDayoungPlottingRoomMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__text-group">
               <h4 className="work-detail__feature-title">작가들의 글이 토리보드 속으로</h4>
               <div className="work-detail__feature-description">
-                <p className="mb-0">자신의 방식대로 써내려간 글들이</p>
-                <p className="mb-0">토리보드 속으로 하나 둘 자리잡으며</p>
-                <p>작가들이 글로 하여금 하나의 새로운 세상을 창조해내는 모습을 보여준다.</p>
+                <p>자신의 방식대로 써내려간 글들이 토리보드 속으로 하나 둘 자리잡으며 작가들이 글로 하여금 하나의 새로운 세상을 창조해내는 모습을 보여준다.</p>
               </div>
             </div>
           </div>
@@ -187,13 +185,9 @@ const LeeDayoungPlottingRoomMobile = ({ work, designer, ctas }) => {
           </div>
           <div className="work-detail__feature-content">
             <div className="work-detail__text-group">
-              <h4 className="work-detail__feature-title">
-                <span className="block mb-0">토리보드 속 인물들이</span>
-                <span className="block">살아 움직이는</span>
-              </h4>
+              <h4 className="work-detail__feature-title">토리보드 속 인물들이 살아 움직이는</h4>
               <div className="work-detail__feature-description">
-                <p className="mb-0">토리보드를 통해 생명력을 갖게된</p>
-                <p>인물들이 살아움직이며 청춘  멜로드라마의 한 장면으로 보여진다.</p>
+                <p>토리보드를 통해 생명력을 갖게된 인물들이 살아움직이며 청춘 멜로드라마의 한 장면으로 보여진다.</p>
               </div>
             </div>
           </div>
@@ -216,8 +210,7 @@ const LeeDayoungPlottingRoomMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__text-group">
               <h4 className="work-detail__feature-title">다양한 분야와</h4>
               <div className="work-detail__feature-description">
-                <p className="mb-0">장면이 전환되며 추리 예능의 한 장면으로</p>
-                <p>변화하고,</p>
+                <p>장면이 전환되며 추리 예능의 한 장면으로 변화하고,</p>
               </div>
             </div>
           </div>
@@ -255,9 +248,7 @@ const LeeDayoungPlottingRoomMobile = ({ work, designer, ctas }) => {
         <div className="work-detail__feature-text">
           <h4 className="work-detail__feature-title">작가들의 소통과 창작의 순간들이 모여</h4>
           <div className="work-detail__feature-description">
-            <p className="mb-0">이런 작가들이 한 방에 모여 이야기를 나누며 또</p>
-            <p className="mb-0">하나의 서사를 이루고, 그 서사들로 채워진 방은,</p>
-            <p>비로소 &lt;플롯팅룸&gt;이 된다.</p>
+            <p>이런 작가들이 한 방에 모여 이야기를 나누며 또 하나의 서사를 이루고, 그 서사들로 채워진 방은, 비로소 &lt;플롯팅룸&gt;이 된다.</p>
           </div>
         </div>
       </section>

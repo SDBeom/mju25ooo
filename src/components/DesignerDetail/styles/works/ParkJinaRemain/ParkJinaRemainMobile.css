@@ -24,10 +24,15 @@
   justify-content: center;
 }
 
-.work-detail--park-jina-remain-mobile .work-detail__hero-image-wrapper--park-jina-remain-mobile {position: relative;
+.work-detail--park-jina-remain-mobile .work-detail__hero-image-wrapper--park-jina-remain-mobile {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
   order: -1;
+  width: 100%;
+  height: 327px;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--park-jina-remain-mobile .work-detail__hero-image {
@@ -36,6 +41,8 @@
   object-fit: cover;
   object-position: center;
   display: block;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--park-jina-remain-mobile .work-detail__hero-image-wrapper--park-jina-remain-mobile .work-detail__hero-image {position: absolute;
@@ -62,8 +69,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
+  text-align: center;
 }
 
 .work-detail--park-jina-remain-mobile .work-detail__title--park-jina-remain-mobile {
@@ -79,10 +87,10 @@
 
 .work-detail--park-jina-remain-mobile .work-detail__lead--park-jina-remain-mobile {
   font-family: 'Pretendard Variable', Pretendard, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
-  letter-spacing: -0.09px;
+  letter-spacing: -0.08px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
@@ -90,6 +98,9 @@
 
 .work-detail--park-jina-remain-mobile .work-detail__lead--park-jina-remain-mobile p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--park-jina-remain-mobile .work-detail__ctas--park-jina-remain-mobile {
@@ -204,6 +215,9 @@
 
 .work-detail--park-jina-remain-mobile .work-detail__feature-description p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 /* Feature Cards: I., Flow., Remain. */
@@ -277,6 +291,9 @@
 
 .work-detail--park-jina-remain-mobile .work-detail__feature-card-description p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 /* Feature Rows: Success and Failure., Love and Loss. */
@@ -328,10 +345,10 @@
 
 .work-detail--park-jina-remain-mobile .work-detail__feature-row-description {
   font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
-  letter-spacing: -0.09px;
+  letter-spacing: -0.08px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
@@ -339,6 +356,9 @@
 
 .work-detail--park-jina-remain-mobile .work-detail__feature-row-description p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--park-jina-remain-mobile .work-detail__feature-row-image-wrapper {max-width: 327px;
@@ -382,7 +402,13 @@
   position: relative;
 }
 
-.work-detail--park-jina-remain-mobile .work-detail__bento-image-wrapper {position: relative;
+.work-detail--park-jina-remain-mobile .work-detail__bento-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 327px;
+  height: 208px;
+  min-width: 327px;
+  min-height: 208px;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
@@ -429,6 +455,9 @@
 
 .work-detail--park-jina-remain-mobile .work-detail__bento-description p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 /* Marquee */

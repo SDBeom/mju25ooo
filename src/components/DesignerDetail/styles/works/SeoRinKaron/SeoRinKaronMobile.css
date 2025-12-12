@@ -24,8 +24,14 @@
   align-items: flex-start;
 }
 
-.work-detail--seorin-karon-mobile .work-detail__hero-image-wrapper--seorin-karon-mobile {overflow: hidden;
-  position: relative;order: -1;
+.work-detail--seorin-karon-mobile .work-detail__hero-image-wrapper--seorin-karon-mobile {
+  overflow: hidden;
+  position: relative;
+  order: -1;
+  width: 100%;
+  height: 327px;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--seorin-karon-mobile .work-detail__hero-image-wrapper--seorin-karon-mobile .work-detail__hero-image {
@@ -35,6 +41,8 @@
   object-position: center;
   display: block;
   order: -1;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--seorin-karon-mobile .work-detail__hero-content--seorin-karon-mobile {
@@ -42,7 +50,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 56px 24px;
   width: 100%;
   order: 1;
@@ -55,6 +63,7 @@
   align-items: center;
   text-align: center;
   width: 100%;
+  max-width: 327px;
 }
 
 .work-detail--seorin-karon-mobile .work-detail__title--seorin-karon-mobile {
@@ -70,13 +79,20 @@
 
 .work-detail--seorin-karon-mobile .work-detail__lead--seorin-karon-mobile {
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
-  letter-spacing: -0.09px;
+  letter-spacing: -0.08px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
+}
+
+.work-detail--seorin-karon-mobile .work-detail__lead--seorin-karon-mobile p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--seorin-karon-mobile .work-detail__ctas--seorin-karon-mobile {
@@ -84,8 +100,9 @@
   flex-direction: column;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
+  max-width: 327px;
   cursor: pointer;
 }
 
@@ -181,6 +198,9 @@
 
 .work-detail--seorin-karon-mobile .work-detail__text-content p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 /* Feature Section - KARON's Personality */
@@ -195,8 +215,15 @@
   margin: 0 auto;
 }
 
-.work-detail--seorin-karon-mobile .work-detail__feature-image-wrapper--seorin-karon-mobile {position: relative;border-radius: 16px;
+.work-detail--seorin-karon-mobile .work-detail__feature-image-wrapper--seorin-karon-mobile {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  max-width: 327px;
+  height: 184px;
+  min-width: 327px;
+  min-height: 184px;
 }
 
 .work-detail--seorin-karon-mobile .work-detail__feature-image {
@@ -205,6 +232,8 @@
   object-fit: cover;
   object-position: center;
   display: block;
+  min-width: 327px;
+  min-height: 184px;
 }
 
 .work-detail--seorin-karon-mobile .work-detail__feature-text {

@@ -9,6 +9,13 @@ import leeunWork2_03 from '../../../../assets/이운/leeun_multimedia_work2_03.w
 import leeunWork2_04 from '../../../../assets/이운/leeun_multimedia_work2_04.webp';
 import leeunWork2_05 from '../../../../assets/이운/leeun_multimedia_work2_05.webp';
 import leeunWork2_06 from '../../../../assets/이운/leeun_multimedia_work2_06.webp';
+import leeunWork2_07 from '../../../../assets/이운/leeun_multimedia_work2_07.webp';
+import leeunWork2_08 from '../../../../assets/이운/leeun_multimedia_work2_08.webp';
+import leeunWork2_09 from '../../../../assets/이운/leeun_multimedia_work2_09.webp';
+import leeunWork2_10 from '../../../../assets/이운/leeun_multimedia_work2_10.webp';
+import leeunWork2_11 from '../../../../assets/이운/leeun_multimedia_work2_11.webp';
+import leeunWork2_12 from '../../../../assets/이운/leeun_multimedia_work2_12.webp';
+import leeunWork2_13 from '../../../../assets/이운/leeun_multimedia_work2_13.webp';
 
 /**
  * 이운 - 9e9e9e (작품2) Mobile 버전
@@ -77,8 +84,8 @@ const LeeUn9e9e9eMobile = ({ work, designer, ctas }) => {
             <p className="mb-0">이름은 리본의 형태를 닮아, 일상 속에서</p>
             <p className="mb-0">자연럽게 묶이는 귀여움의 상징이 됩니다.</p>
             <p className="mb-0">&nbsp;</p>
-            <p className="mb-0">'9e9e9e'는 리본과 마법소녀의 이미지를 모티프로 작은 소작품이 평범한 하루에 다정한 마법으로</p>
-            <p className="mb-0">며들길 바랍니다.</p>
+            <p className="mb-0">'9e9e9e'는 리본과 마법소녀의 이미지를 모티프로 작은 소품이 평범한 하루에 다정한 마법으로</p>
+            <p>스며들길 바랍니다.</p>
             <p>&nbsp;</p>
           </div>
         </div>
@@ -179,7 +186,7 @@ const LeeUn9e9e9eMobile = ({ work, designer, ctas }) => {
                   </div>
                   <div className="work-detail__core-value-author-info">
                     <p className="work-detail__core-value-author-name">Positive</p>
-                    <p className="work-detail__core-value-author-subtitle">긍정적인</p>
+                    <p className="work-detail__core-value-author-subtitle">Life Cycle Manager</p>
                   </div>
                 </div>
                 <div className="work-detail__core-value-text">
@@ -199,30 +206,72 @@ const LeeUn9e9e9eMobile = ({ work, designer, ctas }) => {
         </div>
         <div className="work-detail__gallery-grid">
           <div className="work-detail__gallery-column work-detail__gallery-column--1">
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 첫 번째 이미지는 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_07}
+                alt="9e9e9e Item 1"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_07, work.id, 'gallery-1')}
+                loading="lazy"
+              />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 두 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_08}
+                alt="9e9e9e Item 2"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_08, work.id, 'gallery-2')}
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="work-detail__gallery-column work-detail__gallery-column--2">
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 세 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_09}
+                alt="9e9e9e Item 3"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_09, work.id, 'gallery-3')}
+                loading="lazy"
+              />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 네 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_10}
+                alt="9e9e9e Item 4"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_10, work.id, 'gallery-4')}
+                loading="lazy"
+              />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 다섯 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_11}
+                alt="9e9e9e Item 5"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_11, work.id, 'gallery-5')}
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="work-detail__gallery-column work-detail__gallery-column--3">
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 여섯 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_12}
+                alt="9e9e9e Item 6"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_12, work.id, 'gallery-6')}
+                loading="lazy"
+              />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty">
-              {/* 일곱 번째 이미지도 비어있음 */}
+            <div className="work-detail__gallery-item">
+              <img
+                src={leeunWork2_13}
+                alt="9e9e9e Item 7"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, leeunWork2_13, work.id, 'gallery-7')}
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

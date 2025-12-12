@@ -3,6 +3,7 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/JungJiminTheGothic/JungJiminTheGothicMobile.css';
 
 // 이미지 임포트
+import jungJiminWork1_01 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_01.webp';
 import jungJiminWork1_02 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_02.webp';
 import jungJiminWork1_03 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_03.webp';
 import jungJiminWork1_04 from '../../../../assets/정지민/jungjimin_gamecontent_work1_The_gothic_Desktop_04.webp';
@@ -27,6 +28,15 @@ const JungJiminTheGothicMobile = ({ work, designer, ctas }) => {
     <div className="work-detail work-detail--jungjimin-the-gothic-mobile">
       {/* Hero Section */}
       <section className="work-detail__section work-detail__hero work-detail__hero--jungjimin-gothic-mobile">
+        <div className="work-detail__hero-image-wrapper work-detail__hero-image-wrapper--jungjimin-gothic-mobile">
+          <img
+            src={jungJiminWork1_01}
+            alt={work.title || 'The Gothic'}
+            className="work-detail__hero-image"
+            onError={(e) => handleImageError(e, jungJiminWork1_01, work.id, 'hero')}
+            loading="eager"
+          />
+        </div>
         <div className="work-detail__hero-content work-detail__hero-content--jungjimin-gothic-mobile">
           <div className="work-detail__text-group">
             <h2 className="work-detail__title work-detail__title--jungjimin-gothic-mobile">
@@ -65,8 +75,8 @@ const JungJiminTheGothicMobile = ({ work, designer, ctas }) => {
           />
         </div>
         <div className="work-detail__feature-text work-detail__feature-text--below">
-          <h4 className="work-detail__feature-title">갑옷 디테일</h4>
-          <p>고딕풍 문양과 디테일을 강조한 갑옷</p>
+          <h4 className="work-detail__feature-title">씬1</h4>
+          <p>어두운 분위기 강조</p>
         </div>
       </section>
 
@@ -83,8 +93,8 @@ const JungJiminTheGothicMobile = ({ work, designer, ctas }) => {
             />
           </div>
           <div className="work-detail__feature-text work-detail__feature-text--below">
-            <h4 className="work-detail__feature-title">갑옷 디테일</h4>
-            <p>갑옷의 세부 디테일과 문양 강조</p>
+            <h4 className="work-detail__feature-title">씬2</h4>
+            <p>라이트 강조</p>
           </div>
         </li>
 
@@ -92,15 +102,15 @@ const JungJiminTheGothicMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__feature-image-wrapper work-detail__feature-image-wrapper--jungjimin-gothic-mobile">
             <img
               src={jungJiminWork1_04}
-              alt="갑옷 디테일"
+              alt="씬3"
               className="work-detail__feature-image"
               onError={(e) => handleImageError(e, jungJiminWork1_04, work.id, 'feature-row-2')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__feature-text work-detail__feature-text--below">
-            <h4 className="work-detail__feature-title">갑옷 디테일</h4>
-            <p>고딕풍 문양과 디테일을 강조한 갑옷</p>
+            <h4 className="work-detail__feature-title">씬3</h4>
+            <p>구도 강조</p>
           </div>
         </li>
       </ul>
@@ -116,8 +126,8 @@ const JungJiminTheGothicMobile = ({ work, designer, ctas }) => {
           />
         </div>
         <div className="work-detail__feature-text work-detail__feature-text--below">
-          <h4 className="work-detail__feature-title">더 고딕</h4>
-          <p>고딕풍 갑옷과 판타지적인 분위기</p>
+          <h4 className="work-detail__feature-title">렌더샷</h4>
+          <p>전체적 분위기</p>
         </div>
       </section>
 

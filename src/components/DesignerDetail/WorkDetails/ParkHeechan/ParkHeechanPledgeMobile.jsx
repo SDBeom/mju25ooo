@@ -11,6 +11,7 @@ import parkHeechanWork1_05 from '../../../../assets/박희찬/parkheechan_gameco
 import parkHeechanWork1_06 from '../../../../assets/박희찬/parkheechan_gamecontent_work1_06.webp';
 import parkHeechanWork1_07 from '../../../../assets/박희찬/parkheechan_gamecontent_work1_07.webp';
 import parkHeechanWork1_08 from '../../../../assets/박희찬/parkheechan_gamecontent_work1_08.webp';
+import parkHeechanWork1_09 from '../../../../assets/박희찬/parkheechan_gamecontent_work1_09.webp';
 import parkHeechanWork1_10 from '../../../../assets/박희찬/parkheechan_gamecontent_work1_10.webp';
 import parkHeechanWork1_11 from '../../../../assets/박희찬/parkheechan_gamecontent_work1_11.webp';
 import parkHeechanWork1_12 from '../../../../assets/박희찬/parkheechan_gamecontent_work1_12.webp';
@@ -96,7 +97,7 @@ const ParkHeechanPledgeMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__feature-row-image-wrapper">
             <img
               src={parkHeechanWork1_03}
-              alt="페이 마린"
+              alt="스페이스 마린"
               className="work-detail__feature-row-image"
               onError={(e) => handleImageError(e, parkHeechanWork1_03, work.id, 'feature-row-1')}
               loading="lazy"
@@ -104,11 +105,15 @@ const ParkHeechanPledgeMobile = ({ work, designer, ctas }) => {
           </div>
           <div className="work-detail__feature-row-content">
             <div className="work-detail__feature-row-text">
-              <h4 className="work-detail__feature-row-title">페이 마린</h4>
+              <h4 className="work-detail__feature-row-title">스페이스 마린</h4>
               <div className="work-detail__feature-row-description">
                 <p>인류 제국의 강화인간이며 군사 집단에</p>
-                <p>속해있다. 20가지가 넘는 수술을 통해 덩치, 감각과 근력 등 신체의  모든 부분이 강화가 되었다. 이러한 초인적인 신체능력을 토대로 강한 전투력을 가지고 있으며</p>
-                <p>인류 제국의 최후의 보루이자 희망이다.</p>
+                <p>속해있다.</p>
+                <p>20가지가 넘는 수술을 통해 덩치, 감각과 근력 등 신체의</p>
+                <p>모든 부분이 강화가 되었다.</p>
+                <p>이러한 초인적인 신체능력을 토대로 강한 전투력을 가지고 있으며</p>
+                <p>인류 제국의</p>
+                <p>최후의 보루이자 희망이다.</p>
               </div>
             </div>
           </div>
@@ -127,7 +132,8 @@ const ParkHeechanPledgeMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__feature-row-text">
               <h4 className="work-detail__feature-row-title">드레드노트</h4>
               <div className="work-detail__feature-row-description">
-                <p>초인적인 육체로도 버틸 수 없는 심각한 부상을 입은 페이  마린들 중 강인하고</p>
+                <p>초인적인 육체로도 버틸 수 없는 심각한 부상을 입은 스페이스</p>
+                <p>마린들 중 강인하고</p>
                 <p>의지가 불타오르는 베테랑 마린들을 수술을 통해 병기화 된 관, 드레드노트에 안치한다.</p>
               </div>
             </div>
@@ -150,10 +156,14 @@ const ParkHeechanPledgeMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__bento-text">
             <h5 className="work-detail__bento-title">위협적인 적</h5>
             <div className="work-detail__bento-description">
-              <p>타이라니드 종족은 무한에 가까운 개체 수,</p>
-              <p>시냅로 이어진 정신, 파괴본능 등으로 인해</p>
-              <p>상대하기  까다로우며 휩쓸고 지나간 자리는</p>
-              <p>그 어떤것도 남지 않는 무자비한 종족이다.</p>
+              <p>타이라니드 종족은 무한에 가까운</p>
+              <p>개체 수,</p>
+              <p>시냅스로 이어진 정신,</p>
+              <p>파괴본능 등으로 인해</p>
+              <p>상대하기</p>
+              <p>까다로우며 휩쓸고 지나간 자리는</p>
+              <p>그 어떤것도 남지 않는 무자비한</p>
+              <p>종족이다.</p>
             </div>
           </div>
         </li>
@@ -172,9 +182,11 @@ const ParkHeechanPledgeMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__bento-description">
               <p>주변의 하위 타이라니드에게 하이브 마인드의</p>
               <p>명령을 전달해주는 시냅 크리쳐이자</p>
-              <p>전투 크리쳐. 두꺼운 외골격과 훙폭성으로</p>
-              <p>페이 마린들과의 상대에서도 밀리지 않고</p>
-              <p>오히려 더 강한 모습도 보여준다.</p>
+              <p>전투 크리쳐.</p>
+              <p>두꺼운 외골격과 훙폭성으로</p>
+              <p>스페이스 마린들과의 상대에서도 밀리지 않고</p>
+              <p>오히려 더 강한 모습도</p>
+              <p>보여준다.</p>
             </div>
           </div>
         </li>
@@ -182,14 +194,14 @@ const ParkHeechanPledgeMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__bento-image-wrapper">
             <img
               src={parkHeechanWork1_07}
-              alt="카니펙"
+              alt="카니펙스"
               className="work-detail__bento-image"
               onError={(e) => handleImageError(e, parkHeechanWork1_07, work.id, 'bento-3')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__bento-text">
-            <h5 className="work-detail__bento-title">카니펙</h5>
+            <h5 className="work-detail__bento-title">카니펙스</h5>
             <div className="work-detail__bento-description">
               <p>거대한 덩치, 대부분의 화력을 막는 키틴질 외골격, 강한 근력 등 전차의 포지션에 위치한 괴수.</p>
               <p>강력한 대전차병기로 상대하라는 지침이</p>
@@ -202,7 +214,7 @@ const ParkHeechanPledgeMobile = ({ work, designer, ctas }) => {
       {/* Feature Gallery 1: 틸컷 */}
       <section className="work-detail__section work-detail__gallery work-detail__gallery--park-heechan-pledge-mobile">
         <div className="work-detail__gallery-header">
-          <h3 className="work-detail__gallery-title">틸컷</h3>
+          <h3 className="work-detail__gallery-title">스틸컷</h3>
         </div>
         <div className="work-detail__gallery-grid">
           <div className="work-detail__gallery-column work-detail__gallery-column--1">
@@ -215,7 +227,15 @@ const ParkHeechanPledgeMobile = ({ work, designer, ctas }) => {
                 loading="lazy"
               />
             </div>
-            <div className="work-detail__gallery-item work-detail__gallery-item--empty"></div>
+            <div className="work-detail__gallery-item">
+              <img
+                src={parkHeechanWork1_09}
+                alt="틸컷 2"
+                className="work-detail__gallery-image"
+                onError={(e) => handleImageError(e, parkHeechanWork1_09, work.id, 'gallery-2')}
+                loading="lazy"
+              />
+            </div>
           </div>
           <div className="work-detail__gallery-column work-detail__gallery-column--2">
             <div className="work-detail__gallery-item">

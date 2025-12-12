@@ -24,17 +24,29 @@
   align-items: flex-start;
 }
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__hero-image-wrapper--jungjimin-gothic-mobile {overflow: hidden;
-  position: relative;order: -1;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__hero-image-wrapper--jungjimin-gothic-mobile {
+  overflow: hidden;
+  position: relative;
+  order: -1;
+  width: 100%;
+  height: 298px;
+  min-width: 375px;
+  min-height: 298px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-detail--jungjimin-the-gothic-mobile .work-detail__hero-image-wrapper--jungjimin-gothic-mobile .work-detail__hero-image {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 374px;
+  height: 314px;
   object-fit: cover;
   object-position: center;
-  
-  transform: none;display: block;
+  display: block;
   order: -1;
 }
 
@@ -140,18 +152,37 @@
   margin: 0 auto;
 }
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-image-wrapper--jungjimin-gothic-mobile {position: relative;border-radius: 16px;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-image-wrapper--jungjimin-gothic-mobile {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  max-width: 327px;
+  height: 243px;
+  min-width: 327px;
+  min-height: 243px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-image {height: auto;position: absolute;display: block;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 326px;
+  height: 258px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
 /* Feature Section 1 - ?? ?��?지 */
-.work-detail--jungjimin-the-gothic-mobile .work-detail__feature--jungjimin-gothic-mobile:first-of-type .work-detail__feature-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__feature--jungjimin-gothic-mobile:first-of-type .work-detail__feature-image {
+  width: 326px;
+  height: 258px;
 }
 
 .work-detail--jungjimin-the-gothic-mobile .work-detail__feature-text--below {
@@ -213,14 +244,14 @@
 }
 
 /* Feature Rows ?��?지 */
-.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-row--jungjimin-gothic-mobile:first-child .work-detail__feature-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-row--jungjimin-gothic-mobile:first-child .work-detail__feature-image {
+  width: 326px;
+  height: 259px;
 }
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-row--jungjimin-gothic-mobile:last-child .work-detail__feature-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-row--jungjimin-gothic-mobile:last-child .work-detail__feature-image {
+  width: 327px;
+  height: 243px;
 }
 
 /* Feature Section 3 - ?�더??(?��?지 ?? ?�스???�래) */
@@ -232,11 +263,26 @@
   margin: 0 auto;
 }
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-image-wrapper--small {}
+.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-image-wrapper--small {
+  height: 184px;
+  min-height: 184px;
+}
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-image-wrapper--small .work-detail__feature-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-image-wrapper--small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-detail--jungjimin-the-gothic-mobile .work-detail__feature-image-wrapper--small .work-detail__feature-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 328px;
+  height: 184px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 16px;
 }
 
@@ -271,30 +317,49 @@
   width: 100%;
 }
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__card-image-wrapper {overflow: hidden;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__card-image-wrapper {
+  overflow: hidden;
   position: relative;
-  border-radius: 16px;}
+  border-radius: 16px;
+  width: 100%;
+  max-width: 327px;
+  height: 436px;
+  min-width: 327px;
+  min-height: 436px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__card-image {height: auto;position: absolute;display: block;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__card-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
 /* Card 1 - 갑옷 */
-.work-detail--jungjimin-the-gothic-mobile .work-detail__card--jungjimin-gothic-mobile:first-child .work-detail__card-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__card--jungjimin-gothic-mobile:first-child .work-detail__card-image {
+  width: 327px;
+  height: 435px;
 }
 
 /* Card 2 - ?�구 */
-.work-detail--jungjimin-the-gothic-mobile .work-detail__card--jungjimin-gothic-mobile:nth-child(2) .work-detail__card-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__card--jungjimin-gothic-mobile:nth-child(2) .work-detail__card-image {
+  width: 327px;
+  height: 435px;
 }
 
 /* Card 3 - ?�체 */
-.work-detail--jungjimin-the-gothic-mobile .work-detail__card--jungjimin-gothic-mobile:last-child .work-detail__card-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__card--jungjimin-gothic-mobile:last-child .work-detail__card-image {
+  width: 327px;
+  height: 435px;
 }
 
 .work-detail--jungjimin-the-gothic-mobile .work-detail__card-text {
@@ -339,38 +404,67 @@
   width: 100%;
 }
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card-image-wrapper {overflow: hidden;
-  position: relative;
-  border-radius: 16px;}
-
-.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card-image {height: auto;position: absolute;display: block;
-}
-
-/* Bento Card 1 - 갑옷 */
-.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card--jungjimin-gothic-mobile:first-child .work-detail__bento-card-image {left: 0;
-  top: 0;
-  transform: none;
-  border-radius: 16px;
-}
-
-/* Bento Card 2 - 문양 */
-.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card--jungjimin-gothic-mobile:nth-child(2) .work-detail__bento-card-image {left: 0;
-  top: 0;
-  transform: none;
-  border-radius: 16px;
-}
-
-/* Bento Card 3 - 벨트 */
-.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card--jungjimin-gothic-mobile:last-child .work-detail__bento-card-image-wrapper {position: relative;
+.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card-image-wrapper {
   overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 327px;
+  height: 208px;
+  min-width: 327px;
+  min-height: 208px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card--jungjimin-gothic-mobile:last-child .work-detail__bento-card-image {
+.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
+  border-radius: 16px;
+}
+
+/* Bento Card 1 - 갑옷 */
+.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card--jungjimin-gothic-mobile:first-child .work-detail__bento-card-image {
+  position: absolute;
+  left: 0; /* 44267 - 44266 = 1px, 거의 0 */
+  top: -29px; /* -8587 - (-8558) = -29px */
+  width: 326px;
+  height: 266px;
+  object-fit: cover;
+  object-position: center;
+  transform: none;
+}
+
+/* Bento Card 2 - 문양 */
+.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card--jungjimin-gothic-mobile:nth-child(2) .work-detail__bento-card-image {
+  position: absolute;
+  left: -60px; /* 44206 - 44266 = -60px */
+  top: 0;
+  width: 448px;
+  height: 208px;
+  object-fit: cover;
+  object-position: center;
+  transform: none;
+}
+
+/* Bento Card 3 - 벨트 */
+.work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card--jungjimin-gothic-mobile:last-child .work-detail__bento-card-image {
+  position: absolute;
+  left: -65px; /* 44201 - 44266 = -65px */
+  top: 0;
+  width: 492px;
+  height: 207px;
+  object-fit: cover;
+  object-position: center;
+  transform: none;
 }
 
 .work-detail--jungjimin-the-gothic-mobile .work-detail__bento-card-text {

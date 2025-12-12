@@ -24,17 +24,29 @@
   align-items: flex-start;
 }
 
-.work-detail--jeongitae-warorb-mobile .work-detail__hero-image-wrapper--jeongitae-warorb-mobile {overflow: hidden;
-  position: relative;order: -1;
+.work-detail--jeongitae-warorb-mobile .work-detail__hero-image-wrapper--jeongitae-warorb-mobile {
+  overflow: hidden;
+  position: relative;
+  order: -1;
+  width: 100%;
+  height: 298px;
+  min-width: 375px;
+  min-height: 298px;
 }
 
 .work-detail--jeongitae-warorb-mobile .work-detail__hero-image-wrapper--jeongitae-warorb-mobile .work-detail__hero-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
   order: -1;
+  min-width: 375px;
+  min-height: 298px;
 }
 
 .work-detail--jeongitae-warorb-mobile .work-detail__hero-content--jeongitae-warorb-mobile {
@@ -81,6 +93,9 @@
 
 .work-detail--jeongitae-warorb-mobile .work-detail__lead--jeongitae-warorb-mobile p {
   margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+  letter-spacing: -0.09px;
 }
 
 .work-detail--jeongitae-warorb-mobile .work-detail__ctas--jeongitae-warorb-mobile {
@@ -143,16 +158,32 @@
   margin: 0 auto;
 }
 
-.work-detail--jeongitae-warorb-mobile .work-detail__feature-image-wrapper--jeongitae-warorb-mobile {position: relative;border-radius: 16px;
+.work-detail--jeongitae-warorb-mobile .work-detail__feature-image-wrapper--jeongitae-warorb-mobile {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  max-width: 327px;
+  height: 184px;
+  min-width: 327px;
+  min-height: 184px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-detail--jeongitae-warorb-mobile .work-detail__feature-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
+  min-width: 327px;
+  min-height: 184px;
 }
 
 .work-detail--jeongitae-warorb-mobile .work-detail__feature-text {
@@ -208,15 +239,53 @@
   width: 100%;
 }
 
-.work-detail--jeongitae-warorb-mobile .work-detail__card-image-wrapper {overflow: hidden;
+.work-detail--jeongitae-warorb-mobile .work-detail__card-image-wrapper {
+  overflow: hidden;
   position: relative;
-  border-radius: 16px;}
+  border-radius: 16px;
+  width: 100%;
+  max-width: 327px;
+  height: 208px;
+  min-width: 327px;
+  min-height: 208px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.work-detail--jeongitae-warorb-mobile .work-detail__card-image {
+.work-detail--jeongitae-warorb-mobile .work-detail__card--jeongitae-warorb-mobile:first-child .work-detail__card-image {
+  position: absolute;
+  left: -21px; /* 35980 - 36001 = -21px */
+  top: 0;
+  width: 370px;
+  height: 208px;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+
+.work-detail--jeongitae-warorb-mobile .work-detail__card--jeongitae-warorb-mobile:nth-child(2) .work-detail__card-image {
+  position: absolute;
+  left: -10px; /* 35991 - 36001 = -10px */
+  top: 2px; /* -11116 - (-11118) = 2px */
+  width: 371px;
+  height: 204px;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+
+.work-detail--jeongitae-warorb-mobile .work-detail__card--jeongitae-warorb-mobile:nth-child(3) .work-detail__card-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
+  min-width: 327px;
+  min-height: 208px;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
   display: block;
 }
 

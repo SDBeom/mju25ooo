@@ -149,11 +149,7 @@ const LeeDayoungReadyToMerryMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__text-group">
               <h4 className="work-detail__feature-title">Postcard</h4>
               <div className="work-detail__feature-description">
-                <p className="mb-0">W 100 X H 150 (mm) / 7ea</p>
-                <p className="mb-0"> </p>
-                <p className="mb-0">재해석한 곡의 분위기를 토대로 제작된</p>
-                <p className="mb-0">레터링을 포함하여 디자인되었다. 앞면은</p>
-                <p>그래픽 디자인 위주로, 뒷면은 편지를 쓸 수 있는 공간을 위주로 구성하였다.</p>
+                <p>W 100 X H 150 (mm) / 7ea 재해석한 곡의 분위기를 토대로 제작된 레터링을 포함하여 디자인되었다. 앞면은 그래픽 디자인 위주로, 뒷면은 편지를 쓸 수 있는 공간을 위주로 구성하였다.</p>
               </div>
             </div>
           </div>
@@ -172,11 +168,7 @@ const LeeDayoungReadyToMerryMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__text-group">
               <h4 className="work-detail__feature-title">Lyrics Paper</h4>
               <div className="work-detail__feature-description">
-                <p className="mb-0">W 200 X H 150 (mm) / 7ea</p>
-                <p className="mb-0"> </p>
-                <p className="mb-0">엽서의 주요 그래픽을 모티프로 한 2단</p>
-                <p className="mb-0">접지형 가사지이다. 표지는 엽서와의</p>
-                <p>통일성을 유지하면서도 차별화된 포인트를 더했으며, 내지는 전형적인 가사지의 형태를 벗어나 개성적인 디자인을 시도하였다.</p>
+                <p>W 200 X H 150 (mm) / 7ea 엽서의 주요 그래픽을 모티프로 한 2단 접지형 가사지이다. 표지는 엽서와의 통일성을 유지하면서도 차별화된 포인트를 더했으며, 내지는 전형적인 가사지의 형태를 벗어나 개성적인 디자인을 시도하였다.</p>
               </div>
             </div>
           </div>
@@ -199,11 +191,7 @@ const LeeDayoungReadyToMerryMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__text-group">
               <h4 className="work-detail__feature-title">Sticker Pack</h4>
               <div className="work-detail__feature-description">
-                <p className="mb-0">W 100 X H 150 (mm) / 6ea X 7set</p>
-                <p className="mb-0"> </p>
-                <p className="mb-0">수록곡의 제목과 가사, 포인트 그래픽을</p>
-                <p className="mb-0">녹여냈다. 레터링 디자인과 타이포그래피,</p>
-                <p>그래픽적 요소를 다양하게 담고자 하였다.</p>
+                <p>W 100 X H 150 (mm) / 6ea X 7set 수록곡의 제목과 가사, 포인트 그래픽을 녹여냈다. 레터링 디자인과 타이포그래피, 그래픽적 요소를 다양하게 담고자 하였다.</p>
               </div>
             </div>
           </div>
@@ -222,10 +210,7 @@ const LeeDayoungReadyToMerryMobile = ({ work, designer, ctas }) => {
             <div className="work-detail__text-group">
               <h4 className="work-detail__feature-title">Acrylic Keyring</h4>
               <div className="work-detail__feature-description">
-                <p className="mb-0">W 40 X H 40 (mm) / 7ea</p>
-                <p className="mb-0"> </p>
-                <p className="mb-0">곡의 분위기와 어울리는 오브제를 선정해</p>
-                <p>레터링과 함께 구성했다. 크리마 트리에 장식 오너먼트로 활용할 수 있다.</p>
+                <p>W 40 X H 40 (mm) / 7ea 곡의 분위기와 어울리는 오브제를 선정해 레터링과 함께 구성했다. 크리마 트리에 장식 오너먼트로 활용할 수 있다.</p>
               </div>
             </div>
           </div>

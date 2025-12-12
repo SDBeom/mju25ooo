@@ -23,10 +23,15 @@
   align-items: flex-start;
 }
 
-.work-detail--woosumin-sasindo-mobile .work-detail__hero-image-wrapper--woosumin-sasindo-mobile {position: relative;
+.work-detail--woosumin-sasindo-mobile .work-detail__hero-image-wrapper--woosumin-sasindo-mobile {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
   order: -1;
+  width: 100%;
+  height: 327px;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--woosumin-sasindo-mobile .work-detail__hero-image {
@@ -35,6 +40,8 @@
   object-fit: cover;
   object-position: center;
   display: block;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--woosumin-sasindo-mobile .work-detail__hero-content--woosumin-sasindo-mobile {
@@ -42,7 +49,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 56px 24px;
   width: 100%;
   order: 1;
@@ -54,6 +61,7 @@
   gap: 16px;
   align-items: flex-start;
   width: 100%;
+  max-width: 327px;
 }
 
 .work-detail--woosumin-sasindo-mobile .work-detail__text-group--center {
@@ -85,6 +93,9 @@
 
 .work-detail--woosumin-sasindo-mobile .work-detail__lead--woosumin-sasindo-mobile p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--woosumin-sasindo-mobile .work-detail__ctas--woosumin-sasindo-mobile {
@@ -92,7 +103,8 @@
   flex-direction: column;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  max-width: 327px;
   cursor: pointer;
   width: 100%;
 }
@@ -356,6 +368,13 @@
   white-space: pre-wrap;
 }
 
+.work-detail--woosumin-sasindo-mobile .work-detail__gallery-description p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
+}
+
 .work-detail--woosumin-sasindo-mobile .work-detail__gallery-grid {
   display: flex;
   flex-direction: column;
@@ -474,5 +493,12 @@
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
+}
+
+.work-detail--woosumin-sasindo-mobile .work-detail__text-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 

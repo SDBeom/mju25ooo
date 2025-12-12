@@ -83,8 +83,7 @@ const KimJaeeunGoFetchTablet = ({ work, designer, ctas }) => {
           <h4 className="work-detail__feature-title">To The End, For You</h4>
           <div className="work-detail__feature-description">
             <p>
-              {`주인과의 공놀이가 그리운 강아지 '누리'는 끝없이 우주를 떠도며,
-그리운 주인을 찾기 위한 여정을 계속한다.`}
+              {`주인과의 공놀이가 그리운 강아지 '누리'는 끝없이 우주를 떠도며, 그리운 주인을 찾기 위한 여정을 계속한다.`}
             </p>
           </div>
         </div>

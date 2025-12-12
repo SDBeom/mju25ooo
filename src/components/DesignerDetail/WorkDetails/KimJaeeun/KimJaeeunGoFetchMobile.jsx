@@ -3,21 +3,21 @@ import { handleImageError } from '../../../../shared/imageUtils';
 import '../../styles/works/KimJaeeunGoFetch/KimJaeeunGoFetchMobile.css';
 
 // 이미지 임포트
+import kimJaeeunWork1_01 from '../../../../assets/김재은/kimjaeeun_video_work1_01.webp';
+import kimJaeeunWork1_02 from '../../../../assets/김재은/kimjaeeun_video_work1_02.webp';
+import kimJaeeunWork1_03 from '../../../../assets/김재은/kimjaeeun_video_work1_03.webp';
+import kimJaeeunWork1_04 from '../../../../assets/김재은/kimjaeeun_video_work1_04.webp';
+import kimJaeeunWork1_05 from '../../../../assets/김재은/kimjaeeun_video_work1_05.webp';
+import kimJaeeunWork1_06 from '../../../../assets/김재은/kimjaeeun_video_work1_06.webp';
+import kimJaeeunWork1_07 from '../../../../assets/김재은/kimjaeeun_video_work1_07.webp';
 import kimJaeeunWork1_08 from '../../../../assets/김재은/kimjaeeun_video_work1_08.webp';
 import kimJaeeunWork1_09 from '../../../../assets/김재은/kimjaeeun_video_work1_09.webp';
 import kimJaeeunWork1_10 from '../../../../assets/김재은/kimjaeeun_video_work1_10.webp';
 import kimJaeeunWork1_11 from '../../../../assets/김재은/kimjaeeun_video_work1_11.webp';
 import kimJaeeunWork1_12 from '../../../../assets/김재은/kimjaeeun_video_work1_12.webp';
+import kimJaeeunWork1_13 from '../../../../assets/김재은/kimjaeeun_video_work1_13.webp';
 import kimJaeeunWork1_14 from '../../../../assets/김재은/kimjaeeun_video_work1_14.webp';
 import kimJaeeunWork1_15 from '../../../../assets/김재은/kimjaeeun_video_work1_15.webp';
-// Mobile 전용 이미지 (없으면 기존 이미지 재사용)
-import kimJaeeunWork1_16 from '../../../../assets/김재은/kimjaeeun_video_work1_15.webp'; // 임시로 15 사용
-import kimJaeeunWork1_17 from '../../../../assets/김재은/kimjaeeun_video_work1_14.webp'; // 임시로 14 사용
-import kimJaeeunWork1_18 from '../../../../assets/김재은/kimjaeeun_video_work1_12.webp'; // 임시로 12 사용
-import kimJaeeunWork1_19 from '../../../../assets/김재은/kimjaeeun_video_work1_11.webp'; // 임시로 11 사용
-import kimJaeeunWork1_20 from '../../../../assets/김재은/kimjaeeun_video_work1_13.webp'; // 임시로 13 사용
-import kimJaeeunWork1_22 from '../../../../assets/김재은/kimjaeeun_video_work1_14.webp'; // 임시로 14 사용
-import kimJaeeunWork1_23 from '../../../../assets/김재은/kimjaeeun_video_work1_15.webp'; // 임시로 15 사용
 
 /**
  * 김재은 - Go Fetch! Mobile 버전
@@ -34,10 +34,10 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
       <section className="work-detail__section work-detail__hero work-detail__hero--kim-jaeeun-go-fetch-mobile">
         <div className="work-detail__hero-image-wrapper work-detail__hero-image-wrapper--kim-jaeeun-go-fetch-mobile">
           <img
-            src={kimJaeeunWork1_08}
+            src={kimJaeeunWork1_01}
             alt={work.title || 'Go Fetch!'}
             className="work-detail__hero-image"
-            onError={(e) => handleImageError(e, kimJaeeunWork1_08, work.id, 'hero')}
+            onError={(e) => handleImageError(e, kimJaeeunWork1_01, work.id, 'hero')}
             loading="eager"
           />
         </div>
@@ -71,10 +71,10 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
       <section className="work-detail__section work-detail__feature work-detail__feature--kim-jaeeun-go-fetch-mobile">
         <div className="work-detail__feature-image-wrapper">
           <img
-            src={kimJaeeunWork1_09}
+            src={kimJaeeunWork1_02}
             alt="To The End, For You"
             className="work-detail__feature-image"
-            onError={(e) => handleImageError(e, kimJaeeunWork1_09, work.id, 'feature-to-the-end')}
+            onError={(e) => handleImageError(e, kimJaeeunWork1_02, work.id, 'feature-to-the-end')}
             loading="lazy"
           />
         </div>
@@ -82,9 +82,7 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
           <h4 className="work-detail__feature-title">To The End, For You</h4>
           <div className="work-detail__feature-description">
             <p>
-              주인과의 공놀이가 그리운 강아지 '누리'는 끝없이 우주를 떠도며, 그리운 주인을 찾기 위한
-              <br aria-hidden="true" />
-              여정을 계속한다.
+              주인과의 공놀이가 그리운 강아지 '누리'는 끝없이 우주를 떠도며, 그리운 주인을 찾기 위한 여정을 계속한다.
             </p>
           </div>
         </div>
@@ -95,10 +93,10 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
         <li className="work-detail__feature-card">
           <div className="work-detail__feature-card-image-wrapper">
             <img
-              src={kimJaeeunWork1_10}
+              src={kimJaeeunWork1_03}
               alt="NURI"
               className="work-detail__feature-card-image"
-              onError={(e) => handleImageError(e, kimJaeeunWork1_10, work.id, 'card-nuri')}
+              onError={(e) => handleImageError(e, kimJaeeunWork1_03, work.id, 'card-nuri')}
               loading="lazy"
             />
           </div>
@@ -116,10 +114,10 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
         <li className="work-detail__feature-card">
           <div className="work-detail__feature-card-image-wrapper">
             <img
-              src={kimJaeeunWork1_11}
+              src={kimJaeeunWork1_04}
               alt="GAON"
               className="work-detail__feature-card-image"
-              onError={(e) => handleImageError(e, kimJaeeunWork1_11, work.id, 'card-gaon')}
+              onError={(e) => handleImageError(e, kimJaeeunWork1_04, work.id, 'card-gaon')}
               loading="lazy"
             />
           </div>
@@ -139,10 +137,10 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
         <li className="work-detail__feature-card">
           <div className="work-detail__feature-card-image-wrapper">
             <img
-              src={kimJaeeunWork1_12}
+              src={kimJaeeunWork1_05}
               alt="Spaceship RN-42"
               className="work-detail__feature-card-image"
-              onError={(e) => handleImageError(e, kimJaeeunWork1_12, work.id, 'card-spaceship')}
+              onError={(e) => handleImageError(e, kimJaeeunWork1_05, work.id, 'card-spaceship')}
               loading="lazy"
             />
           </div>
@@ -169,13 +167,21 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
         </div>
         <div className="work-detail__feature-gallery-grid work-detail__feature-gallery-grid--kim-jaeeun-go-fetch-mobile">
           <div className="work-detail__feature-gallery-column">
-            <div className="work-detail__feature-gallery-image-wrapper work-detail__feature-gallery-image-wrapper--empty" />
             <div className="work-detail__feature-gallery-image-wrapper">
               <img
-                src={kimJaeeunWork1_14}
+                src={kimJaeeunWork1_06}
+                alt="Inciting Incident 1"
+                className="work-detail__feature-gallery-image"
+                onError={(e) => handleImageError(e, kimJaeeunWork1_06, work.id, 'gallery-1')}
+                loading="lazy"
+              />
+            </div>
+            <div className="work-detail__feature-gallery-image-wrapper">
+              <img
+                src={kimJaeeunWork1_07}
                 alt="Inciting Incident 2"
                 className="work-detail__feature-gallery-image"
-                onError={(e) => handleImageError(e, kimJaeeunWork1_14, work.id, 'gallery-2')}
+                onError={(e) => handleImageError(e, kimJaeeunWork1_07, work.id, 'gallery-2')}
                 loading="lazy"
               />
             </div>
@@ -183,28 +189,28 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__feature-gallery-column">
             <div className="work-detail__feature-gallery-image-wrapper">
               <img
-                src={kimJaeeunWork1_15}
+                src={kimJaeeunWork1_08}
                 alt="Inciting Incident 3"
                 className="work-detail__feature-gallery-image"
-                onError={(e) => handleImageError(e, kimJaeeunWork1_15, work.id, 'gallery-3')}
+                onError={(e) => handleImageError(e, kimJaeeunWork1_08, work.id, 'gallery-3')}
                 loading="lazy"
               />
             </div>
             <div className="work-detail__feature-gallery-image-wrapper">
               <img
-                src={kimJaeeunWork1_16}
+                src={kimJaeeunWork1_09}
                 alt="Inciting Incident 4"
                 className="work-detail__feature-gallery-image"
-                onError={(e) => handleImageError(e, kimJaeeunWork1_16, work.id, 'gallery-4')}
+                onError={(e) => handleImageError(e, kimJaeeunWork1_09, work.id, 'gallery-4')}
                 loading="lazy"
               />
             </div>
             <div className="work-detail__feature-gallery-image-wrapper">
               <img
-                src={kimJaeeunWork1_17}
+                src={kimJaeeunWork1_10}
                 alt="Inciting Incident 5"
                 className="work-detail__feature-gallery-image"
-                onError={(e) => handleImageError(e, kimJaeeunWork1_17, work.id, 'gallery-5')}
+                onError={(e) => handleImageError(e, kimJaeeunWork1_10, work.id, 'gallery-5')}
                 loading="lazy"
               />
             </div>
@@ -212,19 +218,19 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__feature-gallery-column">
             <div className="work-detail__feature-gallery-image-wrapper">
               <img
-                src={kimJaeeunWork1_18}
+                src={kimJaeeunWork1_11}
                 alt="Inciting Incident 6"
                 className="work-detail__feature-gallery-image"
-                onError={(e) => handleImageError(e, kimJaeeunWork1_18, work.id, 'gallery-6')}
+                onError={(e) => handleImageError(e, kimJaeeunWork1_11, work.id, 'gallery-6')}
                 loading="lazy"
               />
             </div>
             <div className="work-detail__feature-gallery-image-wrapper">
               <img
-                src={kimJaeeunWork1_19}
+                src={kimJaeeunWork1_12}
                 alt="Inciting Incident 7"
                 className="work-detail__feature-gallery-image"
-                onError={(e) => handleImageError(e, kimJaeeunWork1_19, work.id, 'gallery-7')}
+                onError={(e) => handleImageError(e, kimJaeeunWork1_12, work.id, 'gallery-7')}
                 loading="lazy"
               />
             </div>
@@ -237,10 +243,10 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
         <li className="work-detail__feature-story-card">
           <div className="work-detail__feature-story-card-image-wrapper">
             <img
-              src={kimJaeeunWork1_20}
+              src={kimJaeeunWork1_13}
               alt="Farewell"
               className="work-detail__feature-story-card-image"
-              onError={(e) => handleImageError(e, kimJaeeunWork1_20, work.id, 'story-farewell')}
+              onError={(e) => handleImageError(e, kimJaeeunWork1_13, work.id, 'story-farewell')}
               loading="lazy"
             />
           </div>
@@ -258,10 +264,10 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
         <li className="work-detail__feature-story-card">
           <div className="work-detail__feature-story-card-image-wrapper">
             <img
-              src={kimJaeeunWork1_22}
+              src={kimJaeeunWork1_14}
               alt="Journey"
               className="work-detail__feature-story-card-image"
-              onError={(e) => handleImageError(e, kimJaeeunWork1_22, work.id, 'story-journey')}
+              onError={(e) => handleImageError(e, kimJaeeunWork1_14, work.id, 'story-journey')}
               loading="lazy"
             />
           </div>
@@ -275,10 +281,10 @@ const KimJaeeunGoFetchMobile = ({ work, designer, ctas }) => {
         <li className="work-detail__feature-story-card">
           <div className="work-detail__feature-story-card-image-wrapper">
             <img
-              src={kimJaeeunWork1_23}
+              src={kimJaeeunWork1_15}
               alt="Crisis"
               className="work-detail__feature-story-card-image"
-              onError={(e) => handleImageError(e, kimJaeeunWork1_23, work.id, 'story-crisis')}
+              onError={(e) => handleImageError(e, kimJaeeunWork1_15, work.id, 'story-crisis')}
               loading="lazy"
             />
           </div>

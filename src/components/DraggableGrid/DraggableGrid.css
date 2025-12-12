@@ -842,7 +842,7 @@ body .details.--is-showing {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: clamp(32px, 6vw, 48px);
+    gap: 0;
   }
 
   .work-detail__hero-text {

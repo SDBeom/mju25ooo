@@ -76,10 +76,9 @@ const LeeJiminVenetiTablet = ({ work, designer, ctas }) => {
           <h3 className="work-detail__text-section-title">Dream of freedom</h3>
         </div>
         <div className="work-detail__text-content">
-          <p>이 프로젝트는 3D 스컬프팅 실력과 인체 이해도를 향상시키고, 블렌더를 활용해 캐릭터 제작을 완성하는 것을 목표로 기획했다. 월트 디즈니 스튜디오의 애니메이션 영화 '인어공주'에 등장하는 마녀 우르슬라를 현대적인 시선으로 재해석하여 새로운 캐릭터로 탄생시켰으며, '자유를 찾아 떠나는 여정'이라는 스토리를 바탕으로 캐릭터가 꿈꾸는 자유를 상징하기 위해 스케이트보드를 타는 설정을
-부여했다.
+          <p>이 프로젝트는 3D 스컬프팅 실력과 인체 이해도를 향상시키고, 블렌더를 활용해 캐릭터 제작을 완성하는 것을 목표로 기획했다. 월트 디즈니 스튜디오의 애니메이션 영화 '인어공주'에 등장하는 마녀 우르슬라를 현대적인 시선으로 재해석하여 새로운 캐릭터로 탄생시켰으며, '자유를 찾아 떠나는 여정' 이라는 스토리를 바탕으로 캐릭터가 꿈꾸는 자유를 상징하기 위해 스케이트보드를 타는 설정을 부여했다.
 
-또한 캐릭터의 활기찬 모습을 표현하기 위해 리깅 후 역동적인 포즈를 연출하였고, 세계관의 완성도를 높이기 위해 러프한 2D 아트워크부터 세부 디자인까지과정을 정리해 아트북으로 제작했다.</p>
+또한 캐릭터의 활기찬 모습을 표현하기 위해 리깅 후 역동적인 포즈를 연출하였고, 세계관의 완성도를 높이기 위해 러프한 2D 아트워크부터 세부 디자인까지 과정을 정리해 아트북으로 제작했다.</p>
         </div>
       </section>
 
@@ -161,15 +160,11 @@ const LeeJiminVenetiTablet = ({ work, designer, ctas }) => {
               <div className="work-detail__feature-bento-card-image-wrapper">
                 <img
                   src={leejiminWork1_06}
-                  alt="This outstanding object"
+                  alt=""
                   className="work-detail__feature-bento-card-image"
                   onError={(e) => handleImageError(e, leejiminWork1_06, work.id, 'bento-card-1')}
                   loading="lazy"
                 />
-              </div>
-              <div className="work-detail__feature-bento-card-text">
-                <h5 className="work-detail__feature-bento-card-title">This outstanding object</h5>
-                <p>Call out a feature, benefit, or value that can stand on its own.</p>
               </div>
             </div>
             <div className="work-detail__feature-bento-card work-detail__feature-bento-card--2">

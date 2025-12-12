@@ -68,20 +68,17 @@ const KimYunjungLoveAtRustSightMobile = ({ work, designer, ctas }) => {
           />
         </div>
         <div className="work-detail__feature-text work-detail__feature-text--kim-yunjung-love-at-rust-sight-mobile">
-          <p>
-            &lt;Love at Rust Sight&gt;는 로봇과
-          </p>
-          <p>천사가 등장하는 이야기로, 가족에게</p>
-          <p>버림받은 청소로봇이 우연히 천사를</p>
-          <p>만난 후 자신을 가족으로 맞이해주길</p>
-          <p>바라며 죽으려한다는 내용의 2D</p>
-          <p>애니메이션이다.</p>
-          <p>&nbsp;</p>
-          <p>함께했던 가족과 헤어지고 거리를</p>
-          <p>청소하는 미니봇. 미니봇은 자신을</p>
-          <p>가족으로 받아줄 '천사'를 찾아다닌다.</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
+          <p>{`<Love at Rust Sight>는 로봇과
+천사가 등장하는 이야기로, 가족에게
+버림받은 청소로봇이 우연히 천사를
+만난 후 자신을 가족으로 맞이해주길
+바라며 죽으려한다는 내용의 2D
+애니메이션이다.
+
+함께했던 가족과 헤어지고 거리를
+청소하는 미니봇. 미니봇은 자신을
+가족으로 받아줄 '천사'를 찾아다닌다.
+`}</p>
         </div>
       </section>
 
@@ -96,10 +93,10 @@ const KimYunjungLoveAtRustSightMobile = ({ work, designer, ctas }) => {
             loading="lazy"
           />
         </div>
-        <div className="work-detail__feature-text work-detail__feature-text--kim-yunjung-love-at-rust-sight-mobile">
-          <p>영상이 시작되는 초반부는 한색, 후반부로</p>
-          <p>진행될 수록 난색으로 분위기를 전환시켜</p>
-          <p>희망적이고 따뜻한 전개를 표현하고자 했다.</p>
+        <div className="work-detail__feature-text work-detail__feature-text--kim-yunjung-love-at-rust-sight-mobile work-detail__feature-text--small">
+          <p>{`영상이 시작되는 초반부는 한색, 후반부로
+진행될 수록 난색으로 분위기를 전환시켜
+희망적이고 따뜻한 전개를 표현하고자 했다.`}</p>
         </div>
       </section>
 

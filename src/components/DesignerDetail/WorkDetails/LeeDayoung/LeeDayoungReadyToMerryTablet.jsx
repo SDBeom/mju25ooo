@@ -35,9 +35,9 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, ctas }) => {
               Ready to Merry
             </h2>
             <p className="work-detail__lead work-detail__lead--leedayoung-ready-to-merry-tablet">
-              {`<Ready to Merry>는 크리스마스를 주제로 한 
-케이팝 음악을 아카이빙한 앨범이다. 크리스마스를 앞둔 일주일 동안 하루에 한 곡씩, 총 일곱 곡으로 
-이어지는 곡들은 다가올 날에 대한 설렘을 점차 
+              {`<Ready to Merry>는 크리스마스를 
+주제로 한 케이팝 음악을 아카이빙한 
+앨범이다. 크리스마스를 앞둔 일주일동안 하루에 한 곡씩, 총 일곱 곡으로 이어지는 곡들은 다가올 날에 대한 설렘을 점차 
 고조시킨다.
 `}
             </p>
@@ -75,11 +75,11 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, ctas }) => {
           <h3 className="work-detail__text-section-title">COUNTDOWN TO WISHFUL CHRISTMAS</h3>
         </div>
         <div className="work-detail__text-content">
-          <p>{`그래픽 디자인 능력 향상을 목표로, 서로 다른 특징을 지닌 곡들의 분위기를 다양하게 재해석하였다. 이를 위해 실사 이미지는 배제하고, 타이틀 레터링부터 
-굿즈까지 전 과정을 그래픽으로만 구성하였다. 
+          <p>{`그래픽 디자인 능력 향상을 목표로, 서로 다른 특징을 지닌 곡들의 분위기를 다양하게 재해석하였다. 이를 위해 실사 이미지는 배제하고, 타이틀 레터링부터 그래픽으로만 
+구성하였다. 
 
-디자인된 굿즈는 3D로 구현하여, 현재 트렌드에 맞게 앨범의 실사 패키징 영상을 제작하였으며 이를 통해 앨범의 구성 요소를 더욱 직관적으로 전달하고자 
-하였다. 패키지는 '소원을 담는 산타의 우편함'이라는 콘셉트로, 내부는 서랍형 구조로 구성되어 각 곡의 굿즈를 개별적으로 담을 수 있도록 디자인된 형태이다.`}</p>
+디자인된 굿즈는 3D로 구현하여, 현재 트렌드에 맞게 앨범의 실사 패키징 영상을 제작하였으며 이를 통해 앨범의 구성 요소를 더욱 직관적으로 전달하고자 하였다. 패키지는 '소원을 담는 산타의 
+우편함'이라는 콘셉트로, 내부는 서랍형 구조로 구성되어 각 곡의 굿즈를 개별적으로 담을 수 있도록 디자인된 형태이다.`}</p>
         </div>
       </section>
 
@@ -249,7 +249,7 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, ctas }) => {
       {/* Bento Section - 3D Packaging Video */}
       <ul className="work-detail__section work-detail__bento work-detail__bento--leedayoung-ready-to-merry-tablet">
         <li className="work-detail__bento-grid">
-          <div className="work-detail__bento-column">
+          <div className="work-detail__bento-column work-detail__bento-column--1">
             <div className="work-detail__bento-card work-detail__bento-card--leedayoung-ready-to-merry-tablet">
               <div className="work-detail__bento-text">
                 <h5 className="work-detail__bento-title">앨범 굿즈 형태를 직관적으로</h5>
@@ -268,7 +268,7 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, ctas }) => {
             <div className="work-detail__bento-card work-detail__bento-card--leedayoung-ready-to-merry-tablet">
               <div className="work-detail__bento-text">
                 <h5 className="work-detail__bento-title">곡의 분위기를 직접 느낄 수 있도록</h5>
-                <p>곡의 정보와 하이라이트 부분을 함께 보고 들을 수 있도록 제작하였다.</p>
+                <p>수록곡의 정보와 하이라이트 부분을 함께 보고 들을 수 있도록 제작하였다.</p>
               </div>
               <div className="work-detail__bento-image-wrapper">
                 <img
@@ -281,19 +281,21 @@ const LeeDayoungReadyToMerryTablet = ({ work, designer, ctas }) => {
               </div>
             </div>
           </div>
-          <div className="work-detail__bento-card work-detail__bento-card--large work-detail__bento-card--leedayoung-ready-to-merry-tablet">
-            <div className="work-detail__bento-text">
-              <h5 className="work-detail__bento-title">앨범의 콘셉트를 보다 명확하게</h5>
-              <p>산타의 우편함이라는 콘셉트를 명확히 전달하기 위해 패키지 디자인, 배경, 그리고 이펙트에 중점을 뒀다.</p>
-            </div>
-            <div className="work-detail__bento-image-wrapper">
-              <img
-                src={leedayoungWork1_12}
-                alt="앨범의 콘셉트를 보다 명확하게"
-                className="work-detail__bento-image"
-                onError={(e) => handleImageError(e, leedayoungWork1_12, work.id, 'bento-3')}
-                loading="lazy"
-              />
+          <div className="work-detail__bento-column work-detail__bento-column--2">
+            <div className="work-detail__bento-card work-detail__bento-card--large work-detail__bento-card--leedayoung-ready-to-merry-tablet">
+              <div className="work-detail__bento-text">
+                <h5 className="work-detail__bento-title">앨범의 콘셉트를 보다 명확하게</h5>
+                <p>산타의 우편함이라는 콘셉트를 명확히 전달하기 위해 패키지 디자인, 배경, 그리고 이펙트에 중점을 뒀다.</p>
+              </div>
+              <div className="work-detail__bento-image-wrapper">
+                <img
+                  src={leedayoungWork1_12}
+                  alt="앨범의 콘셉트를 보다 명확하게"
+                  className="work-detail__bento-image"
+                  onError={(e) => handleImageError(e, leedayoungWork1_12, work.id, 'bento-3')}
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </li>

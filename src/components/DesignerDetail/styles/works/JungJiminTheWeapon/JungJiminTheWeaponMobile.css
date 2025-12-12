@@ -24,13 +24,26 @@
   align-items: flex-start;
 }
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__hero-image-wrapper--jungjimin-weapon-mobile {overflow: hidden;
-  position: relative;order: -1;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__hero-image-wrapper--jungjimin-weapon-mobile {
+  overflow: hidden;
+  position: relative;
+  order: -1;
+  width: 100%;
+  height: 298px;
+  min-width: 375px;
+  min-height: 298px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-detail--jungjimin-the-weapon-mobile .work-detail__hero-image-wrapper--jungjimin-weapon-mobile .work-detail__hero-image {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 375px;
+  height: 298px;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -139,18 +152,37 @@
   margin: 0 auto;
 }
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image-wrapper--jungjimin-weapon-mobile {position: relative;border-radius: 16px;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image-wrapper--jungjimin-weapon-mobile {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  max-width: 327px;
+  height: 243px;
+  min-width: 327px;
+  min-height: 243px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image {height: auto;position: absolute;display: block;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 326px;
+  height: 258px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
 /* Feature Section 1 - ?��? ?��?지 */
-.work-detail--jungjimin-the-weapon-mobile .work-detail__feature--jungjimin-weapon-mobile:first-of-type .work-detail__feature-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature--jungjimin-weapon-mobile:first-of-type .work-detail__feature-image {
+  width: 326px;
+  height: 258px;
 }
 
 .work-detail--jungjimin-the-weapon-mobile .work-detail__feature-text--below {
@@ -212,14 +244,14 @@
 }
 
 /* Feature Rows ?��?지 */
-.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-row--jungjimin-weapon-mobile:first-child .work-detail__feature-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-row--jungjimin-weapon-mobile:first-child .work-detail__feature-image {
+  width: 326px;
+  height: 260px;
 }
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-row--jungjimin-weapon-mobile:last-child .work-detail__feature-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-row--jungjimin-weapon-mobile:last-child .work-detail__feature-image {
+  width: 326px;
+  height: 258px;
 }
 
 /* Feature Section 3 - ?��? (?��?지 ?? ?�스???�래) */
@@ -231,11 +263,23 @@
   margin: 0 auto;
 }
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image-wrapper--small {}
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image-wrapper--small {
+  height: 184px;
+  min-height: 184px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image-wrapper--small .work-detail__feature-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__feature-image-wrapper--small .work-detail__feature-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 328px;
+  height: 184px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 16px;
 }
 
@@ -270,30 +314,49 @@
   width: 100%;
 }
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__card-image-wrapper {overflow: hidden;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card-image-wrapper {
+  overflow: hidden;
   position: relative;
-  border-radius: 16px;}
+  border-radius: 16px;
+  width: 100%;
+  max-width: 327px;
+  height: 436px;
+  min-width: 327px;
+  min-height: 436px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__card-image {height: auto;position: absolute;display: block;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 16px;
 }
 
 /* Card 1 - ?�머 */
-.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile:first-child .work-detail__card-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile:first-child .work-detail__card-image {
+  width: 325px;
+  height: 435px;
 }
 
 /* Card 2 - ?��? */
-.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile:nth-child(2) .work-detail__card-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile:nth-child(2) .work-detail__card-image {
+  width: 325px;
+  height: 435px;
 }
 
 /* Card 3 - ?��? */
-.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile:last-child .work-detail__card-image {left: 0;
-  top: 0;
-  transform: none;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__card--jungjimin-weapon-mobile:last-child .work-detail__card-image {
+  width: 326px;
+  height: 435px;
 }
 
 .work-detail--jungjimin-the-weapon-mobile .work-detail__card-text {
@@ -338,37 +401,52 @@
   width: 100%;
 }
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card-image-wrapper {overflow: hidden;
-  position: relative;
-  border-radius: 16px;}
-
-.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card-image {height: auto;position: absolute;display: block;
-}
-
-/* Bento Card 1 - 문양 */
-.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:first-child .work-detail__bento-card-image {left: 0;
-  top: 0;
-  transform: none;
-}
-
-/* Bento Card 2 - ?�머 */
-.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:nth-child(2) .work-detail__bento-card-image {left: 0;
-  top: 0;
-  transform: none;
-  border-radius: 16px;
-}
-
-/* Bento Card 3 - ?�머 */
-.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:last-child .work-detail__bento-card-image-wrapper {position: relative;
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card-image-wrapper {
   overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 327px;
+  height: 208px;
+  min-width: 327px;
+  min-height: 208px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:last-child .work-detail__bento-card-image {
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
+  border-radius: 16px;
+}
+
+/* Bento Card 1 - 문양 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:first-child .work-detail__bento-card-image {
+  width: 326px;
+  height: 209px;
+}
+
+/* Bento Card 2 - ?�머 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:nth-child(2) .work-detail__bento-card-image {
+  width: 448px;
+  height: 208px;
+  left: -60px;
+  border-radius: 16px;
+}
+
+/* Bento Card 3 - ?�머 */
+.work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card--jungjimin-weapon-mobile:last-child .work-detail__bento-card-image {
+  width: 498px;
+  height: 207px;
+  left: -85px;
 }
 
 .work-detail--jungjimin-the-weapon-mobile .work-detail__bento-card-text {

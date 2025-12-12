@@ -23,9 +23,15 @@
   align-items: flex-start;
 }
 
-.work-detail--woosumin-pierre-huyghe-mobile .work-detail__hero-image-wrapper--woosumin-pierre-huyghe-mobile {position: relative;
-  overflow: hidden;flex-shrink: 0;
+.work-detail--woosumin-pierre-huyghe-mobile .work-detail__hero-image-wrapper--woosumin-pierre-huyghe-mobile {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
   order: -1;
+  width: 100%;
+  height: 327px;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--woosumin-pierre-huyghe-mobile .work-detail__hero-image-wrapper--woosumin-pierre-huyghe-mobile .work-detail__hero-image {
@@ -35,6 +41,8 @@
   object-position: center;
   display: block;
   order: -1;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--woosumin-pierre-huyghe-mobile .work-detail__hero-content--woosumin-pierre-huyghe-mobile {
@@ -42,7 +50,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 56px 24px;
   width: 100%;
   order: 1;
@@ -55,6 +63,7 @@
   align-items: center;
   text-align: center;
   width: 100%;
+  max-width: 327px;
 }
 
 .work-detail--woosumin-pierre-huyghe-mobile .work-detail__title--woosumin-pierre-huyghe-mobile {
@@ -85,6 +94,9 @@
 
 .work-detail--woosumin-pierre-huyghe-mobile .work-detail__lead--woosumin-pierre-huyghe-mobile p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--woosumin-pierre-huyghe-mobile .work-detail__ctas--woosumin-pierre-huyghe-mobile {
@@ -92,7 +104,8 @@
   flex-direction: column;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  max-width: 327px;
   cursor: pointer;
   width: 100%;
 }
@@ -406,14 +419,17 @@
   letter-spacing: -0.09px;
 }
 
-.work-detail--woosumin-pierre-huyghe-mobile .work-detail__card-image-wrapper--phone {position: absolute;
+.work-detail--woosumin-pierre-huyghe-mobile .work-detail__card-image-wrapper--phone {
+  position: absolute;
+  width: 218px;
+  height: 212px;
   border: 8px solid #ffffff;
   border-radius: 32px;
-  
-  
+  overflow: hidden;
   left: 54px;
   top: 184px;
-  overflow: hidden;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .work-detail--woosumin-pierre-huyghe-mobile .work-detail__card--feature:nth-child(2) .work-detail__card-image-wrapper--phone {left: 55px;
@@ -425,12 +441,15 @@
 }
 
 .work-detail--woosumin-pierre-huyghe-mobile .work-detail__card-image-wrapper--phone .work-detail__card-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
-  border-radius: inherit;
 }
 
 /* Testimonial Wall Section */

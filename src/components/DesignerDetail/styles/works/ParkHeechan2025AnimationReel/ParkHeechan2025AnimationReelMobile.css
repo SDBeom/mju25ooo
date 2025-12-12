@@ -24,10 +24,15 @@
   justify-content: center;
 }
 
-.work-detail--park-heechan-2025-animation-reel-mobile .work-detail__hero-image-wrapper--park-heechan-2025-animation-reel-mobile {position: relative;
+.work-detail--park-heechan-2025-animation-reel-mobile .work-detail__hero-image-wrapper--park-heechan-2025-animation-reel-mobile {
+  position: relative;
   overflow: hidden;
   flex-shrink: 0;
   order: -1;
+  width: 100%;
+  height: 327px;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__hero-image {
@@ -36,11 +41,21 @@
   object-fit: cover;
   object-position: center;
   display: block;
+  min-width: 327px;
+  min-height: 327px;
 }
 
-.work-detail--park-heechan-2025-animation-reel-mobile .work-detail__hero-image-wrapper--park-heechan-2025-animation-reel-mobile .work-detail__hero-image {left: 0;
-  top: -46.88%;
+.work-detail--park-heechan-2025-animation-reel-mobile .work-detail__hero-image-wrapper--park-heechan-2025-animation-reel-mobile .work-detail__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
   order: -1;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__hero-content--park-heechan-2025-animation-reel-mobile {
@@ -58,8 +73,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
+  text-align: center;
 }
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__text-group--center {
@@ -85,10 +101,10 @@
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__lead--park-heechan-2025-animation-reel-mobile {
   font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
-  letter-spacing: -0.09px;
+  letter-spacing: -0.08px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
@@ -96,6 +112,9 @@
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__lead--park-heechan-2025-animation-reel-mobile p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__ctas--park-heechan-2025-animation-reel-mobile {
@@ -120,14 +139,15 @@
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
-  white-space: nowrap;
   text-align: center;
   width: 100%;
-  flex: 1 0 0;
-  min-height: 0;
-  min-width: 0;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__cta--primary.work-detail__cta--park-heechan-2025-animation-reel-mobile {
@@ -214,10 +234,10 @@
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__feature-row-description p {
   font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
-  letter-spacing: -0.09px;
+  letter-spacing: -0.08px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
@@ -328,16 +348,19 @@
 }
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__card--park-heechan-2025-animation-reel-mobile:nth-child(2) .work-detail__card-description {
-  font-size: 18px;
-  letter-spacing: -0.09px;
+  font-size: 16px;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__card--park-heechan-2025-animation-reel-mobile:nth-child(3) .work-detail__card-description {
-  font-size: 18px;
-  letter-spacing: -0.09px;
+  font-size: 16px;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--park-heechan-2025-animation-reel-mobile .work-detail__card-description p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 

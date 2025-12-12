@@ -29,7 +29,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 737px;
+  min-height: auto;
+  height: auto;
 }
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__hero-image-wrapper--kim-yunjung-hello-universe-mobile {
@@ -38,8 +39,10 @@
   overflow: hidden;
   flex-shrink: 0;
   order: -1;
-  width: 375px;
-  height: 298px;
+  width: 100%;
+  height: 327px;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__hero-image {
@@ -47,14 +50,9 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  
-  
-  
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
   display: block;
+  min-width: 327px;
+  min-height: 327px;
 }
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__hero-content--kim-yunjung-hello-universe-mobile {
@@ -63,10 +61,10 @@
   flex-direction: column;
   gap: 32px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 56px 24px;
   order: 1;
-  height: 439px;
+  min-height: auto;
   box-sizing: border-box;
 }
 
@@ -93,10 +91,10 @@
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__lead--kim-yunjung-hello-universe-mobile {
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
-  letter-spacing: -0.09px;
+  letter-spacing: -0.08px;
   color: rgba(0, 0, 0, 0.55);
   margin: 0;
   white-space: pre-wrap;
@@ -105,6 +103,9 @@
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__lead--kim-yunjung-hello-universe-mobile p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__ctas--kim-yunjung-hello-universe-mobile {
@@ -171,8 +172,11 @@
   overflow: hidden;
   border-radius: 16px;
   flex-shrink: 0;
-  width: 327px;
+  width: 100%;
+  max-width: 327px;
   height: 184px;
+  min-width: 327px;
+  min-height: 184px;
 }
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__feature-image {
@@ -183,8 +187,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
   display: block;
+  min-width: 327px;
+  min-height: 184px;
 }
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__feature-text--kim-yunjung-hello-universe-mobile {
@@ -204,6 +210,9 @@
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__feature-text--kim-yunjung-hello-universe-mobile p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__feature--image-only {
@@ -298,5 +307,8 @@
 
 .work-detail--kim-yunjung-hello-universe-mobile .work-detail__feature-bento-card-text p {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.08px;
 }
 

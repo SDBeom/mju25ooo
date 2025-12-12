@@ -75,7 +75,7 @@ const JungJiminTheWeaponMobile = ({ work, designer, ctas }) => {
           />
         </div>
         <div className="work-detail__feature-text work-detail__feature-text--below">
-          <h4 className="work-detail__feature-title">무기</h4>
+          <h4 className="work-detail__feature-title">장검</h4>
         </div>
       </section>
 
@@ -93,25 +93,25 @@ const JungJiminTheWeaponMobile = ({ work, designer, ctas }) => {
             />
           </div>
           <div className="work-detail__feature-text work-detail__feature-text--below">
-            <h4 className="work-detail__feature-title">도끼</h4>
+            <h4 className="work-detail__feature-title">해머</h4>
             <p>문양 강조</p>
           </div>
         </li>
 
-        {/* Row 2 - 검 */}
+        {/* Row 2 - 대검 */}
         <li className="work-detail__feature-row work-detail__feature-row--jungjimin-weapon-mobile">
           <div className="work-detail__feature-image-wrapper work-detail__feature-image-wrapper--jungjimin-weapon-mobile">
             <img
               src={jungJiminWork2_04}
-              alt="검"
+              alt="대검"
               className="work-detail__feature-image"
               onError={(e) => handleImageError(e, jungJiminWork2_04, work.id, 'feature-row-2')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__feature-text work-detail__feature-text--below">
-            <h4 className="work-detail__feature-title">검</h4>
-            <p>무기의 세부 디테일과 문양 강조</p>
+            <h4 className="work-detail__feature-title">대검</h4>
+            <p>라이트 강조</p>
           </div>
         </li>
       </ul>
@@ -128,8 +128,8 @@ const JungJiminTheWeaponMobile = ({ work, designer, ctas }) => {
           />
         </div>
         <div className="work-detail__feature-text work-detail__feature-text--below">
-          <h4 className="work-detail__feature-title">무기</h4>
-          <p>스타일 강조</p>
+          <h4 className="work-detail__feature-title">단검</h4>
+          <p>텍스쳐 강조</p>
         </div>
       </section>
 
@@ -146,35 +146,35 @@ const JungJiminTheWeaponMobile = ({ work, designer, ctas }) => {
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">도끼</h5>
+            <h5 className="work-detail__card-title">해머</h5>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--jungjimin-weapon-mobile">
           <div className="work-detail__card-image-wrapper">
             <img
               src={jungJiminWork2_07}
-              alt="검"
+              alt="장검"
               className="work-detail__card-image"
               onError={(e) => handleImageError(e, jungJiminWork2_07, work.id, 'card-2')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">검</h5>
+            <h5 className="work-detail__card-title">장검</h5>
           </div>
         </li>
         <li className="work-detail__card work-detail__card--jungjimin-weapon-mobile">
           <div className="work-detail__card-image-wrapper">
             <img
               src={jungJiminWork2_08}
-              alt="무기"
+              alt="장검"
               className="work-detail__card-image"
               onError={(e) => handleImageError(e, jungJiminWork2_08, work.id, 'card-3')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__card-text">
-            <h5 className="work-detail__card-title">무기</h5>
+            <h5 className="work-detail__card-title">장검</h5>
           </div>
         </li>
       </ul>
@@ -199,28 +199,28 @@ const JungJiminTheWeaponMobile = ({ work, designer, ctas }) => {
           <div className="work-detail__bento-card-image-wrapper">
             <img
               src={jungJiminWork2_10}
-              alt="도끼"
+              alt="해머"
               className="work-detail__bento-card-image"
               onError={(e) => handleImageError(e, jungJiminWork2_10, work.id, 'bento-2')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__bento-card-text">
-            <h5 className="work-detail__bento-card-title">도끼</h5>
+            <h5 className="work-detail__bento-card-title">해머</h5>
           </div>
         </li>
         <li className="work-detail__bento-card work-detail__bento-card--jungjimin-weapon-mobile">
           <div className="work-detail__bento-card-image-wrapper">
             <img
               src={jungJiminWork2_11}
-              alt="도끼"
+              alt="해머"
               className="work-detail__bento-card-image"
               onError={(e) => handleImageError(e, jungJiminWork2_11, work.id, 'bento-3')}
               loading="lazy"
             />
           </div>
           <div className="work-detail__bento-card-text">
-            <h5 className="work-detail__bento-card-title">도끼</h5>
+            <h5 className="work-detail__bento-card-title">해머</h5>
           </div>
         </li>
       </ul>
