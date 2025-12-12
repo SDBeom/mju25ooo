@@ -45,6 +45,7 @@ import kimJaeEunWork2_07 from '../assets/김재은/kimjaeeun_video_work2_07.webp
 
 import kimJinaWork1 from '../assets/김지나/kimjina_multimedia_work1_01.webp';
 import kimJinaWork1_02 from '../assets/김지나/kimjina_multimedia_work1_02.webp';
+import kimJinaWork1_03 from '../assets/김지나/kimjina_multimedia_work1_03.webp';
 import kimJinaWork1_04 from '../assets/김지나/kimjina_multimedia_work1_04.webp';
 import kimJinaWork1_05 from '../assets/김지나/kimjina_multimedia_work1_05.webp';
 import kimJinaWork1_06 from '../assets/김지나/kimjina_multimedia_work1_06.webp';
@@ -703,6 +704,7 @@ const designerDetailsData = {
         ],
         gallery: [
           { src: kimJinaWork1_02, alt: '로고' },
+          { src: kimJinaWork1_03, alt: '사막 진영' },
           { src: kimJinaWork1_04, alt: '도시 진영' },
           { src: kimJinaWork1_05, alt: '메인 스토리' },
           { src: kimJinaWork1_06, alt: '스토리 설명' },
