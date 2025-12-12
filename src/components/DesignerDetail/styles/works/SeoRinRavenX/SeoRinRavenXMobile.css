@@ -179,7 +179,7 @@
   width: 100%;
   max-width: 327px;
   word-wrap: break-word;
-  word-break: break-word;
+  overflow-wrap: break-word;
   white-space: normal;
 }
 

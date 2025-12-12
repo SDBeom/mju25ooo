@@ -1518,21 +1518,3 @@ width: 224px;
   letter-spacing: -0.08px;
 }
 
-
-  font-weight: 400;
-  line-height: 1.45;
-  letter-spacing: -0.08px;
-  color: rgba(0, 0, 0, 0.45);
-  text-align: center;
-  margin: 0;
-  white-space: pre-wrap;
-  width: 100%;
-}
-
-.work-detail--park-haein-chrome-4-seasons-mobile .work-detail__text-content p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.45;
-  letter-spacing: -0.08px;
-}
-
