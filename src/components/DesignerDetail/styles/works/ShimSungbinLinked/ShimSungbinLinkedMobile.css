@@ -152,6 +152,34 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
+/* YouTube Video Section */
+.work-detail--shim-sungbin-linked-mobile .work-detail__video-section--shim-sungbin-linked-mobile {
+  padding: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--shim-sungbin-linked-mobile .work-detail__video-wrapper--shim-sungbin-linked-mobile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--shim-sungbin-linked-mobile .work-detail__video-iframe--shim-sungbin-linked-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Feature Cards 1 Section */
 .work-detail--shim-sungbin-linked-mobile .work-detail__cards--shim-sungbin-linked-mobile {
   padding: 80px 24px;

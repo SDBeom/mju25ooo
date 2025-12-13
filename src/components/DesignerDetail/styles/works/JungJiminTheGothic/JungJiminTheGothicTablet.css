@@ -216,6 +216,34 @@
   border-radius: 16px;
 }
 
+/* YouTube Video Section */
+.work-detail--jungjimin-the-gothic-tablet .work-detail__video-section--jungjimin-gothic-tablet {
+  padding: 0;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--jungjimin-the-gothic-tablet .work-detail__video-wrapper--jungjimin-gothic-tablet {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--jungjimin-the-gothic-tablet .work-detail__video-iframe--jungjimin-gothic-tablet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Feature 3 - 렌더샷 */
 .work-detail--jungjimin-the-gothic-tablet .work-detail__feature--jungjimin-gothic-tablet {
   padding: 96px 32px;

@@ -60,6 +60,23 @@ const ShimSungbinLinkedTablet = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--shim-sungbin-linked-tablet">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--shim-sungbin-linked-tablet">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Uq0P8C5JnUo?si=VE-TE9ZhYPDQGpji&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--shim-sungbin-linked-tablet"
+          />
+        </div>
+      </section>
+
       {/* Feature Cards 1 Section */}
       <ul className="work-detail__section work-detail__cards work-detail__cards--shim-sungbin-linked-tablet">
         <li className="work-detail__card work-detail__card--shim-sungbin-linked-tablet">

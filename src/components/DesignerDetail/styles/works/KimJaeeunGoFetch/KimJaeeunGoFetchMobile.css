@@ -146,6 +146,34 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
+/* YouTube Video Section */
+.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__video-section--kim-jaeeun-go-fetch-mobile {
+  padding: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__video-wrapper--kim-jaeeun-go-fetch-mobile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--kim-jaeeun-go-fetch-mobile .work-detail__video-iframe--kim-jaeeun-go-fetch-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Feature Section - To The End, For You */
 .work-detail--kim-jaeeun-go-fetch-mobile .work-detail__feature--kim-jaeeun-go-fetch-mobile {
   width: 100%;

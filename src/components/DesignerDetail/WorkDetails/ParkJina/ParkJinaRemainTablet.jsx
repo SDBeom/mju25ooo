@@ -63,6 +63,23 @@ I still REMAIN`}
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--park-jina-remain-tablet">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--park-jina-remain-tablet">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/n6diUdkPPbo?si=q0XeonwRtaOC6zqZ&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--park-jina-remain-tablet"
+          />
+        </div>
+      </section>
+
       {/* Feature 3 */}
       <section className="work-detail__section work-detail__feature work-detail__feature--park-jina-remain-tablet">
         <div className="work-detail__feature-image-wrapper">

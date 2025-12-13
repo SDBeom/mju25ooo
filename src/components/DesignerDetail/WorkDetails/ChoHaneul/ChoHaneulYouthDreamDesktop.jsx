@@ -68,6 +68,23 @@ const ChoHaneulYouthDreamDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--cho-haneul-youth-dream-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--cho-haneul-youth-dream-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/rXY4oOOkcfI?si=7AflkoMdKPOgaUlA&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--cho-haneul-youth-dream-desktop"
+          />
+        </div>
+      </section>
+
       {/* Text Section 1 */}
       <section className="work-detail__section work-detail__text-section work-detail__text-section--cho-haneul-youth-dream-desktop">
         <div className="work-detail__text-headline">

@@ -148,6 +148,34 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
+/* YouTube Video Section */
+.work-detail--leejimin-veneti-mobile .work-detail__video-section--leejimin-veneti-mobile {
+  padding: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--leejimin-veneti-mobile .work-detail__video-wrapper--leejimin-veneti-mobile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--leejimin-veneti-mobile .work-detail__video-iframe--leejimin-veneti-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Text Section */
 .work-detail--leejimin-veneti-mobile .work-detail__text-section--leejimin-veneti-mobile {
   padding: 80px 24px;

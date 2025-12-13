@@ -125,6 +125,34 @@
   object-fit: cover;
 }
 
+/* YouTube Video Section */
+.work-detail--cho-haneul-youth-dream-desktop .work-detail__video-section--cho-haneul-youth-dream-desktop {
+  padding: 0;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--cho-haneul-youth-dream-desktop .work-detail__video-wrapper--cho-haneul-youth-dream-desktop {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--cho-haneul-youth-dream-desktop .work-detail__video-iframe--cho-haneul-youth-dream-desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Text Section */
 .work-detail--cho-haneul-youth-dream-desktop .work-detail__text-section--cho-haneul-youth-dream-desktop {
   padding: 120px 64px;

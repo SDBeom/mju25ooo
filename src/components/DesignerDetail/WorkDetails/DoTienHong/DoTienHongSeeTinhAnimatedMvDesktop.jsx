@@ -55,6 +55,23 @@ const DoTienHongSeeTinhAnimatedMvDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--do-tien-hong-see-tinh-animated-mv-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--do-tien-hong-see-tinh-animated-mv-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/7dxXNybJN40?si=UpVVQiEj5ATN_P4l&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--do-tien-hong-see-tinh-animated-mv-desktop"
+          />
+        </div>
+      </section>
+
       {/* Marquee */}
       <section className="work-detail__section work-detail__marquee work-detail__marquee--do-tien-hong-see-tinh-animated-mv-desktop">
         <h3 className="work-detail__marquee-text">FRAME DESIGN</h3>

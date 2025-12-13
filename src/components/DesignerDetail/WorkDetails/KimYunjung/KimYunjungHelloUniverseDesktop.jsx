@@ -58,6 +58,23 @@ const KimYunjungHelloUniverseDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--kim-yunjung-hello-universe-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--kim-yunjung-hello-universe-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/ySBnMeJA3-Y?si=rtbFpYexYAPv3AsD&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--kim-yunjung-hello-universe-desktop"
+          />
+        </div>
+      </section>
+
       {/* Feature Section - First Image with Description */}
       <section className="work-detail__section work-detail__feature work-detail__feature--kim-yunjung-hello-universe-desktop">
         <div className="work-detail__feature-image-wrapper work-detail__feature-image-wrapper--kim-yunjung-hello-universe-desktop">

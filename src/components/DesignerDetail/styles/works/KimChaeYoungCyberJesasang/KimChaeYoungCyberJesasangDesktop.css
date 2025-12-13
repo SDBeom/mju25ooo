@@ -130,6 +130,34 @@
   display: block;
 }
 
+/* YouTube Video Section */
+.work-detail--kim-chae-young-cyber-jesasang-desktop .work-detail__video-section--kim-chae-young-cyber-jesasang-desktop {
+  padding: 0;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-desktop .work-detail__video-wrapper--kim-chae-young-cyber-jesasang-desktop {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--kim-chae-young-cyber-jesasang-desktop .work-detail__video-iframe--kim-chae-young-cyber-jesasang-desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Text Section */
 .work-detail--kim-chae-young-cyber-jesasang-desktop .work-detail__text-section--kim-chae-young-cyber-jesasang-desktop {
   width: 1280px;

@@ -149,6 +149,62 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
+/* YouTube Video Section */
+.work-detail--do-tien-hong-see-tinh-animated-mv-mobile .work-detail__video-section--do-tien-hong-see-tinh-animated-mv-mobile {
+  padding: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--do-tien-hong-see-tinh-animated-mv-mobile .work-detail__video-wrapper--do-tien-hong-see-tinh-animated-mv-mobile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--do-tien-hong-see-tinh-animated-mv-mobile .work-detail__video-iframe--do-tien-hong-see-tinh-animated-mv-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* YouTube Video Section */
+.work-detail--do-tien-hong-see-tinh-animated-mv-mobile .work-detail__video-section--do-tien-hong-see-tinh-animated-mv-mobile {
+  padding: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--do-tien-hong-see-tinh-animated-mv-mobile .work-detail__video-wrapper--do-tien-hong-see-tinh-animated-mv-mobile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--do-tien-hong-see-tinh-animated-mv-mobile .work-detail__video-iframe--do-tien-hong-see-tinh-animated-mv-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Marquee */
 .work-detail--do-tien-hong-see-tinh-animated-mv-mobile .work-detail__marquee--do-tien-hong-see-tinh-animated-mv-mobile {
   width: 100%;

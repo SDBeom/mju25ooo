@@ -61,6 +61,23 @@ const SongDaheeACardOfLoveDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--song-dahee-a-card-of-love-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--song-dahee-a-card-of-love-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/EPNPNjmLvF4?si=71HO2J0wnDboO8-4&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--song-dahee-a-card-of-love-desktop"
+          />
+        </div>
+      </section>
+
       {/* Feature Cards 1 Section */}
       <ul className="work-detail__section work-detail__cards work-detail__cards--song-dahee-a-card-of-love-desktop">
         <li className="work-detail__card work-detail__card--song-dahee-a-card-of-love-desktop">

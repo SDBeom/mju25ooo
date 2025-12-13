@@ -142,6 +142,34 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
+/* YouTube Video Section */
+.work-detail--heo-jihoon-master-imagination-mobile .work-detail__video-section--heo-jihoon-master-imagination-mobile {
+  padding: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--heo-jihoon-master-imagination-mobile .work-detail__video-wrapper--heo-jihoon-master-imagination-mobile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--heo-jihoon-master-imagination-mobile .work-detail__video-iframe--heo-jihoon-master-imagination-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Pull Quote Section */
 .work-detail--heo-jihoon-master-imagination-mobile .work-detail__quote--mobile {
   padding: 80px 24px;

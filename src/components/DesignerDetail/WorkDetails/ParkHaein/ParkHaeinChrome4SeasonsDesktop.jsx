@@ -65,6 +65,23 @@ const ParkHaeinChrome4SeasonsDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--park-haein-chrome-4-seasons-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--park-haein-chrome-4-seasons-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/vH089PAS44M?si=VqI503F_IM1O2F9Y&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--park-haein-chrome-4-seasons-desktop"
+          />
+        </div>
+      </section>
+
       {/* Feature 3 */}
       <section className="work-detail__section work-detail__feature work-detail__feature--park-haein-chrome-4-seasons-desktop">
         <div className="work-detail__feature-image-wrapper">

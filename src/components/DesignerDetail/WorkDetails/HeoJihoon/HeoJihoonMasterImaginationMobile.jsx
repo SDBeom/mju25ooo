@@ -65,6 +65,23 @@ const HeoJihoonMasterImaginationMobile = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--heo-jihoon-master-imagination-mobile">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--heo-jihoon-master-imagination-mobile">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/FKUY2V-2BRA?si=nPL95-gXoUbt373m&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--heo-jihoon-master-imagination-mobile"
+          />
+        </div>
+      </section>
+
       {/* Pull Quote Section */}
       <section className="work-detail__section work-detail__quote work-detail__quote--mobile">
         <figure className="work-detail__quote-figure">

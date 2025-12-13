@@ -69,6 +69,23 @@ const LeeJiminVenetiTablet = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--leejimin-veneti-tablet">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--leejimin-veneti-tablet">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/rSmw7Z_VXmg?si=zUZNawNoCPVuDcXS&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--leejimin-veneti-tablet"
+          />
+        </div>
+      </section>
+
       {/* Text Section - Dream of freedom */}
       <section className="work-detail__section work-detail__text-section work-detail__text-section--leejimin-veneti-tablet">
         <div className="work-detail__text-section-header">

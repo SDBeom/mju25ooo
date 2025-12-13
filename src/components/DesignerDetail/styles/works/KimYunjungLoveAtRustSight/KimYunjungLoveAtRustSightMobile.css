@@ -158,6 +158,34 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
+/* YouTube Video Section */
+.work-detail--kim-yunjung-love-at-rust-sight-mobile .work-detail__video-section--kim-yunjung-love-at-rust-sight-mobile {
+  padding: 0;
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--kim-yunjung-love-at-rust-sight-mobile .work-detail__video-wrapper--kim-yunjung-love-at-rust-sight-mobile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--kim-yunjung-love-at-rust-sight-mobile .work-detail__video-iframe--kim-yunjung-love-at-rust-sight-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Feature Section */
 .work-detail--kim-yunjung-love-at-rust-sight-mobile .work-detail__feature--kim-yunjung-love-at-rust-sight-mobile {
   width: 100%;

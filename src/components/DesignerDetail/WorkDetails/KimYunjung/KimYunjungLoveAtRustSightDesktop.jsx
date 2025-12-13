@@ -56,6 +56,23 @@ const KimYunjungLoveAtRustSightDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--kim-yunjung-love-at-rust-sight-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--kim-yunjung-love-at-rust-sight-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/ZwtYn7zx1h0?si=BwMUNlUZjpMR_X24&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--kim-yunjung-love-at-rust-sight-desktop"
+          />
+        </div>
+      </section>
+
       {/* Feature Section - First Image with Description */}
       <section className="work-detail__section work-detail__feature work-detail__feature--kim-yunjung-love-at-rust-sight-desktop">
         <div className="work-detail__feature-image-wrapper work-detail__feature-image-wrapper--kim-yunjung-love-at-rust-sight-desktop">

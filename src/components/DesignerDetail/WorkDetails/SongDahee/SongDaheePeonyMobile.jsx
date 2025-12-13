@@ -56,6 +56,23 @@ const SongDaheePeonyMobile = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--song-dahee-peony-mobile">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--song-dahee-peony-mobile">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/tz4dj3WfDKw?si=844__2Sl3KsSMLCD&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--song-dahee-peony-mobile"
+          />
+        </div>
+      </section>
+
       {/* Feature Rows Section */}
       <ul className="work-detail__section work-detail__feature-rows work-detail__feature-rows--song-dahee-peony-mobile">
         <li className="work-detail__feature-row work-detail__feature-row--song-dahee-peony-mobile">

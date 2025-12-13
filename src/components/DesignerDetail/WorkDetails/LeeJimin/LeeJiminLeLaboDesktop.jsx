@@ -68,6 +68,23 @@ const LeeJiminLeLaboDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--leejimin-lelabo-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--leejimin-lelabo-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/xyBSk00G_D0?si=GqMFDBMKO4kgFfxO&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--leejimin-lelabo-desktop"
+          />
+        </div>
+      </section>
+
       {/* Text Section - Imagine a city */}
       <section className="work-detail__section work-detail__text-section work-detail__text-section--leejimin-lelabo-desktop">
         <div className="work-detail__text-section-header">

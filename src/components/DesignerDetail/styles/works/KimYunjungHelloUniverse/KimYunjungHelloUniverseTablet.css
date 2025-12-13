@@ -148,6 +148,34 @@
   display: block;
 }
 
+/* YouTube Video Section */
+.work-detail--kim-yunjung-hello-universe-tablet .work-detail__video-section--kim-yunjung-hello-universe-tablet {
+  padding: 0;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--kim-yunjung-hello-universe-tablet .work-detail__video-wrapper--kim-yunjung-hello-universe-tablet {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--kim-yunjung-hello-universe-tablet .work-detail__video-iframe--kim-yunjung-hello-universe-tablet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Feature Section */
 .work-detail--kim-yunjung-hello-universe-tablet .work-detail__feature--kim-yunjung-hello-universe-tablet {
   width: 100%;

@@ -135,6 +135,34 @@
   display: block;
 }
 
+/* YouTube Video Section */
+.work-detail--leejimin-lelabo-desktop .work-detail__video-section--leejimin-lelabo-desktop {
+  padding: 0;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--leejimin-lelabo-desktop .work-detail__video-wrapper--leejimin-lelabo-desktop {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--leejimin-lelabo-desktop .work-detail__video-iframe--leejimin-lelabo-desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Text Section */
 .work-detail--leejimin-lelabo-desktop .work-detail__text-section--leejimin-lelabo-desktop {
   padding: 120px 64px;

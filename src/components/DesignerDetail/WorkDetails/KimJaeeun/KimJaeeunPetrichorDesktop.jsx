@@ -57,6 +57,23 @@ const KimJaeeunPetrichorDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--kim-jaeeun-petrichor-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--kim-jaeeun-petrichor-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/G7htz6XiiL0?si=YPL9Y0YI7VSkuuhk&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--kim-jaeeun-petrichor-desktop"
+          />
+        </div>
+      </section>
+
       {/* Feature 2 - The Discovery of Hope & The Beginning of the Journey */}
       <section className="work-detail__section work-detail__feature-rows work-detail__feature-rows--kim-jaeeun-petrichor-desktop">
         {/* Row 1 - The Discovery of Hope */}

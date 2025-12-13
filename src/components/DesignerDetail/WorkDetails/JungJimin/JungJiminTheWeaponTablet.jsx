@@ -63,6 +63,23 @@ const JungJiminTheWeaponTablet = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--jungjimin-weapon-tablet">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--jungjimin-weapon-tablet">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/a0-YEvC3Z48?si=KXKpzfCh_aTQWgKi&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--jungjimin-weapon-tablet"
+          />
+        </div>
+      </section>
+
       {/* Feature Section 1 - 장검 */}
       <section className="work-detail__section work-detail__feature work-detail__feature--jungjimin-weapon-tablet">
         <div className="work-detail__feature-content work-detail__feature-content--jungjimin-weapon-tablet">

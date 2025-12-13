@@ -144,6 +144,34 @@
   display: block;
 }
 
+/* YouTube Video Section */
+.work-detail--song-dahee-a-card-of-love-desktop .work-detail__video-section--song-dahee-a-card-of-love-desktop {
+  padding: 0;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--song-dahee-a-card-of-love-desktop .work-detail__video-wrapper--song-dahee-a-card-of-love-desktop {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--song-dahee-a-card-of-love-desktop .work-detail__video-iframe--song-dahee-a-card-of-love-desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Feature Cards 1 Section */
 .work-detail--song-dahee-a-card-of-love-desktop .work-detail__cards--song-dahee-a-card-of-love-desktop {
   padding: 120px 64px;

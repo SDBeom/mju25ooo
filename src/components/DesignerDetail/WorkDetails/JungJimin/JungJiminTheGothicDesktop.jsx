@@ -66,6 +66,23 @@ const JungJiminTheGothicDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--jungjimin-gothic-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--jungjimin-gothic-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/sBCUp1o6Kk8?si=sN2rvoxgIoBJzhkN&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--jungjimin-gothic-desktop"
+          />
+        </div>
+      </section>
+
       {/* Feature cards 1 - 씬1 - 이미지 2번: jungjimin_gamecontent_work1_The_gothic_Desktop_02.webp */}
       <section className="work-detail__section work-detail__feature-card work-detail__feature-card--jungjimin-gothic-desktop">
         <div className="work-detail__feature-card-content work-detail__feature-card-content--jungjimin-gothic-desktop">

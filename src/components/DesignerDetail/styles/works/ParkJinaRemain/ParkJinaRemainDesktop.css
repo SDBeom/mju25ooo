@@ -137,6 +137,34 @@
   border-color: rgba(0, 0, 0, 0.25);
 }
 
+/* YouTube Video Section */
+.work-detail--park-jina-remain-desktop .work-detail__video-section--park-jina-remain-desktop {
+  padding: 0;
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-detail--park-jina-remain-desktop .work-detail__video-wrapper--park-jina-remain-desktop {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.work-detail--park-jina-remain-desktop .work-detail__video-iframe--park-jina-remain-desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Feature 3 */
 .work-detail--park-jina-remain-desktop .work-detail__feature--park-jina-remain-desktop {
   width: 1280px;

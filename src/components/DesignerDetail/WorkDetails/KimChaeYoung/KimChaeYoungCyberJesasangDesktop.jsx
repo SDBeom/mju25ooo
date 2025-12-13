@@ -60,6 +60,23 @@ const KimChaeYoungCyberJesasangDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--kim-chae-young-cyber-jesasang-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--kim-chae-young-cyber-jesasang-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/GZYEHsR12X0?si=4DpgjThtbqQjPZaU&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--kim-chae-young-cyber-jesasang-desktop"
+          />
+        </div>
+      </section>
+
       {/* Text Section */}
       <section className="work-detail__section work-detail__text-section work-detail__text-section--kim-chae-young-cyber-jesasang-desktop">
         <div className="work-detail__text-section-headline">

@@ -58,6 +58,23 @@ const AhnSeonminDotDotDotDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--ahn-seonmin-dot-dot-dot-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--ahn-seonmin-dot-dot-dot-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/r8eMCP6tjh0?si=FhP6Ps_ATFqkR70I&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--ahn-seonmin-dot-dot-dot-desktop"
+          />
+        </div>
+      </section>
+
       {/* Feature 1 Section */}
       <section className="work-detail__section work-detail__feature work-detail__feature--ahn-seonmin-dot-dot-dot-desktop">
         <div className="work-detail__feature-image-wrapper work-detail__feature-image-wrapper--full">

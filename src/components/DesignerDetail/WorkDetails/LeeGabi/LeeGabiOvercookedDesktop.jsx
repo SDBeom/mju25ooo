@@ -66,6 +66,23 @@ const LeeGabiOvercookedDesktop = ({ work, designer, ctas }) => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="work-detail__section work-detail__video-section work-detail__video-section--leegabi-overcooked-desktop">
+        <div className="work-detail__video-wrapper work-detail__video-wrapper--leegabi-overcooked-desktop">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/w22iPfPFSPc?si=HL9DDNIfD80QYB8x&controls=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="work-detail__video-iframe work-detail__video-iframe--leegabi-overcooked-desktop"
+          />
+        </div>
+      </section>
+
       {/* Feature Bento Section */}
       <ul className="work-detail__section work-detail__bento work-detail__bento--leegabi-overcooked-desktop">
         <li className="work-detail__bento-row">
